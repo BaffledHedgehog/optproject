@@ -25,61 +25,74 @@ nb["metadata"] = {
 cells = []
 
 cells.append(md(r"""
-# Сравнение обратного распространения ошибки для разных функций потерь
+# Сравнение обучения нейронной сети с квадратичной функцией потерь и перекрёстной энтропией
 
-Проект построен по статье `project_base.pdf` (*Loss Functions and Metrics in Deep Learning*, Terven et al., 2024): в ней loss-функции рассматриваются как часть обучения модели, а метрики - как инструмент оценки после обучения.
+**Авторы:** Ляхов Ярослав, Суворов Степан  
+**Университет:** Университет Иннополис
 
-Цель проекта: на одинаковых моделях и данных сравнить, как разные функции потерь влияют на backpropagation:
+## Цель работы
 
-- величину градиента по логиту и параметрам;
-- скорость сходимости;
-- итоговые метрики;
-- устойчивость к выбросам;
-- форму границы решения/аппроксимации.
+Рассмотреть задачу обучения нейронной сети для бинарной классификации и сравнить работу метода обратного распространения ошибки при двух функциях потерь:
 
-Главный акцент - сравнение MSE и Cross-Entropy. Дополнительно рассматриваются Hinge и Focal для классификации, MAE, Huber и Log-Cosh для регрессии.
+- квадратичная функция потерь, то есть MSE;
+- перекрёстная энтропия, то есть Binary Cross-Entropy.
+
+Сравнение проводится на одной и той же архитектуре, одном наборе данных, одинаковой инициализации и одинаковом оптимизаторе. Это позволяет изолировать влияние функции потерь на градиенты, скорость обучения и итоговое качество классификации.
 """))
 
 cells.append(md(r"""
-## Краткая теория
+## Теоретическая часть
 
-Обратное распространение ошибки применяет цепное правило:
+Пусть нейронная сеть для бинарной классификации выдаёт логит $z$. Вероятность класса `1` получается через sigmoid:
+
+$$
+p = \sigma(z) = \frac{1}{1 + e^{-z}}.
+$$
+
+При обратном распространении ошибки градиент параметров получается по цепному правилу:
 
 $$
 \frac{\partial L}{\partial w} =
-\frac{\partial L}{\partial \hat y}
-\frac{\partial \hat y}{\partial z}
-\frac{\partial z}{\partial w},
+\frac{\partial L}{\partial z}
+\frac{\partial z}{\partial w}.
 $$
 
-где $L$ - функция потерь, $\hat y$ - предсказание, $z$ - логит/выход линейного слоя, $w$ - параметры модели.
+Следовательно, функция потерь напрямую определяет величину сигнала, который распространяется назад по сети.
 
-Именно loss-функция задаёт первый множитель градиента. Поэтому при одинаковой архитектуре разные loss-функции могут давать разные по масштабу и направлению обновления весов.
+### Перекрёстная энтропия
 
-Для бинарной классификации с вероятностью $p=\sigma(z)$:
-
-**Binary Cross-Entropy**
+Для бинарной классификации:
 
 $$
-L_{BCE}= -y\log p -(1-y)\log(1-p), \qquad
-\frac{\partial L}{\partial z}=p-y
+L_{BCE}= -y\log p -(1-y)\log(1-p).
 $$
 
-**MSE по вероятности**
+Если совместить BCE с sigmoid, то градиент по логиту имеет простой вид:
 
 $$
-L_{MSE}=(p-y)^2, \qquad
-\frac{\partial L}{\partial z}=2(p-y)p(1-p)
+\frac{\partial L_{BCE}}{\partial z}=p-y.
 $$
 
-Ключевое отличие: у MSE появляется дополнительный множитель $p(1-p)$. Если модель сильно ошибается и логит насыщает sigmoid, градиент MSE становится маленьким. У Cross-Entropy градиент остаётся заметным: $p-y$.
+### Квадратичная функция потерь
+
+Если использовать MSE для вероятности:
+
+$$
+L_{MSE}=(p-y)^2,
+$$
+
+то градиент по логиту:
+
+$$
+\frac{\partial L_{MSE}}{\partial z}=2(p-y)p(1-p).
+$$
+
+Главное отличие: у MSE появляется дополнительный множитель $p(1-p)$. Когда sigmoid насыщается, то есть $p$ близко к 0 или 1, этот множитель становится малым. Поэтому MSE может давать слабый градиент даже тогда, когда классификатор сильно ошибается.
 """))
 
 cells.append(code(r"""
-import math
 import os
 import random
-from dataclasses import dataclass
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -88,7 +101,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from sklearn.datasets import make_moons
-from sklearn.metrics import accuracy_score, f1_score, mean_absolute_error, mean_squared_error, r2_score
+from sklearn.metrics import accuracy_score, f1_score, log_loss, mean_squared_error
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 
@@ -112,11 +125,11 @@ device
 """))
 
 cells.append(md(r"""
-## 1. Аналитическое сравнение градиента по логиту
+## 1. Сравнение градиентов по логиту
 
-Сначала сравним не обучение модели, а сам backprop-сигнал $\partial L / \partial z$ для одного объекта класса `1`.
+Сначала сравним не полное обучение, а только сигнал $\partial L / \partial z$, который loss-функция отправляет назад в сеть.
 
-Это показывает, какой сигнал loss передаёт назад в сеть ещё до учёта архитектуры.
+Рассмотрим объект истинного класса $y=1$. Если логит $z$ сильно отрицательный, то модель уверенно ошибается: вероятность $p$ близка к 0.
 """))
 
 cells.append(code(r"""
@@ -126,51 +139,41 @@ y = torch.ones_like(p)
 
 grad_bce = p - y
 grad_mse = 2 * (p - y) * p * (1 - p)
-gamma = 2.0
-# Focal loss for y=1: L=-(1-p)^gamma*log(p)
-# derivative computed by autograd for clarity
-z_focal = z.clone().detach().requires_grad_(True)
-p_focal = torch.sigmoid(z_focal)
-loss_focal = -((1 - p_focal) ** gamma) * torch.log(p_focal.clamp_min(1e-8))
-grad_focal = torch.autograd.grad(loss_focal.sum(), z_focal)[0].detach()
-grad_hinge = torch.where(z < 1, -torch.ones_like(z), torch.zeros_like(z))  # y=1, L=max(0, 1-z)
 
 plt.figure(figsize=(9, 5))
-plt.plot(z, grad_bce, label="Cross-Entropy / BCE")
-plt.plot(z, grad_mse, label="MSE(sigmoid)")
-plt.plot(z, grad_focal, label="Focal loss, gamma=2")
-plt.plot(z, grad_hinge, label="Hinge")
+plt.plot(z, grad_bce, label="Перекрёстная энтропия / BCE", linewidth=2)
+plt.plot(z, grad_mse, label="Квадратичная потеря / MSE", linewidth=2)
 plt.axhline(0, color="black", linewidth=1)
-plt.xlabel("logit z")
+plt.xlabel("логит z")
 plt.ylabel("dL/dz для y=1")
-plt.title("Backprop-сигнал разных функций потерь")
+plt.title("Градиент функции потерь по логиту")
 plt.legend()
 plt.tight_layout()
-plt.savefig(f"{FIG_DIR}/gradient_by_logit.png", dpi=160)
+plt.savefig(f"{FIG_DIR}/gradient_bce_vs_mse.png", dpi=160)
 plt.show()
 """))
 
 cells.append(md(r"""
-Вывод по графику:
+На графике видно, что при уверенной ошибке $z \ll 0$:
 
-- при сильной ошибке для класса `1` логит отрицательный, $p$ близко к 0;
-- Cross-Entropy даёт градиент примерно `-1`, то есть сильный сигнал для исправления ошибки;
-- MSE даёт почти нулевой градиент из-за множителя $p(1-p)$;
-- Hinge даёт постоянный градиент до выполнения margin;
-- Focal усиливает вклад сложных примеров и подавляет лёгкие.
+- у BCE градиент близок к `-1`, поэтому сеть получает сильный сигнал для исправления ошибки;
+- у MSE градиент близок к `0`, потому что sigmoid насыщена и множитель $p(1-p)$ почти нулевой.
+
+Это объясняет, почему для классификации перекрёстная энтропия обычно обучает сеть быстрее и стабильнее, чем MSE.
 """))
 
 cells.append(md(r"""
-## 2. Эксперимент классификации
+## 2. Постановка эксперимента
 
-Задача: бинарная классификация `make_moons`. Архитектура, начальная инициализация, train/test split и число эпох одинаковые для всех loss-функций.
+Используем синтетическую задачу бинарной классификации `make_moons`. Она нелинейно разделима, поэтому для неё нужна небольшая нейронная сеть, а не просто линейная модель.
 
-Сравниваем:
+Условия сравнения:
 
-- `Cross-Entropy / BCEWithLogits`;
-- `MSE(sigmoid)` - MSE между вероятностью и меткой;
-- `Hinge` - margin-based loss по логиту;
-- `Focal` - модификация BCE с фокусом на сложных примерах.
+- одинаковая обучающая и тестовая выборки;
+- одинаковая архитектура MLP;
+- одинаковая начальная инициализация весов;
+- одинаковый оптимизатор SGD с momentum;
+- различается только функция потерь.
 """))
 
 cells.append(code(r"""
@@ -187,7 +190,17 @@ y_train_t = torch.tensor(y_train, device=device)
 X_test_t = torch.tensor(X_test, device=device)
 y_test_t = torch.tensor(y_test, device=device)
 
+plt.figure(figsize=(7, 5))
+plt.scatter(X_train[:, 0], X_train[:, 1], c=y_train.ravel(), cmap="RdBu_r", s=24, alpha=0.75, edgecolor="white")
+plt.title("Обучающая выборка make_moons")
+plt.xlabel("x1")
+plt.ylabel("x2")
+plt.tight_layout()
+plt.savefig(f"{FIG_DIR}/dataset_make_moons.png", dpi=160)
+plt.show()
+"""))
 
+cells.append(code(r"""
 class BinaryMLP(nn.Module):
     def __init__(self):
         super().__init__()
@@ -203,42 +216,33 @@ class BinaryMLP(nn.Module):
         return self.net(x)
 
 
-def focal_bce_with_logits(logits, targets, gamma=2.0, alpha=0.25):
-    bce = F.binary_cross_entropy_with_logits(logits, targets, reduction="none")
-    p = torch.sigmoid(logits)
-    p_t = targets * p + (1 - targets) * (1 - p)
-    alpha_t = targets * alpha + (1 - targets) * (1 - alpha)
-    return (alpha_t * (1 - p_t) ** gamma * bce).mean()
-
-
-def classification_loss(name, logits, targets):
-    if name == "Cross-Entropy (BCE)":
+def loss_function(name, logits, targets):
+    if name == "BCE":
         return F.binary_cross_entropy_with_logits(logits, targets)
-    if name == "MSE(sigmoid)":
-        return F.mse_loss(torch.sigmoid(logits), targets)
-    if name == "Hinge":
-        signed_targets = targets * 2 - 1
-        return torch.clamp(1 - signed_targets * logits, min=0).mean()
-    if name == "Focal":
-        return focal_bce_with_logits(logits, targets)
+    if name == "MSE":
+        probs = torch.sigmoid(logits)
+        return F.mse_loss(probs, targets)
     raise ValueError(name)
 
 
-def evaluate_classifier(model):
+def evaluate(model):
     model.eval()
     with torch.no_grad():
         logits = model(X_test_t)
         probs = torch.sigmoid(logits).cpu().numpy().ravel()
+
     pred = (probs >= 0.5).astype(int)
     true = y_test.ravel().astype(int)
+
     return {
         "accuracy": accuracy_score(true, pred),
         "f1": f1_score(true, pred),
-        "brier_mse": mean_squared_error(true, probs),
+        "bce_metric": log_loss(true, np.clip(probs, 1e-7, 1 - 1e-7)),
+        "mse_metric": mean_squared_error(true, probs),
     }
 
 
-def train_classifier(loss_name, epochs=350, lr=0.05):
+def train(loss_name, epochs=350, lr=0.05):
     torch.manual_seed(SEED)
     model = BinaryMLP().to(device)
     optimizer = torch.optim.SGD(model.parameters(), lr=lr, momentum=0.9)
@@ -247,59 +251,97 @@ def train_classifier(loss_name, epochs=350, lr=0.05):
     for epoch in range(epochs):
         model.train()
         optimizer.zero_grad()
+
         logits = model(X_train_t)
-        loss = classification_loss(loss_name, logits, y_train_t)
+        loss = loss_function(loss_name, logits, y_train_t)
         loss.backward()
-        grad_norm = model.net[0].weight.grad.detach().norm().item()
+
+        first_layer_grad = model.net[0].weight.grad.detach().norm().item()
+        all_grad = torch.sqrt(sum(
+            (param.grad.detach() ** 2).sum()
+            for param in model.parameters()
+            if param.grad is not None
+        )).item()
+
         optimizer.step()
 
         if epoch % 5 == 0 or epoch == epochs - 1:
-            metrics = evaluate_classifier(model)
             history.append({
                 "epoch": epoch,
-                "loss": loss.item(),
-                "grad_norm_first_layer": grad_norm,
-                **metrics,
+                "train_loss": loss.item(),
+                "grad_norm_first_layer": first_layer_grad,
+                "grad_norm_all": all_grad,
+                **evaluate(model),
             })
+
     return model, pd.DataFrame(history)
 
 
-classification_results = {}
-classification_histories = {}
+models = {}
+histories = {}
+results = {}
 
-for loss_name in ["Cross-Entropy (BCE)", "MSE(sigmoid)", "Hinge", "Focal"]:
-    model, hist = train_classifier(loss_name)
-    classification_results[loss_name] = evaluate_classifier(model)
-    classification_histories[loss_name] = hist
+for loss_name in ["BCE", "MSE"]:
+    model, hist = train(loss_name)
+    models[loss_name] = model
+    histories[loss_name] = hist
+    results[loss_name] = evaluate(model)
 
-pd.DataFrame(classification_results).T.sort_values("accuracy", ascending=False)
+pd.DataFrame(results).T
+"""))
+
+cells.append(md(r"""
+## 3. Графики обучения
+
+Ниже показаны:
+
+- значение оптимизируемой функции потерь на обучении;
+- accuracy на тестовой выборке;
+- F1-score на тестовой выборке;
+- норма градиента первого слоя.
+
+Градиент первого слоя полезен как индикатор того, насколько сильный сигнал доходит в ранние параметры сети.
 """))
 
 cells.append(code(r"""
-fig, axes = plt.subplots(1, 3, figsize=(16, 4.5))
+fig, axes = plt.subplots(2, 2, figsize=(14, 9))
+axes = axes.ravel()
 
-for loss_name, hist in classification_histories.items():
-    axes[0].plot(hist["epoch"], hist["loss"], label=loss_name)
-    axes[1].plot(hist["epoch"], hist["accuracy"], label=loss_name)
-    axes[2].plot(hist["epoch"], hist["grad_norm_first_layer"], label=loss_name)
+for loss_name, hist in histories.items():
+    axes[0].plot(hist["epoch"], hist["train_loss"], label=loss_name, linewidth=2)
+    axes[1].plot(hist["epoch"], hist["accuracy"], label=loss_name, linewidth=2)
+    axes[2].plot(hist["epoch"], hist["f1"], label=loss_name, linewidth=2)
+    axes[3].plot(hist["epoch"], hist["grad_norm_first_layer"], label=loss_name, linewidth=2)
 
-axes[0].set_title("Loss на train")
+axes[0].set_title("Оптимизируемый loss на train")
 axes[0].set_xlabel("epoch")
 axes[0].set_ylabel("loss")
+
 axes[1].set_title("Accuracy на test")
 axes[1].set_xlabel("epoch")
 axes[1].set_ylabel("accuracy")
-axes[2].set_title("Норма градиента первого слоя")
+
+axes[2].set_title("F1-score на test")
 axes[2].set_xlabel("epoch")
-axes[2].set_ylabel("gradient norm")
-axes[2].set_yscale("log")
+axes[2].set_ylabel("F1")
+
+axes[3].set_title("Норма градиента первого слоя")
+axes[3].set_xlabel("epoch")
+axes[3].set_ylabel("gradient norm")
+axes[3].set_yscale("log")
 
 for ax in axes:
     ax.legend()
 
 plt.tight_layout()
-plt.savefig(f"{FIG_DIR}/classification_training_curves.png", dpi=160)
+plt.savefig(f"{FIG_DIR}/training_bce_vs_mse.png", dpi=160)
 plt.show()
+"""))
+
+cells.append(md(r"""
+## 4. Границы классификации
+
+Следующий график показывает, какие области пространства признаков каждая сеть относит к классу `1`.
 """))
 
 cells.append(code(r"""
@@ -310,257 +352,56 @@ def plot_decision_boundaries(models):
     grid = np.c_[xx.ravel(), yy.ravel()].astype(np.float32)
     grid_t = torch.tensor(grid, device=device)
 
-    fig, axes = plt.subplots(2, 2, figsize=(11, 9))
-    axes = axes.ravel()
+    fig, axes = plt.subplots(1, 2, figsize=(13, 5.5))
 
     for ax, (loss_name, model) in zip(axes, models.items()):
         model.eval()
         with torch.no_grad():
             probs = torch.sigmoid(model(grid_t)).cpu().numpy().reshape(xx.shape)
-        ax.contourf(xx, yy, probs, levels=np.linspace(0, 1, 21), cmap="RdBu_r", alpha=0.75)
-        ax.contour(xx, yy, probs, levels=[0.5], colors="black", linewidths=1.2)
-        ax.scatter(X_test[:, 0], X_test[:, 1], c=y_test.ravel(), cmap="RdBu_r", edgecolor="white", s=24)
-        ax.set_title(loss_name)
-        ax.set_xticks([])
-        ax.set_yticks([])
 
-    plt.suptitle("Границы решений после обучения")
+        ax.contourf(xx, yy, probs, levels=np.linspace(0, 1, 21), cmap="RdBu_r", alpha=0.75)
+        ax.contour(xx, yy, probs, levels=[0.5], colors="black", linewidths=1.4)
+        ax.scatter(X_test[:, 0], X_test[:, 1], c=y_test.ravel(), cmap="RdBu_r", edgecolor="white", s=26)
+        ax.set_title(f"Граница решения: {loss_name}")
+        ax.set_xlabel("x1")
+        ax.set_ylabel("x2")
+
     plt.tight_layout()
-    plt.savefig(f"{FIG_DIR}/classification_decision_boundaries.png", dpi=160)
+    plt.savefig(f"{FIG_DIR}/decision_boundaries_bce_vs_mse.png", dpi=160)
     plt.show()
 
 
-trained_models = {name: train_classifier(name)[0] for name in classification_histories.keys()}
-plot_decision_boundaries(trained_models)
+plot_decision_boundaries(models)
 """))
 
 cells.append(md(r"""
-### Интерпретация классификации
+## 5. Итоговая таблица
 
-Для классификации Cross-Entropy обычно оптимизируется лучше, чем MSE по вероятности, потому что её градиент по логиту равен $p-y$ и не получает дополнительного подавления от производной sigmoid. Поэтому CE быстрее исправляет уверенные неправильные ответы.
+В таблице сравниваются финальные метрики на тестовой выборке.
 
-MSE остаётся допустимой метрикой качества вероятностей, например как Brier score, но как loss для классификации она часто проигрывает CE по скорости и устойчивости обучения.
-
-Hinge хорошо работает как margin-loss: он не стремится к калиброванным вероятностям, а заставляет объекты оказаться по правильную сторону границы с запасом. Focal полезна при дисбалансе классов или большом числе лёгких примеров: она уменьшает вклад уже правильно классифицированных объектов.
-"""))
-
-cells.append(md(r"""
-## 3. Эксперимент регрессии
-
-Теперь сравним loss-функции на регрессии с выбросами. Данные: зашумлённая синусоида, часть точек испорчена большими выбросами.
-
-Сравниваем:
-
-- `MSE` - сильно штрафует большие ошибки;
-- `MAE` - устойчивее к выбросам, но градиент менее гладкий;
-- `Huber` - MSE около нуля и MAE на больших ошибках;
-- `Log-Cosh` - гладкая робастная альтернатива Huber.
+`bce_metric` и `mse_metric` здесь считаются уже как метрики качества вероятностей, а не как обязательно оптимизируемая функция.
 """))
 
 cells.append(code(r"""
-n = 360
-rng = np.random.default_rng(SEED)
-X_reg = rng.uniform(-3, 3, size=(n, 1)).astype(np.float32)
-y_clean = np.sin(2.2 * X_reg) + 0.25 * X_reg
-y_reg = y_clean + rng.normal(0, 0.15, size=(n, 1)).astype(np.float32)
-
-outlier_idx = rng.choice(n, size=int(0.12 * n), replace=False)
-y_reg[outlier_idx] += rng.normal(0, 2.2, size=(len(outlier_idx), 1)).astype(np.float32)
-
-Xr_train, Xr_test, yr_train, yr_test = train_test_split(
-    X_reg, y_reg, test_size=0.3, random_state=SEED
-)
-
-Xr_train_t = torch.tensor(Xr_train, device=device)
-yr_train_t = torch.tensor(yr_train, device=device)
-Xr_test_t = torch.tensor(Xr_test, device=device)
-yr_test_t = torch.tensor(yr_test, device=device)
-
-
-class RegressionMLP(nn.Module):
-    def __init__(self):
-        super().__init__()
-        self.net = nn.Sequential(
-            nn.Linear(1, 32),
-            nn.Tanh(),
-            nn.Linear(32, 32),
-            nn.Tanh(),
-            nn.Linear(32, 1),
-        )
-
-    def forward(self, x):
-        return self.net(x)
-
-
-def log_cosh_loss(pred, target):
-    error = pred - target
-    return torch.log(torch.cosh(error + 1e-12)).mean()
-
-
-def regression_loss(name, pred, target):
-    if name == "MSE":
-        return F.mse_loss(pred, target)
-    if name == "MAE":
-        return F.l1_loss(pred, target)
-    if name == "Huber":
-        return F.huber_loss(pred, target, delta=0.5)
-    if name == "Log-Cosh":
-        return log_cosh_loss(pred, target)
-    raise ValueError(name)
-
-
-def evaluate_regressor(model):
-    model.eval()
-    with torch.no_grad():
-        pred = model(Xr_test_t).cpu().numpy()
-    return {
-        "rmse": math.sqrt(mean_squared_error(yr_test, pred)),
-        "mae": mean_absolute_error(yr_test, pred),
-        "r2": r2_score(yr_test, pred),
-    }
-
-
-def train_regressor(loss_name, epochs=700, lr=0.01):
-    torch.manual_seed(SEED)
-    model = RegressionMLP().to(device)
-    optimizer = torch.optim.Adam(model.parameters(), lr=lr)
-    history = []
-
-    for epoch in range(epochs):
-        model.train()
-        optimizer.zero_grad()
-        pred = model(Xr_train_t)
-        loss = regression_loss(loss_name, pred, yr_train_t)
-        loss.backward()
-        grad_norm = model.net[0].weight.grad.detach().norm().item()
-        optimizer.step()
-
-        if epoch % 10 == 0 or epoch == epochs - 1:
-            history.append({
-                "epoch": epoch,
-                "loss": loss.item(),
-                "grad_norm_first_layer": grad_norm,
-                **evaluate_regressor(model),
-            })
-    return model, pd.DataFrame(history)
-
-
-regression_models = {}
-regression_histories = {}
-regression_results = {}
-
-for loss_name in ["MSE", "MAE", "Huber", "Log-Cosh"]:
-    model, hist = train_regressor(loss_name)
-    regression_models[loss_name] = model
-    regression_histories[loss_name] = hist
-    regression_results[loss_name] = evaluate_regressor(model)
-
-pd.DataFrame(regression_results).T.sort_values("mae")
-"""))
-
-cells.append(code(r"""
-fig, axes = plt.subplots(1, 3, figsize=(16, 4.5))
-
-for loss_name, hist in regression_histories.items():
-    axes[0].plot(hist["epoch"], hist["loss"], label=loss_name)
-    axes[1].plot(hist["epoch"], hist["mae"], label=loss_name)
-    axes[2].plot(hist["epoch"], hist["grad_norm_first_layer"], label=loss_name)
-
-axes[0].set_title("Loss на train")
-axes[0].set_xlabel("epoch")
-axes[0].set_ylabel("loss")
-axes[1].set_title("MAE на test")
-axes[1].set_xlabel("epoch")
-axes[1].set_ylabel("MAE")
-axes[2].set_title("Норма градиента первого слоя")
-axes[2].set_xlabel("epoch")
-axes[2].set_ylabel("gradient norm")
-axes[2].set_yscale("log")
-
-for ax in axes:
-    ax.legend()
-
-plt.tight_layout()
-plt.savefig(f"{FIG_DIR}/regression_training_curves.png", dpi=160)
-plt.show()
-"""))
-
-cells.append(code(r"""
-x_plot = np.linspace(-3.2, 3.2, 500).reshape(-1, 1).astype(np.float32)
-x_plot_t = torch.tensor(x_plot, device=device)
-
-plt.figure(figsize=(10, 6))
-plt.scatter(Xr_train, yr_train, s=22, alpha=0.45, label="train with outliers")
-plt.scatter(Xr_test, yr_test, s=28, alpha=0.65, label="test")
-plt.plot(x_plot, np.sin(2.2 * x_plot) + 0.25 * x_plot, color="black", linewidth=2, label="clean target")
-
-for loss_name, model in regression_models.items():
-    model.eval()
-    with torch.no_grad():
-        pred = model(x_plot_t).cpu().numpy()
-    plt.plot(x_plot, pred, linewidth=2, label=loss_name)
-
-plt.title("Аппроксимация регрессии при выбросах")
-plt.xlabel("x")
-plt.ylabel("y")
-plt.legend()
-plt.tight_layout()
-plt.savefig(f"{FIG_DIR}/regression_predictions.png", dpi=160)
-plt.show()
+summary = pd.DataFrame(results).T
+summary.index.name = "training_loss"
+summary
 """))
 
 cells.append(md(r"""
-### Интерпретация регрессии
+## Вывод
 
-MSE даёт градиент, пропорциональный ошибке: чем дальше точка от предсказания, тем сильнее она двигает параметры. Это ускоряет обучение на чистых данных, но при выбросах модель может начать подстраиваться под неправильные точки.
+В задаче бинарной классификации перекрёстная энтропия лучше согласована с вероятностным выходом sigmoid. Её градиент по логиту равен $p-y$, поэтому даже при уверенной ошибке сеть получает заметный сигнал для исправления весов.
 
-MAE ограничивает влияние больших ошибок: градиент по предсказанию равен знаку ошибки. Поэтому она робастнее, но около минимума менее гладкая.
+Квадратичная функция потерь на вероятности имеет градиент $2(p-y)p(1-p)$. Из-за множителя $p(1-p)$ градиент становится малым, когда sigmoid насыщается. Поэтому MSE может медленнее исправлять уверенные ошибки и хуже подходит как основная функция потерь для классификации.
 
-Huber и Log-Cosh являются компромиссами: они ведут себя как MSE для малых ошибок и как MAE для больших. В задачах с выбросами такие функции часто дают более стабильную аппроксимацию.
+Эксперимент подтверждает теоретическое различие: при одинаковой архитектуре и данных BCE даёт более эффективную динамику обучения и обычно быстрее достигает хороших accuracy/F1. MSE остаётся полезной как метрика качества вероятностей, но для обучения классификатора чаще предпочтительнее перекрёстная энтропия.
 """))
 
 cells.append(md(r"""
-## 4. Сводные таблицы
-"""))
+## Связь с исходной статьёй
 
-cells.append(code(r"""
-classification_table = pd.DataFrame(classification_results).T
-classification_table = classification_table.sort_values(["accuracy", "f1"], ascending=False)
-classification_table
-"""))
-
-cells.append(code(r"""
-regression_table = pd.DataFrame(regression_results).T
-regression_table = regression_table.sort_values("mae")
-regression_table
-"""))
-
-cells.append(md(r"""
-## Итоговые выводы
-
-1. Для классификации Cross-Entropy лучше согласована с sigmoid/softmax-выходом, чем MSE: её градиент по логиту не исчезает так быстро на уверенных ошибках.
-
-2. MSE можно использовать как метрику качества вероятностных прогнозов, но как training loss для классификации она часто обучается медленнее и хуже исправляет насыщенные неправильные предсказания.
-
-3. Hinge оптимизирует разделяющую границу с margin, но не калибрует вероятности. Поэтому её удобно сравнивать по accuracy/F1, но не по вероятностным метрикам.
-
-4. Focal loss полезна, когда много лёгких примеров или есть дисбаланс классов: она уменьшает вклад объектов, которые модель уже уверенно классифицирует правильно.
-
-5. Для регрессии MSE чувствительна к выбросам, потому что большие ошибки дают большие градиенты. MAE, Huber и Log-Cosh уменьшают влияние выбросов, поэтому могут давать более устойчивую модель.
-
-6. Выбор loss-функции напрямую меняет backpropagation: даже при одинаковой сети, данных и оптимизаторе изменяются масштаб градиентов, траектория обучения и итоговое качество.
-"""))
-
-cells.append(md(r"""
-## Где сохранены графики
-
-Все графики из ноутбука сохраняются в папку `figures/`:
-
-- `gradient_by_logit.png`;
-- `classification_training_curves.png`;
-- `classification_decision_boundaries.png`;
-- `regression_training_curves.png`;
-- `regression_predictions.png`.
+В статье `project_base.pdf` функции потерь рассматриваются как критерии, которые оптимизируются во время обучения, а метрики - как способы оценки качества после обучения. В данной работе эта идея проверена на конкретной задаче классификации: одна и та же сеть обучается с разными loss-функциями, после чего сравниваются не только итоговые метрики, но и поведение градиентов при backpropagation.
 """))
 
 nb["cells"] = cells
