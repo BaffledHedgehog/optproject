@@ -6,3 +6,4 @@ torch
 nbformat
 nbclient
 jupyter
+python-docx

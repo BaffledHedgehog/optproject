@@ -3,12 +3,14 @@
 Главный файл:
 
 - `loss_backprop_comparison.ipynb` - выполненный Jupyter Notebook с теорией, кодом, таблицами, графиками и выводами.
-- `report.md` - реферат по работе.
+- `report.docx` - реферат по работе в формате Word.
+- `report.md` - Markdown-версия реферата.
 
 Дополнительно:
 
 - `figures/` - PNG-графики из ноутбука;
 - `make_project_notebook.py` - генератор ноутбука, полезен если нужно пересобрать `.ipynb`;
+- `make_report_docx.py` - генератор Word-реферата;
 - `project_base.pdf` - исходная статья-обзор по loss functions and metrics.
 
 Запуск:
