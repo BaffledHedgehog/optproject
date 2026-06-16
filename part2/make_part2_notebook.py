@@ -896,25 +896,26 @@ $$
 (\hat L_{0,k},\hat L_{1,k})=\arg\min_{a,b\ge 0}\sum_{j}\bigl(\hat L_j-a-b\|g_j\|\bigr)^2,
 $$
 
-и слегка раздуваем оценку коэффициентом безопасности, чтобы получить верхнюю огибающую. Затем используем шаги из Vankov et al.:
+слегка раздуваем оценку коэффициентом безопасности и сглаживаем экспоненциальным средним (EMA), чтобы получить устойчивую верхнюю огибающую. Затем используем шаги из Vankov et al.:
 
 - упрощенный шаг $\eta_k^{\mathrm{si}}=\dfrac{1}{\hat L_{0,k}+\frac32\hat L_{1,k}\|g_k\|}$ (метод `AdaptiveSI`);
-- адаптивный радиус clipping $c_k=\hat L_{0,k}/\hat L_{1,k}$ (метод `AdaptiveClip`).
+- clipping-шаг $\eta_k^{\mathrm{cl}}=\min\left\{\dfrac{1}{2\hat L_{0,k}},\dfrac{1}{3\hat L_{1,k}\|g_k\|}\right\}$ (метод `AdaptiveClip`).
 
-Так параметры шага полностью определяются оценками, полученными по ходу обучения, а не задаются вручную.
+Оба шага полностью определяются оценками, полученными по ходу обучения, а не задаются вручную. Шаг $\eta_k^{\mathrm{cl}}$ ведет себя как clipping: при большом $\|g_k\|$ длина update ограничена величиной $1/(3\hat L_{1,k})$, а при малом — переходит к обычному шагу $1/(2\hat L_{0,k})$. Дополнительно шаг ограничен сверху значением `eta_max` для устойчивости на этой конкретной задаче.
 """))
 
 cells.append(code(r"""
 class L0L1Estimator:
     '''Онлайн-оценка (L0, L1) по парам (||g||, L_hat) на скользящем окне.
 
-    Делает неотрицательную регрессию L_hat ~ L0 + L1 * ||g|| и раздувает
-    результат коэффициентом safety, чтобы получить консервативную верхнюю
-    оценку локальной гладкости.
+    Делает неотрицательную регрессию L_hat ~ L0 + L1 * ||g||, раздувает
+    результат коэффициентом safety и сглаживает экспоненциальным средним
+    (EMA), чтобы получить устойчивую верхнюю оценку локальной гладкости и
+    не реагировать на отдельные выбросы L_hat.
     '''
 
-    def __init__(self, window=30, safety=1.1, L0_init=2.0, L1_init=1.0,
-                 L0_floor=1e-2):
+    def __init__(self, window=60, safety=1.1, L0_init=2.0, L1_init=1.0,
+                 L0_floor=0.05, ema=0.3):
         self.gn = []
         self.lh = []
         self.window = window
@@ -922,6 +923,7 @@ class L0L1Estimator:
         self.L0 = L0_init
         self.L1 = L1_init
         self.L0_floor = L0_floor
+        self.ema = ema
 
     def update(self, grad_norm, local_smoothness):
         if local_smoothness is not None and np.isfinite(local_smoothness):
@@ -929,16 +931,13 @@ class L0L1Estimator:
             self.lh.append(float(local_smoothness))
         gn = np.array(self.gn[-self.window:])
         lh = np.array(self.lh[-self.window:])
-        if len(gn) >= 4 and np.ptp(gn) > 1e-6:
+        if len(gn) >= 8 and np.ptp(gn) > 1e-3:
             A = np.column_stack([np.ones_like(gn), gn])
             sol, *_ = np.linalg.lstsq(A, lh, rcond=None)
-            l0 = max(float(sol[0]), self.L0_floor)
-            l1 = max(float(sol[1]), 0.0)
-            self.L0 = self.safety * l0
-            self.L1 = self.safety * l1
-        elif len(lh) >= 1:
-            self.L0 = self.safety * max(float(np.max(lh)), self.L0_floor)
-            self.L1 = 0.0
+            target_L0 = self.safety * max(float(sol[0]), self.L0_floor)
+            target_L1 = self.safety * max(float(sol[1]), 0.0)
+            self.L0 = (1 - self.ema) * self.L0 + self.ema * target_L0
+            self.L1 = (1 - self.ema) * self.L1 + self.ema * target_L1
         return self.L0, self.L1
 
 
@@ -958,15 +957,17 @@ def run_adaptive_si(epochs=250, warmup=10, warmup_lr=0.05, eta_max=0.5):
             dx = float(torch.linalg.norm(params - prev_params).cpu())
             est.update(grad_norm, dg / (dx + 1e-12))
         L0, L1 = est.L0, est.L1
+        eta_raw = 1.0 / (L0 + 1.5 * L1 * grad_norm + 1e-12)
         if epoch < warmup:
             eta = warmup_lr
         else:
-            eta = min(eta_max, 1.0 / (L0 + 1.5 * L1 * grad_norm + 1e-12))
+            eta = min(eta_max, eta_raw)
         update = -eta * grad
         apply_flat_update(model, update)
         _append_history(history, "AdaptiveSI", epoch, loss, grad, prev_grad, params, prev_params,
                         float(torch.linalg.norm(update).cpu()), False)
         history[-1]["eta"] = eta
+        history[-1]["eta_raw"] = eta_raw
         history[-1]["L0_hat"] = L0
         history[-1]["L1_hat"] = L1
         prev_grad = grad.detach().clone()
@@ -974,7 +975,11 @@ def run_adaptive_si(epochs=250, warmup=10, warmup_lr=0.05, eta_max=0.5):
     return model, pd.DataFrame(history)
 
 
-def run_adaptive_clip(epochs=250, lr=0.08, warmup=10, c_init=0.5):
+def run_adaptive_clip(epochs=250, warmup=10, warmup_lr=0.05, eta_max=0.5):
+    # Clipping-шаг Vankov et al.: eta_cl = min(1/(2 L0), 1/(3 L1 ||g||)),
+    # где (L0, L1) оцениваются онлайн. Это самосогласованный шаг, а не
+    # отдельный lr поверх clip: при большом градиенте активна вторая ветвь
+    # (длина update ~ 1/(3 L1)), при малом - первая (шаг ~ 1/(2 L0)).
     model = reset_model()
     history = []
     prev_grad = None
@@ -990,14 +995,21 @@ def run_adaptive_clip(epochs=250, lr=0.08, warmup=10, c_init=0.5):
             dx = float(torch.linalg.norm(params - prev_params).cpu())
             est.update(grad_norm, dg / (dx + 1e-12))
         L0, L1 = est.L0, est.L1
-        c = c_init if epoch < warmup else float(np.clip(L0 / (L1 + 1e-6), 1e-3, 1e3))
-        clipped_grad = clip_by_norm(grad, torch.tensor(c, device=device))
-        update = -lr * clipped_grad
+        eta_smooth = 1.0 / (2.0 * L0)
+        eta_clip = 1.0 / (3.0 * L1 * grad_norm + 1e-12)
+        eta_raw = min(eta_smooth, eta_clip)
+        clip_active = bool(eta_clip < eta_smooth)
+        if epoch < warmup:
+            eta = warmup_lr
+            clip_active = False
+        else:
+            eta = min(eta_max, eta_raw)
+        update = -eta * grad
         apply_flat_update(model, update)
-        was_clipped = bool(grad_norm > c)
         _append_history(history, "AdaptiveClip", epoch, loss, grad, prev_grad, params, prev_params,
-                        float(torch.linalg.norm(update).cpu()), was_clipped)
-        history[-1]["clip_radius"] = c
+                        float(torch.linalg.norm(update).cpu()), clip_active)
+        history[-1]["eta"] = eta
+        history[-1]["eta_raw"] = eta_raw
         history[-1]["L0_hat"] = L0
         history[-1]["L1_hat"] = L1
         prev_grad = grad.detach().clone()
@@ -1041,7 +1053,7 @@ for name, runner in [
     ("Backtracking", lambda: run_backtracking_gd(epochs=250, eta0=1.0)),
     ("Polyak", lambda: run_polyak(epochs=250, f_star=0.0, max_lr=1.0)),
     ("AdaptiveSI", lambda: run_adaptive_si(epochs=250)),
-    ("AdaptiveClip", lambda: run_adaptive_clip(epochs=250, lr=0.08)),
+    ("AdaptiveClip", lambda: run_adaptive_clip(epochs=250)),
 ]:
     model, hist = runner()
     models[name] = model
@@ -1128,6 +1140,8 @@ $$
 $$
 
 имеет смысл для данной задачи.
+
+**Важное замечание про NGD.** У NGD корреляция получается слабо отрицательной, а оценка $\hat L_1$ зануляется. Это не ошибка, а следствие самого метода: NGD делает шаг почти фиксированной длины $\|x_k-x_{k-1}\|\approx\alpha$, поэтому знаменатель в $\hat L_k=\|g_k-g_{k-1}\|/\|x_k-x_{k-1}\|$ почти постоянен и не меняется вместе с $\|g_k\|$. Вблизи минимума норма градиента падает, но фиксированный шаг заставляет траекторию колебаться, из-за чего $\|g_k-g_{k-1}\|$ не уменьшается — и $\hat L_k$ оказывается даже больше при малых $\|g_k\|$. Поэтому траекторная проверка `(L0,L1)` информативна именно для методов с шагом, зависящим от градиента (GD, ClipGD, AdaptiveSI/AdaptiveClip), а не для чисто нормализованного шага.
 """))
 
 cells.append(code(r"""
@@ -1170,7 +1184,9 @@ print("OK: local smoothness diagnostics are valid.")
 cells.append(md(r"""
 ## Адаптивные параметры: оценки `(L0, L1)` и шаг по траектории
 
-Для методов `AdaptiveSI` и `AdaptiveClip` параметры не заданы заранее, а оцениваются онлайн. Ниже видно, как меняются оценки $\hat L_{0,k}$, $\hat L_{1,k}$ и сам адаптивный шаг/радиус по ходу обучения. После warmup метод полностью опирается на собственные оценки.
+Для методов `AdaptiveSI` и `AdaptiveClip` параметры не заданы заранее, а оцениваются онлайн. Ниже видно, как меняются оценки $\hat L_{0,k}$, $\hat L_{1,k}$ и сам адаптивный шаг по ходу обучения. После warmup метод полностью опирается на собственные оценки.
+
+На правой панели показан **сырой** (до ограничения сверху) адаптивный шаг в логарифмическом масштабе. Видно, что он имеет большой динамический диапазон: в начале обучения, когда $\|g_k\|$ велика, шаг мал (срабатывает защитный механизм $\sim 1/(\hat L_1\|g_k\|)$), а по мере уменьшения градиента он растет. На этой сравнительно простой задаче `make_moons` оценки $\hat L_0,\hat L_1$ малы, поэтому оптимальный шаг быстро превышает потолок `eta_max=0.5` и фактически применяемый шаг упирается в него (горизонтальная линия). То есть адаптивность здесь работает в основном как **защита от больших градиентов** в начале, а в режиме малого градиента шаг ограничен потолком для устойчивости.
 """))
 
 cells.append(code(r"""
@@ -1184,12 +1200,14 @@ for method, h in adp.groupby("method"):
 
 si = history[history["method"] == "AdaptiveSI"]
 ac = history[history["method"] == "AdaptiveClip"]
-axes[2].plot(si["epoch"], si["eta"], label=r"AdaptiveSI: $\eta_k^{si}$")
-axes[2].plot(ac["epoch"], ac["clip_radius"], label=r"AdaptiveClip: $c_k$")
+axes[2].plot(si["epoch"], si["eta_raw"], label=r"AdaptiveSI: raw $\eta_k^{si}$")
+axes[2].plot(ac["epoch"], ac["eta_raw"], label=r"AdaptiveClip: raw $\eta_k^{cl}$")
+axes[2].axhline(0.5, color="gray", linestyle="--", linewidth=1, label=r"$\eta_{\max}$ cap")
+axes[2].set_yscale("log")
 
 axes[0].set_title(r"Online estimate $\hat L_0$")
 axes[1].set_title(r"Online estimate $\hat L_1$")
-axes[2].set_title("Adaptive step / clip radius")
+axes[2].set_title("Raw adaptive step (log), before eta_max cap")
 for ax in axes:
     ax.set_xlabel("epoch")
     ax.grid(alpha=0.25)
@@ -1210,10 +1228,9 @@ for method in adaptive_methods:
     h = history[history["method"] == method]
     assert h["L0_hat"].ge(0).all(), f"{method}: negative L0_hat"
     assert h["L1_hat"].ge(0).all(), f"{method}: negative L1_hat"
+    assert h["eta"].gt(0).all(), f"{method}: non-positive step"
+    assert h["eta"].le(0.5 + 1e-9).all(), f"{method}: step exceeds eta_max"
     assert h["loss"].iloc[-1] < h["loss"].iloc[0], f"{method}: loss did not decrease"
-
-assert si["eta"].le(0.5 + 1e-9).all(), "AdaptiveSI step exceeds eta_max"
-assert ac["clip_radius"].gt(0).all(), "AdaptiveClip radius must be positive"
 
 print("OK: adaptive (L0, L1) methods produce valid parameters and train.")
 """))
@@ -1231,7 +1248,13 @@ $$
 \|b_k\|\le \delta_k.
 $$
 
-Здесь $\xi_k$ - несмещенный шум (масштаб $\sigma$ на координату), а $b_k$ - смещение, заданное как доля от истинного градиента: $\|b_k\|=\rho\|\nabla F(x_k)\|$.
+Здесь $\xi_k$ - несмещенный шум (масштаб $\sigma$ на координату), а $b_k$ - смещение нормы $\|b_k\|=\rho\|\nabla F(x_k)\|$. Мы берем **худшее (противонаправленное)** смещение $b_k=-\rho\nabla F(x_k)$, то есть $\tilde g_k=(1-\rho)\nabla F(x_k)$: именно этот случай отвечает оценке скалярного произведения
+
+$$
+\langle \nabla F(x_k),\tilde g_k\rangle\ge (1-\rho)\|\nabla F(x_k)\|^2,
+$$
+
+которая гарантирует спуск только при $\rho<1$.
 
 Теория предсказывает **шумовой пол**: нельзя достичь точности лучше, чем
 
@@ -1239,7 +1262,9 @@ $$
 \|\nabla F(x)\|\lesssim \varepsilon+C_1\sigma+C_2\delta.
 $$
 
-Мы запускаем GD, ClipGD и NGD с зашумленным градиентом при разных $\sigma$ и смотрим на **истинную** норму градиента $\|\nabla F(x_k)\|$ (вычисленную точно, до добавления шума). Ожидаем, что итоговый уровень растет вместе с $\sigma$, причем clipping/normalization более устойчивы к выбросам.
+Мы запускаем GD, ClipGD и NGD с зашумленным градиентом при разных $\sigma$ и смотрим на **истинную** норму градиента $\|\nabla F(x_k)\|$ (вычисленную точно, до добавления шума). Ожидаем, что итоговый уровень растет вместе с $\sigma$. Отдельно отметим: NGD делает шаг почти фиксированной длины и поэтому имеет **собственный** ненулевой пол по градиенту даже при $\sigma=0$ (метод не сходится в стационарную точку, а колеблется около нее).
+
+Для смещения проверяем порог $\rho=1$: при $\rho<1$ спуск сохраняется, при $\rho>1$ направление $\tilde g_k$ становится восходящим и loss растет.
 """))
 
 cells.append(code(r"""
@@ -1257,7 +1282,10 @@ def make_inexact_oracle(sigma=0.0, rel_bias=0.0, seed=0):
             )
             g = g + noise
         if rel_bias > 0:
-            g = g + rel_bias * grad
+            # Худшее (противонаправленное) смещение нормы rel_bias*||grad||:
+            # g_tilde = (1 - rel_bias) * grad. Именно этот случай отвечает
+            # оценке <grad, g_tilde> >= (1 - rho) ||grad||^2.
+            g = g - rel_bias * grad
         return loss, g, true_norm
 
     return oracle
@@ -1321,8 +1349,9 @@ for rho in [0.0, 0.5, 0.9, 1.5]:
     axes[1].plot(h["epoch"], h["loss"], label=f"rho={rho}")
 axes[1].set_title("GD train loss under relative bias in gradient")
 axes[1].set_xlabel("epoch")
-axes[1].set_ylabel("train loss")
-axes[1].grid(alpha=0.25)
+axes[1].set_ylabel("train loss (log scale)")
+axes[1].set_yscale("log")
+axes[1].grid(alpha=0.25, which="both")
 axes[1].legend(fontsize=8)
 
 plt.tight_layout()
@@ -1341,11 +1370,14 @@ for method in floor_pivot.columns:
     assert floor_pivot[method].loc[0.3] > floor_pivot[method].loc[0.0], \
         f"{method}: noise floor did not grow with sigma"
 
-# rho < 1: loss still decreases; rho = 1.5: descent guarantee can be lost.
+# rho < 1: loss still decreases; rho > 1: anti-aligned bias breaks descent.
 _, h_ok = run_with_oracle("GD", make_inexact_oracle(rel_bias=0.9, seed=0), epochs=200, lr=0.08)
 assert h_ok["loss"].iloc[-1] < h_ok["loss"].iloc[0], "GD with rho=0.9 should still decrease loss"
 
-print("OK: noise floor grows with sigma and relative bias rho<1 keeps descent.")
+_, h_bad = run_with_oracle("GD", make_inexact_oracle(rel_bias=1.5, seed=0), epochs=200, lr=0.08)
+assert h_bad["loss"].iloc[-1] > h_bad["loss"].iloc[0], "GD with rho=1.5 should lose the descent guarantee"
+
+print("OK: noise floor grows with sigma; rho<1 keeps descent, rho>1 breaks it.")
 """))
 
 cells.append(md(r"""
