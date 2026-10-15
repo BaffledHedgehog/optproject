@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-15",
+  "authors": [
+    "Yaroslav P. Lyakhov",
+    "Stepan Suvorov"
+  ],
+  "artifact_sha256": {
+    "article.pdf": "8da9a4aa79ccc7be19495e503683d95ad959f3442db40347f566beaa077668a5",
+    "arxiv_source.zip": "1bd813e2b020c75cc5b54e3f0ef6158395eb31507872680c53ae933616854cf7",
+    "literature_comparison.json": "03b07261437af4fb041d30961f46ad54f8aff8ff12da3b96db9b1034f9cbb977",
+    "README_RU.txt": "42a5ce919672e6e5465c738b98061313b8ddc0f3f80d9444202695414f582ec6",
+    "reproducibility.zip": "6770114156f6384980f99fc74b192e36ed769bb9dbc3c22e4bbdc6dcb22d769f",
+    "submission_metadata.txt": "0af33c795322c341e2278f5783a676683212526cd9d9c25d11a067c243fb4644",
+    "technical_report.pdf": "c23759f1dfcec01a5f204896859a5b0aca530ed58117fdf1512e11826acabeb1",
+    "verification.json": "5f8d24e83cb3f1d010c89bdf373960ca3fb64379adf5158caf4ad557a052b9c6"
+  },
+  "artifact_bytes": {
+    "article.pdf": 451403,
+    "arxiv_source.zip": 44338,
+    "literature_comparison.json": 5314,
+    "README_RU.txt": 8075,
+    "reproducibility.zip": 46204957,
+    "submission_metadata.txt": 1738,
+    "technical_report.pdf": 974378,
+    "verification.json": 10462
+  },
+  "reproduction_files": 310,
+  "arxiv_source_files": 13,
+  "external_submission": false,
+  "independent_peer_review": false,
+  "builder_sha256": "d3f3a449521a3bd6f68ed510e69ea93cc34e5babca35e4f3cbc5e4d05455dcbf"
+}

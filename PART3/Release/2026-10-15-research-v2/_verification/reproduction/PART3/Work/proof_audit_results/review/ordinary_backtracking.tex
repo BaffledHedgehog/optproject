@@ -1,0 +1,114 @@
+\subsection{The same order for ordinary backtracking}
+Certificate normalization is not necessary for the two-phase order.
+Consider the standard quadratic backtracking scheme of
+\cite{pedregosa}, specialized to initial trial $L_{k-1}/2$ and
+doubling on rejection, with the same test~\eqref{eq:accept} and
+certificate~\eqref{eq:certificate}. Let $L_{-1}=M>0$ be arbitrary.
+The algorithm needs neither curvature constants nor a diameter input;
+$D$ enters only its analysis. The optional initialization $M=U_0/D^2$
+uses a diameter bound and also makes the trajectory invariant under
+positive objective rescaling, with the tolerance scaled accordingly.
+
+\begin{theorem}[Ordinary backtracking]\label{thm:ordinary}
+Under the assumptions of Theorem~\ref{thm:main}, let
+$J=\lceil\log_2(U_0/\varepsilon)\rceil$ and
+$P=\lceil\log_2\max\{1,MD^2/U_0\}\rceil$.
+Ordinary backtracking reaches $U_N\le\varepsilon$ within
+\begin{equation}\label{eq:ordinarycomplexity}
+ N\le P+\left\lceil(6+16H_1D^2)J+32H_0D^2/\varepsilon\right\rceil
+\end{equation}
+updates, using $N+1$ gradients and linear-oracle calls. For the actual
+$N\ge1$, all function calls satisfy
+\begin{equation}\label{eq:ordinarytrials}
+ N_f\le1+2N+
+ \left\lceil\log_2\max\{1,2(H_0+H_1U_0)/M\}\right\rceil.
+\end{equation}
+For $M=U_0/D^2$, $P=0$ and the logarithmic overhead in
+\eqref{eq:ordinarytrials} is independent of $\varepsilon$.
+\end{theorem}
+\begin{proof}
+As before, every $L\ge H_0+H_1U_k$ passes the test. If a step has at
+least one rejection, its accepted curvature is strictly less than
+$2(H_0+H_1U_k)$. If there is no rejection, $L_k=L_{k-1}/2$.
+Acceptance implies monotone $f$ and $U$.
+
+Let $b_j=U_0/2^j$, $j=0,\ldots,J-1$, and assign a source iterate to
+phase $j$ when $b_j/2<U_k\le b_j$. Sources with $U_k>\varepsilon$
+belong to these phases. Define the positive caps
+\[
+ C_j=\max\{2(H_0+H_1b_j),\ b_j/(2D^2)\}.
+\]
+They satisfy $C_j/2\le C_{j+1}\le C_j$.
+Call a step a lag step if its accepted $L_k>C_j$ in its source phase.
+Such a step has no rejection, so its curvature halves. Once
+$L_k\le C_j$, all subsequent steps in the same phase also satisfy
+this bound: their initial trial is at most $C_j/2$, and a trial
+accepted after rejection is below $2(H_0+H_1U_k)\le C_j$.
+
+For completeness, before a step in phase $j$ give the previous estimate
+the nonnegative integer potential
+\[
+ p=\max\{0,\lceil\log_2(L_{k-1}/C_j)\rceil\}.
+\]
+A lag step reduces this potential by one; a non-lag step leaves
+potential zero before any phase change. A jump over $m$ phases can
+increase it by at most $m$, because the cap falls by at most $2^m$.
+Initially $p\le P+1$, since $C_0\ge U_0/(2D^2)$. Source phase indices
+increase by at most $J-1$ in total. Thus at most $P+J$ lag steps occur,
+also on any prefix of the run.
+
+On a non-lag step in phase $j$, acceptance, $G_k\ge U_k>b_j/2$,
+and $q_k\le D$ give a decrease of at least
+\[
+ p_j=\min\{b_j/4,\ b_j^2/(8C_jD^2)\}.
+\]
+All steps decrease $f$, and the total decrease during this phase
+is at most $b_j$. Its non-lag steps therefore number at most
+\[
+ \lfloor b_j/p_j\rfloor+1
+ \le 5+16H_1D^2+16H_0D^2/b_j.
+\]
+Sum over phases and use $\sum_j1/b_j<2/\varepsilon$, then add the
+lag bound. The same argument bounds every prefix of an unfinished
+run, establishing termination and~\eqref{eq:ordinarycomplexity}.
+
+Finally the accepted estimates obey
+\[
+ L_k\le\max\{M/2^{k+1},\ 2(H_0+H_1U_0)\}.
+\]
+Writing $r_k$ for the number of rejections gives
+$L_k=2^{r_k-1}L_{k-1}$ and hence exactly
+$\sum_{k<N}(r_k+1)=2N+\log_2(L_{N-1}/M)$.
+The preceding envelope proves~\eqref{eq:ordinarytrials} after adding
+the initial value. Accepted values are cached.
+\end{proof}
+This is an analysis of an existing algorithm, not a new backtracking
+rule. The constants above are conservative and do not imply a practical
+ranking of the two variants. A complete literature audit is still needed
+to determine whether this specialization or an equivalent argument has
+already appeared. In particular, the telescoping trial-count identity
+is standard in backtracking analyses~\cite{pedregosa}.
+
+\begin{proposition}[Why an initialization term remains]\label{prop:initialization}
+Let $Q=[-1,1]$, $f(x)=-cx$ with $c>0$, $x_0=-1$, and $L_{-1}=M>0$.
+Although $H_0=H_1=0$, ordinary halving backtracking needs exactly
+\[
+ N=\left\lceil\log_2\left(1+\frac Mc
+                  \left(1-\frac{\varepsilon}{2c}\right)\right)\right\rceil
+\]
+updates for $0<\varepsilon<2c$. In particular, halving $U_0$ can require
+$\Theta(\log(M/c))$ updates as $M/c\to\infty$.
+\end{proposition}
+\begin{proof}
+Every quadratic test accepts its first trial, since $f$ is affine.
+Thus $L_k=M/2^{k+1}$ and
+$x_{k+1}=\min\{1,x_k+c/L_k\}$. The linear lower bound is always the
+exact optimum $-c$, so
+\[
+ x_N=\min\{1,-1+(2c/M)(2^N-1)\},\qquad U_N=c(1-x_N).
+\]
+Solve $U_N\le\varepsilon$ for the integer $N$. This concerns the
+initialization penalty of this particular backtracking rule; it is not
+a lower bound for arbitrary first-order or linear-oracle algorithms.
+With $M=U_0/D^2=c/2$, the first step is full and solves the problem.
+\end{proof}

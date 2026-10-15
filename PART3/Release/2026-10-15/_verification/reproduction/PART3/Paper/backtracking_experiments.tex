@@ -1,0 +1,54 @@
+\subsection{Ordinary backtracking and an auto-conditioned comparator}
+A separate 350-run extension uses the same seven families, ten seeds,
+tolerance, and cap. It compares ordinary backtracking initialized at 1
+or $U_0/D^2$, certificate scaling, Armijo, and AC-FW
+\cite{autoconditioned}. Of these runs, 280 repeat existing deterministic
+trajectories with additional logging; only the 70 AC-FW runs add a new
+method on these same instances. They are not new independent datasets.
+
+AC-FW is our independent implementation of Algorithms 1 and 2 in
+\cite{autoconditioned}, using its equation (6) with a fixed $\delta=1$:
+\[
+ r_t=1-\frac{1}{(t+1)\log^2(t+3)}.
+\]
+We do not claim to reproduce the authors' numerical configuration.
+Its compulsory move from $x_{-1}$ to an LMO vertex $x_0$, both function
+and gradient evaluations, and the initial LMO are charged. Available
+linear lower bounds from both points enter the certificate history.
+After initialization, each outer iteration makes one function trial;
+strict decrease accepts the point, and rejection keeps the old point
+and cached gradient. Rejections consume the iteration cap. Consequently
+$N_f=N+2$, $N_{\rm LMO}=N+2$, and $N_g=2+N_{\rm accepted}$, including the
+final certificate check. The initial move changes the starting trajectory;
+its effect is included in the algorithm comparison, not isolated in an
+initialization ablation. Our cosh and Poisson losses are not globally
+gradient-Lipschitz on $\R^d$, unlike the assumption in the cited paper;
+their use here is an empirical comparison on the compact feasible set,
+not a claim that its global theorem applies verbatim.
+
+Table~\ref{tab:backtracking} shows strong competing results. On the active
+family AC-FW certifies all ten runs, with medians 18.5 function and gradient
+calls; certificate scaling certifies one run within the cap. On the scaled
+active family neither adaptive variant nor AC-FW certifies any run, and
+AC-FW's median certificate is worse. On Bike Sharing AC-FW uses 639 median
+function calls and certifies seven starts, versus 860 calls and eight
+starts for certificate scaling; its median gradient count is higher
+(639 versus 420). Capped runs remain in every median, so these figures
+must be read together with successes and both oracle budgets. Only five
+outer trials are rejected across the 70 AC-FW runs. This study gives no
+uniform practical ranking or evidence that the normalization is necessary.
+
+We replay all 140 ordinary-backtracking runs from their archived source
+and check every accepted curvature, decrease, phase classification,
+lag budget, telescoping trial identity, and trial bound. The replay
+matches recorded objectives, certificates, and all three oracle counts
+exactly. All these runs have zero lag steps relative to the conservative
+analytic phase caps; they do not test sharpness of the lag bound or the
+large worst-case iteration constants. A separate affine example tests
+more than twenty lag steps and the exact formula in
+Proposition~\ref{prop:initialization}. Five hundred abstract trajectories
+stress the potential argument with abrupt phase jumps and varying
+initial scales. These checks support implementation consistency, not
+independent mathematical validation or a priority claim.
+
+\input{backtracking_table}

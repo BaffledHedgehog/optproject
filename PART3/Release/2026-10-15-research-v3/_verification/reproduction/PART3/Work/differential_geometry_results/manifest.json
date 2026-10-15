@@ -1,0 +1,11 @@
+{
+  "study": "differential_geometry_audit",
+  "date": "2026-10-15",
+  "scope": "finite exact rational tests; not a formal proof, priority search or independent peer review",
+  "arithmetic": "fractions.Fraction; no floating-point optimizer comparisons",
+  "artifact_sha256": {
+    "audit_source.py": "53121b348f6ae7c3951635afe5c164c5e0bd55af91da1e0bde3ecaebb1658898",
+    "checks.json": "1d1539841c4b3f0ee5fdcaa649b58b899fce07720c319e72f81dc658e0560777",
+    "runs.csv": "91145e83ddc86bbb20cbe0b5aeaae3ac72be60323b578e51a86f83f4e6a96182"
+  }
+}

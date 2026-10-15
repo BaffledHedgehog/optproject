@@ -1,0 +1,10 @@
+Title: Certificate Bounds for Backtracking Frank-Wolfe under Function-Dependent Curvature
+Authors: Yaroslav P. Lyakhov; Stepan Suvorov
+Proposed primary category: math.OC
+Processor: PDFLaTeX; main file article.tex
+
+Abstract (TeX math retained):
+We study convex minimization over a compact convex set when the Hessian norm is bounded by $H_0+H_1(f-f_Q^*)$, relative to the constrained minimum. For ordinary quadratic backtracking Frank--Wolfe, we prove a bound of $O(H_0D^2/\varepsilon+(1+H_1D^2)\log(U_0/\varepsilon))$ updates to an observable certificate, together with an explicit initialization term. The method receives neither curvature parameters nor the optimal value. A phase argument controls estimates that lag behind falling local curvature, and all trial function evaluations cost at most $1+2N$ plus an explicit logarithmic overhead after $N$ updates. Standard away steps inherit the convex bound. Under a geometric error bound they yield logarithmic certificate accuracy dependence, with a separate initial curvature contribution. A differential comparison gives the optimal pointwise Frank--Wolfe gap envelope, with one-dimensional attaining objectives. When $H_0=0$, the solution set is an exposed face on which the gradient is constant; backtracking away-step Frank--Wolfe then terminates exactly in finitely many updates without a separate geometric-growth assumption. A quadratic counterexample separates this endpoint from every $H_0>0$. Exact segment minimization and known-curvature short steps provide comparisons in the same linear-oracle model. Controlled experiments with analytically verified objectives and real Poisson data separate initialization, active-face geometry, and stopping cost. They show no uniform advantage of certificate-scaled initialization and expose regimes where the scalar certificate substantially lags primal accuracy. The results concern an existing backtracking method; they establish neither a new algorithm nor optimal oracle complexity.
+
+No external submission has been made.
+Affiliations and contact email were not supplied. The authors select the distribution license at submission.

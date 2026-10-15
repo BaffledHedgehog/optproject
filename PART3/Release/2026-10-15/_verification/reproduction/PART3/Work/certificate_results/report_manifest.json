@@ -1,0 +1,11 @@
+{
+  "artifact_sha256": {
+    "manifest.json": "8867c12e7188c0f7b1f7c6b748bfe7a449c0f5058ad068a89d6007c23a31fc87",
+    "report_source.py": "1fc1eed347e2b1ca9b900cd882135c19adc190b6d5cdede4dcdebc7fcb89e110",
+    "results.md": "6264da95d28052867f245282297820fde66cb66c2ac74f5f1a44c12eb58b4e1d",
+    "paired.csv": "b468e1ed7cf0556905c6d93e08ca169c57a399f9c0186293e4895fa57b2719d5",
+    "certificate_table.tex": "d306940642a46b6e4496f14bdc9f0cea5e3dda07071ac3614e9dd6c4f1149079",
+    "causal_certificates.pdf": "937ec7866409c374e589c1cebd6858eba9f6901dce7aeb6ae94de200f77ecfde",
+    "causal_certificates.png": "34e19762b2fe5e0dbbf696c55c2925ca4d4a9178bb41615dcf04c43f18b949d7"
+  }
+}

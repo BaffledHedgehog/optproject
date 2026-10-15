@@ -1,0 +1,11 @@
+{
+  "source": "face_diagnostics_source.py",
+  "source_sha256": "fca68c973628867f166fc97de6b0cd0dc7aa6dc8afb648792cc4ed855bbc9bcc",
+  "experiment_manifest_sha256": "f3c5e148abd221e0ba83465b13869c9e5693813abde7cc3a901cf5b2d137975b",
+  "result_sha256": {
+    "face_summary.csv": "ff4bd2768450f12a2ebdead9e27250ef78b6cc880f84a18ed757b67dcb77aa5b",
+    "face_trace.csv": "76a572cc322be2c22cd80d2be7bb3ae95fd39e8c7285f59ab953fed06d13f18e"
+  },
+  "runs": 120,
+  "interpretation": "post-run planted reference geometry only"
+}

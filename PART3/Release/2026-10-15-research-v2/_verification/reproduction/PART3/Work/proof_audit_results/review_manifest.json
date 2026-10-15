@@ -1,0 +1,18 @@
+{
+  "scope": "frozen proof, helper and test sources accompanying the internal review; the self-contained rational checker is audit_source.py",
+  "artifact_sha256": {
+    "manifest.json": "cbd48c580d5b054b14fc90770dbac8564780e1eecb5cee535af0ce8e88149e80",
+    "results.md": "b76e67622a7f24fa0cb7497b9fb8776b25e43012be852d6caf4fd80b5d1be506",
+    "review/away_theory.tex": "073d7e005381429374a37f47051877df62f26fe27e43099d6f60b1dd6330200a",
+    "review/ordinary_backtracking.tex": "bf1c40426c0978fd1eba30223c7becd7fb42e5ebf9a274b0f03477e0b8910882",
+    "review/adaptive_theory.tex": "f3746e8078d4e6a50a4a8d4942ca6b7b9c2a7ae5beb4e661d69844619d27e1b2",
+    "review/manuscript.tex": "342537e62cc99e347e5e29a6eb6d2cfc83ce65ca079b6915b9fe49d8766b483f",
+    "review/certificate_bounds.py": "ba87b5b803aaa864b3d15bac88e23e67279efc06b1fe946be2fed9d0c619f1d7",
+    "review/test_proof_audit.py": "9f8b92852adf3207c98f27a2ded5ab2322ed0d80430a43d91c23a9a23f5d1b49",
+    "review/test_certificate_bounds.py": "c4bd3b308ee69b7fb726d95d29c98ad27df779270ddda4d82dbfbc533ea7ffb3",
+    "review/fw.py": "b22fa6a080cc4166865607a8c9890510f44524ef9fbd5da76ae417d7e2d688d0",
+    "review/away_fw.py": "38e842c4c54a56b5a382654abe8ab653a774067dc59bd0fca34c9ce662694bc7",
+    "review/problems.py": "9e4aab8137905586c39b82b921264b6777b388c3e663c3ef054a112bf2f061ca",
+    "review/requirements.txt": "274e485de052181f3df44b6125204e8c117363e1d11663a673a32b4b47679c9a"
+  }
+}

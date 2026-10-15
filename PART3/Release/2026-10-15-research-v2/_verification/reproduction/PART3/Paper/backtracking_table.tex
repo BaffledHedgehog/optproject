@@ -1,0 +1,31 @@
+\begin{table}[htbp]
+\centering\small
+\caption{350-run extension, selected families. Medians include capped runs. The cap is 1000 outer iterations, including AC-FW rejections; the compulsory AC-FW initialization is included in all oracle costs. Success means $U\le10^{-5}$.}
+\label{tab:backtracking}
+\begin{tabular}{lrrrrr}
+\hline
+Method & Successes & Outer iterations & $U$ & $f$ calls & $\nabla f$ calls \\
+\hline
+\multicolumn{6}{l}{\textbf{active}} \\
+Ordinary, $M=U_0/D^2$ & 1/10 & 1000.0 & 2.43e-04 & 2002.0 & 1001.0 \\
+Ordinary, $M=1$ & 0/10 & 1000.0 & 2.23e-04 & 1998.5 & 1001.0 \\
+Certificate scaling & 1/10 & 1000.0 & 1.99e-04 & 2014.0 & 1001.0 \\
+AC-FW, $\delta=1$ & 10/10 & 16.5 & 7.93e-06 & 18.5 & 18.5 \\
+Armijo & 10/10 & 19.0 & 6.55e-06 & 141.0 & 20.0 \\
+\hline
+\multicolumn{6}{l}{\textbf{active\_scaled}} \\
+Ordinary, $M=U_0/D^2$ & 0/10 & 1000.0 & 1.87e-03 & 2002.0 & 1001.0 \\
+Ordinary, $M=1$ & 0/10 & 1000.0 & 1.77e-03 & 2002.0 & 1001.0 \\
+Certificate scaling & 0/10 & 1000.0 & 1.47e-03 & 2014.0 & 1001.0 \\
+AC-FW, $\delta=1$ & 0/10 & 1000.0 & 2.67e-03 & 1002.0 & 1002.0 \\
+Armijo & 1/10 & 1000.0 & 4.78e-04 & 9758.0 & 1001.0 \\
+\hline
+\multicolumn{6}{l}{\textbf{bike\_poisson}} \\
+Ordinary, $M=U_0/D^2$ & 6/10 & 500.0 & 9.87e-06 & 1002.5 & 501.0 \\
+Ordinary, $M=1$ & 8/10 & 893.5 & 9.85e-06 & 1789.0 & 894.5 \\
+Certificate scaling & 8/10 & 419.0 & 9.41e-06 & 860.0 & 420.0 \\
+AC-FW, $\delta=1$ & 7/10 & 637.0 & 9.53e-06 & 639.0 & 639.0 \\
+Armijo & 10/10 & 310.0 & 9.93e-06 & 4399.0 & 311.0 \\
+\hline
+\end{tabular}
+\end{table}

@@ -1,0 +1,249 @@
+\section{Away steps: certificates and removal of active atoms}
+Let $Q=\operatorname{conv}(\mathcal A)$ for a finite atom set. Maintain
+$x=\sum_{a\in S}\lambda_a a$ with positive weights summing to one.
+Besides the FW atom $s$, choose $v\in\arg\max_{a\in S}\inner{\nabla f(x)}{a}$.
+Use the larger descent gap of $s-x$ and $x-v$; ties choose FW. Denote the
+chosen direction by $d$ and its gap by $g=-\inner{\nabla f(x)}d$.
+Its feasible cap is $\alpha_{\max}=1$ for FW and
+$\lambda_v/(1-\lambda_v)$ for an away step. A singleton active set takes
+a FW step. The stopping certificate always uses the \emph{full FW gap},
+not the selected direction's gap. In particular $g\ge G\ge U$.
+
+This is classical away-step FW with standard quadratic
+backtracking~\cite{lacostejaggi,pedregosa}. Start from $L_{-1}=M>0$;
+each update halves the previous estimate, doubles on rejection, and
+uses
+\[
+ \alpha=\min\{\alpha_{\max},g/(L\|d\|^2)\}
+\]
+in~\eqref{eq:accept}, with $G$ there replaced by $g$.
+An away update at its cap is a \emph{drop step}; all other updates are
+called good. Searching the active set incurs additional work, separate
+from one full LMO per iterate.
+The bounds in this section use exact arithmetic and exact full and
+active-set linear oracles.
+
+\begin{lemma}[Local acceptance and counting drops]\label{lem:away}
+The quadratic test passes for $L\ge H_0+H_1\delta$, where
+$\delta=f(x)-f_Q^*$. This also holds when $\alpha_{\max}>1$.
+If $m$ good updates occur, the total number of updates is at most
+$2m+|S_0|-1$.
+\end{lemma}
+\begin{proof}
+On the feasible segment $[0,\alpha_{\max}]$, the same initial-descent
+argument as in Lemma~\ref{lem:progress} applies with the chosen $g$.
+More explicitly, while the function is at most $f(x)$ its directional
+second derivative is bounded by $(H_0+H_1\delta)\|d\|^2$.
+The resulting quadratic upper bound is strictly below $f(x)$ for
+$0<t\le\min\{\alpha_{\max},g/(L\|d\|^2)\}$, preventing a first
+return to the initial level. Thus the bound holds through the trial.
+Every drop removes an atom, whereas a FW step adds at most one and is
+good. Active-set cardinality is positive, so drops number at most the
+number of FW steps plus $|S_0|-1$.
+\end{proof}
+
+\begin{theorem}[Convex certificate bound with away steps]\label{thm:awayconvex}
+With $J,P$ as in Theorem~\ref{thm:ordinary}, away-step backtracking
+reaches $U_N\le\varepsilon$ in at most
+\[
+ 2\left[P+\left\lceil(6+16H_1D^2)J+32H_0D^2/\varepsilon\right\rceil\right]
+ +|S_0|-1
+\]
+updates. It uses $N+1$ gradients and full LMOs, and, for actual $N\ge1$,
+\[
+ N_f\le1+2N+\left\lceil\log_2\max\{1,2(H_0+H_1U_0)/M\}\right\rceil.
+\]
+\end{theorem}
+\begin{proof}
+Use the same phase caps and integer potential as in
+Theorem~\ref{thm:ordinary}, counting lag steps across \emph{all} updates.
+On a good away step the quadratic minimizer is not clipped; on a full
+FW step acceptance decreases $f$ by at least $g/2$. Hence a good update
+with $L\le C_j$ decreases $f$ by at least
+$\min\{b_j/4,b_j^2/(8C_jD^2)\}$. Count only these good updates using
+the phase budget; drops also decrease $f$ and cannot increase that
+budget. The resulting bound on good updates is the ordinary bound.
+Apply Lemma~\ref{lem:away}. The accepted-curvature envelope and exact
+telescoping trial identity hold across drops as well, proving the
+function-call bound.
+\end{proof}
+The known-$H$ AFW quadratic rule, with $L=H_0+H_1U_k$ and the same
+cap, similarly inherits Theorem~\ref{thm:main}'s bound on good updates.
+Its total updates are at most twice that bound plus $|S_0|-1$, and it
+uses $N+1$ function calls. The stronger theorem below concerns ordinary
+backtracking, whose accepted estimates can follow the true local error.
+
+\subsection{A logarithmic certificate bound under a geometric error bound}
+Assume the selected gaps satisfy the standard geometric error bound
+\begin{equation}\label{eq:awaygeometry}
+ g_k^2\ge 2\kappa\bigl(f(x_k)-f_Q^*\bigr),\qquad\kappa>0.
+\end{equation}
+Strong convexity with parameter $\mu>0$ is one sufficient condition:
+for a finite polytope, one may use
+$\kappa=\mu W^2/4$, where $W$ is its pyramidal width. The pairwise
+gap squared is at least $2\mu W^2\delta$ and the selected gap is at
+least half that pairwise gap~\cite{lacostejaggi,pedregosa}.
+No numerical width estimate fitted to a trajectory is used here.
+Strong convexity is not required separately when~\eqref{eq:awaygeometry}
+is available; geometric error-bound rates are established
+results~\cite{wirth,restartfw}.
+
+\begin{proposition}[A standard quadratic-growth sufficient condition]
+\label{prop:qg}
+Let $X^*=\arg\min_Q f$ and suppose that, on the initial sublevel set,
+\[
+ f(x)-f_Q^*\ge\frac\gamma2\operatorname{dist}(x,X^*)^2,
+ \qquad\gamma>0.
+\]
+For a polytope of pyramidal width $W$, condition~\eqref{eq:awaygeometry}
+holds along monotone iterates with $\kappa=\gamma W^2/16$.
+No unique minimizer or positive strong-convexity parameter is required.
+\end{proposition}
+\begin{proof}
+Let $p$ be the pairwise gap for the current active set, and take a
+nearest $x^*\in X^*$ when $\delta>0$. The standard polytope scaling
+inequality and convexity give
+\[
+ p\ge W\frac{\inner{\nabla f(x)}{x-x^*}}{\norm{x-x^*}}
+   \ge W\frac\delta{\operatorname{dist}(x,X^*)}
+   \ge W\sqrt{\gamma\delta/2}.
+\]
+The selected FW/away gap is at least $p/2$. Squaring proves
+$g^2\ge\gamma W^2\delta/8=2\kappa\delta$; zero error is immediate.
+Monotone iterates stay in the sublevel set where growth is assumed.
+\end{proof}
+This is the known scaling/Holderian-error-bound implication at exponent
+$1/2$~\cite{restartfw}, Lemmas 3.4 and 3.6, with constants translated
+to our selected-gap convention. It is not a new geometric result.
+The direct strong-convexity implication above has a better constant.
+For example, $f(x)=\cosh(x_1)-1$ on a two-dimensional $\ell_1$ ball
+satisfies quadratic growth with $\gamma=1$ and a non-singleton optimal
+set, while its Hessian has a zero eigenvalue.
+
+\begin{lemma}[From primal error to the stopping certificate]\label{lem:awaybridge}
+Under~\eqref{eq:curvature}, every feasible point with primal error
+$\delta=f(x)-f_Q^*$ satisfies
+\[
+ U\le G\le\widehat B(\delta):=
+ \begin{cases}
+ \sqrt{2C(\delta)\delta},&2\delta\le C(\delta),\\
+ \delta+C(\delta)/2,&2\delta>C(\delta),
+ \end{cases}
+ \qquad C(\delta)=D^2(H_0+H_1\delta).
+\]
+This is at most the earlier conservative envelope
+$B(\delta)=\max\{2\delta,\sqrt{2C(\delta)\delta}\}$.
+For $D>0$, put $a=D^2H_0$, $b=D^2H_1$.
+Then $\delta\le\eta_\varepsilon$ implies $U\le\varepsilon$, where
+\[
+ \eta_\varepsilon=
+ \begin{cases}
+ (\varepsilon-a/2)/(1+b/2),& b<2\text{ and }\varepsilon(2-b)\ge2a,\\[2pt]
+ \varepsilon^2/(a+\sqrt{a^2+2b\varepsilon^2}),&\text{otherwise}.
+ \end{cases}
+\]
+In particular $H_0=H_1=0$ gives $\eta_\varepsilon=\varepsilon$.
+Neither strong convexity nor uniqueness of the minimizer is needed.
+\end{lemma}
+\begin{proof}
+Use the local quadratic model on the hypothetical step
+$t=\min\{1,G/C(\delta)\}$, with a full step if $C(\delta)=0$.
+The initial-descent argument in Lemma~\ref{lem:progress} proves that
+the model is valid through this step; $\norm{s-x}\le D$.
+Feasibility and the exact model decrease give
+\[
+ \delta\ge\Phi_C(G):=
+ \begin{cases}G^2/(2C),&G\le C,\ C>0,\\
+ G-C/2,&G>C\text{ or }C=0.
+ \end{cases}
+\]
+Inverting this increasing function of $G$ gives $\widehat B$.
+If $2\delta\le C$, the square-root branch is unchanged; otherwise
+$\delta+C/2<2\delta$ and exceeds $\sqrt{2C\delta}$.
+Solving $\widehat B(\eta)=\varepsilon$ gives the stated threshold.
+The full-step root applies exactly when $b<2$ and
+$\varepsilon(2-b)\ge2a$; otherwise rationalization gives the
+quadratic root. This threshold is at least the earlier conservative
+$\min\{\varepsilon/2,\varepsilon^2/(a+\sqrt{a^2+2b\varepsilon^2})\}$,
+with the zero-curvature convention for that expression.
+\end{proof}
+The two-branch inversion already appears in~\cite[Eq.~(15)]{lacoste2016}.
+Here the feasible-descent argument uses a source-dependent local
+curvature bound and retains the exact full-step decrease.
+For $H_0=0<H_1$, the threshold is
+$\varepsilon/(1+b/2)$ when $b<2$, and
+$\varepsilon/\sqrt{2b}$ when $b\ge2$. For fixed $H_0>0$ and small
+$\varepsilon$, it is still of order $\varepsilon^2$.
+
+The square-root branch cannot in general be replaced by a linear
+primal-to-gap bound. For $f(x)=x^2/2$ on $[-1,1]$, at $x=t>0$,
+\[
+ \delta=t^2/2,\qquad G=t(1+t),\qquad G/\delta=2(1+t)/t\longrightarrow\infty.
+\]
+At the first observation the scalar certificate also equals $G$.
+This example has strong convexity one. It limits pointwise conversion
+for this certificate, not the iteration complexity of a method or
+the benefit of an accumulated history. In fact, $\widehat B$ is attained
+on both branches when $H_1=0$: for $Q=[-D/2,D/2]$, a source at $D/2$
+and a quadratic of curvature $H_0$ centred inside $Q$ give the
+square-root branch; centres to the left of $-D/2$ give the full-step
+branch. Thus this refinement is sharp for the quadratic descent
+inequality; no optimal-envelope claim is made for general $H_1>0$.
+
+\begin{theorem}[Phase bound under a geometric error bound]\label{thm:awaystrong}
+Assume additionally $H_0+H_1>0$ and~\eqref{eq:awaygeometry}. For
+$0<\varepsilon<U_0$, set
+\[
+ J_*=\left\lceil\log_2(U_0/\eta_\varepsilon)\right\rceil,\qquad
+ P_*=\left\lceil\log_2\max\{1,M/[2(H_0+H_1U_0)]\}\right\rceil.
+\]
+The same algorithm reaches $U_N\le\varepsilon$ within
+\[
+ N\le2\left\lceil P_*+
+       (6+4H_0D^2/\kappa)J_*+8H_1D^2U_0/\kappa\right\rceil+|S_0|-1.
+\]
+The preceding function-call bound remains valid. The algorithm needs
+none of $H_0,H_1,\kappa,f_Q^*$ as inputs. For fixed problem and
+initialization, the accuracy dependence is logarithmic.
+\end{theorem}
+\begin{proof}
+Analyze phases of the \emph{true} error, with $b_j=U_0/2^j$, stopping
+at $\eta_\varepsilon$. These phases are for analysis only. Use positive
+caps $C_j=2(H_0+H_1b_j)$, which decrease by at most a factor two.
+The initial potential is at most $P_*$ in virtual phase zero. Allowing
+initially skipped phases, its total increases number at most $J_*-1$;
+at most $P_*+J_*$ lag steps occur.
+
+On a controlled good step, acceptance and~\eqref{eq:awaygeometry} give
+\[
+ f_k-f_{k+1}\ge\delta_k\min\{1/2,\kappa/(C_jD^2)\}
+ >\min\{b_j/4,\kappa b_j/(2C_jD^2)\}.
+\]
+The phase budget $b_j$ permits at most
+$5+4H_0D^2/\kappa+4H_1D^2b_j/\kappa$ such steps.
+Sum with $\sum_jb_j<2U_0$, add lag steps, and apply the drop count.
+Lemma~\ref{lem:awaybridge} ensures the actual stopping certificate has
+passed by that point. No stronger assertion is made for general convex
+functions: the extra geometric error bound matters.
+\end{proof}
+The geometric inequality, drop counting, and linear convergence of
+adaptive AFW are established results. The candidate extension here is
+the separated curvature dependence and its conversion to this particular
+certificate, not a new away-step method or a priority claim.
+The requirement $H_0>0$ in the earlier working version was stronger
+than needed: the proof only needs positive caps at positive source
+errors, which $H_1>0$ also ensures. For example,
+$f(x)=t+(\max\{t,0\})^3$, $t=1/2-x$, on $[-1/2,1/2]$ has $H_0=0,H_1=6$,
+zero strong-convexity modulus, and a positive selected-gap geometric
+constant. The all-affine case $H_0=H_1=0$ is covered by the convex
+backtracking bound, without invoking these caps.
+For comparison, substituting
+$L_Q=H_0+H_1\max_Q(f-f_Q^*)$ in a global-smoothness linear rate leaves
+the entire global curvature multiplying the accuracy logarithm.
+Here the explicit $H_1$ phase cost is proportional to $U_0$, with further
+dependence inside $J_*$ through the certificate bridge. The new bridge
+uses no $\mu$ or initial-level curvature $H_0+H_1U_0$; those quantities
+are unnecessary for converting primal error into this stopping criterion.
+This comparison
+does not rule out deriving an equivalent specialization from a prior
+adaptive AFW proof; its priority remains unresolved.

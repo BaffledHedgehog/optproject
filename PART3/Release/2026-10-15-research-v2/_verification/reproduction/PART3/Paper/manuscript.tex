@@ -1,0 +1,570 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,graphicx}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\inner}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\R}{\mathbb R}
+\DeclareMathOperator{\artanh}{artanh}
+\title{Two-Phase Certificate Bounds for Backtracking Frank--Wolfe\\
+under Function-Dependent Curvature\\[3pt]\large Extended technical report}
+\author{Yaroslav P. Lyakhov \and Stepan Suvorov}
+\hypersetup{pdfauthor={Yaroslav P. Lyakhov and Stepan Suvorov}}
+\date{15 October 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We consider convex minimization over a compact convex set with a linear
+minimization oracle and curvature bounded by
+$\norm{\nabla^2 f(x)}\le H_0+H_1(f(x)-f_Q^*)$.
+The optimal value is unavailable to the algorithm. We use accumulated
+linear lower bounds to construct a computable upper certificate. Standard
+quadratic backtracking attains certificate accuracy $\varepsilon$ in
+$O(H_0D^2/\varepsilon+(1+H_1D^2)\log(U_0/\varepsilon))$ linear-oracle calls,
+up to an explicit initialization term and the final verification call,
+for $0<\varepsilon<U_0$. It requires no curvature or optimal-value input.
+A phase argument bounds the cost of estimates that lag behind decreasing
+local curvature. All function trials cost at most $1+2N$ plus an explicit
+logarithmic overhead after $N$ updates. The same linear-oracle order holds
+for two explicit steps, exact segment minimization, and a
+certificate-scaled backtracking variant; normalization is not needed
+for this order. For standard away-step backtracking, we extend the
+certificate bound by counting atom removals. Under a geometric error
+bound, a second phase estimate gives logarithmic
+accuracy dependence and separates the $H_1$ warm-up term from the
+$H_0$ logarithmic term, without parameter inputs. We also give a corrected
+lower certificate for deterministically bounded oracle errors.
+A local gap envelope removes strong convexity from the primal-to-certificate
+conversion; strong convexity remains one sufficient condition for the
+geometric error bound.
+Experiments cover seven families, including real-data Poisson regression
+with positive $H_1$. Controlled initialization, radius, and objective-unit
+comparisons separate oracle budgets and reveal important baseline
+sensitivities. A Poisson activity sweep excludes repeated starting
+vertices from its primary summaries. Two further count datasets show
+that online certificate attainment can lag the independently bounded
+primal error. Causal block-averaged tangent controls do not yield earlier
+stopping on these paths; a standard known-strong-convexity control
+resolves much of the lag on one dataset, using additional information.
+No uniform empirical superiority
+of certificate initialization or priority over all adaptive analyses
+is established.
+Independent proof checking and a complete priority audit remain necessary.
+\end{abstract}
+
+\noindent\emph{Version scope.} This report preserves the expanded
+derivations and historical studies. The companion focused
+\texttt{article.pdf} contains the subsequent exact differential
+gap envelope and the zero-base finite-termination theorem. Saved
+experiment thresholds in this report retain their original definitions.
+
+\section{Introduction and scope}
+Frank--Wolfe methods replace projections by linear minimization over the
+feasible region. The resulting oracle model is attractive when linear
+minimization is inexpensive and sparse convex combinations are useful;
+see the survey~\cite{braun}. A global smoothness constant can nevertheless
+make a short step conservative. Function-dependent curvature offers a
+different way to choose an explicit step.
+
+The condition studied here is motivated by the loss-suboptimality curvature
+model of Alimisis, Islamov, and Lucchi~\cite{warmup}. Related developments
+include generalized-smooth clipped methods~\cite{lobanovkoloskova} and
+accelerated full-gradient and coordinate methods~\cite{lobanov}.
+Vyguzov and Stonyakin~\cite{vyguzov} analyze Frank--Wolfe with curvature
+depending on the gradient norm, including adaptive parameter selection.
+Other practical choices include backtracking~\cite{pedregosa}, secant
+line search~\cite{hendrych}, and the recent auto-conditioned framework~\cite{autoconditioned}.
+Analytic steps derived from other curvature
+models also exist, for example generalized self-concordance~\cite{selfconcordant}.
+Adaptive Bregman steps treat relative smoothness~\cite{bregmanfw}, while
+adaptive conditional gradient sliding reuses gradients across inner
+linear-oracle iterations~\cite{adcgs}. Their assumptions and oracle units
+require a separate comparison; the present study does not establish
+superiority over these broader frameworks.
+
+Extended-curvature error-bound rates~\cite{wirth} and restart schemes
+adaptive to error bounds~\cite{restartfw} further constrain any priority
+claim. Linear objective- and FW-gap convergence beyond global gradient
+smoothness also precedes this work for log-homogeneous barriers~\cite{zhao}.
+Appendix~\ref{sec:prioranalysis} records the precise comparisons used here.
+
+The candidate contribution is an analysis of standard FW and away-step
+backtracking under
+\eqref{eq:curvature}, with separate dependence on $H_0,H_1$, a computable
+stopping criterion, an initialization term, and a bound on all function
+trials. It is a result about an existing method; it does not require a
+new step-size rule. The linear certificate, scalar
+differential comparison, halving argument, quadratic acceptance test, and
+telescoping count of failures are standard tools. The quadratic step has
+the same guarantee as the hyperbolic step, as does classical exact line
+search in the linear-oracle model. An elementary function in a step rule
+is therefore not the main claim. We do not establish optimal oracle
+complexity, an accelerated rate for all smooth functions, or priority over
+all adaptive analyses. The related-work search in this working version is
+targeted and incomplete.
+
+\section{Setting and computable certificates}
+Let $Q\subset\R^d$ be nonempty, compact, and convex, of Euclidean diameter
+$D$. Let $f$ be convex and twice continuously differentiable on a neighborhood
+of $Q$, and set $f_Q^*=\min_{x\in Q}f(x)$. Assume $H_0,H_1\ge0$ satisfy
+\begin{equation}\label{eq:curvature}
+ \norm{\nabla^2 f(z)}_2\le H_0+H_1\bigl(f(z)-f_Q^*\bigr),\qquad z\in Q.
+\end{equation}
+Only the explicit steps require these constants as inputs; backtracking
+does not. This is a condition relative to the \emph{constrained} minimum. A condition
+relative to a smaller unconstrained optimum cannot be substituted with the
+same $H_0$ automatically.
+
+At $x_k\in Q$, compute
+\begin{equation}\label{eq:gap}
+ s_k\in\arg\min_{v\in Q}\inner{\nabla f(x_k)}{v},\quad
+ d_k=s_k-x_k,\quad G_k=-\inner{\nabla f(x_k)}{d_k}.
+\end{equation}
+Convexity gives $f(x_k)-G_k\le f_Q^*$ and
+$0\le f(x_k)-f_Q^*\le G_k$. Consequently
+\begin{equation}\label{eq:certificate}
+ \ell_k=\max_{0\le j\le k}\{f(x_j)-G_j\},\qquad
+ U_k=f(x_k)-\ell_k
+\end{equation}
+satisfy $f(x_k)-f_Q^*\le U_k\le G_k$. A valid known lower bound may be
+included in the maximum, but is not required. The algorithm stops at
+$U_k\le\varepsilon$. When $G_k=0$, convexity already certifies optimality.
+
+\section{Two explicit steps and a local progress bound}
+We suppress iteration indices. Write $q=\norm d$, and let
+$f(x)-f_Q^*\le V\le G$. In the algorithm one may take $V=U$ or $V=G$.
+
+\begin{lemma}[Hyperbolic upper model]\label{lem:model}
+If $H_1>0$ and $c=q\sqrt{H_1}>0$, then, for $0\le t\le1$,
+\begin{equation}\label{eq:model}
+ f(x+td)-f(x)\le M_V(t)
+ =\left(V+\frac{H_0}{H_1}\right)(\cosh(ct)-1)
+ -\frac Gc\sinh(ct).
+\end{equation}
+For $H_1=0$ the upper model is $-Gt+H_0q^2t^2/2$.
+\end{lemma}
+\begin{proof}
+Let $y(t)=f(x+td)-f_Q^*$ and $\delta=y(0)$. Assumption~\eqref{eq:curvature}
+implies $y''\le q^2H_0+c^2y$, while $y'(0)=-G$.
+The equality solution with these initial data is
+\[
+ u_\delta(t)=\left(\delta+\frac{H_0}{H_1}\right)\cosh(ct)
+              -\frac Gc\sinh(ct)-\frac{H_0}{H_1}.
+\]
+For $w=y-u_\delta$, variation of constants expresses $w(t)$ as the
+integral of $w''-c^2w\le0$ against the nonnegative kernel
+$\sinh(c(t-r))/c$. Thus $w\le0$. Subtract the initial value and use
+$\delta\le V$ and $\cosh(ct)-1\ge0$.
+\end{proof}
+
+Let $B=V+H_0/H_1$ and $r=G/(cB)$. When these quantities are positive,
+the model minimizer on $[0,1]$ is
+\begin{equation}\label{eq:hyperbolic}
+ \alpha_H=\begin{cases}
+ 1,&r\ge1,\\
+ \min\{1,\artanh(r)/c\},&0<r<1.
+ \end{cases}
+\end{equation}
+The quadratic step is
+\begin{equation}\label{eq:quadratic}
+ a=(H_0+H_1V)q^2,\qquad \alpha_Q=\min\{1,G/a\}.
+\end{equation}
+For $H_1=0$ the two rules coincide. When $a=0$, use a full step.
+Zero gap or zero diameter is handled before evaluating these expressions.
+
+\begin{lemma}[Local progress without an exponential factor]\label{lem:progress}
+For either step, if $a>0$,
+\begin{equation}\label{eq:progress}
+ f(x)-f(x+\alpha d)\ge\frac G2\min\{1,G/a\}.
+\end{equation}
+If $a=0$, a full step decreases the function by at least $G$.
+\end{lemma}
+\begin{proof}
+For the hyperbolic model, $M'''=c^2M'$, $M'(0)=-G$, and $M''(0)=a$.
+Its derivative is nonpositive up to its selected minimizer $\alpha_H$.
+Also $\alpha_Q\le\alpha_H$: this follows from $\artanh(r)\ge r$ for
+$r<1$, and from $\alpha_H=1$ for $r\ge1$. Hence $M''\le a$ on
+$[0,\alpha_H]$. Therefore
+\[
+ M(\alpha_H)\le M(\alpha_Q)\le-G\alpha_Q+\tfrac12a\alpha_Q^2
+ \le-\tfrac12G\alpha_Q.
+\]
+Lemma~\ref{lem:model} proves the assertion for $\alpha_H$.
+
+For $\alpha_Q$, set $\psi(t)=f(x+td)-f(x)$. While $\psi\le0$,
+\eqref{eq:curvature} gives $\psi''\le a$. Initially $\psi'(0)=-G<0$.
+A first return to zero at $0<t<\min\{1,2G/a\}$ would imply
+$\psi(t)\le-Gt+at^2/2<0$, a contradiction. Thus this quadratic bound
+holds up to $\alpha_Q\le G/a$, proving~\eqref{eq:progress}.
+For $H_1=0$ the bound is the ordinary quadratic calculation.
+If $a=0$ and $G>0$, a valid $V$ cannot be zero, since
+$V=0$ would imply optimality and hence $G=0$. Consequently $a=0$ forces
+$H_0=H_1=0$, so $f$ is affine on the segment and the full step is valid.
+\end{proof}
+
+The proof only bounds curvature on a descent segment. Bounding
+$\cosh(ct)-1$ uniformly on the entire segment would instead introduce
+an unnecessary factor $e^{D\sqrt{H_1}}$. The quadratic model is not
+asserted for arbitrary $t\in[0,1]$.
+
+\section{Complexity of a computable stopping certificate}
+The algorithm computes~\eqref{eq:gap}--\eqref{eq:certificate}, stops if
+$U_k\le\varepsilon$, chooses $V_k\in[U_k,G_k]$, and updates
+$x_{k+1}=x_k+\alpha_kd_k$ with either rule. In particular, retaining
+the lower-bound history is sufficient; no explicit restarting is needed.
+
+\begin{theorem}\label{thm:main}
+Under the stated assumptions, both rules decrease $f$, and $U_k$ is
+nonincreasing. If $D>0$ and $0<\varepsilon<U_0$, define
+$J=\lceil\log_2(U_0/\varepsilon)\rceil$. The algorithm reaches
+$U_N\le\varepsilon$ within
+\begin{equation}\label{eq:complexity}
+ N\le\left\lceil(5+4H_1D^2)J+\frac{16H_0D^2}{\varepsilon}\right\rceil
+\end{equation}
+updates. Each explicit-step implementation uses $N+1$ function, gradient,
+and linear-oracle evaluations including the initial point and final check.
+If $U_0\le\varepsilon$, no update is needed; if $D=0$ the problem has one
+feasible point. If $H_0=H_1=0$, one full step suffices.
+\end{theorem}
+\begin{proof}
+Monotonicity follows from Lemma~\ref{lem:progress}; $\ell_k$ is nondecreasing,
+so $U_k=f(x_k)-\ell_k$ is nonincreasing. Since $V_k\le G_k$, $q_k\le D$,
+and $G_k\ge U_k$, local progress yields
+\begin{equation}\label{eq:certificateprogress}
+ f_k-f_{k+1}\ge\frac12\min\left\{G_k,
+ \frac{G_k^2}{D^2(H_0+H_1G_k)}\right\}
+ \ge\frac12\min\left\{U_k,
+ \frac{U_k^2}{D^2(H_0+H_1U_k)}\right\}.
+\end{equation}
+The second inequality uses monotonicity of $z^2/(H_0+H_1z)$ for $z>0$.
+The affine case has already been handled.
+
+Consider a phase starting with $U\le b$ and ending at $U\le b/2$.
+While it continues, each update reduces $f$ by at least
+\[
+ p(b)=\min\left\{\frac b4,
+       \frac{b^2}{8D^2H_0+4D^2H_1b}\right\}.
+\]
+Total decrease from the start of the phase cannot exceed
+$f_{\rm start}-f_Q^*\le U_{\rm start}\le b$. Thus the phase ends within
+$\lfloor b/p(b)\rfloor+1\le5+4D^2H_1+8D^2H_0/b$ updates.
+Apply this to $b_j=U_0/2^j$, $j=0,\ldots,J-1$. Skipped phases cost zero.
+Finally,
+$\sum_{j=0}^{J-1}1/b_j=(2^J-1)/U_0<2/\varepsilon$,
+which proves~\eqref{eq:complexity}.
+\end{proof}
+
+For $H_0=0$, the bound is logarithmic. This is a restricted curvature
+class, not a logarithmic guarantee for arbitrary globally smooth objectives.
+For example $f(x)=t+(\max\{t,0\})^3$, $t=1/2-x$, on $[-1/2,1/2]$ satisfies
+$|f''|=6t\le6f$, and has $H_0=0,H_1=6$. Our numerical checks include
+this limit. For general $H_0>0$, the inverse-accuracy term remains.
+
+\input{adaptive_theory}
+\input{away_theory}
+\input{tangent_certificates}
+
+\section{A corrected certificate with inexact information}
+The convergence theorem assumes exact oracles. The following separate
+statement only establishes validity of a lower certificate.
+
+\begin{proposition}\label{prop:noise}
+Suppose $\norm{\widehat g-\nabla f(x)}\le\rho$,
+$\inner{\widehat g}{s}\le\min_{v\in Q}\inner{\widehat g}{v}+\eta$,
+and $|\widehat f-f(x)|\le\nu$, with known deterministic bounds.
+Then
+\[
+ \ell^{\rm safe}=\widehat f+\inner{\widehat g}{s-x}
+                     -\rho D-\eta-\nu\le f_Q^*.
+\]
+\end{proposition}
+\begin{proof}
+For $v\in Q$, convexity and Cauchy--Schwarz imply
+\[
+ f(v)\ge\widehat f-\nu+\inner{\widehat g}{v-x}-\rho D
+      \ge\widehat f-\nu+\inner{\widehat g}{s-x}-\eta-\rho D.
+\]
+Minimize over $v$. A maximum of such lower bounds is still valid.
+\end{proof}
+An upper certificate at a noisy function evaluation is
+$\widehat f+\nu-\max_j\ell_j^{\rm safe}$. A variance estimate is not
+a deterministic norm bound. No noisy-direction complexity theorem is
+claimed here. Without the correction, even $f(x)=x^2/2$ at $x=1$,
+with $\widehat g=0$ on $[-1,1]$, gives a false lower bound $1/2>f_Q^*=0$.
+
+\section{Experiments}
+\subsection{Problems with analytically verified assumptions}
+On $Q=\{x:\norm x_1\le R\}$, the oracle returns a signed coordinate
+vertex at a largest-magnitude gradient coordinate. Let
+\[
+ \phi(x)=\frac1m\sum_{i=1}^m[\cosh(a_i^\top(x-x^*))-1]
+                        +\frac\mu2\norm{x-x^*}^2,
+\]
+where $\mu>0$ and $x^*\in Q$. Valid constants are
+\[
+ H_0=\mu+\lambda_{\max}(A^\top A/m),\qquad
+ H_1=\max_i\norm{a_i}^2.
+\]
+Indeed, decompose the Hessian into its value at $x^*$ and the positive
+semidefinite sum weighted by $\cosh(a_i^\top(x-x^*))-1$.
+The latter has norm at most $H_1\phi(x)$.
+
+An optimum placed on the boundary can still have zero gradient.
+To test genuinely active constraints, choose $\norm{x^*}_1=R$,
+$v\in\partial\norm{x^*}_1$, and $\lambda>0$, and set
+\begin{equation}\label{eq:active}
+ f(x)=\phi(x)-\lambda v^\top(x-x^*).
+\end{equation}
+On $Q$, $v^\top(x-x^*)\le0$. Hence $f\ge\phi\ge0$, $f_Q^*=0$,
+and $x^*$ is its unique constrained minimizer. Its gradient is
+$-\lambda v\ne0$. The KKT multiplier is positive, and $x^*$ also
+minimizes $f(x)+\lambda\norm x_1$ over $\R^d$. The Hessian is unchanged,
+so the same constants satisfy~\eqref{eq:curvature} on $Q$.
+These are planted examples, not naturally occurring application instances.
+
+The original interior/boundary cases use $d=12$, $m=10$, $R=1.5$,
+$\mu=0.08$, and independent $a_{ij}\sim N(0,0.22^2)$.
+The start is $Re_1$. The optimum has entries $(0.3,-0.25,0.2)$ on
+coordinates $(2,6,10)$ in the interior case, and $(0.6,-0.5,0.4)$ otherwise.
+Active cases use $\lambda=0.15$, signs on the support of $x^*$, and
+independent $v_j\sim\mathrm{Uniform}(-0.6,0.6)$ off that support.
+The scaled case changes the Gaussian standard deviation to $0.9$;
+the high-dimensional case uses $d=60,m=40$ and standard deviation $0.22$.
+
+As a real-data control, we solve $\ell_1$-constrained logistic regression
+on the Wisconsin Diagnostic Breast Cancer dataset~\cite{wdbc}, using the
+copy bundled with scikit-learn. For each seed a stratified 80\% training
+partition is standardized using training statistics only. The objective is
+mean binary logistic loss plus $0.01\norm x^2/2$, on a ball of radius 2.
+A valid bound is $H_0=L=0.25\lambda_{\max}(A^\top A/m)+0.01,H_1=0$.
+Thus this is a standard-smoothness control, not evidence of gains for
+positive $H_1$. SLSQP on positive/negative split variables supplies an
+independent feasible reference and its linear lower certificate; the
+largest reference interval width in the ten runs is $3.1\cdot10^{-9}$.
+These reference quantities are used only for post-run error reporting.
+
+\subsection{Protocol and findings}
+We use ten matched seeds, eleven methods, a cap of 1000 updates, and a
+common stopping condition $U\le10^{-5}$: 660 runs in total. The three
+hyperbolic variants use respectively $V=G$, accumulated certificates, and
+an additional valid lower bound 0. The extra information in the last
+variant is explicitly disclosed. The quadratic variant uses accumulated
+certificates. Baselines include global-$L$ short steps, $2/(k+2)$, Armijo
+with initial step 1, shrinkage $1/2$ and parameter $10^{-4}$, adaptive
+quadratic backtracking, and Algorithm 2 of~\cite{vyguzov} with $\rho=3$
+and both initial parameters equal to 1. The scalar adaptive-$L$ estimate
+starts at 1, is halved on each update, and doubled on rejection.
+
+The secant implementation is a safeguarded variant inspired by~\cite{hendrych},
+not a reproduction of the authors' code. It checks the endpoint, starts
+at 0 and $10^{-3}$, uses a derivative-root tolerance
+$10^{-10}\max\{1,G\}$, and maintains a bracket with bisection when
+necessary, including every eighth trial. Golden-section search checks
+both endpoints and uses an absolute interval tolerance $10^{-10}$.
+The script records all internal oracle calls, reuses accepted values,
+and logs line-search safeguards. No baseline hyperparameter is tuned
+on the reported tasks.
+
+Table~\ref{tab:results} reports selected scenarios and methods. Complete
+results, including the additional lower-bound variant and remaining
+scenarios, are in the accompanying CSV files.
+The hyperbolic and quadratic methods are nearly indistinguishable on
+these instances. In the interior case the accumulated-certificate
+hyperbolic method reaches the certificate tolerance in a median 136.5
+updates, versus 170 for global $L$ and 27 for Armijo.
+On the active scaled family, no hyperbolic-memory run certifies the target
+within the cap: median error is $3.64\cdot10^{-3}$, versus
+$5.18\cdot10^{-2}$ for global $L$ and $3.03\cdot10^{-6}$ for the
+diminishing step. The latter certifies only four of ten runs, illustrating
+the distinction between small primal error and an available stopping
+certificate. An exact numerical line minimizer need not yield the best
+finite-budget multi-step trajectory.
+
+\input{results_table}
+\begin{figure}[p]
+\centering
+\includegraphics[width=\textwidth]{figures/certificates.png}
+\caption{Median certificate and interquartile band across ten seeds.
+Completed runs are carried forward at their final value. The figure uses
+trace samples every ten updates plus the final point, linearly interpolated
+for plotting only. The vertical display range is clipped below $2\cdot10^{-6}$;
+actual values, including zero certificates, are retained in the CSV files.
+The horizontal reference is the stopping tolerance $10^{-5}$.}
+\label{fig:certificates}
+\end{figure}
+
+\subsection{Reproducibility and limitations}
+From the PART3 directory, after installing its pinned requirements, run
+\begin{verbatim}
+python Work/benchmark.py --seeds 10 --max-iter 1000 --tolerance 1e-5
+\end{verbatim}
+The recorded environment uses Python 3.13.5, NumPy 2.5.2, SciPy 1.16.3,
+Matplotlib 3.10.9, and scikit-learn 1.8.0, with BLAS/OpenMP thread
+environment variables set to 1. The manifest records platform details,
+parameters, reference intervals, and source SHA-256 hashes. Timings are
+one run per instance, include logging, and exclude problem/reference
+construction. They are exploratory; inter-seed variation does not replace
+repeated timing on each instance. Function, gradient, and LMO costs are
+reported separately, without assigning arbitrary relative weights.
+
+Sixty-five automated tests compare the analytic minimizer with numerical
+scalar minimization and check numerical derivatives, KKT conditions,
+curvature bounds, local progress, certificates, oracle counts,
+objective-shift invariance, independence from reference values, the
+$H_1\to0$ limit, $H_0=0$, and deterministic error corrections.
+Additional checks cover the adaptive envelope, exact telescoping identity,
+total function-call bound, objective rescaling, unknown-curvature inputs,
+and a positive-$H_1$ real-data problem, plus matching first steps in the
+initialization ablation. Boundary tests cover both attainable quadratic
+gap-envelope branches and the geometric theorem with $H_0=0$.
+A separate exact-rational audit checks 8370 finite configurations,
+including 57989 abstract curvature-state visits, phase-budget constants,
+gap inversion and atom-removal counts. Its archived source and hashes
+are replayed by the validator. The abstract state model dominates
+possible curvature histories but does not assert realizability of
+every state by an objective. Neither finite numerical checks nor this
+rational audit establish a universal theorem or replace independent
+proof review.
+
+The companion focused article, \texttt{article.pdf}, strengthens the
+pointwise gap envelope by a differential comparison with attaining
+objectives. It also characterizes the zero-base optimal face and proves
+finite exact termination of backtracking AFW in that regime, without
+a separate geometric-growth assumption. This expanded report retains
+the older valid quadratic comparisons to document the historical
+experiments; their saved thresholds and outcomes are not recomputed.
+
+\paragraph{Generative-tool disclosure.}
+An OpenAI Codex assistant was used substantially for literature triage,
+proof development, implementation, experiment analysis, manuscript
+drafting and verification automation. Explicit derivations, archived
+sources and executable checks are provided for scrutiny; this internal
+process is not independent mathematical peer review. Responsibility for
+submitted scientific claims rests with the named authors.
+
+\input{adaptive_experiments}
+\input{backtracking_experiments}
+\input{initialization_experiments}
+\input{away_experiments}
+\input{robustness_experiments}
+\input{constraint_experiments}
+\input{multidata_experiments}
+\input{count_comparator_experiments}
+\input{certificate_experiments}
+
+\section{Discussion}
+The main candidate result is a two-phase certificate analysis of ordinary
+quadratic backtracking without smoothness inputs, counting both LMO and all
+function trials. Overestimated curvature requires only an additional
+phase-controlled number of steps. Certificate normalization is optional:
+the order alone does not justify it as a new algorithmic contribution.
+The LMO guarantee also holds for the explicit rules and exact line search.
+The empirical results support reporting unfavorable
+regimes, controlling initialization, and separating oracle costs. On a
+planted active family, the compulsory vertex move largely explains the
+earlier apparent advantage of AC-FW over the chosen backtracking baselines.
+Away steps provide a standard way to remove obstructing atoms without a
+special initial move. Their established geometric progress inequality
+also yields our phase bound under an additional geometric error bound.
+The certificate conversion itself needs no strong convexity: feasible
+descent provides a local gap envelope. Only the geometric error bound
+is required separately in the logarithmic phase theorem.
+The known linear convergence of AFW is not a novelty claim; the candidate
+specialization concerns the separated curvature dependence, this stopping
+certificate, and total trial cost.
+The radius/units control also shows that fixed numerical curvature
+initialization can affect outcomes on equivalent objectives; matching
+the units of $M$ is necessary for an objective-scale comparison.
+On the additional count datasets, success in active regimes does not
+extend uniformly to larger interior domains. Independent reference
+intervals expose a gap between primal accuracy and observable stopping.
+The tested block tangent bounds do not improve stopping and add LMO cost.
+A standard known-$\mu$ control improves Metro stopping without extra
+LMOs, showing the role of available model information. Its residual
+failures on Seoul limit a general claim. Neither control adds a new
+duality or convergence result.
+
+Open work includes a complete comparison with certificate/restart and
+relative-smoothness analyses, an adaptive sliding baseline, independent
+validation of the proof, more natural positive-$H_1$
+applications, and pairwise extensions. Noisy directions and
+finite-precision robustness require additional theory. Convexity of
+the feasible region ensures that segment updates are feasible; a transfer
+to an $\ell_0$ constraint does not follow from the present argument.
+
+\appendix
+\input{prior_analysis}
+
+\begin{thebibliography}{99}
+\bibitem{lacoste2016} S.~Lacoste-Julien.
+Convergence Rate of Frank-Wolfe for Non-Convex Objectives.
+\href{https://arxiv.org/abs/1607.00345}{arXiv:1607.00345}, 2016.
+\bibitem{wirth} E.~Wirth, J.~Pe\~na, and S.~Pokutta.
+Fast convergence of Frank-Wolfe algorithms on polytopes.
+\href{https://arxiv.org/abs/2406.18789v3}{arXiv:2406.18789v3}, 2025.
+\bibitem{restartfw} T.~Kerdreux, A.~d'Aspremont, and S.~Pokutta.
+Restarting Frank-Wolfe: Faster Rates under H\"olderian Error Bounds.
+\href{https://arxiv.org/abs/1810.02429v4}{arXiv:1810.02429v4}, 2021.
+\bibitem{zhao} R.~Zhao.
+New Analysis of an Away-Step Frank-Wolfe Method for Minimizing
+Logarithmically-Homogeneous Barriers.
+\href{https://arxiv.org/html/2305.17808v4}{arXiv:2305.17808v4}, 2023.
+\bibitem{lacostejaggi} S.~Lacoste-Julien and M.~Jaggi.
+On the Global Linear Convergence of Frank-Wolfe Optimization Variants.
+\emph{NeurIPS}, 2015.
+\href{https://arxiv.org/abs/1511.05932}{arXiv:1511.05932}.
+\bibitem{warmup} F.~Alimisis, R.~Islamov, and A.~Lucchi.
+Why Do We Need Warm-up? A Theoretical Perspective.
+\href{https://arxiv.org/abs/2510.03164v2}{arXiv:2510.03164v2}, 2026.
+\bibitem{vyguzov} A.~A.~Vyguzov and F.~S.~Stonyakin.
+Frank-Wolfe Algorithms for $(L_0,L_1)$-smooth functions.
+\href{https://arxiv.org/abs/2510.16468v5}{arXiv:2510.16468v5}, 2026.
+\bibitem{lobanov} A.~Lobanov.
+A Few Accelerated Algorithms for Convex Optimization under $(H_0,H_1)$-Smoothness.
+\href{https://arxiv.org/abs/2608.04884}{arXiv:2608.04884}, 2026.
+\bibitem{lobanovkoloskova} A.~Lobanov and A.~Koloskova.
+Avoiding Bias in Clipped SGD for Overparameterized Models under Generalized Smoothness.
+\href{https://arxiv.org/abs/2605.14800v2}{arXiv:2605.14800v2}, 2026.
+\bibitem{braun} G.~Braun, A.~Carderera, C.~W.~Combettes, H.~Hassani,
+A.~Karbasi, A.~Mokhtari, and S.~Pokutta. Conditional Gradient Methods.
+\href{https://arxiv.org/abs/2211.14103v5}{arXiv:2211.14103v5}, 2025.
+\bibitem{pedregosa} F.~Pedregosa, G.~Negiar, A.~Askari, and M.~Jaggi.
+Linearly Convergent Frank-Wolfe with Backtracking Line-Search.
+\emph{AISTATS}, 2020. \href{https://arxiv.org/abs/1806.05123}{arXiv:1806.05123}.
+\bibitem{karimi} H.~Karimi, J.~Nutini, and M.~Schmidt.
+Linear Convergence of Gradient and Proximal-Gradient Methods Under the
+Polyak--{\L}ojasiewicz Condition.
+\href{https://arxiv.org/abs/1608.04636v4}{arXiv:1608.04636v4}, 2020.
+\bibitem{hendrych} D.~Hendrych, M.~Besan\c{c}on, D.~Mart\'inez-Rubio, and S.~Pokutta.
+Secant Line Search for Frank-Wolfe Algorithms.
+\href{https://arxiv.org/abs/2501.18775v2}{arXiv:2501.18775v2}, 2025.
+\bibitem{selfconcordant} P.~Dvurechensky, K.~Safin, S.~Shtern, and M.~Staudigl.
+Generalized Self-Concordant Analysis of Frank-Wolfe Algorithms.
+\href{https://arxiv.org/abs/2010.01009}{arXiv:2010.01009}, 2020.
+\bibitem{wdbc} W.~Wolberg, O.~Mangasarian, N.~Street, and W.~Street.
+Breast Cancer Wisconsin (Diagnostic) [Dataset]. UCI Machine Learning Repository, 1993.
+\href{https://doi.org/10.24432/C5DW2B}{doi:10.24432/C5DW2B}.
+\bibitem{autoconditioned} K.-H.~Giang-Tran, S.~Shafiee, and N.~Ho-Nguyen.
+Auto-Conditioned Frank-Wolfe Algorithms.
+\href{https://arxiv.org/abs/2605.15512}{arXiv:2605.15512}, 2026.
+\bibitem{bike} H.~Fanaee-T. Bike Sharing [Dataset]. UCI Machine Learning Repository, 2013.
+\href{https://doi.org/10.24432/C5W894}{doi:10.24432/C5W894}. CC BY 4.0.
+\bibitem{seoul} Seoul Bike Sharing Demand [Dataset].
+UCI Machine Learning Repository, 2020.
+\href{https://doi.org/10.24432/C5F62R}{doi:10.24432/C5F62R}. CC BY 4.0.
+\bibitem{metro} J.~Hogue. Metro Interstate Traffic Volume [Dataset].
+UCI Machine Learning Repository, 2019.
+\href{https://doi.org/10.24432/C5X60B}{doi:10.24432/C5X60B}. CC BY 4.0.
+\bibitem{bregmanfw} S.~Takahashi, S.~Pokutta, and A.~Takeda.
+Fast Frank--Wolfe Algorithms with Adaptive Bregman Step-Size for Weakly Convex Functions.
+\emph{ICLR}, 2026.
+\href{https://arxiv.org/abs/2504.04330v4}{arXiv:2504.04330v4}.
+\bibitem{adcgs} S.~Takahashi.
+Adaptive Conditional Gradient Sliding: Projection-Free and Line-Search-Free Acceleration.
+\href{https://arxiv.org/abs/2601.20443v2}{arXiv:2601.20443v2}, 2026.
+\end{thebibliography}
+\end{document}

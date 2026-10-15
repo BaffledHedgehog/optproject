@@ -1,0 +1,13 @@
+{
+  "source": "report_source.py",
+  "source_sha256": "63505dddbb3e907db8d9d56d6e8550d7c8e6cd41beabc6376bcb4082cebd7c47",
+  "experiment_manifest_sha256": "f3c5e148abd221e0ba83465b13869c9e5693813abde7cc3a901cf5b2d137975b",
+  "report_sha256": "b3cec9d84160f81aa5ac8724c1f910c749c959af7ef95d15a64b46466b7689dd",
+  "table_sha256": "46390ffa250ddac55b4723aff46e434c399c8cd46c75d02cc0902010077e7d8a",
+  "figure_sha256": {
+    "initialization_effect.png": "a065467999611b90c0180b3f37c1c3157f3f3f7f372c51b7e24de8abe949af6f",
+    "initialization_effect.pdf": "6410fa03812d1c41dc713e188d077ddf102cf85308bc9619534035e916c1aa90",
+    "initialization_publication.png": "9401a60b3deaf6e22e27d897298bd9278c8470db46913f963ddaaf6370728a3e",
+    "initialization_publication.pdf": "ec4b6703e6acfc50c1d067dce0b995b42f0bde8dbeb80a5e51d8570aa5124f29"
+  }
+}

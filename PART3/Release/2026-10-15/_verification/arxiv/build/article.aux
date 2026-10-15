@@ -1,0 +1,143 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{braun}
+\citation{pedregosa}
+\citation{lacostejaggi}
+\citation{warmup}
+\citation{warmup}
+\citation{lobanovkoloskova}
+\citation{lobanov}
+\citation{vyguzov}
+\citation{pedregosa}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Related analyses.}{1}{section*.1}\protected@file@percent }
+\citation{selfconcordant}
+\citation{bregmanfw}
+\citation{adcgs}
+\citation{wirth}
+\citation{restartfw}
+\citation{zhao}
+\citation{autoconditioned}
+\citation{khademi}
+\citation{yagishita}
+\citation{pedregosa}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Ordinary backtracking and a computable certificate}{2}{section.2}\protected@file@percent }
+\newlabel{sec:model}{{2}{2}{Ordinary backtracking and a computable certificate}{section.2}{}}
+\newlabel{eq:curvature}{{1}{2}{Ordinary backtracking and a computable certificate}{equation.2.1}{}}
+\newlabel{eq:gap}{{2}{2}{Ordinary backtracking and a computable certificate}{equation.2.2}{}}
+\newlabel{eq:certificate}{{3}{2}{Ordinary backtracking and a computable certificate}{equation.2.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{The algorithm.}{2}{section*.2}\protected@file@percent }
+\newlabel{eq:btstep}{{4}{2}{The algorithm}{equation.2.4}{}}
+\newlabel{lem:local}{{2.1}{2}{Local acceptance}{theorem.2.1}{}}
+\newlabel{eq:acceptedprogress}{{5}{2}{Local acceptance}{equation.2.5}{}}
+\newlabel{eq:localenvelope}{{6}{3}{Local acceptance}{equation.2.6}{}}
+\newlabel{lem:lag}{{2.2}{3}{Lag potential}{theorem.2.2}{}}
+\newlabel{thm:fw}{{2.3}{3}{Observable stopping and total function cost}{theorem.2.3}{}}
+\newlabel{eq:fwcount}{{7}{3}{Observable stopping and total function cost}{equation.2.7}{}}
+\newlabel{eq:functioncount}{{8}{3}{Observable stopping and total function cost}{equation.2.8}{}}
+\citation{pedregosa}
+\citation{lacostejaggi}
+\citation{pedregosa}
+\newlabel{prop:init}{{2.4}{4}{Initialization is visible even for affine objectives}{theorem.2.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{Comparison with a global bound.}{4}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Away steps and geometric progress}{4}{section.3}\protected@file@percent }
+\newlabel{eq:dropcount}{{9}{4}{Away steps and geometric progress}{equation.3.9}{}}
+\citation{lacostejaggi}
+\citation{restartfw}
+\citation{lacoste2016}
+\newlabel{thm:afw}{{3.1}{5}{Convex AFW certificate bound}{theorem.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}From primal progress to the observable threshold}{5}{subsection.3.1}\protected@file@percent }
+\newlabel{eq:geometry}{{10}{5}{From primal progress to the observable threshold}{equation.3.10}{}}
+\newlabel{lem:bridge}{{3.2}{5}{Local primal-to-gap conversion}{theorem.3.2}{}}
+\newlabel{eq:sharpbridge}{{11}{5}{Local primal-to-gap conversion}{equation.3.11}{}}
+\newlabel{eq:threshold}{{12}{5}{Local primal-to-gap conversion}{equation.3.12}{}}
+\citation{seoul}
+\citation{metro}
+\newlabel{thm:geometric}{{3.3}{6}{Geometric AFW certificate bound}{theorem.3.3}{}}
+\newlabel{eq:geometriccount}{{13}{6}{Geometric AFW certificate bound}{equation.3.13}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Experiments: initialization, geometry and stopping}{6}{section.4}\protected@file@percent }
+\newlabel{sec:experiments}{{4}{6}{Experiments: initialization, geometry and stopping}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Count-data objectives with verified curvature bounds}{6}{subsection.4.1}\protected@file@percent }
+\newlabel{eq:poisson}{{14}{6}{Count-data objectives with verified curvature bounds}{equation.4.14}{}}
+\newlabel{eq:poissonconstants}{{15}{6}{Count-data objectives with verified curvature bounds}{equation.4.15}{}}
+\citation{autoconditioned}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Count-data protocols. $R_*$ is the offline unconstrained reference $\ell _1$ norm; tested radii are $R_*/2$ and $2R_*$. Widths are numerical reference brackets, without directed rounding. All $2d$ signed coordinate vertices are used at each radius.}}{7}{table.1}\protected@file@percent }
+\newlabel{tab:data}{{1}{7}{Count-data protocols. $R_*$ is the offline unconstrained reference $\ell _1$ norm; tested radii are $R_*/2$ and $2R_*$. Widths are numerical reference brackets, without directed rounding. All $2d$ signed coordinate vertices are used at each radius}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Common function budgets and failed runs}{7}{subsection.4.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Certified starts at the common budget of 1000 function calls. Every nonterminal run reaches this budget before its cap; completed runs are carried forward. Seoul has 30 starts per cell, Metro 24. $F/A$: FW/AFW; subscripts $1,U$: initial $M=1,U_0/D^2$; $Q$: known-curvature short step; AC: auto-conditioned FW with charged preprocessing.}}{7}{table.2}\protected@file@percent }
+\newlabel{tab:budget}{{2}{7}{Certified starts at the common budget of 1000 function calls. Every nonterminal run reaches this budget before its cap; completed runs are carried forward. Seoul has 30 starts per cell, Metro 24. $F/A$: FW/AFW; subscripts $1,U$: initial $M=1,U_0/D^2$; $Q$: known-curvature short step; AC: auto-conditioned FW with charged preprocessing}{table.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Median scalar certificates over all distinct vertices at function-call budgets. Curves include failed runs and charged AC-FW preprocessing; completed runs are carried forward. The dotted horizontal line is $10^{-5}$. BT has no curvature inputs, Q receives analytic $H_0,H_1$. These are paired finite cases, not confidence bands for a population of problems.}}{8}{figure.1}\protected@file@percent }
+\newlabel{fig:counts}{{1}{8}{Median scalar certificates over all distinct vertices at function-call budgets. Curves include failed runs and charged AC-FW preprocessing; completed runs are carried forward. The dotted horizontal line is $10^{-5}$. BT has no curvature inputs, Q receives analytic $H_0,H_1$. These are paired finite cases, not confidence bands for a population of problems}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Controlling initialization and objective units}{9}{subsection.4.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Starting-point control on three planted active families, ten matched instances each. Counts are certified starts at 1000 function calls. O/V: original point/compulsory initial LMO vertex. The last column is the descriptive paired median BT-V/AC-V certificate ratio and 95\% percentile-bootstrap interval, not a speedup estimate.}}{9}{table.3}\protected@file@percent }
+\newlabel{tab:init}{{3}{9}{Starting-point control on three planted active families, ten matched instances each. Counts are certified starts at 1000 function calls. O/V: original point/compulsory initial LMO vertex. The last column is the descriptive paired median BT-V/AC-V certificate ratio and 95\% percentile-bootstrap interval, not a speedup estimate}{table.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}Causal stopping controls on fixed BT paths}{9}{subsection.4.4}\protected@file@percent }
+\citation{pedregosa}
+\bibcite{braun}{1}
+\bibcite{pedregosa}{2}
+\bibcite{lacostejaggi}{3}
+\bibcite{warmup}{4}
+\bibcite{lobanovkoloskova}{5}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Isolated causal controls on 432 exactly repeated BT paths, giving 2160 dependent profiles. Counts use each profile's first stop or the original cap. More LMOs compares total direction plus certificate LMOs with scalar. Known $\mu $ receives the analytical ridge coefficient; blocks do not.}}{10}{table.4}\protected@file@percent }
+\newlabel{tab:monitors}{{4}{10}{Isolated causal controls on 432 exactly repeated BT paths, giving 2160 dependent profiles. Counts use each profile's first stop or the original cap. More LMOs compares total direction plus certificate LMOs with scalar. Known $\mu $ receives the analytical ridge coefficient; blocks do not}{table.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Discussion}{10}{section.5}\protected@file@percent }
+\bibcite{lobanov}{6}
+\bibcite{vyguzov}{7}
+\bibcite{selfconcordant}{8}
+\bibcite{bregmanfw}{9}
+\bibcite{adcgs}{10}
+\bibcite{wirth}{11}
+\bibcite{restartfw}{12}
+\bibcite{zhao}{13}
+\bibcite{autoconditioned}{14}
+\bibcite{khademi}{15}
+\bibcite{yagishita}{16}
+\bibcite{lacoste2016}{17}
+\bibcite{seoul}{18}
+\bibcite{metro}{19}
+\bibcite{karimi}{20}
+\bibcite{wdbc}{21}
+\bibcite{bike}{22}
+\citation{lacostejaggi}
+\citation{restartfw}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Comparison steps and certificate normalization}{12}{appendix.A}\protected@file@percent }
+\newlabel{app:explicit}{{A}{12}{Comparison steps and certificate normalization}{appendix.A}{}}
+\newlabel{eq:explicitcount}{{16}{12}{Comparison steps and certificate normalization}{equation.A.16}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Geometric implications and attaining examples}{12}{appendix.B}\protected@file@percent }
+\newlabel{app:geometry}{{B}{12}{Geometric implications and attaining examples}{appendix.B}{}}
+\citation{pedregosa}
+\citation{karimi}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1}Gap-envelope equality and zero base curvature}{13}{subsection.B.1}\protected@file@percent }
+\newlabel{app:bridge}{{B.1}{13}{Gap-envelope equality and zero base curvature}{subsection.B.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Lower-bound controls and deterministic oracle errors}{13}{appendix.C}\protected@file@percent }
+\newlabel{app:monitors}{{C}{13}{Lower-bound controls and deterministic oracle errors}{appendix.C}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.1}Certificate validity with bounded deterministic errors}{13}{subsection.C.1}\protected@file@percent }
+\newlabel{app:inexact}{{C.1}{13}{Certificate validity with bounded deterministic errors}{subsection.C.1}{}}
+\citation{wdbc}
+\citation{bike}
+\citation{khademi}
+\citation{yagishita}
+\citation{pedregosa}
+\@writefile{toc}{\contentsline {section}{\numberline {D}Additional protocol details and controls}{14}{appendix.D}\protected@file@percent }
+\newlabel{app:protocol}{{D}{14}{Additional protocol details and controls}{appendix.D}{}}
+\@writefile{toc}{\contentsline {paragraph}{Features.}{14}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Native comparator.}{14}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Planted geometry.}{14}{section*.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Objective-unit study.}{14}{section*.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {E}What the closest bounds directly establish}{14}{appendix.E}\protected@file@percent }
+\newlabel{app:comparison}{{E}{14}{What the closest bounds directly establish}{appendix.E}{}}
+\citation{lobanovkoloskova}
+\citation{vyguzov}
+\citation{bregmanfw}
+\citation{adcgs}
+\citation{wirth}
+\citation{restartfw}
+\citation{zhao}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Certification at $10^{-5}$ within 1000 updates. Each cell gives the certified count and median function calls to stop or cap, including failed runs. Seoul has 30 starts and Metro 24 per radius/method. $F/A$: FW/AFW; subscripts $1,U$: BT initialized at $1,U_0/D^2$; $Q$: known-$H$ short step. AC counts 1000 outer trials, including rejections, and pays two preprocessing source evaluations. These medians are not times to success.}}{15}{table.5}\protected@file@percent }
+\newlabel{tab:counts}{{5}{15}{Certification at $10^{-5}$ within 1000 updates. Each cell gives the certified count and median function calls to stop or cap, including failed runs. Seoul has 30 starts and Metro 24 per radius/method. $F/A$: FW/AFW; subscripts $1,U$: BT initialized at $1,U_0/D^2$; $Q$: known-$H$ short step. AC counts 1000 outer trials, including rejections, and pays two preprocessing source evaluations. These medians are not times to success}{table.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {F}Reproducibility and evidence checks}{15}{appendix.F}\protected@file@percent }
+\newlabel{app:reproduction}{{F}{15}{Reproducibility and evidence checks}{appendix.F}{}}
+\@writefile{toc}{\contentsline {paragraph}{Generative-tool disclosure.}{16}{section*.9}\protected@file@percent }
+\gdef \@abspage@last{16}

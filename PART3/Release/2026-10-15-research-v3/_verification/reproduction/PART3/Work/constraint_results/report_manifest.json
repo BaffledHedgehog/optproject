@@ -1,0 +1,16 @@
+{
+  "artifact_sha256": {
+    "manifest.json": "39113364c7a17657b4ea6b6f61733e05ed3d6d793c7a12d346a04602deced0df",
+    "report_source.py": "dab18d73baa6cc1ed1888022fd821a7ea55cf0b52752aaaa85d58b123b060d72",
+    "results.md": "ca72120d492de897716c520138b17ef2ce868afa87e5b85b94ed21bbfb5814a3",
+    "distinct_starts.csv": "eeebac6a4817c2159e304da9e6c643385027c30e1afc5df3984f405fb1813fe6",
+    "constraint_transition.png": "a35117dd61bb7005aa3e5d7e137ca049d3e109f1b20162f63e4c7b632eb07315",
+    "constraint_transition.pdf": "7eb0c207682c4caf01b42e6df62fe73066dddf875cf148eb43c1422894717242",
+    "duplicate_checks.csv": "1f6adc7f2b541b1f014e13adca261f4493c296599b439514af15f78f50652b6e"
+  },
+  "raw_trajectories": 280,
+  "distinct_trajectories": 196,
+  "distinct_starts": 7,
+  "duplicate_trajectories_checked": 84,
+  "paper_table_sha256": "80296a9e59356f1285f09e1933a7f4a49d45e79fa6528e560aa04687c9b3642f"
+}

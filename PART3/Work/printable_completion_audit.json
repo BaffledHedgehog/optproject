@@ -1,0 +1,120 @@
+{
+  "objective": "до-ресёрчи до принтабельных материалов",
+  "status": "complete_for_local_printable_materials",
+  "date": "2026-10-15",
+  "release_directory": "Release/2026-10-15",
+  "release_manifest_sha256": "926419fc5e957a833b9fc39616c4f8cddc99d0c7e02c6a1ae0ff1523884ae882",
+  "verified_artifacts": {
+    "article.pdf": "8da9a4aa79ccc7be19495e503683d95ad959f3442db40347f566beaa077668a5",
+    "arxiv_source.zip": "1bd813e2b020c75cc5b54e3f0ef6158395eb31507872680c53ae933616854cf7",
+    "literature_comparison.json": "03b07261437af4fb041d30961f46ad54f8aff8ff12da3b96db9b1034f9cbb977",
+    "README_RU.txt": "42a5ce919672e6e5465c738b98061313b8ddc0f3f80d9444202695414f582ec6",
+    "reproducibility.zip": "6770114156f6384980f99fc74b192e36ed769bb9dbc3c22e4bbdc6dcb22d769f",
+    "submission_metadata.txt": "0af33c795322c341e2278f5783a676683212526cd9d9c25d11a067c243fb4644",
+    "technical_report.pdf": "c23759f1dfcec01a5f204896859a5b0aca530ed58117fdf1512e11826acabeb1",
+    "verification.json": "5f8d24e83cb3f1d010c89bdf373960ca3fb64379adf5158caf4ad557a052b9c6"
+  },
+  "article_pages": 16,
+  "technical_report_pages": 33,
+  "article_references": 22,
+  "article_source_inputs": 13,
+  "reproduction_package_files": 310,
+  "unit_tests": 58,
+  "experiment_archives_validated": 11,
+  "separate_exact_rational_audit_reexecuted": true,
+  "ac_fw_runs_replayed_exactly": {
+    "records": 108,
+    "exactly_matching_fields": [
+      "objective",
+      "certificate",
+      "iteration",
+      "function_evals",
+      "gradient_evals",
+      "lmo_evals",
+      "accepted_steps",
+      "rejected_steps"
+    ]
+  },
+  "article_evidence": "All five tables and the 80-row claim ledger match byte-for-byte; regenerated figure rendering matches",
+  "isolated_source_pdf_text_matches": true,
+  "extracted_article_and_report_pdf_text_matches": true,
+  "pdf_font_embedding_checked": true,
+  "visual_review_article_pages": [
+    1,
+    4,
+    7,
+    8,
+    15,
+    16
+  ],
+  "deliverables": [
+    {
+      "id": "article",
+      "requirement": "Focused English article with complete principal proofs, authors, validated tables, readable figures and limitations",
+      "evidence": [
+        "Release/2026-10-15/article.pdf",
+        "Paper/article.tex",
+        "Release/2026-10-15/verification.json: article, isolated_source, extracted_papers"
+      ],
+      "status": "verified_locally"
+    },
+    {
+      "id": "prior_work",
+      "requirement": "Primary-source comparison of closest assumptions, algorithms, certificates and oracle costs; no unsupported first or optimality claim",
+      "evidence": [
+        "Release/2026-10-15/literature_comparison.json",
+        "Paper/article_intro.tex",
+        "Paper/article_appendix.tex",
+        "Paper/article_references.tex"
+      ],
+      "status": "verified_locally"
+    },
+    {
+      "id": "technical_report",
+      "requirement": "Preserve expanded theory and historical studies as a printable technical report",
+      "evidence": [
+        "Release/2026-10-15/technical_report.pdf",
+        "Paper/manuscript.tex",
+        "Release/2026-10-15/verification.json: technical_report, extracted_papers"
+      ],
+      "status": "verified_locally"
+    },
+    {
+      "id": "reproduction",
+      "requirement": "Self-contained local code/data/results package, pinned dependencies, source provenance and commands validated after extraction",
+      "evidence": [
+        "Release/2026-10-15/reproducibility.zip",
+        "Release/2026-10-15/verification.json: checks, replayed_method_records, evidence_roundtrip",
+        "requirements.txt",
+        "requirements-paper.txt"
+      ],
+      "status": "verified_locally"
+    },
+    {
+      "id": "source_bundle",
+      "requirement": "Portable article LaTeX source archive, compiled from an isolated extraction and checked for references/fonts/layout",
+      "evidence": [
+        "Release/2026-10-15/arxiv_source.zip",
+        "Release/2026-10-15/verification.json: isolated_source",
+        "Release/2026-10-15/manifest.json"
+      ],
+      "status": "verified_locally"
+    },
+    {
+      "id": "handoff",
+      "requirement": "Russian guide stating scientific contribution, files, reproduction, limitations and external submission status",
+      "evidence": [
+        "Release/2026-10-15/README_RU.txt",
+        "Release/2026-10-15/submission_metadata.txt",
+        "Release/2026-10-15/manifest.json"
+      ],
+      "status": "verified_locally"
+    }
+  ],
+  "limits": [
+    "Local PDFLaTeX checks only; no server-side arXiv build or external submission",
+    "No independent mathematical peer review or verified absolute priority",
+    "Numerical reference brackets are not directed-rounding interval certificates",
+    "Affiliations, email, distribution license and personal author review remain for the authors before external submission"
+  ]
+}

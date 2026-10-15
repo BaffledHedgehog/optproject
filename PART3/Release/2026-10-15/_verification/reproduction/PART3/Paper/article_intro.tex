@@ -1,0 +1,62 @@
+\section{Introduction}
+Frank--Wolfe (FW) methods solve linear subproblems in place of
+projections. Backtracking makes their quadratic step models usable
+without a prescribed smoothness constant, and away steps improve
+progress on polytopes~\cite{braun,pedregosa,lacostejaggi}.
+A global curvature bound can nevertheless discard substantial
+information when curvature decreases with the objective value.
+We consider the loss-suboptimality Hessian condition introduced in
+\cite{warmup}, specialized to a constrained convex problem.
+
+Our question is quantitative: what does ordinary backtracking guarantee
+for an observable stopping rule under this condition, including its
+initial estimate and all trial evaluations? Theorem~\ref{thm:fw}
+answers it with separate $H_0/\varepsilon$ and $H_1\log(1/\varepsilon)$
+contributions. The main device is a potential for estimates that remain
+too large as the certificate enters lower dyadic levels. It does not
+change the algorithm or restrict the LMO to a sublevel set.
+Theorem~\ref{thm:afw} extends the result by standard atom-removal
+counting. Under a geometric gap inequality,
+Theorem~\ref{thm:geometric} gives logarithmic accuracy dependence with
+an explicit initial $H_1$ cost. Complete proofs are provided below.
+
+\paragraph{Related analyses.}
+Function-dependent smoothness and two-regime gradient-method bounds
+precede this work~\cite{warmup,lobanovkoloskova,lobanov}.
+Vyguzov and Stonyakin~\cite{vyguzov} analyze FW under gradient-norm
+dependent smoothness. On a compact convex domain,
+$f-f_Q^*\le D\norm{\nabla f}$ converts our condition to one such Hessian
+bound, but a global bound on the largest gradient does not retain the
+separated dependence studied here.
+Pedregosa et al.~\cite[Theorems 1, 3, and 4]{pedregosa} already give
+backtracking trial counts, an averaged-gradient Fenchel dual guarantee,
+and linear AFW convergence with accepted local curvature estimates.
+Our scalar lower-bound maximum differs from that Fenchel dual; their
+values cannot simply be identified. The result here specializes local
+curvature to a certificate threshold and explicitly accounts for lag.
+It does not claim priority for backtracking, dual certificates, linear
+AFW convergence, or the telescoping identity for rejected trials.
+
+Other related frameworks include generalized self-concordant FW,
+adaptive Bregman steps, and adaptive conditional gradient
+sliding~\cite{selfconcordant,bregmanfw,adcgs}.
+Extended-curvature bounds and restarted error-bound schemes already
+provide two-regime and geometric rates~\cite{wirth,restartfw};
+linear objective- and FW-gap convergence beyond global gradient
+smoothness is also known for log-homogeneous barriers~\cite{zhao}.
+Auto-conditioned FW supplies a practical comparator with different
+preprocessing and oracle accounting~\cite{autoconditioned}.
+Gradient-difference initialization with backtracking~\cite{khademi}
+and line-search-free conditional gradients~\cite{yagishita}
+provide further parameter-adaptive alternatives.
+Appendix~\ref{app:comparison} specifies the differences used in our
+comparison. A direct global-smoothness substitution is generally weaker,
+but that observation is not a claim that no equivalent consequence
+can be obtained from another adaptive analysis.
+
+The empirical study addresses three issues relevant to interpreting
+these bounds: whether certificate initialization helps independently of
+a starting-point change; whether away steps resolve active-face
+obstructions; and whether failure to stop reflects remaining primal
+error or a conservative certificate. Oracle budgets are kept separate,
+and failed runs are retained.

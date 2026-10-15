@@ -1,0 +1,85 @@
+{
+  "objective": "до-ресёрчи до принтабельных материалов",
+  "date": "2026-10-15",
+  "authors": [
+    {
+      "as_provided": "Ярослав Ляхов Павлович",
+      "article_name": "Yaroslav P. Lyakhov"
+    },
+    {
+      "as_provided": "Суворов Степан",
+      "article_name": "Stepan Suvorov"
+    }
+  ],
+  "deliverables": [
+    {
+      "id": "article",
+      "requirement": "Focused English article with complete principal proofs, authors, validated tables, readable figures and limitations",
+      "evidence": [
+        "Release/2026-10-15/article.pdf",
+        "Paper/article.tex",
+        "Release/2026-10-15/verification.json: article, isolated_source, extracted_papers"
+      ],
+      "status": "verified_locally"
+    },
+    {
+      "id": "prior_work",
+      "requirement": "Primary-source comparison of closest assumptions, algorithms, certificates and oracle costs; no unsupported first or optimality claim",
+      "evidence": [
+        "Release/2026-10-15/literature_comparison.json",
+        "Paper/article_intro.tex",
+        "Paper/article_appendix.tex",
+        "Paper/article_references.tex"
+      ],
+      "status": "verified_locally"
+    },
+    {
+      "id": "technical_report",
+      "requirement": "Preserve expanded theory and historical studies as a printable technical report",
+      "evidence": [
+        "Release/2026-10-15/technical_report.pdf",
+        "Paper/manuscript.tex",
+        "Release/2026-10-15/verification.json: technical_report, extracted_papers"
+      ],
+      "status": "verified_locally"
+    },
+    {
+      "id": "reproduction",
+      "requirement": "Self-contained local code/data/results package, pinned dependencies, source provenance and commands validated after extraction",
+      "evidence": [
+        "Release/2026-10-15/reproducibility.zip",
+        "Release/2026-10-15/verification.json: checks, replayed_method_records, evidence_roundtrip",
+        "requirements.txt",
+        "requirements-paper.txt"
+      ],
+      "status": "verified_locally"
+    },
+    {
+      "id": "source_bundle",
+      "requirement": "Portable article LaTeX source archive, compiled from an isolated extraction and checked for references/fonts/layout",
+      "evidence": [
+        "Release/2026-10-15/arxiv_source.zip",
+        "Release/2026-10-15/verification.json: isolated_source",
+        "Release/2026-10-15/manifest.json"
+      ],
+      "status": "verified_locally"
+    },
+    {
+      "id": "handoff",
+      "requirement": "Russian guide stating scientific contribution, files, reproduction, limitations and external submission status",
+      "evidence": [
+        "Release/2026-10-15/README_RU.txt",
+        "Release/2026-10-15/submission_metadata.txt",
+        "Release/2026-10-15/manifest.json"
+      ],
+      "status": "verified_locally"
+    }
+  ],
+  "status": "verified_local_release",
+  "publication": "Local preparation only; no external submission or messages authorized by this plan.",
+  "release_directory": "Release/2026-10-15",
+  "completion_audit": "Work/printable_completion_audit.json",
+  "external_submission": false,
+  "independent_peer_review": false,
+  "superseded_by_scientific_revision": "Release/2026-10-15-research-v3"
+}

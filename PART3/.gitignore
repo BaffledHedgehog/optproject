@@ -1,0 +1,9 @@
+**/__pycache__/
+Work/smoke_results/
+Work/reproduced_baseline/
+Work/reproduced_factorial/
+Work/reproduced_away/
+Work/reproduced_robustness/
+Work/reproduced_constraint/
+Work/reproduced_multidata/
+Paper/build/

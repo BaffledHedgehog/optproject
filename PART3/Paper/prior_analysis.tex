@@ -1,0 +1,80 @@
+\section{What direct substitutions into existing bounds establish}
+\label{sec:prioranalysis}
+This comparison concerns the stated bounds below, rather than every
+consequence of the cited papers. It does not establish bibliographic priority.
+
+Pedregosa et al.~\cite{pedregosa}, Theorem 3, give a convex primal--dual
+bound in terms of averaged accepted smoothness estimates. Thus adaptive
+curvature and last-iterate dual guarantees are already present there.
+One cannot identify that dual value with the maximum of scalar tangent
+lower bounds used here: their dual variable averages gradients. This
+distinction alone does not prove a new rate; a transfer argument along
+the algorithm's trajectory could still exist.
+
+Here is an elementary illustration of the certificate distinction. For
+$f(x)=x^2/2$ on $[-1,1]$, the scalar tangent lower bound is
+$a(x)=-x^2/2-|x|$, whereas the Fenchel dual value is
+$\psi(u)=-u^2/2-|u|$. For the history $(-1,1)$,
+\[
+ \max_i a(x_i)=-3/2 < \psi((x_0+x_1)/2)=0.
+\]
+For the history $(-1,-1/2)$,
+\[
+ \max_i a(x_i)=-5/8 > \psi(-3/4)=-33/32.
+\]
+Thus the two lower bounds have no universal ordering for arbitrary
+tangent histories. These histories are not asserted to be iterates of
+the cited algorithm; neither example contradicts its theorem.
+
+A global Euclidean-smoothness substitution also loses information.
+Let $\Delta_Q=\max_{x\in Q}(f(x)-f_Q^*)$. Assumption~\eqref{eq:curvature}
+gives a valid bound $L_Q=H_0+H_1\Delta_Q$ on $Q$. Applying a conventional
+$O(L_QD^2/\varepsilon)$ estimate retains $\Delta_Q/\varepsilon$, rather
+than the logarithmic $H_1$ term. Replacing $\Delta_Q$ by $U_0$ is not
+automatically valid: $U_0$ only bounds the initial suboptimality.
+Restricting $Q$ to an initial sublevel set changes its LMO. Our local
+acceptance argument avoids that restriction, followed by a phase-wise
+count of estimates that remain too large. A finer use of an existing
+average-curvature bound remains an open priority question.
+
+The relative-smooth framework of Takahashi, Pokutta, and
+Takeda~\cite{bregmanfw} uses a kernel, a segment scaling condition, and
+additional assumptions for its accelerated conclusions. Its Euclidean
+specialization recovers ordinary smoothness bounds, so choosing a
+Euclidean kernel and $L=L_Q$ alone does not yield the separated
+$H_0,H_1$ dependence above. This does not exclude a more suitable
+kernel or a refined specialization of that analysis.
+
+For adaptive sliding~\cite{adcgs}, Corollary 3.3 concerns outer
+iterations with a running maximum of local curvature estimates;
+Theorem 2.1 separately bounds inner LMO effort. Its restarted
+Theorem 4.1 additionally assumes local strong convexity and uses local
+smoothness and strong-convexity parameters in the restart schedule.
+Our curvature assumption does not imply strong convexity: for example,
+$f(x_1,x_2)=\cosh(x_1)-1$ on $[-1,1]^2$ has $H_0=H_1=1$ and a line
+of minimizers. Consequently the restarted strong-convexity theorem
+cannot be invoked from our assumptions alone. A complete comparison
+must count all inner LMO calls and preserve the stopping certificate;
+we do not establish superiority over sliding methods.
+
+Wirth, Pe\~na, and Pokutta~\cite{wirth}, Definition 2.3(b) and
+Theorem 3.6, use a uniform extended-curvature constant and a vertex
+error bound for exact line search or a short step. Their linear
+and two-regime rates are prior results. Directly substituting a
+global $L_QD^2$ retains global curvature; a varying-curvature extension
+would require further analysis.
+
+Kerdreux, d'Aspremont, and Pokutta~\cite{restartfw}, Proposition 4.2
+and Theorem 5.1, already combine burn-in, computable strong-Wolfe
+stopping, unknown error-bound parameters, and cumulative LMO counts.
+The stated bound uses global away curvature. Our phases analyze
+ordinary backtracking without algorithmic restarts; this difference
+does not itself establish a novel bound.
+
+Zhao~\cite{zhao}, Theorems 4.1--4.2, establishes linear rates for both
+objective error and FW gap with logarithmically homogeneous barriers.
+Algorithm 1
+uses exact search or a local-Hessian analytic step, rather than our
+first-order quadratic backtracking. The function assumptions differ.
+The passage from primal to gap rates is therefore also prior in
+spirit, and is not claimed as novel here.

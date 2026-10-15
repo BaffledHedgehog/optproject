@@ -1,0 +1,121 @@
+{
+  "checked_on": "2026-10-15",
+  "scope": "Targeted primary-source comparison. It does not prove absence of equivalent results or bibliographic priority.",
+  "article_claim": "Explicit certificate and total-trial bounds for existing halving/doubling FW/AFW; an optimal pointwise gap envelope with attaining objectives; zero-base face structure and finite AFW termination with separated initialization lag. No new algorithm, optimal oracle complexity, universal practical superiority or absolute-priority claim.",
+  "queries": [
+    "Frank-Wolfe H_0 H_1 smoothness",
+    "Frank-Wolfe function-dependent curvature",
+    "conditional gradient loss-dependent smoothness",
+    "Frank-Wolfe two-phase backtracking certificate",
+    "Frank-Wolfe generalized smoothness",
+    "Primary-reference follow-up from Auto-Conditioned FW and Adaptive Conditional Gradient Sliding",
+    "Frank-Wolfe finite termination weak sharp minima active-set identification",
+    "function-value Hessian bound self-bounding regularity",
+    "function-dependent smoothness exact gradient norm inequality"
+  ],
+  "sources": [
+    {
+      "key": "warmup",
+      "url": "https://arxiv.org/html/2510.03164v2",
+      "checked": "H0,H1 definition; convex gradient analysis; related work",
+      "conclusion": "The loss-suboptimality Hessian model is prior. Its gradient-method results are not an LMO stopping theorem."
+    },
+    {
+      "key": "lobanovkoloskova",
+      "url": "https://arxiv.org/html/2605.14800v2",
+      "checked": "Appendix C.4, especially C.4.2",
+      "conclusion": "Two-regime deterministic gradient-descent complexity under the same smoothness model is prior. Phases alone are not a new contribution."
+    },
+    {
+      "key": "pedregosa",
+      "url": "https://arxiv.org/html/1806.05123v5",
+      "checked": "Algorithms 1-2; Theorems 1,3,4 and associated proof identities",
+      "conclusion": "Quadratic backtracking, total-trial telescoping, averaged-gradient Fenchel certificates and local-curvature AFW geometric progress are prior. The scalar tangent envelope cannot simply be identified with their dual."
+    },
+    {
+      "key": "vyguzov",
+      "url": "https://arxiv.org/html/2510.16468v5",
+      "checked": "Model assumptions; Theorem 5.1; two-regime statements in Table 1",
+      "conclusion": "Gradient-norm dependent FW and adaptive generalized smoothness are prior. A direct global substitution retains a largest-gradient contribution."
+    },
+    {
+      "key": "autoconditioned",
+      "url": "https://arxiv.org/html/2605.15512v2",
+      "checked": "Assumptions 1-2; Algorithms 1-2; damping Eq.(6)",
+      "conclusion": "Native comparator uses a compulsory initial LMO move and one charged trial per outer iteration; global gradient-Lipschitz assumption is stronger than the exponential objectives used empirically."
+    },
+    {
+      "key": "khademi",
+      "url": "https://arxiv.org/html/2510.11440v1",
+      "checked": "Related-work lag discussion; Section 3 gradient-difference/backtracking strategy; Theorems 4.4-4.5",
+      "conclusion": "The motivation of slow downward curvature adaptation is explicit prior work. Their stated constrained rates retain global smoothness/gradient constants and concern a different initialization strategy."
+    },
+    {
+      "key": "yagishita",
+      "url": "https://arxiv.org/html/2509.14670",
+      "checked": "Section 3.1; Algorithm 3; Theorem 3.1",
+      "conclusion": "A line-search-free composite conditional-gradient method and nonconvex minimum-gap guarantee precede the article."
+    },
+    {
+      "key": "adcgs",
+      "url": "https://arxiv.org/html/2601.20443v2",
+      "checked": "Theorem 2.1; Corollary 3.3; Algorithm 3 and Theorem 4.1",
+      "conclusion": "Count inner LMOs separately from accelerated outer iterations. The stated restart theorem uses local strong convexity and smoothness parameters in its schedule; it cannot be applied from the Hessian assumption alone. No superiority over sliding is claimed."
+    },
+    {
+      "key": "bregmanfw",
+      "url": "https://arxiv.org/html/2504.04330v4",
+      "checked": "Relative-smooth kernel and segment-scaling assumptions; Euclidean specialization",
+      "conclusion": "Adaptive Bregman FW is a broader prior framework. A single global Euclidean substitution is weaker; more suitable kernels or refined consequences are not ruled out."
+    },
+    {
+      "key": "wirth",
+      "url": "https://arxiv.org/html/2406.18789v3",
+      "checked": "Definition 2.3(b); Theorem 3.6",
+      "conclusion": "Uniform extended-curvature and vertex-error-bound AFW rates are prior; the stated theorem uses exact search or a short step."
+    },
+    {
+      "key": "restartfw",
+      "url": "https://arxiv.org/html/1810.02429v4",
+      "checked": "Lemmas 3.4,3.6; Proposition 4.2; Theorem 5.1",
+      "conclusion": "Polytope scaling, HEB implications, burn-in, computable stopping and adaptive restart rates are prior. The stated restart result uses global away curvature."
+    },
+    {
+      "key": "zhao",
+      "url": "https://arxiv.org/html/2305.17808v4",
+      "checked": "Algorithm 1; Theorems 4.1-4.2",
+      "conclusion": "Linear objective- and FW-gap convergence outside global gradient smoothness is prior for log-homogeneous barriers, using exact search or local Hessian information."
+    },
+    {
+      "key": "lacoste2016",
+      "url": "https://arxiv.org/html/1607.00345",
+      "checked": "Theorem 1 proof, Eqs.(8)-(15)",
+      "conclusion": "The quadratic-descent two-branch gap inversion is prior. The article uses a source-dependent local curvature bound and does not claim a new general inversion."
+    },
+    {
+      "key": "kale",
+      "url": "https://arxiv.org/pdf/2210.06705",
+      "checked": "Assumption 2; Lemma 11, pp. 28-29",
+      "conclusion": "Function-value Hessian bounds and transformed-potential self-bounding precede the affine warm-up model. Its displayed gradient bound uses rho(value)^2 times an integral of 1/rho; our affine-class ray comparison yields exact polynomial constants."
+    },
+    {
+      "key": "caoselfbound",
+      "url": "https://arxiv.org/html/2503.04712v3",
+      "checked": "Assumption 1.1; Corollary 1; Appendix A.3 proof and citation of 2022 Lemma 11",
+      "conclusion": "General second-order self-bounding regularity is prior. Corollary 1 gives the log-enlarged affine-model gradient bound; it does not provide our constrained LMO gap envelope. No general self-bounding principle is claimed new."
+    },
+    {
+      "key": "bomze",
+      "url": "https://optimization-online.org/wp-content/uploads/2019/12/7537.pdf",
+      "checked": "Theorem 3.1, Eq. (3.8); Sections 4-5; generic-polytope appendix",
+      "conclusion": "Finite active-set identification and maximal away deletions near a strictly complementary solution are prior. Our zero-base model forces the entire solution set to be the exposed face and supplies an objective-level neighborhood and inherited-curvature trial count."
+    },
+    {
+      "key": "garber",
+      "url": "https://arxiv.org/html/2006.00558",
+      "checked": "Assumption 2; Theorems 4-5; Algorithms 1-2",
+      "conclusion": "Finite vertex convergence and optimal-face identification with line-search FW variants are prior. We do not claim the general finite-identification phenomenon or that identifying a face solves a nonconstant function on it."
+    }
+  ],
+  "attribution_correction": "Earlier wording attributing introduction of function-value Hessian bounds to the warm-up paper was too narrow. The focused article now cites the prior 2022 and 2025 self-bounding frameworks."
+}

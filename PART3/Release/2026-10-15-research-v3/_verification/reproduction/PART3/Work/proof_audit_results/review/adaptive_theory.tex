@@ -1,0 +1,102 @@
+\begin{proposition}[Scope of the preceding bound]\label{prop:exact}
+Classical Frank--Wolfe with exact minimization over each oracle segment
+and the accumulated certificate~\eqref{eq:certificate} satisfies
+Theorem~\ref{thm:main}'s update bound without knowing $H_0,H_1$.
+\end{proposition}
+\begin{proof}
+The exact minimizer performs at least as well as the feasible quadratic
+step with $V=U_k$. Its local decrease thus satisfies
+\eqref{eq:certificateprogress}, and the phase proof applies unchanged.
+\end{proof}
+This observation follows from our argument; it is not a bibliographic
+priority claim. It also gives no bound on the function evaluations needed
+to obtain an exact scalar minimizer. Finite-tolerance golden-section
+search in the experiment is not its literal exact-arithmetic implementation.
+
+\section{Adaptation without curvature parameters}
+Assume a positive known upper bound $D$ on the diameter. Maintain the
+same accumulated certificate, and initialize a dimensionless estimate
+$\theta_{-1}=1$. Whenever $U_k>\varepsilon$, start with
+$\theta=\theta_{k-1}/2$, set
+\[
+ L=\theta U_k/D^2,\qquad
+ \alpha=\min\{1,G_k/(Lq_k^2)\},
+\]
+and test
+\begin{equation}\label{eq:accept}
+ f(x_k+\alpha d_k)\le f(x_k)-\alpha G_k
+                          +\tfrac12L\alpha^2q_k^2.
+\end{equation}
+Double $\theta$ on rejection, and store the accepted value as $\theta_k$.
+Accepted function values are reused. This is a standard quadratic
+acceptance test~\cite{pedregosa} with a certificate-dependent normalization;
+adaptation to unknown smoothness is not new by itself~\cite{autoconditioned}.
+
+\begin{lemma}[Accepted-curvature envelope]\label{lem:adaptive}
+The search terminates in exact arithmetic and its accepted curvature obeys
+\begin{equation}\label{eq:envelope}
+ L_k\le\max\left\{\frac{U_k}{2^{k+1}D^2},\ 2(H_0+H_1U_k)\right\}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For $L\ge H_0+H_1U_k$, the initial-descent argument of
+Lemma~\ref{lem:progress} implies~\eqref{eq:accept}. Hence doubling terminates.
+The sufficient threshold for $\theta$ is
+$T_k=D^2(H_0/U_k+H_1)$. Acceptance gives monotone $f$ and therefore
+nonincreasing $U_k$; thus $T_k$ is nondecreasing.
+Inductively suppose $\theta_{k-1}\le\max\{2^{-k},2T_{k-1}\}$.
+If the first trial is accepted, $\theta_k=\theta_{k-1}/2
+\le\max\{2^{-k-1},T_k\}$. Otherwise the last rejected value is smaller
+than $T_k$, so the accepted value is smaller than $2T_k$.
+The initial case starts from $\theta_{-1}=1$. Multiply the resulting
+bound by $U_k/D^2$ to obtain~\eqref{eq:envelope}.
+\end{proof}
+
+\begin{theorem}[Unknown curvature and total trial cost]\label{thm:adaptive}
+Under the assumptions of Theorem~\ref{thm:main}, with
+$J=\lceil\log_2(U_0/\varepsilon)\rceil$, certificate-scaled backtracking
+attains $U_N\le\varepsilon$ within
+\begin{equation}\label{eq:adaptivecomplexity}
+ N\le\left\lceil(7+8H_1D^2)J+32H_0D^2/\varepsilon\right\rceil
+\end{equation}
+updates. It uses $N+1$ gradients and linear-oracle calls. For the actual
+number $N\ge1$ of updates, its function calls, including all rejected
+trials, satisfy
+\begin{equation}\label{eq:trials}
+ N_f\le1+2N+
+ \left\lceil\log_2\max\{1,2D^2(H_0/\varepsilon+H_1)\}\right\rceil.
+\end{equation}
+For $N=0$, only the initial function value is needed. The statements use
+exact oracles and exact arithmetic. The $H_0,H_1$ in the bound describe
+the objective; they are not inputs to this adaptive algorithm.
+\end{theorem}
+\begin{proof}
+Acceptance guarantees a decrease of at least $G_k\alpha_k/2$.
+From~\eqref{eq:envelope}, for $k\ge0$,
+\[
+ L_k\le2H_0+(2H_1+1/(2D^2))U_k.
+\]
+Thus the progress and phase argument of Theorem~\ref{thm:main} applies
+with effective constants $2H_0$ and $2H_1+1/(2D^2)$, proving
+\eqref{eq:adaptivecomplexity}. These effective constants only bound
+accepted step curvatures; they are not a new Hessian assumption.
+
+Let $r_k$ count rejected trials. The recursion is exactly
+$\theta_k=2^{r_k-1}\theta_{k-1}$. Telescoping gives
+\[
+ \sum_{k=0}^{N-1}(r_k+1)=2N+\log_2\theta_{N-1}.
+\]
+The last source certificate exceeds $\varepsilon$. Hence
+Lemma~\ref{lem:adaptive} bounds the last normalized estimate by
+$\max\{1,2D^2(H_0/\varepsilon+H_1)\}$. Add the initial function value
+and reuse each accepted value to obtain~\eqref{eq:trials}.
+\end{proof}
+The recurrence is invariant under $\widetilde f=af+b$, $a>0$, with
+tolerance scaled by $a$: $G,U,L$ scale together and $\alpha,\theta$ do not.
+As with other sufficient-decrease tests, floating-point differences near
+an optimum can violate exact-arithmetic comparisons. In a planted active
+example, certificate scales near $10^{-9}$ can correspond to decreases
+below $10^{-18}$. Envelope tests stop at $10^{-6}$; the main study uses
+$10^{-5}$. Roundoff is not included in the theorem.
+
+\input{ordinary_backtracking}

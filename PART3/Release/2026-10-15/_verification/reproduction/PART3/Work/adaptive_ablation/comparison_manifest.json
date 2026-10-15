@@ -1,0 +1,10 @@
+{
+  "bootstrap_seed": 7103,
+  "bootstrap_samples": 10000,
+  "statistic": "median of per-seed function-call ratios, including capped runs",
+  "numerator": "adaptive_certificate",
+  "denominator": "adaptive_L_initial",
+  "interpretation": "Descriptive percentile interval, no multiplicity correction; n=10 starts per case.",
+  "script_sha256": "8a405f221e7eb97c421b92610c910a1fe778112a6b5ee9d0e614c1375877b79e",
+  "input_sha256": "f083f1a81e386c9fa57c30c2b89545a51ea63b3640e64547508c681e1524f7b9"
+}

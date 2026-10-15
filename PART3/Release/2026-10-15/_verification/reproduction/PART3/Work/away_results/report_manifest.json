@@ -1,0 +1,12 @@
+{
+  "source": "report_source.py",
+  "source_sha256": "3e53a345711633851a6623122219b985e2b1f8b014d55c7509fe7e59e20ffd10",
+  "experiment_manifest_sha256": "83872759ca9edaef4f2284606451c7ea264d9fb1501ff90ce30cf370499c437a",
+  "report_sha256": "8e2b0978bbfcaac1221cff2d1a9684d9847f00045112c20e9da4d35aad849f3a",
+  "table_sha256": "93db14171ba2293af7b8b57dee2f517e078c26e6eebdf798b7d34aadc16591f8",
+  "matplotlib_version": "3.10.9",
+  "figure_sha256": {
+    "away_comparison.pdf": "84d6fdba1641751be9db0668247c88b421eacf7ba7a081d8ee2a212a52d48c76",
+    "away_comparison.png": "dcf62e4a9804cb2ccc9d3734afe9dbb791aca978a44ac8746f371426e5a517a9"
+  }
+}

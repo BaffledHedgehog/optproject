@@ -1,0 +1,324 @@
+\section{Comparison steps and certificate normalization}
+\label{app:explicit}
+If $H_0,H_1$ are supplied, consider
+\[
+ \alpha=\min\{1,G/[(H_0+H_1U)q^2]\},
+\]
+with a full step when its curvature is zero.
+Lemma~\ref{lem:local}'s descent argument, with $U\ge\delta$,
+gives
+\[
+ f_k-f_{k+1}\ge\frac12\min\{U_k,U_k^2/[D^2(H_0+H_1U_k)]\}.
+\]
+In a phase $b/2<U\le b$, progress is at least
+$\min\{b/4,b^2/(8D^2H_0+4D^2H_1b)\}$, because the right-hand side
+is increasing in $U>0$. The phase budget therefore permits at most
+$5+4H_1D^2+8H_0D^2/b$ updates. Summing the same dyadic levels proves
+\begin{equation}\label{eq:explicitcount}
+ N\le\ceil{(5+4H_1D^2)J+16H_0D^2/\varepsilon}.
+\end{equation}
+There are $N+1$ calls of each oracle for this explicit step.
+Exact segment minimization performs at least as well as the comparison
+step, so it inherits~\eqref{eq:explicitcount} without receiving
+$H_0,H_1$. This does not bound the inner function or gradient calls
+needed for an exact scalar minimizer. The expanded technical report
+also derives a hyperbolic step with the same order; its elementary
+function is not needed for Theorem~\ref{thm:fw}.
+
+For completeness, certificate-scaled backtracking starts with
+$\theta_{-1}=1$, tries $\theta_{k-1}/2$, sets $L=\theta U_k/D^2$,
+and doubles $\theta$ on a failed quadratic test. The sufficient
+threshold $T_k=D^2(H_0/U_k+H_1)$ is nondecreasing. By induction,
+\[
+ \theta_k\le\max\{2^{-k-1},2T_k\},\qquad
+ L_k\le\max\{U_k/(2^{k+1}D^2),2(H_0+H_1U_k)\}.
+\]
+Indeed a first-trial acceptance halves the previous bound, and after
+a rejection the accepted estimate is less than $2T_k$.
+Thus $L_k\le2H_0+(2H_1+1/(2D^2))U_k$. Applying the preceding
+phase argument with these effective constants gives
+\[
+ N\le\ceil{(7+8H_1D^2)J+32H_0D^2/\varepsilon}.
+\]
+The recursion $\theta_k=2^{r_k-1}\theta_{k-1}$ gives
+\[
+ N_f\le1+2N+\ceil{\log_2\max\{1,2D^2(H_0/\varepsilon+H_1)\}}.
+\]
+The last source before an update has $U>\varepsilon$, which bounds
+$\theta_{N-1}$. This normalization requires $D$ and is optional for
+the two-phase order. Theorems~\ref{thm:fw} and~\ref{thm:afw} concern
+ordinary backtracking, rather than this separate variant.
+
+\section{Geometric implications and attaining examples}
+\label{app:geometry}
+Let $p=\inner{\nabla f(x)}{v-s}$ be the pairwise gap over the full
+atom set and current active set. The selected FW/away gap is at
+least $p/2$. The standard polytope scaling inequality gives, for
+any optimal $x^*\ne x$,
+\[
+ p\ge W\frac{\inner{\nabla f(x)}{x-x^*}}{\norm{x-x^*}}.
+\]
+See~\cite[Theorem 3]{lacostejaggi} and
+\cite[Lemmas 3.4 and 3.6]{restartfw}. For quadratic growth, choose
+a nearest optimum. Convexity and the growth inequality imply
+$p\ge W\delta/\operatorname{dist}(x,X^*)
+\ge W\sqrt{\gamma\delta/2}$. Hence
+$g^2\ge\gamma W^2\delta/8$, giving $\kappa=\gamma W^2/16$.
+Monotone iterates stay in the initial sublevel set where growth is
+assumed. No uniqueness is required. For strong convexity,
+$\inner{\nabla f(x)}{x-x^*}\ge\delta+\mu\norm{x-x^*}^2/2$;
+minimizing $\delta/r+\mu r/2$ over $r>0$ gives
+$p\ge W\sqrt{2\mu\delta}$ and $\kappa=\mu W^2/4$.
+These geometric implications are prior results.
+
+\subsection{Gap-envelope equality and zero base curvature}
+\label{app:bridge}
+Let $Q=[-D/2,D/2]$, $x=D/2$ and $f(y)=h(y-z)^2/2$, $h>0$.
+For $z\in Q$, $\delta=h(x-z)^2/2$ and
+$G=hD(x-z)=\sqrt{2hD^2\delta}$, attaining the square-root branch
+of~\eqref{eq:sharpbridge} with $H_0=h,H_1=0$.
+For $z<-D/2$, the constrained optimum is $-D/2$,
+$\delta=-hDz$ and $G=\delta+hD^2/2$, attaining its full-step branch.
+This proves sharpness for that quadratic descent inequality, not an
+optimal envelope over all functions satisfying~\eqref{eq:curvature}
+with $H_1>0$.
+
+The example $f(x)=t+t^3$, $t=1/2-x\in[0,1]$, has
+$f''(x)=6t\le6f(x)$, so $H_0=0,H_1=6$.
+It is not strongly convex. At a nonoptimal interior point both
+endpoint atoms are active, and the selected gap is
+$(1+3t^2)\max\{t,1-t\}\ge1/2$; the nonoptimal endpoint also satisfies
+this inequality. Since $\delta\le2$, condition~\eqref{eq:geometry}
+holds with $\kappa=1/16$. At zero error the geometric inequality is
+immediate. This shows the $H_0=0$ extension is nonvacuous.
+
+\section{Lower-bound controls and deterministic oracle errors}
+\label{app:monitors}
+Write $g_j=\nabla f(x_j)$ and $a_j=f(x_j)-\inner{g_j}{x_j}$.
+For a completed block $B$ of $K$ consecutive paid sources,
+\[
+ b_B=\bar a_B+\min_{v\in Q}\inner{\bar g_B}v\le f_Q^*.
+\]
+Convexity gives $f(v)\ge a_j+\inner{g_j}v$ for each source;
+average and minimize to prove validity. Disjoint blocks begin at
+source zero, and an incomplete block is not queried. The new lower
+bound is the maximum of $\ell_k$ and all completed $b_B$.
+Its certificate is nonincreasing and at most $U_k$ on the same
+monotone path, so its first crossing occurs no later in updates,
+function or gradient calls. At source $k$, exactly
+$\lfloor(k+1)/K\rfloor$ additional full LMOs have been performed.
+Total LMO cost need not decrease. The monitors affect neither the
+line search nor the initial $M$; each reported cost is for one
+isolated monitor, excluding the other diagnostic monitors.
+An affordable budget source pays its entire scheduled verification.
+
+These uniform block bounds differ from the averaged-gradient Fenchel
+dual in~\cite[Theorem 3]{pedregosa}. When the global conjugate exists,
+Fenchel equality and Jensen give
+\[
+ b_B=-\overline{f^*(g_j)}-\sigma_Q(-\bar g_B)
+     \le-f^*(\bar g_B)-\sigma_Q(-\bar g_B).
+\]
+Here $f^*$ denotes the conjugate, not the scalar optimum $f_Q^*$.
+No transfer of that paper's theorem or averaging weights is asserted.
+With a valid supplied strong-convexity constant $\mu$,
+$f(x_j)-\norm{g_j}^2/(2\mu)\le f_Q^*$ follows by minimizing the
+quadratic lower model over $\R^d$~\cite[Appendix B]{karimi}.
+Caching these bounds costs no LMO, but uses additional information.
+Native stopping checks on one synthetic interior instance verify all
+20 method/profile pairs against the attainable-prefix construction
+and instrument actual oracle calls. They do not represent 2160
+additional native solver runs.
+
+\subsection{Certificate validity with bounded deterministic errors}
+\label{app:inexact}
+If $|\widehat f-f(x)|\le\nu$,
+$\norm{\widehat g-\nabla f(x)}\le\rho$ and
+$\inner{\widehat g}s\le\min_{v\in Q}\inner{\widehat g}v+\eta$
+with known bounds, then
+\[
+ \ell^{\rm safe}=\widehat f+\inner{\widehat g}{s-x}
+                      -\nu-\rho D-\eta\le f_Q^*.
+\]
+For each $v\in Q$, convexity gives
+$f(v)\ge\widehat f-\nu+\inner{\widehat g}{v-x}-\rho D
+\ge\ell^{\rm safe}$; minimize over $v$.
+A maximum of such lower bounds remains valid, and
+$\widehat f+\nu-\max_j\ell_j^{\rm safe}$ is an upper certificate.
+This is a validity statement, not a convergence theorem for noisy
+directions. Empirical variance is not a deterministic norm bound.
+
+\section{Additional protocol details and controls}
+\label{app:protocol}
+\paragraph{Features.}
+Seoul uses eight numerical weather features (temperature, humidity,
+wind speed, visibility, dew point, solar radiation, rainfall and snowfall),
+sine/cosine of hour and weekday, holiday and functioning indicators.
+Metro uses temperature, rain, snow, cloud cover, sine/cosine of hour,
+weekday and day of year (period 365.25), and a holiday indicator.
+Other textual categories are omitted. Features constant on training
+data are dropped before the $\tanh$ transform; source encodings and
+feature names are recorded in the manifests. These deterministic
+choices precede the solver comparisons.
+
+\paragraph{Native comparator.}
+For $x\ne y$, the AC-FW estimate is
+\[
+ \ell(x,y)=\frac{2|f(y)-f(x)-\inner{\nabla f(x)}{y-x}|}{\norm{y-x}^2},
+\]
+and it is zero if $x=y$. Its update is the maximum of this trial estimate
+and $r_kL_k$, with $r_k=1-1/((k+1)\log^2(k+3))$.
+Only strict objective decrease accepts a trial.
+After $N$ outer trials the charged counts are
+$N_f=N_{\rm LMO}=N+2$, $N_g=N_{\rm accepted}+2$.
+Rejected trials count against the cap. All primary count-data starts
+are atoms, as in the cited initialization. Parameter-hidden tests on
+both count datasets instrument preprocessing, rejected trials and
+oracle calls independently of recorded counters.
+
+\paragraph{Planted geometry.}
+For the initialization controls, let
+\[
+ \phi(x)=m^{-1}\sum_i[\cosh(a_i^\top(x-x^*))-1]
+                         +\mu\norm{x-x^*}^2/2,
+ \quad f(x)=\phi(x)-\lambda v^\top(x-x^*),
+\]
+where $\norm{x^*}_1=R$, $v\in\partial\norm{x^*}_1$ and
+$\lambda=0.15$. On $Q$, $f\ge\phi\ge0=f_Q^*$ and
+$\nabla f(x^*)=-\lambda v\ne0$. Valid constants are
+$H_0=\mu+\lambda_{\max}(A^\top A/m)$ and
+$H_1=\max_i\norm{a_i}^2$.
+The active and active-scaled families use $d=12,m=10$,
+$R=1.5,\mu=0.08$, with $x^*$ entries $(0.6,-0.5,0.4)$ at
+coordinates $(2,6,10)$; Gaussian row entries have standard deviation
+$0.22$ or $0.9$. The high-dimensional family has $d=60,m=40$
+and standard deviation $0.22$. Each has ten matched seeds.
+Off-support normal coordinates are uniform in $[-0.6,0.6]$.
+
+With $w=\operatorname{sign}(x^*)$, zero off support, the optimal-face
+slack $\sigma(x)=R-w^\top x$ obeys
+$\sigma(x+\alpha(s-x))=(1-\alpha)\sigma(x)+\alpha\sigma(s)$.
+Thus strict subunit steps to atoms on the face keep positive slack
+from an exterior start. A full initial vertex move can remove it.
+Moreover $f(x)\ge0.4\lambda\sigma(x)$ on these planted examples.
+This familiar FW face obstruction explains why initialization is a
+necessary control, not a new acceleration mechanism.
+
+\paragraph{Objective-unit study.}
+The separate radius/scale archive contains 360 runs on the WDBC
+logistic control and UCI Bike Sharing Poisson objective~\cite{wdbc,bike},
+three radii, five seeds, three positive scales
+and four BT methods. Accuracy is scaled with the objective.
+The 60 pairwise scale comparisons per certificate-initialized method
+compare final counters and sampled budget certificates, not bitwise
+identity of every intermediate iterate. All scalings of a problem
+are dependent controls. Additional studies and full baseline settings
+are retained in the expanded technical report and companion archive.
+
+\input{evidence/counts_table}
+
+\section{What the closest bounds directly establish}
+\label{app:comparison}
+The following comparison concerns specific stated results, not every
+possible consequence of their proofs.
+Khademi and Silveti-Falls~\cite[Theorems 4.4--4.5]{khademi}
+combine gradient-difference estimates with backtracking. Their stated
+constrained rates retain a global smoothness/gradient contribution;
+they also explicitly discuss slow downward adaptation of ordinary
+backtracking. Thus that motivation is prior. Yagishita and
+Ito~\cite[Algorithm 3, Theorem 3.1]{yagishita} analyze a line-search-free
+composite conditional-gradient method with a nondecreasing estimate
+and a nonconvex minimum-gap guarantee. These are different methods
+and stopping statements, not evidence for a general priority claim.
+Pedregosa et al.~\cite[Theorem 3]{pedregosa} bound a last-iterate
+Fenchel primal--dual gap using averaged accepted curvature estimates.
+Its dual lower value and the maximum scalar tangent lower bound have
+no general ordering for arbitrary histories: for $f=x^2/2$ on
+$[-1,1]$, histories $(-1,1)$ and $(-1,-1/2)$ reverse the order.
+These histories are not asserted to be algorithm trajectories and do
+not contradict that theorem. Its Theorem 4 already yields geometric
+progress from accepted local curvature, which our AFW proof specializes.
+
+Substituting $L_Q=H_0+H_1\max_Q\delta$ in a global smoothness bound
+retains the global gap range. The smaller initial certificate $U_0$
+does not bound curvature everywhere on $Q$; restricting the region
+to an initial sublevel set would change its LMO.
+Our first-return argument instead bounds only the tested descent
+segment. A phase count controls estimates above the current level.
+
+The deterministic convex result in~\cite[Appendix C.4]{lobanovkoloskova}
+already separates function-dependent-curvature regimes for gradient
+descent; it is not an LMO certificate theorem.
+The gradient-norm dependent FW analysis in~\cite[Theorem 5.1]{vyguzov}
+contains a largest-gradient contribution after a direct substitution.
+Neither the use of phases nor unknown-curvature adaptation alone
+is presented as new here.
+
+Takahashi et al.~\cite{bregmanfw} use relative smoothness, a kernel,
+and segment scaling. A Euclidean kernel with a single global $L_Q$
+does not by itself give the separated dependence above.
+For adaptive sliding~\cite[Theorems 2.1 and 4.1]{adcgs}, inner LMO
+effort is distinct from outer iterations, and the restarted theorem
+also requires local strong convexity and its scheduling parameters.
+Condition~\eqref{eq:curvature} alone does not give strong convexity:
+$\cosh(x_1)-1$ on a square has a line of minimizers.
+No superiority over sliding is established.
+
+Wirth et al.~\cite[Definition 2.3(b), Theorem 3.6]{wirth} use uniform
+extended curvature and a vertex error bound. Kerdreux et
+al.~\cite[Proposition 4.2, Theorem 5.1]{restartfw} already combine
+burn-in, computable strong-Wolfe stopping, unknown error-bound
+parameters and cumulative LMO counts, with global away curvature.
+Zhao~\cite[Theorems 4.1--4.2]{zhao} proves linear objective- and
+FW-gap rates for log-homogeneous barriers, using exact search or a
+local-Hessian step. Our function class and the evaluated algorithm
+differ. None of these comparisons rules out an equivalent refined
+specialization of another adaptive proof.
+
+\section{Reproducibility and evidence checks}
+\label{app:reproduction}
+The companion package includes source snapshots, raw data attribution,
+CSV results and SHA-256 manifests. The main real-data comparison
+joins 648 preserved records with 108 additional AC-FW records on the
+same cases; it does not count them as new datasets.
+The certificate study replays 432 existing paths and reports 2160
+dependent causal profiles. The initialization factorial also reuses
+earlier cases. Table values are generated from immutable CSVs; the
+claim ledger records each selection and its value.
+
+The recorded environment uses Python 3.13.5, NumPy 2.5.2, SciPy 1.16.3,
+Matplotlib 3.10.9 and scikit-learn 1.8.0, with BLAS/OpenMP thread
+environment variables set to one. From the extracted repository root:
+\begin{verbatim}
+python -m pip install -r PART3/requirements.txt
+python -m unittest discover -s PART3/Work -p "test_*.py"
+python PART3/Work/validate_results.py
+python PART3/Paper/prepare_article_evidence.py
+\end{verbatim}
+The 58 tests cover derivatives, reference independence, actual oracle
+calls, certificates, accepted progress and curvature limits. Full
+trajectory audits run before trace sampling; saved validators also
+check provenance and budget accounting.
+A separate finite audit uses exact rational arithmetic for 8370
+phase configurations, 57989 abstract curvature-state visits, phase
+budgets, gap inversion and atom-removal counts. It overapproximates
+possible curvature histories and does not assert that every state
+is realizable by an objective. Finite tests are not a formal proof
+or independent mathematical review.
+
+The broader legacy experiments include repeated Bike Sharing initial
+vertices: ten historical seeds give seven distinct starts. Later
+activity-sweep summaries explicitly remove those duplicates. Those
+historical seed-weighted summaries are not used as independent
+replications in the main count-data comparison, which enumerates all
+distinct vertices. Numerical references and floating-point audits
+do not provide directed-rounding guarantees.
+
+\paragraph{Generative-tool disclosure.}
+An OpenAI Codex assistant was used substantially for literature triage,
+proof development, implementation, experiment analysis, manuscript
+drafting and verification automation. The explicit derivations, source
+snapshots and executable checks are supplied for scrutiny. Automated
+checks and AI-assisted internal review are not independent mathematical
+peer review. Responsibility for the submitted scientific claims rests
+with the named authors.

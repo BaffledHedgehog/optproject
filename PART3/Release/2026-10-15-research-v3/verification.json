@@ -1,0 +1,216 @@
+{
+  "scope": "Local isolated build and reproduction; no external arXiv upload or independent peer review",
+  "date": "2026-10-15",
+  "checks": {
+    "article_build": {
+      "pdf_sha256": "c505f20595b4afe150317851ed4f3542edb70ccd91101651024092aeed2c50f3",
+      "passes": 2,
+      "engine": "E:/miktex/miktex/bin/x64/pdflatex.exe",
+      "command": [
+        "E:/miktex/miktex/bin/x64/pdflatex.exe",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-no-shell-escape",
+        "-recorder",
+        "-output-directory=build",
+        "article.tex"
+      ],
+      "log_sha256": "2a752218dd225e9d3c0df671cd28a4c7818f9b2bad6aab6cce810126f0d7b1de"
+    },
+    "manuscript_build": {
+      "pdf_sha256": "e18144a7f2e114378c11d35d2ba131992292cf846ce7e6d9869ece770f3d81a4",
+      "passes": 2,
+      "engine": "E:/miktex/miktex/bin/x64/pdflatex.exe",
+      "command": [
+        "E:/miktex/miktex/bin/x64/pdflatex.exe",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-no-shell-escape",
+        "-recorder",
+        "-output-directory=build",
+        "manuscript.tex"
+      ],
+      "log_sha256": "c2bc732c9b8ed76c0e0e7765332d211a9b155fe76f811a20c825949b155ea92e"
+    },
+    "extracted_tests": {
+      "command": [
+        "C:\\Users\\yarik_temp\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "PART3/Work",
+        "-p",
+        "test_*.py"
+      ],
+      "exit_code": 0,
+      "output": ".................................................................\n----------------------------------------------------------------------\nRan 65 tests in 3.092s\n\nOK\n",
+      "output_sha256": "02a8601847c8dbe1aa63418fdb3ebd41f306ca99fb353c25e3d31c0f462bab1f"
+    },
+    "extracted_archives": {
+      "command": [
+        "C:\\Users\\yarik_temp\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "PART3/Work/validate_results.py"
+      ],
+      "exit_code": 0,
+      "output": "benchmark_results: 660 unique runs; source hashes and records valid; 0 adaptive function-call bounds checked\nadaptive_results: 840 unique runs; source hashes and records valid; 70 adaptive function-call bounds checked\nadaptive_ablation: 210 unique runs; source hashes and records valid; 70 adaptive function-call bounds checked\nbacktracking_results: 350 unique runs; source hashes and records valid; 70 adaptive function-call bounds checked\ninitialization_factorial: 280 runs, 8400 budget prefixes and 84 paired comparisons valid; 70 native AC-FW runs match earlier records exactly\naway_results: 280 runs, 9240 budget prefixes, 70 full AFW audits valid; 140 FW baselines match earlier records exactly\nrobustness_results: 360 paired runs, 11880 budget prefixes, 360 full-trajectory audits valid; 30 old baselines match exactly\nconstraint_results: 280 trajectories, 10080 oracle prefixes, 840 accuracy prefixes, 280 full audits valid\nmultidata_results: 648 runs, 21384 oracle prefixes, 648 full audits valid; all signed coordinate starts present\ncertificate_results: 432 exactly repeated paths, 2160 causal stopping profiles, 71280 paid budget prefixes valid\nproof_audit_results: exact replay of 8370 configurations, 57989 curvature states, 1799 bridge checks valid; finite audit, not a formal proof\ncount_comparator_results: 108 new AC-FW method runs on existing cases, 3240 charged prefixes valid\ndifferential_geometry_results: 24 exact rational AFW runs, 6 local drop runs and 180 positive-base counterexample checks replay exactly\n",
+      "output_sha256": "8b0b76df4262139e1f34d123c672cd8d975e7e59f6c051dec0f9915b4d970c9a"
+    },
+    "extracted_comparator_replay": {
+      "command": [
+        "C:\\Users\\yarik_temp\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "PART3/Work/count_comparator_results/source/count_comparator.py",
+        "--output",
+        "PART3/Work/reproduced_count_comparator"
+      ],
+      "exit_code": 0,
+      "output": "seoul, R/R*=0.5: 30 AC-FW starts complete\nseoul, R/R*=2: 30 AC-FW starts complete\nmetro, R/R*=0.5: 24 AC-FW starts complete\nmetro, R/R*=2: 24 AC-FW starts complete\nSaved 108 additional method runs and 3240 prefixes\n",
+      "output_sha256": "e33b207dce08b5bc46c0caaf11f02fd32bb1b43cac64aea8a27457b2bff63a04"
+    },
+    "replayed_archive_validation": {
+      "command": [
+        "C:\\Users\\yarik_temp\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "PART3/Work/validate_results.py",
+        "PART3/Work/reproduced_count_comparator"
+      ],
+      "exit_code": 0,
+      "output": "reproduced_count_comparator: 108 new AC-FW method runs on existing cases, 3240 charged prefixes valid\n",
+      "output_sha256": "73ffe671e70e260316a18b25cc823c6d7026daa73479283962a930e4bbdbdb04"
+    },
+    "extracted_evidence": {
+      "command": [
+        "C:\\Users\\yarik_temp\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "PART3/Paper/prepare_article_evidence.py"
+      ],
+      "exit_code": 0,
+      "output": "Focused-article evidence: 80 claim records, five generated tables and vector figure\n",
+      "output_sha256": "c0d6d6d3fc81fc0248cf7af2f96923a61b12eb909ffddba8bd6d2a50afc42a93"
+    },
+    "extracted_geometry": {
+      "command": [
+        "C:\\Users\\yarik_temp\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+        "PART3/Paper/prepare_geometry_evidence.py"
+      ],
+      "exit_code": 0,
+      "output": "Theoretical geometry figure and 322 grid rows generated\n",
+      "output_sha256": "526494fe2b7bde54fe9594619e3682fa441e9170ea65c58dbf958edfa6060355"
+    }
+  },
+  "article": {
+    "dependencies": {
+      "article.tex": "480252aa5026cf0c2141995ecd5a4bced630f0c41206a169e4bbd4ed983c3f18",
+      "article_appendix.tex": "8a2c9e609121eb63cfaf706fbbccd18cdbdcfa9debd3e92ea527891d9c05fc83",
+      "article_away.tex": "074ec05afb59c9b153306885f1c52e26287e96b8c38e2b973c9c44819cc5a1fe",
+      "article_experiments.tex": "0aab4e93243a2811192e657596bb0760e8c7ea7bbb28716c6bd9281440e0942d",
+      "article_fw.tex": "b54e512d80d8e1acda231915fa878f79b14d8d0669ea22faca08e5e3368908b8",
+      "article_intro.tex": "8eab143272813e5444642bf73968ba26cdaabca5ea47aeee4db33ffdb7acc0f3",
+      "article_references.tex": "7f543e70571a18519b1e27bd5806070cd42f4b3d95b67158a39b63213b25da4b",
+      "article_zero.tex": "57ea7b51ca9d0db4e660ce0deffd474306a0152f1f1537fb289612b18736eb72",
+      "evidence/budget_table.tex": "3d0067d2ef6a8a5be4fe2cf1f1a0c83fa0db0c7339bf20045d6233406701f94c",
+      "evidence/counts_table.tex": "3918fb9d5a155d31f9234787ee1f9f820691ac9f3772e62432e8df4d495ae92e",
+      "evidence/data_table.tex": "b5a5cb75e5781d544b2386d74820ef5e1b2d91abb51c072aa8805412eb726bfd",
+      "evidence/initialization_control.tex": "33db298a4ed146bb94f4d6c0d85302887045d6c21a5b1519775eed00d9555e37",
+      "evidence/monitor_table.tex": "59b671bdd40dfe27aa59ebc3fee8f925e7d4f8897f4f7e4aa8babce3c0a06379",
+      "figures/count_comparators.pdf": "70c1c5b1c6227f61657a62776edb6966aecd619ec20ac6fb8ce290302dd1762a",
+      "figures/gap_geometry.pdf": "ae8ea20b31feebfc6fdbeb863ab09150923ba18dd1a9cbe69bc65ea7cb9b4d2d"
+    },
+    "labels": 51,
+    "citations": 26,
+    "pdf": {
+      "pages": 21,
+      "embedded_fonts": 24,
+      "type3_procedure_fonts": 0,
+      "page_width_pt": 595.2760009765625,
+      "page_height_pt": 841.8900146484375,
+      "text_sha256": "f1a2b94621b87a05e364b03f65ecfc0e1807c7b146024603f95613e406be300d",
+      "pdf_sha256": "c505f20595b4afe150317851ed4f3542edb70ccd91101651024092aeed2c50f3"
+    },
+    "research_claims": {
+      "claims": 7,
+      "reviewed_source_files": 14,
+      "primary_sources_compared": 17,
+      "independent_peer_review": false
+    },
+    "evidence": {
+      "primary_method_records": 756,
+      "distinct_cases": 108,
+      "uncensored_1000f_records": 756,
+      "claim_records": 80
+    }
+  },
+  "technical_report": {
+    "pages": 34,
+    "embedded_fonts": 30,
+    "type3_procedure_fonts": 2,
+    "page_width_pt": 612.0,
+    "page_height_pt": 792.0,
+    "text_sha256": "d689b81d1d865bfc14d7f6543eddc1289e4c2db3ef35152934be1676ae8f0415",
+    "pdf_sha256": "e18144a7f2e114378c11d35d2ba131992292cf846ce7e6d9869ece770f3d81a4"
+  },
+  "isolated_source": {
+    "dependencies": {
+      "article.tex": "480252aa5026cf0c2141995ecd5a4bced630f0c41206a169e4bbd4ed983c3f18",
+      "article_appendix.tex": "8a2c9e609121eb63cfaf706fbbccd18cdbdcfa9debd3e92ea527891d9c05fc83",
+      "article_away.tex": "074ec05afb59c9b153306885f1c52e26287e96b8c38e2b973c9c44819cc5a1fe",
+      "article_experiments.tex": "0aab4e93243a2811192e657596bb0760e8c7ea7bbb28716c6bd9281440e0942d",
+      "article_fw.tex": "b54e512d80d8e1acda231915fa878f79b14d8d0669ea22faca08e5e3368908b8",
+      "article_intro.tex": "8eab143272813e5444642bf73968ba26cdaabca5ea47aeee4db33ffdb7acc0f3",
+      "article_references.tex": "7f543e70571a18519b1e27bd5806070cd42f4b3d95b67158a39b63213b25da4b",
+      "article_zero.tex": "57ea7b51ca9d0db4e660ce0deffd474306a0152f1f1537fb289612b18736eb72",
+      "evidence/budget_table.tex": "3d0067d2ef6a8a5be4fe2cf1f1a0c83fa0db0c7339bf20045d6233406701f94c",
+      "evidence/counts_table.tex": "3918fb9d5a155d31f9234787ee1f9f820691ac9f3772e62432e8df4d495ae92e",
+      "evidence/data_table.tex": "b5a5cb75e5781d544b2386d74820ef5e1b2d91abb51c072aa8805412eb726bfd",
+      "evidence/initialization_control.tex": "33db298a4ed146bb94f4d6c0d85302887045d6c21a5b1519775eed00d9555e37",
+      "evidence/monitor_table.tex": "59b671bdd40dfe27aa59ebc3fee8f925e7d4f8897f4f7e4aa8babce3c0a06379",
+      "figures/count_comparators.pdf": "70c1c5b1c6227f61657a62776edb6966aecd619ec20ac6fb8ce290302dd1762a",
+      "figures/gap_geometry.pdf": "ae8ea20b31feebfc6fdbeb863ab09150923ba18dd1a9cbe69bc65ea7cb9b4d2d"
+    },
+    "labels": 51,
+    "citations": 26,
+    "pdf": {
+      "pages": 21,
+      "embedded_fonts": 24,
+      "type3_procedure_fonts": 0,
+      "page_width_pt": 595.2760009765625,
+      "page_height_pt": 841.8900146484375,
+      "text_sha256": "f1a2b94621b87a05e364b03f65ecfc0e1807c7b146024603f95613e406be300d",
+      "pdf_sha256": "a203afe993f2199a79b692e98b35ee7a649b5f101f640210002480fafb0a443a"
+    }
+  },
+  "replayed_method_records": {
+    "records": 108,
+    "exactly_matching_fields": [
+      "objective",
+      "certificate",
+      "iteration",
+      "function_evals",
+      "gradient_evals",
+      "lmo_evals",
+      "accepted_steps",
+      "rejected_steps"
+    ]
+  },
+  "evidence_roundtrip": "All five tables, the 80-row numerical claim ledger and 322-row geometry grid match byte-for-byte; both regenerated figure renderings match",
+  "extracted_papers": {
+    "article": {
+      "pages": 21,
+      "embedded_fonts": 24,
+      "type3_procedure_fonts": 0,
+      "page_width_pt": 595.2760009765625,
+      "page_height_pt": 841.8900146484375,
+      "text_sha256": "f1a2b94621b87a05e364b03f65ecfc0e1807c7b146024603f95613e406be300d",
+      "pdf_sha256": "0eea69b6122eadee9a7dd0b60b364b383fb593120a0474e4ffb899b24f7fc85e"
+    },
+    "technical_report": {
+      "pages": 34,
+      "embedded_fonts": 30,
+      "type3_procedure_fonts": 2,
+      "page_width_pt": 612.0,
+      "page_height_pt": 792.0,
+      "text_sha256": "d689b81d1d865bfc14d7f6543eddc1289e4c2db3ef35152934be1676ae8f0415",
+      "pdf_sha256": "96fd4ac680e9a424b064ebc6aa49411d54a0865d60165b8a68e4fa2b6cfd0145"
+    }
+  }
+}

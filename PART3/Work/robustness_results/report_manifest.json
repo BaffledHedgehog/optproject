@@ -1,0 +1,13 @@
+{
+  "artifact_sha256": {
+    "manifest.json": "93a46ef7cf5ad4c068637e17720299b1c6e99bac81e952a5d847285bc902822a",
+    "report_source.py": "d7f338d94dd0eb3e75d226806955698438615075126b108d84384585042dec45",
+    "results.md": "db5fd145eb3ad46cb895a4c7c69cbd8f0ef7b4c7dc2436ee208908928da6a672",
+    "scale_checks.csv": "cea0465edd938c850fb48db993c1aa09d64d63769d555e19ff0968472d09e2fc",
+    "radius_and_units.png": "5cf8897dfb0d839bf762059a1aee23bd35d6cfd9459b784c2e8985ab34bb61d7",
+    "radius_and_units.pdf": "e7c5b390e19638a45c8d585b5b9bfd49ec017138b0f19b0050760631eb148ef8"
+  },
+  "paper_table_sha256": "ef2b56684ff59f3a25a975aa4b6b8a149f87021a6f071fc976e3d4c9f30b75a2",
+  "scale_pairs": 240,
+  "seed_count": 5
+}

@@ -1,0 +1,16 @@
+{
+  "study": "finite_rational_proof_audit",
+  "date": "2026-10-15",
+  "scope": "bounded exact checks of dominating abstract states and inequalities, not a formal proof or independent review",
+  "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "arithmetic": "fractions.Fraction; no floating-point comparisons",
+  "command": [
+    "C:\\Users\\yarik_temp\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+    "PART3/Work/proof_audit.py"
+  ],
+  "artifact_sha256": {
+    "checks.json": "45b21bff86049e6373f8829c380865a32ed8d46fe934c2b5724b1852cbfac23c",
+    "audit_source.py": "c158dbffb7fe9ff91ee2586b57f8e09cd63af31e87c29fd173a52a617b3a20c9"
+  }
+}

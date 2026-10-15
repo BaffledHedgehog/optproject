@@ -1,0 +1,10 @@
+{
+  "phase_configurations": 8370,
+  "exact_curvature_states": 57989,
+  "phase_budget_inequalities": 28620,
+  "maximum_ordinary_lag": 15,
+  "maximum_geometric_lag": 21,
+  "rational_bridge_inequalities": 1799,
+  "attaining_quadratics": 45,
+  "drop_count_states_up_to_12_updates": 906
+}

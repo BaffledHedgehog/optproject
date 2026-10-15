@@ -1,0 +1,81 @@
+claim,source,selection,value
+training_rows,multidata_results/manifest.json,seoul,7008
+reference_width_max,multidata_results/manifest.json,seoul,4.2203817912644936e-08
+training_rows,multidata_results/manifest.json,metro,38563
+reference_width_max,multidata_results/manifest.json,metro,2.294958570403516e-09
+certified_count;median_function_calls,multidata_results/summary.csv,seoul;R/R*=0.5;FW_BT_fixed,1/30;2001
+certified_count;median_function_calls,multidata_results/summary.csv,seoul;R/R*=0.5;FW_BT_certificate,1/30;2003
+certified_count;median_function_calls,multidata_results/summary.csv,seoul;R/R*=0.5;AFW_BT_fixed,30/30;424
+certified_count;median_function_calls,multidata_results/summary.csv,seoul;R/R*=0.5;AFW_BT_certificate,30/30;399
+certified_count;median_function_calls,multidata_results/summary.csv,seoul;R/R*=0.5;FW_Q,0/30;1001
+certified_count;median_function_calls,multidata_results/summary.csv,seoul;R/R*=0.5;AFW_Q,0/30;1001
+certified_count;median_function_calls,multidata_results/summary.csv,seoul;R/R*=0.5;AC_FW,0/30;1002
+certified_count;median_function_calls,multidata_results/summary.csv,seoul;R/R*=2;FW_BT_fixed,0/30;2001
+certified_count;median_function_calls,multidata_results/summary.csv,seoul;R/R*=2;FW_BT_certificate,0/30;1996
+certified_count;median_function_calls,multidata_results/summary.csv,seoul;R/R*=2;AFW_BT_fixed,0/30;2001
+certified_count;median_function_calls,multidata_results/summary.csv,seoul;R/R*=2;AFW_BT_certificate,0/30;1995.5
+certified_count;median_function_calls,multidata_results/summary.csv,seoul;R/R*=2;FW_Q,0/30;1001
+certified_count;median_function_calls,multidata_results/summary.csv,seoul;R/R*=2;AFW_Q,0/30;1001
+certified_count;median_function_calls,multidata_results/summary.csv,seoul;R/R*=2;AC_FW,0/30;1002
+certified_count;median_function_calls,multidata_results/summary.csv,metro;R/R*=0.5;FW_BT_fixed,3/24;2001
+certified_count;median_function_calls,multidata_results/summary.csv,metro;R/R*=0.5;FW_BT_certificate,3/24;2003
+certified_count;median_function_calls,multidata_results/summary.csv,metro;R/R*=0.5;AFW_BT_fixed,24/24;99
+certified_count;median_function_calls,multidata_results/summary.csv,metro;R/R*=0.5;AFW_BT_certificate,24/24;80.5
+certified_count;median_function_calls,multidata_results/summary.csv,metro;R/R*=0.5;FW_Q,1/24;1001
+certified_count;median_function_calls,multidata_results/summary.csv,metro;R/R*=0.5;AFW_Q,24/24;423
+certified_count;median_function_calls,multidata_results/summary.csv,metro;R/R*=0.5;AC_FW,13/24;385
+certified_count;median_function_calls,multidata_results/summary.csv,metro;R/R*=2;FW_BT_fixed,0/24;2000
+certified_count;median_function_calls,multidata_results/summary.csv,metro;R/R*=2;FW_BT_certificate,0/24;2002
+certified_count;median_function_calls,multidata_results/summary.csv,metro;R/R*=2;AFW_BT_fixed,6/24;2000
+certified_count;median_function_calls,multidata_results/summary.csv,metro;R/R*=2;AFW_BT_certificate,7/24;2001
+certified_count;median_function_calls,multidata_results/summary.csv,metro;R/R*=2;FW_Q,0/24;1001
+certified_count;median_function_calls,multidata_results/summary.csv,metro;R/R*=2;AFW_Q,0/24;1001
+certified_count;median_function_calls,multidata_results/summary.csv,metro;R/R*=2;AC_FW,0/24;1002
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,seoul;R/R*=0.5;FW_BT_fixed,0/30;0.00353663504421
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,seoul;R/R*=0.5;FW_BT_certificate,0/30;0.00346621370487
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,seoul;R/R*=0.5;AFW_BT_fixed,30/30;8.63786819298e-06
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,seoul;R/R*=0.5;AFW_BT_certificate,30/30;8.95752203312e-06
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,seoul;R/R*=0.5;FW_Q,0/30;0.0447464743343
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,seoul;R/R*=0.5;AFW_Q,0/30;0.0488578751086
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,seoul;R/R*=0.5;AC_FW,0/30;0.00288232847219
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,seoul;R/R*=2;FW_BT_fixed,0/30;0.0135722396132
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,seoul;R/R*=2;FW_BT_certificate,0/30;0.0117355819355
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,seoul;R/R*=2;AFW_BT_fixed,0/30;0.00723328406408
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,seoul;R/R*=2;AFW_BT_certificate,0/30;0.00577900188526
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,seoul;R/R*=2;FW_Q,0/30;7.96043244443
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,seoul;R/R*=2;AFW_Q,0/30;7.96043244443
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,seoul;R/R*=2;AC_FW,0/30;0.0598132233596
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,metro;R/R*=0.5;FW_BT_fixed,2/24;0.000238971966116
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,metro;R/R*=0.5;FW_BT_certificate,3/24;0.00018502384652
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,metro;R/R*=0.5;AFW_BT_fixed,24/24;7.97272530873e-06
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,metro;R/R*=0.5;AFW_BT_certificate,24/24;7.75639252837e-06
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,metro;R/R*=0.5;FW_Q,1/24;0.0016224221584
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,metro;R/R*=0.5;AFW_Q,24/24;9.75513581276e-06
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,metro;R/R*=0.5;AC_FW,13/24;9.99739072796e-06
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,metro;R/R*=2;FW_BT_fixed,0/24;0.000210429575935
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,metro;R/R*=2;FW_BT_certificate,0/24;0.00021363224469
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,metro;R/R*=2;AFW_BT_fixed,0/24;0.000158604066262
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,metro;R/R*=2;AFW_BT_certificate,0/24;0.000157353482871
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,metro;R/R*=2;FW_Q,0/24;0.0311630653023
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,metro;R/R*=2;AFW_Q,0/24;0.0278145308109
+certified_at_1000f;median_certificate,multidata_results/budget.csv + count_comparator_results/budget.csv,metro;R/R*=2;AC_FW,0/24;0.000176074540721
+initialization_success_count,initialization_factorial/budget.csv,active;AC_original;1000f,1/10
+initialization_success_count,initialization_factorial/budget.csv,active;AC_vertex;1000f,10/10
+initialization_success_count,initialization_factorial/budget.csv,active;BT_original;1000f,0/10
+initialization_success_count,initialization_factorial/budget.csv,active;BT_vertex;1000f,10/10
+paired_certificate_ratio_interval,initialization_factorial/paired_comparisons.csv,active,"1.049 [0.935, 1.257]"
+initialization_success_count,initialization_factorial/budget.csv,active_scaled;AC_original;1000f,0/10
+initialization_success_count,initialization_factorial/budget.csv,active_scaled;AC_vertex;1000f,0/10
+initialization_success_count,initialization_factorial/budget.csv,active_scaled;BT_original;1000f,0/10
+initialization_success_count,initialization_factorial/budget.csv,active_scaled;BT_vertex;1000f,0/10
+paired_certificate_ratio_interval,initialization_factorial/paired_comparisons.csv,active_scaled,"1.530 [0.822, 1.750]"
+initialization_success_count,initialization_factorial/budget.csv,active_highdim;AC_original;1000f,6/10
+initialization_success_count,initialization_factorial/budget.csv,active_highdim;AC_vertex;1000f,8/10
+initialization_success_count,initialization_factorial/budget.csv,active_highdim;BT_original;1000f,2/10
+initialization_success_count,initialization_factorial/budget.csv,active_highdim;BT_vertex;1000f,8/10
+paired_certificate_ratio_interval,initialization_factorial/paired_comparisons.csv,active_highdim,"1.231 [0.798, 2.117]"
+profile_successes;early;more_total_LMOs,certificate_results/summary.csv,scalar,129;0;0
+profile_successes;early;more_total_LMOs,certificate_results/summary.csv,block_8,129;0;432
+profile_successes;early;more_total_LMOs,certificate_results/summary.csv,block_32,129;0;425
+profile_successes;early;more_total_LMOs,certificate_results/summary.csv,block_128,129;0;380
+profile_successes;early;more_total_LMOs,certificate_results/summary.csv,known_mu,226;110;0

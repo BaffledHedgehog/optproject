@@ -1,0 +1,71 @@
+\section{Causal certificate controls on an unchanged path}
+\label{sec:tangentmonitors}
+We describe two standard lower-bound constructions used as stopping
+controls. Neither is a new primal--dual method. Write
+$g_j=\nabla f(x_j)$ and $a_j=f(x_j)-\inner{g_j}{x_j}$.
+For a completed block $B$ of $K$ consecutive source observations, set
+\[
+ \bar a_B=K^{-1}\sum_{j\in B}a_j,\qquad
+ \bar g_B=K^{-1}\sum_{j\in B}g_j,\qquad
+ b_B=\bar a_B+\min_{v\in Q}\inner{\bar g_B}{v}.
+\]
+The last minimization costs one additional full LMO. Disjoint blocks
+start at source $j=0$; an incomplete block is not queried.
+
+\begin{proposition}[Elementary stopping control]\label{prop:blocks}
+Let $f(x_k)$ be nonincreasing along a fixed feasible path, and let $\ell_k$
+be the accumulated scalar tangent lower bound. Define
+\[
+ \widetilde\ell_k=\max\{\ell_k,\ b_B:B\text{ completed by }k\},
+ \qquad \widetilde U_k=f(x_k)-\widetilde\ell_k.
+\]
+Then $\delta_k\le\widetilde U_k\le U_k$, and
+$\widetilde U_k$ is nonincreasing. Its first crossing of a prescribed
+tolerance occurs no later on this path than that of $U_k$.
+Up to source $k$, exactly $\lfloor(k+1)/K\rfloor$ extra LMOs are used,
+with no extra function or gradient calls.
+\end{proposition}
+\begin{proof}
+Convexity gives $f(v)\ge a_j+\inner{g_j}{v}$ for each source and every
+$v\in Q$. Averaging and minimizing gives $b_B\le f_Q^*$.
+Taking the maximum preserves validity and is nondecreasing. Subtracting
+it from the nonincreasing function values proves the assertions;
+the oracle count follows from the number of completed blocks.
+\end{proof}
+
+In particular, if the original algorithm stops after $N$ updates, this
+control uses at most $N+1+\lfloor(N+1)/K\rfloor$ total LMOs and no more
+function/gradient calls than the original run. This is a pathwise
+comparison, not an improved worst-case convergence rate. Earlier stopping
+need not reduce the total LMO count. The monitor affects neither the
+line search nor the initial curvature estimate.
+
+Average tangent bounds need not dominate the best scalar tangent bound.
+For $f(x)=x^2/2$ on $[-1,1]$, the two-source histories $(-1,1)$ and
+$(-1,-1/2)$ give block bounds $-1/2$ and $-17/16$, versus scalar maxima
+$-3/2$ and $-5/8$, respectively. The maximum in
+Proposition~\ref{prop:blocks} prevents deterioration. For a globally
+defined differentiable convex $f$, Fenchel equality and Jensen give
+\[
+ b_B=-K^{-1}\sum_{j\in B}f^*(g_j)-\sigma_Q(-\bar g_B)
+ \ \le\ -f^*(\bar g_B)-\sigma_Q(-\bar g_B)=\psi(\bar g_B).
+\]
+Here $f^*$ is the convex conjugate, distinct from the scalar optimum
+$f_Q^*$. Pedregosa et al.~\cite[Theorem 3]{pedregosa} already analyze an
+averaged-gradient Fenchel dual for adaptive FW variants, with their
+specified weights. Our uniform, disjoint-block tangent computation
+does not evaluate that dual or inherit its theorem.
+
+A separate control receives a valid strong-convexity constant $\mu>0$.
+Minimizing the quadratic lower model over the ambient space gives
+\[
+ b_j^\mu=f(x_j)-\frac{\norm{g_j}^2}{2\mu}\ \le f_Q^*,\qquad
+ \widetilde\ell_k^\mu=\max\{\ell_k,\max_{j\le k}b_j^\mu\}.
+\]
+This standard bound is recorded, for example, in
+\cite[Appendix B]{karimi}; it remains valid for a constrained minimum
+because minimizing the model over $\mathbb R^d$ only lowers it.
+It requires no extra LMO but uses more information than the block
+controls. At a boundary solution a nonzero gradient can keep it weak.
+All assertions here use exact arithmetic; the experiment audits
+floating-point bounds against independent reference intervals.

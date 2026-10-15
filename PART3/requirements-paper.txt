@@ -1,0 +1,3 @@
+-r requirements.txt
+# PDF text, embedded-font and portability checks for the publication build.
+PyMuPDF==1.28.2

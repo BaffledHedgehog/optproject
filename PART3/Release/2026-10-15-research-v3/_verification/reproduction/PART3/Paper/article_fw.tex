@@ -1,0 +1,186 @@
+\section{Ordinary backtracking and a computable certificate}
+\label{sec:model}
+Let $Q\subset\R^d$ be nonempty, compact and convex, with diameter
+$D>0$. Let $f$ be convex and $C^2$ on a neighborhood of $Q$,
+$f_Q^*=\min_Q f$, and $\delta(x)=f(x)-f_Q^*$. Assume
+\begin{equation}\label{eq:curvature}
+ \norm{\nabla^2f(z)}_2\le H_0+H_1\delta(z),\qquad z\in Q,
+ \quad H_0,H_1\ge0.
+\end{equation}
+The reference value in this assumption is the constrained optimum.
+A bound relative to a smaller unconstrained infimum does not imply the
+same constrained bound without modifying $H_0$.
+If $D=0$ the only feasible point solves the problem.
+
+At a source $x_k$, obtain an exact linear minimization oracle (LMO),
+and form the FW gap and accumulated certificate:
+\begin{align}
+ s_k&\in\arg\min_{v\in Q}\inner{\nabla f(x_k)}{v},\quad
+ G_k=\inner{\nabla f(x_k)}{x_k-s_k},\label{eq:gap}\\
+ \ell_k&=\max_{0\le i\le k}\{f(x_i)-G_i\},\quad
+ U_k=f(x_k)-\ell_k.\label{eq:certificate}
+\end{align}
+Convexity gives $0\le\delta_k\le U_k\le G_k$. A valid known lower
+bound can be included in $\ell_k$, but is not required. A zero gap
+certifies optimality. We stop at $U_k\le\varepsilon$.
+
+\paragraph{The algorithm.}
+Choose $M>0$ and set $L_{-1}=M$. At each nonterminal source, put
+$d_k=s_k-x_k$, $q_k=\norm{d_k}$, and start with $L=L_{k-1}/2$.
+Repeat
+\begin{equation}\label{eq:btstep}
+ \alpha=\min\{1,G_k/(Lq_k^2)\},\qquad
+ f(x_k+\alpha d_k)\le f(x_k)-\alpha G_k
+                         +\tfrac12L\alpha^2q_k^2
+\end{equation}
+until the inequality passes, doubling $L$ after each rejection.
+Store $L_k=L$, update $x_{k+1}=x_k+\alpha d_k$, and reuse the accepted
+value. Only trial function values are recomputed during the search.
+This is the standard quadratic backtracking scheme~\cite{pedregosa}.
+For $M$ fixed, the algorithm does not need $D,H_0,H_1$, or $f_Q^*$.
+The optional $M=U_0/D^2$ uses a diameter bound and the first paid
+function, gradient and LMO calls.
+
+\begin{lemma}[Local acceptance]\label{lem:local}
+For a feasible descent direction $d$ with $g=-\inner{\nabla f(x)}d>0$
+and feasible cap $a_{\max}>0$, the test in~\eqref{eq:btstep} passes
+at $\alpha=\min\{a_{\max},g/(L\norm d^2)\}$ whenever
+$L\ge H_0+H_1\delta(x)$. Every accepted trial, regardless of this
+sufficient threshold, satisfies
+\begin{equation}\label{eq:acceptedprogress}
+ f(x)-f(x+\alpha d)\ge\tfrac12\alpha g.
+\end{equation}
+Thus the search terminates and
+\begin{equation}\label{eq:localenvelope}
+ L_k\le\max\{L_{k-1}/2,\ 2(H_0+H_1\delta_k)\}.
+\end{equation}
+The assertion also allows $a_{\max}>1$.
+\end{lemma}
+\begin{proof}
+Write $h(t)=f(x+td)-f(x)$ and $K=H_0+H_1\delta(x)$.
+While $h\le0$, the Hessian bound gives $h''(t)\le K\norm d^2$.
+Initially $h'(0)=-g<0$. If $K>0$, a first return to zero before
+$\min\{a_{\max},2g/(K\norm d^2)\}$ contradicts
+$h(t)\le-gt+K\norm d^2t^2/2<0$. The same integration proves
+the quadratic upper bound through the prescribed trial; the zero-$K$
+case follows with a linear upper model. Its curvature is at most $L$,
+so the test passes. For any accepted trial,
+$L\alpha\norm d^2\le g$, proving~\eqref{eq:acceptedprogress}.
+If there is a rejection, the last rejected estimate is less than $K$,
+so the accepted one is less than $2K$; otherwise it is $L_{k-1}/2$.
+\end{proof}
+
+Consequently $f_k$ and $U_k$ are nonincreasing. The analysis uses
+curvature only on a descent segment, not a uniform upper model on
+every segment point.
+
+\begin{lemma}[Lag potential]\label{lem:lag}
+Let source phase indices be nondecreasing in $\{0,\ldots,J-1\}$.
+Let positive caps obey $C_j/2\le C_{j+1}\le C_j$.
+Suppose an update with $L_k>C_j$ in its source phase must have
+$L_k=L_{k-1}/2$. Then the number of such lag updates is at most
+\[
+ \ceil{\log_2\max\{1,M/C_0\}}+J-1.
+\]
+The statement applies to every prefix and allows initially skipped phases.
+\end{lemma}
+\begin{proof}
+Before an update in phase $j$, use the nonnegative integer potential
+\[
+ p=\max\{0,\ceil{\log_2(L_{k-1}/C_j)}\}.
+\]
+A lag update reduces it by one; a non-lag update leaves zero potential
+before a phase change. A forward jump of $m$ phases raises it by at
+most $m$. Starting from virtual phase zero, all jumps, including an
+initial jump, sum to at most $J-1$. Nonnegativity proves the count.
+\end{proof}
+
+\begin{theorem}[Observable stopping and total function cost]\label{thm:fw}
+For $0<\varepsilon<U_0$, let
+\[
+ J=\ceil{\log_2(U_0/\varepsilon)},\qquad
+ P=\ceil{\log_2\max\{1,MD^2/U_0\}}.
+\]
+Ordinary backtracking reaches $U_N\le\varepsilon$ within
+\begin{equation}\label{eq:fwcount}
+ N\le P+\ceil{(6+16H_1D^2)J+32H_0D^2/\varepsilon}
+\end{equation}
+updates. It uses $N+1$ gradients and LMOs, including the final check.
+For its actual $N\ge1$, every function evaluation, including all
+rejected trials, is counted in
+\begin{equation}\label{eq:functioncount}
+ N_f\le1+2N+\ceil{\log_2\max\{1,2(H_0+H_1U_0)/M\}}.
+\end{equation}
+For $N=0$, one function, gradient and LMO evaluation suffice.
+These are exact-oracle and exact-arithmetic bounds.
+\end{theorem}
+\begin{proof}
+Put $b_j=U_0/2^j$ and assign a nonterminal source to phase $j$ when
+$b_j/2<U_k\le b_j$, for $j=0,\ldots,J-1$.
+Use
+\[
+ C_j=\max\{2(H_0+H_1b_j),\ b_j/(2D^2)\}.
+\]
+The caps decrease by at most a factor two. By
+Lemma~\ref{lem:local}, an accepted estimate above $C_j$ must be a
+first-trial halving. Since $C_0\ge U_0/(2D^2)$,
+Lemma~\ref{lem:lag} bounds lag updates by $P+J$.
+
+For a non-lag update in phase $j$, $G_k\ge U_k>b_j/2$ and
+$q_k\le D$ imply
+\[
+ f_k-f_{k+1}\ge p_j:=\min\{b_j/4,\ b_j^2/(8C_jD^2)\}.
+\]
+Every update decreases $f$, and the total decrease within the phase
+is at most its initial suboptimality, hence at most $b_j$.
+Thus its non-lag updates number at most
+\[
+ \lfloor b_j/p_j\rfloor+1
+ \le5+16H_1D^2+16H_0D^2/b_j.
+\]
+Summing and using $\sum_{j<J}1/b_j<2/\varepsilon$ proves
+\eqref{eq:fwcount}. This bounds every unfinished prefix, which also
+establishes termination.
+
+The local envelope and monotone $U$ give
+$L_k\le\max\{M/2^{k+1},2(H_0+H_1U_0)\}$.
+If $r_k$ denotes rejections, $L_k=2^{r_k-1}L_{k-1}$, so exactly
+\[
+ \sum_{k<N}(r_k+1)=2N+\log_2(L_{N-1}/M)
+\]
+trial values are computed. Add the initial value and use the envelope
+to obtain~\eqref{eq:functioncount}. Accepted values are cached.
+\end{proof}
+
+The last identity is standard~\cite{pedregosa}. For $M=U_0/D^2$,
+$P=0$, and the function-count overhead is independent of
+$\varepsilon$. This normalization is optional for the order of the bound.
+
+\begin{proposition}[Initialization is visible even for affine objectives]
+\label{prop:init}
+Let $Q=[-1,1]$, $f(x)=-cx$, $c>0$, $x_0=-1$, and $L_{-1}=M>0$.
+For $0<\varepsilon<2c$, halving backtracking uses exactly
+\[
+ N=\ceil{\log_2\left(1+\frac Mc(1-\varepsilon/(2c))\right)}
+\]
+updates. Thus halving $U_0$ may require $\Theta(\log(M/c))$ updates.
+\end{proposition}
+\begin{proof}
+Every test accepts its first trial: $L_k=M/2^{k+1}$,
+$x_{k+1}=\min\{1,x_k+c/L_k\}$. The tangent lower bound is always
+$-c$, so $x_N=\min\{1,-1+(2c/M)(2^N-1)\}$ and $U_N=c(1-x_N)$.
+Solving the stopping inequality gives the formula.
+\end{proof}
+This lower bound concerns the specified halving rule, not arbitrary
+first-order algorithms. With $M=U_0/D^2=c/2$ the first step solves it.
+
+\paragraph{Comparison with a global bound.}
+For $f(x)=\cosh(x)-1$ on $[-R,R]$, $H_0=H_1=1$, while a global
+gradient-Lipschitz constant is $L_Q=\cosh R$. Starting at $R$ gives
+$U_0=2R\sinh R$. For fixed tolerance and fixed $M$, our update bound
+grows as $O(R^3+R^2/\varepsilon)$ as $R\to\infty$, rather than the
+exponential $L_QD^2/\varepsilon$ term obtained by substituting
+$H_0=L_Q,H_1=0$ in the same certificate theorem.
+This compares upper bounds, not a runtime or oracle lower bound;
+exact segment minimization solves this particular one-dimensional example
+in one step. Appendix~\ref{app:explicit} gives further step comparisons.

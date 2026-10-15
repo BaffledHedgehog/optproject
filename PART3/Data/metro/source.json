@@ -1,0 +1,14 @@
+{
+  "title": "Metro Interstate Traffic Volume",
+  "year": 2019,
+  "doi": "10.24432/C5X60B",
+  "creator": "John Hogue",
+  "url": "https://archive.ics.uci.edu/static/public/492/metro+interstate+traffic+volume.zip",
+  "page": "https://archive.ics.uci.edu/dataset/492/metro+interstate+traffic+volume",
+  "file": "Metro_Interstate_Traffic_Volume.csv.gz",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "archive_sha256": "b99aeabcbd6cc86f642da3a79d90883425798f58abd3b3302da2fa19dda73768",
+  "file_sha256": "0b3679ac15173f79c6dc6c5ef8a0798d806fa5c5d7f05c84a5fa711bd1b05f07",
+  "changes": "Named file retained byte-for-byte; preprocessing is in count_problems.py."
+}

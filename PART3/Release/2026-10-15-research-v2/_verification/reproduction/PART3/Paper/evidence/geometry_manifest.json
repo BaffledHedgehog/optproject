@@ -1,0 +1,14 @@
+{
+  "scope": "Theoretical bound comparisons only; not optimization trajectories or timing results",
+  "grid_rows": 322,
+  "input_sha256": {
+    "Paper/prepare_geometry_evidence.py": "2d89711f5cc20840a596d68809a9d116077e95dd68cda84ab342d4cd1f7f6dce",
+    "Work/certificate_bounds.py": "5ec77354a9bde008ce1d70591e2628d4359ed35d049f5d7010ad91a6ebded966",
+    "Work/differential_geometry_results/manifest.json": "50fba880469cdd92249c451488181902a95fc98482e4d34282753366a4398cf7"
+  },
+  "artifact_sha256": {
+    "evidence/geometry_grid.csv": "ca6433ddf9c7a7b20e6320728878292b4a9125058b620ba68fc6434318660a1d",
+    "figures/gap_geometry.pdf": "c6f16d166b155c2e6245b52fa3bab10a8dd50223dfcc261a39394ef936c6433a",
+    "figures/gap_geometry.png": "36288ab11b2a769a75464355973d0f5b25b1254a2aa7b807991e3feaf8cdf572"
+  }
+}

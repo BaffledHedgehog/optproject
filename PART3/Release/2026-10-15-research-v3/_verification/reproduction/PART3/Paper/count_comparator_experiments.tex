@@ -1,0 +1,25 @@
+\subsection{Auto-conditioned comparison on the additional count datasets}
+We add 108 AC-FW runs to the same 108 Seoul/Metro cases, preserving the
+648 earlier records. Algorithms 1--2 and Eq.~(6) with $\delta=1$
+of~\cite{autoconditioned} are implemented independently, with the
+mandatory initial vertex move and both initial source evaluations
+charged. Rejected trials consume the 1000-outer-trial cap. Actual
+counts are $N_f=N_{\rm LMO}=N+2$ and $N_g=N_{\rm accepted}+2$.
+Parameter-hidden tests on both datasets instrument actual calls.
+
+The common budget of 1000 function calls is reached by every
+nonterminal run before its cap. AC-FW certifies 13/24 active Metro
+starts, with median endpoint function count 385, and no start in the
+other three dataset/radius conditions. FW-BT has 2/24 and 3/24
+active Metro successes at this budget, while both AFW-BT variants
+have 24/24. On active Seoul, AFW-BT has 30/30 and AC-FW has none.
+All seven scalar-certificate variants remain unsuccessful on both
+interior domains at 1000 function calls. These are oracle-budget
+observations, not a uniform performance or runtime ranking.
+
+The exponential objective is not globally gradient-Lipschitz on
+$\R^d$, so this remains an empirical use on compact $Q$ rather than
+a verbatim application of the cited global theorem. The new archive
+contains 3240 budget prefixes and full-source audits. The focused
+article joins these records with the six preserved methods in its
+generated tables and vector figure.

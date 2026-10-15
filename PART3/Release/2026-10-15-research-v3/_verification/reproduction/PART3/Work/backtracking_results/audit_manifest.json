@@ -1,0 +1,8 @@
+{
+  "audit_source_sha256": "7c00c9d42e28cecd69093de2aaff9e3b0d48b9290ace9d87c3bd912210d09428",
+  "audit_source": "audit_source.py",
+  "experiment_manifest_sha256": "28044ba5ce7c3e8802aad78b898ea52afb532798e236d9b01e0a791a965d49e7",
+  "audit_csv_sha256": "d152a6676df6ae52e3e0f8a234b2441f7a9554edbf2e8110977a13a5cd4c87df",
+  "runs": 140,
+  "checks": "full replay; lag budget; decrease; trial identity and bound"
+}

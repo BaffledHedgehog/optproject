@@ -1,0 +1,33 @@
+{
+  "generator_sha256": "19a55ad9ffe55e2bbfd9b7fe183a2d3cc2e6cc8bce94401878aed17a0b622f43",
+  "source_manifest_sha256": {
+    "multidata_results": "f2b98b96a6c5427d0b817ffcddb253ce14d90036320f2240e93978c7625318b9",
+    "count_comparator_results": "823a312ccd0b79cf4942646e8d18fe20f32fe6b065e364fa39ab5b7aad6278e8",
+    "initialization_factorial": "f3c5e148abd221e0ba83465b13869c9e5693813abde7cc3a901cf5b2d137975b",
+    "certificate_results": "8867c12e7188c0f7b1f7c6b748bfe7a449c0f5058ad068a89d6007c23a31fc87"
+  },
+  "source_csv_sha256": {
+    "multidata_results/summary.csv": "785677deda0a4d795e55bb113f059071d2e8f9189703ba91c83ae8097ae31cbf",
+    "count_comparator_results/summary.csv": "0289cabf3027e526033237dc5f46de8868d33f9701d679dd615be6178a62c07f",
+    "multidata_results/budget.csv": "37fd90cf36db2e0e60097b903a75a9e14e634b50fd9fb44cec57ac6e021cc982",
+    "count_comparator_results/budget.csv": "1ca7450b4052516fb6c523ac8fe16f304ea4ce89d7ee2dfecf028e84a19fde13",
+    "initialization_factorial/budget.csv": "325b51342333a4ca34f76d46eb44631dad3baf51651863011235023cde1f3a55",
+    "initialization_factorial/paired_comparisons.csv": "94638f1c62053b11f7678e20125c2d115748831819d37c70f46f91c5e87c2646",
+    "certificate_results/summary.csv": "30c2a5e22e37ccad3df7bb4d1fb45839ef45aecc0fa271bbe737133fc82581fb",
+    "certificate_results/audit.csv": "f681d99a5d4e8ba46d683ae6cd7fa24b2b1f6a54ef08f394611fae806b632dfb"
+  },
+  "artifact_sha256": {
+    "budget_table.tex": "3d0067d2ef6a8a5be4fe2cf1f1a0c83fa0db0c7339bf20045d6233406701f94c",
+    "claim_ledger.csv": "f6060cc5bf69d6d8495689ac007d6ed154e606e3236bef0efd77dfd875105a19",
+    "counts_table.tex": "3918fb9d5a155d31f9234787ee1f9f820691ac9f3772e62432e8df4d495ae92e",
+    "data_table.tex": "b5a5cb75e5781d544b2386d74820ef5e1b2d91abb51c072aa8805412eb726bfd",
+    "geometry_grid.csv": "ca6433ddf9c7a7b20e6320728878292b4a9125058b620ba68fc6434318660a1d",
+    "geometry_manifest.json": "daaf383b4aa34d80633c625fcc3ec2112b6b3e28c86c5e10e6bf16f316805053",
+    "initialization_control.tex": "33db298a4ed146bb94f4d6c0d85302887045d6c21a5b1519775eed00d9555e37",
+    "monitor_table.tex": "59b671bdd40dfe27aa59ebc3fee8f925e7d4f8897f4f7e4aa8babce3c0a06379"
+  },
+  "figure_sha256": {
+    "figures/count_comparators.pdf": "439cdd059c02e0f7201efe27d23866a8857a44bceffd8073f6800190d9e2d33e",
+    "figures/count_comparators.png": "90fefc0428240f276b07a01fdc64b41948021e9859482a102c776f644090d1d3"
+  }
+}

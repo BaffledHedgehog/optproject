@@ -1,0 +1,182 @@
+\section{Zero base curvature: structure and finite termination}
+\label{sec:zero}
+The endpoint $H_0=0$ is qualitatively different from a small positive
+$H_0$. The statements below concern the constrained gap
+$\delta=f-f_Q^*$, with the curvature condition holding throughout $Q$.
+
+\begin{proposition}[Exposed optimal face and a common gradient]
+\label{prop:zeroface}
+Assume $H_0=0$. For any $x^*\in X^*:=\arg\min_Q f$, put
+$g^*=\nabla f(x^*)$. Then
+\begin{equation}\label{eq:zeroface}
+ X^*=\{x\in Q:\inner{g^*}{x-x^*}=0\}.
+\end{equation}
+The gradient is the same $g^*$ at every optimum, and for $x\in Q$,
+\begin{equation}\label{eq:zerograd}
+ \norm{\nabla f(x)-g^*}\le\tfrac12H_1D\delta(x).
+\end{equation}
+In particular, an ambient stationary optimum $g^*=0$ forces $f$
+to be constant on $Q$. A nonconstant function in this zero-base
+class cannot have a relative-interior optimum either.
+\end{proposition}
+\begin{proof}
+Optimality and convexity give $w:=\inner{g^*}{x-x^*}\ge0$ and
+$\delta(x)\ge w$. For $h(t)=\delta(x^*+t(x-x^*))$, the
+curvature condition gives $h''\le H_1\norm{x-x^*}^2h$,
+with $h(0)=0$ and $h'(0)=w$. The same positive-kernel comparison
+as in Theorem~\ref{lem:bridge} yields
+\[
+ 0\le h(t)\le w\frac{\sinh(rt)}r,\qquad
+ r=\sqrt{H_1}\norm{x-x^*},
+\]
+where the quotient is $t$ at $r=0$. Thus $w=0$ implies
+$h(1)=0$, proving~\eqref{eq:zeroface}. A segment joining two
+optima lies in $X^*$; its Hessian is zero by the assumed norm
+bound, so integration shows that their gradients coincide.
+Along a segment from $x^*$ to $x$, convexity gives $h(t)\le t\delta(x)$.
+Integrating the Hessian norm therefore gives
+\[
+ \norm{\nabla f(x)-g^*}
+ \le H_1\norm{x-x^*}\int_0^1h(t)\,dt
+ \le\tfrac12H_1D\delta(x).
+\]
+At a relative-interior optimum, the linear functional $g^*$ is
+constant on the affine hull of $Q$, so~\eqref{eq:zeroface} gives
+$X^*=Q$.
+\end{proof}
+
+Suppose now that $Q=\operatorname{conv}(\mathcal A)$ is a polytope
+with a finite atom set, and that $f$ is nonconstant on $Q$.
+Write $\mathcal A_*:=\mathcal A\cap X^*$ and
+\begin{equation}\label{eq:atommargin}
+ m:=\min_{v\in\mathcal A\setminus\mathcal A_*}
+              \inner{g^*}{v-x^*}>0.
+\end{equation}
+For any active representation $x=\sum\lambda_vv$, its mass outside
+the optimal face obeys
+\begin{equation}\label{eq:badmass}
+ \theta:=\sum_{v\notin\mathcal A_*}\lambda_v
+ \le\frac{\inner{g^*}{x-x^*}}m\le\frac{\delta(x)}m.
+\end{equation}
+Replacing its nonoptimal atoms by any point of $X^*$ shows
+$\operatorname{dist}(x,X^*)\le D\theta$. Hence the model itself
+implies the global weak-sharpness bound
+\[
+ \delta(x)\ge(m/D)\operatorname{dist}(x,X^*).
+\]
+An independent quadratic-growth hypothesis is unnecessary here.
+The finite atom assumption matters for this error bound: for the
+affine function $f(x)=1-x_1$ on the unit disk,
+$\delta(\cos t,\sin t)/\operatorname{dist}((\cos t,\sin t),X^*)
+=|\sin(t/2)|\to0$. Zero base curvature on a general compact
+convex set therefore does not imply weak sharpness.
+
+\begin{theorem}[Finite exact termination of backtracking AFW]
+\label{thm:zerofinite}
+Assume $H_0=0$, a finite atom set, and $U_0>0$. Set
+\[
+ b=H_1D^2,\quad
+ c_b=\begin{cases}\sqrt b\coth\sqrt b,&b>0,\\1,&b=0,\end{cases}
+ \qquad \overline L=\max\{M,2H_1U_0\},
+\]
+\begin{equation}\label{eq:zerothreshold}
+ \tau=\min\left\{\frac{U_0}2,
+       \frac{m}{4(1+b+c_b)}\right\},\qquad
+ J_0=\ceil{\log_2(U_0/\tau)}.
+\end{equation}
+Define the two initialization potentials
+\[
+ P=\ceil{\log_2\max\{1,MD^2/U_0\}},\qquad
+ Q_0=\ceil{\log_2\max\{1,8\overline L D^2\tau/m^2\}}.
+\]
+The standard backtracking AFW algorithm, continued with stopping
+tolerance zero, reaches an exact optimum and $U_N=0$ within
+\begin{equation}\label{eq:zerofinite}
+ N\le2\big[P+\ceil{(6+16b)J_0}+Q_0\big]+|S_0|-1
+\end{equation}
+updates. After the first source with $U\le\tau$, every nonoptimal
+update selects away, and at most $Q_0$ further good updates occur
+before only maximal drops of nonoptimal atoms remain.
+The gradient and full-LMO counts are $N+1$, and
+\[
+ N_f\le1+2N+\ceil{\log_2\max\{1,2H_1U_0/M\}}.
+\]
+Neither $m,H_1,f_Q^*$ nor the threshold $\tau$ is an algorithm input.
+No hypothesis~\eqref{eq:geometry} or positive strong-convexity
+constant is required. These are exact-arithmetic statements.
+\end{theorem}
+\begin{proof}
+The accepted-curvature envelope gives $L_k\le\overline L$ for all
+updates. Consider a nonoptimal source with $U\le\tau$; then
+$0<\delta\le\tau$. By~\eqref{eq:zerograd}, the difference between
+the current and optimal gradient scores of any two atoms is at
+most $b\delta/2$. Thus every nonoptimal atom has a strictly larger
+current score than every optimal atom. An LMO returns an optimal
+atom. A nonoptimal source has some active nonoptimal atom, and an
+away maximizer $v$ is necessarily nonoptimal. Its gap satisfies
+\[
+ g_{\mathrm A}=\inner{\nabla f(x)}{v-x}
+ \ge m-\delta-b\delta/2\ge3m/4.
+\]
+Meanwhile Theorem~\ref{lem:bridge} gives
+$G\le c_b\delta\le m/4$. The algorithm therefore selects away.
+Its atom weight is at most $\theta\le\delta/m<1/2$, so
+\[
+ \alpha_{\max}\le2\delta/m.
+\]
+Put $R=m^2/(8D^2\tau)$. Since
+\[
+ 2H_1\tau/R=16b\tau^2/m^2
+ \le b/(1+b+c_b)^2\le1,
+\]
+an accepted estimate above $R$ must be a first-trial halving;
+an acceptance after rejection is below $2H_1\delta\le R$.
+At entry the inherited estimate is at most $\overline L$, so there
+are at most $Q_0$ such halvings. An accepted estimate at most $R$
+remains at most $R$ thereafter by the local envelope, and satisfies
+\[
+ L_k\norm d^2\alpha_{\max}
+ \le 2RD^2\delta/m\le m/4<g_{\mathrm A}.
+\]
+Every such trial is clipped at the feasible cap and drops a
+nonoptimal atom. The objective and $U$ decrease, so the local
+conditions remain valid. After finitely many drops all active atoms
+are optimal. Then $G=0$ and the paid final check gives $U=0$.
+
+To count the preceding updates, apply the phase proof of
+Theorem~\ref{thm:afw} up to its first source $U\le\tau$.
+It bounds the total number of good updates before that source
+by $P+\ceil{(6+16b)J_0}$. The local argument permits at most
+$Q_0$ further good updates. The global atom-removal count~\eqref{eq:dropcount}
+proves~\eqref{eq:zerofinite}. The function-call identity and envelope
+give the stated oracle bound, including rejections.
+\end{proof}
+Here $J_0$ does not depend on $M$. For a fixed objective and start,
+large $M$ therefore contributes only $O(\log M)$ through $P,Q_0$,
+with no additional factor $H_1D^2$ on that initialization cost.
+
+Finite active-set identification under strict complementarity is
+established theory~\cite[Theorem 3.1 and Appendix]{bomze}
+and is not a new general phenomenon. Garber~\cite[Theorems 4--5]{garber}
+also gives finite-convergence and face-identification results for
+line-search FW variants. Here the zero-base model itself forces
+the exposed face to equal the entire solution set; identifying
+that face solves the problem exactly. The displayed threshold
+and trial count specialize this mechanism to the inherited
+halving/doubling curvature estimate, without requiring convergence
+to a particular optimum. This does not assert priority over every
+identification theorem.
+
+\paragraph{Why the endpoint matters.}
+The conclusion does not extend to an arbitrary $H_0>0$.
+On $[-1,1]$, take $f(x)=h x^2/2$, $h>0$, $0<x_0<1$,
+and $M=3h$. Backtracking accepts $L_k=3h/2$ at every update:
+the first trial accepts initially, and each later trial $3h/4$
+fails for this nonzero quadratic step. The selected direction
+is FW (in the usual two-endpoint representation), and
+\[
+ x_{k+1}=x_k-f'(x_k)/(3h/2)=x_k/3.
+\]
+Hence no finite iterate is optimal, however small $h=H_0>0$ is.
+Finite identification of an optimal face does not in general
+solve a nonconstant objective on that face.

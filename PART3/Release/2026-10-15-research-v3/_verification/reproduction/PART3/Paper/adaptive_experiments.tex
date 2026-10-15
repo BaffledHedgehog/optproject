@@ -1,0 +1,67 @@
+\subsection{Additional study: adaptation and real count data}
+A separate recorded study repeats the controls with the adaptive method
+and adds Poisson regression: 12 methods, seven scenarios, ten seeds, or
+840 runs. These include reruns of previous controls, not 840 independent
+new problem instances. The previous 660-run experiment and exact source
+snapshots are retained. New results are in \texttt{Work/adaptive\_results/}.
+
+For the official UCI Bike Sharing daily data~\cite{bike}, use the first
+584 of 731 chronological observations. Training-only standardized
+features are temperature, apparent temperature, humidity, windspeed,
+working-day, holiday and year indicators, plus an intercept. The target
+components \texttt{casual} and \texttt{registered} are excluded.
+Let $t_i=y_i/\bar y$, where $y_i$ is the count and $\bar y$ its training
+mean. On an $\ell_1$ ball of radius $R=1.5$, minimize
+\[
+ f(x)=\frac1m\sum_i\big[e^{a_i^\top x}-t_i a_i^\top x
+                         +t_i\log t_i-t_i\big]+\frac\mu2\norm x^2,
+ \quad \mu=0.01.
+\]
+This is a Poisson-deviance objective with offset $\log\bar y$, divided
+by $\bar y$, plus the quadratic penalty. Seeds vary only the starting
+signed vertex of this fixed training objective. No forecasting performance
+claim or test-set evaluation is made.
+
+For $H_1=\max_i\norm{a_i}^2$ and $C=m^{-1}\sum_i(t_i\log t_i-t_i)$,
+$\norm{\nabla^2f}\le\mu+H_1m^{-1}\sum_i e^{a_i^\top x}$.
+Also $f_Q^*\le f(0)=1+C$ and
+$m^{-1}\sum_i t_i a_i^\top x\le Rm^{-1}\sum_i t_i\norm{a_i}_\infty$.
+Thus~\eqref{eq:curvature} holds with the explicit, conservative constant
+\[
+ H_0=\mu+H_1\left(1+\frac Rm\sum_i t_i\norm{a_i}_\infty\right).
+\]
+Here $H_0\approx165.37$, $H_1\approx49.39$, while the guaranteed global
+$L$ is approximately 8098.06. The independent SLSQP reference is polished
+by Newton steps when interior and is accompanied by its FW-gap interval.
+The reference is unavailable to every FW solver.
+
+Table~\ref{tab:adaptive} gives selected results. On the real count
+problem, certificate-scaled backtracking and the chosen adaptive-$L$
+baseline each certify eight of ten starts. Their respective median
+function-call counts are 860 and 1789, including capped runs.
+Armijo certifies all ten starts, using 4399 median function calls and
+310 updates. This is a promising comparison with one backtracking
+configuration, not uniform superiority or a paired speedup for every start.
+On the scaled active family, the new method certifies no run within
+the cap. All 70 runs of the new method obey the total trial bound
+in~\eqref{eq:trials}; this is a trajectory check, not a proof by experiment.
+The real-data study covers only one dataset and radius with positive
+$H_1$. The next subsection adds auto-conditioned FW~\cite{autoconditioned}.
+\input{adaptive_table}
+
+A 210-run ablation repeats the same seven families with three methods.
+The new control uses the same initial curvature $U_0/D^2$ and the same
+first trial as the proposed method, followed by ordinary halving of $L$
+without current-certificate scaling. On Bike Sharing its median function
+count is 1002.5, with six certified starts, versus 860 and eight for the
+proposed method. The original baseline's count of 1789 therefore partly
+reflects initialization. The median of the ten paired function-call ratios
+is 0.953, with a descriptive 95\% percentile-bootstrap interval
+$[0.535,2.303]$ (10000 resamples, seed 7103, capped runs included).
+This wide interval includes 1; stable empirical superiority is not
+established. On the interior family the corresponding median ratio is
+1.050 with interval $[0.824,1.184]$. These are descriptive intervals
+without multiple-comparison correction. The ablation reuses the main
+instances and is not independent evidence from new datasets.
+Theorem~\ref{thm:ordinary} now proves the same two-phase order for ordinary
+backtracking, including an arbitrary positive initial estimate.

@@ -1,0 +1,11 @@
+{
+  "artifact_sha256": {
+    "manifest.json": "f2b98b96a6c5427d0b817ffcddb253ce14d90036320f2240e93978c7625318b9",
+    "report_source.py": "4cb06dcbccd8b595aaedc814bfa24dcf6b02cec11bfe4f46bc15f8ecb72301ab",
+    "results.md": "8e18ec7917efb9d1b03beb49764d917409795a4e8e2cc747d27a34d23b033352",
+    "reference_diagnostics.csv": "9f4e64833fe1e3dd2a6d73f85c1b8cb01e67ff4981a549cab5a4724cbb499e05",
+    "additional_counts.pdf": "88bcfa5e3d740c74fb760e25d75b6a07b5fa48f5f575acc7de3100fa0b56929c",
+    "additional_counts.png": "82dd3ed57ab7a81e3617b1022bf84dfd7b1a73ae7a0ce56a6f97a9237671f124"
+  },
+  "paper_table_sha256": "8c6d66d7ed7524adf28dcb4946a6f7fb878ae622c6f0b30317dbdd4f1f36c027"
+}

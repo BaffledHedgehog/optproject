@@ -1,0 +1,7 @@
+{
+  "artifact_sha256": {
+    "manifest.json": "823a312ccd0b79cf4942646e8d18fe20f32fe6b065e364fa39ab5b7aad6278e8",
+    "results.md": "bea97a110842f895b7e98ef55f6e94739226baf3e201ea84d9b07dcb25a74573",
+    "report_source.py": "72f5046ad88e0da11bd79ce3d70170d4eb657d9b550c1ee4a14e468ad41943e8"
+  }
+}

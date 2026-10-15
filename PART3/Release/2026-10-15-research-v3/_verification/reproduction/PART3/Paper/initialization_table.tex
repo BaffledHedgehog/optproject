@@ -1,0 +1,29 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Controlled starting-point/update-rule ablation. Each cell has the same preprocessing cost and first trial curvature. Successes and median certificates at separate budgets of 1000 function or gradient calls, over ten seeds. Other oracle types are unrestricted; the outer cap remains 1000.}
+\label{tab:factorial}
+\begin{tabular}{llrrrr}
+\hline
+ & & \multicolumn{2}{c}{1000 function calls} & \multicolumn{2}{c}{1000 gradient calls} \\
+Rule & Start & Successes & Median $U$ & Successes & Median $U$ \\
+\hline
+\multicolumn{6}{l}{\textbf{active}} \\
+AC & original & 1/10 & 2.06e-04 & 1/10 & 2.06e-04 \\
+AC & vertex & 10/10 & 7.93e-06 & 10/10 & 7.93e-06 \\
+BT & original & 0/10 & 5.18e-04 & 0/10 & 2.61e-04 \\
+BT & vertex & 10/10 & 8.44e-06 & 10/10 & 8.44e-06 \\
+\hline
+\multicolumn{6}{l}{\textbf{active\_scaled}} \\
+AC & original & 0/10 & 2.00e-03 & 0/10 & 2.00e-03 \\
+AC & vertex & 0/10 & 2.68e-03 & 0/10 & 2.68e-03 \\
+BT & original & 0/10 & 3.72e-03 & 0/10 & 1.86e-03 \\
+BT & vertex & 0/10 & 3.60e-03 & 0/10 & 1.84e-03 \\
+\hline
+\multicolumn{6}{l}{\textbf{bike\_poisson}} \\
+AC & original & 6/10 & 9.72e-06 & 6/10 & 9.72e-06 \\
+AC & vertex & 7/10 & 9.53e-06 & 7/10 & 9.53e-06 \\
+BT & original & 2/10 & 6.72e-05 & 6/10 & 9.94e-06 \\
+BT & vertex & 5/10 & 2.20e-05 & 5/10 & 1.11e-05 \\
+\hline
+\end{tabular}
+\end{table}

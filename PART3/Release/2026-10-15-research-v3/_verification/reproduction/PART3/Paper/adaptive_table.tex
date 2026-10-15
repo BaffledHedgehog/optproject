@@ -1,0 +1,28 @@
+\begin{table}[htbp]
+\centering\small
+\caption{Additional 840-run study: selected comparisons. Medians over ten seeds include capped runs; tolerance $10^{-5}$ and cap 1000 updates. On Bike Sharing, seeds vary the starting vertex of one fixed training objective.}
+\label{tab:adaptive}
+\begin{tabular}{lrrrrr}
+\hline
+Method & Successes & Updates & $U$ & $f$ calls & $\nabla f$ calls \\
+\hline
+\multicolumn{6}{l}{\textbf{interior}} \\
+Hyperbolic, known $H_0,H_1$ & 10/10 & 136.5 & 9.48e-06 & 137.5 & 137.5 \\
+Adaptive $L$ & 10/10 & 85.0 & 9.34e-06 & 168.5 & 86.0 \\
+Certificate-scaled backtracking & 10/10 & 75.0 & 8.71e-06 & 168.0 & 76.0 \\
+Armijo & 10/10 & 27.0 & 7.10e-06 & 220.0 & 28.0 \\
+\hline
+\multicolumn{6}{l}{\textbf{active\_scaled}} \\
+Hyperbolic, known $H_0,H_1$ & 0/10 & 1000.0 & 4.25e-03 & 1001.0 & 1001.0 \\
+Adaptive $L$ & 0/10 & 1000.0 & 1.77e-03 & 2002.0 & 1001.0 \\
+Certificate-scaled backtracking & 0/10 & 1000.0 & 1.47e-03 & 2014.0 & 1001.0 \\
+Armijo & 1/10 & 1000.0 & 4.78e-04 & 9758.0 & 1001.0 \\
+\hline
+\multicolumn{6}{l}{\textbf{bike\_poisson}} \\
+Hyperbolic, known $H_0,H_1$ & 0/10 & 1000.0 & 1.04e-01 & 1001.0 & 1001.0 \\
+Adaptive $L$ & 8/10 & 893.5 & 9.85e-06 & 1789.0 & 894.5 \\
+Certificate-scaled backtracking & 8/10 & 419.0 & 9.41e-06 & 860.0 & 420.0 \\
+Armijo & 10/10 & 310.0 & 9.93e-06 & 4399.0 & 311.0 \\
+\hline
+\end{tabular}
+\end{table}

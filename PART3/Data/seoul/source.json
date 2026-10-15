@@ -1,0 +1,14 @@
+{
+  "title": "Seoul Bike Sharing Demand",
+  "year": 2020,
+  "doi": "10.24432/C5F62R",
+  "creator": "UCI dataset citation (no named creator listed)",
+  "url": "https://archive.ics.uci.edu/static/public/560/seoul+bike+sharing+demand.zip",
+  "page": "https://archive.ics.uci.edu/dataset/560/seoul+bike+sharing+demand",
+  "file": "SeoulBikeData.csv",
+  "license": "CC BY 4.0",
+  "license_url": "https://creativecommons.org/licenses/by/4.0/",
+  "archive_sha256": "139e9908f0a3544bb222386855c9ce107e96467306bb8e4ce936aab59e7baac4",
+  "file_sha256": "373339b71a8935d69e9af0abf26a70744632119862eeb3919efb389a7b749c60",
+  "changes": "Named file retained byte-for-byte; preprocessing is in count_problems.py."
+}

@@ -1,0 +1,142 @@
+{
+  "objective": "Strengthen and scrutinize the scientific claims of PART3 before publication.",
+  "date": "2026-10-15",
+  "status": "internally_checked",
+  "claims": [
+    {
+      "id": "model_attribution",
+      "claim": "Function-value Hessian regularity is known; the compact constrained affine model is our specialization.",
+      "kind": "prior model",
+      "sources": [
+        "kale",
+        "caoselfbound",
+        "warmup"
+      ],
+      "resolution": "Corrected the former introduction attribution; no model novelty claim."
+    },
+    {
+      "id": "backtracking_certificate",
+      "claim": "Existing halving/doubling FW and AFW have the stated separated certificate and total-trial bounds, including initialization and final verification.",
+      "kind": "analysis theorem",
+      "proof": [
+        "Paper/article_fw.tex",
+        "Paper/article_away.tex"
+      ],
+      "verification": [
+        "Work/test_research.py",
+        "Work/test_away_fw.py",
+        "Work/proof_audit_results/checks.json"
+      ],
+      "priority": "Specialized analysis; no first-algorithm or exhaustive-priority claim."
+    },
+    {
+      "id": "optimal_pointwise_gap",
+      "claim": "The differential envelope E(delta) is the smallest universal bound depending only on D,H0,H1,delta for the stated class; one-dimensional convex C2 functions attain every branch and parameter tuple.",
+      "kind": "sharp mathematical inequality",
+      "proof": [
+        "Paper/article_away.tex",
+        "Paper/article_appendix.tex"
+      ],
+      "verification": [
+        "Work/test_differential_geometry.py",
+        "Paper/evidence/geometry_grid.csv"
+      ],
+      "limits": "Pointwise sharpness is proved by extremizers. This is not optimal oracle complexity or a proof of bibliographic priority."
+    },
+    {
+      "id": "zero_base_geometry",
+      "claim": "When H0=0 the entire constrained solution set is an exposed face with a common gradient; gradient variation is at most H1 D delta/2. Finite atoms imply weak sharpness.",
+      "kind": "structural proposition",
+      "proof": [
+        "Paper/article_zero.tex"
+      ],
+      "verification": [
+        "Work/test_differential_geometry.py"
+      ],
+      "limits": "A nonconstant objective cannot have a relative-interior optimum. Weak sharpness need not hold on a disk; this is not an unrestricted interpolation-loss model."
+    },
+    {
+      "id": "zero_base_exact_afw",
+      "claim": "Backtracking AFW terminates at an exact optimum in finitely many updates when H0=0 and the atom set is finite, without an additional geometric inequality. The explicit bound separates initialization lag from the phase cost.",
+      "kind": "theorem specializing identification",
+      "proof": [
+        "Paper/article_zero.tex"
+      ],
+      "verification": [
+        "Work/differential_geometry_results/checks.json",
+        "Work/test_differential_geometry.py"
+      ],
+      "sources": [
+        "bomze",
+        "garber"
+      ],
+      "limits": "Exact arithmetic and exact oracles; finite identification is prior. No finite-precision termination guarantee or extension to H0>0 is asserted."
+    },
+    {
+      "id": "exact_global_self_bound",
+      "claim": "Under a global R^d Hessian/value bound and finite global infimum, gradient norm squared is at most 2H0 delta+H1 delta^2; quadratics, cosh and exponential functions attain the constants.",
+      "kind": "auxiliary sharp inequality",
+      "proof": [
+        "Paper/article_appendix.tex"
+      ],
+      "sources": [
+        "warmup",
+        "kale",
+        "caoselfbound"
+      ],
+      "verification": [
+        "Work/test_differential_geometry.py"
+      ],
+      "limits": "The compact constrained model alone does not imply this inequality; a nonconstant affine function is a counterexample. This does not transfer the source papers convergence theorems automatically."
+    },
+    {
+      "id": "empirical_scope",
+      "claim": "The 756 method records share 108 cases; failures and matched budgets remain included. No uniform advantage, wall-time superiority or independent-replication inflation is asserted.",
+      "kind": "controlled empirical observations",
+      "verification": [
+        "Paper/evidence/claim_ledger.csv",
+        "Work/count_comparator_results/manifest.json",
+        "Work/certificate_results/manifest.json"
+      ],
+      "limits": "The rational geometry audits are theorem checks, not new real-data benchmarks. Numerical references are not directed-rounding interval certificates."
+    }
+  ],
+  "global_limits": [
+    "No independent mathematical peer review has occurred.",
+    "A targeted source comparison does not establish absolute bibliographic priority."
+  ],
+  "required_checks": [
+    "All analytic proofs and extremizers included in the current article.",
+    "Independent decimal constructions, actual objective gaps and rational AFW/counterexample checks pass.",
+    "Prior attribution corrected and closest displayed bounds compared.",
+    "Fresh PDFs and isolated source/reproduction package validated with the new results."
+  ],
+  "proof_source_sha256": {
+    "Paper/article.tex": "480252aa5026cf0c2141995ecd5a4bced630f0c41206a169e4bbd4ed983c3f18",
+    "Paper/article_intro.tex": "8eab143272813e5444642bf73968ba26cdaabca5ea47aeee4db33ffdb7acc0f3",
+    "Paper/article_fw.tex": "b54e512d80d8e1acda231915fa878f79b14d8d0669ea22faca08e5e3368908b8",
+    "Paper/article_away.tex": "074ec05afb59c9b153306885f1c52e26287e96b8c38e2b973c9c44819cc5a1fe",
+    "Paper/article_zero.tex": "57ea7b51ca9d0db4e660ce0deffd474306a0152f1f1537fb289612b18736eb72",
+    "Paper/article_experiments.tex": "0aab4e93243a2811192e657596bb0760e8c7ea7bbb28716c6bd9281440e0942d",
+    "Paper/article_appendix.tex": "8a2c9e609121eb63cfaf706fbbccd18cdbdcfa9debd3e92ea527891d9c05fc83",
+    "Paper/article_references.tex": "7f543e70571a18519b1e27bd5806070cd42f4b3d95b67158a39b63213b25da4b",
+    "Work/certificate_bounds.py": "5ec77354a9bde008ce1d70591e2628d4359ed35d049f5d7010ad91a6ebded966",
+    "Work/test_differential_geometry.py": "b1c34d6f3395fcacfbff322f64dbc67e7a277dfe62d4b39e4e52e1000dc7b1f9",
+    "Work/differential_geometry_audit.py": "53121b348f6ae7c3951635afe5c164c5e0bd55af91da1e0bde3ecaebb1658898",
+    "Work/publication_literature.json": "af63acbec31733a0541b250dc09401afb154d8ce48e01521dce0b283c863426a",
+    "Work/away_fw.py": "38e842c4c54a56b5a382654abe8ab653a774067dc59bd0fca34c9ce662694bc7",
+    "Work/problems.py": "9e4aab8137905586c39b82b921264b6777b388c3e663c3ef054a112bf2f061ca"
+  },
+  "check_scope": {
+    "unit_tests": 65,
+    "decimal_extremizers": 108,
+    "decimal_precision": 70,
+    "rational_uniform_start_afw_runs": 24,
+    "rational_local_drop_runs": 6,
+    "additional_local_lag_paths_in_tests": 2,
+    "positive_base_trial_checks": 180,
+    "independent_peer_review": false,
+    "formal_proof_assistant_verification": false
+  },
+  "comparison_summary": "Mathematical sharpness is proved by attaining functions. The targeted literature comparison supplies attribution and explicit bound comparisons, not a claim of absolute priority."
+}

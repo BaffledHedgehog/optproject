@@ -1,0 +1,9 @@
+{
+  "global_runs": 24,
+  "planted_local_runs": 6,
+  "checked_local_maximal_drops": 12,
+  "max_updates": 6,
+  "max_function_evals": 10,
+  "exact_positive_base_trial_checks": 180,
+  "finite_horizon_per_scale": 30
+}

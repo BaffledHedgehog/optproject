@@ -1,0 +1,24 @@
+{
+  "scope": "Frozen internal proof and claim review accompanying finite exact checks; not independent peer review",
+  "claim_count": 7,
+  "article_pdf_at_freeze": "review/article.pdf",
+  "artifact_sha256": {
+    "review/article.pdf": "ed6299735dd2d21a6ec184180b753582abbea7f0d81d576d10fd8bbe69312496",
+    "review/research_claims.json": "11cdaeb7ed82ac5cfa21bc29bdc95d25aab415604f9aba71ce847ca876378507",
+    "review/Paper/article.tex": "480252aa5026cf0c2141995ecd5a4bced630f0c41206a169e4bbd4ed983c3f18",
+    "review/Paper/article_appendix.tex": "8a2c9e609121eb63cfaf706fbbccd18cdbdcfa9debd3e92ea527891d9c05fc83",
+    "review/Paper/article_away.tex": "074ec05afb59c9b153306885f1c52e26287e96b8c38e2b973c9c44819cc5a1fe",
+    "review/Paper/article_experiments.tex": "0aab4e93243a2811192e657596bb0760e8c7ea7bbb28716c6bd9281440e0942d",
+    "review/Paper/article_fw.tex": "b54e512d80d8e1acda231915fa878f79b14d8d0669ea22faca08e5e3368908b8",
+    "review/Paper/article_intro.tex": "8eab143272813e5444642bf73968ba26cdaabca5ea47aeee4db33ffdb7acc0f3",
+    "review/Paper/article_references.tex": "7f543e70571a18519b1e27bd5806070cd42f4b3d95b67158a39b63213b25da4b",
+    "review/Paper/article_zero.tex": "57ea7b51ca9d0db4e660ce0deffd474306a0152f1f1537fb289612b18736eb72",
+    "review/Work/away_fw.py": "38e842c4c54a56b5a382654abe8ab653a774067dc59bd0fca34c9ce662694bc7",
+    "review/Work/certificate_bounds.py": "5ec77354a9bde008ce1d70591e2628d4359ed35d049f5d7010ad91a6ebded966",
+    "review/Work/differential_geometry_audit.py": "53121b348f6ae7c3951635afe5c164c5e0bd55af91da1e0bde3ecaebb1658898",
+    "review/Work/problems.py": "9e4aab8137905586c39b82b921264b6777b388c3e663c3ef054a112bf2f061ca",
+    "review/Work/publication_literature.json": "af63acbec31733a0541b250dc09401afb154d8ce48e01521dce0b283c863426a",
+    "review/Work/test_differential_geometry.py": "b1c34d6f3395fcacfbff322f64dbc67e7a277dfe62d4b39e4e52e1000dc7b1f9",
+    "results.txt": "95cbea7a8c9620258f53dd35885c3b7b46df8395849d45d14cd02ed81217fc0a"
+  }
+}
