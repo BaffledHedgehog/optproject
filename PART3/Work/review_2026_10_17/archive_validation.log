@@ -1,0 +1,13 @@
+benchmark_results: 660 unique runs; source hashes and records valid; 0 adaptive function-call bounds checked
+adaptive_results: 840 unique runs; source hashes and records valid; 70 adaptive function-call bounds checked
+adaptive_ablation: 210 unique runs; source hashes and records valid; 70 adaptive function-call bounds checked
+backtracking_results: 350 unique runs; source hashes and records valid; 70 adaptive function-call bounds checked
+initialization_factorial: 280 runs, 8400 budget prefixes and 84 paired comparisons valid; 70 native AC-FW runs match earlier records exactly
+away_results: 280 runs, 9240 budget prefixes, 70 full AFW audits valid; 140 FW baselines match earlier records exactly
+robustness_results: 360 paired runs, 11880 budget prefixes, 360 full-trajectory audits valid; 30 old baselines match exactly
+constraint_results: 280 trajectories, 10080 oracle prefixes, 840 accuracy prefixes, 280 full audits valid
+multidata_results: 648 runs, 21384 oracle prefixes, 648 full audits valid; all signed coordinate starts present
+certificate_results: 432 exactly repeated paths, 2160 causal stopping profiles, 71280 paid budget prefixes valid
+proof_audit_results: exact replay of 8370 configurations, 57989 curvature states, 1799 bridge checks valid; finite audit, not a formal proof
+count_comparator_results: 108 new AC-FW method runs on existing cases, 3240 charged prefixes valid
+differential_geometry_results: 24 exact rational AFW runs, 6 local drop runs and 180 positive-base counterexample checks replay exactly
