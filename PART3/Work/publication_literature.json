@@ -1,6 +1,6 @@
 {
-  "checked_on": "2026-10-15",
-  "scope": "Targeted primary-source comparison. It does not prove absence of equivalent results or bibliographic priority.",
+  "checked_on": "2026-10-17",
+  "scope": "Targeted primary-source comparison updated through 2026-10-17. Freshly read parts and abstract-only screening are distinguished in literature_search_2026_10_17.json. Not an exhaustive priority claim.",
   "article_claim": "Explicit certificate and total-trial bounds for existing halving/doubling FW/AFW; an optimal pointwise gap envelope with attaining objectives; zero-base face structure and finite AFW termination with separated initialization lag. No new algorithm, optimal oracle complexity, universal practical superiority or absolute-priority claim.",
   "queries": [
     "Frank-Wolfe H_0 H_1 smoothness",
@@ -11,7 +11,31 @@
     "Primary-reference follow-up from Auto-Conditioned FW and Adaptive Conditional Gradient Sliding",
     "Frank-Wolfe finite termination weak sharp minima active-set identification",
     "function-value Hessian bound self-bounding regularity",
-    "function-dependent smoothness exact gradient norm inequality"
+    "function-dependent smoothness exact gradient norm inequality",
+    "\"Frank-Wolfe\" \"function-dependent\" curvature",
+    "\"H_0\" \"H_1\" smoothness lower bounds convex optimization",
+    "\"Frank-Wolfe\" \"zero\" curvature \"finite\" termination",
+    "\"Frank-Wolfe\" \"self-bounding\" certificate",
+    "\"Frank-Wolfe\" \"function-value\" Hessian",
+    "\"Frank-Wolfe\" \"loss-dependent\" smoothness",
+    "\"Frank-Wolfe\" \"H_0\" \"H_1\"",
+    "\"gap-dependent smoothness\" lower bound",
+    "\"generalized smoothness\" \"lower bounds\" convex 2026",
+    "\"Frank-Wolfe\" \"backtracking\" 2026 October",
+    "\"Hessian\" \"function value\" \"gradient\" \"self-bounding\"",
+    "\"Frank-Wolfe\" \"finite termination\" \"weak sharp\"",
+    "site:arxiv.org/abs/2610 \"Frank-Wolfe\"",
+    "site:arxiv.org/abs/2609 \"Frank-Wolfe\"",
+    "site:arxiv.org \"gap-dependent\" \"lower\"",
+    "\"H_0,H_1\" \"interpolation\"",
+    "\"Frank-Wolfe\" \"October 2026\" curvature",
+    "\"Frank-Wolfe\" \"September 2026\" adaptive",
+    "\"(H0,H1)\" \"lower\" optimization -Hilbert -polytopes",
+    "\"(H_0,H_1)\" \"lower bounds\" optimization",
+    "\"Frank-Wolfe\" \"coth\"",
+    "\"function-dependent curvature\" \"certificate\"",
+    "\"Hessian\" \"exposed face\" optimization",
+    "\"H0\" \"H1\" \"oracle complexity\" optimization"
   ],
   "sources": [
     {
@@ -115,7 +139,64 @@
       "url": "https://arxiv.org/html/2006.00558",
       "checked": "Assumption 2; Theorems 4-5; Algorithms 1-2",
       "conclusion": "Finite vertex convergence and optimal-face identification with line-search FW variants are prior. We do not claim the general finite-identification phenomenon or that identifying a face solves a nonconstant function on it."
+    },
+    {
+      "key": "freundgrigas",
+      "title": "New Analysis and Results for the Frank-Wolfe Method",
+      "url": "https://arxiv.org/html/1307.0873v2",
+      "first_submitted": "2013-07-02",
+      "version_date": "2014-06-02",
+      "checked": "Method 1 steps 2-3, bound gap and warm-start discussion",
+      "conclusion": "Best-so-far tangent bounds are prior, including the scalar accumulated stopping construction."
+    },
+    {
+      "key": "beyondshort",
+      "title": "Beyond Short Steps in Frank-Wolfe Algorithms",
+      "url": "https://arxiv.org/html/2501.18773v1",
+      "first_submitted": "2025-01-30",
+      "version_date": "2025-01-30",
+      "checked": "Sections 2-4, Proposition 4.1 and averaged lower models",
+      "conclusion": "Computable primal-dual short steps and optimistic FW under global smoothness are prior; the displayed result uses a different update and certificate model."
+    },
+    {
+      "key": "liuwarmup",
+      "title": "Theoretical Analysis on how Learning Rate Warmup Accelerates Convergence",
+      "url": "https://arxiv.org/html/2509.07972v1",
+      "first_submitted": "2025-09-09",
+      "version_date": "2025-09-09",
+      "checked": "Definition 1, Lemma 2, Section 4.3 Theorem 3",
+      "conclusion": "Power-of-gap Hessian bounds precede the project. The lower bound concerns GD with non-increasing steps and gradient stationarity, not arbitrary convex FO algorithms."
+    },
+    {
+      "key": "alfcg",
+      "title": "Adaptive Lipschitz-Free Conditional Gradient Methods for Stochastic Composite Nonconvex Optimization",
+      "url": "https://arxiv.org/pdf/2603.06369v1",
+      "first_submitted": "2026-03-06",
+      "version_date": "2026-03-06",
+      "checked": "PDF Section 3, Assumptions 1-3 and Definition 4; algorithm framework",
+      "conclusion": "No-input-L and line-search-free adaptation is prior; component/average smoothness remains an assumption and the target is stochastic FW stationarity."
+    },
+    {
+      "key": "newtonfw",
+      "title": "Beyond Polytopes: Damped Newton Frank-Wolfe Methods over Compact Convex Sets",
+      "url": "https://arxiv.org/html/2609.34290v1",
+      "first_submitted": "2026-09-28",
+      "version_date": "2026-09-28",
+      "checked": "Section 1 positive-definite Hessian assumption and Sections 2-3 Newton/residual-backtracking framework",
+      "conclusion": "Recent related second-order method; positive definite Hessians exclude the project's zero-base optimum where the Hessian is zero."
+    },
+    {
+      "key": "lobanov",
+      "title": "A Few Accelerated Algorithms for Convex Optimization under (H0,H1)-Smoothness",
+      "url": "https://arxiv.org/html/2608.04884v1",
+      "first_submitted": "2026-08-05",
+      "version_date": "2026-08-05",
+      "checked": "Algorithm 2, discussion after Theorem 5, Appendix B Lemma 10",
+      "conclusion": "Uses initial sublevel-set radius and distinguishes accelerated outer iterations from full inexact-relaxation oracle calls. Does not establish optimality against arbitrary FO methods."
     }
   ],
-  "attribution_correction": "Earlier wording attributing introduction of function-value Hessian bounds to the warm-up paper was too narrow. The focused article now cites the prior 2022 and 2025 self-bounding frameworks."
+  "attribution_correction": "In addition to prior self-bounding frameworks, cite Liu et al. (2025) for power-of-gap curvature, Freund-Grigas for best-tangent scalar bounds, and optimistic/primal-dual FW. New specific comparisons include ALFCG and September 2026 damped Newton-FW.",
+  "previous_checked_on": "2026-10-15",
+  "publication_cutoff_inclusive": "2026-10-17",
+  "fresh_search_record": "Work/literature_search_2026_10_17.json"
 }

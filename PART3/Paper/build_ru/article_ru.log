@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2026.10.17)  17 OCT 2026 11:35
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex 2026.10.17)  17 OCT 2026 12:09
 entering extended mode
  file:line:error style messages enabled.
  %&-line parsing enabled.
@@ -677,21 +677,21 @@ Underfull \hbox (badness 3260) in paragraph at lines 2--18
  []
 
 [5] [6]
-File: figures/gap_geometry.pdf Graphic file (type pdf)
-<use figures/gap_geometry.pdf>
-) (ru/article_zero.tex [7] [8] [9]) (ru/article_experiments.tex [10]
+File: ru/figures/gap_geometry.pdf Graphic file (type pdf)
+<use ru/figures/gap_geometry.pdf>
+ [7]) (ru/article_zero.tex [8] [9]) (ru/article_experiments.tex [10]
 (ru/evidence/data_table.tex) [11] (ru/evidence/budget_table.tex)
-File: figures/count_comparators.pdf Graphic file (type pdf)
-<use figures/count_comparators.pdf>
-
-(ru/evidence/initialization_control.tex) [12] [13]
-(ru/evidence/monitor_table.tex)) (article_references.tex
+File: ru/figures/count_comparators.pdf Graphic file (type pdf)
+<use ru/figures/count_comparators.pdf>
+ [12] [13]
+(ru/evidence/initialization_control.tex) (ru/evidence/monitor_table.tex))
+[14] (article_references.tex
 Underfull \hbox (badness 2486) in paragraph at lines 73--1
 []\TU/TimesNewRoman(0)/m/n/10.95 Эксперименты подтверждают необходимость контро
 ля инициализации, единиц целевой
  []
 
-[14]
+
 Underfull \hbox (badness 3977) in paragraph at lines 24--27
 []\TU/TimesNewRoman(0)/m/n/10.95 D. Garber. Revisiting Frank-Wolfe for Polytope
 s: Strict Complementarity and Sparsity.
@@ -715,17 +715,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--83
 ne Learning Repository, 2013.
  []
 
-) (ru/article_appendix.tex [16] [17] [18] [19] (ru/evidence/counts_table.tex)
-[20]
+
+Underfull \hbox (badness 3657) in paragraph at lines 86--89
+[]\TU/TimesNewRoman(0)/m/n/10.95 R. M. Freund and P. Grigas. New Analysis and R
+esults for the Frank-Wolfe Method.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--92
+[]\TU/TimesNewRoman(0)/m/n/10.95 D. Martínez-Rubio and S. Pokutta. Beyond Short
+ Steps in Frank-Wolfe Algorithms.
+ []
+
+[16]) (ru/article_appendix.tex [17] [18] [19] [20]
+(ru/evidence/counts_table.tex) [21]
 Underfull \hbox (badness 3849) in paragraph at lines 388--397
 \TU/TimesNewRoman(0)/m/n/10.95 Сопроводительный пакет включает снимки исходнико
 в, атрибуцию сырых данных, CSV-
  []
 
-[21]
 LaTeX Font Info:    Font shape `TU/Consolas(0)/m/n' will be
 (Font)              scaled to size 9.30756pt on input line 402.
-)
+[22])
 Underfull \hbox (badness 4279) in paragraph at lines 461--93
  []\TU/TimesNewRoman(0)/b/n/10.95 Раскрытие использования генеративных инструме
 нтов.[] \TU/TimesNewRoman(0)/m/n/10.95 Ассистент OpenAI Codex су-
@@ -737,8 +748,7 @@ Underfull \hbox (badness 6461) in paragraph at lines 461--93
 тературы, разработки доказательств,
  []
 
-[22] [23]
-(C:\Users\daeris\Desktop\optproject\PART3\Paper\build_ru\article_ru.aux)
+[23] (C:\Users\daeris\Desktop\optproject\PART3\Paper\build_ru\article_ru.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -747,13 +757,13 @@ Package rerunfilecheck Info: File `article_ru.out' has not changed.
 (rerunfilecheck)             Checksum: B72B528E5AB67C757BD7D5678E88ECF4;7915.
  ) 
 Here is how much of TeX's memory you used:
- 13978 strings out of 409616
- 267705 string characters out of 5773788
+ 13983 strings out of 409616
+ 267811 string characters out of 5773788
  1939191 words of memory out of 5000000
- 35824 multiletter control sequences out of 15000+600000
+ 35829 multiletter control sequences out of 15000+600000
  568266 words of font info for 125 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 79i,9n,93p,643b,630s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,9n,93p,643b,632s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on C:\Users\daeris\Desktop\optproject\PART3\Paper\build_ru\artic
 le_ru.pdf (23 pages).

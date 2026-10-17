@@ -1,0 +1,43 @@
+{
+  "reviewed_on": "2026-10-17",
+  "scope": "Internal validation of corrections; universal H1 lower bound remains open",
+  "unit_tests": {
+    "passed_in_this_session": 72,
+    "existing": 65,
+    "new_lower_bound_tests": 7
+  },
+  "archive_validation": {
+    "command": "python PART3/Work/validate_results.py",
+    "exit_code": 0,
+    "experiment_archives": 11,
+    "previous_exact_audits": 2,
+    "direct_working_tree": true
+  },
+  "lower_bound_audit": {
+    "rational_schur_checks": 91,
+    "dense_oracle_histories": 36,
+    "carrier_cases": 27,
+    "current_input_hashes_verified": true
+  },
+  "english_pdf": {
+    "pages": 22,
+    "embedded_fonts": 24,
+    "type3_procedure_fonts": 0,
+    "page_width_pt": 595.2760009765625,
+    "page_height_pt": 841.8900146484375,
+    "text_sha256": "11c76b717858cb817466ae1ae37ab38324eb6673901ef25d8a30fb698bc45cb0",
+    "pdf_sha256": "fbe1c33b56837c7d9c4d7ff735ae94d082e79736479ae99aec841e9fb06ae30f"
+  },
+  "russian_pdf": {
+    "pages": 23,
+    "embedded_fonts": 24,
+    "type3_procedure_fonts": 0,
+    "page_width_pt": 595.280029296875,
+    "page_height_pt": 841.8900146484375,
+    "text_sha256": "13c84e40ff6936d6e126c7ac4861260fd18c0a2250c7e8ed0403c539988ee67c",
+    "pdf_sha256": "ae332e64f5350ed62b3d94b5078f6155d040cc5c5f2db14b4418332f6fdc9a87"
+  },
+  "original_notes_preserved_and_hashed": 4,
+  "translation_sources_hashed": 15,
+  "independent_peer_review": false
+}

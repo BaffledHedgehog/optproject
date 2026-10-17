@@ -207,9 +207,9 @@ INPUT .\ru\article_away.tex
 INPUT .\ru\article_away.tex
 INPUT .\ru\article_away.tex
 INPUT ru\article_away.tex
-INPUT .\figures\gap_geometry.pdf
-INPUT .\figures\gap_geometry.pdf
-INPUT .\figures\gap_geometry.pdf
+INPUT .\ru\figures\gap_geometry.pdf
+INPUT .\ru\figures\gap_geometry.pdf
+INPUT .\ru\figures\gap_geometry.pdf
 INPUT .\ru\article_zero.tex
 INPUT .\ru\article_zero.tex
 INPUT .\ru\article_zero.tex
@@ -230,9 +230,9 @@ INPUT .\ru\evidence\budget_table.tex
 INPUT .\ru\evidence\budget_table.tex
 INPUT .\ru\evidence\budget_table.tex
 INPUT ru\evidence\budget_table.tex
-INPUT .\figures\count_comparators.pdf
-INPUT .\figures\count_comparators.pdf
-INPUT .\figures\count_comparators.pdf
+INPUT .\ru\figures\count_comparators.pdf
+INPUT .\ru\figures\count_comparators.pdf
+INPUT .\ru\figures\count_comparators.pdf
 INPUT .\ru\evidence\initialization_control.tex
 INPUT .\ru\evidence\initialization_control.tex
 INPUT .\ru\evidence\initialization_control.tex

@@ -1,0 +1,584 @@
+{
+  "scope": "Finite internal checks of the written proofs; no universal H1 lower bound or bibliographic priority",
+  "rational_schur_checks": 91,
+  "dense_oracle_runs": [
+    {
+      "N": 0,
+      "seed": 0,
+      "dimension": 4,
+      "consistency_error": 0.0,
+      "min_eigenvalue": 0.19038059222874398,
+      "output_gap": 0.8464482178600178,
+      "guaranteed_floor": 0.13417857142857142
+    },
+    {
+      "N": 0,
+      "seed": 1,
+      "dimension": 4,
+      "consistency_error": 0.0,
+      "min_eigenvalue": 0.1903805922287441,
+      "output_gap": 2.2447315057969446,
+      "guaranteed_floor": 0.13417857142857142
+    },
+    {
+      "N": 0,
+      "seed": 2,
+      "dimension": 4,
+      "consistency_error": 0.0,
+      "min_eigenvalue": 0.19038059222874396,
+      "output_gap": 2.978674314892974,
+      "guaranteed_floor": 0.13417857142857142
+    },
+    {
+      "N": 0,
+      "seed": 3,
+      "dimension": 4,
+      "consistency_error": 0.0,
+      "min_eigenvalue": 0.19038059222874387,
+      "output_gap": 1.9740165796351095,
+      "guaranteed_floor": 0.13417857142857142
+    },
+    {
+      "N": 0,
+      "seed": 4,
+      "dimension": 4,
+      "consistency_error": 0.0,
+      "min_eigenvalue": 0.19038059222874396,
+      "output_gap": 0.8245672769170592,
+      "guaranteed_floor": 0.13417857142857142
+    },
+    {
+      "N": 0,
+      "seed": 5,
+      "dimension": 4,
+      "consistency_error": 0.0,
+      "min_eigenvalue": 0.1903805922287441,
+      "output_gap": 1.6100641626669467,
+      "guaranteed_floor": 0.13417857142857142
+    },
+    {
+      "N": 0,
+      "seed": 6,
+      "dimension": 4,
+      "consistency_error": 0.0,
+      "min_eigenvalue": 0.19038059222874407,
+      "output_gap": 1.965669616264243,
+      "guaranteed_floor": 0.13417857142857142
+    },
+    {
+      "N": 0,
+      "seed": 7,
+      "dimension": 4,
+      "consistency_error": 0.0,
+      "min_eigenvalue": 0.1903805922287441,
+      "output_gap": 1.3598025093037511,
+      "guaranteed_floor": 0.13417857142857142
+    },
+    {
+      "N": 0,
+      "seed": 8,
+      "dimension": 4,
+      "consistency_error": 0.0,
+      "min_eigenvalue": 0.19038059222874432,
+      "output_gap": 4.011690217829424,
+      "guaranteed_floor": 0.13417857142857142
+    },
+    {
+      "N": 1,
+      "seed": 0,
+      "dimension": 7,
+      "consistency_error": 2.8031757299712627e-16,
+      "min_eigenvalue": 0.08708348754011482,
+      "output_gap": 2.734128396978263,
+      "guaranteed_floor": 0.05123181818181818
+    },
+    {
+      "N": 1,
+      "seed": 1,
+      "dimension": 7,
+      "consistency_error": 4.440892098500626e-16,
+      "min_eigenvalue": 0.08708348754011472,
+      "output_gap": 1.163004697543091,
+      "guaranteed_floor": 0.05123181818181818
+    },
+    {
+      "N": 1,
+      "seed": 2,
+      "dimension": 7,
+      "consistency_error": 3.8459253727671276e-16,
+      "min_eigenvalue": 0.08708348754011508,
+      "output_gap": 0.7100853714498525,
+      "guaranteed_floor": 0.05123181818181818
+    },
+    {
+      "N": 1,
+      "seed": 3,
+      "dimension": 7,
+      "consistency_error": 8.881784197001252e-16,
+      "min_eigenvalue": 0.087083487540115,
+      "output_gap": 1.9278893925496638,
+      "guaranteed_floor": 0.05123181818181818
+    },
+    {
+      "N": 1,
+      "seed": 4,
+      "dimension": 7,
+      "consistency_error": 2.220446049250313e-16,
+      "min_eigenvalue": 0.08708348754011486,
+      "output_gap": 0.8052566655658787,
+      "guaranteed_floor": 0.05123181818181818
+    },
+    {
+      "N": 1,
+      "seed": 5,
+      "dimension": 7,
+      "consistency_error": 1.594436429147036e-16,
+      "min_eigenvalue": 0.08708348754011476,
+      "output_gap": 4.117568811961165,
+      "guaranteed_floor": 0.05123181818181818
+    },
+    {
+      "N": 1,
+      "seed": 6,
+      "dimension": 7,
+      "consistency_error": 3.090730095650652e-16,
+      "min_eigenvalue": 0.08708348754011441,
+      "output_gap": 6.118319640793223,
+      "guaranteed_floor": 0.05123181818181818
+    },
+    {
+      "N": 1,
+      "seed": 7,
+      "dimension": 7,
+      "consistency_error": 2.0770370905276122e-16,
+      "min_eigenvalue": 0.08708348754011465,
+      "output_gap": 2.816004835506379,
+      "guaranteed_floor": 0.05123181818181818
+    },
+    {
+      "N": 1,
+      "seed": 8,
+      "dimension": 7,
+      "consistency_error": 8.881784197001252e-16,
+      "min_eigenvalue": 0.08708348754011523,
+      "output_gap": 1.5233396408112205,
+      "guaranteed_floor": 0.05123181818181818
+    },
+    {
+      "N": 3,
+      "seed": 0,
+      "dimension": 13,
+      "consistency_error": 8.881784197001252e-16,
+      "min_eigenvalue": 0.03181326440815058,
+      "output_gap": 3.966807279804079,
+      "guaranteed_floor": 0.016478070175438595
+    },
+    {
+      "N": 3,
+      "seed": 1,
+      "dimension": 13,
+      "consistency_error": 4.943687995239386e-16,
+      "min_eigenvalue": 0.03181326440815037,
+      "output_gap": 4.0091829966317905,
+      "guaranteed_floor": 0.016478070175438595
+    },
+    {
+      "N": 3,
+      "seed": 2,
+      "dimension": 13,
+      "consistency_error": 8.881784197001252e-16,
+      "min_eigenvalue": 0.03181326440815006,
+      "output_gap": 3.7041663964780884,
+      "guaranteed_floor": 0.016478070175438595
+    },
+    {
+      "N": 3,
+      "seed": 3,
+      "dimension": 13,
+      "consistency_error": 4.440892098500626e-16,
+      "min_eigenvalue": 0.03181326440815063,
+      "output_gap": 11.57642480412647,
+      "guaranteed_floor": 0.016478070175438595
+    },
+    {
+      "N": 3,
+      "seed": 4,
+      "dimension": 13,
+      "consistency_error": 8.881784197001252e-16,
+      "min_eigenvalue": 0.03181326440814989,
+      "output_gap": 5.246163239016073,
+      "guaranteed_floor": 0.016478070175438595
+    },
+    {
+      "N": 3,
+      "seed": 5,
+      "dimension": 13,
+      "consistency_error": 8.881784197001252e-16,
+      "min_eigenvalue": 0.03181326440815021,
+      "output_gap": 2.0884937395930474,
+      "guaranteed_floor": 0.016478070175438595
+    },
+    {
+      "N": 3,
+      "seed": 6,
+      "dimension": 13,
+      "consistency_error": 8.881784197001252e-16,
+      "min_eigenvalue": 0.031813264408150355,
+      "output_gap": 2.965168242429176,
+      "guaranteed_floor": 0.016478070175438595
+    },
+    {
+      "N": 3,
+      "seed": 7,
+      "dimension": 13,
+      "consistency_error": 8.881784197001252e-16,
+      "min_eigenvalue": 0.03181326440815069,
+      "output_gap": 4.923387636506382,
+      "guaranteed_floor": 0.016478070175438595
+    },
+    {
+      "N": 3,
+      "seed": 8,
+      "dimension": 13,
+      "consistency_error": 8.881784197001252e-16,
+      "min_eigenvalue": 0.03181326440814971,
+      "output_gap": 2.2780171777694296,
+      "guaranteed_floor": 0.016478070175438595
+    },
+    {
+      "N": 6,
+      "seed": 0,
+      "dimension": 22,
+      "consistency_error": 4.3930651883366523e-16,
+      "min_eigenvalue": 0.012489567737899825,
+      "output_gap": 5.505261266857067,
+      "guaranteed_floor": 0.0060596774193548385
+    },
+    {
+      "N": 6,
+      "seed": 1,
+      "dimension": 22,
+      "consistency_error": 2.6645352591003757e-15,
+      "min_eigenvalue": 0.01248956773790013,
+      "output_gap": 6.532147549096902,
+      "guaranteed_floor": 0.0060596774193548385
+    },
+    {
+      "N": 6,
+      "seed": 2,
+      "dimension": 22,
+      "consistency_error": 2.6645352591003757e-15,
+      "min_eigenvalue": 0.01248956773789994,
+      "output_gap": 5.242569353706774,
+      "guaranteed_floor": 0.0060596774193548385
+    },
+    {
+      "N": 6,
+      "seed": 3,
+      "dimension": 22,
+      "consistency_error": 8.881784197001252e-16,
+      "min_eigenvalue": 0.012489567737900024,
+      "output_gap": 6.4711449197726365,
+      "guaranteed_floor": 0.0060596774193548385
+    },
+    {
+      "N": 6,
+      "seed": 4,
+      "dimension": 22,
+      "consistency_error": 3.552713678800501e-15,
+      "min_eigenvalue": 0.012489567737899695,
+      "output_gap": 8.94254863207463,
+      "guaranteed_floor": 0.0060596774193548385
+    },
+    {
+      "N": 6,
+      "seed": 5,
+      "dimension": 22,
+      "consistency_error": 9.531322860796707e-16,
+      "min_eigenvalue": 0.0124895677379004,
+      "output_gap": 8.609296183235895,
+      "guaranteed_floor": 0.0060596774193548385
+    },
+    {
+      "N": 6,
+      "seed": 6,
+      "dimension": 22,
+      "consistency_error": 1.7763568394002505e-15,
+      "min_eigenvalue": 0.012489567737899608,
+      "output_gap": 3.4345829782735082,
+      "guaranteed_floor": 0.0060596774193548385
+    },
+    {
+      "N": 6,
+      "seed": 7,
+      "dimension": 22,
+      "consistency_error": 3.552713678800501e-15,
+      "min_eigenvalue": 0.012489567737900444,
+      "output_gap": 6.1674459603631115,
+      "guaranteed_floor": 0.0060596774193548385
+    },
+    {
+      "N": 6,
+      "seed": 8,
+      "dimension": 22,
+      "consistency_error": 1.7763568394002505e-15,
+      "min_eigenvalue": 0.012489567737900078,
+      "output_gap": 8.040369862486942,
+      "guaranteed_floor": 0.0060596774193548385
+    }
+  ],
+  "carrier_cases": [
+    {
+      "N": 0,
+      "H1": 0.0,
+      "rho": 0.25,
+      "z": 0.49999999999999967,
+      "chain_radius_sq": 3.7500000000000004,
+      "matched_f0": 0.5267857142857142,
+      "floor": 0.13392857142857145
+    },
+    {
+      "N": 0,
+      "H1": 0.0,
+      "rho": 0.7,
+      "z": 1.4,
+      "chain_radius_sq": 2.04,
+      "matched_f0": 1.1985714285714284,
+      "floor": 0.07285714285714286
+    },
+    {
+      "N": 0,
+      "H1": 0.0,
+      "rho": 0.9,
+      "z": 1.7999999999999998,
+      "chain_radius_sq": 0.7600000000000007,
+      "matched_f0": 1.701428571428571,
+      "floor": 0.027142857142857166
+    },
+    {
+      "N": 0,
+      "H1": 0.2,
+      "rho": 0.25,
+      "z": 0.4999999999999999,
+      "chain_radius_sq": 3.75,
+      "matched_f0": 0.5273074164500835,
+      "floor": 0.13392857142857142
+    },
+    {
+      "N": 0,
+      "H1": 0.2,
+      "rho": 0.7,
+      "z": 1.4,
+      "chain_radius_sq": 2.04,
+      "matched_f0": 1.2310060104048952,
+      "floor": 0.07285714285714286
+    },
+    {
+      "N": 0,
+      "H1": 0.2,
+      "rho": 0.9,
+      "z": 1.7999999999999998,
+      "chain_radius_sq": 0.7600000000000007,
+      "matched_f0": 1.7908201626333096,
+      "floor": 0.027142857142857166
+    },
+    {
+      "N": 0,
+      "H1": 2.0,
+      "rho": 0.25,
+      "z": 0.5,
+      "chain_radius_sq": 3.75,
+      "matched_f0": 0.5320816325463924,
+      "floor": 0.13392857142857142
+    },
+    {
+      "N": 0,
+      "H1": 2.0,
+      "rho": 0.7,
+      "z": 1.4,
+      "chain_radius_sq": 2.04,
+      "matched_f0": 1.5635950780731156,
+      "floor": 0.07285714285714286
+    },
+    {
+      "N": 0,
+      "H1": 2.0,
+      "rho": 0.9,
+      "z": 1.7999999999999998,
+      "chain_radius_sq": 0.7600000000000007,
+      "matched_f0": 2.78870476299686,
+      "floor": 0.027142857142857166
+    },
+    {
+      "N": 3,
+      "H1": 0.0,
+      "rho": 0.25,
+      "z": 0.4999999999999999,
+      "chain_radius_sq": 3.75,
+      "matched_f0": 0.2730263157894736,
+      "floor": 0.01644736842105263
+    },
+    {
+      "N": 3,
+      "H1": 0.0,
+      "rho": 0.7,
+      "z": 1.4,
+      "chain_radius_sq": 2.04,
+      "matched_f0": 1.0605263157894735,
+      "floor": 0.008947368421052631
+    },
+    {
+      "N": 3,
+      "H1": 0.0,
+      "rho": 0.9,
+      "z": 1.7999999999999998,
+      "chain_radius_sq": 0.7600000000000007,
+      "matched_f0": 1.6499999999999997,
+      "floor": 0.003333333333333336
+    },
+    {
+      "N": 3,
+      "H1": 0.2,
+      "rho": 0.25,
+      "z": 0.4999999999999999,
+      "chain_radius_sq": 3.75,
+      "matched_f0": 0.27354801795384287,
+      "floor": 0.01644736842105263
+    },
+    {
+      "N": 3,
+      "H1": 0.2,
+      "rho": 0.7,
+      "z": 1.4,
+      "chain_radius_sq": 2.04,
+      "matched_f0": 1.0929608976229404,
+      "floor": 0.008947368421052631
+    },
+    {
+      "N": 3,
+      "H1": 0.2,
+      "rho": 0.9,
+      "z": 1.7999999999999998,
+      "chain_radius_sq": 0.7600000000000007,
+      "matched_f0": 1.7393915912047382,
+      "floor": 0.003333333333333336
+    },
+    {
+      "N": 3,
+      "H1": 2.0,
+      "rho": 0.25,
+      "z": 0.5,
+      "chain_radius_sq": 3.75,
+      "matched_f0": 0.2783222340501518,
+      "floor": 0.01644736842105263
+    },
+    {
+      "N": 3,
+      "H1": 2.0,
+      "rho": 0.7,
+      "z": 1.4,
+      "chain_radius_sq": 2.04,
+      "matched_f0": 1.4255499652911607,
+      "floor": 0.008947368421052631
+    },
+    {
+      "N": 3,
+      "H1": 2.0,
+      "rho": 0.9,
+      "z": 1.7999999999999998,
+      "chain_radius_sq": 0.7600000000000007,
+      "matched_f0": 2.737276191568289,
+      "floor": 0.003333333333333336
+    },
+    {
+      "N": 8,
+      "H1": 0.0,
+      "rho": 0.25,
+      "z": 0.5,
+      "chain_radius_sq": 3.75,
+      "matched_f0": 0.19711538461538464,
+      "floor": 0.0037955465587044533
+    },
+    {
+      "N": 8,
+      "H1": 0.0,
+      "rho": 0.7,
+      "z": 1.4,
+      "chain_radius_sq": 2.04,
+      "matched_f0": 1.0192307692307692,
+      "floor": 0.0020647773279352227
+    },
+    {
+      "N": 8,
+      "H1": 0.0,
+      "rho": 0.9,
+      "z": 1.7999999999999998,
+      "chain_radius_sq": 0.7600000000000007,
+      "matched_f0": 1.6346153846153844,
+      "floor": 0.0007692307692307699
+    },
+    {
+      "N": 8,
+      "H1": 0.2,
+      "rho": 0.25,
+      "z": 0.4999999999999999,
+      "chain_radius_sq": 3.75,
+      "matched_f0": 0.19763708677975383,
+      "floor": 0.0037955465587044533
+    },
+    {
+      "N": 8,
+      "H1": 0.2,
+      "rho": 0.7,
+      "z": 1.4,
+      "chain_radius_sq": 2.04,
+      "matched_f0": 1.0516653510642358,
+      "floor": 0.0020647773279352227
+    },
+    {
+      "N": 8,
+      "H1": 0.2,
+      "rho": 0.9,
+      "z": 1.7999999999999998,
+      "chain_radius_sq": 0.7600000000000007,
+      "matched_f0": 1.7240069758201229,
+      "floor": 0.0007692307692307699
+    },
+    {
+      "N": 8,
+      "H1": 2.0,
+      "rho": 0.25,
+      "z": 0.5,
+      "chain_radius_sq": 3.75,
+      "matched_f0": 0.20241130287606274,
+      "floor": 0.0037955465587044533
+    },
+    {
+      "N": 8,
+      "H1": 2.0,
+      "rho": 0.7,
+      "z": 1.4,
+      "chain_radius_sq": 2.04,
+      "matched_f0": 1.3842544187324561,
+      "floor": 0.0020647773279352227
+    },
+    {
+      "N": 8,
+      "H1": 2.0,
+      "rho": 0.9,
+      "z": 1.7999999999999998,
+      "chain_radius_sq": 0.7600000000000007,
+      "matched_f0": 2.721891576183673,
+      "floor": 0.0007692307692307699
+    }
+  ],
+  "input_sha256": {
+    "Work/lower_bound_audit.py": "9c1725fdac09cab9271cb3e6b79918082b4e5ed3d0ddf3f2520f88de815d1415",
+    "Work/test_lower_bound_audit.py": "0e84962092638df98e670020007832d1dccdedb889a87e7f589885459c50ec0b",
+    "some md research/m0_оракульная_модель_и_целевая_теорема_рабочий_документ.md": "34e5e7cf27b1287290925ba899fc6fde35967231fa466777a18054587fefc65e",
+    "some md research/m1_структурные_леммы_класса_h₀_h₁_и_кандидаты_в_hard_instances.md": "5b1db3fb8582efb33cb6b7bdf55691378f1e8a2855b1cac074df38c0674ee5ad",
+    "some md research/m2_теорема_a_сужение_h₁_=_0_и_теорема_b_d_=_1_лёгок_1.md": "ac7f7831952cb15afde1ddeeda4c456f19f67b4b3af4e316bec40489d0f7e5a8",
+    "some md research/README.md": "b832307fc64ed7ddfd756330b673ccd8f0b78ad96fa8e4d8820abd1bf83655d6",
+    "some md research/теорема_c_гарантированная_нижняя_граница_h₀_члена_max_форма_часть.md": "b4f5cda56df6fbc4bb56791c11e0ed4bd55ed5c835508c0b0e81753d834108d3"
+  }
+}

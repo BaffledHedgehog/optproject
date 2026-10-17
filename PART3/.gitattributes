@@ -1,0 +1,15 @@
+# Byte-hashed source snapshots must survive Windows checkout unchanged.
+*.py text eol=lf
+*.tex text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+# CSV writers may intentionally emit CRLF. Do not normalize experimental data.
+*.csv -text
+*.pdf binary
+*.png binary
+*.zip binary
+*.gz binary
+Data/** -text
+Release/** -text
+Work/research_notes_history/** -text

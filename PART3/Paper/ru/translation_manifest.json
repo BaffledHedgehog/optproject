@@ -1,0 +1,39 @@
+{
+  "engine": "C:\\Users\\daeris\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\xelatex.EXE",
+  "passes": 2,
+  "numbered_math_environments": 23,
+  "labels": 51,
+  "citations": 31,
+  "translated_tables": 5,
+  "pdf_sha256": "ae332e64f5350ed62b3d94b5078f6155d040cc5c5f2db14b4418332f6fdc9a87",
+  "source_sha256": {
+    "article_references.tex": "0c7a08c28426870bca1bac5b9abbe809fc6cfa1aed1508286421c6908e44f643",
+    "article_ru.tex": "00e1c801140837fb94c3b13afcf2fbf3ee8e9fdecdaed19d610a4f966c399ab1",
+    "ru/article_appendix.tex": "55e53e90e8608a50a8f118416eb56f478ed2af928d0d61ebda69f6544ee3a1d5",
+    "ru/article_away.tex": "8e202f4efb1d9cdd50564a730f0079d7100a8bd698c5b3de560925c7bd029952",
+    "ru/article_experiments.tex": "fab974dcb2f8a5d5f99b72f9a4b8900eb60ac560ef4b8941c9170aa24168a04e",
+    "ru/article_fw.tex": "2fde22609357c6209d02d7ad04ece986afd3bd0b0586384231fda9715f4c7239",
+    "ru/article_intro.tex": "786cf49e08f237e9711dbe32a9764722934bd27c0b0309c80e107ced0e22c7c7",
+    "ru/article_zero.tex": "8fc7f39d3c8d0f9d4061092669b5f935e113bc085ef40a852dfec3ae64c12379",
+    "ru/evidence/budget_table.tex": "3fca429b0404b14135fb93d4fa62421f02ecaef537c588c420f5dea657a13766",
+    "ru/evidence/counts_table.tex": "0435db8d527be8c868e793b5d9407634f0aca2d0a3d5d226152c7c982e73a434",
+    "ru/evidence/data_table.tex": "29f26ff261c1a13181a5843fe9a8642dec75d74045a94f9e972d2c27345514b2",
+    "ru/evidence/initialization_control.tex": "7475604fb2b6af5476bc18c524996e8775cae98189c7351da99b585e74567305",
+    "ru/evidence/monitor_table.tex": "09f023b5e9ca6460883054bed3945754545e92496080be3aa1cc67644a310dd2",
+    "ru/figures/count_comparators.pdf": "508e40e7efafc0b7cdcb2054863797c733acaac75cbcae0c57096ff785e40b87",
+    "ru/figures/gap_geometry.pdf": "8e7e115d48105272c6ce39da5beab48e7d8cc870eef49b8a08d59c888979e8c5"
+  },
+  "build_helpers_sha256": {
+    "build_article_ru.py": "42b57b143f4bf4fab012e0c6915380300d761c6aedb0658fa06118b912952a7f",
+    "ru/make_figures.py": "4ed499af9cb28eca802fa25ba569a5e7b179f77b2017d0fddc918abab6fe95c1"
+  },
+  "pdf_validation": {
+    "pages": 23,
+    "embedded_fonts": 24,
+    "type3_procedure_fonts": 0,
+    "page_width_pt": 595.280029296875,
+    "page_height_pt": 841.8900146484375,
+    "text_sha256": "13c84e40ff6936d6e126c7ac4861260fd18c0a2250c7e8ed0403c539988ee67c",
+    "pdf_sha256": "ae332e64f5350ed62b3d94b5078f6155d040cc5c5f2db14b4418332f6fdc9a87"
+  }
+}

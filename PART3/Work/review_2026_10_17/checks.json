@@ -144,5 +144,18 @@
     "PART3/Work/robustness_results/source/robustness_benchmark.py"
   ],
   "archive_validation_exit_code": 0,
-  "archive_validation_log": "C:\\Users\\daeris\\Desktop\\optproject\\PART3\\Work\\review_2026_10_17\\archive_validation.log"
+  "archive_validation_log": "C:\\Users\\daeris\\Desktop\\optproject\\PART3\\Work\\review_2026_10_17\\archive_validation.log",
+  "unit_tests": {
+    "command": "python -m unittest discover -s PART3/Work -p \"test_*.py\" -v",
+    "count": 65,
+    "exit_code": 0
+  },
+  "environment": {
+    "python": "3.12.5",
+    "numpy": "2.1.0",
+    "scipy": "1.14.1",
+    "matplotlib": "3.9.2",
+    "scikit-learn": "1.7.2"
+  },
+  "scope": "Unit tests and archived validation; full floating-point benchmarks were not rerun. Exact rational audit archives were replayed by the standard validator."
 }
