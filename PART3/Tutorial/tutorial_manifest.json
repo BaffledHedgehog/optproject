@@ -1,0 +1,44 @@
+{
+  "article_revision": "2026-10-17",
+  "executed": true,
+  "environment": {
+    "python": "3.12.5",
+    "packages": {
+      "numpy": "2.1.0",
+      "matplotlib": "3.9.2",
+      "ipython": "8.26.0",
+      "nbformat": "5.10.4",
+      "nbclient": "0.10.0",
+      "nbconvert": "7.16.4",
+      "ipykernel": "6.29.5"
+    }
+  },
+  "cells": 44,
+  "code_cells": 20,
+  "embedded_png_outputs": 17,
+  "errors": [],
+  "input_sha256": {
+    "Tutorial/build_tutorial.py": "c2d5816804b105f69302bb20cae9d39952043535a41fe89e1b07452d7f2a3c3d",
+    "Paper/ru/article_appendix.tex": "55e53e90e8608a50a8f118416eb56f478ed2af928d0d61ebda69f6544ee3a1d5",
+    "Paper/ru/article_away.tex": "8e202f4efb1d9cdd50564a730f0079d7100a8bd698c5b3de560925c7bd029952",
+    "Paper/ru/article_experiments.tex": "fab974dcb2f8a5d5f99b72f9a4b8900eb60ac560ef4b8941c9170aa24168a04e",
+    "Paper/ru/article_fw.tex": "2fde22609357c6209d02d7ad04ece986afd3bd0b0586384231fda9715f4c7239",
+    "Paper/ru/article_intro.tex": "786cf49e08f237e9711dbe32a9764722934bd27c0b0309c80e107ced0e22c7c7",
+    "Paper/ru/article_zero.tex": "8fc7f39d3c8d0f9d4061092669b5f935e113bc085ef40a852dfec3ae64c12379",
+    "Paper/article_ru.tex": "00e1c801140837fb94c3b13afcf2fbf3ee8e9fdecdaed19d610a4f966c399ab1",
+    "Paper/article_references.tex": "0c7a08c28426870bca1bac5b9abbe809fc6cfa1aed1508286421c6908e44f643",
+    "Work/multidata_results/summary.csv": "785677deda0a4d795e55bb113f059071d2e8f9189703ba91c83ae8097ae31cbf",
+    "Work/count_comparator_results/summary.csv": "0289cabf3027e526033237dc5f46de8868d33f9701d679dd615be6178a62c07f",
+    "Work/multidata_results/budget.csv": "37fd90cf36db2e0e60097b903a75a9e14e634b50fd9fb44cec57ac6e021cc982",
+    "Work/count_comparator_results/budget.csv": "1ca7450b4052516fb6c523ac8fe16f304ea4ce89d7ee2dfecf028e84a19fde13",
+    "Work/certificate_results/summary.csv": "30c2a5e22e37ccad3df7bb4d1fb45839ef45aecc0fa271bbe737133fc82581fb"
+  },
+  "notebook_sha256": "93ffb29907f82a9c16ad2caa0134af165a7204232d19c9fd15c2d6e1e8e62f4f",
+  "html_sha256": "820a1f261bf2ece40c4fcbf08ec7575f68c776e25d7551f4911eeae53f7d172b",
+  "limitations": [
+    "Illustrations are not new paper benchmarks",
+    "Floating-point illustrations do not prove exact arithmetic theorems",
+    "Widgets require an interactive Jupyter frontend",
+    "Math rendering in exported HTML may load MathJax from a CDN"
+  ]
+}

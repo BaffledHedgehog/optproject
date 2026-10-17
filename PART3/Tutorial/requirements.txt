@@ -1,0 +1,9 @@
+numpy
+matplotlib
+ipython
+nbformat>=5
+nbclient>=0.10
+nbconvert>=7
+ipykernel
+# Optional: step slider in a live Jupyter frontend.
+ipywidgets>=8
