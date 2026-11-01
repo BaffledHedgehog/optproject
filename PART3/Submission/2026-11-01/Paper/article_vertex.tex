@@ -1,0 +1,129 @@
+\section{An integrated curvature certificate for the optimal vertex}
+\label{sec:vertex}
+The current FW gap contains more information than one oriented Bregman
+divergence. Retaining the curvature profile along a segment to a
+minimizer gives an observable gradient ball. The constant-profile
+mechanism is the established cocoercivity and safe-screening
+argument~\cite{wachsmuth,raj,sunbach};
+the refinement here is the explicit integrated loss profile under
+local-domain assumptions.
+
+Let $f$ be convex and $C^2$ on an open convex neighborhood of compact
+convex $Q$, and suppose
+\begin{equation}\label{vertex:profile}
+ 0\preceq\nabla^2 f(z)\preceq\rho(\delta(z))I\qquad(z\in Q),
+\end{equation}
+where $\rho:[0,\infty)\to[0,\infty)$ is continuous and
+nondecreasing. Define
+\begin{equation}\label{vertex:profiledefs}
+ \Omega(u)=\int_0^u\rho(v)\,dv,\qquad
+ A(u)=\begin{cases}\Omega(u)/u,&u>0,\\ \rho(0),&u=0.\end{cases}
+\end{equation}
+The function $A$ is nondecreasing. The gradients at all constrained
+minimizers coincide: along a segment joining two minimizers, convexity
+forces the function to be constant; positive semidefiniteness of the
+Hessian then gives $\nabla^2 f(z)d=0$ along the segment direction $d$,
+so integration gives equal endpoint gradients. Denote this common value
+by $g^*$.
+
+\begin{proposition}[Integrated gradient-gap radius]
+\label{vertex:radius}
+For all $x\in Q$,
+\begin{equation}\label{vertex:gradientbound}
+ \norm{\nabla f(x)-g^*}^2\le A(\delta(x))G(x).
+\end{equation}
+In particular, valid bounds $\delta(x)\le U$ and $G(x)\le B$ give
+$\norm{\nabla f(x)-g^*}\le\sqrt{A(U)B}$, and
+$\norm{\nabla f(x)-g^*}^2\le\Omega(G(x))$. For
+$\rho(u)=H_0+H_1u$, the coefficient is
+$A(U)=H_0+H_1U/2$.
+\end{proposition}
+\begin{proof}
+Fix a minimizer $y$ and put $d=x-y$ and
+$H_t=\nabla^2 f(y+td)$ for $0\le t\le1$. Convexity gives
+$0\le\delta(y+td)\le t\delta(x)$, whence
+$0\preceq H_t\preceq\rho(t\delta(x))I$ by monotonicity of $\rho$.
+The spectral inequality
+$H_t^2\preceq\rho(t\delta(x))H_t$ and Cauchy--Schwarz imply
+\begin{align*}
+ \norm{\nabla f(x)-g^*}
+ &\le\int_0^1\sqrt{\rho(t\delta(x))}
+             \sqrt{d^TH_td}\,dt\\
+ &\le\sqrt{A(\delta(x))\inner{\nabla f(x)-g^*}{d}}.
+\end{align*}
+Optimality gives $\inner{g^*}{d}\ge0$, and the feasible point $y$
+in the FW gap gives $\inner{\nabla f(x)}{d}\le G(x)$. This proves
+\eqref{vertex:gradientbound}. At $\delta(x)=0$ the gradient difference
+is zero by the common-gradient property. Monotonicity of $A$ proves
+the first consequence. Since convexity gives $\delta(x)\le G(x)$,
+\eqref{vertex:gradientbound} also gives
+$A(\delta(x))G(x)\le A(G(x))G(x)=\Omega(G(x))$.
+\end{proof}
+
+For a constant profile $\rho=L$, the coefficient one in
+$\norm{\nabla f-g^*}^2\le LG$ is exact, as shown by
+$f(t)=Lt^2/2$ on $[0,D]$. We do not claim that $\Omega(G)$ is the
+sharp envelope for every nonconstant profile. For $\rho(u)=Hu^p$,
+the integral gives $A(U)=HU^p/(p+1)$; compared with using $\rho(U)B$,
+this reduces that sufficient squared radius by a factor $p+1$.
+
+\begin{proposition}[A certified runner-up test]
+\label{vertex:certificate}
+Let $Q=\operatorname{conv}(V)$ have distinct finitely many vertices,
+and suppose $\norm{\widehat g-\nabla f(x)}\le r$. Suppose
+$s\in V$ satisfies the additive linear-oracle specification
+\begin{equation}\label{vertex:oracle}
+ \inner{\widehat g}{s}\le\min_{v\in V}\inner{\widehat g}{v}+\eta.
+\end{equation}
+Put
+\begin{equation}\label{vertex:oraclebound}
+ h=\inner{\widehat g}{x-s},\qquad B=h+\eta+Dr,
+\end{equation}
+and choose any valid $0\le U\le B$ with $\delta(x)\le U$. If no
+tighter primal bound is available, use $U=B$. Set
+$R=r+\sqrt{A(U)B}$. If a certified lower bound $\kappa$ satisfies
+\begin{equation}\label{vertex:margin}
+ \inner{\widehat g}{v-s}\ge\kappa\quad(v\in V\setminus\{s\}),
+ \qquad \kappa>DR,
+\end{equation}
+then $X^*=\{s\}$.
+\end{proposition}
+\begin{proof}
+The oracle specification gives
+$\inner{\widehat g}{x-s}\ge-\eta$, since $x\in Q$ is a convex
+combination of vertices. Moreover,
+\[
+ G(x)=\max_{v\in V}\inner{\nabla f(x)}{x-v}
+ \le \inner{\widehat g}{x-s}+\eta+Dr
+ =h+\eta+Dr=B.
+\]
+Thus Proposition~\ref{vertex:radius} and the gradient-error bound
+give $\norm{\widehat g-g^*}\le R$. For every other vertex,
+\[
+ \inner{g^*}{v-s}
+ \ge\inner{\widehat g}{v-s}-D\norm{g^*-\widehat g}
+ \ge\kappa-DR>0.
+\]
+The linear form defined by $g^*$ therefore has the unique minimizer
+$s$ on $Q$. Every minimizer of $f$ minimizes this linear form, so
+$X^*=\{s\}$.
+\end{proof}
+
+A standard LMO alone does not provide $\kappa$. Computing it requires
+an exhaustive vertex scan or a certified runner-up linear oracle; its
+cost must be counted. A gap to merely sampled alternatives is
+insufficient. If exact oracles are used, $G_k\to0$, and the problem has
+a strictly exposed unique optimal vertex, the exact runner-up gap
+converges to its positive optimal margin while $R_k\to0$. The test
+eventually succeeds. An arbitrary conservative lower bound, such as
+$\kappa\equiv0$, has no such guarantee. Multiple optimal vertices
+and persistent oracle errors can prevent the test from firing.
+
+For a concrete strict improvement, take $Q=[0,1]$ and
+$f(t)=t+(t_+)^3$, with $\rho(u)=6u$ on $Q$. At $x=9/20$,
+$g=\kappa=643/400$ and $G=5787/8000$. Using only $U=B=G$,
+the integrated test passes because $\kappa^2>3G^2$, whereas the
+endpoint-profile test fails because $\kappa^2<6G^2$. More generally
+their respective thresholds are $x<1/\sqrt3$ and $x<1/\sqrt6$.
+These compare sufficient certificates, not one-dimensional
+optimization complexity.

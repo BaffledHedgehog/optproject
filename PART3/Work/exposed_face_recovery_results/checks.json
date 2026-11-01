@@ -1,0 +1,75 @@
+{
+  "arithmetic": "fractions.Fraction; no floating-point optimization decisions",
+  "scope": "Illustrative checks of one exact exposed-face family, not a practical benchmark",
+  "baseline_cap": 64,
+  "baseline_runs": 6,
+  "endpoint_runs": 48,
+  "exactly_terminated_endpoint_runs": 48,
+  "baseline_runs_nonterminal_at_cap": 6,
+  "matched_pre_endpoint_sources": 222,
+  "maximum_endpoint_updates": 16,
+  "maximum_paid_endpoint_values": 2,
+  "pointwise_counterexample": [
+    {
+      "a": "3/2",
+      "t": "1/4",
+      "ratio": 2.0,
+      "limit": 2.0
+    },
+    {
+      "a": "3/2",
+      "t": "1/256",
+      "ratio": 2.0,
+      "limit": 2.0
+    },
+    {
+      "a": "3/2",
+      "t": "1/65536",
+      "ratio": 2.0,
+      "limit": 2.0
+    },
+    {
+      "a": "2",
+      "t": "1/4",
+      "ratio": 2.888888888888889,
+      "limit": 3.0
+    },
+    {
+      "a": "2",
+      "t": "1/256",
+      "ratio": 2.9980506822612085,
+      "limit": 3.0
+    },
+    {
+      "a": "2",
+      "t": "1/65536",
+      "ratio": 2.999992370663676,
+      "limit": 3.0
+    },
+    {
+      "a": "4",
+      "t": "1/4",
+      "ratio": 4.352941176470588,
+      "limit": 7.0
+    },
+    {
+      "a": "4",
+      "t": "1/256",
+      "ratio": 6.91362763915547,
+      "limit": 7.0
+    },
+    {
+      "a": "4",
+      "t": "1/65536",
+      "ratio": 6.999656700818578,
+      "limit": 7.0
+    }
+  ],
+  "integrated_vertex_example": {
+    "t": "9/20",
+    "gradient": "643/400",
+    "gap": "5787/8000",
+    "integrated_passes": true,
+    "frozen_profile_passes": false
+  }
+}

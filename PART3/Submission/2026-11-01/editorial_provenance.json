@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-01",
+  "source": "PART3/Recovery/2026-11-01",
+  "changes": [
+    "Lead full-face trajectory and exact stopping results",
+    "Remove service history from manuscript; retain a separate provenance note",
+    "Endpoint table regenerated solely from strict verified runs",
+    "Define delta_k, require positive epsilon, specify endpoint curvature memory",
+    "State immediate U_k/delta_k consequence",
+    "Retain AI-tool disclosure and limited scope of Lean checks"
+  ],
+  "baseline_pdf_sha256": "d37dbe844b71c33647f2e1c75d47c30c30057b6627207141c595373bdeae8fa3",
+  "status": "publication_edit_complete",
+  "title": "Observable Certificates and Exact Termination in Backtracking Frank-Wolfe",
+  "human_review": "pending",
+  "category_recommendation": "math.OC",
+  "affiliations_inferred": false,
+  "external_submission_performed": false,
+  "author_identity_update": {
+    "as_provided": "Степан Суворов Александрович",
+    "full_name_ru": "Степан Александрович Суворов",
+    "article_name": "Stepan A. Suvorov",
+    "revision_tag": "v2"
+  }
+}

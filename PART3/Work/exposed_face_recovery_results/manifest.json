@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-01",
+  "study": "independent_finite_exposed_face_examples",
+  "article": "new/part3_revised.pdf, Section 5 and Section 6",
+  "original_324_runs_reproduced": false,
+  "artifact_sha256": {
+    "summary.csv": "26bae4ecd15e493d2e8a0321bbfa51c719285c85c8bcf9358841fb5e743e9f38",
+    "trace.csv": "ab66b900e026d089f3f7b48b72f21ce33d980beb8ed2ad453ec2e78c09edd6af",
+    "checks.json": "f04f3f985d8356ea7991407ff9bc66577b0c4d9956e9ede28c2570be4842ca81",
+    "audit_source.py": "ee37b3f42ac17ebf852616faccd2785a611ed0407e9aca3e9cd8eaf06ef39331"
+  }
+}

@@ -1,0 +1,96 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,graphicx,booktabs}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Observable Certificates and Exact Termination in Backtracking Frank-Wolfe},pdfauthor={Yaroslav P. Lyakhov and Stepan A. Suvorov}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\inner}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\R}{\mathbb R}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\DeclareMathOperator{\artanh}{artanh}
+\title{Observable Certificates and Exact Termination\\in Backtracking Frank--Wolfe}
+\author{Yaroslav P. Lyakhov \and Stepan A. Suvorov}
+\date{1 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study observable stopping and exact termination in backtracking
+Frank--Wolfe methods. For a convex objective with Lipschitz gradient on a
+polytope whose entire solution set is an exposed face, ordinary quadratic
+backtracking satisfies $G_k/(f(x_k)-f_Q^*)\to1$ along every infinite
+nonterminal trajectory. A transfer argument for normalized atom weights
+bounds the total number of exceptions and yields logarithmic local
+complexity for an accumulated tangent certificate. The result concerns
+algorithm trajectories: arbitrary near-optimal points need not satisfy
+the same ratio, and an explicit convex $C^2$ example takes half-steps
+forever. Endpoint Armijo probes at any predetermined unbounded sequence
+of indices restore finite exact termination. For the function-dependent
+Hessian model $H_0+H_1(f-f_Q^*)$, we also give separated certificate and
+trial-evaluation bounds, a sharp pointwise gap envelope, and finite
+away-step termination when $H_0=0$. An integrated curvature profile
+provides a safe optimal-vertex test with deterministic gradient and
+linear-oracle errors, provided a runner-up margin is certified and its
+cost is counted separately. Exact example checks illustrate termination;
+count-data controls measure the cost of unsuccessful probes outside the
+solution-face assumptions. The results concern exact-oracle mechanisms
+and do not establish universal practical speedup or minimax complexity.
+\end{abstract}
+
+\input{article_intro}
+\input{article_fw}
+\input{article_away}
+\input{article_zero}
+\input{article_face}
+\input{article_vertex}
+\input{article_experiments}
+
+\section{Discussion}
+The exposed-face analysis connects the observable FW gap to primal
+suboptimality along an actual backtracking trajectory. Normalized atom
+weights control the total number of gap-ratio defects, which gives a
+local certificate bound without specifying the last exceptional index.
+The explicit half-step trajectory separates geometric approach to the
+solution face from exact termination. Sparse endpoint probes bridge
+that distinction under the full-solution-face and exact-oracle
+assumptions.
+
+The loss-dependent curvature model supplies complementary quantitative
+bounds. The phase potential accounts for estimates that lag behind
+falling curvature and for every rejected function trial; its output is
+an observable-certificate guarantee for the existing backtracking rule.
+The initialization cost is intrinsic to that halving rule. Positive
+$H_1$ on a compact domain is compatible with a global Lipschitz bound,
+and the displayed constants can be conservative. At $H_0=0$, the model
+itself implies a full exposed solution face; for general positive base
+curvature, geometric AFW progress retains its additional gap inequality.
+
+The experiments distinguish initialization, active geometry and
+certificate cost. The count-data endpoint controls have nonvertex
+optima and lie outside the full-face hypothesis; their unsuccessful
+probes quantify overhead. The rational exposed-face example verifies
+the termination mechanism on one analytic family. Neither study
+establishes a universal empirical advantage. Exact-arithmetic stopping
+results also require separate numerical analysis before they can be
+used as finite-precision guarantees. The integrated gradient ball gives
+a valid optimal-vertex test with certified oracle errors and a separately
+charged runner-up margin; it does not establish noisy-algorithm
+complexity.
+
+Extending the trajectory argument to controlled inexact directions,
+pairwise updates, or more general optimal sets remains open. A separate
+question is minimax oracle complexity: the global gradient-dependent
+first-order model of~\cite{everest} has different function-class and
+initial-distance assumptions. A local compact-domain substitution does
+not transfer its lower bounds to the constrained loss-dependent model
+and observable LMO certificate considered here.
+
+\input{article_references}
+\appendix
+\input{article_appendix}
+\end{document}

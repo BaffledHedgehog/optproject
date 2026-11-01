@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-01",
+  "endpoint_results": {
+    "dense": {
+      "median": 1.0047980514900319,
+      "better": 0,
+      "worse": 35,
+      "within": 73
+    },
+    "dyadic": {
+      "median": 1.0007270451715033,
+      "better": 0,
+      "worse": 12,
+      "within": 96
+    }
+  },
+  "input_sha256": {
+    "Work/endpoint_recovery_strict_results/summary.csv": "1ca076c9cf521ea079c2a5f8f7985f81f02a1dd15a46c72f44b2aa5e53927389",
+    "Work/exposed_face_recovery_results/trace.csv": "ab66b900e026d089f3f7b48b72f21ce33d980beb8ed2ad453ec2e78c09edd6af"
+  },
+  "output_sha256": {
+    "Paper/evidence/endpoint_table.tex": "d02a5c9b09dfff2e6ae640f1439db4d62683789d5a2f009bf137f8b07dfcad74",
+    "Paper/figures/exposed_face_mechanism.pdf": "591f8f705d3b81d165941a47d1624839d7e12a6ff7e5997dc16f7202675b3dcf"
+  },
+  "generator_sha256": "c2da3312d57246d2805c16b04e21e58cf203de9efd08f077c7a2bd7b7f7dfc3e"
+}

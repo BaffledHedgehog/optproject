@@ -1,0 +1,2 @@
+# Imported course notes are preserved verbatim rather than style-normalized.
+new/prof_info.txt -text -whitespace

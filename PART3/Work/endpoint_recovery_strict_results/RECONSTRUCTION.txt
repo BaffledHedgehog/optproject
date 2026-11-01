@@ -1,0 +1,20 @@
+﻿Strict endpoint FW reconstruction — 2026-11-01
+
+This archive is the corrected reconstruction; it does not replace the first archived run in `endpoint_recovery_results/`. Provenance is explicit in `manifest.json`: the original source/results were lost, so this is a new execution from Appendix G and the surviving modules/data, not original recovery. Cache-key fix: only exact signed l1 vertices with all other coordinates zero are cached. A regression test uses `np.nextafter(R, 0)` and confirms that near-vertex and exact-vertex objective values are both paid independently. Materially negative FW gaps now raise, matching the surviving `fw.py` convention.
+
+The 324 runs use 108 Seoul/Metro configurations (two radii, all signed coordinate starts) and ordinary/dense/dyadic endpoint schedules. All used persistent exact-Float64 vertex caches, Armijo endpoint coefficient 1/2, the same ordinary quadratic-backtracking fallback, objective budget 1000, tolerance 1e-5, and BLAS thread counts 1. Dataset and reference interval values match the surviving `multidata_results/manifest.json`.
+
+## Replay audit
+
+All 108 configurations were paired against ordinary FW for each probe schedule, yielding 216 paired paths. The auditable common prefixes contain 106,623 source points and 106,407 transitions. On every path, the common-source objective value f, FW gap G, accumulated certificate U, and every shared accepted curvature L and step alpha are exactly equal (Float64 equality). No endpoint tests were accepted. At equal update counts, paid objective-call differences satisfy `0 <= N_probe - N_ordinary <= 2d` for all 216 comparisons; maximum additional calls: 17 (the largest vertex set has 30 vertices). Every run passed feasibility/cache-accounting checks. Maximum terminal iteration was 505, so none hit the 5000-iteration cap.
+
+## Table 6 comparison: persistent cache
+
+| Variant | Manuscript median | Strict reconstructed median | Manuscript better / worse / within 1% | Strict better / worse / within 1% |
+|---|---:|---:|---:|---:|
+| Dense | 1.004798 | 1.0047980515 | 0 / 35 / 73 | 0 / 35 / 73 |
+| Dyadic | 1.000871 | 1.0007270452 | 0 / 12 / 96 | 0 / 12 / 96 |
+
+Dense reproduces the reported rounded median and all paired bands. Dyadic has the same paired bands, but strict median differs by -0.000143955 (about 0.0144 percentage points in the ratio). The old trace/code are unavailable and Appendix G does not specify the first exponent j or exact budget-snapshot semantics, so this small difference remains unresolved and is not tuned away. The earlier non-strict reconstruction's dyadic median was 1.000628; it is retained unchanged in its own archive as a superseded run with an inexact near-vertex cache key. The corrected strict execution is the one represented in the recovery Paper table. The iteration-local cache rows in manuscript Table 6 were not rerun here and remain manuscript-reported only.
+
+The frozen source/data hashes in `manifest.json` use paths relative to this result folder (`frozen/source/...`, `frozen/data/...`). `REPLAY.txt` documents the required extracted repository layout and replay commands. `manifest.sha256` records the SHA-256 of the sealed manifest.

@@ -1,0 +1,106 @@
+{
+  "study": "endpoint_probe_recovery",
+  "provenance": "reconstructed 2026-11-01 from revised PART3 Appendix G and surviving modules/data; not recovered original source/results",
+  "target_protocol": "revised manuscript revision dated 2026-10-19; Appendix G, 108 matched configurations x ordinary/dense/dyadic persistent-cache methods = 324 executions",
+  "command": [
+    "C:\\Users\\yarik_temp\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+    "endpoint_benchmark.py",
+    "--output",
+    "endpoint_recovery_strict_results",
+    "--finalize-existing",
+    "--max-iter",
+    "5000",
+    "--budget",
+    "1000",
+    "--tolerance",
+    "1e-5"
+  ],
+  "datasets": [
+    "seoul",
+    "metro"
+  ],
+  "radius_ratios": [
+    0.5,
+    2.0
+  ],
+  "starts": "all 2d signed coordinate vertices",
+  "methods": [
+    "ordinary",
+    "dense",
+    "dyadic"
+  ],
+  "runs": 324,
+  "objective_budget": 1000,
+  "max_iterations": 5000,
+  "tolerance": 1e-05,
+  "objective": "unchanged count_problems.make_count_problem normalized regularized Poisson objective",
+  "fallback": "Section 2 ordinary quadratic backtracking: L_-1=U0/D^2; source trial Lprev/2; alpha=min(1,G/(L||d||^2)); accept f(x+alpha d)<=f(x)-alpha G+L alpha^2||d||^2/2; double after rejection",
+  "probe": "f(s)<=f(x)-sigma G, sigma=1/2; dense every update; dyadic iff k+1 is power of two; rejection runs unchanged fallback",
+  "cache": "persistent exact deterministic Float64 objective cache for signed l1 vertices only; gradients and LMOs never cached; nonvertex function evaluations always paid",
+  "budget_rule": "certificate reported at latest source observation whose cumulative paid objective calls are <= budget; source_paid_evals is explicit in trace",
+  "solver_information": "objective, gradient, radius, initial vertex only; references are offline for audit and comparison; no Hessian/curvature constants supplied",
+  "prior_manifest_sha256": "f2b98b96a6c5427d0b817ffcddb253ce14d90036320f2240e93978c7625318b9",
+  "prior_results_unchanged": true,
+  "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "versions": {
+    "numpy": "2.3.5",
+    "scipy": "1.16.3"
+  },
+  "thread_environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1"
+  },
+  "frozen_source_sha256": {
+    "frozen/source/count_problems.py": "d9dcbf840c4b8d232a67d29000876119402984c065fbcc1ebdefbcd252fb1f15",
+    "frozen/source/endpoint_benchmark.py": "e92372a99646b101c7838de7bab9c27a7a75f3c1b5fb1b33522649e01d27070d",
+    "frozen/source/endpoint_fw.py": "62a1ad40abfdc7e0d4ff250abf50106ae7a34a08a3690f7344c243c9bbb404c1",
+    "frozen/source/fw.py": "b22fa6a080cc4166865607a8c9890510f44524ef9fbd5da76ae417d7e2d688d0",
+    "frozen/source/multidata_benchmark.py": "4621222db4ef91012cf88f8ba0ccc40df2c705fb80ccb2c05b54bdff7a5e529d",
+    "frozen/source/problems.py": "9e4aab8137905586c39b82b921264b6777b388c3e663c3ef054a112bf2f061ca"
+  },
+  "frozen_data_sha256": {
+    "frozen/data/metro/Metro_Interstate_Traffic_Volume.csv.gz": "0b3679ac15173f79c6dc6c5ef8a0798d806fa5c5d7f05c84a5fa711bd1b05f07",
+    "frozen/data/metro/source.json": "0bcd6072db7e4413b9c17e25229cd4952207804e36d9a4ae0850a89bb5488c0d",
+    "frozen/data/seoul/SeoulBikeData.csv": "373339b71a8935d69e9af0abf26a70744632119862eeb3919efb389a7b749c60",
+    "frozen/data/seoul/source.json": "cc89de743c58e0c78e48836260c74c16ce5262cd7922b290ce2b6efa338aec91"
+  },
+  "result_sha256": {
+    "summary.csv": "1ca076c9cf521ea079c2a5f8f7985f81f02a1dd15a46c72f44b2aa5e53927389",
+    "trace.csv": "eadd0fa8cd21314e3142382e7581dc012014f0df04ff6458b391c42823de4214",
+    "configurations.csv": "7085640d10f60c671510f27dae2a10b003fd92c001986e06b400b7273f94d6a5",
+    "audit.csv": "f9b8dae8e08a018715a047422d982dd9de7e4109ef4384a446f1b4834bbf0493",
+    "replay_audit.csv": "89e0e2ee32f12b58ae31ae5072562d6c3b073fe23934bef671b5f101bb017d29"
+  },
+  "replay_audit": {
+    "paired_paths": 216,
+    "paired_source_points": 106623,
+    "paired_transitions": 106407,
+    "all_common_prefixes_exact": true,
+    "all_paid_call_bounds_satisfied": true
+  },
+  "table6_comparison": {
+    "dense_persistent": {
+      "manuscript_median": 1.004798,
+      "strict_median": 1.0047980514900319,
+      "strict_better_worse_within": [
+        0,
+        35,
+        73
+      ]
+    },
+    "dyadic_persistent": {
+      "manuscript_median": 1.000871,
+      "strict_median": 1.0007270451715033,
+      "strict_better_worse_within": [
+        0,
+        12,
+        96
+      ]
+    }
+  },
+  "accepted_endpoint_steps": 0,
+  "maximum_terminal_iteration": 505,
+  "iteration_cap_reached": false
+}

@@ -1,0 +1,14 @@
+COMMAND: lean.exe --version
+Lean (version 4.35.0-rc2, x86_64-w64-windows-gnu, commit 11acb17ec6b07a8f9e9173e6845197929540936b, Release)
+
+COMMAND: lean.exe ResearchAlgebra.lean
+EXIT CODE: 0
+'PART3.Recovery.normalized_other_atom_clear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PART3.Recovery.normalized_selected_atom_clear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PART3.Recovery.endpoint_gap_coefficient_crossmul' does not depend on any axioms
+'PART3.Recovery.endpoint_value_coefficient_crossmul' does not depend on any axioms
+'PART3.Recovery.endpoint_acceptance_slack_crossmul' does not depend on any axioms
+'PART3.Recovery.vertex_gradient_numerator' does not depend on any axioms
+'PART3.Recovery.vertex_gap_numerator' does not depend on any axioms
+'PART3.Recovery.integrated_vertex_certificate_crossmul' does not depend on any axioms
+'PART3.Recovery.endpoint_profile_certificate_crossmul' does not depend on any axioms

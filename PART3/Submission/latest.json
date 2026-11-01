@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-01",
+  "directory": "2026-11-01",
+  "title": "Observable Certificates and Exact Termination in Backtracking Frank-Wolfe",
+  "paper": "2026-11-01/paper.pdf",
+  "arxiv_source": "2026-11-01/arxiv_source_v2.zip",
+  "expert_packet": "2026-11-01/for_gasnikov_v2.zip",
+  "metadata": "2026-11-01/ARXIV_METADATA.txt",
+  "status": "prepared locally; human expert review pending; not submitted",
+  "authors": [
+    "Yaroslav P. Lyakhov",
+    "Stepan A. Suvorov"
+  ],
+  "revision_tag": "v2",
+  "reproducibility": "2026-11-01/reproducibility_v2.zip",
+  "validation": "2026-11-01/submission_validation_v2.json"
+}

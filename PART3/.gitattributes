@@ -13,3 +13,11 @@
 Data/** -text
 Release/** -text
 Work/research_notes_history/** -text
+# New evidence and publication files contain byte-level SHA-256 references.
+# Preserve their original bytes across Windows/Linux checkouts.
+Submission/** -text -whitespace
+Work/endpoint_recovery_strict_results/** -text -whitespace
+Work/exposed_face_recovery_results/** -text -whitespace
+Work/endpoint_fw.py -text
+Work/endpoint_benchmark.py -text
+Work/exposed_face_recovery.py -text

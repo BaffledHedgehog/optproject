@@ -1,0 +1,17 @@
+﻿Replay from an extracted repository tree
+========================================
+
+Expected layout: the extracted repository root contains `PART3/`, with the frozen input files at `PART3/Data/seoul/` and `PART3/Data/metro/`, and the solver modules at `PART3/Work/`. `count_problems.py` locates the nearest parent directory named `PART3`; therefore this layout is part of the input contract.
+
+Run in PowerShell from the extracted repository root:
+
+    $env:OPENBLAS_NUM_THREADS = '1'
+    $env:OMP_NUM_THREADS = '1'
+    $env:MKL_NUM_THREADS = '1'
+    Set-Location PART3/Work
+    python -m unittest test_endpoint_fw.py -v
+    python endpoint_benchmark.py --output endpoint_recovery_strict_results_replay --max-iter 5000 --budget 1000 --tolerance 1e-5
+
+Required runtime dependencies already used by the project: Python, NumPy, and SciPy. No package installation is part of replay. Data source JSON files verify the SHA-256 of each raw CSV/GZip input before preprocessing. The solver receives only objective, gradient, radius, and initial vertex; reference solutions remain comparison-only offline calculations.
+
+For a ZIP, retain the `PART3` directory name and its `Data/seoul`, `Data/metro`, and `Work` sibling layout. Frozen hashes inside this archive are relative to the result folder (`frozen/source/...` and `frozen/data/...`) so they remain checkable after extraction.

@@ -1,0 +1,50 @@
+# Local Python environments and caches.
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Local editor state and assistant tooling.
+.idea/
+.codex/
+.claude/
+.aider*
+.env
+.env.*
+!.env.example
+
+# Extracted release checks and LaTeX build intermediates.
+**/_verification/
+/PART3/**/build/
+/PART3/**/build_ru/
+*.aux
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.out
+*.toc
+*.log
+!/PART3/Submission/*/Formal/lean_validation.log
+
+# Intermediate recovery, superseded experiments and assistant working notes.
+/PART3/Recovery/
+/PART3/Work/endpoint_recovery_results/
+/new/review_*/
+/PART3/Work/review_2026_10_17/*page*.png
+/PART3/Submission/*/preview_*.png
+/PART3/Submission/*/AUDIT_KEY_PROOFS_RU.txt
+/PART3/Submission/*/INTRO_EDIT.txt
+/PART3/Submission/*/PUBLICATION_SCOPE_EDIT.txt
+/PART3/Submission/*/review_locations.json
+/PART3/Submission/*/verification_failure.json
+
+# Keep the current small handoff/source archives; regenerate large bundles.
+/PART3/Submission/*/*.zip
+!/PART3/Submission/*/arxiv_source_v2.zip
+!/PART3/Submission/*/for_gasnikov_v2.zip
+/PART3/Submission/*/package_manifest.json
+
+# The final PDF lives at Submission/<date>/paper.pdf.
+/PART3/Submission/*/Paper/article.pdf
+/PART3/Submission/*/Paper/evidence/endpoint_recovery_table.tex

@@ -1,0 +1,292 @@
+\section{Ordinary backtracking on an exposed solution face}
+\label{sec:face}
+The zero-base model in Section~\ref{sec:zero} supplies a full exposed
+solution face. The behavior of ordinary FW on such a face can be analyzed
+under weaker regularity: a Lipschitz gradient on the entire polytope
+suffices. The conclusion concerns the actual trajectory of the algorithm.
+A corresponding pointwise assertion over arbitrary near-optimal points
+is false. We write $\delta_k:=\delta(x_k)$ along a trajectory.
+
+Throughout this section let $Q=\operatorname{conv}(V)$ for a finite
+set of atoms, with diameter $D>0$. Let $f$ be convex and continuously
+differentiable on an open convex neighborhood of $Q$. Assume
+\begin{equation}\label{face:lip}
+ \norm{\nabla f(x)-\nabla f(y)}\le L_{\rm sm}\norm{x-y}
+ \qquad (x,y\in Q),\quad L_{\rm sm}>0,
+\end{equation}
+and
+\begin{equation}\label{face:exposed}
+ X^*=F=\arg\min_{x\in Q}\inner{g^*}{x},\qquad
+ g^*=\nabla f(x^*)\quad(x^*\in X^*).
+\end{equation}
+The gradients at all minimizers coincide: for a fixed minimizer $x^*$,
+convexity and constrained optimality imply
+$\inner{\nabla f(x^*)}{y-x^*}=0$ for every $y\in X^*$; the
+nonnegative convex function
+$f(\cdot)-f(x^*)-\inner{\nabla f(x^*)}{\cdot-x^*}$ vanishes at
+each such $y$, which is an interior point of the neighborhood, so its
+gradient vanishes there. If $F=Q$, the initial gap is zero. Otherwise set
+\begin{equation}\label{face:margin}
+ m=\min_{v\in V\setminus F}\inner{g^*}{v-x^*}>0,
+ \qquad n_F=|V\cap F|,
+ \qquad \overline L_{\rm bt}=\max\{M,2L_{\rm sm}\}.
+\end{equation}
+The LMO is required to return an atom from this fixed finite set; no
+active-set representation is needed by the algorithm. Weak sharpness
+and finite identification of optimal linear-oracle outputs under this
+geometry are classical~\cite{burkeferris}; the result below gives a
+finite budget of gap-ratio defects for the inherited quadratic-
+backtracking rule.
+
+\begin{theorem}[Trajectory ratio and finite defect budget]
+\label{face:ratio}
+Run the ordinary backtracking method of Section~\ref{sec:model}, with an
+exact atom LMO and the first-halving, rejection-doubling rule. Under
+\eqref{face:lip}--\eqref{face:exposed}, every infinite nonterminal run
+satisfies
+\begin{equation}\label{face:ratiolimit}
+ \frac{G_k}{\delta_k}\longrightarrow 1.
+\end{equation}
+Consequently $U_k/\delta_k\to1$ along each such run, since
+$\delta_k\le U_k\le G_k$.
+More quantitatively, for every $\eta\in(0,1]$, after the first source
+with $\delta\le\tau_\eta$, where
+\begin{equation}\label{face:threshold}
+ \tau_\eta=\frac{\eta m^2}{2L_{\rm sm}D^2},\qquad
+ P_\eta=n_F\ceil{\frac{L_{\rm sm}\overline L_{\rm bt}D^4}
+                              {\eta m^2}},
+\end{equation}
+at most $P_\eta$ nonterminal updates have
+$G>(1+\eta)\delta$. For $\eta=1/3$, each nonexceptional update that does not reach an
+optimum accepts its first fractional trial and halves the inherited
+curvature.
+\end{theorem}
+\begin{proof}
+The $L_{\rm sm}$-smooth descent lemma holds on every feasible trial
+segment, so a trial is accepted once its estimate reaches
+$L_{\rm sm}$. Since the search starts at half the preceding accepted
+estimate and doubles after rejection,
+$L_k\le\max\{L_{k-1}/2,2L_{\rm sm}\}$. Induction from
+$L_{-1}=M$ gives $L_k\le\overline L_{\rm bt}$ for every update.
+Put
+\[
+ t(x)=\inner{g^*}{x-x^*},\qquad h(x)=\delta(x)-t(x),\qquad
+ C=\frac{L_{\rm sm}D^2}{2m^2}.
+\]
+Both $h$ and its gradient vanish on $F$, and $h\ge0$. In any atom
+representation $x=\sum_v\lambda_vv$, the mass $\theta$ outside $F$
+satisfies $\theta\le t/m$. Normalizing the remaining face weights
+gives a point in $F$ at distance at most $D\theta$ from $x$. If
+$\theta=1$, the same bound follows from $t\ge m$ and
+$\operatorname{dist}(x,F)\le D$. Thus
+$\operatorname{dist}(x,F)\le Dt/m$. The descent lemma applied from a
+nearest point in $F$, where $h=0$ and $\nabla h=0$, and
+\eqref{face:lip} give
+\begin{equation}\label{face:residual}
+ 0\le h(x)\le Ct^2,\qquad
+ \norm{\nabla h(x)}\le\frac{L_{\rm sm}D}{m}t.
+\end{equation}
+
+Suppose the selected atom $s\in F$ has positive current weight
+$\lambda_s$. For any $v\in V\cap F$, the transfer point
+$z_v=x+\lambda_s(v-s)$ is feasible and has the same value of $t$.
+Convexity and~\eqref{face:residual} imply
+\[
+ \lambda_s\inner{\nabla h(x)}{v-s}
+ \le h(z_v)-h(x)\le Ct^2.
+\]
+Consequently the face contribution to
+$\inner{\nabla h(x)}{x-s}$ is at most $Ct^2/\lambda_s$.
+The nonface contribution is at most
+$\theta D\norm{\nabla h(x)}\le 2Ct^2$. Since
+$\inner{g^*}{x-s}=t$ and $\delta=t+h\ge t$, this yields
+\begin{equation}\label{face:defect}
+ 0\le\frac{G-\delta}{\delta}
+ \le 2Ct+\frac{C}{A_s},\qquad A_s=\frac{\lambda_s}{t},
+\end{equation}
+where the last term is interpreted as $+\infty$ if $\lambda_s=0$.
+Here the lower bound $G\ge\delta$ is the standard convexity bound.
+
+If $\delta\le\tau_\eta=\eta/(4C)$, then
+$D\norm{\nabla f(x)-g^*}\le\eta m/2$. Every atom outside $F$ has a
+strictly larger current gradient score than every atom in $F$; hence
+all subsequent LMO outputs lie in $F$. Propagate any atom representation
+by ordinary FW updates. A full update reaches an optimum. On each
+remaining update, if $\alpha<1$ then
+\[
+ t_+=(1-\alpha)t,\qquad
+ A_s^+=A_s+\frac{\alpha}{(1-\alpha)t},\qquad
+ A_v^+=A_v\quad(v\ne s).
+\]
+Fractionalness and $G\ge\delta\ge t$ imply
+\[
+ A_s^+-A_s\ge\frac{\alpha}{t}
+ =\frac{G}{L_k\norm{s-x}^2t}
+ \ge\frac{1}{\overline L_{\rm bt}D^2}.
+\]
+Once $A_s\ge2C/\eta$, inequality~\eqref{face:defect} gives
+$G\le(1+\eta)\delta$. Each face atom can be selected before reaching
+this threshold at most
+\[
+ \ceil{\frac{2C\overline L_{\rm bt}D^2}{\eta}}
+ =\ceil{\frac{L_{\rm sm}\overline L_{\rm bt}D^4}
+                 {\eta m^2}}
+\]
+times. Summing over the $n_F$ face atoms proves the defect budget.
+
+For each $\eta>0$, only finitely many later ratios exceed $1+\eta$.
+To see that the run cannot stay away from the optimum, every accepted
+update decreases $f$ by at least
+$\min\{\delta_k/2,\delta_k^2/(2\overline L_{\rm bt}D^2)\}$,
+using~\eqref{eq:acceptedprogress} for a full step and the fractional
+step formula otherwise. The finite total decrease implies
+$\delta_k\to0$. This proves~\eqref{face:ratiolimit}.
+
+Finally let $\eta=1/3$ and consider a nonexceptional nonterminal
+update after the stated entry. Its LMO atom is in $F$ and
+$G\le4\delta/3$. If the first trial is fractional, convexity gives
+$f(x+\alpha(s-x))\le f(x)-\alpha\delta$, while the quadratic
+model requires a decrease of $\alpha G/2$; since $G<2\delta$, this
+first fractional trial is accepted. If the first trial is full at
+curvature $\ell$, acceptance is equivalent to
+$\ell\norm{s-x}^2\ge2(G-\delta)$, because $f(s)=f^*$.
+If it passes, the update terminates exactly. If it fails, the first
+doubled curvature crossing this threshold is less than
+$4(G-\delta)/\norm{s-x}^2\le G/\norm{s-x}^2$, where the last
+inequality uses $G\le4\delta/3$. That doubled trial remains full and
+is accepted, so it also terminates exactly. Hence every nonterminal
+regular update accepts its first fractional trial, which halves the
+inherited curvature.
+\end{proof}
+
+The normalized-weight cancellation in~\eqref{face:defect} is an
+elementary rescaling; a related rescaling appears in
+Harks~\cite[Section~3.2]{harks}. The budget controls the number of
+exceptional updates, not the index of the last one.
+
+\begin{corollary}[Observable local complexity]
+\label{face:local}
+Set
+\[
+ \tau=\frac{m^2}{6L_{\rm sm}D^2},\qquad
+ P=n_F\ceil{\frac{3L_{\rm sm}\overline L_{\rm bt}D^4}{m^2}}.
+\]
+If $K$ is a source with $U_K\le\tau$, then after $N>P$ further
+nonterminal updates,
+\begin{equation}\label{face:certificate}
+ U_{K+N}<\overline L_{\rm bt}D^2\,2^{-\ceil{(N-P)/(P+1)}}.
+\end{equation}
+In particular, for every $\varepsilon>0$, at most
+\begin{equation}\label{face:localcount}
+ P+(P+1)\max\left\{1,
+ \ceil{\log_2\frac{\overline L_{\rm bt}D^2}{\varepsilon}}\right\}
+\end{equation}
+updates are needed after this entry until $U\le\varepsilon$. The entry
+time is finite; a valid conservative bound is
+\begin{equation}\label{face:entry}
+ K\le\ceil{\frac{U_0}{\min\{\tau/2,\tau^2/(2\overline L_{\rm bt}D^2)\}}}.
+\end{equation}
+When the model assumptions of Theorem~\ref{thm:fw} are available, its
+sharper phase bound can replace~\eqref{face:entry}.
+\end{corollary}
+\begin{proof}
+There are at most $P$ exceptional updates, splitting the regular
+updates into at most $P+1$ blocks. One block has length at least
+$\ceil{(N-P)/(P+1)}$. A regular block of length $r$ ends with
+curvature at most $\overline L_{\rm bt}2^{-r}$. At its final
+fractional source, $U\le G< L_k\norm{s-x}^2\le
+\overline L_{\rm bt}D^2 2^{-r}$. The certificate is nonincreasing
+thereafter, proving~\eqref{face:certificate} and the stated local
+count. A full update already solves the problem. Until entry,
+$G\ge U>\tau$, so every accepted update decreases $f$ by at least
+the denominator in~\eqref{face:entry}; the available initial decrease
+is at most $U_0$. This proves the entry bound.
+\end{proof}
+The constants can be large, particularly when the face has many
+atoms. The result gives an accuracy-independent finite defect budget
+and logarithmic local certificate complexity, without a Hessian
+modulus of continuity; it does not assert a small practical condition
+number or a minimax bound. For $T$ updates and a final source check,
+$N_g=N_{\rm LMO}=T+1$ and
+\[
+ N_f\le1+2T+\ceil{\log_2\max\{1,2L_{\rm sm}/M\}}.
+\]
+
+\subsection{A pointwise counterexample and an infinite exact trajectory}
+\label{face:examples}
+The pointwise extension of~\eqref{face:ratiolimit} to arbitrary feasible
+points is false. On
+\[
+ Q=\operatorname{conv}\{(0,-1),(0,1),(1,0)\},\qquad
+ f(t,z)=t+\tfrac12(at+z-1)_+^2,\quad a>1,
+\]
+the gradient is globally Lipschitz with constant $a^2+1$,
+$X^*=F=\{0\}\times[-1,1]$, and $g^*=(1,0)$. At
+$x_t=(t,1-t)$, the unique LMO atom is $(0,-1)$ and
+\[
+ \delta(x_t)=t+\tfrac12(a-1)^2t^2,\qquad
+ G(x_t)=(2a-1)t+(a-1)^2t^2.
+\]
+Thus $G(x_t)/\delta(x_t)\to2a-1>1$. These arbitrary feasible
+points need not be a tail of the algorithm's trajectory.
+
+Conversely, ordinary FW need not terminate exactly even in the
+zero-base model. Let
+\begin{equation}\label{face:c2example}
+ Q=[0,1]\times[-1,1],\qquad
+ f(t,z)=t+c(t_+)^3(1+z^2/4),\qquad c=81/476.
+\end{equation}
+This function is $C^2$ and convex on an open rectangle containing
+$Q$ with $|z|<\sqrt2$. For $t>0$ its Hessian determinant is
+$3c^2t^4(1-z^2/2)$; for $t\le0$ its Hessian is zero. On $Q$ its
+trace is at most $8ct\le8cf$, so it satisfies the original model
+with $H_0=0$ and $H_1=8c$.
+Start at $(t_0,1/3)$, where $0<t_0\le1$, with $M=9t_0/4$.
+At every iterate the unique LMO selects the opposite endpoint of the
+optimal face. Inductively,
+\begin{equation}\label{face:c2trajectory}
+ t_k=2^{-k}t_0,\qquad z_k=(-1)^k/3,\qquad
+ L_k=9t_k/8,\qquad \alpha_k=1/2.
+\end{equation}
+Indeed, at either sign of $z=1/3$,
+$G=t+(9/16)t^3$ and $\norm{s-x}^2=t^2+16/9$, so
+$G/\norm{s-x}^2=9t/16$. The first half-curvature trial therefore
+has step $1/2$. Since
+$f(t,\pm1/3)=t+(333/1904)t^3$, the quadratic acceptance right
+side minus the proposed endpoint value is
+\[
+ \frac{t}{4}+\frac{189}{15232}t^3>0.
+\]
+This proves~\eqref{face:c2trajectory} by induction. No iterate is
+optimal and $\delta_{k+1}/\delta_k\to1/2$. The example is $C^2$;
+no $C^\infty$ regularity is claimed.
+
+\begin{corollary}[Sparse endpoint probes]
+\label{face:endpoint}
+Under the assumptions of Theorem~\ref{face:ratio}, add an
+Armijo test
+\begin{equation}\label{face:armijo}
+ f(s)\le f(x)-\sigma G
+\end{equation}
+with any fixed $0<\sigma<1$ at a predetermined unbounded set of
+iteration indices. A failed test leaves the current point and curvature memory unchanged
+before the ordinary backtracking fallback. An accepted test sets the
+next point to $s$ and carries forward the current positive, finite
+curvature memory. With exact oracles and arithmetic, this algorithm
+reaches an exact optimum after finitely many updates.
+\end{corollary}
+\begin{proof}
+Every accepted nonoptimal endpoint strictly decreases the objective
+to one of the finitely many atom values, so there can be only finitely
+many such acceptances. After the last one, an infinite run consists
+of the ordinary fallback steps. Eventually $s\in X^*$ and
+$G/\delta\to1$, hence $\delta\ge\sigma G$; the next scheduled
+endpoint test succeeds at an optimum. If the run terminates earlier,
+the claim already holds.
+\end{proof}
+This is an exact-arithmetic termination result with no positive
+stopping tolerance or imposed iteration cap. It is not a speedup
+claim. A persistent cache of exact atom values limits the additional
+cost of wholly rejected probes to at most $|V|$ over any fixed number
+of fallback updates; the empirical qualification is recorded in
+Appendix~\ref{app:endpoint}.

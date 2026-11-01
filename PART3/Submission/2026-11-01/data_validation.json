@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-01",
+  "paper": {
+    "pages": 29,
+    "labels": 81,
+    "citations": 38,
+    "embedded_fonts": 26,
+    "pdf_sha256": "bd9c398be085d8d9fbc056e8e40600c5c565219b36a4d02787b6d18acdd1917d",
+    "dependency_sha256": {
+      "article.tex": "8c45ebc682e6384338c4251e3cac680156e70e6f3d0af7fe8623e3c7a6bc087e",
+      "article_appendix.tex": "1cabecf02c9bea19afb6129c117793eae78c41c3f8460f363c0bc19c33781c44",
+      "article_away.tex": "074ec05afb59c9b153306885f1c52e26287e96b8c38e2b973c9c44819cc5a1fe",
+      "article_endpoint_experiments.tex": "f2aa4fae3f7081067b34f4bf04760933d318e8b99d88fd0525e44aa74cf3b6a0",
+      "article_experiments.tex": "ae8d642effe25478390c29debda61dcc9d4f0f05869a7e2107fdae3906e20d15",
+      "article_face.tex": "b83cdcb4a88efb4c5ddf5b0618a56365b7471859a03affe09f2453654b30e68f",
+      "article_fw.tex": "35e84eeb5ea1e41ecc7de818380a438f8792e6e0b6271cb444b686e0bc855511",
+      "article_intro.tex": "8a9b14dd09143f6b275a2dfe133467159f39a079e93eeef165d73685451d973f",
+      "article_references.tex": "5f20ec652f78dd2e167efbc9177d687be39f57e9164b6e38e77948ad0c6c152a",
+      "article_vertex.tex": "bd168a96318f9dc1fade4d4f074bb6f4efd3a8fcc94dbc68e28197a73b83b76c",
+      "article_zero.tex": "57ea7b51ca9d0db4e660ce0deffd474306a0152f1f1537fb289612b18736eb72",
+      "evidence/budget_table.tex": "3d0067d2ef6a8a5be4fe2cf1f1a0c83fa0db0c7339bf20045d6233406701f94c",
+      "evidence/counts_table.tex": "3918fb9d5a155d31f9234787ee1f9f820691ac9f3772e62432e8df4d495ae92e",
+      "evidence/data_table.tex": "b5a5cb75e5781d544b2386d74820ef5e1b2d91abb51c072aa8805412eb726bfd",
+      "evidence/endpoint_table.tex": "d02a5c9b09dfff2e6ae640f1439db4d62683789d5a2f009bf137f8b07dfcad74",
+      "evidence/exposed_face_check.tex": "ce25278862d7454d1feb000deab5684e15e55f9530664afe596e84eb1eda95b9",
+      "evidence/initialization_control.tex": "33db298a4ed146bb94f4d6c0d85302887045d6c21a5b1519775eed00d9555e37",
+      "evidence/monitor_table.tex": "59b671bdd40dfe27aa59ebc3fee8f925e7d4f8897f4f7e4aa8babce3c0a06379",
+      "figures/count_comparators.pdf": "70c1c5b1c6227f61657a62776edb6966aecd619ec20ac6fb8ce290302dd1762a",
+      "figures/exposed_face_mechanism.pdf": "591f8f705d3b81d165941a47d1624839d7e12a6ff7e5997dc16f7202675b3dcf",
+      "figures/gap_geometry.pdf": "ae8ea20b31feebfc6fdbeb863ab09150923ba18dd1a9cbe69bc65ea7cb9b4d2d"
+    }
+  },
+  "endpoint": {
+    "runs": 324,
+    "paired_paths": 216,
+    "matched_sources": 106623,
+    "matched_transitions": 106407,
+    "maximum_paid_overhead": 17,
+    "endpoint_accepts": 0,
+    "summaries": {
+      "dense": {
+        "median": 1.0047980514900319,
+        "better": 0,
+        "worse": 35,
+        "within": 73
+      },
+      "dyadic": {
+        "median": 1.0007270451715033,
+        "better": 0,
+        "worse": 12,
+        "within": 96
+      }
+    }
+  },
+  "exact_examples": {
+    "runs": 54,
+    "trace_rows": 660,
+    "exact_endpoint_successes": 48
+  },
+  "human_mathematical_review": "pending; prepared for external expert reading"
+}

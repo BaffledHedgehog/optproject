@@ -1,0 +1,21 @@
+Title:
+Observable Certificates and Exact Termination in Backtracking Frank-Wolfe
+
+Authors:
+Yaroslav P. Lyakhov; Stepan A. Suvorov
+
+Primary category:
+math.OC
+
+Abstract:
+We study observable stopping and exact termination in backtracking Frank--Wolfe methods. For a convex objective with Lipschitz gradient on a polytope whose entire solution set is an exposed face, ordinary quadratic backtracking satisfies $G_k/(f(x_k)-f_Q^*)\to1$ along every infinite nonterminal trajectory. A transfer argument for normalized atom weights bounds the total number of exceptions and yields logarithmic local complexity for an accumulated tangent certificate. The result concerns algorithm trajectories: arbitrary near-optimal points need not satisfy the same ratio, and an explicit convex $C^2$ example takes half-steps forever. Endpoint Armijo probes at any predetermined unbounded sequence of indices restore finite exact termination. For the function-dependent Hessian model $H_0+H_1(f-f_Q^*)$, we also give separated certificate and trial-evaluation bounds, a sharp pointwise gap envelope, and finite away-step termination when $H_0=0$. An integrated curvature profile provides a safe optimal-vertex test with deterministic gradient and linear-oracle errors, provided a runner-up margin is certified and its cost is counted separately. Exact example checks illustrate termination; count-data controls measure the cost of unsuccessful probes outside the solution-face assumptions. The results concern exact-oracle mechanisms and do not establish universal practical speedup or minimax complexity.
+
+Comments:
+29 pages, 3 figures, 6 tables
+
+Processor: PDFLaTeX
+Main file: article.tex
+
+Journal reference and DOI: leave blank (no journal publication recorded).
+
+License: select in your arXiv account. Affiliation and contact details: use your actual details.

@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "scope": "Author identity correction only",
+  "authors": [
+    "Yaroslav P. Lyakhov",
+    "Stepan A. Suvorov"
+  ],
+  "arxiv_archive_compiles": true,
+  "fresh_pdf_text_matches": true,
+  "forwarding_packet_checked": true,
+  "reproduction_metadata_checked": true,
+  "numerical_tests_rerun": false,
+  "previous_full_validation": "submission_validation.json",
+  "arxiv_compilation": {
+    "pdf_sha256": "157b08a810a6960a9f2f41cc1c2a344eb013fe52cb2c4b7d886b6dfb6d57ccaf",
+    "passes": 2,
+    "engine": "E:\\miktex\\miktex\\bin\\x64\\pdflatex.EXE",
+    "command": [
+      "E:\\miktex\\miktex\\bin\\x64\\pdflatex.EXE",
+      "-interaction=nonstopmode",
+      "-halt-on-error",
+      "-file-line-error",
+      "-no-shell-escape",
+      "-recorder",
+      "-output-directory=build",
+      "article.tex"
+    ],
+    "log_sha256": "7a3c3c35b7802fb4492e2b571a5f4d9da239c06a966fa157d7e52e51905a6061"
+  }
+}

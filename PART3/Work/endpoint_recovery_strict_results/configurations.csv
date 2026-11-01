@@ -1,0 +1,5 @@
+dataset,radius_ratio,radius,critical_radius,reference_lower,reference_upper,dimension,starts,data_sha256,preprocessing
+seoul,0.5,2.287910414718786,4.575820829437572,0.17141858527434795,0.17141862747816586,15,30,373339b71a8935d69e9af0abf26a70744632119862eeb3919efb389a7b749c60,stable chronological first 80%; train-only mean/std; tanh standardized non-intercept features
+seoul,2.0,9.151641658875144,4.575820829437572,0.16193306564369936,0.16193306564539972,15,30,373339b71a8935d69e9af0abf26a70744632119862eeb3919efb389a7b749c60,stable chronological first 80%; train-only mean/std; tanh standardized non-intercept features
+metro,0.5,0.7158725796675205,1.431745159335041,0.10127486340098689,0.10127486569594546,12,24,0b3679ac15173f79c6dc6c5ef8a0798d806fa5c5d7f05c84a5fa711bd1b05f07,stable chronological first 80%; train-only mean/std; tanh standardized non-intercept features
+metro,2.0,2.863490318670082,1.431745159335041,0.08597847148648421,0.08597847148648435,12,24,0b3679ac15173f79c6dc6c5ef8a0798d806fa5c5d7f05c84a5fa711bd1b05f07,stable chronological first 80%; train-only mean/std; tanh standardized non-intercept features

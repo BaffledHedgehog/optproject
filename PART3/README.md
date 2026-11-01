@@ -2,6 +2,37 @@
 
 Это текущий исследовательский проект. Каталоги первого и второго лабораторных проектов вне PART3 к нему не относятся.
 
+**Актуальный комплект от 01.11.2026:**
+[публикационный PDF](Submission/2026-11-01/paper.pdf),
+[LaTeX](Submission/2026-11-01/Paper/article.tex),
+[чистый архив для arXiv](Submission/2026-11-01/arxiv_source_v2.zip) и
+[инструкция](Submission/2026-11-01/README_RU.txt).
+Авторы: **Yaroslav P. Lyakhov и Stepan A. Suvorov**.
+Версия подготовлена для экспертного чтения и самостоятельной подачи авторами;
+одобрение внешнего рецензента или публикация на arXiv не заявляются.
+
+Новые проверенные свидетельства:
+[324 endpoint-запуска](Work/endpoint_recovery_strict_results/manifest.json),
+[54 точных примера](Work/exposed_face_recovery_results/checks.json),
+[код endpoint FW](Work/endpoint_fw.py) и
+[ограниченные Lean-проверки](Submission/2026-11-01/Formal/ResearchAlgebra.lean).
+Текущий указатель на материалы: [Submission/latest.json](Submission/latest.json).
+
+В Git хранятся исходники и первичные данные, необходимые для воспроизведения.
+Большой `reproducibility_v2.zip` — локальный генерируемый артефакт, он не
+включён в Git. После клонирования полный комплект можно собрать с новым тегом:
+
+```powershell
+cd PART3/Submission/2026-11-01
+python -m pip install -r requirements.txt
+python prepare_submission.py --build
+python prepare_submission.py --package --verify --tag local
+```
+
+Результат — `reproducibility_local.zip`; уже существующие архивы не
+перезаписываются. Временные сборки и распакованные проверки остаются локально.
+Разделы ниже описывают сохранённые исторические версии.
+
 **Статья с нуля:** [учебный ноутбук с графиками](Tutorial/article_explained_ru.ipynb)
 и [версия для чтения в браузере](Tutorial/article_explained_ru.html).
 От обычного FW до сертификата остановки, backtracking, AFW и основных

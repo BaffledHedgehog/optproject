@@ -1,0 +1,89 @@
+﻿\section{Introduction}
+Frank--Wolfe (FW) replaces projections with linear minimization oracles~\cite{braun}.
+Backtracking makes its quadratic step model usable without a prescribed
+curvature constant, but a small primal error need not be visible to an
+observable stopping certificate. This paper asks when FW can certify
+progress, and when a certificate can lead to exact termination.
+
+We first study ordinary FW on a polytope whose entire minimizing set is
+a full exposed face. Assume that $f$ is convex and continuously
+differentiable on a neighborhood of $Q$, its gradient is Lipschitz on
+all of $Q$, and the atom oracle is exact. Theorem~\ref{face:ratio}
+proves that along every infinite nonterminal trajectory, the FW gap
+divided by primal suboptimality tends to one. A normalized-atom-weight
+argument bounds the total number of exceptional updates and yields the
+local observable-certificate complexity in Corollary~\ref{face:local}.
+This is a trajectory statement; it does not assert the same ratio for
+every near-optimal feasible point. Corollary~\ref{face:endpoint} shows
+that sparse endpoint probes can force exact termination. An explicit
+$C^2$ example shows why the probes matter: ordinary backtracking can
+continue taking half-steps forever.
+
+A complementary analysis concerns the constrained
+loss-dependent Hessian bound
+\[
+ \|\nabla^2 f(x)\|\le H_0+H_1\bigl(f(x)-f_Q^*\bigr),
+ \qquad x\in Q.
+\]
+This condition and its function-dependent-smoothness context are
+previously studied~\cite{warmup,liuwarmup,kale,caoselfbound,lobanov}. Under it,
+Theorem~\ref{thm:fw} bounds the updates and all rejected function trials
+needed by ordinary backtracking to reach its observable certificate. The
+update bound separates the $H_0/\varepsilon$ and
+$H_1\log(1/\varepsilon)$ contributions and includes the initial
+estimate. Its lag potential controls curvature estimates that remain
+large as the certificate falls; the method and full-region LMO are
+unchanged. Theorem~\ref{lem:bridge} gives the sharp pointwise FW-gap
+envelope, attained by one-dimensional objectives. For away-step FW,
+Theorem~\ref{thm:afw} gives the corresponding convex bound, while
+Theorem~\ref{thm:geometric} gives logarithmic certificate accuracy under
+an additional geometric gap inequality. At $H_0=0$,
+Proposition~\ref{prop:zeroface} shows that the full solution set is an
+exposed face with a common gradient, and Theorem~\ref{thm:zerofinite}
+proves finite exact termination of backtracking AFW without that
+additional inequality. The finite identification mechanism uses
+established AFW results~\cite{bomze,garber}; we do not claim a new AFW
+algorithm or general identification theory.
+
+A further certificate uses curvature along a segment rather than a
+single worst-case bound. Propositions~\ref{vertex:radius} and
+\ref{vertex:certificate} give an integrated-curvature gradient radius
+and a verifiable optimal-vertex test with deterministic oracle errors.
+The test requires a certified runner-up margin. It establishes
+certificate validity, not a complexity guarantee for a noisy method.
+Safe-screening methods for convex and generalized conditional-gradient
+problems provide related certificate context~\cite{raj,sunbach}.
+
+\paragraph{Related work.}
+Harks~\cite[Theorem 1 and Corollary 3]{harks} proves last-iterate
+distance and gap rates for FW on monotone variational inequalities,
+assuming Jacobian coercivity along the exposed face at a unique solution
+and using prescribed reciprocal-step schedules. Our face result instead
+allows a full, possibly non-singleton minimizing face and assumes only a
+Lipschitz gradient; it bounds a trajectory-wise gap-to-objective ratio
+and the local certificate cost under ordinary backtracking. Harks's
+open-loop rates do not give the endpoint-probe stopping result.
+
+Vyguzov and Stonyakin~\cite{vyguzov} analyze FW with
+$\|\nabla^2 f(x)\|\le L_0+L_1\|\nabla f(x)\|$ and an adaptive step
+rule. Their curvature depends on gradient norm, whereas ours depends on
+loss suboptimality. On compact $Q$, convexity gives
+$f-f_Q^*\le D\|\nabla f\|$, but replacing this by a global maximum
+gradient does not retain our separated dependence. Oikonomou and Loizou
+derive a related whole-space self-bounding inequality by ray comparison
+\cite[Lemma B.7, Eq.~(30)]{oikonomouloizou}; that auxiliary inequality
+is not a contribution claimed here.
+
+Backtracking trial counts, Fenchel dual certificates, and linear AFW
+convergence are already established by Pedregosa et al.
+\cite[Theorems 1, 3, and 4]{pedregosa}. Our scalar lower-bound maximum
+is distinct from their averaged-gradient Fenchel dual. Computable
+tangent bounds are also classical~\cite[Method 1]{freundgrigas};
+optimistic and primal--dual short steps explicitly optimize gaps under
+global smoothness~\cite[Proposition 4.1]{beyondshort}. Appendix
+\ref{app:comparison} discusses these and other adaptive, screening, and
+active-set comparisons. We make no minimax-optimality, universal
+speedup, or absolute-priority claim. The experiments isolate
+initialization, active-face geometry, and certificate cost; the
+cache-controlled endpoint study found no accepted probes or practical
+improvement on tasks whose optima are not vertices.
