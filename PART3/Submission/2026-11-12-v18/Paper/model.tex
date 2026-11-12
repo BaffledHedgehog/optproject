@@ -1,0 +1,67 @@
+\section{Model and computable information}
+\label{sec:model}
+Let $Q\subset\mathbb R^d$ be a nonempty compact convex set with
+$\operatorname{diam}Q\le D$, where $D>0$. Let $f$ be convex on $Q$
+and twice continuously differentiable on a neighborhood of $Q$. Assume
+\begin{equation}\label{eq:gradient_smoothness}
+ \|\nabla^2f(x)\|\le L_0+L_1\|\nabla f(x)\|,\qquad x\in Q,
+ \quad L_0,L_1\ge0.
+\end{equation}
+Vector norms are Euclidean and matrix norms are spectral. A minimizer
+$x^*\in Q$ exists. It is used to state the accuracy guarantee, not as an
+input to the method. We write $f(x)-f(x^*)$ and $\|\nabla f(x)\|$
+explicitly, without introducing names for these two expressions.
+
+The available operations are objective evaluation, gradient evaluation,
+and linear minimization over all of $Q$. The latter returns
+\[
+ s\in\arg\min_{v\in Q}\langle\nabla f(x),v\rangle.
+\]
+The full Frank-Wolfe gap is the computed quantity
+\begin{equation}\label{eq:gap}
+ G(x)=\max_{v\in Q}\langle\nabla f(x),x-v\rangle
+     =\langle\nabla f(x),x-s\rangle.
+\end{equation}
+Since $x\in Q$, $G(x)\ge0$. Convexity gives
+$f(x)-f(x^*)\le G(x)$, so $f(x)-G(x)$ is a valid lower bound on the
+unknown minimum value \cite{jaggi}. In particular, the stopping test
+does not evaluate that minimum.
+
+At a constrained minimizer the correct first-order condition is
+\[
+ \langle\nabla f(x^*),v-x^*\rangle\ge0\quad(v\in Q),
+\]
+which is equivalent to $G(x^*)=0$. It does not require
+$\nabla f(x^*)=0$. For example, $f(x)=Ax+x^2/2$ on $[0,1]$, $A>0$,
+has its minimum at zero, derivative $A$ there, and Hessian equal to one.
+A large gradient and large curvature are therefore different phenomena.
+
+\begin{lemma}[A finite curvature bound from the initial gradient]
+\label{lem:global_curvature}
+The smoothness condition implies
+\begin{equation}\label{eq:global_curvature}
+ \|\nabla^2f(z)\|\le K_Q\quad(z\in Q),\qquad
+ K_Q=(L_0+L_1\|\nabla f(x_0)\|)e^{L_1D}.
+\end{equation}
+Any sharper valid uniform bound can replace $K_Q$ in the results below.
+This constant is used to express work bounds; the algorithm does not
+need to know it.
+\end{lemma}
+\begin{proof}
+For a unit direction $e$ along a segment from $x_0$ in $Q$, the
+fundamental theorem of calculus gives
+\[
+ \|\nabla f(x_0+te)\|\le\|\nabla f(x_0)\|
+ +\int_0^t\{L_0+L_1\|\nabla f(x_0+se)\|\}\,ds.
+\]
+For $L_1>0$, Gronwall's inequality bounds
+$L_0+L_1\|\nabla f(x_0+te)\|$ by
+$(L_0+L_1\|\nabla f(x_0)\|)e^{L_1t}$. Since $t\le D$, this proves
+the assertion. If $L_1=0$, the original condition directly gives the
+bound $L_0$.
+\end{proof}
+
+The smoothness condition contains no minimum value. The algorithm below
+also uses neither a regularity constant centered at an unknown optimizer
+nor a positive-distance assumption on that optimizer. Convexity is the
+property that makes the full gap a global error certificate.

@@ -1,0 +1,33 @@
+{
+  "release": "v18",
+  "language": "en",
+  "passes": [
+    {
+      "pass": 1,
+      "exit": 0,
+      "seconds": 1.7012974329991266
+    },
+    {
+      "pass": 2,
+      "exit": 0,
+      "seconds": 1.7079867380016367
+    },
+    {
+      "pass": 3,
+      "exit": 0,
+      "seconds": 1.7311592209989612
+    }
+  ],
+  "warning_lines": [],
+  "source_changed_during_build": false,
+  "source_hashes": {
+    "article.tex": "89c8d251bf4d5a54612c6d1f0299329476ede64cf0985f3921848d1ffd84037b",
+    "experiments.tex": "09c3a901c609b250958d607e22aca68bc6574cbee29ac223610fe205b2aa2dc8",
+    "intro.tex": "46ff07b59a67c9b6a47b937633c3e3d7251510c3b3bbdd912d7434fbe8332fa8",
+    "model.tex": "8b0c2685a1f60cf100b625a0ed248f4007c5e442cf5228f845428660b70d62a8",
+    "normal_gradient.tex": "9d0c1683ce281a88cfa61734d504e66732d3eba8bf69e001c04eb87a538805a8",
+    "references.tex": "116aefa5a53ecd97361743b5b5e7ba720997450a45785ecc9fa7f7b182a513a4",
+    "stopping.tex": "367ee54b6027ed400109ebe5c19af4625ff58cb34427f1720cae3d385d66ce10"
+  },
+  "scientific_calls": 0
+}

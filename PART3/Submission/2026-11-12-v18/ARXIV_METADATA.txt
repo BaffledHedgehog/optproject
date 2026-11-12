@@ -1,0 +1,30 @@
+Title: Certified Frank-Wolfe stopping with a nonzero gradient at the minimum
+Authors: Yaroslav P. Lyakhov; Stepan A. Suvorov
+Revision: v18, 12 November 2026
+Suggested primary category: math.OC
+Status: research manuscript; not submitted
+English PDF: paper.pdf (8 pages)
+English source archive: arxiv_source_v18.zip (pdfLaTeX)
+Russian PDF: paper_ru.pdf (8 pages)
+Russian source archive: arxiv_source_ru_v18.zip (XeLaTeX)
+
+Abstract:
+At a constrained minimum, the gradient can remain arbitrarily large.
+We study stopping and step selection under gradient-dependent smoothness
+for convex objectives on compact convex sets. A full-gap certificate and
+quadratic backtracking give finite termination without knowing the minimum
+value or requiring the gradient norm to vanish. We count gradient and
+linear-oracle queries, rejected objective trials, and adaptive
+directional-accuracy refinements. For product domains, adding a normal
+linear term leaves the entire backtracking execution unchanged when the
+method starts on the corresponding face. On the globally (1,1)-smooth
+family exp(x)+A*y, a fixed gradient-norm step requires at least a constant
+times A updates, whereas backtracking is independent of A. A deterministic
+experiment reproduces this separation with the same stopping certificate
+for both methods.
+
+Keywords: Frank-Wolfe; constrained optimization; generalized smoothness;
+stopping certificate; backtracking; boundary minimizer; inexact oracle.
+
+The fixed-step comparison is with Algorithm 1 of arXiv:2510.16468v5.
+No external submission or sharing is performed by this release.

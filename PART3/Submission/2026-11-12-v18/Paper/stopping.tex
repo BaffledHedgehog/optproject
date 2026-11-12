@@ -1,0 +1,176 @@
+\section{Certified stopping with backtracking}
+\label{sec:stopping}
+Assume the convex model of Section~\ref{sec:model}. Convexity gives
+\begin{equation}\label{eq:gap_certificate}
+ f(x)-f(x^*)\le
+ \langle\nabla f(x),x-x^*\rangle\le G(x).
+\end{equation}
+Thus the full gap is a computable error certificate even when
+$\nabla f(x^*)\ne0$. No estimate of that unknown gradient is needed.
+Use a positive global curvature bound $K_Q$ from
+\eqref{eq:global_curvature} in the analysis; if that bound is zero,
+it may be enlarged to any positive value. The algorithm does not
+need $K_Q$, $L_0$, or $L_1$ as inputs.
+
+\paragraph{Exact-oracle algorithm.}
+Fix $\varepsilon>0$ and an initial stored curvature $L_{\rm init}>0$.
+At a visited point $x$, compute its gradient, a full linear minimizer
+$s\in Q$, and $G(x)$. Retain
+\[
+ \ell\leftarrow\max\{\ell,f(x)-G(x)\},
+\]
+where the first query initializes $\ell=f(x_0)-G(x_0)$.
+Stop if $f(x)-\ell\le\varepsilon$. Otherwise set $d=s-x$, start with
+half the previous accepted curvature (initially $L_{\rm init}$),
+and double $L$ until
+\begin{equation}\label{eq:stopping_bt}
+ \alpha=\min\left\{1,\frac{G(x)}{L\|d\|^2}\right\},\qquad
+ f(x+\alpha d)\le f(x)-\alpha G(x)+\frac{L\alpha^2\|d\|^2}{2}.
+\end{equation}
+Accept $x+\alpha d$, cache its objective value, and store $L$.
+The update is ordinary Frank-Wolfe backtracking \cite{pedregosa}.
+Objective values, gradients, and full linear minimizers are exact.
+
+\begin{theorem}[Finite stopping and complete oracle counts]
+\label{thm:finite_stopping}
+Every line search terminates. The algorithm stops with
+$f(x_N)-f(x^*)\le f(x_N)-\ell_N\le\varepsilon$.
+If $G(x_0)>\varepsilon$, set
+\[
+ J=\left\lceil\log_2\frac{G(x_0)}{\varepsilon}\right\rceil,
+ \quad b_j=G(x_0)/2^j\ (0\le j<J),
+\]
+\[
+ H_{\rm init}=\left\lceil
+ \log_2\max\left\{1,\frac{L_{\rm init}}{2K_Q}\right\}\right\rceil.
+\]
+The number $N$ of accepted updates satisfies
+\begin{align}
+ N&\le H_{\rm init}+\left\lceil\sum_{j=0}^{J-1}
+       \max\left\{4,\frac{16K_QD^2}{b_j}\right\}\right\rceil
+       \label{eq:stopping_steps}\\
+  &\le H_{\rm init}+\left\lceil4J+
+       \frac{32K_QD^2}{\varepsilon}\right\rceil.
+       \label{eq:stopping_simple}
+\end{align}
+There are exactly $N+1$ gradient evaluations and $N+1$ full linear
+minimization calls, including the terminal query. The initial objective
+value and all accepted and rejected line-search trials number at most
+\begin{equation}\label{eq:stopping_values}
+ N_f\le 1+2N+
+ \left\lceil\log_2\max\left\{1,\frac{2K_Q}{L_{\rm init}}\right\}\right\rceil.
+\end{equation}
+If $G(x_0)\le\varepsilon$, there are no updates and exactly one call
+of each oracle; the phase quantities are unnecessary.
+\end{theorem}
+
+\begin{proof}
+Every retained $\ell$ is a lower bound on $f(x^*)$, so
+\[
+ 0\le f(x)-f(x^*)\le f(x)-\ell\le G(x).
+\]
+A nonterminal point therefore has $G(x)>0$ and $d\ne0$.
+Every $L\ge K_Q$ passes \eqref{eq:stopping_bt}. Accepted values obey
+\begin{equation}\label{eq:stopping_progress}
+ \begin{split}
+ L_k&\le\max\{L_{k-1}/2,2K_Q\},\qquad L_{-1}=L_{\rm init},\\
+ f(x_k)-f(x_{k+1})&\ge
+ \min\left\{\frac{G(x_k)}2,\frac{G(x_k)^2}{2L_kD^2}\right\}.
+ \end{split}
+\end{equation}
+Thus the objective decreases, $\ell$ increases, and $f(x_k)-\ell_k$
+decreases. If $L_k>2K_Q$, the accepted trial was the first: otherwise
+its preceding rejected value $L_k/2>K_Q$ would have passed.
+Such an update halves the inherited curvature. Once $L_k\le2K_Q$,
+it stays at most $2K_Q$. There are at most $H_{\rm init}$ updates
+above this threshold.
+
+Assign every other nonterminal update to
+$b_j/2<f(x_k)-\ell_k\le b_j$. These phases are visited in order.
+Here $G(x_k)>b_j/2$, and \eqref{eq:stopping_progress} gives decrease
+at least
+\[
+ \min\left\{b_j/4,\ b_j^2/(16K_QD^2)\right\}.
+\]
+The total decrease of all updates starting in that phase is at most
+the true error at its entry, hence at most $b_j$. This includes the
+last update leaving the phase, because its endpoint has objective
+at least $f(x^*)$. Division and summation prove
+\eqref{eq:stopping_steps}. The inequality
+$\sum_{j<J}b_j^{-1}<2/\varepsilon$ gives
+\eqref{eq:stopping_simple}. The same finite bound applies to every
+unfinished prefix, excluding an infinite nonterminal run.
+
+If update $k$ rejects $q_k$ trials, then
+$L_k=2^{q_k-1}L_{k-1}$. For $N\ge1$,
+\[
+ \sum_{k<N}(q_k+1)=2N+\log_2\frac{L_{N-1}}{L_{\rm init}},
+ \quad L_{N-1}\le\max\{L_{\rm init}/2^N,2K_Q\}.
+\]
+Adding the initial objective value proves \eqref{eq:stopping_values}.
+Each visited point uses one gradient and one full linear minimizer.
+\end{proof}
+
+\subsection{Carrying absolute directional accuracy between iterations}
+A directional query with requested accuracy $\eta>0$ returns $h\ge0$
+and $d=s-x$, $s\in Q$, with certified bounds
+\begin{equation}\label{eq:directional_query}
+ G(x)\le h+\eta,\qquad
+ -\langle\nabla f(x),d\rangle\ge h-\eta.
+\end{equation}
+This is an explicit oracle requirement, not a consequence of the line-search
+check. Objective values remain exact. The exact algorithm above needs
+no such additional oracle.
+
+Start with $\eta_0>0$ and fix $0<\theta<1$. After every query, update
+$\ell\leftarrow\max\{\ell,f(x)-(h+\eta)\}$ and first test
+$f(x)-\ell\le\varepsilon$. If this fails and $\eta>\theta h$,
+halve $\eta$ and query again at the same point, reusing its objective
+value. Once $\eta\le\theta h$, use \eqref{eq:stopping_bt} with
+$G(x)$ replaced by $h-\eta$. Carry the current $\eta$ to the next point.
+
+\begin{corollary}[All accuracy refinements are counted]
+\label{cor:directional_stopping}
+The rule stops with $f(x_N)-f(x^*)\le\varepsilon$.
+Put $\kappa=(1-\theta)/(1+\theta)$. The total number $R$ of accuracy
+halvings obeys
+\begin{equation}\label{eq:accuracy_refinements}
+ R\le\left\lceil\log_2\max\left\{1,
+ \frac{(1+\theta)\eta_0}{\theta\varepsilon}\right\}\right\rceil.
+\end{equation}
+If the first upper gap $h_0+\eta_0>\varepsilon$, define $J$ and $b_j$
+as above with $G(x_0)$ replaced by $h_0+\eta_0$. Then
+\begin{equation}\label{eq:directional_steps}
+ N\le H_{\rm init}+\left\lceil
+ \frac{4J}{\kappa}+\frac{32K_QD^2}{\kappa^2\varepsilon}
+ \right\rceil.
+\end{equation}
+There are exactly $N+1+R$ directional queries. The objective bound
+\eqref{eq:stopping_values} is unchanged. If each directional query uses
+one full linear minimization call, their number is also $N+1+R$.
+If the first upper gap is at most $\varepsilon$, the rule stops immediately.
+\end{corollary}
+\begin{proof}
+At a failed nonterminal accuracy check,
+\[
+ \varepsilon<f(x)-\ell\le h+\eta
+ <(1+\theta)\eta/\theta.
+\]
+Since $\eta$ is halved and never reset, this proves
+\eqref{eq:accuracy_refinements}. At a passed nonterminal check,
+\[
+ h-\eta\ge\kappa(h+\eta)\ge\kappa(f(x)-\ell)>0.
+\]
+The preceding descent and phase proof therefore applies with phase
+slope threshold $\kappa b_j/2$, giving
+\eqref{eq:directional_steps}. Each visited point has one closing query,
+including the terminal point, and each halving adds one failed query.
+Refinements at a fixed point do not evaluate the objective again.
+\end{proof}
+
+The stopping proof uses the full gap and permits a nonzero limiting
+gradient. In Section~\ref{sec:normal}, the true curvature bound and the
+complete execution are independent of an arbitrarily large normal
+gradient. Directional-query counts specify how often the requested
+accuracy is needed; the cost of producing each answer is determined by
+the chosen oracle implementation.

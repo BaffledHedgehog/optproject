@@ -1,0 +1,91 @@
+{
+  "release": "v18",
+  "date": "2026-11-12",
+  "status": "passed",
+  "pages": {
+    "en": 8,
+    "ru": 8
+  },
+  "build": {
+    "en": {
+      "passes": 3,
+      "all_passes_succeeded": true,
+      "source_hashes_match": true,
+      "warning_lines": []
+    },
+    "ru": {
+      "passes": 3,
+      "all_passes_succeeded": true,
+      "source_hashes_match": true,
+      "warning_lines": [
+        "Package polyglossia Warning: No hyphenation patterns were loaded for `russian'"
+      ]
+    }
+  },
+  "visual_review": {
+    "all_pages_checked": true,
+    "languages": [
+      "en",
+      "ru"
+    ],
+    "clipping_or_overlap_found": false,
+    "english_float_spacing_corrected": true,
+    "method": "Rendered PDF pages, contact sheets, and enlarged equation/experiment pages"
+  },
+  "mathematical_review": {
+    "report": "Evidence/independent_review.txt",
+    "reviewer": "separate assistant agent",
+    "external_peer_review_claimed": false,
+    "final_stopping_source_sha256": "367ee54b6027ed400109ebe5c19af4625ff58cb34427f1720cae3d385d66ce10"
+  },
+  "boundary_benchmark": {
+    "deterministic_runs": 10,
+    "all_converged": true,
+    "same_stopping_certificate": true,
+    "independent_rerun_and_trace_review": "Evidence/independent_review.txt",
+    "backtracking_trajectories_identical": true,
+    "fixed_rule_accepted_updates": [
+      11,
+      14,
+      66,
+      610,
+      6045
+    ],
+    "backtracking_accepted_updates": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "source_sha256": "51ebbaef6c3766f27759d8a2973cd0768c3d31fa6bb07d5f9fdab020d6200706"
+  },
+  "directional_checks": {
+    "runs": 8,
+    "verified": 8,
+    "true_optimum_used_by_solver": false,
+    "source_sha256": "8b494d4eafdc2605ee2c1082249ae2df3823ef66806a6a4cef86471ca54c41c0",
+    "results": "Evidence/directional_checks.json"
+  },
+  "numerical_scope": "Deterministic binary64 checks supplement the analytical proofs; no random benchmark or universal acceleration claim.",
+  "previous_release_preserved": "2026-11-12-v17",
+  "archive_checks": {
+    "source_archives": [
+      "arxiv_source_v18.zip",
+      "arxiv_source_ru_v18.zip"
+    ],
+    "crc_and_content_match": true,
+    "tex_inputs_and_figure_included": true,
+    "ru_figure_path_normalized": true,
+    "scientific_runs_during_packaging": 0
+  },
+  "sha256": {
+    "paper.pdf": "bdef9515a7bfe45e600f01c4e9c13e50789c788bd82e5be6e1901e17fd2065f4",
+    "paper_ru.pdf": "35abf2142330849cdf6aed9dd6543fbc4a01abc90bed3444b8ae4ec5b2f3c089",
+    "guide_professor.txt": "b8767f2837731e3200bf5b13823a8b059e5d5189a1200cc9c67a27fb82e5ad37",
+    "arxiv_source_v18.zip": "44901a415eddb4cd70371432b23c1ce076665855cc24ec5e6f596c5008743acb",
+    "arxiv_source_ru_v18.zip": "67ad8fae90baf4aa3be8963adcda9e0ada5d5c95bcd88a9ab141b176e82ccc27",
+    "Code/benchmark_boundary.py": "51ebbaef6c3766f27759d8a2973cd0768c3d31fa6bb07d5f9fdab020d6200706",
+    "Code/check_directional.py": "8b494d4eafdc2605ee2c1082249ae2df3823ef66806a6a4cef86471ca54c41c0"
+  }
+}

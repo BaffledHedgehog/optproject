@@ -1,0 +1,88 @@
+{
+  "format_version": 1,
+  "release": "v18",
+  "source_commit": "4fa316fd59f88d950142725c1b3b5afb7fe4198d",
+  "release_repository_path": "PART3/Submission/2026-11-12-v18",
+  "maximum_part_bytes": 131072,
+  "files": [
+    {
+      "path": "Evidence/boundary_trace.csv",
+      "repository_path": "PART3/Submission/2026-11-12-v18/Evidence/boundary_trace.csv",
+      "source_git_blob_sha1": "b66246b7c12c530bb0dd09c3b0bc42e253a71596",
+      "original_size": 1192836,
+      "original_sha256": "7d2e1e072659021d5f78f0bb930f2d777e92bf2765125471310f6f90a6df5b1b",
+      "encoding": "gzip",
+      "encoded_size": 357910,
+      "encoded_sha256": "eed4a8bb3e7c8030b179a2cc0398a638a00eb7835172580896f13ed34bd258f1",
+      "parts": [
+        {
+          "path": "parts/boundary_trace.csv.gz.part0001",
+          "size": 131072,
+          "sha256": "2f7aeac5fc54c3cfdf16686765aa45a09a233b25385aec98be51086173fc41f4"
+        },
+        {
+          "path": "parts/boundary_trace.csv.gz.part0002",
+          "size": 131072,
+          "sha256": "740eea86f52d7e6792c943accc2a303ad115e4db2698f56196a8c2e1c5a9ee15"
+        },
+        {
+          "path": "parts/boundary_trace.csv.gz.part0003",
+          "size": 95766,
+          "sha256": "be234953953d17f66494dc2382faf85e6ff855a95f7703ca18da1636960ebcdf"
+        }
+      ]
+    },
+    {
+      "path": "reading_packet_v18.zip",
+      "repository_path": "PART3/Submission/2026-11-12-v18/reading_packet_v18.zip",
+      "source_git_blob_sha1": "0ba4a394e07ba149e45c8fb19c89961d8b0bbb8a",
+      "original_size": 1028991,
+      "original_sha256": "2dbabe481515a8b6adf14090493eb21755a03341e62d40e2feb0b8d86ba72b09",
+      "encoding": "raw",
+      "encoded_size": 1028991,
+      "encoded_sha256": "2dbabe481515a8b6adf14090493eb21755a03341e62d40e2feb0b8d86ba72b09",
+      "parts": [
+        {
+          "path": "parts/reading_packet_v18.zip.part0001",
+          "size": 131072,
+          "sha256": "06acccaafc0bd2f5df44071eca8937490fa66a88202570d493e92ef9e0cbdfef"
+        },
+        {
+          "path": "parts/reading_packet_v18.zip.part0002",
+          "size": 131072,
+          "sha256": "f4c3b6a88eb847acfeef38f0d8a221e4b6bc69380f33230e6f84e11e063fb77c"
+        },
+        {
+          "path": "parts/reading_packet_v18.zip.part0003",
+          "size": 131072,
+          "sha256": "9d0a3f484f7398bd9dae4a4868ce00529e5a907a60c0c77496332b6b3f590442"
+        },
+        {
+          "path": "parts/reading_packet_v18.zip.part0004",
+          "size": 131072,
+          "sha256": "ce0cd698f05d26669a542ce71a2fd4a5fe8cbac139768b1ca59510f61a3d4dbd"
+        },
+        {
+          "path": "parts/reading_packet_v18.zip.part0005",
+          "size": 131072,
+          "sha256": "4c6f0cc00bc8173e629994fa72660e3f47adabcb7ae51fe0866a30c1d1c9c1af"
+        },
+        {
+          "path": "parts/reading_packet_v18.zip.part0006",
+          "size": 131072,
+          "sha256": "d4d1ab3fc9ade3ae901fac79555a3ad8e5954c576d37309848cd05002cffd030"
+        },
+        {
+          "path": "parts/reading_packet_v18.zip.part0007",
+          "size": 131072,
+          "sha256": "096e0d433fcea3e7fb51bd0bcaac676e4fdb443844ac932345a8ebbb796fb8fe"
+        },
+        {
+          "path": "parts/reading_packet_v18.zip.part0008",
+          "size": 111487,
+          "sha256": "2f2b44b3829cb4da284917bb8cba173c683f7ed5aac6d422708374890e4ac077"
+        }
+      ]
+    }
+  ]
+}

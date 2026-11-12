@@ -1,24 +1,50 @@
 {
   "date": "2026-11-12",
-  "directory": "2026-11-12-v17",
-  "title": "Sharp Error Bounds and Adaptive Stopping for Frank-Wolfe beyond Convexity",
-  "paper": "2026-11-12-v17/paper.pdf",
-  "paper_ru": "2026-11-12-v17/paper_ru.pdf",
-  "arxiv_source": "2026-11-12-v17/arxiv_source_v17.zip",
-  "arxiv_source_ru": "2026-11-12-v17/arxiv_source_ru_v17.zip",
-  "expert_packet": "2026-11-12-v17/reading_packet_v17.zip",
-  "metadata": "2026-11-12-v17/ARXIV_METADATA.txt",
+  "directory": "2026-11-12-v18",
+  "title": "Certified Frank-Wolfe stopping with a nonzero gradient at the minimum",
+  "paper": "2026-11-12-v18/paper.pdf",
+  "paper_ru": "2026-11-12-v18/paper_ru.pdf",
+  "arxiv_source": "2026-11-12-v18/arxiv_source_v18.zip",
+  "arxiv_source_ru": "2026-11-12-v18/arxiv_source_ru_v18.zip",
+  "expert_packet": "2026-11-12-v18/reading_packet_v18.zip",
+  "metadata": "2026-11-12-v18/ARXIV_METADATA.txt",
   "status": "research manuscript; not submitted",
   "authors": [
     "Yaroslav P. Lyakhov",
     "Stepan A. Suvorov"
   ],
-  "revision_tag": "v17",
+  "revision_tag": "v18",
   "pages": {
-    "en": 23,
-    "ru": 23
+    "en": 8,
+    "ru": 8
   },
-  "reproducibility": "2026-11-12-v17/Code/README.txt",
-  "validation": "2026-11-12-v17/Evidence/release_validation.json",
-  "previous_release": "2026-11-01"
+  "reproducibility": "2026-11-12-v18/Code/README.txt",
+  "validation": "2026-11-12-v18/Evidence/release_validation.json",
+  "previous_release": "2026-11-12-v17",
+  "storage": {
+    "format": "verified_file_parts",
+    "manifest": "2026-11-12-v18/ArchiveParts/manifest.json",
+    "maximum_part_bytes": 131072,
+    "artifacts": [
+      {
+        "path": "2026-11-12-v18/Evidence/boundary_trace.csv",
+        "encoding": "gzip",
+        "original_size": 1192836,
+        "sha256": "7d2e1e072659021d5f78f0bb930f2d777e92bf2765125471310f6f90a6df5b1b"
+      },
+      {
+        "path": "2026-11-12-v18/reading_packet_v18.zip",
+        "encoding": "raw",
+        "original_size": 1028991,
+        "sha256": "2dbabe481515a8b6adf14090493eb21755a03341e62d40e2feb0b8d86ba72b09"
+      }
+    ]
+  },
+  "restore": {
+    "script": "2026-11-12-v18/restore_large_files.py",
+    "working_directory": "2026-11-12-v18",
+    "command": "python restore_large_files.py",
+    "instructions": "2026-11-12-v18/ArchiveParts/README_RU.txt",
+    "overwrites_different_files": false
+  }
 }

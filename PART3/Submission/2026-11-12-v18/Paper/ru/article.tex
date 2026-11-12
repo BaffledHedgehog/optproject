@@ -1,0 +1,44 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+\setmainfont{Liberation Serif}
+\setsansfont{Liberation Sans}
+\setmonofont{DejaVu Sans Mono}[Scale=0.82]
+\usepackage{amsmath,amssymb,amsthm,graphicx,booktabs}
+\usepackage[hidelinks,unicode]{hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{lemma}[theorem]{Лемма}
+\newtheorem{proposition}[theorem]{Утверждение}
+\newtheorem{corollary}[theorem]{Следствие}
+\hypersetup{pdftitle={Гарантированная остановка метода Франка-Вульфа при ненулевом градиенте в минимуме},pdfauthor={Ярослав П. Ляхов и Степан А. Суворов}}
+\title{Гарантированная остановка метода Франка-Вульфа\\при ненулевом градиенте в минимуме}
+\author{Ярослав П. Ляхов \and Степан А. Суворов}
+\date{12 ноября 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+В минимуме на множестве градиент может оставаться сколь угодно большим.
+Рассматриваются остановка и выбор шага для выпуклых функций на компактных
+выпуклых множествах при гладкости, зависящей от градиента. Сертификат
+по полному зазору и квадратичный подбор шага дают конечную остановку
+без знания значения минимума и без стремления нормы градиента к нулю.
+Подсчитаны запросы градиента и линейного оракула, отклонённые пробы
+функции и адаптивные уточнения направленных данных. Для областей в
+форме прямого произведения добавление нормального линейного слагаемого
+не меняет выполнение метода, начатого на соответствующей грани.
+На глобально $(1,1)$-гладком семействе $e^x+Ay$ фиксированное правило шага
+через норму градиента требует не менее порядка $A$ шагов, а подбор шага
+не зависит от $A$. Детерминированный эксперимент воспроизводит это
+различие при одинаковом сертификате остановки.
+\end{abstract}
+\input{intro}
+\input{model}
+\input{stopping}
+\input{normal_gradient}
+\input{experiments}
+\input{references}
+\end{document}

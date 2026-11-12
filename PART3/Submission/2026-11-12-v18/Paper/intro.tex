@@ -1,0 +1,66 @@
+\section{Introduction}
+\label{sec:intro}
+We consider minimization of a convex function over a compact convex set
+$Q$. The function is twice continuously differentiable near $Q$ and
+satisfies the gradient-dependent smoothness condition
+\[
+ \|\nabla^2 f(x)\|\le L_0+L_1\|\nabla f(x)\|,\qquad x\in Q.
+\]
+The constants $L_0,L_1$ and the diameter of $Q$ enter the work bounds;
+the backtracking method does not require their values.
+The smoothness condition and the algorithm do not use the unknown
+minimum value. The point $x^*$ denotes a minimizer only in the analysis.
+
+The full Frank-Wolfe gap
+$G(x)=\max_{s\in Q}\langle\nabla f(x),x-s\rangle$
+satisfies $f(x)-f(x^*)\le G(x)$ by convexity \cite{jaggi}.
+Thus $f(x)-G(x)$ is a computable lower bound on the minimum.
+This certificate remains valid at boundary solutions, where the
+norm of the gradient may stay positive. The stopping quantity is the
+gap, not the gradient norm.
+
+Gradient-dependent smoothness nevertheless affects step selection.
+We isolate this effect on the convex family
+\[
+ f_A(x,y)=\exp(x)+Ay,\qquad
+ Q=[-1,1]\times[0,1],\qquad A>0.
+\]
+All members satisfy the same smoothness bound with $L_0=L_1=1$.
+Starting at $(0.7,0)$, the full linear oracle always returns $(-1,0)$.
+The gap and all objective values along the generated face are independent
+of $A$, while the gradient norm grows with $A$.
+We prove that the prescribed step in Algorithm~1 of Vyguzov and
+Stonyakin \cite{vyguzov}, with fixed smoothness parameters, needs
+$\Omega(A)$ updates even to cross $x=0$.
+For exact oracle answers and the same initial curvature estimate,
+quadratic backtracking gives identical trial points, accepted updates,
+and stopping counts for every $A$.
+This comparison concerns their fixed-parameter Algorithm~1; it does not
+compare with their adaptive Algorithm~2.
+
+We then give a stopping rule with adaptive absolute accuracy for the
+directional oracle. Its error bounds certify both the full gap and the
+descent direction. The rule carries the requested accuracy between
+iterations, refines it when necessary, and retains the best certified
+lower bound on the minimum. We prove termination at a prescribed
+objective accuracy and bound all oracle calls and objective evaluations,
+including failed precision checks, rejected backtracking trials, and the
+final stopping query. Exact gradients and exact full linear minimization
+are included as a special case.
+
+\paragraph{Relation to earlier work.}
+Gap certificates and approximate linear oracles are established parts
+of convex Frank-Wolfe analysis \cite{jaggi}. Vyguzov and Stonyakin
+\cite{vyguzov} study both fixed and adaptive steps under the smoothness
+condition above. Quadratic backtracking also has an established analysis
+\cite{pedregosa}; we use that update and provide the stopping rule and
+complete query counts described here. The explicit family quantifies
+how a gradient component can affect a norm-based step while leaving
+the selected direction and its objective values unchanged.
+
+The residual-dependent curvature condition used in warm-up analysis
+\cite{warmup} is a different assumption and is not imposed here.
+Local LMO \cite{locallmo} uses linear minimization over
+$Q\cap B(x,t)$, whereas our rule retains the full linear oracle over $Q$.
+The results therefore concern the original convex oracle model, with
+no fixed-center regularity assumption or knowledge of $f(x^*)$.

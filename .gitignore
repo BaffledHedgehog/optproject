@@ -54,3 +54,15 @@ venv/
 !/PART3/Submission/*/arxiv_source_v17.zip
 !/PART3/Submission/*/arxiv_source_ru_v17.zip
 !/PART3/Submission/*/reading_packet_v17.zip
+
+# Small source and reading archives for the v18 revision.
+!/PART3/Submission/*/arxiv_source_v18.zip
+!/PART3/Submission/*/arxiv_source_ru_v18.zip
+!/PART3/Submission/*/reading_packet_v18.zip
+/PART3/Submission/2026-11-12-v18/Paper/*.pdf
+/PART3/Submission/2026-11-12-v18/Paper/ru/*.pdf
+/PART3/Submission/2026-11-12-v18/Paper/ru/*.xdv
+
+# Large v18 files are restored from verified small parts.
+/PART3/Submission/2026-11-12-v18/Evidence/boundary_trace.csv
+/PART3/Submission/2026-11-12-v18/reading_packet_v18.zip

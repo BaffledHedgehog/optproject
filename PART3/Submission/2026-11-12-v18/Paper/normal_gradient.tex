@@ -1,0 +1,99 @@
+\section{Large normal gradients and unchanged trajectories}
+\label{sec:normal}
+The gradient-dependent curvature bound can grow because of a linear
+term that has no curvature. The next result identifies a family on
+which this growth has no effect on the backtracking method.
+
+\begin{proposition}[Invariance under a normal linear term]
+\label{prop:normal_invariance}
+Let $Q_0$ be compact and convex, and let $\varphi$ be convex and $C^2$
+near $Q_0$. For $A\ge0$, consider
+\[
+ Q=Q_0\times[0,1],\qquad f_A(z,y)=\varphi(z)+Ay.
+\]
+Run the exact method of Section~\ref{sec:stopping} from $(z_0,0)$,
+with the same accuracy and initial curvature. Choose the same
+linear minimizer on $Q_0$ in every tie, and choose $y=0$ in ties.
+Then all iterates, gaps, accepted step sizes, backtracking trials, and
+oracle counts are identical for all $A\ge0$. If $\varphi$ satisfies
+\eqref{eq:gradient_smoothness}, every $f_A$ satisfies it with the same
+constants. At a minimizer $(z^*,0)$,
+\[
+ \|\nabla f_A(z^*,0)\|
+   =\sqrt{\|\nabla\varphi(z^*)\|^2+A^2}\ge A.
+\]
+\end{proposition}
+\begin{proof}
+At $(z,0)$ the gradient is $(\nabla\varphi(z),A)$, so a full linear
+minimizer is $(s,0)$ with $s$ minimizing
+$\langle\nabla\varphi(z),s\rangle$ on $Q_0$. The direction has zero
+last coordinate. Its norm, its directional derivative, the gap, and
+every objective value along it are independent of $A$. The retained
+lower bound and every backtracking comparison are consequently the
+same. Induction proves the equality of the complete executions.
+The Hessian has blocks $\nabla^2\varphi$ and zero, while
+$\|\nabla f_A\|\ge\|\nabla\varphi\|$, proving the smoothness claim.
+\end{proof}
+
+A bound on $\|\nabla^2\varphi\|$ on $Q_0$ supplies a value of $K_Q$
+independent of $A$ in Theorem~\ref{thm:finite_stopping}. Thus both the
+actual execution and a valid work bound can ignore this normal
+component. No inverse Hessian is used.
+
+\subsection{A quantitative comparison with the fixed smoothness step}
+The fixed-parameter rule in Algorithm~1 of \cite{vyguzov} uses
+\begin{equation}\label{eq:vyguzov_step}
+ \alpha_k=\min\left\{1,
+ \frac{G(x_k)}{e(L_0+L_1\|\nabla f(x_k)\|)\|s_k-x_k\|^2}
+ \right\}.
+\end{equation}
+Here $e$ is the base of the natural logarithm. We compare this specified
+rule with backtracking; the adaptive Algorithm~2 in that work is a
+different method.
+
+\begin{theorem}[A linear separation in the normal coefficient]
+\label{thm:normal_separation}
+Let
+\[
+ f_A(x,y)=e^x+Ay,\qquad Q=[-1,1]\times[0,1],\qquad A>0.
+\]
+Start at $(a,0)$, where $0<a<1$, and require
+$0<\varepsilon<1-e^{-1}$. Use $L_0=L_1=1$ in
+\eqref{eq:vyguzov_step}, and stop by the same retained lower-bound
+test as in Section~\ref{sec:stopping}. This rule needs at least
+\begin{equation}\label{eq:normal_lower}
+ \left\lceil a e^{1-a}A\right\rceil
+\end{equation}
+updates before it can stop. The backtracking execution, including its
+finite stopping time, is independent of $A$.
+\end{theorem}
+\begin{proof}
+The functions are globally convex, with
+\[
+ \nabla f_A(x,y)=(e^x,A),\qquad
+ \nabla^2f_A(x,y)=\operatorname{diag}(e^x,0).
+\]
+Thus \eqref{eq:gradient_smoothness} holds globally with the fixed
+constants $L_0=L_1=1$. The minimum on $Q$ is at $(-1,0)$.
+Every full linear oracle returns $(-1,0)$. The iterates stay on $y=0$
+and their first coordinates decrease. At a current coordinate $x$,
+the gap is $e^x(x+1)$. Rule~\eqref{eq:vyguzov_step} decreases $x$ by
+at most
+\[
+ \frac{e^x}{e(1+\sqrt{e^{2x}+A^2})}
+ \le\frac{e^a}{eA}.
+\]
+This remains an upper bound when the step is capped at one. Until the
+coordinate crosses zero, the true objective error is at least
+$1-e^{-1}>\varepsilon$, so no valid certificate permits stopping.
+Moving a distance at least $a$ proves \eqref{eq:normal_lower}.
+Backtracking invariance follows from Proposition~\ref{prop:normal_invariance}.
+Its finite stopping follows from Theorem~\ref{thm:finite_stopping},
+for example with $K_Q=e$ and $D=\sqrt5$, both independent of $A$.
+\end{proof}
+
+The separation concerns a concrete convex family and a specified step
+rule. Its cause is visible in \eqref{eq:vyguzov_step}: the normal
+component enters the denominator even though it changes neither the
+objective along the executed steps nor the Hessian. Backtracking tests
+the actual change along those steps.

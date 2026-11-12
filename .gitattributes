@@ -1,2 +1,3 @@
 # Imported course notes are preserved verbatim rather than style-normalized.
 new/prof_info.txt -text -whitespace
+/PART3/Submission/2026-11-12-v18/ArchiveParts/parts/* -text

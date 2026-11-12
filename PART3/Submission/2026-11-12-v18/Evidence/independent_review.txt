@@ -1,0 +1,82 @@
+INDEPENDENT MATHEMATICAL AND CODE REVIEW
+Date: 2026-11-12
+Release: PART3/Submission/2026-11-12-v18
+Reviewer: separate gradient_check agent
+Scope: mathematical correctness, comparison protocol, and reproducibility.
+
+RESULT
+No blocking mathematical or code issue was found in the reviewed versions.
+The comparison is with fixed-parameter Algorithm 1 of arXiv:2510.16468v5,
+not with its adaptive Algorithm 2. No judgment of external novelty is made.
+
+MATHEMATICAL CHECKS
+1. The constrained first-order inequality and full-gap certificate are
+   correct for a convex function on a compact convex set, including boundary
+   minimizers with nonzero gradients. No unknown minimum enters the algorithm.
+2. The uniform curvature estimate follows from the integral gradient bound
+   along segments and Gronwall; the L1=0 and zero-curvature cases are handled.
+3. The product-family invariance is exact with the stated common initial
+   curvature and tie rules. All directions lie in y=0, objective evaluations
+   and retained lower bounds coincide, and the Hessian block is unchanged.
+4. For f_A(x,y)=exp(x)+A*y and fixed L0=L1=1, every fixed-rule displacement
+   before crossing zero is at most exp(a-1)/A. A valid stopping certificate
+   cannot close for epsilon<1-exp(-1) while x>=0. This proves the stated
+   ceil(a*exp(1-a)*A) lower bound. Capping the step cannot invalidate it.
+5. Every backtracking search terminates once L>=K_Q. The accepted curvature
+   recurrence, the count of updates above 2*K_Q, and the ordered phase
+   argument are valid. The last step leaving a phase is included correctly.
+6. The objective-query identity follows by telescoping accepted curvature
+   ratios. One gradient and one full LMO are used at every visited point,
+   including the final point, so their exact counts are N+1.
+7. Under the explicitly stated directional-oracle bounds, carried precision
+   gives the stated logarithmic refinement bound. Every accepted nonterminal
+   slope is at least kappa times the retained error bound. The phase proof
+   and the exact directional-query count N+1+R therefore follow.
+
+CODE AND DATA CHECKS
+The benchmark was rerun once into a separate scratch directory, without
+rewriting the release evidence or figures. Its complete JSON protocol and
+results match Evidence/boundary_benchmark.json exactly. All recorded trace
+points were also checked against the analytic objective exp(x), full gap
+exp(x)*(x+1), and the independently accumulated lower bound. Both methods
+stop at the first closing query under the same retained-certificate test.
+The analytic optimum is used only for diagnostics after stopping.
+
+A:                     0     1     10     100     1000
+Fixed-rule updates:   11    14     66     610     6045
+Backtracking updates:  2     2      2       2        2
+Backtracking objective calls: 5 for every A (2 rejected trials included).
+Backtracking gradient/full-LMO calls: 3 of each for every A.
+The actual fixed-rule zero crossings satisfy the proved lower bound.
+
+SOURCE CHECK
+The five bibliography entries were checked on primary arXiv or official
+proceedings pages during this review task. The Vyguzov entry intentionally
+cites arXiv v5 with its two listed authors; it does not combine that record
+with the different three-author journal metadata. Equation (7) and the
+factor exp(1) in the fixed-step denominator agree with the cited version.
+
+REVIEWED FILE SNAPSHOT
+optproject/PART3/Submission/2026-11-12-v18/Paper/model.tex
+  SHA256 8b0c2685a1f60cf100b625a0ed248f4007c5e442cf5228f845428660b70d62a8
+optproject/PART3/Submission/2026-11-12-v18/Paper/normal_gradient.tex
+  SHA256 9d0c1683ce281a88cfa61734d504e66732d3eba8bf69e001c04eb87a538805a8
+stopping_en.tex
+  SHA256 cb2b2f9da3d685b630ef97fdb23b26ab38d67292c195930981cff55ab09862bf
+optproject/PART3/Submission/2026-11-12-v18/Code/benchmark_boundary.py
+  SHA256 51ebbaef6c3766f27759d8a2973cd0768c3d31fa6bb07d5f9fdab020d6200706
+optproject/PART3/Submission/2026-11-12-v18/Paper/references.tex
+  SHA256 116aefa5a53ecd97361743b5b5e7ba720997450a45785ecc9fa7f7b182a513a4
+
+FINAL-SOURCE RECONCILIATION (2026-11-12)
+The final Paper/stopping.tex was compared with the reviewed scratch
+stopping_en.tex (SHA256 cb2b2f9da3d685b630ef97fdb23b26ab38d67292c195930981cff55ab09862bf).
+The only difference is the final explanatory paragraph: it now points
+to the proved normal-gradient invariance and retains the distinction
+between directional-query counts and the work of producing an answer.
+The algorithm, theorem and corollary statements, constants, and proofs
+are unchanged. The revised paragraph agrees with the independently
+reviewed normal-gradient proposition. No additional numerical run was made.
+
+Final reviewed source: PART3/Submission/2026-11-12-v18/Paper/stopping.tex
+SHA256 367ee54b6027ed400109ebe5c19af4625ff58cb34427f1720cae3d385d66ce10

@@ -1,0 +1,185 @@
+% Standalone section fragment for the gradient-dependent curvature model.
+% No optimality claim is made for the new explicit certificate.
+\section{Boundary minima and a computable error bound}
+\label{sec:boundary-gradient-model}
+
+Let $Q$ be a nontrivial compact convex set, let $f$ be $C^2$ near $Q$,
+and let $x^*\in\arg\min_Q f$. Assume, for every $z\in Q$, that
+\begin{equation}\label{eq:boundary-gradient-assumptions}
+\begin{aligned}
+ \langle\nabla f(z)-\nabla f(x^*),z-x^*\rangle
+    &\ge m\|z-x^*\|^2,\qquad m>0,\\
+ \|\nabla^2 f(z)\|&\le L_0+L_1\|\nabla f(z)\|,
+       \qquad L_0,L_1\ge0.
+\end{aligned}
+\end{equation}
+Write $D\ge\operatorname{diam}Q>0$ and
+\[
+ G(x)=\max_{v\in Q}\langle\nabla f(x),x-v\rangle.
+\]
+The first condition is shifted restricted secant regularity. A boundary
+minimizer may have a nonzero gradient. The second condition controls
+curvature by the gradient norm; it does not require this norm to vanish.
+
+\subsection{What the available observations can certify}
+
+\begin{proposition}[A limitation of the gradient norm]
+\label{prop:boundary-norm-obstruction}
+Fix $m,D>0$. Suppose a certificate $\mathcal C$ uses only the gradient
+norm and the constants $m,L_0=m,L_1=0,D$, and is valid for every problem
+satisfying \eqref{eq:boundary-gradient-assumptions}:
+\[
+ f(x)-f(x^*)\le\mathcal C(\|\nabla f(x)\|).
+\]
+Then, for every scalar argument $t\ge0$,
+\begin{equation}\label{eq:boundary-norm-lower}
+ \mathcal C(t)\ge
+ \begin{cases}
+ t^2/(2m),&0\le t\le mD,\\
+ tD-mD^2/2,&t\ge mD.
+ \end{cases}
+\end{equation}
+Consequently, such a certificate can stay arbitrarily large at an exact
+minimizer, even with constant positive curvature.
+\end{proposition}
+\begin{proof}
+On the fixed interval $[0,D]$, consider
+$f_a(x)=ax+mx^2/2$, where $a\ge0$. Its minimum is at zero, its Hessian
+is $m$, and all the stated constants are independent of $a$.
+At a point with derivative $t$, one has $a=t-mx$ and
+\[
+ 0\le x\le\min\{D,t/m\},\qquad
+ f_a(x)-f_a(0)=tx-mx^2/2.
+\]
+This expression increases throughout the indicated interval. Its
+maximum is exactly the right side of \eqref{eq:boundary-norm-lower}.
+The two cases are attained by $a=0,x=t/m$ and $a=t-mD,x=D$,
+respectively. At the exact minimizer of $f_a$, the norm is $a$ and the
+error is zero, but the same valid function $\mathcal C(a)$ must satisfy
+\eqref{eq:boundary-norm-lower}.
+\end{proof}
+
+\begin{proposition}[The full gap alone has no uniform error bound]
+\label{prop:boundary-gap-obstruction}
+Under \eqref{eq:boundary-gradient-assumptions} with $L_1>0$, the
+values of $G(x),m,L_0,L_1,D$ do not determine a finite universal upper
+bound on $f(x)-f(x^*)$. This remains true on the fixed square $[0,1]^2$,
+even when the curvature condition holds on all of $\mathbb R^2$.
+\end{proposition}
+\begin{proof}
+Take $Q=[0,1]^2$, $m=1/2$, and $L_0=L_1=1$. For $t\ge0$, define
+\[
+ f_t(u,v)=\frac{u^2}{2}+\frac t\pi(1-\cos(\pi u))
+             +\sqrt{1+v^2}+(\pi t+1)v.
+\]
+Its gradient is
+$(u+t\sin(\pi u),\,\pi t+1+v/\sqrt{1+v^2})$.
+Both coordinates are nonnegative on $Q$, so $x^*=(0,0)$ is a minimizer.
+Moreover, on $Q$,
+\[
+ \langle\nabla f_t(u,v)-\nabla f_t(0,0),(u,v)\rangle
+ =u^2+tu\sin(\pi u)+\frac{v^2}{\sqrt{1+v^2}}
+ \ge\tfrac12(u^2+v^2).
+\]
+On all of $\mathbb R^2$, the Hessian is
+$\operatorname{diag}(1+\pi t\cos(\pi u),(1+v^2)^{-3/2})$,
+and the second gradient coordinate is at least $\pi t$. Hence
+\[
+ \|\nabla^2 f_t(u,v)\|\le1+\pi t
+ \le1+\|\nabla f_t(u,v)\|.
+\]
+All constants and the domain are fixed. At $x=(1,0)$, the linear
+minimization oracle selects $(0,0)$, and
+\[
+ G(1,0)=1,\qquad
+ f_t(1,0)-f_t(0,0)=\frac12+\frac{2t}{\pi}.
+\]
+The latter tends to infinity with $t$ while the former stays fixed.
+\end{proof}
+
+This example allows negative curvature away from the minimizer, while
+retaining shifted secant regularity. A valid error bound therefore needs
+information beyond the full gap and the stated constants. The current
+gradient norm provides one such quantity.
+
+\subsection{A local curvature bound and an explicit certificate}
+
+\begin{theorem}[A certificate without a vanishing gradient norm]
+\label{thm:boundary-local-certificate}
+Under \eqref{eq:boundary-gradient-assumptions}, set
+\begin{align}
+ R(x)&=\min\left\{D,\sqrt{G(x)/m},\|\nabla f(x)\|/m\right\},
+       \label{eq:boundary-local-radius}\\
+ K(x)&=\max\left\{m,
+    \bigl(L_0+L_1\|\nabla f(x)\|\bigr)e^{L_1R(x)}\right\},
+       \label{eq:boundary-local-curvature}\\
+ C(x)&=G(x)+
+   \max\left\{0,\frac{K(x)^2-2mK(x)-m^2}{4K(x)}\right\}R(x)^2.
+       \label{eq:boundary-local-certificate}
+\end{align}
+Then $f(x)-f(x^*)\le C(x)$ for every $x\in Q$.
+For every sequence in this fixed problem with $G(x_k)\to0$, one has
+$C(x_k)\to0$. No condition $\|\nabla f(x_k)\|\to0$ is needed.
+\end{theorem}
+\begin{proof}
+For $x\ne x^*$, let $r=\|x-x^*\|$ and $e=(x-x^*)/r$.
+Constrained optimality gives
+$\langle\nabla f(x^*),e\rangle\ge0$. Shifted secant regularity gives
+\[
+ \langle\nabla f(x),e\rangle\ge mr,\qquad
+ G(x)\ge r\langle\nabla f(x),e\rangle\ge mr^2.
+\]
+Cauchy--Schwarz also gives $mr\le\|\nabla f(x)\|$, hence $r\le R(x)$.
+
+Along the segment followed backwards from $x$, the norm is absolutely
+continuous and satisfies, almost everywhere,
+\[
+ \frac{d}{ds}\|\nabla f(x-se)\|
+ \le L_0+L_1\|\nabla f(x-se)\|.
+\]
+The scalar differential inequality implies
+\[
+ L_0+L_1\|\nabla f(x-se)\|
+ \le\bigl(L_0+L_1\|\nabla f(x)\|\bigr)e^{L_1s},
+       \qquad 0\le s\le r.
+\]
+For $L_1=0$ the same conclusion is immediate. Thus $K(x)$ bounds
+the Hessian norm on $[x^*,x]$.
+
+Define $u(s)=f(x^*+se)-f(x^*)$ on $[0,r]$, and abbreviate $K=K(x)$.
+The preceding facts give $|u''|\le K$ and
+$u'(0)\le u'(r)-mr$. Consequently
+\[
+ u'(s)\le
+ \min\{u'(r)-mr+Ks,\ u'(r)+K(r-s)\}.
+\]
+Since $K\ge m$, the two affine bounds meet at
+$s=(K+m)r/(2K)\in[0,r]$. Integrating the two pieces gives
+\begin{equation}\label{eq:boundary-tent-integral}
+ u(r)\le r u'(r)
+       +\frac{K^2-2mK-m^2}{4K}r^2.
+\end{equation}
+Now $r u'(r)\le G(x)$. If the coefficient of $r^2$ is nonpositive,
+discard that term. Otherwise use $r^2\le R(x)^2$.
+This proves \eqref{eq:boundary-local-certificate}. If $x=x^*$,
+constrained optimality gives $G(x)=0$, and the claim holds directly.
+
+Finally, continuity of the gradient on compact $Q$ bounds its norm.
+Hence $K(x_k)$ remains bounded, while $G(x_k)\to0$ implies
+$R(x_k)\to0$. Formula \eqref{eq:boundary-local-certificate} then tends
+to zero.
+\end{proof}
+
+\paragraph{Interpretation and limits.}
+The rule $C(x)\le\varepsilon$ certifies the requested error.
+The theorem proves convergence of the certificate along sequences with
+vanishing full gap; convergence of a particular algorithm requires its
+own argument. Large gradients can make this bound conservative. If a
+verified bound $\|\nabla^2f(z)\|\le K_Q$ on $Q$ is also available,
+$K(x)$ may be replaced by $\min\{K(x),K_Q\}$. The counterexample above
+precludes a uniform error calibration based only on
+$m,L_0,L_1,D$ and the gap. Quantitative work estimates obtained from
+such a calibration need additional information, such as a gradient
+or curvature bound and an initial error bound. The example is not an
+iteration lower bound. The explicit certificate is not asserted to be
+sharp for the gradient-dependent curvature class.

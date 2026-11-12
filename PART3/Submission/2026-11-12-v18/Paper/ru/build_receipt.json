@@ -1,0 +1,35 @@
+{
+  "release": "v18",
+  "language": "ru",
+  "passes": [
+    {
+      "pass": 1,
+      "exit": 0,
+      "seconds": 17.085727182999108
+    },
+    {
+      "pass": 2,
+      "exit": 0,
+      "seconds": 15.745380616001057
+    },
+    {
+      "pass": 3,
+      "exit": 0,
+      "seconds": 18.35260630099947
+    }
+  ],
+  "warning_lines": [
+    "Package polyglossia Warning: No hyphenation patterns were loaded for `russian'"
+  ],
+  "source_changed_during_build": false,
+  "source_hashes": {
+    "article.tex": "ad3327d84c2d67bd805c383f0aba895073d957b50c07b9f890a2a400127835ae",
+    "experiments.tex": "b30b492a81b42e5dcb4c94ecf1e398f17b2ffe281c41f297f428b28928fe65b8",
+    "intro.tex": "43f53a0364fd9b67b2b78e0687df5727d379c8ba30e854d48de45ec4c9941b7a",
+    "model.tex": "f297487f5d0156d6b101d73614e3db3cc10721e4b884d52c5cd7b58bdfe30762",
+    "normal_gradient.tex": "5460a9f7e2962067cfa0e2c5e1772e7a68d6b80be05339b860c1b3046f849a62",
+    "references.tex": "116aefa5a53ecd97361743b5b5e7ba720997450a45785ecc9fa7f7b182a513a4",
+    "stopping.tex": "703fd585bbb3f8ea974b9650f4edfb0d998ae46f072c20ffc56a0379847aa028"
+  },
+  "scientific_calls": 0
+}
