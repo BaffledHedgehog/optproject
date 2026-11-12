@@ -1,0 +1,89 @@
+{
+  "protocol_id": "certified_diameter_v17_first_fixed_panel",
+  "version": 1,
+  "execution_policy": "Development and static review only until an independent root PASS identifies the exact final FREEZE. Then one fresh immutable run_001 of these ten cases. No adaptive retry, precision increase, case replacement, parameter tuning, legacy rerun, optimizer, LP or stochastic execution.",
+  "scope": "Fixed deterministic implementation controls for the proved diameter envelopes and explicit refusals. They are not new proofs or optimization experiments.",
+  "default_model": {"m": "1", "H0": "1", "H1": "1"},
+  "default_precision": {"work_dps": 100, "value_dps": 100},
+  "default_limits": {"max_positive_nodes": 64, "max_bisection_steps": 1024, "max_scalar_evaluations": 2048, "max_elementary_evaluations": 10000},
+  "default_factor": "5/4",
+  "cases": [
+    {
+      "id": "constant_exact_pair_diameter_improvement",
+      "function": "certify_joint_diameter",
+      "model": {"m": "1", "H0": "4", "H1": "0"},
+      "args": {"g": "1", "P": "2", "D": "3/5"},
+      "expected": {"status": "certified", "envelope": "J_D", "branch": "diameter_constant_curvature", "working_gap": "1", "radius_interval": ["1/4", "9/25"], "exact": "463/400", "strictly_below_exact_unrestricted": "23/16", "no_switch": true, "regime_evaluations": 0}
+    },
+    {
+      "id": "affine_diameter_active_collapsed",
+      "function": "certify_joint_diameter",
+      "model": {"m": "1", "H0": "4", "H1": "1"},
+      "args": {"g": "1", "P": "1", "D": "1/2"},
+      "expected": {"status": "certified", "envelope": "J_D", "branch": "diameter_collapsed_node", "working_gap": "1/2", "radius_interval": ["1/4", "1/4"], "positive_nodes": 1, "regime_evaluations": 0}
+    },
+    {
+      "id": "exact_regime_equality_with_clipped_radius",
+      "function": "certify_joint_diameter",
+      "model": {"m": "23", "H0": "40", "H1": "1"},
+      "args": {"g": "48", "P": "40", "D": "7/5"},
+      "factor": "2",
+      "expected": {"status": "certified", "envelope": "J_D", "branch": "diameter_regime_one_node", "working_gap": "48", "radius_interval": ["36/25", "49/25"], "positive_nodes": 1, "regime": "nonpositive", "regime_evaluations": 1, "S_interval_exact": ["0", "0"], "tau_interval_exact": ["3/4", "3/4"]}
+    },
+    {
+      "id": "outside_regime_shortened_grid",
+      "function": "certify_joint_diameter",
+      "model": {"m": "1", "H0": "3", "H1": "1"},
+      "args": {"g": "1/4", "P": "1", "D": "2/5"},
+      "factor": "4",
+      "expected": {"status": "certified", "envelope": "J_D", "branch": "diameter_restricted_grid", "working_gap": "1/4", "radius_interval": ["1/16", "4/25"], "regime": "positive", "regime_evaluations": 1, "positive_grid": true}
+    },
+    {
+      "id": "large_diameter_inactive",
+      "function": "certify_joint_diameter",
+      "args": {"g": "1", "P": "2", "D": "3"},
+      "expected": {"status": "certified", "envelope": "J_D", "branch": "diameter_regime_one_node", "working_gap": "1", "radius_interval": ["1/4", "1"], "positive_nodes": 1, "regime": "nonpositive", "regime_evaluations": 1, "reference": "unit_joint_left", "upper_lt": "1"}
+    },
+    {
+      "id": "constant_norm_only_affine_formula",
+      "function": "certify_norm_diameter",
+      "model": {"m": "1", "H0": "4", "H1": "0"},
+      "args": {"P": "2", "D": "3/5"},
+      "expected": {"status": "certified", "envelope": "E_D", "branch": "diameter_constant_curvature", "working_gap": "6/5", "radius_interval": ["9/25", "9/25"], "derived_gap_cap": "6/5", "exact": "543/400", "no_switch": true, "regime_evaluations": 0}
+    },
+    {
+      "id": "reject_zero_diameter",
+      "function": "certify_joint_diameter",
+      "args": {"g": "1", "P": "2", "D": "0"},
+      "expected": {"status": "refused", "envelope": "J_D", "reason": "invalid_input", "parameter": "D", "no_switch": true, "regime_evaluations": 0}
+    },
+    {
+      "id": "zero_norm_cap",
+      "function": "certify_joint_diameter",
+      "args": {"g": "1", "P": "0", "D": "1"},
+      "expected": {"status": "certified", "envelope": "J_D", "branch": "diameter_zero", "exact": "0", "no_switch": true, "regime_evaluations": 0}
+    },
+    {
+      "id": "collapsed_node_resource_refusal",
+      "function": "certify_joint_diameter",
+      "model": {"m": "1", "H0": "4", "H1": "1"},
+      "args": {"g": "1", "P": "1", "D": "1/2"},
+      "limits": {"max_positive_nodes": 0},
+      "expected": {"status": "refused", "envelope": "J_D", "branch": "diameter_collapsed_node", "reason": "resource_cap", "resource": "positive_nodes", "no_switch": true, "regime_evaluations": 0}
+    },
+    {
+      "id": "reject_inexact_float_diameter",
+      "function": "certify_joint_diameter",
+      "args": {"g": "1", "P": "2", "D": 0.6},
+      "expected": {"status": "refused", "envelope": "J_D", "reason": "invalid_input", "parameter": "D", "no_switch": true, "regime_evaluations": 0}
+    }
+  ],
+  "interpretation": {
+    "caps": "g and P are upper bounds; a g cap larger than P*D is valid and must be clipped, not rejected as an impossible exact observation.",
+    "constant_example": "Exact arithmetic before execution: beta=7/16, h=1, rho_plus=9/25 give 463/400, versus 23/16 without the diameter. The exact observations are feasible since 1<6/5=P*D.",
+    "constant_norm": "With P=2,D=3/5,H0=4,m=1,H1=0, the exact norm envelope is P*D+beta*D^2=543/400.",
+    "exact_gate": "m=23,H0=40,H1=1,h=48 gives discriminant=5776=76^2, tau=3/4, S=0 exactly. D=7/5 clips only the right radius endpoint, so the gate is actually exercised.",
+    "large_diameter": "D=3 leaves the whole unrestricted J(1,2) radius interval intact. The historical rational enclosure is copied read-only; no v16 call is repeated.",
+    "cost": "Count named scalar starts, elementary evaluations, sign queries, root updates and explicit selections. Runner assertions and time are separate; no all-operation or bit-complexity claim. Source objective, gradient, LMO, LP, optimizer and stochastic counts must be zero."
+  }
+}

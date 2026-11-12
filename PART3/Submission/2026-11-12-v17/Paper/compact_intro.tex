@@ -1,0 +1,52 @@
+\section{Introduction}
+Frank-Wolfe methods replace projection by linear minimization over a
+compact convex set. For a convex objective, their full gap bounds the
+global error. For a nonconvex objective, a small gap usually certifies
+only stationarity. A global stopping rule therefore needs a quantitative
+relation between the observations and the error.
+
+We study this relation under shifted restricted secant regularity and
+the loss-dependent curvature bound
+\[
+ \|\nabla^2 f(x)\|\le H_0+H_1\bigl(f(x)-f(x^*)\bigr).
+\]
+The minimizer can lie on the boundary and have a nonzero gradient.
+The Hessian norm is not squared. This model, used in the analysis of
+warm-up \cite{warmup}, differs from curvature controlled by
+$L_0+L_1\|\nabla f(x)\|$, as studied for Frank-Wolfe in
+\cite{vyguzov}. Fixed-center regularity and restricted secant
+conditions are established alternatives to convexity
+\cite{regregularity,rsipep}.
+
+The main result is a sharp bound on the error from the full gap $g$,
+the gradient norm $P$, and optionally the diameter $D$. A single radial
+comparison yields the separate norm and gap envelopes and the joint
+envelopes $\mathcal J(g,P)$ and $\mathcal J_D(g,P)$. Their sharpness
+holds over functions and domains satisfying the assumptions, even when
+both observations and the diameter are prescribed exactly; positive
+exact observations are feasible precisely when $g\le PD$. It does not
+claim sharpness for each fixed domain.
+
+We also determine exactly when the ordinary gap itself bounds the error.
+The criterion needs arithmetic and a square root. Within that regime,
+the joint envelope reduces to one scalar equation; an algebraic upper
+bound avoids even that solve. Outside it, a finite grid and scalar
+bisection give certified enclosures with explicit comparison budgets.
+The radius profile need not be concave. The global enclosure assumes
+neither concavity nor unimodality.
+
+A second result turns any suitable nonlinear gap calibration into a
+stopping rule with adaptive directional accuracy. The count includes
+failed accuracy checks, rejected objective trials, and the final query.
+It extends to away steps and to median-of-means directional estimates
+with one confidence event for all adaptively requested queries.
+The iteration uses the established backtracking rule
+\cite{pedregosa,lacostejaggi}; the contribution concerns its certificates
+and complete work accounting. Relative-error first-order oracles and
+adaptive Frank-Wolfe variants are also studied in
+\cite{oraclehallak,oracledenisov}.
+
+The paper ends with explicit constants for realizable sigmoid regression
+on an $\ell_1$ ball and fixed checks of the certificate formulas.
+The certificates proved here do not by themselves establish a runtime
+improvement.

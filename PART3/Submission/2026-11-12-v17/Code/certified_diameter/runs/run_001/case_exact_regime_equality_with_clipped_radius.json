@@ -1,0 +1,315 @@
+{
+  "id": "exact_regime_equality_with_clipped_radius",
+  "function": "certify_joint_diameter",
+  "fixed_case": {
+    "id": "exact_regime_equality_with_clipped_radius",
+    "function": "certify_joint_diameter",
+    "model": {
+      "m": "23",
+      "H0": "40",
+      "H1": "1"
+    },
+    "args": {
+      "g": "48",
+      "P": "40",
+      "D": "7/5"
+    },
+    "factor": "2",
+    "expected": {
+      "status": "certified",
+      "envelope": "J_D",
+      "branch": "diameter_regime_one_node",
+      "working_gap": "48",
+      "radius_interval": [
+        "36/25",
+        "49/25"
+      ],
+      "positive_nodes": 1,
+      "regime": "nonpositive",
+      "regime_evaluations": 1,
+      "S_interval_exact": [
+        "0",
+        "0"
+      ],
+      "tau_interval_exact": [
+        "3/4",
+        "3/4"
+      ]
+    }
+  },
+  "api_call_started": true,
+  "output": {
+    "status": "certified",
+    "envelope": "J_D",
+    "envelope_lower": "98574730883348772874506263140002998152805009018093658617602379535497257687482140385173251824427928815/2187250724783011924372502227117621365353169430893212436425770606409952999199375923223513177023053824",
+    "envelope_upper": "97555632495836183140983149874006569977439363093706781498716786653743975143444844038296289292032115/2135987035920910082395021706169552114602704522356652769947041607822219725780640550022962086936576",
+    "achieved_factor": "19979393535147250307273349094196545531379581561591148850937197906686766109377504059043080047008177152/19714946176669754574901252628000599630561001803618731723520475907099451537496428077034650364885585763",
+    "requested_factor": "2",
+    "internal_factor": "3/2",
+    "reason": null,
+    "message": null,
+    "inputs": {
+      "m": "23",
+      "H0": "40",
+      "H1": "1",
+      "P": "40",
+      "g": "48",
+      "D": "7/5"
+    },
+    "precision": {
+      "work_dps": 100,
+      "value_dps": 100
+    },
+    "plan": {
+      "envelope_family": "diameter_restricted",
+      "working_gap": "48",
+      "working_gap_semantics": "Effective radial parameter h; not a claim that the observed full gap is at most P^2/m.",
+      "norm_gap_cap": "1600/23",
+      "diameter_gap_cap": "56",
+      "radius_interval": [
+        "36/25",
+        "49/25"
+      ],
+      "limiting_zero_radius_nodes": 0,
+      "regime": {
+        "working_gap": "48",
+        "tau_interval": [
+          "3/4",
+          "3/4"
+        ],
+        "S_interval": [
+          "0",
+          "0"
+        ],
+        "decision": "nonpositive"
+      },
+      "branch": "diameter_regime_one_node",
+      "fixed_radius": "36/25",
+      "grid_intervals": 0,
+      "Kstar_interval": [
+        "85329722808805562695350682459413120705949423294961461049752421829101366492897892052009789490658472757/546812681195752981093125556779405341338292357723303109106442651602488249799843980805878294255763456",
+        "21332430702201390673837670614853280176487355823740365262438105457275341623224473013002447372664618191/136703170298938245273281389194851335334573089430825777276610662900622062449960995201469573563940864"
+      ],
+      "Lstar_interval": [
+        "90219162932198892123593575460096780161888129219561948812439130966938735033229149329111503571855126491/136703170298938245273281389194851335334573089430825777276610662900622062449960995201469573563940864",
+        "22554790733049723030898393865024195040472032304890487203109782741734683758307287332277875892963781627/34175792574734561318320347298712833833643272357706444319152665725155515612490248800367393390985216"
+      ],
+      "positive_nodes": 1,
+      "bisections_per_node": 6,
+      "planned_bisections": 6,
+      "known_envelope_lower": "24",
+      "sampled_envelope_lower": "98574730883348772874506263140002998152805009018093658617602379535497257687482140385173251824427928815/2187250724783011924372502227117621365353169430893212436425770606409952999199375923223513177023053824",
+      "mesh_allowance": "0",
+      "inner_root_allowance": "191991876319812516064539035533679521588386202413663287361942949115478074609020257117022026353981563719/27340634059787649054656277838970267066914617886165155455322132580124412489992199040293914712788172800",
+      "maximum_upper_evaluation_rounding_width": "7/1093625362391505962186251113558810682676584715446606218212885303204976499599687961611756588511526912",
+      "reserved_rounding_allowance": "12",
+      "total_additive_allowance": "95995938159906258032269517766839760794193101206831643680971474557739037304510128558511013176990781947/13670317029893824527328138919485133533457308943082577727661066290062206244996099520146957356394086400",
+      "upper_minus_allowance_lower": "528360109813445314070022641426802287061418822592891757910815960026222403613536873286585238292014754053/13670317029893824527328138919485133533457308943082577727661066290062206244996099520146957356394086400"
+    },
+    "work": {
+      "bound_evaluations": 1,
+      "node_coefficient_preparations": 1,
+      "switch_evaluations": 8,
+      "loss_evaluations": 2,
+      "scalar_evaluations_started": 12,
+      "bracket_sign_queries": 2,
+      "bracket_sign_decisions": 2,
+      "root_sign_queries": 6,
+      "root_sign_decisions": 6,
+      "bisection_updates": 6,
+      "sign_order_predicates": 13,
+      "sign_equality_predicates": 0,
+      "certificate_maximum_comparisons": 0,
+      "witness_maximum_comparisons": 0,
+      "rounding_maximum_comparisons": 0,
+      "derived_lower_maximum_comparisons": 2,
+      "budget_setup_maximum_comparisons": 0,
+      "budget_order_comparisons": 2,
+      "resource_metadata_maximum_comparisons": 92,
+      "budget_ceiling_operations": 0,
+      "rational_to_interval_conversions": 24,
+      "interval_endpoint_extractions": 28,
+      "resource_limit_checks": 107,
+      "validation_checks": 39,
+      "exact_formula_evaluations": 0,
+      "source_objective_calls": 0,
+      "source_gradient_calls": 0,
+      "full_LMO_calls": 0,
+      "LP_calls": 0,
+      "optimizer_updates": 0,
+      "stochastic_samples": 0,
+      "regime_evaluations": 1,
+      "regime_sign_queries": 1,
+      "regime_nonpositive_decisions": 1,
+      "regime_positive_decisions": 0,
+      "regime_unresolved_queries": 0,
+      "regime_order_predicates": 1,
+      "working_gap_minimum_comparisons": 0,
+      "algebraic_bound_evaluations": 0,
+      "diameter_cap_minimum_comparisons": 2,
+      "diameter_radius_minimum_comparisons": 1,
+      "diameter_collapse_comparisons": 1,
+      "diameter_exact_endpoint_comparisons": 0
+    },
+    "elementary_evaluations": {
+      "exp": 22,
+      "sin": 10,
+      "cos": 10,
+      "sqrt": 3
+    },
+    "trace": [
+      {
+        "index": 0,
+        "rho": "36/25",
+        "planned_bisections": 6,
+        "completed_bisections": 6,
+        "alpha_bracket": [
+          "17/64",
+          "9/32"
+        ],
+        "sign_history": "-+---+",
+        "status": "enclosed",
+        "left_residual_interval": [
+          "7948363468239849775370735090109427408584939724085789909271501691630049081107466057233486459371281/34175792574734561318320347298712833833643272357706444319152665725155515612490248800367393390985216",
+          "254347630983675192811863522883501677074718071170745277096688054132161570595438913831471566699881001/1093625362391505962186251113558810682676584715446606218212885303204976499599687961611756588511526912"
+        ],
+        "right_residual_interval": [
+          "-5149064840184104924281548132386188414663046470555913780496912571093966748206922984661022947886732007/2187250724783011924372502227117621365353169430893212436425770606409952999199375923223513177023053824",
+          "-5149064840184104924281548132386188414663046470555913780496912571093966748206922984661022947886731993/2187250724783011924372502227117621365353169430893212436425770606409952999199375923223513177023053824"
+        ],
+        "last_residual_interval": [
+          "7948363468239849775370735090109427408584939724085789909271501691630049081107466057233486459371281/34175792574734561318320347298712833833643272357706444319152665725155515612490248800367393390985216",
+          "254347630983675192811863522883501677074718071170745277096688054132161570595438913831471566699881001/1093625362391505962186251113558810682676584715446606218212885303204976499599687961611756588511526912"
+        ],
+        "last_alpha": "17/64",
+        "loss_lower_endpoint_interval": [
+          "98574730883348772874506263140002998152805009018093658617602379535497257687482140385173251824427928815/2187250724783011924372502227117621365353169430893212436425770606409952999199375923223513177023053824",
+          "98574730883348772874506263140002998152805009018093658617602379535497257687482140385173251824427928829/2187250724783011924372502227117621365353169430893212436425770606409952999199375923223513177023053824"
+        ],
+        "loss_upper_endpoint_interval": [
+          "49948483837868125768183372735491363828448953903977872127342994766716915273443760147607700117520442873/1093625362391505962186251113558810682676584715446606218212885303204976499599687961611756588511526912",
+          "97555632495836183140983149874006569977439363093706781498716786653743975143444844038296289292032115/2135987035920910082395021706169552114602704522356652769947041607822219725780640550022962086936576"
+        ],
+        "fixed_radius_lower": "98574730883348772874506263140002998152805009018093658617602379535497257687482140385173251824427928815/2187250724783011924372502227117621365353169430893212436425770606409952999199375923223513177023053824",
+        "fixed_radius_upper": "97555632495836183140983149874006569977439363093706781498716786653743975143444844038296289292032115/2135987035920910082395021706169552114602704522356652769947041607822219725780640550022962086936576",
+        "upper_evaluation_rounding_width": "7/1093625362391505962186251113558810682676584715446606218212885303204976499599687961611756588511526912"
+      }
+    ],
+    "refusal_details": {},
+    "bound_semantics": "The interval encloses the sharp diameter-restricted mathematical envelope. Only envelope_upper bounds source error under the model assumptions and input caps.",
+    "cost_semantics": "Named started scalar and elementary evaluations, sign decisions and explicit comparisons; not all arithmetic operations or bit cost."
+  },
+  "checks": [
+    {
+      "check": "expected_status",
+      "passed": true
+    },
+    {
+      "check": "expected_envelope",
+      "passed": true
+    },
+    {
+      "check": "global_precision_unchanged",
+      "passed": true
+    },
+    {
+      "check": "no_source_or_optimizer_operations",
+      "passed": true
+    },
+    {
+      "check": "scalar_counter_partition",
+      "passed": true
+    },
+    {
+      "check": "root_updates_no_more_than_queries",
+      "passed": true
+    },
+    {
+      "check": "all_costs_nonnegative_integers",
+      "passed": true
+    },
+    {
+      "check": "expected_branch",
+      "passed": true
+    },
+    {
+      "check": "expected_working_gap",
+      "passed": true
+    },
+    {
+      "check": "expected_radius_interval",
+      "passed": true
+    },
+    {
+      "check": "expected_regime_evaluation_count",
+      "passed": true
+    },
+    {
+      "check": "expected_regime_decision",
+      "passed": true
+    },
+    {
+      "check": "one_regime_query",
+      "passed": true
+    },
+    {
+      "check": "outward_nonpositive_sign",
+      "passed": true
+    },
+    {
+      "check": "expected_exact_S_interval",
+      "passed": true
+    },
+    {
+      "check": "expected_exact_tau_interval",
+      "passed": true
+    },
+    {
+      "check": "expected_positive_nodes",
+      "passed": true
+    },
+    {
+      "check": "ordered_nonnegative_enclosure",
+      "passed": true
+    },
+    {
+      "check": "exact_returned_ratio",
+      "passed": true
+    },
+    {
+      "check": "requested_factor_met",
+      "passed": true
+    },
+    {
+      "check": "sqrt_counter_partition",
+      "passed": true
+    },
+    {
+      "check": "completed_all_planned_nodes",
+      "passed": true
+    },
+    {
+      "check": "root_budget_respected",
+      "passed": true
+    },
+    {
+      "check": "node_radii_respect_diameter_interval",
+      "passed": true
+    },
+    {
+      "check": "single_node_is_left_endpoint",
+      "passed": true
+    }
+  ],
+  "status": "PASS",
+  "elapsed_seconds": 0.005276610998407705,
+  "cpu_seconds": 0.005265626999999995,
+  "global_precision_before": [
+    15,
+    15
+  ],
+  "global_precision_after": [
+    15,
+    15
+  ]
+}

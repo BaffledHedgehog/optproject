@@ -1,0 +1,31 @@
+{
+  "release": "v17",
+  "language": "ru",
+  "passes": [
+    {
+      "pass": 1,
+      "exit": 0,
+      "seconds": 43.43996235099985
+    }
+  ],
+  "warning_lines": [
+    "Package polyglossia Warning: No hyphenation patterns were loaded for `russian'"
+  ],
+  "source_changed_during_build": false,
+  "source_hashes": {
+    "article.tex": "0542480770eba179bc98a34a0c7ef6db33c079ed02beb4af44e30944fcf06bb6",
+    "article_references.tex": "a858db872e7e1a697c2ebff1aa1eb094ce44428876af1e96e7eecbe7d187e721",
+    "compact_assumptions.tex": "f53df1a851352a680898d6da05667ad44d2a186248bb5bb49801367d76585232",
+    "compact_diameter.tex": "d86ff2db8cddd83834b1b291e240ecdf667fa65f952df0c66e1b443b7b9f6bf5",
+    "compact_directional.tex": "6f0a84fae59acb3b7905403ff24c543c2e32a1eda8f2a6da2aa1497daaac82f9",
+    "compact_evidence.tex": "2245115f27870b80655e5599383d8225a3ba04fd1c3c2ca14d2479038bfa385c",
+    "compact_full_gap.tex": "5f6a78ca57dc95dac64573b1b3251d744fedb5d5ae5e9fdc04d77360086d14d2",
+    "compact_gap_regime.tex": "3ba47cab76a5e92a5ee9ddde1513f5956bc73fa27db3fa85b9b7e0a2933cd9ed",
+    "compact_intro.tex": "5ada6aa8a4f171ba23863ca540ac866e5498599c605fb3e0f4b69ecb72ce991f",
+    "compact_joint.tex": "2a6500d4c8a25bf8a753929aa7b8d26db48cd902029fd0dfb932b9871c74f5c3",
+    "compact_radial_norm.tex": "e980164d64646d0c809a2b0c1b3a89af70e221cd5f3350874281844e2b7d43ec",
+    "compact_sigmoid.tex": "1a9d9d5c1965038068fd564dbefe81bfab1672868d828213abfb0857303c13c7",
+    "compact_stopping.tex": "d0982316a9dec097fa44ea05c76ecc0d6ae577738986ca53a62b50ba9d28fe3b"
+  },
+  "scientific_calls": 0
+}

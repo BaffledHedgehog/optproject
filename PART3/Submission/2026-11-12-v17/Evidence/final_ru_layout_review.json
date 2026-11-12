@@ -1,0 +1,287 @@
+{
+  "status": "PASS",
+  "pdf_sha256": "c281b85ed5c1096c354021fd3320374e4cd8d04b63a781fb98a6f4ba85afcf09",
+  "captured_at_utc": "2026-11-12T16:29:00.488622+00:00",
+  "review_type": "Narrow final availability-prose delta; read-only QA",
+  "pdf": {
+    "path": "/workspace/scratch/50468750a620/continuation_v17/manuscript_ru/paper_ru.pdf",
+    "sha256": "c281b85ed5c1096c354021fd3320374e4cd8d04b63a781fb98a6f4ba85afcf09",
+    "bytes": 242979,
+    "mtime_ns": 1794500624179126266,
+    "pages": 23,
+    "unchanged_during_review": true
+  },
+  "build_receipt": {
+    "path": "/workspace/scratch/50468750a620/continuation_v17/manuscript_ru/build_receipt.json",
+    "sha256": "8370547f1908b3d1dab5f0a51c5bacd3636593498a810470d5b2dfe23c06286b",
+    "passes": [
+      {
+        "pass": 1,
+        "exit": 0,
+        "seconds": 43.43996235099985
+      }
+    ],
+    "source_changed_during_build": false,
+    "warning_lines": [
+      "Package polyglossia Warning: No hyphenation patterns were loaded for `russian'"
+    ],
+    "scientific_calls": 0
+  },
+  "source_hashes": {
+    "article.tex": "0542480770eba179bc98a34a0c7ef6db33c079ed02beb4af44e30944fcf06bb6",
+    "article_references.tex": "a858db872e7e1a697c2ebff1aa1eb094ce44428876af1e96e7eecbe7d187e721",
+    "compact_assumptions.tex": "f53df1a851352a680898d6da05667ad44d2a186248bb5bb49801367d76585232",
+    "compact_diameter.tex": "d86ff2db8cddd83834b1b291e240ecdf667fa65f952df0c66e1b443b7b9f6bf5",
+    "compact_directional.tex": "6f0a84fae59acb3b7905403ff24c543c2e32a1eda8f2a6da2aa1497daaac82f9",
+    "compact_evidence.tex": "2245115f27870b80655e5599383d8225a3ba04fd1c3c2ca14d2479038bfa385c",
+    "compact_full_gap.tex": "5f6a78ca57dc95dac64573b1b3251d744fedb5d5ae5e9fdc04d77360086d14d2",
+    "compact_gap_regime.tex": "3ba47cab76a5e92a5ee9ddde1513f5956bc73fa27db3fa85b9b7e0a2933cd9ed",
+    "compact_intro.tex": "5ada6aa8a4f171ba23863ca540ac866e5498599c605fb3e0f4b69ecb72ce991f",
+    "compact_joint.tex": "2a6500d4c8a25bf8a753929aa7b8d26db48cd902029fd0dfb932b9871c74f5c3",
+    "compact_radial_norm.tex": "e980164d64646d0c809a2b0c1b3a89af70e221cd5f3350874281844e2b7d43ec",
+    "compact_sigmoid.tex": "1a9d9d5c1965038068fd564dbefe81bfab1672868d828213abfb0857303c13c7",
+    "compact_stopping.tex": "d0982316a9dec097fa44ea05c76ecc0d6ae577738986ca53a62b50ba9d28fe3b"
+  },
+  "source_checks": [
+    {
+      "file": "article.tex",
+      "sha256": "0542480770eba179bc98a34a0c7ef6db33c079ed02beb4af44e30944fcf06bb6",
+      "matches_build_receipt": true,
+      "changed_from_previous_static_review": false,
+      "long_dash_or_control_characters": false
+    },
+    {
+      "file": "article_references.tex",
+      "sha256": "a858db872e7e1a697c2ebff1aa1eb094ce44428876af1e96e7eecbe7d187e721",
+      "matches_build_receipt": true,
+      "changed_from_previous_static_review": false,
+      "long_dash_or_control_characters": false
+    },
+    {
+      "file": "compact_assumptions.tex",
+      "sha256": "f53df1a851352a680898d6da05667ad44d2a186248bb5bb49801367d76585232",
+      "matches_build_receipt": true,
+      "changed_from_previous_static_review": false,
+      "long_dash_or_control_characters": false
+    },
+    {
+      "file": "compact_diameter.tex",
+      "sha256": "d86ff2db8cddd83834b1b291e240ecdf667fa65f952df0c66e1b443b7b9f6bf5",
+      "matches_build_receipt": true,
+      "changed_from_previous_static_review": false,
+      "long_dash_or_control_characters": false
+    },
+    {
+      "file": "compact_directional.tex",
+      "sha256": "6f0a84fae59acb3b7905403ff24c543c2e32a1eda8f2a6da2aa1497daaac82f9",
+      "matches_build_receipt": true,
+      "changed_from_previous_static_review": false,
+      "long_dash_or_control_characters": false
+    },
+    {
+      "file": "compact_evidence.tex",
+      "sha256": "2245115f27870b80655e5599383d8225a3ba04fd1c3c2ca14d2479038bfa385c",
+      "matches_build_receipt": true,
+      "changed_from_previous_static_review": true,
+      "long_dash_or_control_characters": false
+    },
+    {
+      "file": "compact_full_gap.tex",
+      "sha256": "5f6a78ca57dc95dac64573b1b3251d744fedb5d5ae5e9fdc04d77360086d14d2",
+      "matches_build_receipt": true,
+      "changed_from_previous_static_review": false,
+      "long_dash_or_control_characters": false
+    },
+    {
+      "file": "compact_gap_regime.tex",
+      "sha256": "3ba47cab76a5e92a5ee9ddde1513f5956bc73fa27db3fa85b9b7e0a2933cd9ed",
+      "matches_build_receipt": true,
+      "changed_from_previous_static_review": false,
+      "long_dash_or_control_characters": false
+    },
+    {
+      "file": "compact_intro.tex",
+      "sha256": "5ada6aa8a4f171ba23863ca540ac866e5498599c605fb3e0f4b69ecb72ce991f",
+      "matches_build_receipt": true,
+      "changed_from_previous_static_review": true,
+      "long_dash_or_control_characters": false
+    },
+    {
+      "file": "compact_joint.tex",
+      "sha256": "2a6500d4c8a25bf8a753929aa7b8d26db48cd902029fd0dfb932b9871c74f5c3",
+      "matches_build_receipt": true,
+      "changed_from_previous_static_review": false,
+      "long_dash_or_control_characters": false
+    },
+    {
+      "file": "compact_radial_norm.tex",
+      "sha256": "e980164d64646d0c809a2b0c1b3a89af70e221cd5f3350874281844e2b7d43ec",
+      "matches_build_receipt": true,
+      "changed_from_previous_static_review": false,
+      "long_dash_or_control_characters": false
+    },
+    {
+      "file": "compact_sigmoid.tex",
+      "sha256": "1a9d9d5c1965038068fd564dbefe81bfab1672868d828213abfb0857303c13c7",
+      "matches_build_receipt": true,
+      "changed_from_previous_static_review": false,
+      "long_dash_or_control_characters": false
+    },
+    {
+      "file": "compact_stopping.tex",
+      "sha256": "d0982316a9dec097fa44ea05c76ecc0d6ae577738986ca53a62b50ba9d28fe3b",
+      "matches_build_receipt": true,
+      "changed_from_previous_static_review": false,
+      "long_dash_or_control_characters": false
+    }
+  ],
+  "figure_sha256": "6943ccadbac27f05a396d8291b1f08895b3a7e2738ea9b6fa5613f5f67b98e0c",
+  "previous_static_review": {
+    "path": "/workspace/scratch/50468750a620/continuation_v17/publication_review/publication_static_review.json",
+    "sha256": "69c0fc9f446339c8723b78b52082fc8b3ba1fad5590a3714a2b18d7086d1b57d",
+    "prior_ru_pdf_sha256": "f0712db900341040b08a91b018f1dd952af15ad9b8f5eb84882c32f9d4f1508a"
+  },
+  "changed_tex_files": [
+    "compact_evidence.tex",
+    "compact_intro.tex"
+  ],
+  "key_label_page_map": {
+    "sec:model": {
+      "number": "2",
+      "page": 2
+    },
+    "compact:radial": {
+      "number": "3.1",
+      "page": 3
+    },
+    "bndnorm:main": {
+      "number": "3.2",
+      "page": 4
+    },
+    "boundarygap:main": {
+      "number": "4.1",
+      "page": 6
+    },
+    "gapregime:main": {
+      "number": "5.1",
+      "page": 8
+    },
+    "joint:main": {
+      "number": "6.1",
+      "page": 10
+    },
+    "jointdiam:main": {
+      "number": "7.1",
+      "page": 13
+    },
+    "jointdiam:geometry": {
+      "number": "1",
+      "page": 14
+    },
+    "nloracle:main": {
+      "number": "8.1",
+      "page": 16
+    },
+    "diroracle:sampling": {
+      "number": "9.2",
+      "page": 19
+    },
+    "reg:sigmoid": {
+      "number": "10",
+      "page": 20
+    },
+    "compact:evidence": {
+      "number": "11",
+      "page": 21
+    },
+    "compact:certificate-table": {
+      "number": "1",
+      "page": 21
+    }
+  },
+  "key_theorem_page_map_unchanged": true,
+  "aux_sha256": "e0e719d0a0cf389692f9a149b00c65ac182c1debd9829e87477af6493da608a8",
+  "checks": {
+    "all_13_tex_hashes_match_current_build_receipt": true,
+    "other_11_tex_files_unchanged_from_previous_static_review": true,
+    "figure_unchanged": true,
+    "no_unicode_en_em_dash_or_tex_double_hyphen_in_tex": true,
+    "no_disallowed_C0_controls_in_tex": true,
+    "no_unresolved_question_marks_in_all_23_pdf_pages": true,
+    "availability_paragraph_explicitly_separates_historical_archive": true,
+    "no_obsolete_claim_that_all_historical_records_are_in_release": true,
+    "current_source_counts_and_table_visually_preserved": true,
+    "requested_pages_readable_and_within_margins": true
+  },
+  "visual_review": {
+    "pages": [
+      2,
+      21,
+      22
+    ],
+    "renderer": "Poppler pdftoppm, 120 dpi",
+    "findings": [
+      "Page 2: revised introductory ending and following model/radial equations are readable with unchanged section and equation placement.",
+      "Page 21: sigmoid proof tail, evidence heading and complete three-row certificate table fit within the page; no overlaps or broken symbols.",
+      "Page 22: intervals, API counts, distinct historical 5/16 and 3/6 context, separate-archive statement and availability paragraph are fully visible. The paragraph no longer promises that old research records are included in this public release.",
+      "The Russian hyphenation warning produces no visible clipping or overflow on the inspected pages."
+    ],
+    "images": [
+      {
+        "page": 2,
+        "path": "/workspace/scratch/50468750a620/continuation_v17/qa_v17/current_scope/ru/page-02.png",
+        "sha256": "17f9b129eff61294e90ae19e4c1558fa376a0e61d6029727aabca6263b2011a6",
+        "bytes": 260966,
+        "dpi": 120
+      },
+      {
+        "page": 21,
+        "path": "/workspace/scratch/50468750a620/continuation_v17/qa_v17/current_scope/ru/page-21.png",
+        "sha256": "8bb2f6186597e216fce63d280e104ea94cc744087cf9c5dceaad5e707c5cc842",
+        "bytes": 251071,
+        "dpi": 120
+      },
+      {
+        "page": 22,
+        "path": "/workspace/scratch/50468750a620/continuation_v17/qa_v17/current_scope/ru/page-22.png",
+        "sha256": "1dd3b1a8f09b949ed5ceb10198e306f52a8ff0640ffa07b8db49f00dff3d5ec0",
+        "bytes": 329570,
+        "dpi": 120
+      }
+    ],
+    "margin_metadata": [
+      {
+        "page": 2,
+        "outside_page_word_boxes": 0,
+        "text_left_pt": 70.865966796875,
+        "text_right_pt": 524.4287109375,
+        "text_bottom_with_footer_pt": 803.5042724609375
+      },
+      {
+        "page": 21,
+        "outside_page_word_boxes": 0,
+        "text_left_pt": 70.865966796875,
+        "text_right_pt": 524.43359375,
+        "text_bottom_with_footer_pt": 803.5042724609375
+      },
+      {
+        "page": 22,
+        "outside_page_word_boxes": 0,
+        "text_left_pt": 70.86599731445312,
+        "text_right_pt": 524.4335327148438,
+        "text_bottom_with_footer_pt": 803.5042724609375
+      }
+    ]
+  },
+  "required_corrections": [],
+  "scope_limits": [
+    "Only the requested pages 2, 21 and 22 were rendered and visually inspected in this narrow final pass; all 23 PDF pages were text-scanned for unresolved references.",
+    "Mathematics was not rerun. The unchanged central mathematical sources and figure are identified by their hashes; the two changed prose modules were checked for the availability delta and retained displayed content.",
+    "No publication file, PDF, TeX source or frozen scientific record was modified. Only this review and requested QA render images were written.",
+    "No API import, API call, optimization, LP, stochastic or scalar scientific execution was performed."
+  ],
+  "scientific_api_imports": 0,
+  "scientific_api_calls": 0,
+  "scientific_runs": 0,
+  "publication_files_modified": 0
+}

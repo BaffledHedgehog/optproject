@@ -1,0 +1,229 @@
+\section{The sharp full-gap certificate}
+\label{boundarygap:section}
+At a constrained minimum, the initial radial slope need not vanish.
+The full-gap envelope must therefore retain the radius as a parameter.
+For $g>0$, define
+\begin{equation}\label{boundarygap:definition}
+ \begin{aligned}
+ V(g,\rho)&=A(g/\sqrt\rho,\sqrt\rho),&&0<\rho\le g/m,\\
+ V(g,0)&=g,\qquad
+ \mathcal B(g)=\max_{0\le\rho\le g/m}V(g,\rho).
+ \end{aligned}
+\end{equation}
+and set $\mathcal B(0)=0$.
+Equivalently,
+\begin{equation}\label{joint:radial-identity}
+ A(P,r)=V(Pr,r^2),\qquad 0<r\le P/m.
+\end{equation}
+
+\begin{theorem}[Full-gap envelope]\label{boundarygap:main}
+Under \eqref{boundarygap:assumptions},
+\[
+ \delta(x)\le\mathcal B(G(x)).
+\]
+The maximum exists, $V$ is continuous on its parameter domain, and
+$\mathcal B$ is finite and continuous on $[0,\infty)$. Moreover,
+\begin{equation}\label{boundarygap:growth}
+ \mathcal B(g_2)\ge\mathcal B(g_1)+g_2-g_1
+ \quad(0\le g_1<g_2),\qquad \mathcal B(g)\ge g.
+\end{equation}
+Hence $\mathcal B$ has a continuous increasing inverse from zero to
+infinity. For every $g>0$, it is the sharp error bound with $G(x)=g$
+exactly. Smooth examples on intervals suffice.
+
+If $H_1=0$, with $\beta$ from \eqref{compact:radial-constant},
+\begin{equation}\label{boundarygap:constant}
+ V(g,\rho)=g+\beta\rho,
+ \qquad \mathcal B(g)=g\max\{1,1+\beta/m\}.
+\end{equation}
+The stationary endpoint is $V(g,g/m)=W(g)=\mathcal E(\sqrt{mg})$.
+For $H_1>0$, a direct upper bound is
+\begin{equation}\label{boundarygap:elementary-formula}
+ \mathcal B(g)\le\mathcal C(g):=
+ \frac{H_0}{H_1}(\cosh T_g-1)+g\frac{\sinh T_g}{T_g},
+ \qquad T_g=\sqrt{H_1g/m},\qquad \mathcal C(0)=0.
+\end{equation}
+The function $\mathcal C$ is also continuous, strictly increasing and
+unbounded, and requires no root or radius search.
+\end{theorem}
+
+\begin{proof}\label{boundarygap:proof}
+For a source of gap $g>0$, \eqref{compact:observed-caps} gives
+$r^2\le g/m$ and terminal radial slope at most $g/r$.
+Lemma~\ref{compact:radial} therefore bounds its loss by $V(g,r^2)$.
+For $g=0$ the source is optimal.
+
+To prove continuity at $\rho=0$, normalize a fixed-radius extremal
+trajectory to $t\in[0,1]$. Its slopes are $u'(0)=g-m\rho$ and
+$u'(1)=g$, and $|u''|\le\rho(H_0+H_1u)$. Integrating RSI gives
+$V(g,\rho)\ge g-m\rho/2$. Comparison with positive curvature throughout
+gives, for $H_1>0$ and $c=\sqrt{H_1\rho}$,
+\begin{equation}\label{compact:radial-upper}
+ g-\frac{m\rho}{2}\le V(g,\rho)
+ \le\frac{H_0}{H_1}(\cosh c-1)
+       +(g-m\rho)\frac{\sinh c}{c}\le\mathcal C(g).
+\end{equation}
+The $\rho$-dependent lower and upper bounds tend to $g$ as $\rho\downarrow0$, locally
+uniformly in positive $g$. Away from zero, continuity follows from
+the strict switch equation. Parameterizing $\rho=zg/m$, $z\in[0,1]$,
+therefore proves existence and continuity of the maximum.
+Since $\mathcal C(g)=O(g)$ at zero, continuity extends to $g=0$.
+Its power series have nonnegative coefficients and include the term
+$g$, proving the asserted properties of $\mathcal C$.
+For $H_1=0$, \eqref{compact:radial-constant} gives all these claims
+directly and yields \eqref{boundarygap:constant}.
+
+At every positive radius, Lemma~\ref{compact:radial} gives smooth
+interval examples with terminal slope $g/r$, hence full gap $g$ exactly.
+If the maximum is only at zero, use
+$u(s)=(g/r-mr)s+ms^2/2$ on $[0,r]$ and let $r\downarrow0$;
+its loss is $g-mr^2/2$. This proves sharpness.
+For $g_2>g_1>0$, adding $(g_2-g_1)s/r$ to an interval near-extremizer
+at $g_1$ increases both endpoint slopes equally. RSI is unchanged,
+the permitted curvature increases, and the gap and endpoint loss both
+increase by $g_2-g_1$. Taking suprema proves
+\eqref{boundarygap:growth}; the case $g_1=0$ follows from the shrinking
+interval examples.
+\end{proof}
+
+The endpoint $\rho=0$ represents a limit of shrinking intervals, not
+positive error at zero distance. It is essential: for $H_0=m,H_1=0$,
+$\mathcal B(g)=g$, whereas the stationary formula gives $W(g)=g/2$.
+
+\subsection{Finite scalar evaluation}
+For $H_1>0$, evaluate $V(g,\rho)$ using
+\eqref{compact:radial-switch} and \eqref{compact:radial-value}.
+In normalized time, put $c=\sqrt{H_1\rho}$ and $\tau=1-b/c$.
+If $F(\tau)$ and $Z(\tau)$ are the terminal normalized slope and loss,
+the switch satisfies
+\begin{equation}\label{boundarygap:switch}
+ F(\tau)=g,
+ \qquad \max\{0,1-\pi/(4c)\}\le\tau\le1.
+\end{equation}
+Writing $u(\tau)$ for the loss at the switch, differentiation gives
+\begin{equation}\label{boundarygap:switch-derivatives}
+ F'(\tau)=2\rho(H_0+H_1u(\tau))\cos b>0,
+ \qquad
+ Z'(\tau)=\frac{2\rho(H_0+H_1u(\tau))}{c}\sin b\ge0.
+\end{equation}
+Thus the upper endpoint of a retained $\tau$ bracket gives an upper
+loss bound. No quadrature is needed.
+
+For the outer search, define the continuous functions
+\[
+ \mathsf a(t)=\sinh(t)/t,\qquad
+ \mathsf c(t)=(\cosh t-1)/t^2,\qquad
+ \mathsf a(0)=1,\quad\mathsf c(0)=1/2,
+\]
+and, with $T=T_g$,
+\begin{equation}\label{compact:scalar-constants}
+ \begin{aligned}
+ K_*&=H_0+H_1\mathcal C(g),\\
+ L_*&=m\{\mathsf a(T)+2\cosh T\}
+       +K_*\{\mathsf c(T)+2\mathsf a(T)\}.
+ \end{aligned}
+\end{equation}
+
+\begin{proposition}[A certified maximum on a radius interval]
+\label{boundarygap:budget}\label{joint:budget}
+Fix $g>0$, $H_1>0$, $\vartheta>1$, and
+$I=[\rho_-,\rho_+]\subseteq[0,g/m]$.
+Write $M_I=\max_I V(g,\rho)$ and choose a known lower bound
+$0<\ell\le M_I$. The choice $\ell=g/2$ is always valid; for
+$I=[0,g/m]$ one can use $\ell=g$. This is a lower bound on the
+extremal envelope, not on the error of an observed source.
+If $\Delta=\rho_+-\rho_->0$, put
+\begin{equation}\label{compact:interval-budget}
+ J=\max\left\{1,\left\lceil
+       \frac{L_*\Delta}{(\vartheta-1)\ell}\right\rceil\right\},
+ \qquad
+ n=\left\lceil\log_2\max\left\{1,
+       \frac{4\rho_+K_*}{(\vartheta-1)\ell}\right\}\right\rceil.
+\end{equation}
+At $\rho_j=\rho_-+j\Delta/J$, use $n$ exact-sign bisections of
+\eqref{boundarygap:switch} and take the upper retained endpoint
+value $\widehat V_j$. A zero node has exact value $g$. Then
+\begin{equation}\label{boundarygap:finite-enclosure}
+ M_I\le\widehat M_I:=
+ \max_{0\le j\le J}\widehat V_j+\frac{L_*\Delta}{2J}
+ \le\vartheta M_I.
+\end{equation}
+This uses at most $n$ sign comparisons per positive node and $J$
+comparisons for the maximum. There are $J+1$ positive nodes if
+$\rho_->0$, and $J$ otherwise.
+If $I=\{\rho\}$ with $\rho>0$, use one node and
+\begin{equation}\label{energy:scalar-budget}
+ n=\left\lceil\log_2\max\left\{1,
+       \frac{2\rho K_*}{(\vartheta-1)\ell}\right\}\right\rceil,
+\end{equation}
+with no mesh correction. At $\rho=0$ no root is needed.
+For $H_1=0$, use the exact affine formula for $V$; at $g=0$ return zero.
+\end{proposition}
+
+\begin{proof}
+First we prove $|V_\rho|\le L_*$. Keep the normalized switch fixed
+and differentiate its trajectory in $\rho$. The sensitivity $w$ solves
+\[
+ w''=\sigma_\tau(t)(H_0+H_1u+\rho H_1w),
+ \qquad w(0)=0,\quad w'(0)=-m,
+\]
+where $\sigma_\tau$ is $+1$ before the switch and $-1$ afterwards.
+The positive-kernel comparison for its integral equation gives
+\[
+ |w(1)|\le m\mathsf a(c)+K_*\mathsf c(c),\qquad
+ |w'(1)|\le m\cosh c+K_*\mathsf a(c).
+\]
+Implicit differentiation of the terminal slope constraint yields
+\begin{equation}\label{boundarygap:rho-derivative}
+ V_\rho=w(1)-\frac{\tan b}{c}w'(1).
+\end{equation}
+Since $b\le\min\{c,\pi/4\}$, $\tan b/c\le2$.
+The functions $\mathsf a$, $\mathsf c$ and $\cosh$ increase on
+$[0,\infty)$, giving $|V_\rho|\le L_*$.
+Continuity extends this Lipschitz bound to both radius endpoints.
+
+At every candidate switch, its first-arc curvature is at most $K_*$.
+Equation~\eqref{boundarygap:switch-derivatives} gives
+$0\le Z'\le2\rho K_*$, so $n$ bisections produce excess at most
+$2\rho K_*2^{-n}$. Each point of $I$ is within $\Delta/(2J)$ of
+a grid node. The root and mesh errors in
+\eqref{compact:interval-budget} are each at most
+$(\vartheta-1)\ell/2$. Their sum is at most
+$(\vartheta-1)M_I$, proving \eqref{boundarygap:finite-enclosure}.
+The single-node case spends the whole allowance on its root error.
+The lower bounds on $M_I$ follow from
+$V(g,\rho)\ge g-m\rho/2\ge g/2$ and $V(g,0)=g$.
+\end{proof}
+
+These counts concern comparisons in exact scalar arithmetic, excluding
+elementary-function evaluation and bit cost. A numerical certificate
+must also enclose those evaluations and may use an internal factor
+$1<\vartheta_0<\vartheta$ to reserve an error allowance. Unresolved
+interval signs require a valid fallback or an explicit refusal.
+No objective, gradient or linear minimization oracle is called by this
+scalar calculation. As $g\downarrow0$, $K_*\to H_0$ and
+$L_*\to3m+5H_0/2$, so the displayed full-gap and joint budgets remain
+bounded for fixed constants and factor.
+
+\paragraph{The two endpoints can both be insufficient.}
+\label{boundarygap:counterexample}
+For $m=H_0=H_1=1$ and $g=6$, the first-variation formula
+\eqref{gapregime:variation}, proved below, gives
+\begin{equation}\label{boundarygap:small-radius}
+ V(6,\rho)=6+\frac{181-31\sqrt{31}}{54}\rho+O(\rho^2)>6
+\end{equation}
+for small positive $\rho$. At the stationary endpoint,
+the time integral at $U=6$, $P=\sqrt6$, $q=0$ crosses at
+$v_c=2\sqrt7-1$ and has maximum speed $3\sqrt3$. Hence
+\[
+ \mathcal T(6;\sqrt6,0)
+ \ge\operatorname{arcosh}(2\sqrt7)
+       +\frac{7-2\sqrt7}{3\sqrt3}
+ >\frac{13}{6}+\frac3{10}>\sqrt6.
+\]
+Here $\operatorname{arcosh}(2\sqrt7)>\log9>13/6$ follows from the
+first two positive terms of the series for $\log3$; also
+$\sqrt7<8/3$ and $\sqrt3<7/4$ give the second bound.
+Strict inversion yields $W(6)<6$. Thus
+$\mathcal B(6)>\max\{6,W(6)\}$, with smooth interval examples supplied
+by the sharpness theorem.

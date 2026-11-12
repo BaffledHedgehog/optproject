@@ -1,0 +1,46 @@
+\section{Model and radial reduction}
+\label{compact:assumptions}\label{sec:model}
+Let $Q\subset\mathbb R^d$ be a nontrivial compact convex set, let
+$f$ be $C^2$ on a neighborhood of $Q$, and fix $x^*\in\arg\min_Q f$.
+Write
+\[
+ \delta(x)=f(x)-f(x^*),\qquad
+ P(x)=\|\nabla f(x)\|.
+\]
+\begin{equation}\label{eq:gap}
+ G(x)=\max_{v\in Q}\langle\nabla f(x),x-v\rangle.
+\end{equation}
+The full Frank-Wolfe gap $G$ uses all of $Q$. Throughout the certificate
+sections, the supplied constants satisfy $m>0$, $H_0,H_1\ge0$, and
+\begin{equation}\label{boundarygap:assumptions}
+ \begin{aligned}
+ \langle\nabla f(z)-\nabla f(x^*),z-x^*\rangle
+   &\ge m\|z-x^*\|^2,\\
+ \|\nabla^2 f(z)\|&\le H_0+H_1\delta(z),\qquad z\in Q.
+ \end{aligned}
+\end{equation}
+The first inequality is shifted restricted secant regularity (RSI).
+Neither convexity of $f$ nor $\nabla f(x^*)=0$ is assumed.
+The norm results below only require that $Q$ contain every segment
+$[x^*,x]$, with $f$ smooth near those segments.
+
+For $x\ne x^*$, set $r=\|x-x^*\|$, $e=(x-x^*)/r$, and
+$u(s)=f(x^*+se)-f(x^*)$ on $[0,r]$. Constrained optimality and
+\eqref{boundarygap:assumptions} give
+\begin{equation}\label{compact:radial-data}
+ q:=u'(0)\ge0,\qquad u'(s)\ge q+ms,\qquad
+ |u''(s)|\le H_0+H_1u(s).
+\end{equation}
+In particular $H_0\ge m$, by differentiating the first derivative
+inequality at zero. If $p=u'(r)$, then
+\begin{equation}\label{compact:observed-caps}
+ p\le P(x),\qquad rp\le G(x),\qquad
+ r\le\min\{P(x)/m,\sqrt{G(x)/m}\}.
+\end{equation}
+Thus either $G(x)=0$ or $P(x)=0$ implies $x=x^*$, although the norm
+may be positive at $x^*$.
+
+All sharpness statements below take suprema over functions and compact
+convex domains with the stated constants. The domain may vary. They do
+not assert optimality for a prescribed domain. Smooth
+sequences can approach the suprema without attaining them.

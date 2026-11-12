@@ -1,0 +1,183 @@
+{
+  "id": "unresolved_regime_refusal",
+  "function": "certify_joint",
+  "fixed_case": {
+    "id": "unresolved_regime_refusal",
+    "function": "certify_joint",
+    "args": {
+      "g": "444949/100000",
+      "P": "10"
+    },
+    "precision": {
+      "work_dps": 2,
+      "value_dps": 2
+    },
+    "expected": {
+      "status": "refused",
+      "reason": "unresolved_regime_sign",
+      "regime": "unresolved",
+      "no_switch": true
+    }
+  },
+  "output": {
+    "status": "refused",
+    "envelope": "J",
+    "envelope_lower": null,
+    "envelope_upper": null,
+    "achieved_factor": null,
+    "requested_factor": "2",
+    "internal_factor": "3/2",
+    "reason": "unresolved_regime_sign",
+    "message": "The fixed-precision S interval certifies neither S<=0 nor S>0.",
+    "inputs": {
+      "m": "1",
+      "H0": "1",
+      "H1": "1",
+      "P": "10",
+      "g": "444949/100000"
+    },
+    "precision": {
+      "work_dps": 2,
+      "value_dps": 2
+    },
+    "plan": {
+      "regime": {
+        "working_gap": "444949/100000",
+        "tau_interval": [
+          "791/1024",
+          "399/512"
+        ],
+        "S_interval": [
+          "-121/4096",
+          "173/8192"
+        ],
+        "decision": "unresolved"
+      }
+    },
+    "work": {
+      "bound_evaluations": 0,
+      "node_coefficient_preparations": 0,
+      "switch_evaluations": 0,
+      "loss_evaluations": 0,
+      "scalar_evaluations_started": 1,
+      "bracket_sign_queries": 0,
+      "bracket_sign_decisions": 0,
+      "root_sign_queries": 0,
+      "root_sign_decisions": 0,
+      "bisection_updates": 0,
+      "sign_order_predicates": 0,
+      "sign_equality_predicates": 0,
+      "certificate_maximum_comparisons": 0,
+      "witness_maximum_comparisons": 0,
+      "rounding_maximum_comparisons": 0,
+      "derived_lower_maximum_comparisons": 0,
+      "budget_setup_maximum_comparisons": 0,
+      "budget_order_comparisons": 0,
+      "resource_metadata_maximum_comparisons": 19,
+      "budget_ceiling_operations": 0,
+      "rational_to_interval_conversions": 4,
+      "interval_endpoint_extractions": 4,
+      "resource_limit_checks": 16,
+      "validation_checks": 26,
+      "exact_formula_evaluations": 0,
+      "source_objective_calls": 0,
+      "source_gradient_calls": 0,
+      "full_LMO_calls": 0,
+      "LP_calls": 0,
+      "optimizer_updates": 0,
+      "stochastic_samples": 0,
+      "regime_evaluations": 1,
+      "regime_sign_queries": 1,
+      "regime_nonpositive_decisions": 0,
+      "regime_positive_decisions": 0,
+      "regime_unresolved_queries": 1,
+      "regime_order_predicates": 2,
+      "working_gap_minimum_comparisons": 0,
+      "algebraic_bound_evaluations": 0
+    },
+    "elementary_evaluations": {
+      "exp": 0,
+      "sin": 0,
+      "cos": 0,
+      "sqrt": 1
+    },
+    "trace": [],
+    "refusal_details": {
+      "S_interval": [
+        "-121/4096",
+        "173/8192"
+      ],
+      "tau_interval": [
+        "791/1024",
+        "399/512"
+      ]
+    },
+    "bound_semantics": "The interval encloses the mathematical envelope; only envelope_upper bounds source error under the model assumptions.",
+    "cost_semantics": "Named started evaluations, resolved/attempted sign queries and explicit maximum selections; not all arithmetic operations or bit cost."
+  },
+  "checks": [
+    {
+      "check": "expected_status",
+      "passed": true
+    },
+    {
+      "check": "global_precision_unchanged",
+      "passed": true
+    },
+    {
+      "check": "no_source_or_optimizer_operations",
+      "passed": true
+    },
+    {
+      "check": "scalar_counter_partition",
+      "passed": true
+    },
+    {
+      "check": "root_updates_no_more_than_queries",
+      "passed": true
+    },
+    {
+      "check": "all_costs_nonnegative_integers",
+      "passed": true
+    },
+    {
+      "check": "expected_refusal_reason",
+      "passed": true
+    },
+    {
+      "check": "expected_regime_decision",
+      "passed": true
+    },
+    {
+      "check": "one_regime_evaluation",
+      "passed": true
+    },
+    {
+      "check": "one_regime_query",
+      "passed": true
+    },
+    {
+      "check": "unresolved_interval_straddles_allowed_tests",
+      "passed": true
+    },
+    {
+      "check": "no_switch_or_loss_evaluations",
+      "passed": true
+    },
+    {
+      "check": "refusal_has_no_enclosure",
+      "passed": true
+    }
+  ],
+  "status": "PASS",
+  "elapsed_seconds": 0.0006193269982759375,
+  "cpu_seconds": 0.0005959290000000228,
+  "global_precision_before": [
+    15,
+    15
+  ],
+  "global_precision_after": [
+    15,
+    15
+  ]
+}

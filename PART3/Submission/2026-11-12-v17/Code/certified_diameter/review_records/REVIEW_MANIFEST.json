@@ -1,0 +1,32 @@
+{
+  "scope": "Independent diameter API reviews and read-only saved-record audit",
+  "files": {
+    "preexecution_static_review.json": {
+      "sha256": "cd60cced2b7bd34abd5051208b8e3dbd4523162b1b574803517637f157eaa54d",
+      "bytes": 13258
+    },
+    "preexecution_static_review.txt": {
+      "sha256": "6dae424d1d585bf09abd48377761b05afbf7041ba01a2fbf20ec049b4d797aa2",
+      "bytes": 3144
+    },
+    "audit_first_attempt_receipt.json": {
+      "sha256": "6ee472fc1960220fd7cdb42ac279b6b480f67662f4113c19a39b085eccd769c0",
+      "bytes": 771
+    },
+    "audit_saved_records.py": {
+      "sha256": "7e757773f863fd45e42bc33a5f6906225c7fd3a2c3846cdd5d8406da9ffa78ad",
+      "bytes": 30334
+    },
+    "postexecution_saved_record_review.json": {
+      "sha256": "8c9af9fb14d0300c44fa9e86dfdd9ba90ac80cf1b99b4ed51e928166db1122f9",
+      "bytes": 93011
+    },
+    "postexecution_saved_record_review.txt": {
+      "sha256": "45c636bb987ba8be35250b264c327506ab713d34e0d6c00674866fc29c651f39",
+      "bytes": 3920
+    }
+  },
+  "scientific_api_imports": 0,
+  "scientific_api_calls": 0,
+  "scientific_runs": 0
+}

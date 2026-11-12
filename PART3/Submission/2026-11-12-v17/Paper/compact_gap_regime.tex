@@ -1,0 +1,205 @@
+\section{When the ordinary gap is exact}
+\label{gapregime:section}
+For $H_1>0$ and $g\ge0$, put $b=H_1g$. The unique solution in
+$(1/2,1]$ of the following switch equation is
+\begin{align}
+ b\tau_g^2+2H_0\tau_g&=H_0+m+b/2,
+       \label{gapregime:switch}\\
+ \tau_g&=\frac{H_0+m+b/2}
+ {H_0+\sqrt{H_0^2+b(H_0+m)+b^2/2}}.
+       \label{gapregime:tau}
+\end{align}
+Set
+\begin{equation}\label{gapregime:coefficient}
+ \mathcal S(g)=H_0(1/2-\tau_g^2)
+          +\frac{H_1g}{3}(1-2\tau_g^3).
+\end{equation}
+
+\begin{theorem}[Exact ordinary-gap regime]\label{gapregime:main}
+For $m>0$, $H_0\ge m$, $H_1>0$ and $g>0$,
+\begin{equation}\label{gapregime:equivalence}
+ \mathcal B(g)=g\quad\Longleftrightarrow\quad\mathcal S(g)\le0.
+\end{equation}
+In this regime $V(g,\rho)<g$ at every positive radius, so every
+nonoptimal source with full gap $g$ has $\delta(x)<g$.
+The function $\mathcal S$ is continuously differentiable, with
+\begin{align}
+ \mathcal S(0)&=\beta,
+       \label{gapregime:initial}\\
+ \mathcal S'(g)&=H_1(\tau_g^3/3-\tau_g/2+1/3)>0.
+       \label{gapregime:derivative}
+\end{align}
+If $m\le H_0<(1+\sqrt2)m$, there is a unique $g_{\rm c}>0$ for which
+$\mathcal S(g_{\rm c})=0$, and the ordinary-gap regime is
+$0\le g\le g_{\rm c}$. If $H_0\ge(1+\sqrt2)m$, then
+$\mathcal B(g)>g$ for every $g>0$. For $H_0=m$,
+\begin{equation}\label{gapregime:unit-threshold}
+ g_{\rm c}=(2+\sqrt6)m/H_1.
+\end{equation}
+\end{theorem}
+
+\begin{proof}\label{gapregime:proof}
+Write $K_g(t)=H_0+H_1gt$. The function
+\[
+ D_g(a)=\int_0^1|a-t|K_g(t)\,dt-ma
+\]
+has $D_g''(a)=2K_g(a)>0$ and
+$D_g'(a)=2H_0a+H_1ga^2-H_0-H_1g/2-m$.
+Its minimizer is $\tau_g$, and direct integration gives
+$D_g(\tau_g)=\mathcal S(g)$. Therefore every measurable $a(t)$ with
+$|a(t)|\le K_g(t)$ and $\int_0^1a(t)\,dt=m$ satisfies
+\begin{equation}\label{gapregime:dual-bound}
+ \int_0^1(1-t)a(t)\,dt-m
+ =\int_0^1(\tau_g-t)a(t)\,dt-m\tau_g
+ \le\mathcal S(g).
+\end{equation}
+Equality holds for $a=K_g$ before $\tau_g$ and $a=-K_g$ afterwards.
+Differentiating $D_g(\tau_g)$ eliminates the derivative of $\tau_g$:
+\[
+ \mathcal S'(g)=H_1\int_0^1|\tau_g-t|t\,dt
+ =H_1(\tau_g^3/3-\tau_g/2+1/3).
+\]
+This also holds at $g=0,H_0=m$, where $\tau_0=1$ but
+$D'_0(\tau_0)=0$. On $[1/2,1]$, the cubic has minimum
+$(1-1/\sqrt2)/3$ at $1/\sqrt2$ and maximum $1/6$ at $1$. Hence
+\begin{equation}\label{gapregime:derivative-bounds}
+ \frac{H_1}{3}(1-1/\sqrt2)\le\mathcal S'(g)\le H_1/6.
+\end{equation}
+Consequently $\mathcal S$ is strictly increasing and unbounded;
+substitution at zero gives $\mathcal S(0)=\beta$.
+
+For the first variation, let $u_{\rho,\tau}$ solve
+\[
+ u''=\rho\sigma_\tau(t)(H_0+H_1u),\qquad
+ u(0)=0,\quad u'(0)=g-m\rho,
+\]
+where $\sigma_\tau$ equals $+1$ and then $-1$.
+At $\rho=0$, $u=gt$. The terminal slope equation, after division by
+$\rho$, is
+\[
+ R(\rho,\tau):=-m+
+   \int_0^1\sigma_\tau(t)(H_0+H_1u_{\rho,\tau}(t))\,dt=0.
+\]
+The two explicit arcs make $R$ smooth near $(0,\tau_g)$, where
+$R=0$ and $R_\tau=2K_g(\tau_g)>0$.
+For $g>0$, $\tau_g$ is interior, so the implicit function theorem
+gives the unique smooth switch branch. Integrating twice yields
+\begin{equation}\label{gapregime:variation}
+ V(g,\rho)=g+\rho\mathcal S(g)+O(\rho^2).
+\end{equation}
+Thus $\mathcal S(g)>0$ implies $\mathcal B(g)>g$.
+
+Suppose $\mathcal S(g)<0$. Equation~\eqref{gapregime:variation} gives
+$V(g,\rho)<g$ near zero. If equality first occurred at a positive
+radius $\rho$, its extremal trajectory would have initial derivative
+$g-m\rho<g$, one increasing arc, and one decreasing arc ending at $g$.
+Hence $u'(t)-g$ changes sign once from negative to positive.
+Since $u(0)=0$ and $u(1)=g$, this implies
+\begin{equation}\label{gapregime:below-line}
+ u(t)<gt\qquad(0<t<1).
+\end{equation}
+Apply \eqref{gapregime:dual-bound} to $a=u''/\rho$:
+its integral is $m$, its magnitude is at most $K_g$, and
+$0=u(1)-g\le\rho\mathcal S(g)<0$, a contradiction.
+Thus every positive radius gives a value below $g$.
+
+If $g>0$ and $\mathcal S(g)=0$, take $0<g_n\uparrow g$.
+Strict increase of $\mathcal S$ gives $\mathcal B(g_n)=g_n$;
+continuity of $\mathcal B$ then gives $\mathcal B(g)=g$.
+If a positive radius attained $g$, \eqref{gapregime:below-line}
+would imply $|u''|/\rho=H_0+H_1u<K_g$ in the open interval.
+Since $|\tau_g-t|$ is positive except at one point, the dual bound
+would be strict, giving $0<\rho\mathcal S(g)=0$.
+This proves the equivalence and the stated strictness.
+
+Finally, the sign of $\beta$ and the derivative bounds identify the
+existence and uniqueness of $g_{\rm c}$. When $H_0=m$, substitution of
+$g=(2+\sqrt6)m/H_1$ and $\tau=2-\sqrt6/2$ into the switch equation
+and \eqref{gapregime:coefficient} gives $\mathcal S(g)=0$.
+\end{proof}
+
+\begin{corollary}[Radius monotonicity and an algebraic bound]
+\label{gapregime:radius-monotone}
+If $H_1>0$, $g>0$ and $\mathcal S(g)\le0$, then $V(g,\rho)$ is strictly
+decreasing on $[0,g/m]$. For $0<\rho_1<\rho_2\le g/m$,
+\begin{equation}\label{gapregime:deficit-ratio}
+ \frac{g-V(g,\rho_1)}{\rho_1}
+ \le\frac{g-V(g,\rho_2)}{\rho_2},
+\end{equation}
+and
+\begin{equation}\label{gapregime:tangent-upper}
+ V(g,\rho)\le g+\rho\mathcal S(g),\qquad 0\le\rho\le g/m.
+\end{equation}
+The maximum on a restricted interval is its left endpoint value.
+It needs at most one switch root, with none if the left endpoint is zero.
+\end{corollary}
+\begin{proof}
+Let $u_2$ be the normalized extremal trajectory at $\rho_2$.
+Its derivative first increases and then decreases to $g$, and
+$u_2(1)<g$. Thus $u_2(t)-gt$ first decreases and then increases to a
+negative endpoint, so $u_2(t)\le gt$. With $\lambda=\rho_1/\rho_2$, put
+$v(t)=\lambda u_2(t)+(1-\lambda)gt$. Then
+\[
+ v'(0)=g-m\rho_1,\quad v'(1)=g,\quad
+ v'(t)\ge g-m\rho_1+m\rho_1t,
+ \quad |v''|\le\rho_1(H_0+H_1v)\quad\text{a.e.},
+\]
+where the last bound uses $v\ge u_2$.
+The scaled form of Lemma~\ref{compact:radial} applies to this
+$C^1$ trajectory with absolutely continuous derivative, giving
+\begin{equation}\label{gapregime:mixture}
+ V(g,\rho_1)\ge\lambda V(g,\rho_2)+(1-\lambda)g>V(g,\rho_2).
+\end{equation}
+Rearrangement proves \eqref{gapregime:deficit-ratio}.
+Letting $\rho_1\downarrow0$ and using
+\eqref{gapregime:variation} proves \eqref{gapregime:tangent-upper}.
+Since $V(g,0)=g$ and $V(g,\rho)<g$ for $\rho>0$, strict monotonicity
+also holds when the first radius is zero.
+\end{proof}
+
+For $d=-\beta>0$, integration of \eqref{gapregime:derivative-bounds} gives
+\begin{equation}\label{gapregime:threshold-bracket}
+ \frac{6d}{H_1}\le g_{\rm c}
+ \le\frac{3d}{H_1(1-1/\sqrt2)}.
+\end{equation}
+No threshold search is needed at a source: the test
+$\mathcal S(g)\le0$ uses one square root and arithmetic.
+If $H_1=0$, \eqref{boundarygap:constant} instead gives
+$\mathcal B(g)=g$ for all $g\ge0$ exactly when
+$H_0\le(1+\sqrt2)m$.
+When $g_{\rm c}>0$, $\mathcal B^{-1}(u)=u$ on $[0,g_{\rm c}]$;
+this supplies the final-phase calibration in Theorem~\ref{nloracle:main}.
+An interval implementation uses the shortcut only after certifying
+the nonpositive sign.
+For an upper observation $G(x)\le B$ with $\mathcal S(B)\le0$,
+\begin{equation}\label{gapregime:inexact}
+ \delta(x)\le\mathcal B(G(x))\le\mathcal B(B)=B.
+\end{equation}
+
+\subsection{The radius profile need not be concave}
+\label{gapregime:nonconcavity}
+For completeness, the outer search cannot be justified by global
+concavity. Take $m=H_1=1$, $H_0=4$, $g=6$. The limiting switch is
+$T=2/3$, and \eqref{gapregime:variation} has coefficient
+$\mathcal S(6)=28/27$. Its first state variation is
+\[
+ w(t)=
+ \begin{cases}
+ -t+2t^2+t^3,&0\le t\le2/3,\\
+ 7t-2t^2-t^3-80/27,&2/3\le t\le1.
+ \end{cases}
+\]
+Write the switch as $T+\rho T_1+O(\rho^2)$ and the endpoint loss as
+$g+\rho\mathcal S(g)+\rho^2C_2+O(\rho^3)$.
+In the second state variation, the switch shift contributes
+$2T_1(H_0+H_1gT)$ to the terminal derivative and
+$2T_1(H_0+H_1gT)(1-T)$ to the terminal value.
+Eliminating $T_1$ using the fixed terminal derivative gives
+\[
+ C_2=H_1\int_0^1(T-t)\sigma_T(t)w(t)\,dt
+     =\int_0^1|2/3-t|w(t)\,dt=\frac{52}{1215}.
+\]
+Therefore $V_{\rho\rho}(6,0)=104/1215>0$. Smooth switch continuation
+makes this derivative positive also at small positive radii.
+The example lies outside $\mathcal S(g)\le0$ and says nothing about
+general unimodality.

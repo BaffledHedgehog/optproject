@@ -1,0 +1,64 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+\IfFontExistsTF{Liberation Serif}{\setmainfont{Liberation Serif}}{\setmainfont{Times New Roman}}
+\IfFontExistsTF{Liberation Sans}{\setsansfont{Liberation Sans}}{\setsansfont{Arial}}
+\IfFontExistsTF{DejaVu Sans Mono}{\setmonofont{DejaVu Sans Mono}[Scale=0.82]}{\setmonofont{Consolas}[Scale=0.82]}
+\usepackage{amsmath,amssymb,amsthm,graphicx,booktabs}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\inner}[2]{\left\langle#1,#2\right\rangle}
+\newcommand{\R}{\mathbb R}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\DeclareMathOperator{\artanh}{artanh}
+\setlength{\emergencystretch}{3em}
+\usepackage[hidelinks,unicode]{hyperref}
+\hypersetup{pdftitle={Точные оценки ошибки и адаптивная остановка метода Франка-Вульфа для невыпуклых задач},pdfauthor={Ярослав П. Ляхов и Степан А. Суворов}}
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{lemma}[theorem]{Лемма}
+\newtheorem{proposition}[theorem]{Утверждение}
+\newtheorem{corollary}[theorem]{Следствие}
+\newtheorem{example}[theorem]{Пример}
+\title{Точные оценки ошибки и адаптивная остановка\\метода Франка-Вульфа для невыпуклых задач}
+\author{Ярослав П. Ляхов \and Степан А. Суворов}
+\date{12 ноября 2026}
+\begin{document}
+\hyphenation{ре-гу-ляр-но-сти гео-мет-ри-че-ско-го
+ве-ро-ят-но-стью не-огра-ни-чен-ным до-пол-ни-тель-ной
+по-сле-ду-ю-щих не-за-вер-шен-но-го ма-те-ма-ти-че-ским
+фик-си-ро-ван-но-го ко-эф-фи-ци-ен-том рас-смат-ри-вае-мой}
+\maketitle
+\begin{abstract}
+При сдвинутом условии секущей и аффинной границе нормы гессиана
+через ошибку получены точные сертификаты глобальной точности по
+полному зазору Франка-Вульфа, норме градиента и диаметру области.
+Допускается граничный минимум с ненулевым градиентом. Одно радиальное
+сравнение даёт отдельные и совместные границы; гладкие примеры
+приближают их при допустимом точном задании наблюдений и диаметра. Найден
+критерий того, когда обычный зазор уже ограничивает ошибку. В этом
+режиме совместный сертификат требует одного скалярного уравнения
+или допускает алгебраическую верхнюю оценку; вне него гарантированные
+включения даёт конечная сетка. Теорема с нелинейной связью ошибки
+и зазора обосновывает остановку с адаптивной направленной точностью,
+учитывая неудачные уточнения, отклонённые пробы функции и последний
+запрос. Она охватывает шаги от активных атомов и медианы средних при конечной
+дисперсии наблюдений и точных значениях функции. Реализуемая
+сигмоидная регрессия даёт невыпуклое приложение с явными константами.
+Фиксированные скалярные проверки контролируют формулы и реализацию.
+\end{abstract}
+
+\input{compact_intro}
+\input{compact_assumptions}
+\input{compact_radial_norm}
+\input{compact_full_gap}
+\input{compact_gap_regime}
+\input{compact_joint}
+\input{compact_diameter}
+\input{compact_stopping}
+\input{compact_directional}
+\input{compact_sigmoid}
+\input{compact_evidence}
+\input{article_references}
+\end{document}

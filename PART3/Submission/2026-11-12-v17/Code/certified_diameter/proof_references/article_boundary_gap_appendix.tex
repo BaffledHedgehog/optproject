@@ -1,0 +1,265 @@
+\section{Proof of the constrained full-gap envelope}
+\label{boundarygap:proof}
+
+\paragraph{Radial reduction.}
+For $x\ne x^*$, put $r=\|x-x^*\|$, $e=(x-x^*)/r$, and
+$u(s)=f(x^*+se)-f(x^*)$, $p(s)=u'(s)$ on $[0,r]$.
+Constrained optimality and \eqref{boundarygap:assumptions} give
+\[
+ p(0)\ge0,\qquad p(s)\ge p(0)+ms,\qquad
+ |p'(s)|\le H_0+H_1u(s).
+\]
+Taking the derivative at zero shows $H_0\ge m$.
+For $g=G(x)$, the feasible point $x^*$ gives $rp(r)\le g$.
+Consequently $r^2\le g/m$ and
+$p(0)\le g/r-mr$.  Integrating $2pp'$ forward and backward yields
+\[
+ p(s)^2\le p(0)^2+\mathcal A(u(s)),\qquad
+ p(s)^2\le p(r)^2+\mathcal A(u(r))-\mathcal A(u(s)).
+\]
+Replacing the two endpoint derivatives by $p_0=g/r-mr$ and $P=g/r$
+only enlarges the right sides.  Changing variable from $s$ to $u(s)$
+therefore proves $\mathcal T(u(r);P,p_0)\le r$.
+The possible square-root singularity when $p_0=0$ is integrable.
+If $G(x)=0$, the inequality $G(x)\ge mr^2$ gives $x=x^*$ directly.
+
+\paragraph{Strict inversion of the time integral.}
+Fix $P\ge p_0\ge0$ with $P>0$.  If
+$\mathcal A(U)\le P^2-p_0^2$, the forward expression is smaller
+throughout the integral, which is strictly increasing in $U$.
+Otherwise the crossing $v_c\in(0,U)$ is specified by
+\[
+ \mathcal A(v_c)=\tfrac12\{P^2+\mathcal A(U)-p_0^2\}.
+\]
+For $H_1>0$, write
+\[
+ k=\sqrt{H_1},\quad a=H_0/H_1,\quad z=U+a,\quad
+ R^2=z^2+P^2/k^2,\quad
+ w^2=\tfrac12\{R^2+a^2-p_0^2/k^2\}.
+\]
+Then $w=v_c+a$ and
+\[
+ \mathcal T(U;P,p_0)=
+ \int_a^w\frac{dy}{\sqrt{k^2y^2+p_0^2-k^2a^2}}
+ +\frac1k\{\arcsin(z/R)-\arcsin(w/R)\}.
+\]
+The moving-crossing terms cancel on differentiation, leaving
+\begin{equation}\label{boundarygap:time-derivative}
+ \mathcal T_U=
+ \frac{P}{k^2R^2}+
+ \frac{zw}{kR^2\sqrt{R^2-w^2}}>0.
+\end{equation}
+This also proves continuity of the derivative at the forward-only
+boundary.  The forward integral tends to infinity with $U$; its upper
+endpoint is of order $U$, and its integrand is asymptotic to $1/(ky)$.
+Thus $\mathcal T$ is continuous, strictly increasing from zero to
+infinity.
+
+For $H_1=0$, direct integration gives the same conclusion:
+\[
+ \mathcal T(U;P,p_0)=
+ \begin{cases}
+ [\sqrt{p_0^2+2H_0U}-p_0]/H_0,
+       &2H_0U\le P^2-p_0^2,\\[1mm]
+ [\sqrt{2p_0^2+2P^2+4H_0U}-p_0-P]/H_0,
+       &2H_0U>P^2-p_0^2.
+ \end{cases}
+\]
+This proves existence and uniqueness in \eqref{boundarygap:time}, and
+the radial comparison proves the asserted upper bound.
+
+\paragraph{The extremal trajectory at fixed radius.}
+Use normalized time $t=s/r\in[0,1]$.  Write the loss again as $u(t)$;
+its initial derivative is now $q=g-m\rho$ and its terminal derivative
+is $g$.  Start with
+\[
+ u''=\rho(H_0+H_1u),\quad u(0)=0,\quad u'(0)=q,
+\]
+and switch once to $u''=-\rho(H_0+H_1u)$ at $t=\tau$.
+For $H_1>0$ these two elementary solutions give the functions $F,Z$
+in the main text.  At $\tau=1$,
+\[
+ F(1)=ac\sinh c+q\cosh c>H_0\rho+q\ge g.
+\]
+At the lower bracket endpoint, either $b=c\le\pi/4$, in which case
+$F=q\cos c-ac\sin c<g$, or $b=\pi/4$, in which case
+\[
+ F=\frac{(q-ac)e^{-(c-\pi/4)}}{\sqrt2}<g.
+\]
+Differentiation gives \eqref{boundarygap:switch-derivatives}, so the
+root is unique and interior.  On the second arc, $u+a>0$ because its
+cosine and sine factors are nonnegative and its initial shifted value
+is positive.  Thus the derivative $u'$ increases on the first arc and
+decreases on the second to $g>0$, and the loss remains nonnegative.
+On the first arc,
+$u'(t)\ge q+m\rho t$, since $H_0\ge m$ and $u\ge0$.
+On the second, $u'(t)\ge g=q+m\rho\ge q+m\rho t$.
+Hence shifted RSI holds on the entire interval.  The two energy
+inequalities are equalities on their respective arcs, so this
+trajectory has $\mathcal T(Z(\tau);P,p_0)=r$ and value $V(g,\rho)$.
+
+If $H_1=0$, the normalized switch is
+$\tau=(H_0+m)/(2H_0)$.  Integrating the two constant accelerations gives
+\eqref{boundarygap:constant}; maximizing its affine expression in
+$\rho\in[0,g/m]$ proves the clipped coefficient formula.
+
+\paragraph{Sharpness for smooth functions with the same gap.}
+In physical time, the preceding construction starts at derivative
+$p_0$ and ends at $P$, so on $Q=[0,r]$ its full gap at the right
+endpoint is exactly $rP=g$.  Except when $H_1=0,H_0=m$, the switch is
+interior and its derivative exceeds $P$ by a positive margin.
+Replace the acceleration sign by a smooth nonincreasing transition
+$\chi_{\epsilon,d}\in[-1,1]$, equal to $+1$ before $d-\epsilon$ and
+$-1$ after $d+\epsilon$, and solve
+\[
+ u''=\chi_{\epsilon,d}(H_0+H_1u),\qquad u(0)=0,\quad u'(0)=p_0.
+\]
+Continuous dependence of this linear ODE gives uniform convergence of
+$u,u'$ as the transition shrinks.  The limiting terminal derivative is
+strictly increasing in the switch location: its derivative is
+$2(H_0+H_1u(d))\cos(\sqrt{H_1}(r-d))>0$ when $H_1>0$, and $2H_0$
+when $H_1=0$.  The intermediate value theorem therefore permits a
+small adjustment of $d$ keeping $u'(r)=P$ exactly.
+
+Before the transition $u'(s)\ge p_0+ms$.  During the transition it
+stays above $P$ by the strict margin; afterwards it decreases to $P$.
+Thus shifted RSI, nonnegative loss, and the same Hessian bound hold
+everywhere on the interval.  The endpoint error tends to $V(g,\rho)$,
+with all constants and the full gap unchanged.  The exceptional
+$H_1=0,H_0=m$ trajectory is already a smooth quadratic plus a linear
+term.  If the maximum occurs only at $\rho=0$, the smooth functions
+\[
+ u(s)=(g/r-mr)s+\tfrac12ms^2,\qquad 0\le s\le r,
+\]
+have full gap $g$ and errors $g-mr^2/2\to g$.  They obey the stated
+bound for every $H_0\ge m,H_1\ge0$.  This proves smooth sharpness once
+the endpoint continuity is established.
+
+\paragraph{Compactness, continuity, and strict growth.}
+For fixed $g>0$, use $\rho=zg/m$, $z\in[0,1]$.  The formulas and the
+strict switch equation are continuous for $z>0$.  The normalized
+trajectory satisfies
+\[
+ g(1-z/2)\le V(g,zg/m)
+ \le\frac{H_0}{H_1}\{\cosh(\sqrt{H_1gz/m})-1\}
+       +g(1-z)\mathsf a(\sqrt{H_1gz/m})
+\]
+when $H_1>0$.  The lower bound integrates shifted RSI; the upper bound
+is the all-positive acceleration comparison.  Both converge to $g$
+as $z\downarrow0$, locally uniformly in $g>0$.  This gives joint
+continuity on the compact normalized parameter interval, so its maximum
+exists and is continuous in $g>0$.  The upper bound is $O(g)$ uniformly
+in $z$ as $g\downarrow0$, proving continuity at zero.  It also yields
+$0\le V(g,\rho)\le F_*$, proving finiteness.  The constant-curvature
+formula handles $H_1=0$ directly.
+
+For $g_2>g_1>0$, take any smooth interval near-extremizer at gap $g_1$
+and replace $u(s)$ by
+\[
+ u(s)+\frac{g_2-g_1}{r}s.
+\]
+The initial and terminal derivatives increase equally, so shifted RSI
+is unchanged.  The Hessian is unchanged and its permitted bound
+increases.  The endpoint gap is $g_2$, while the endpoint loss
+increases by $g_2-g_1$.  Taking the supremum proves
+\eqref{boundarygap:growth} for $g_1>0$.  Its case $g_1=0$ follows from
+the shrinking quadratic-plus-linear examples.  Strict increase,
+unboundedness, and the claimed inverse follow.
+
+\paragraph{A Lipschitz constant for the outer maximization.}
+Fix $g>0,H_1>0$ and $0<\rho<g/m$.  At the optimizing switch,
+$0\le u(t)\le F_*$ and $H_0+H_1u(t)\le K_*$.
+Keep the switch fixed while differentiating the trajectory in $\rho$.
+The sensitivity $w=\partial_\rho u$ solves
+\[
+ w''=\sigma_\tau(t)\{H_0+H_1u+\rho H_1w\},
+ \qquad w(0)=0,\quad w'(0)=-m,
+\]
+where $\sigma_\tau$ is $+1$ before the switch and $-1$ after it.
+The integral equation, taking absolute values and comparing with its
+positive-kernel solution, gives
+\[
+ |w(1)|\le m\mathsf a(c)+K_*\mathsf c(c),\qquad
+ |w'(1)|\le m\cosh c+K_*\mathsf a(c),\qquad c=\sqrt{H_1\rho}.
+\]
+Since the optimized terminal derivative equals the fixed number $g$,
+implicit differentiation using \eqref{boundarygap:switch-derivatives}
+yields
+\begin{equation}\label{boundarygap:rho-derivative}
+ \frac{\partial V}{\partial\rho}
+     =w(1)-\frac{\tan b}{c}\,w'(1).
+\end{equation}
+Here $b\le\min\{c,\pi/4\}$, so $\tan b\le2b\le2c$.
+The functions $\mathsf a,\mathsf c,\cosh$ are nondecreasing on
+$[0,\infty)$, as their power series show.  Therefore
+$|\partial_\rho V|\le L_*$.  This derivative calculation is used only
+for positive $\rho$; continuity at zero extends the same Lipschitz
+bound to $[0,g/m]$.  At the upper endpoint use one-sided limits.
+
+\paragraph{The finite enclosure and its count.}
+At any candidate switch in the bracket, its first-arc loss is at most
+$F_*$, so \eqref{boundarygap:switch-derivatives} gives
+$0\le Z'(\tau)\le2\rho K_*$ because $\sin b\le b\le c$.
+After $n$ bisections the switch interval has length at most $2^{-n}$.
+Hence
+\[
+ 0\le\widehat V_j-V(g,\rho_j)
+       \le2\rho_jK_*2^{-n}\le(\vartheta-1)g/2.
+\]
+Every $\rho\in[0,g/m]$ lies within $g/(2mJ)$ of a grid point.  The
+Lipschitz bound proves
+\[
+ \mathcal B(g)\le\max_j\widehat V_j+\frac{L_*g}{2mJ}
+ \le\mathcal B(g)+(\vartheta-1)g\le\vartheta\mathcal B(g).
+\]
+There are $J$ nonzero grid points, each using at most $n$ root sign
+comparisons, and $J+1$ candidate values require $J$ comparisons for
+their maximum.  The brackets are proved analytically, so no extra
+endpoint sign tests are required by this idealized count.
+As $g\downarrow0$, $K_*\to H_0$ and
+$L_*\to3m+\tfrac52H_0$, so the displayed budgets stay bounded.
+All factors defining $K_*$ and $L_*$ are nondecreasing in $g$, which
+also proves the uniform query-budget assertion in the main text.
+
+\paragraph{Proof of the interior-radius counterexample.}
+Take $m=H_0=H_1=1$ and $g=6$.  At $\rho=0$ the normalized limiting
+trajectory is $u(t)=6t$.  Dividing the endpoint derivative equation
+$F(\tau)-6=0$ by $\rho$ gives a smooth residual at zero, with limit
+\[
+ \int_0^1\sigma_\tau(t)(1+6t)\,dt-1.
+\]
+Its derivative in $\tau$ is $2(1+6\tau)>0$.  Thus the switch has a
+smooth continuation from the unique solution
+\[
+ \tau_0+3\tau_0^2=\tfrac52,\qquad
+ \tau_0=(\sqrt{31}-1)/6.
+\]
+The first variation of the endpoint value is
+\begin{align*}
+ \partial_\rho V(6,0)
+ &=-1+\int_0^1(1-t)\sigma_{\tau_0}(t)(1+6t)\,dt\\
+ &=\tfrac52-\tau_0^2-4\tau_0^3
+   =\frac{181-31\sqrt{31}}{54}>0.
+\end{align*}
+This proves \eqref{boundarygap:small-radius}.
+
+For the stationary endpoint, $P=r=\sqrt6$ and the time integral at
+$U=6$ crosses at $v_c=2\sqrt7-1$, with peak speed $3\sqrt3$.
+Consequently
+\[
+ \mathcal T(6;\sqrt6,0)
+ \ge\operatorname{arcosh}(2\sqrt7)
+       +\frac{7-2\sqrt7}{3\sqrt3}
+ >\frac{13}{6}+\frac3{10}
+ =\frac{37}{15}>\sqrt6.
+\]
+For the strict middle bound, use
+$\operatorname{arcosh}(2\sqrt7)>\log9=2\log3>13/6$;
+the last logarithmic inequality follows from the first two positive
+terms of $\log3=2\sum_{j\ge0}(1/2)^{2j+1}/(2j+1)$.
+Also $\sqrt7<8/3$ and $\sqrt3<7/4$ give
+$(7-2\sqrt7)/(3\sqrt3)>20/63>3/10$.
+Strict inversion gives $W(6)<6$.  Choose any sufficiently small
+positive radius parameter and then the smooth near-extremizers with
+unchanged full gap.  Their error exceeds six, proving the counterexample
+within the stated smooth class.

@@ -1,0 +1,75 @@
+Mathematical contract and implementation changes
+
+The model, sharpness scope and diameter theorem are preserved in
+proof_references. The inputs g and P are upper caps; D is positive.
+Exact positive observations would additionally need g<=P*D, but this
+is not an API precondition for caps.
+
+For positive caps the exact envelope is
+
+  h=min(g,P^2/m,P*D),
+  a=h^2/P^2, b=min(h/m,D^2),
+  J_D(g,P)=max_{a<=rho<=b} V(h,rho).
+
+The interval is nonempty because h<=P^2/m and h<=P*D. The quantity h
+is an effective radial parameter. The implementation never asserts
+that every observed full gap is at most P^2/m.
+
+For norm-only input, G<=P*D follows from Cauchy, so setting the derived
+gap cap to P*D does not add an assumption. The interval then collapses
+to rho=min(D,P/m)^2. Consequently E_D(P)=J_D(P*D,P) is one radial
+value, equivalently the fixed-initial-slope envelope with
+q=max(P-m*D,0). D is validated before zero caps are returned.
+
+The H1=0 branch is exact rational arithmetic:
+
+  beta=(H0^2-2*m*H0-m^2)/(4*H0),
+  J_D=h+beta*b if beta>=0, otherwise h+beta*a.
+
+For positive H1, a=b needs one fixed node and no S test. If a<b,
+the unchanged outward v16 gate tests S(h). Upper(S)<=0 proves that
+the maximum is V(h,a); lower(S)>0 selects the general grid; an
+unresolved sign refuses the call. No floating midpoint decides a sign.
+The dependency and scale guards remain inside both gate and bounds.
+
+Relative-enclosure budget
+
+Write theta=factor>1 and lambda=(1+theta)/2. Every admissible radius
+obeys rho<=h/m. The quadratic radial profile gives
+V(h,rho)>=h-m*rho/2>=h/2, hence h/2 is an envelope lower bound.
+The unchanged scalar node has switch error at most 2*rho*K*2^(-n),
+where K and L are outward curvature and radius-Lipschitz bounds.
+
+For a single node choose n=ceil(log2(max(1,4*K/[m*(lambda-1)]))).
+Its root allowance is at most (lambda-1)*h/2, and no mesh is used.
+
+For a positive-width grid choose
+
+  N=max(1,ceil(2*L*(b-a)/[(lambda-1)*h])),
+  n=ceil(log2(max(1,8*K/[m*(lambda-1)]))).
+
+Both endpoints are included. Mesh error L*(b-a)/(2*N) and the root
+allowance 2*b*K*2^(-n) are each at most (lambda-1)*h/4. The old
+finish_affine method reserves (theta-lambda)*h/2 for outward value
+rounding and verifies the final exact inequality U<=theta*Lout.
+No estimate is returned if fixed precision cannot meet this contract.
+
+Reuse and accounting
+
+_legacy_core.py and _v16_api.py are unchanged copies from the verified
+v16 run snapshot. They supply exact parsing, private interval contexts,
+finite endpoints, the S gate, K/L bounds, node coefficients, switch
+bracketing, sign-aware bisection, rounding checks and partial refusals.
+No live v16 module is imported or modified.
+
+The new wrapper changes only D validation, exact h/radius geometry,
+constant-curvature endpoint selection, the singleton dispatch and the
+radius-grid width. It has separate counters for its minimum comparisons,
+collapse test and exact endpoint choice. Inherited counters include gate
+work, sqrt evaluations and partial resource failures. Counts describe
+named operations, not all arithmetic or total bit complexity.
+
+The standalone DiameterCertificate changes the envelope labels to J_D
+and E_D while retaining the reviewed enclosure/refusal fields. Only U
+is a bound on an observed source error; L is a lower bound on the
+mathematical envelope. No optimizer or source oracle is called.

@@ -1,0 +1,44 @@
+\section{Модель и радиальное сведение}
+\label{compact:assumptions}\label{sec:model}
+Пусть $Q\subset\mathbb R^d$ есть нетривиальный выпуклый компакт,
+$f\in C^2$ в окрестности $Q$ и $x^*\in\arg\min_Q f$.
+Обозначим
+\begin{equation}\label{eq:gap}
+ \delta(x)=f(x)-f(x^*),\qquad P(x)=\|\nabla f(x)\|,
+ \qquad G(x)=\max_{v\in Q}\langle\nabla f(x),x-v\rangle.
+\end{equation}
+Полный зазор $G$ использует всё множество $Q$.
+В разделах о сертификатах предполагаются известными
+$m>0$, $H_0,H_1\ge0$, для которых
+\begin{equation}\label{boundarygap:assumptions}
+ \begin{aligned}
+ \langle\nabla f(z)-\nabla f(x^*),z-x^*\rangle
+   &\ge m\|z-x^*\|^2,\\
+ \|\nabla^2 f(z)\|&\le H_0+H_1\delta(z),\qquad z\in Q.
+ \end{aligned}
+\end{equation}
+Первое условие называется сдвинутым RSI. Выпуклость $f$ и
+стационарность $x^*$ не требуются. Для результатов через норму
+достаточно, чтобы $Q$ содержало каждый отрезок $[x^*,x]$, а
+$f$ была $C^2$ в окрестности этих отрезков.
+
+При $x\ne x^*$ положим $r=\|x-x^*\|$, $e=(x-x^*)/r$,
+$u(s)=f(x^*+se)-f(x^*)$ на $[0,r]$. Условная минимальность и
+\eqref{boundarygap:assumptions} дают
+\begin{equation}\label{compact:radial-data}
+ q:=u'(0)\ge0,\qquad u'(s)\ge q+ms,
+ \qquad |u''(s)|\le H_0+H_1u(s).
+\end{equation}
+Дифференцируя неравенство для $u'$ в нуле, получаем $H_0\ge m$.
+Для $p=u'(r)$ имеем
+\begin{equation}\label{compact:observed-caps}
+ p\le P(x),\qquad rp\le G(x),\qquad
+ r\le\min\{P(x)/m,\sqrt{G(x)/m}\}.
+\end{equation}
+Поэтому нулевой зазор или нулевая норма влекут $x=x^*$.
+Норма в условном минимуме при этом может быть положительной.
+
+Утверждения о точности ниже относятся к супремумам по функциям
+и областям с заданными константами. Область может меняться.
+Точность для одной фиксированной области не утверждается.
+Гладкие последовательности могут приближать супремум, не достигая его.

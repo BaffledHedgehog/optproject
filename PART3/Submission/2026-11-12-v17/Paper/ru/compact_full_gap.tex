@@ -1,0 +1,228 @@
+\section{Точная огибающая полного зазора}
+\label{boundarygap:section}
+При $g>0$ определим
+\begin{equation}\label{boundarygap:definition}
+ V(g,\rho)=A(g/\sqrt\rho,\sqrt\rho)\quad(0<\rho\le g/m),
+ \qquad V(g,0)=g,\qquad
+ \mathcal B(g)=\max_{0\le\rho\le g/m}V(g,\rho),
+\end{equation}
+и положим $\mathcal B(0)=0$.
+Здесь $\rho=0$ обозначает предел сжимающихся областей, не точку
+с положительной ошибкой на нулевом расстоянии от минимума.
+Другой конец даёт $V(g,g/m)=W(g)=\mathcal E(\sqrt{mg})$.
+Равносильная радиальная запись:
+\begin{equation}\label{joint:radial-identity}
+ A(P,r)=V(Pr,r^2),\qquad A(P,P/m)=\mathcal E(P).
+\end{equation}
+
+\begin{theorem}[Сертификат полного зазора]
+\label{boundarygap:main}
+При условиях \eqref{boundarygap:assumptions}
+\[
+ \delta(x)\le\mathcal B(G(x)).
+\]
+Максимум в \eqref{boundarygap:definition} существует.
+Функция $\mathcal B$ конечна, непрерывна и удовлетворяет
+\begin{equation}\label{boundarygap:growth}
+ \mathcal B(g_2)\ge\mathcal B(g_1)+g_2-g_1
+ \quad(0\le g_1<g_2),\qquad \mathcal B(g)\ge g.
+\end{equation}
+Следовательно, она строго возрастает, не ограничена сверху
+и имеет непрерывную обратную функцию.
+При фиксированном точном зазоре $G(x)=g>0$ значение
+$\mathcal B(g)$ есть супремум ошибки. Его приближают гладкие
+функции на отрезках с теми же константами и зазором.
+
+При $H_1=0$, с $\beta$ из \eqref{compact:radial-constant},
+\begin{equation}\label{boundarygap:constant}
+ V(g,\rho)=g+\beta\rho,\qquad
+ \mathcal B(g)=g\max\{1,1+\beta/m\}.
+\end{equation}
+
+При $H_1>0$ положим $T_g=\sqrt{H_1g/m}$ и
+\begin{equation}\label{boundarygap:elementary-formula}
+ \mathcal B(g)\le\mathcal C(g):=
+ \frac{H_0}{H_1}(\cosh T_g-1)+g\frac{\sinh T_g}{T_g},
+ \qquad\mathcal C(0)=0.
+\end{equation}
+Функция $\mathcal C$ непрерывна, строго возрастает и не ограничена
+сверху; её вычисление не требует корня или внешней максимизации.
+\end{theorem}
+
+\begin{proof}\label{boundarygap:proof}
+Для $g=G(x)>0$ радиальные данные дают $r^2\le g/m$ и
+$u'(r)\le g/r$. По лемме~\ref{compact:radial}
+$\delta(x)\le A(g/r,r)=V(g,r^2)$.
+При $g=0$ точка оптимальна.
+Непрерывность при $\rho>0$ следует из уравнения переключения.
+Для $H_1>0$, $c=\sqrt{H_1\rho}$, интегрирование RSI и
+сравнение с положительной кривизной на всём пути дают
+\begin{equation}\label{compact:radial-upper}
+ g-\frac{m\rho}{2}\le V(g,\rho)
+ \le\frac{H_0}{H_1}(\cosh c-1)
+        +(g-m\rho)\frac{\sinh c}{c}.
+\end{equation}
+Обе границы стремятся к $g$ при $\rho\downarrow0$ локально
+равномерно по $g>0$. После замены $\rho=zg/m$, $z\in[0,1]$,
+максимум берётся по фиксированному компакту и непрерывен по $g$.
+Правая часть имеет порядок $O(g)$ равномерно по $z$ при $g\downarrow0$.
+Случай $H_1=0$ следует из явной формулы.
+Верхняя оценка $\mathcal C$ получается заменой $g-m\rho$ на $g$
+и $\rho$ на $g/m$ в \eqref{compact:radial-upper}.
+Остальные её свойства следуют из степенных рядов с неотрицательными
+коэффициентами и $\mathcal C(g)\ge g$.
+
+При положительном максимизирующем радиусе точность даёт
+гладкое приближение из радиальной леммы: на $[0,r]$ полный
+зазор в правом конце равен $r(g/r)=g$ точно.
+Если максимум задаёт $\rho=0$, то функции
+\[
+ u(s)=(g/r-mr)s+ms^2/2,\qquad 0\le s\le r,
+\]
+имеют зазор $g$ и потери $g-mr^2/2\to g$.
+Наконец, добавление $(g_2-g_1)s/r$ к почти экстремальной
+функции для $g_1>0$ сохраняет сдвинутое RSI и гессиан,
+увеличивает допустимую кривизну и повышает зазор и ошибку
+ровно на $g_2-g_1$. Это доказывает \eqref{boundarygap:growth};
+случай $g_1=0$ следует из сжимающихся примеров.
+\end{proof}
+
+\paragraph{Переключение в нормированном времени.}
+Для вычислений при $H_1>0$, $g>0$, $0<\rho\le g/m$ положим
+$c=\sqrt{H_1\rho}$, $a=H_0/H_1$, $q=g-m\rho$ и
+\[
+ \begin{aligned}
+ Y_\tau&=a\cosh(c\tau)+(q/c)\sinh(c\tau),&
+ Q_\tau&=ac\sinh(c\tau)+q\cosh(c\tau),\\
+ F(\tau)&=Q_\tau\cos b-cY_\tau\sin b,&
+ Z(\tau)&=Y_\tau\cos b+(Q_\tau/c)\sin b-a,
+ \end{aligned}
+ \qquad b=c(1-\tau).
+\]
+Радиальная лемма после замены времени даёт единственный внутренний
+корень и значение
+\begin{equation}\label{boundarygap:switch}
+ F(\tau)=g,\qquad
+ \max\{0,1-\pi/(4c)\}\le\tau\le1,\qquad V(g,\rho)=Z(\tau).
+\end{equation}
+Прямое дифференцирование даёт
+\begin{equation}\label{boundarygap:switch-derivatives}
+ F'=2\rho(H_0+H_1u(\tau))\cos b>0,\qquad
+ Z'=\frac{2\rho(H_0+H_1u(\tau))}{c}\sin b\ge0,
+\end{equation}
+где $u(\tau)=Y_\tau-a$. Верхний конец интервала для $\tau$
+поэтому даёт верхнюю оценку $V$ без численного интегрирования.
+
+\begin{proposition}[Единый бюджет скалярного ограждения]
+\label{boundarygap:budget}\label{joint:budget}
+Пусть $H_1>0$, $g>0$, $\vartheta>1$. Определим
+\[
+ T=\sqrt{H_1g/m},\quad
+ \mathsf a(t)=\frac{\sinh t}{t},\quad
+ \mathsf c(t)=\frac{\cosh t-1}{t^2},\qquad
+ \mathsf a(0)=1,\quad\mathsf c(0)=\tfrac12,
+\]
+\begin{equation}\label{compact:scalar-constants}
+\begin{aligned}
+ K_*&=H_0+H_1\mathcal C(g),\\
+ L_*&=m\{\mathsf a(T)+2\cosh T\}
+       +K_*\{\mathsf c(T)+2\mathsf a(T)\}.
+\end{aligned}
+\end{equation}
+На отрезке $I=[\rho_-,\rho_+]\subseteq[0,g/m]$ пусть
+$M=\max_I V(g,\rho)$ и известна граница $0<\ell\le M$.
+Можно всегда взять $\ell=g/2$; при $I=[0,g/m]$ можно взять $\ell=g$.
+Это нижняя граница огибающей $M$, а не ошибки конкретной точки.
+Для $\Delta=\rho_+-\rho_->0$ положим
+\begin{equation}\label{compact:interval-budget}
+ J=\max\left\{1,\left\lceil\frac{L_*\Delta}
+                       {(\vartheta-1)\ell}\right\rceil\right\},
+ \qquad n=\left\lceil\log_2\max\left\{1,
+       \frac{4\rho_+K_*}{(\vartheta-1)\ell}\right\}\right\rceil.
+\end{equation}
+В каждом положительном узле из $J+1$ равномерных узлов выполним $n$
+делений пополам в \eqref{boundarygap:switch} с точным знаком.
+Пусть $\widehat V_j$ есть $Z$ на верхнем сохранённом конце;
+для узла $\rho_j=0$ положим $\widehat V_j=g$.
+Тогда
+\begin{equation}\label{boundarygap:finite-enclosure}
+ \widehat M=\max_j\widehat V_j+\frac{L_*\Delta}{2J},
+ \qquad M\le\widehat M\le\vartheta M.
+\end{equation}
+Положительных узлов $N_+=J+1-\mathbf1_{\{\rho_-=0\}}$;
+нужно $N_+n$ сравнений знака и $J$ сравнений для максимума.
+При $\Delta=0$, $\rho_+>0$ достаточно одного узла с
+\begin{equation}\label{energy:scalar-budget}
+ n=\left\lceil\log_2\max\left\{1,
+       \frac{2\rho_+K_*}{(\vartheta-1)\ell}\right\}\right\rceil
+\end{equation}
+сравнениями знака, без сеточной поправки. Для $I=\{0\}$ ответ равен $g$.
+\end{proposition}
+
+\begin{proof}
+Оценка \eqref{compact:radial-upper} даёт $V\ge g/2$.
+При оптимальном переключении $0\le u\le\mathcal C(g)$.
+Если сначала фиксировать переключение, то чувствительность
+$w=\partial_\rho u$ решает
+\[
+ w''=\sigma_\tau(H_0+H_1u+\rho H_1w),\qquad
+ w(0)=0,\quad w'(0)=-m.
+\]
+Сравнение интегрального уравнения по модулю с положительным ядром даёт
+\[
+ |w(1)|\le m\mathsf a(c)+K_*\mathsf c(c),\qquad
+ |w'(1)|\le m\cosh c+K_*\mathsf a(c),\qquad c=\sqrt{H_1\rho}.
+\]
+После учёта условия постоянной конечной производной
+\begin{equation}\label{boundarygap:rho-derivative}
+ V_\rho=w(1)-(\tan b/c)w'(1).
+\end{equation}
+Поскольку $b\le\min\{c,\pi/4\}$, имеем $\tan b\le2c$,
+откуда $|V_\rho|\le L_*$.
+Непрерывность продолжает эту оценку на концы отрезка.
+В \eqref{boundarygap:switch-derivatives} имеем
+$0\le Z'\le2\rho K_*$, в том числе при пробных переключениях.
+Поэтому ошибка после $n$ делений не больше
+$2\rho_+K_*2^{-n}\le(\vartheta-1)\ell/2$.
+Любая точка $I$ удалена от узла не более чем на $\Delta/(2J)$;
+поправка не больше той же величины.
+Их сумма не превосходит $(\vartheta-1)M$.
+При одном узле весь допуск отводится ошибке корня.
+\end{proof}
+
+Это счёт сравнений в точной арифметике, не число интервальных
+операций и не битовая сложность. Строгая реализация должна
+ограждать значения элементарных функций и ошибки округления;
+например, можно строить оценку с $1<\vartheta_0<\vartheta$
+и оставить запас на эти ошибки. Новых запросов функции,
+градиента или LMO скалярная процедура не делает.
+При $H_1=0$ используются явные формулы, при $g=0$ возвращается нуль.
+Если интервальный знак не определён, нужна другая корректная
+процедура либо явный отказ в сертификате.
+При $g\downarrow0$ имеем $K_*\to H_0$ и
+$L_*\to3m+5H_0/2$, поэтому бюджеты для полного зазора и
+совместного сертификата остаются ограниченными при фиксированных
+константах и множителе.
+
+\paragraph{Двух крайних значений недостаточно.}
+\label{boundarygap:counterexample}
+При $m=H_0=H_1=1$, $g=6$ формула
+\eqref{gapregime:variation} даёт
+\begin{equation}\label{boundarygap:small-radius}
+ V(6,\rho)=6+\frac{181-31\sqrt{31}}{54}\rho+O(\rho^2)>6
+\end{equation}
+при малых положительных $\rho$.
+При этом в стационарном интеграле времени для $U=6$, $P=\sqrt6$
+пересечение равно $v_c=2\sqrt7-1$, а наибольшая скорость равна
+$3\sqrt3$. Значит,
+\[
+ \mathcal T(6;\sqrt6,0)
+ \ge\operatorname{arcosh}(2\sqrt7)
+       +\frac{7-2\sqrt7}{3\sqrt3}
+ >\frac{13}{6}+\frac3{10}>\sqrt6.
+\]
+Здесь $\operatorname{arcosh}(2\sqrt7)>\log9>13/6$
+следует из первых двух членов ряда для $\log3$;
+$\sqrt7<8/3$, $\sqrt3<7/4$ дают вторую строгую оценку.
+По строгому обращению $W(6)<6$.
+Следовательно, $\mathcal B(6)>\max\{6,W(6)\}$.

@@ -1,22 +1,22 @@
 # Проект по оптимизации
 
 Текущий исследовательский проект находится в [PART3](PART3/README.md).
-Актуальная статья — **Observable Certificates and Exact Termination in
-Backtracking Frank–Wolfe**, Yaroslav P. Lyakhov и Stepan A. Suvorov.
+Основная статья: **Sharp Error Bounds and Adaptive Stopping for Frank-Wolfe
+beyond Convexity**, Yaroslav P. Lyakhov и Stepan A. Suvorov.
 
-- [PDF для экспертного чтения](PART3/Submission/2026-11-01/paper.pdf).
-- [Исходники для arXiv](PART3/Submission/2026-11-01/arxiv_source_v2.zip).
-- [Инструкция и воспроизведение](PART3/Submission/2026-11-01/README_RU.txt).
+Редакция v17 от 12 ноября 2026:
 
-Большие генерируемые архивы, распакованные проверки, промежуточные сборки
-и служебные отчёты ассистента исключены из Git. Исходники, проверенные
-экспериментальные данные и снимки кода сохранены. Полный архив кода и данных
-можно создать из каталога `PART3/Submission/2026-11-01`:
+- [Русский PDF](PART3/Submission/2026-11-12-v17/paper_ru.pdf), 23 страницы.
+- [English PDF](PART3/Submission/2026-11-12-v17/paper.pdf), 23 pages.
+- [Краткий разбор](PART3/Submission/2026-11-12-v17/guide_professor.txt).
+- [Исходники, код и воспроизведение](PART3/Submission/2026-11-12-v17/README_RU.txt).
 
-```powershell
-python prepare_submission.py --build
-python prepare_submission.py --package --verify --tag local
-```
+Повторные доказательства объединены. Новый результат учитывает диаметр
+области и усиливает совместный сертификат по зазору и норме градиента.
+Полные центральные доказательства входят в текущую статью. Расширенные
+материалы v16 сохранены в отдельном архиве
+extended_sources_and_records_v16.zip, который предоставляется отдельно
+от этого репозитория.
 
 Ниже сохранено описание более ранней лабораторной работы.
 

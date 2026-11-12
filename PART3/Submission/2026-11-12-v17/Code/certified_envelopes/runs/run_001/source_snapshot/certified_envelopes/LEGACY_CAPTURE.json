@@ -1,0 +1,314 @@
+{
+  "snapshot_captured_at_utc": "2026-11-12T13:41:40.609794+00:00",
+  "source_directory": "/workspace/scratch/66527267c68e/continuation_v15/certified_envelopes",
+  "frozen_source_directory": "/workspace/scratch/50468750a620/continuation_v16/certified_envelopes/legacy_v15_frozen_source",
+  "late_snapshot_directory": "/workspace/scratch/50468750a620/continuation_v16/certified_envelopes/legacy_v15_snapshot_20261112T134140Z",
+  "files": [
+    {
+      "path": "FREEZE.json",
+      "sha256": "d68c445e8bc06418354a8f2d1c8db8fb4099cafa6d20ca461b971129968f1dba",
+      "bytes": 1226,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "PROVENANCE.json",
+      "sha256": "0f9b70c39fbd4e9e6a4f38998cb886d3dd1a114d940bf76c1937d8db61aa8d1b",
+      "bytes": 1914,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "README_RU.md",
+      "sha256": "bd0f0c93175950c17f25627323b7ad22111949c71fa92ea2c118299b94290957",
+      "bytes": 17316,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "__init__.py",
+      "sha256": "f94757cf56544aa95a651ca613c566b6f193860c15b37b6167448007bea4ffd8",
+      "bytes": 335,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "api.py",
+      "sha256": "55b3e6a1bc196a507d7627003db643a7be3deb4497f57b3626694a26fb929c08",
+      "bytes": 31819,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "parent_pre_execution_review.json",
+      "sha256": "959fb8edbc6e4099ef7fcd9cca5d6c3fe6c60eafa2ab624838095c2af2b6b0d4",
+      "bytes": 2087,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "protocol.json",
+      "sha256": "a01be9fac637796829173ad03b5f776fe4bbc05cbdcadfdd4599686c13257c20",
+      "bytes": 14515,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "reference_data.json",
+      "sha256": "444d5fd6004c59a04ce0b18e6cd00feb8fd763dbf9b9f47dd0a6da33493770d9",
+      "bytes": 2710,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "a699f46ed76bd216f1081b6b2330e4fb45d7c8c5a5354b208694d6590a5a8645",
+      "bytes": 14,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "run_protocol.py",
+      "sha256": "8b421d060106c7ed02cee54beabcf3aa7ebc12dde90c8eb69f1421d0a12f26fa",
+      "bytes": 16195,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_affine_gap.json",
+      "sha256": "7d3a9cfc531a07e69b413875f48a2036d7f4c4a3c027530f567d7ba98dc0ab98",
+      "bytes": 92678,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_affine_joint_norm_branch.json",
+      "sha256": "08fc28dbcc0c8831d78dc089d73ce65373ed4be2f747b0051ed6d70ad0d51cd0",
+      "bytes": 12799,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_affine_joint_restricted.json",
+      "sha256": "47186dd5a0d33126a23054f835a0167ad42c1e7635dd8c724130a21f3f9fe30d",
+      "bytes": 107258,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_affine_norm.json",
+      "sha256": "540d8bf25cb0200c4612666472a804356ccbef84f7435c0c26940d0a55a97199",
+      "bytes": 12719,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_constant_h1_gap.json",
+      "sha256": "9e3c75f1f5353063729b10af7470a5fdfde8571a6dd14fd6fdb67385e5aa1e80",
+      "bytes": 4014,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_constant_h1_joint.json",
+      "sha256": "ec20fa24cd3a64f5bb1a5334037a246e6c578e560c302207cad1093d6e1a24b4",
+      "bytes": 4116,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_constant_h1_norm.json",
+      "sha256": "d4b425d88590d2d80a46fa988a98fddf62bdf4e184f9e9f4e21b1a3e0c97cdc1",
+      "bytes": 4020,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_constant_h2_gap.json",
+      "sha256": "70e78752d21abd66d823c2d855ce087058c8800018f843a37a8fcd6f8bf81865",
+      "bytes": 4014,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_constant_h2_joint.json",
+      "sha256": "a9805e765e842beb748c810c90032c911b2196d773ac4f511affdecac964b408",
+      "bytes": 4122,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_constant_h2_norm.json",
+      "sha256": "7b9e8759d4446d6110f952694bbfa49603d5bed7a507631cb91f994412ef53ba",
+      "bytes": 4020,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_constant_h3_gap.json",
+      "sha256": "fd74e06012f1161df51cc426fe3385ef1c268984a43150ab41872c6b6ac609d0",
+      "bytes": 4020,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_constant_h3_joint.json",
+      "sha256": "18f4d12bf7e8df34c010dab2de6f39134bb9c3287f777e1bf491f86bdbf77a6d",
+      "bytes": 4118,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_constant_h3_norm.json",
+      "sha256": "17513171199b6c1271e87fc5aa67d81ee3119ea39d427784348216ac20a73380",
+      "bytes": 4019,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_constant_joint_norm_branch.json",
+      "sha256": "6ad8c5429ff9af951c7641405af0e213fe925875e7881b16087875b0c97f7845",
+      "bytes": 4052,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_refuse_grid_resource.json",
+      "sha256": "651d0aaa1cf77fadd4ed71e1438022d837c5408135d620f9d3a4803297fb55c4",
+      "bytes": 5543,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_refuse_root_resource.json",
+      "sha256": "aec9ef9f74b40b3b38599958218e9843eee88bfcfa83c76b21235fe5bbf2920a",
+      "bytes": 5503,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_refuse_rounding_slack.json",
+      "sha256": "188630769e73a59ee5207c6d1339bd96ae4e6dc92faf65b7a2834640b781860f",
+      "bytes": 8663,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_refuse_unresolved_sign.json",
+      "sha256": "74cea92e0267eb9454bd8011d3af7db88b9e6eb8c55cf585848e7f0f4e443333",
+      "bytes": 5544,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_reject_bool.json",
+      "sha256": "b2352f6e4c2583b8e02128a2fbde81a50f47424d047e5a4647cbad73cf8a06f5",
+      "bytes": 3791,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_reject_float.json",
+      "sha256": "b171d59134a28bb3808d51b83b16ca42a8f28be08a98446cd1946adb4c43aa56",
+      "bytes": 3832,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_reject_model.json",
+      "sha256": "5c3a3c0fc5a9251b27931f7c54b0ae10ee5872173d623bede8c2e5d3fe3de61e",
+      "bytes": 3510,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_reject_none.json",
+      "sha256": "0b1af2112cde62de90799eeebc12e19bc15d8e4eca1e25825f722e91fa61be2f",
+      "bytes": 3799,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_zero_gap.json",
+      "sha256": "2c5ac72fb63fa6d6783583b784e86370ee46e9dca6e93eba80def00946fe0c84",
+      "bytes": 3928,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_zero_joint_gap.json",
+      "sha256": "b44e229a28268bf4dbb8b62420eb8e7da0858f97869c15778a2d392063e2337e",
+      "bytes": 3902,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_zero_joint_norm.json",
+      "sha256": "a026ed94dc92b89ec81e2b42dbd76474d1aa56e1d9ba57c691afa6788f68a2b6",
+      "bytes": 3903,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/case_zero_norm.json",
+      "sha256": "fe6eb423721ce76db393976ccedc325e4b3122d76b2ec9ecbf2cba09930bc334",
+      "bytes": 3865,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/partial_result.json",
+      "sha256": "204715c8db90945ce9a4dde722729613c0b5dfe1e39e369a4ba1849d1c6b3f0a",
+      "bytes": 6249,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/preflight.json",
+      "sha256": "f2a3b89c987041edf38f8b6ef02b00a5b1c1a6ef76bd1857699dd7e60a2f6951",
+      "bytes": 17603,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/result.json",
+      "sha256": "90ee1867ae1b1a871e0a631bb6657bb2e761f0d764a0f92350dcf1b74cbfcee0",
+      "bytes": 7377,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/source_snapshot/FREEZE.json",
+      "sha256": "d68c445e8bc06418354a8f2d1c8db8fb4099cafa6d20ca461b971129968f1dba",
+      "bytes": 1226,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/source_snapshot/PROVENANCE.json",
+      "sha256": "0f9b70c39fbd4e9e6a4f38998cb886d3dd1a114d940bf76c1937d8db61aa8d1b",
+      "bytes": 1914,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/source_snapshot/README_RU.md",
+      "sha256": "bd0f0c93175950c17f25627323b7ad22111949c71fa92ea2c118299b94290957",
+      "bytes": 17316,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/source_snapshot/__init__.py",
+      "sha256": "f94757cf56544aa95a651ca613c566b6f193860c15b37b6167448007bea4ffd8",
+      "bytes": 335,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/source_snapshot/api.py",
+      "sha256": "55b3e6a1bc196a507d7627003db643a7be3deb4497f57b3626694a26fb929c08",
+      "bytes": 31819,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/source_snapshot/protocol.json",
+      "sha256": "a01be9fac637796829173ad03b5f776fe4bbc05cbdcadfdd4599686c13257c20",
+      "bytes": 14515,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/source_snapshot/reference_data.json",
+      "sha256": "444d5fd6004c59a04ce0b18e6cd00feb8fd763dbf9b9f47dd0a6da33493770d9",
+      "bytes": 2710,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/source_snapshot/requirements.txt",
+      "sha256": "a699f46ed76bd216f1081b6b2330e4fb45d7c8c5a5354b208694d6590a5a8645",
+      "bytes": 14,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/source_snapshot/run_protocol.py",
+      "sha256": "8b421d060106c7ed02cee54beabcf3aa7ebc12dde90c8eb69f1421d0a12f26fa",
+      "bytes": 16195,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "runs/run_001/source_snapshot/static_review.json",
+      "sha256": "936ed41bcd0c9eb81aff26734616eae779da79c20a1f19a257ea6deac90c51c0",
+      "bytes": 709,
+      "source_unchanged_after_copy": true
+    },
+    {
+      "path": "static_review.json",
+      "sha256": "936ed41bcd0c9eb81aff26734616eae779da79c20a1f19a257ea6deac90c51c0",
+      "bytes": 709,
+      "source_unchanged_after_copy": true
+    }
+  ],
+  "excluded": [
+    "__pycache__ directories and .pyc interpreter caches"
+  ],
+  "scientific_execution_performed": false,
+  "dated_update": "Earlier read-only review correctly observed pending first execution. At this capture the live old tree contained parent_pre_execution_review.json and runs/run_001. The immutable snapshot preserves these later files; they are history, not v16 executions.",
+  "subsequent_reads": "Implementation derives from _legacy_core.py and immutable captured records only. No imports from the live legacy directory."
+}

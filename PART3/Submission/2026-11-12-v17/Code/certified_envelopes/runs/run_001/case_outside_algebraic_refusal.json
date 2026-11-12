@@ -1,0 +1,175 @@
+{
+  "id": "outside_algebraic_refusal",
+  "function": "algebraic_joint_bound",
+  "fixed_case": {
+    "id": "outside_algebraic_refusal",
+    "function": "algebraic_joint_bound",
+    "args": {
+      "g": "6",
+      "P": "3"
+    },
+    "expected": {
+      "status": "refused",
+      "reason": "outside_algebraic_regime",
+      "regime": "positive",
+      "no_switch": true
+    }
+  },
+  "output": {
+    "status": "refused",
+    "source_error_upper": null,
+    "bound_type": "joint_algebraic",
+    "reason": "outside_algebraic_regime",
+    "message": "The algebraic shortcut requires a certified nonpositive S(h).",
+    "inputs": {
+      "m": "1",
+      "H0": "1",
+      "H1": "1",
+      "P": "3",
+      "g": "6"
+    },
+    "precision": {
+      "work_dps": 100,
+      "value_dps": 100
+    },
+    "plan": {
+      "regime": {
+        "working_gap": "6",
+        "tau_interval": [
+          "6660563942158652067940904774240299403157851746774350988264126570903811403585434022558392689183592071/8749002899132047697490008908470485461412677723572849745703082425639811996797503692894052708092215296",
+          "53284511537269216543527238193922395225262813974194807906113012567230491228683472180467141513468736569/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368"
+        ],
+        "S_interval": [
+          "21773493815791961477479421707222853399864069225451312011358465676403815837847355774295367711313827899/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736",
+          "21773493815791961477479421707222853399864069225451312011358465676403815837847355774295367711313827919/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736"
+        ],
+        "decision": "positive"
+      }
+    },
+    "work": {
+      "bound_evaluations": 0,
+      "node_coefficient_preparations": 0,
+      "switch_evaluations": 0,
+      "loss_evaluations": 0,
+      "scalar_evaluations_started": 1,
+      "bracket_sign_queries": 0,
+      "bracket_sign_decisions": 0,
+      "root_sign_queries": 0,
+      "root_sign_decisions": 0,
+      "bisection_updates": 0,
+      "sign_order_predicates": 0,
+      "sign_equality_predicates": 0,
+      "certificate_maximum_comparisons": 0,
+      "witness_maximum_comparisons": 0,
+      "rounding_maximum_comparisons": 0,
+      "derived_lower_maximum_comparisons": 0,
+      "budget_setup_maximum_comparisons": 0,
+      "budget_order_comparisons": 0,
+      "resource_metadata_maximum_comparisons": 19,
+      "budget_ceiling_operations": 0,
+      "rational_to_interval_conversions": 4,
+      "interval_endpoint_extractions": 4,
+      "resource_limit_checks": 16,
+      "validation_checks": 27,
+      "exact_formula_evaluations": 0,
+      "source_objective_calls": 0,
+      "source_gradient_calls": 0,
+      "full_LMO_calls": 0,
+      "LP_calls": 0,
+      "optimizer_updates": 0,
+      "stochastic_samples": 0,
+      "regime_evaluations": 1,
+      "regime_sign_queries": 1,
+      "regime_nonpositive_decisions": 0,
+      "regime_positive_decisions": 1,
+      "regime_unresolved_queries": 0,
+      "regime_order_predicates": 2,
+      "working_gap_minimum_comparisons": 1,
+      "algebraic_bound_evaluations": 0
+    },
+    "elementary_evaluations": {
+      "exp": 0,
+      "sin": 0,
+      "cos": 0,
+      "sqrt": 1
+    },
+    "refusal_details": {
+      "S_interval": [
+        "21773493815791961477479421707222853399864069225451312011358465676403815837847355774295367711313827899/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736",
+        "21773493815791961477479421707222853399864069225451312011358465676403815837847355774295367711313827919/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736"
+      ],
+      "working_gap": "6"
+    },
+    "bound_semantics": "Only a source-error upper bound under the model assumptions and input caps; no lower error bound or requested relative-envelope factor.",
+    "cost_semantics": "Named started evaluations and comparisons; not all arithmetic operations or bit cost."
+  },
+  "checks": [
+    {
+      "check": "expected_status",
+      "passed": true
+    },
+    {
+      "check": "global_precision_unchanged",
+      "passed": true
+    },
+    {
+      "check": "no_source_or_optimizer_operations",
+      "passed": true
+    },
+    {
+      "check": "scalar_counter_partition",
+      "passed": true
+    },
+    {
+      "check": "root_updates_no_more_than_queries",
+      "passed": true
+    },
+    {
+      "check": "all_costs_nonnegative_integers",
+      "passed": true
+    },
+    {
+      "check": "expected_refusal_reason",
+      "passed": true
+    },
+    {
+      "check": "expected_regime_decision",
+      "passed": true
+    },
+    {
+      "check": "one_regime_evaluation",
+      "passed": true
+    },
+    {
+      "check": "one_regime_query",
+      "passed": true
+    },
+    {
+      "check": "certified_positive_endpoint",
+      "passed": true
+    },
+    {
+      "check": "no_switch_or_loss_evaluations",
+      "passed": true
+    },
+    {
+      "check": "no_relative_envelope_contract",
+      "passed": true
+    },
+    {
+      "check": "refusal_has_no_bound",
+      "passed": true
+    }
+  ],
+  "status": "PASS",
+  "elapsed_seconds": 0.0006480279989773408,
+  "cpu_seconds": 0.0005961670000000086,
+  "global_precision_before": [
+    15,
+    15
+  ],
+  "global_precision_after": [
+    15,
+    15
+  ]
+}

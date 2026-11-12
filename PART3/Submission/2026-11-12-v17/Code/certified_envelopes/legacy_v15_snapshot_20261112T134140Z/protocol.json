@@ -1,0 +1,600 @@
+{
+  "id": "certified_envelopes_v15_001",
+  "status_before_execution": "frozen_before_first_execution",
+  "scope": "Fixed implementation validation of the previously proved E/B/J scalar envelopes. No optimizer, LP, stochastic run or new scan. The original 1092-check scalar protocol is a separate immutable reference.",
+  "prepared_at_utc": "2026-11-12T13:34:17.961305+00:00",
+  "dependency_versions": {
+    "mpmath": "1.3.0"
+  },
+  "default_model": {
+    "m": "1",
+    "H0": "1",
+    "H1": "1"
+  },
+  "default_factor": "2",
+  "default_precision": {
+    "work_dps": 100,
+    "value_dps": 100
+  },
+  "default_limits": {
+    "max_input_bits": 4096,
+    "max_precision_digits": 1000,
+    "max_scaled_radius_square": "10000",
+    "max_positive_nodes": 10000,
+    "max_bisection_steps": 200000,
+    "max_scalar_evaluations": 500000,
+    "max_elementary_evaluations": 3000000,
+    "max_endpoint_bits": 20000
+  },
+  "internal_factor_policy": "Exactly (1+requested_factor)/2; no automatic retry or retuning.",
+  "expected_case_count": 26,
+  "failure_policy": "Keep the first source snapshot, every returned API certificate/refusal, partial costs and every validation failure. A mismatch with the fixed expected status/reason makes the overall run FAIL. Continue the remaining predeclared cases once without changing any case. Any correction requires a separately frozen protocol revision and a new run directory. Never overwrite a run.",
+  "precision_refusal_policy": "The low-work-precision failure is a single-node norm calculation, so a huge-grid resource refusal cannot preempt the prescribed sign-refusal check. A separate fixed high-work/low-value-precision norm case tests insufficient rounding slack.",
+  "reference_policy": "Read only the extracted exact interval strings/rationals in reference_data.json. Never use old float midpoint_display_only fields as certified bounds.",
+  "source_oracle_budget": {
+    "objective": 0,
+    "gradient": 0,
+    "LMO": 0,
+    "LP": 0,
+    "optimizer_updates": 0,
+    "stochastic_samples": 0
+  },
+  "cases": [
+    {
+      "id": "zero_norm",
+      "case_type": "exact_zero",
+      "envelope": "E",
+      "arguments": [
+        0
+      ],
+      "expected": {
+        "status": "certified",
+        "branch": "zero",
+        "exact_envelope": "0"
+      }
+    },
+    {
+      "id": "zero_gap",
+      "case_type": "exact_zero",
+      "envelope": "B",
+      "arguments": [
+        {
+          "fraction": [
+            0,
+            1
+          ]
+        }
+      ],
+      "expected": {
+        "status": "certified",
+        "branch": "zero",
+        "exact_envelope": "0"
+      }
+    },
+    {
+      "id": "zero_joint_gap",
+      "case_type": "exact_zero",
+      "envelope": "J",
+      "arguments": [
+        "1",
+        0
+      ],
+      "expected": {
+        "status": "certified",
+        "branch": "zero",
+        "exact_envelope": "0"
+      }
+    },
+    {
+      "id": "zero_joint_norm",
+      "case_type": "exact_zero",
+      "envelope": "J",
+      "arguments": [
+        0,
+        "1"
+      ],
+      "expected": {
+        "status": "certified",
+        "branch": "zero",
+        "exact_envelope": "0"
+      }
+    },
+    {
+      "id": "constant_h1_norm",
+      "case_type": "exact_constant",
+      "envelope": "E",
+      "arguments": [
+        1
+      ],
+      "expected": {
+        "status": "certified",
+        "branch": "constant_curvature",
+        "exact_envelope": "1/2"
+      },
+      "model": {
+        "H0": "1",
+        "H1": "0"
+      }
+    },
+    {
+      "id": "constant_h1_gap",
+      "case_type": "exact_constant",
+      "envelope": "B",
+      "arguments": [
+        "1"
+      ],
+      "expected": {
+        "status": "certified",
+        "branch": "constant_curvature",
+        "exact_envelope": "1"
+      },
+      "model": {
+        "H0": "1",
+        "H1": "0"
+      }
+    },
+    {
+      "id": "constant_h1_joint",
+      "case_type": "exact_constant",
+      "envelope": "J",
+      "arguments": [
+        "1",
+        {
+          "fraction": [
+            1,
+            2
+          ]
+        }
+      ],
+      "expected": {
+        "status": "certified",
+        "branch": "constant_curvature",
+        "exact_envelope": "3/8"
+      },
+      "model": {
+        "H0": "1",
+        "H1": "0"
+      }
+    },
+    {
+      "id": "constant_h2_norm",
+      "case_type": "exact_constant",
+      "envelope": "E",
+      "arguments": [
+        1
+      ],
+      "expected": {
+        "status": "certified",
+        "branch": "constant_curvature",
+        "exact_envelope": "7/8"
+      },
+      "model": {
+        "H0": "2",
+        "H1": "0"
+      }
+    },
+    {
+      "id": "constant_h2_gap",
+      "case_type": "exact_constant",
+      "envelope": "B",
+      "arguments": [
+        "1"
+      ],
+      "expected": {
+        "status": "certified",
+        "branch": "constant_curvature",
+        "exact_envelope": "1"
+      },
+      "model": {
+        "H0": "2",
+        "H1": "0"
+      }
+    },
+    {
+      "id": "constant_h2_joint",
+      "case_type": "exact_constant",
+      "envelope": "J",
+      "arguments": [
+        "1",
+        {
+          "fraction": [
+            1,
+            2
+          ]
+        }
+      ],
+      "expected": {
+        "status": "certified",
+        "branch": "constant_curvature",
+        "exact_envelope": "15/32"
+      },
+      "model": {
+        "H0": "2",
+        "H1": "0"
+      }
+    },
+    {
+      "id": "constant_h3_norm",
+      "case_type": "exact_constant",
+      "envelope": "E",
+      "arguments": [
+        1
+      ],
+      "expected": {
+        "status": "certified",
+        "branch": "constant_curvature",
+        "exact_envelope": "7/6"
+      },
+      "model": {
+        "H0": "3",
+        "H1": "0"
+      }
+    },
+    {
+      "id": "constant_h3_gap",
+      "case_type": "exact_constant",
+      "envelope": "B",
+      "arguments": [
+        "1"
+      ],
+      "expected": {
+        "status": "certified",
+        "branch": "constant_curvature",
+        "exact_envelope": "7/6"
+      },
+      "model": {
+        "H0": "3",
+        "H1": "0"
+      }
+    },
+    {
+      "id": "constant_h3_joint",
+      "case_type": "exact_constant",
+      "envelope": "J",
+      "arguments": [
+        "1",
+        {
+          "fraction": [
+            1,
+            2
+          ]
+        }
+      ],
+      "expected": {
+        "status": "certified",
+        "branch": "constant_curvature",
+        "exact_envelope": "7/12"
+      },
+      "model": {
+        "H0": "3",
+        "H1": "0"
+      }
+    },
+    {
+      "id": "constant_joint_norm_branch",
+      "case_type": "exact_constant",
+      "envelope": "J",
+      "arguments": [
+        "1",
+        "2"
+      ],
+      "expected": {
+        "status": "certified",
+        "branch": "constant_curvature",
+        "exact_envelope": "1/2"
+      },
+      "model": {
+        "H1": "0"
+      }
+    },
+    {
+      "id": "affine_norm",
+      "case_type": "affine",
+      "envelope": "E",
+      "arguments": [
+        "1"
+      ],
+      "expected": {
+        "status": "certified",
+        "branch": "affine_norm",
+        "reference_norm_point": "unit_gap_rho1",
+        "plan": {
+          "positive_nodes": 1,
+          "bisections_per_node": 5,
+          "planned_bisections": 5
+        },
+        "work": {
+          "bound_evaluations": 1,
+          "switch_evaluations": 7,
+          "loss_evaluations": 2,
+          "root_sign_queries": 5,
+          "root_sign_decisions": 5,
+          "bisection_updates": 5,
+          "bracket_sign_queries": 2,
+          "certificate_maximum_comparisons": 0,
+          "witness_maximum_comparisons": 0,
+          "rounding_maximum_comparisons": 0,
+          "derived_lower_maximum_comparisons": 2,
+          "scalar_evaluations_started": 10
+        }
+      }
+    },
+    {
+      "id": "affine_gap",
+      "case_type": "affine",
+      "envelope": "B",
+      "arguments": [
+        "1"
+      ],
+      "expected": {
+        "status": "certified",
+        "branch": "affine_gap",
+        "reference_gap_grid": "1",
+        "plan": {
+          "positive_nodes": 25,
+          "grid_intervals": 25,
+          "bisections_per_node": 5,
+          "planned_bisections": 125
+        },
+        "work": {
+          "bound_evaluations": 1,
+          "switch_evaluations": 175,
+          "loss_evaluations": 50,
+          "root_sign_queries": 125,
+          "root_sign_decisions": 125,
+          "bisection_updates": 125,
+          "bracket_sign_queries": 50,
+          "certificate_maximum_comparisons": 25,
+          "witness_maximum_comparisons": 25,
+          "rounding_maximum_comparisons": 25,
+          "derived_lower_maximum_comparisons": 2,
+          "scalar_evaluations_started": 226
+        }
+      }
+    },
+    {
+      "id": "affine_joint_restricted",
+      "case_type": "affine",
+      "envelope": "J",
+      "arguments": [
+        "1",
+        "1/4"
+      ],
+      "expected": {
+        "status": "certified",
+        "branch": "affine_joint_restricted",
+        "reference_joint_points": [
+          "small_gap_rho1_16",
+          "small_gap_rho1_8",
+          "small_gap_rho1_4"
+        ],
+        "reference_outer_cap": "1/4",
+        "plan": {
+          "positive_nodes": 29,
+          "grid_intervals": 28,
+          "bisections_per_node": 5,
+          "planned_bisections": 145
+        },
+        "work": {
+          "bound_evaluations": 1,
+          "switch_evaluations": 203,
+          "loss_evaluations": 58,
+          "root_sign_queries": 145,
+          "root_sign_decisions": 145,
+          "bisection_updates": 145,
+          "bracket_sign_queries": 58,
+          "certificate_maximum_comparisons": 28,
+          "witness_maximum_comparisons": 29,
+          "rounding_maximum_comparisons": 29,
+          "derived_lower_maximum_comparisons": 2,
+          "scalar_evaluations_started": 262
+        }
+      }
+    },
+    {
+      "id": "affine_joint_norm_branch",
+      "case_type": "affine",
+      "envelope": "J",
+      "arguments": [
+        "1",
+        "2"
+      ],
+      "expected": {
+        "status": "certified",
+        "branch": "affine_joint_norm_branch",
+        "reference_norm_point": "unit_gap_rho1",
+        "plan": {
+          "positive_nodes": 1,
+          "bisections_per_node": 5,
+          "planned_bisections": 5
+        },
+        "work": {
+          "bound_evaluations": 1,
+          "switch_evaluations": 7,
+          "loss_evaluations": 2,
+          "root_sign_queries": 5,
+          "root_sign_decisions": 5,
+          "bisection_updates": 5,
+          "bracket_sign_queries": 2,
+          "certificate_maximum_comparisons": 0,
+          "witness_maximum_comparisons": 0,
+          "rounding_maximum_comparisons": 0,
+          "derived_lower_maximum_comparisons": 2,
+          "scalar_evaluations_started": 10
+        }
+      }
+    },
+    {
+      "id": "refuse_grid_resource",
+      "case_type": "forced_resource_refusal",
+      "envelope": "B",
+      "arguments": [
+        "1"
+      ],
+      "expected": {
+        "status": "refused",
+        "reason": "resource_cap",
+        "details": {
+          "resource": "positive_nodes"
+        },
+        "plan": {
+          "positive_nodes": 25,
+          "bisections_per_node": 5
+        },
+        "work": {
+          "bound_evaluations": 1,
+          "switch_evaluations": 0,
+          "loss_evaluations": 0
+        }
+      },
+      "limits": {
+        "max_positive_nodes": 2
+      }
+    },
+    {
+      "id": "refuse_root_resource",
+      "case_type": "forced_resource_refusal",
+      "envelope": "E",
+      "arguments": [
+        "1"
+      ],
+      "expected": {
+        "status": "refused",
+        "reason": "resource_cap",
+        "details": {
+          "resource": "bisection_steps"
+        },
+        "plan": {
+          "positive_nodes": 1,
+          "bisections_per_node": 5
+        },
+        "work": {
+          "bound_evaluations": 1,
+          "switch_evaluations": 0,
+          "loss_evaluations": 0
+        }
+      },
+      "limits": {
+        "max_bisection_steps": 0
+      }
+    },
+    {
+      "id": "refuse_unresolved_sign",
+      "case_type": "forced_precision_refusal",
+      "envelope": "E",
+      "arguments": [
+        "1"
+      ],
+      "expected": {
+        "status": "refused",
+        "reason": "unresolved_interval_sign",
+        "details": {
+          "stage": "root",
+          "node": 0
+        },
+        "plan": {
+          "positive_nodes": 1,
+          "bisections_per_node": 45
+        }
+      },
+      "factor": "1099511627777/1099511627776",
+      "precision": {
+        "work_dps": 6,
+        "value_dps": 6
+      }
+    },
+    {
+      "id": "refuse_rounding_slack",
+      "case_type": "forced_precision_refusal",
+      "envelope": "E",
+      "arguments": [
+        "1"
+      ],
+      "expected": {
+        "status": "refused",
+        "reason": "insufficient_rounding_slack",
+        "plan": {
+          "positive_nodes": 1,
+          "bisections_per_node": 45
+        },
+        "work": {
+          "bound_evaluations": 1,
+          "root_sign_queries": 45,
+          "root_sign_decisions": 45,
+          "bisection_updates": 45,
+          "loss_evaluations": 2
+        }
+      },
+      "factor": "1099511627777/1099511627776",
+      "precision": {
+        "work_dps": 100,
+        "value_dps": 6
+      }
+    },
+    {
+      "id": "reject_float",
+      "case_type": "input_validation",
+      "envelope": "E",
+      "arguments": [
+        {
+          "rejected_float": "0.5"
+        }
+      ],
+      "expected": {
+        "status": "refused",
+        "reason": "invalid_input",
+        "details": {
+          "parameter": "P",
+          "received_type": "float"
+        }
+      }
+    },
+    {
+      "id": "reject_bool",
+      "case_type": "input_validation",
+      "envelope": "B",
+      "arguments": [
+        true
+      ],
+      "expected": {
+        "status": "refused",
+        "reason": "invalid_input",
+        "details": {
+          "parameter": "g",
+          "received_type": "bool"
+        }
+      }
+    },
+    {
+      "id": "reject_none",
+      "case_type": "input_validation",
+      "envelope": "E",
+      "arguments": [
+        null
+      ],
+      "expected": {
+        "status": "refused",
+        "reason": "invalid_input",
+        "details": {
+          "parameter": "P",
+          "received_type": "NoneType"
+        }
+      }
+    },
+    {
+      "id": "reject_model",
+      "case_type": "input_validation",
+      "envelope": "E",
+      "arguments": [
+        "1"
+      ],
+      "expected": {
+        "status": "refused",
+        "reason": "invalid_input"
+      },
+      "model": {
+        "m": "0"
+      }
+    }
+  ]
+}

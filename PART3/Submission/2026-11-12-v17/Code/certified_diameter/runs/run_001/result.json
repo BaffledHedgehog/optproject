@@ -1,0 +1,188 @@
+{
+  "status": "PASS",
+  "protocol_id": "certified_diameter_v17_first_fixed_panel",
+  "started_utc": "2026-11-12T15:18:26.965388+00:00",
+  "completed_utc": "2026-11-12T15:18:27.004595+00:00",
+  "scope": "Fixed deterministic implementation controls for the proved diameter envelopes and explicit refusals. They are not new proofs or optimization experiments.",
+  "api_calls": 10,
+  "new_protocol_run_index": 1,
+  "v16_api_calls_repeated": 0,
+  "automatic_retries": 0,
+  "cases": [
+    {
+      "id": "constant_exact_pair_diameter_improvement",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 18,
+      "failed_checks": [],
+      "result_sha256": "54e60e47cf6387c70b389d3dc0140d9213b4d894c92223f4a738d2117ae95e1e"
+    },
+    {
+      "id": "affine_diameter_active_collapsed",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 20,
+      "failed_checks": [],
+      "result_sha256": "ac7f3bfbb30d9f38ee324c8b260e0967e1b1214abc084c7edd955601ce6da614"
+    },
+    {
+      "id": "exact_regime_equality_with_clipped_radius",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 25,
+      "failed_checks": [],
+      "result_sha256": "43d6c0a3ff35f70520720ece1e45c23941af8b1ce503ea3d26ef40ce6055c3d8"
+    },
+    {
+      "id": "outside_regime_shortened_grid",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 24,
+      "failed_checks": [],
+      "result_sha256": "7aff30e04576ca53a4a6b3cfcede002ac4367bd9598829fc309d30a4d945dc66"
+    },
+    {
+      "id": "large_diameter_inactive",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 25,
+      "failed_checks": [],
+      "result_sha256": "22e1049ac11b9ef611a340054a6d6fde2ca3397ad64786e3943df9defe45369b"
+    },
+    {
+      "id": "constant_norm_only_affine_formula",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 19,
+      "failed_checks": [],
+      "result_sha256": "92696825f63ebde3e6831045f9350718343f0ff0d4756601320b4889af1972c7"
+    },
+    {
+      "id": "reject_zero_diameter",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 12,
+      "failed_checks": [],
+      "result_sha256": "0b0f6d0b70b1c0fa5d2f26ba7f65be3a2d9d4ec0beb591f99a9e21a815d37281"
+    },
+    {
+      "id": "zero_norm_cap",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 15,
+      "failed_checks": [],
+      "result_sha256": "af56b6ea62297350253f785f7521019b90f210473789aec8de3299a43207c80f"
+    },
+    {
+      "id": "collapsed_node_resource_refusal",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 13,
+      "failed_checks": [],
+      "result_sha256": "d0fd1ab05737de424c345c4fdc5f8adc19a7a5e4297887f9c4f4d10391e4cfce"
+    },
+    {
+      "id": "reject_inexact_float_diameter",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 12,
+      "failed_checks": [],
+      "result_sha256": "665bcbc0382c3d114bd0c6e9a72acb22d165a046b674ce878e289882dc2dc232"
+    }
+  ],
+  "interface_checks": [
+    {
+      "check": "joint_g_P_D_are_keyword_only",
+      "passed": true
+    }
+  ],
+  "validation_checks": 184,
+  "work": {
+    "bound_evaluations": 5,
+    "node_coefficient_preparations": 11,
+    "switch_evaluations": 83,
+    "loss_evaluations": 22,
+    "scalar_evaluations_started": 113,
+    "bracket_sign_queries": 22,
+    "bracket_sign_decisions": 22,
+    "root_sign_queries": 61,
+    "root_sign_decisions": 61,
+    "bisection_updates": 61,
+    "sign_order_predicates": 129,
+    "sign_equality_predicates": 0,
+    "certificate_maximum_comparisons": 7,
+    "witness_maximum_comparisons": 8,
+    "rounding_maximum_comparisons": 8,
+    "derived_lower_maximum_comparisons": 8,
+    "budget_setup_maximum_comparisons": 1,
+    "budget_order_comparisons": 10,
+    "resource_metadata_maximum_comparisons": 804,
+    "budget_ceiling_operations": 1,
+    "rational_to_interval_conversions": 193,
+    "interval_endpoint_extractions": 242,
+    "resource_limit_checks": 988,
+    "validation_checks": 344,
+    "exact_formula_evaluations": 3,
+    "source_objective_calls": 0,
+    "source_gradient_calls": 0,
+    "full_LMO_calls": 0,
+    "LP_calls": 0,
+    "optimizer_updates": 0,
+    "stochastic_samples": 0,
+    "regime_evaluations": 3,
+    "regime_sign_queries": 3,
+    "regime_nonpositive_decisions": 2,
+    "regime_positive_decisions": 1,
+    "regime_unresolved_queries": 0,
+    "regime_order_predicates": 4,
+    "working_gap_minimum_comparisons": 0,
+    "algebraic_bound_evaluations": 0,
+    "diameter_cap_minimum_comparisons": 14,
+    "diameter_radius_minimum_comparisons": 7,
+    "diameter_collapse_comparisons": 5,
+    "diameter_exact_endpoint_comparisons": 2
+  },
+  "elementary_evaluations": {
+    "exp": 220,
+    "sin": 105,
+    "cos": 105,
+    "sqrt": 19
+  },
+  "elapsed_seconds": 0.039212345000123605,
+  "cpu_seconds": 0.039140544,
+  "source_hashes": {
+    "DEPENDENCY_CAPTURE.json": "e5bbb6a28ff314e8bae64f9b3e24e4b6c16a11601168cded2f78b0fcc8ccbd8c",
+    "DERIVATION.txt": "676b8839ca1a543e8093293a39d6b787a7be62c2b2e432cfd5f1986b6416c099",
+    "PROVENANCE.json": "577d8197a6a6c2c903be1652e0a0a092605cc9aaec2faee626b8fec520c7828a",
+    "README_RU.txt": "319422ff94dac9d80bf10a6018324a2c006db1c18042304f283c31b40bd3f209",
+    "__init__.py": "5c3c038c942c6a368ce98166c5b450f72c4d0b0e6ec4547cfb425658e4f5d7f2",
+    "_legacy_core.py": "55b3e6a1bc196a507d7627003db643a7be3deb4497f57b3626694a26fb929c08",
+    "_v16_api.py": "00bc84cf21a5b4ee39358c5439d26465333220a477b532edeca8ec14729c7ece",
+    "api.py": "9720c39164e39efe842ec850d7ccb0f87c3e011ee07d75a933bfb50a3e5b0cfd",
+    "proof_references/article_boundary_gap_appendix.tex": "d6c3ce0b50d3bdae4bb06589da0106757eee9285d176158b07fcd747b09ffa6d",
+    "proof_references/article_gap_regime.tex": "3404f90393152fdc5661c86c8853fde1f4089f98ca21568794f85348a3402a72",
+    "proof_references/article_gap_regime_appendix.tex": "5e5f3f20145279805a3453b2e32509deac577efaab6596aa3ba6b781001b3a59",
+    "proof_references/article_joint_diameter.tex": "29dbde366f203bd3a736326aae4a9ae6cf03c43210c6f9554718166194245f3d",
+    "proof_references/article_joint_diameter_appendix.tex": "26c3560ffd5cc4a15930fc432f662d78e0b55c423777f52824fa48c650cc53cd",
+    "proof_references/article_joint_envelope.tex": "863125a093800d9738e3429531fa4d127d73369b5d52dbc4a70143712eca774d",
+    "proof_references/article_joint_envelope_appendix.tex": "da0ee9f223f0ade6563053e070d6d178fcb1d9543052d263eb2bcf70dcf509fa",
+    "protocol.json": "ba866f45d396cff907d2e8d4b88b1aa17dfe05d867c361b9aaf8061d3da608c2",
+    "reference_data.json": "540394fa6b68d79f7682e1c323d5db8f791224f9fedcb73a4932e67b56a5c270",
+    "requirements.txt": "a699f46ed76bd216f1081b6b2330e4fb45d7c8c5a5354b208694d6590a5a8645",
+    "run_protocol.py": "45cee3812814b4f033cf91405af82906a697f5a7f4a8a1b202ecc71d59abb14a",
+    "static_self_review.json": "01792aa1bb9e2387ff579bc48c4f638f78d34e74271ced29ca88b0ba67a7c9f8"
+  },
+  "sources_unchanged": true,
+  "freeze_sha256": "55f9824ee37c2b16e79918ff5a8849210589671c39055500bf2197a3fb3eb9c8",
+  "review_sha256": "748d298f5978df5488e287232943ce5c2d032a7f6097d14e6af3f35ece1c7865",
+  "freeze_and_review_unchanged": true,
+  "mpmath_version": "1.3.0",
+  "api_version": "0.1.0",
+  "imported_modules": {
+    "api": "/workspace/scratch/50468750a620/continuation_v17/certified_diameter/runs/run_001/source_snapshot/certified_diameter/api.py",
+    "_v16_api": "/workspace/scratch/50468750a620/continuation_v17/certified_diameter/runs/run_001/source_snapshot/certified_diameter/_v16_api.py",
+    "_legacy_core": "/workspace/scratch/50468750a620/continuation_v17/certified_diameter/runs/run_001/source_snapshot/certified_diameter/_legacy_core.py"
+  },
+  "cost_semantics": "Count named scalar starts, elementary evaluations, sign queries, root updates and explicit selections. Runner assertions and time are separate; no all-operation or bit-complexity claim. Source objective, gradient, LMO, LP, optimizer and stochastic counts must be zero.",
+  "limits_of_evidence": "Fixed implementation controls supplement the mathematical proofs. They are not optimizer benchmarks, fixed-domain sharpness proofs, or a total bit-complexity analysis."
+}

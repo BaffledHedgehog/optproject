@@ -1,0 +1,146 @@
+{
+  "id": "zero_algebraic_norm",
+  "function": "algebraic_joint_bound",
+  "fixed_case": {
+    "id": "zero_algebraic_norm",
+    "function": "algebraic_joint_bound",
+    "args": {
+      "g": "1",
+      "P": "0"
+    },
+    "expected": {
+      "status": "certified",
+      "branch": "algebraic_zero",
+      "exact_upper": "0",
+      "no_switch": true
+    }
+  },
+  "output": {
+    "status": "certified",
+    "source_error_upper": "0",
+    "bound_type": "joint_algebraic",
+    "reason": null,
+    "message": null,
+    "inputs": {
+      "m": "1",
+      "H0": "1",
+      "H1": "1",
+      "P": "0",
+      "g": "1"
+    },
+    "precision": {
+      "work_dps": 100,
+      "value_dps": 100
+    },
+    "plan": {
+      "branch": "algebraic_zero"
+    },
+    "work": {
+      "bound_evaluations": 0,
+      "node_coefficient_preparations": 0,
+      "switch_evaluations": 0,
+      "loss_evaluations": 0,
+      "scalar_evaluations_started": 0,
+      "bracket_sign_queries": 0,
+      "bracket_sign_decisions": 0,
+      "root_sign_queries": 0,
+      "root_sign_decisions": 0,
+      "bisection_updates": 0,
+      "sign_order_predicates": 0,
+      "sign_equality_predicates": 0,
+      "certificate_maximum_comparisons": 0,
+      "witness_maximum_comparisons": 0,
+      "rounding_maximum_comparisons": 0,
+      "derived_lower_maximum_comparisons": 0,
+      "budget_setup_maximum_comparisons": 0,
+      "budget_order_comparisons": 0,
+      "resource_metadata_maximum_comparisons": 7,
+      "budget_ceiling_operations": 0,
+      "rational_to_interval_conversions": 0,
+      "interval_endpoint_extractions": 0,
+      "resource_limit_checks": 9,
+      "validation_checks": 24,
+      "exact_formula_evaluations": 1,
+      "source_objective_calls": 0,
+      "source_gradient_calls": 0,
+      "full_LMO_calls": 0,
+      "LP_calls": 0,
+      "optimizer_updates": 0,
+      "stochastic_samples": 0,
+      "regime_evaluations": 0,
+      "regime_sign_queries": 0,
+      "regime_nonpositive_decisions": 0,
+      "regime_positive_decisions": 0,
+      "regime_unresolved_queries": 0,
+      "regime_order_predicates": 0,
+      "working_gap_minimum_comparisons": 0,
+      "algebraic_bound_evaluations": 0
+    },
+    "elementary_evaluations": {
+      "exp": 0,
+      "sin": 0,
+      "cos": 0,
+      "sqrt": 0
+    },
+    "refusal_details": {},
+    "bound_semantics": "Only a source-error upper bound under the model assumptions and input caps; no lower error bound or requested relative-envelope factor.",
+    "cost_semantics": "Named started evaluations and comparisons; not all arithmetic operations or bit cost."
+  },
+  "checks": [
+    {
+      "check": "expected_status",
+      "passed": true
+    },
+    {
+      "check": "global_precision_unchanged",
+      "passed": true
+    },
+    {
+      "check": "no_source_or_optimizer_operations",
+      "passed": true
+    },
+    {
+      "check": "scalar_counter_partition",
+      "passed": true
+    },
+    {
+      "check": "root_updates_no_more_than_queries",
+      "passed": true
+    },
+    {
+      "check": "all_costs_nonnegative_integers",
+      "passed": true
+    },
+    {
+      "check": "expected_branch",
+      "passed": true
+    },
+    {
+      "check": "no_switch_or_loss_evaluations",
+      "passed": true
+    },
+    {
+      "check": "no_relative_envelope_contract",
+      "passed": true
+    },
+    {
+      "check": "nonnegative_bound",
+      "passed": true
+    },
+    {
+      "check": "expected_exact_upper",
+      "passed": true
+    }
+  ],
+  "status": "PASS",
+  "elapsed_seconds": 0.00011533900033100508,
+  "cpu_seconds": 0.00011494200000000676,
+  "global_precision_before": [
+    15,
+    15
+  ],
+  "global_precision_after": [
+    15,
+    15
+  ]
+}

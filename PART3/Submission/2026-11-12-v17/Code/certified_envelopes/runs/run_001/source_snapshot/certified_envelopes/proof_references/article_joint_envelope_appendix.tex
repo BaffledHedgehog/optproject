@@ -1,0 +1,217 @@
+\section{Proof of the joint gap and norm certificate}
+\label{joint:proof}
+
+\paragraph{The radial envelope with a fixed terminal cap.}
+Fix $P>0$ and $0<r\le P/m$. Put $q=P-mr$ and let $A(P,r)$ be
+the unique solution of
+\[
+ \mathcal T(A(P,r);P,q)=r,
+\]
+where $\mathcal T$ is defined in \eqref{boundarygap:time}.
+Existence and strict inversion were proved in
+Appendix~\ref{boundarygap:proof}. Every radial trajectory of length
+$r$, with terminal derivative at most $P$, shifted RSI with constant
+$m$, nonnegative initial slope, and the same curvature bound, has
+loss at most $A(P,r)$. Its initial slope is at most $P-mr$;
+enlarging both endpoint slopes in the two energy bounds gives this
+assertion. The positive-then-negative curvature construction in
+Appendix~\ref{boundarygap:proof}, applied with gap $Pr$, realizes
+$A(P,r)$ in $C^{1,1}$ and approaches it smoothly with the endpoint
+slopes and model constants fixed. Thus
+\begin{equation}\label{joint:radial-identity}
+ A(P,r)=V(Pr,r^2),\qquad A(P,P/m)=\mathcal E(P).
+\end{equation}
+
+The function $A(P,r)$ is strictly increasing in $r$. A prefix argument
+proves this without differentiating a singular endpoint integral.
+Take $0<r_1<r_2\le P/m$, let $d=r_2-r_1$, and put
+$q_i=P-mr_i$. Prefix a radial near-extremizer of length $r_1$ by
+\[
+ v(t)=q_2t+mt^2/2,\qquad 0\le t\le d.
+\]
+At $t=d$ its derivative is $q_1$, matching the original initial
+slope. Its terminal value is
+$a=q_2d+md^2/2>0$. Continue with $a+u(t-d)$.
+The join is $C^1$ with absolutely continuous derivative. Before
+the join the derivative is $q_2+mt$; afterwards shifted RSI gives
+the same lower bound. Prefix curvature is $m\le H_0+H_1v$, and
+adding $a\ge0$ on the suffix only enlarges its permitted curvature.
+The terminal derivative remains $P$. The energy comparison applies
+across this join as in Lemma~\ref{bndnorm:ac-comparison}; its initial
+energy is now $q_2^2$. Taking near-extremizer limits gives
+\[
+ A(P,r_2)\ge A(P,r_1)+a>A(P,r_1).
+\]
+Also $A(P,r)\to0$ as $r\downarrow0$, from the all-positive
+acceleration upper bound. No points are being added to the original
+feasible set in this comparison construction.
+
+\paragraph{Proof of the joint upper bound.}
+Consider first upper bounds $G(x)\le g$ and
+$\|\nabla f(x)\|\le P$, with $g,P>0$.
+For a nonoptimal source let $r=\|x-x^*\|$ and denote its terminal
+radial derivative by $p$. The two observations give
+\[
+ p\le\min\{P,g/r\},\qquad
+ r\le\min\{P/m,\sqrt{g/m}\}.
+\]
+If $g\ge P^2/m$, the shifted norm theorem gives
+$\delta(x)\le\mathcal E(P)$, as required.
+Suppose $g<P^2/m$, and put $r_0=g/P$ and $R=\sqrt{g/m}$.
+Then $0<r_0<R<P/m$.
+For $r\le r_0$, the preceding monotonicity gives
+\[
+ \delta(x)\le A(P,r)\le A(P,r_0)=V(g,r_0^2).
+\]
+For $r\ge r_0$, the terminal cap $g/r$ and initial cap
+$g/r-mr$ give $\delta(x)\le V(g,r^2)$.
+Combining the two ranges proves the maximum on
+$[g^2/P^2,g/m]$. The optimal source has zero error and needs no
+radial construction. If either cap is zero, shifted RSI and
+constrained minimality imply $x=x^*$ directly.
+
+Every fixed-radius extremal value entering this maximum is feasible
+with gap at most $g$ and norm at most $P$. Consequently it is bounded
+by both separate certificates. In the branch $g\ge P^2/m$,
+\[
+ \mathcal B(g)\ge W(g)=\mathcal E(\sqrt{mg})\ge\mathcal E(P).
+\]
+This proves the second inequality in \eqref{joint:bound}.
+
+\paragraph{Sharpness with both observations fixed: the gap-active branch.}
+Let $0<g<P^2/m$ and choose a maximizing
+$\rho\in[g^2/P^2,g/m]$. Put $r=\sqrt\rho$,
+$p=g/r\le P$, and $q=p-mr\ge0$.
+Use the smooth interval near-extremizers $u_i$ from
+Appendix~\ref{boundarygap:proof}, so that
+\[
+ u_i(0)=0,\quad u_i'(0)=q,\quad u_i'(r)=p,\quad
+ u_i'(s)\ge q+ms,\quad
+ |u_i''(s)|\le H_0+H_1u_i(s),\quad
+ u_i(r)\longrightarrow V(g,\rho).
+\]
+They are smooth on a neighborhood of $[0,r]$ and nonnegative there
+on the interval. Fix any $a>0$, set $c=\sqrt{P^2-p^2}$, and define
+\[
+ Q=[0,r]\times[0,a],\qquad
+ f_i(s,y)=u_i(s)+cy+\frac m2y^2,\qquad x^*=(0,0).
+\]
+This rectangle has nonempty interior in $\mathbb R^2$.
+Its unique minimizer is $x^*$, and $f_i$ is smooth on a neighborhood
+of $Q$. For every $(s,y)\in Q$,
+\[
+ \langle\nabla f_i(s,y)-\nabla f_i(0,0),(s,y)\rangle
+ =(u_i'(s)-q)s+my^2\ge m(s^2+y^2).
+\]
+The Hessian is diagonal, so
+\[
+ \|\nabla^2f_i(s,y)\|
+ =\max\{|u_i''(s)|,m\}
+ \le H_0+H_1u_i(s)\le H_0+H_1f_i(s,y).
+\]
+At $x=(r,0)$ the gradient is $(p,c)$, hence its norm is exactly
+$P$. Both components are nonnegative. The linear oracle minimizes
+the gradient pairing at $(0,0)$ (with possible nonuniqueness if
+$c=0$), so the full gap is exactly $rp=g$.
+The source errors tend to $\mathcal J(g,P)$.
+The second coordinate changes the observed norm without changing
+the full gap or the source loss.
+
+\paragraph{Sharpness with both observations fixed: the norm-active branch.}
+Let $g\ge P^2/m$, put $r=P/m$ and $a=g/P-r\ge0$.
+Choose the stationary smooth near-extremizers $u_i$ of
+Theorem~\ref{energy:main} on $[0,r]$ with
+$u_i'(r)=P$ and $u_i(r)\to\mathcal E(P)$.
+The construction in its proof smooths only the interior curvature
+switch. Thus the functions agree near zero with the positive-curvature
+solution
+\[
+ u_+(s)=
+ \begin{cases}
+ \displaystyle\frac{H_0}{H_1}
+       \{\cosh(\sqrt{H_1}s)-1\},&H_1>0,\\[1mm]
+ H_0s^2/2,&H_1=0.
+ \end{cases}
+\]
+Extend them to $[-a,0]$ using this same even function.
+The extensions remain smooth near zero and can be taken smooth
+on a neighborhood of $Q=[-a,r]$.
+On the added segment the curvature bound is an equality, and
+$u_+'(s)s\ge H_0s^2\ge ms^2$.
+On the original segment the established RSI and curvature bounds
+are unchanged. The unique minimizer remains zero.
+At the source $r$, the gradient norm is $P$ and the full gap is
+\[
+ (r+a)P=g.
+\]
+The loss tends to $\mathcal E(P)=\mathcal J(g,P)$.
+The exceptional case $H_0=m,H_1=0$ uses the exact quadratic;
+when $a=0$ no extension is needed.
+
+These two constructions establish exact-observation sharpness.
+They also establish sharpness for the upper-bound class, because
+the upper bound already holds for that larger class.
+For $g=0$ every feasible source is a minimizer and the supremum
+is zero. Any $P\ge0$ can occur there, for example at the left
+endpoint of $f(s)=Ps+ms^2/2$ on a positive interval.
+A positive exact gap with exact norm zero is infeasible; only
+the upper-bound interpretation is used when $P=0<g$.
+
+\paragraph{Monotonicity and continuity.}
+The upper-bound extremal characterization makes monotonicity in
+each cap immediate: enlarging a cap only enlarges the feasible
+class. For $g,P>0$ the endpoints in \eqref{joint:definition}
+depend continuously on $(g,P)$ and lie strictly above zero.
+Parameterize their compact interval by a fixed $z\in[0,1]$.
+The joint continuity of $V$ proved in
+Appendix~\ref{boundarygap:proof} gives continuity of its maximum,
+including the collapsed interval at $g=P^2/m$.
+At either coordinate axis use
+\[
+ 0\le\mathcal J(g,P)\le\min\{\mathcal B(g),\mathcal E(P)\}
+\]
+and the vanishing, continuous separate envelopes. This proves
+continuity on the closed quadrant.
+
+\begin{proposition}[The exact envelope at a fixed initial radial slope]
+\label{joint:fixed-slope}
+Fix $P>q\ge0$. Among radial trajectories with initial slope $q$,
+terminal slope $P$, shifted RSI constant $m$, and the same affine
+curvature bound, the sharp loss is the unique solution
+\begin{equation}\label{joint:fixed-slope-time}
+ \mathcal T(\mathcal E_q(P);P,q)=(P-q)/m.
+\end{equation}
+The supremum is approached by smooth interval functions with those
+slopes and all constants fixed. In particular
+\[
+ \mathcal E_q(P)\le\mathcal E(P)-\mathcal E(q).
+\]
+When $H_1=0$ its exact formula is
+\begin{equation}\label{joint:fixed-slope-constant}
+ \mathcal E_q(P)=\frac{P^2-q^2}{2m}
+       +\frac{H_0^2-m^2}{4H_0m^2}(P-q)^2.
+\end{equation}
+The old deficit bound has a strictly positive excess
+\[
+ \mathcal E(P)-\mathcal E(q)-\mathcal E_q(P)
+   =\frac{q(P-q)(H_0^2-m^2)}{2H_0m^2}
+\]
+when $q>0$ and $H_0>m$.
+\end{proposition}
+\begin{proof}
+Shifted RSI gives the length cap $r\le(P-q)/m$.
+The two energy inequalities now use the known endpoint slopes
+without relaxation. Strict inversion of $\mathcal T$ bounds the
+loss by \eqref{joint:fixed-slope-time}.
+At $r=(P-q)/m$ the switching construction of
+Appendix~\ref{boundarygap:proof} has initial slope exactly $q$,
+terminal slope exactly $P$, and obeys shifted RSI throughout.
+Its smoothing keeps both slopes and all model constants fixed.
+This proves sharpness. The deficit inequality follows by applying
+Theorem~\ref{bndnorm:main} to these near-extremizers and taking
+their limiting losses. If $H_1=0$, substitute the explicit mixed
+time formula from Appendix~\ref{boundarygap:proof} and solve its
+quadratic identity for the loss. At $H_0=m$ the forward-only and
+mixed formulas agree. Subtraction from
+\eqref{energy:constant} gives the displayed excess.
+\end{proof}

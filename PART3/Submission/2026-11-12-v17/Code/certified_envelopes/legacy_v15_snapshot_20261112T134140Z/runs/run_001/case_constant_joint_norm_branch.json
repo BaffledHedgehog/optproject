@@ -1,0 +1,159 @@
+{
+  "id": "constant_joint_norm_branch",
+  "case_type": "exact_constant",
+  "case": {
+    "id": "constant_joint_norm_branch",
+    "case_type": "exact_constant",
+    "envelope": "J",
+    "arguments": [
+      "1",
+      "2"
+    ],
+    "expected": {
+      "status": "certified",
+      "branch": "constant_curvature",
+      "exact_envelope": "1/2"
+    },
+    "model": {
+      "H1": "0"
+    }
+  },
+  "test_status": "PASS",
+  "certificate": {
+    "status": "certified",
+    "envelope": "J",
+    "envelope_lower": "1/2",
+    "envelope_upper": "1/2",
+    "achieved_factor": "1",
+    "requested_factor": "2",
+    "internal_factor": "3/2",
+    "reason": null,
+    "message": null,
+    "inputs": {
+      "m": "1",
+      "H0": "1",
+      "H1": "0",
+      "P": "1",
+      "g": "2"
+    },
+    "precision": {
+      "work_dps": 100,
+      "value_dps": 100
+    },
+    "plan": {
+      "branch": "constant_curvature",
+      "beta": "-1/2",
+      "kappa": "1/2"
+    },
+    "work": {
+      "bound_evaluations": 0,
+      "node_coefficient_preparations": 0,
+      "switch_evaluations": 0,
+      "loss_evaluations": 0,
+      "scalar_evaluations_started": 0,
+      "bracket_sign_queries": 0,
+      "bracket_sign_decisions": 0,
+      "root_sign_queries": 0,
+      "root_sign_decisions": 0,
+      "bisection_updates": 0,
+      "sign_order_predicates": 0,
+      "sign_equality_predicates": 0,
+      "certificate_maximum_comparisons": 0,
+      "witness_maximum_comparisons": 0,
+      "rounding_maximum_comparisons": 0,
+      "derived_lower_maximum_comparisons": 0,
+      "budget_setup_maximum_comparisons": 0,
+      "budget_order_comparisons": 0,
+      "resource_metadata_maximum_comparisons": 7,
+      "budget_ceiling_operations": 0,
+      "rational_to_interval_conversions": 0,
+      "interval_endpoint_extractions": 0,
+      "resource_limit_checks": 9,
+      "validation_checks": 24,
+      "exact_formula_evaluations": 1,
+      "source_objective_calls": 0,
+      "source_gradient_calls": 0,
+      "full_LMO_calls": 0,
+      "LP_calls": 0,
+      "optimizer_updates": 0,
+      "stochastic_samples": 0
+    },
+    "elementary_evaluations": {
+      "exp": 0,
+      "sin": 0,
+      "cos": 0,
+      "sqrt": 0
+    },
+    "trace": [],
+    "refusal_details": {},
+    "bound_semantics": "The interval encloses the mathematical envelope; only envelope_upper bounds source error under the model assumptions.",
+    "cost_semantics": "Named started evaluations, resolved/attempted sign queries and explicit maximum selections; not all arithmetic operations or bit cost."
+  },
+  "checks": [
+    {
+      "name": "expected API status",
+      "passed": true
+    },
+    {
+      "name": "zero scientific source/optimizer/stochastic oracles",
+      "passed": true
+    },
+    {
+      "name": "all started scalar evaluations are named",
+      "passed": true
+    },
+    {
+      "name": "bisection ledger matches the saved node traces",
+      "passed": true
+    },
+    {
+      "name": "resolved midpoint signs match completed updates",
+      "passed": true
+    },
+    {
+      "name": "direct exp calls reconcile with started scalar evaluations",
+      "passed": true
+    },
+    {
+      "name": "direct sin calls reconcile",
+      "passed": true
+    },
+    {
+      "name": "direct cos calls reconcile",
+      "passed": true
+    },
+    {
+      "name": "direct sqrt calls reconcile",
+      "passed": true
+    },
+    {
+      "name": "rational envelope endpoints",
+      "passed": true
+    },
+    {
+      "name": "nonnegative ordered envelope enclosure",
+      "passed": true
+    },
+    {
+      "name": "achieved factor is the exact returned endpoint ratio",
+      "passed": true
+    },
+    {
+      "name": "requested relative enclosure factor",
+      "passed": true
+    },
+    {
+      "name": "expected implementation branch executed",
+      "passed": true
+    },
+    {
+      "name": "independent exact branch value",
+      "passed": true
+    },
+    {
+      "name": "exact branch performs no interval scalar work",
+      "passed": true
+    }
+  ],
+  "elapsed_seconds_measurement_only": 7.813299998815637e-05
+}

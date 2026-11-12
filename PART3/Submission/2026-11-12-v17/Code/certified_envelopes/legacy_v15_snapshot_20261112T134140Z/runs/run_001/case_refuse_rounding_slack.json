@@ -1,0 +1,242 @@
+{
+  "id": "refuse_rounding_slack",
+  "case_type": "forced_precision_refusal",
+  "case": {
+    "id": "refuse_rounding_slack",
+    "case_type": "forced_precision_refusal",
+    "envelope": "E",
+    "arguments": [
+      "1"
+    ],
+    "expected": {
+      "status": "refused",
+      "reason": "insufficient_rounding_slack",
+      "plan": {
+        "positive_nodes": 1,
+        "bisections_per_node": 45
+      },
+      "work": {
+        "bound_evaluations": 1,
+        "root_sign_queries": 45,
+        "root_sign_decisions": 45,
+        "bisection_updates": 45,
+        "loss_evaluations": 2
+      }
+    },
+    "factor": "1099511627777/1099511627776",
+    "precision": {
+      "work_dps": 100,
+      "value_dps": 6
+    }
+  },
+  "test_status": "PASS",
+  "certificate": {
+    "status": "refused",
+    "envelope": "E",
+    "envelope_lower": null,
+    "envelope_upper": null,
+    "achieved_factor": null,
+    "requested_factor": "1099511627777/1099511627776",
+    "internal_factor": "2199023255553/2199023255552",
+    "reason": "insufficient_rounding_slack",
+    "message": "The fixed value precision did not meet the reserved evaluation allowance.",
+    "inputs": {
+      "m": "1",
+      "H0": "1",
+      "H1": "1",
+      "P": "1"
+    },
+    "precision": {
+      "work_dps": 100,
+      "value_dps": 6
+    },
+    "plan": {
+      "branch": "affine_norm",
+      "working_gap": "1",
+      "fixed_radius": "1",
+      "Kstar_interval": [
+        "47564511195692300647032481380328689457821114006534486654973699574435731771518958482255775061119909527/17498005798264095394980017816940970922825355447145699491406164851279623993595007385788105416184430592",
+        "95129022391384601294064962760657378915642228013068973309947399148871463543037916964511550122239819057/34996011596528190789960035633881941845650710894291398982812329702559247987190014771576210832368861184"
+      ],
+      "Lstar_interval": [
+        "53048112672558730383571078748449851413388226677704567821301425661935615801375190489880879177371643459/4374501449566023848745004454235242730706338861786424872851541212819905998398751846447026354046107648",
+        "26524056336279365191785539374224925706694113338852283910650712830967807900687595244940439588685821731/2187250724783011924372502227117621365353169430893212436425770606409952999199375923223513177023053824"
+      ],
+      "positive_nodes": 1,
+      "bisections_per_node": 45,
+      "planned_bisections": 45,
+      "known_envelope_lower": "1/2",
+      "sampled_envelope_lower": "2256661/4194304",
+      "mesh_allowance": "0",
+      "inner_root_allowance": "95129022391384601294064962760657378915642228013068973309947399148871463543037916964511550122239819057/615656346818663737691860001564743965704370926101022604186692084441339402679643915803347910232576806887603562348544",
+      "maximum_upper_evaluation_rounding_width": "3/2097152",
+      "reserved_rounding_allowance": "1/4398046511104"
+    },
+    "work": {
+      "bound_evaluations": 1,
+      "node_coefficient_preparations": 2,
+      "switch_evaluations": 47,
+      "loss_evaluations": 2,
+      "scalar_evaluations_started": 50,
+      "bracket_sign_queries": 2,
+      "bracket_sign_decisions": 2,
+      "root_sign_queries": 45,
+      "root_sign_decisions": 45,
+      "bisection_updates": 45,
+      "sign_order_predicates": 71,
+      "sign_equality_predicates": 0,
+      "certificate_maximum_comparisons": 0,
+      "witness_maximum_comparisons": 0,
+      "rounding_maximum_comparisons": 0,
+      "derived_lower_maximum_comparisons": 0,
+      "budget_setup_maximum_comparisons": 0,
+      "budget_order_comparisons": 2,
+      "resource_metadata_maximum_comparisons": 312,
+      "budget_ceiling_operations": 0,
+      "rational_to_interval_conversions": 63,
+      "interval_endpoint_extractions": 102,
+      "resource_limit_checks": 411,
+      "validation_checks": 31,
+      "exact_formula_evaluations": 0,
+      "source_objective_calls": 0,
+      "source_gradient_calls": 0,
+      "full_LMO_calls": 0,
+      "LP_calls": 0,
+      "optimizer_updates": 0,
+      "stochastic_samples": 0
+    },
+    "elementary_evaluations": {
+      "exp": 100,
+      "sin": 49,
+      "cos": 49,
+      "sqrt": 3
+    },
+    "trace": [
+      {
+        "index": 0,
+        "rho": "1",
+        "planned_bisections": 45,
+        "completed_bisections": 45,
+        "alpha_bracket": [
+          "1021271551219/17592186044416",
+          "2042543102439/35184372088832"
+        ],
+        "sign_history": "----+++-++-+++--+---+----+++--+-++--++++--++-",
+        "status": "enclosed",
+        "left_residual_interval": [
+          "509346799563661520686295033886711809246924570943645539942436814726021327708013459585163/17498005798264095394980017816940970922825355447145699491406164851279623993595007385788105416184430592",
+          "1018693599127323041372590067773423618493849141887291079884873629452042655416026919170329/34996011596528190789960035633881941845650710894291398982812329702559247987190014771576210832368861184"
+        ],
+        "right_residual_interval": [
+          "-3830752206928175431858243154956262411367543878204071641653745034533162709875798854505161/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368",
+          "-7661504413856350863716486309912524822735087756408143283307490069066325419751597709010313/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736"
+        ],
+        "last_residual_interval": [
+          "-3830752206928175431858243154956262411367543878204071641653745034533162709875798854505161/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368",
+          "-7661504413856350863716486309912524822735087756408143283307490069066325419751597709010313/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736"
+        ],
+        "last_alpha": "2042543102439/35184372088832",
+        "loss_lower_endpoint_interval": [
+          "2256661/4194304",
+          "2256667/4194304"
+        ],
+        "loss_upper_endpoint_interval": [
+          "2256661/4194304",
+          "2256667/4194304"
+        ],
+        "fixed_radius_lower": "2256661/4194304",
+        "fixed_radius_upper": "2256667/4194304",
+        "upper_evaluation_rounding_width": "3/2097152"
+      }
+    ],
+    "refusal_details": {
+      "actual_width": "3/2097152",
+      "reserved_width": "1/4398046511104"
+    },
+    "bound_semantics": "The interval encloses the mathematical envelope; only envelope_upper bounds source error under the model assumptions.",
+    "cost_semantics": "Named started evaluations, resolved/attempted sign queries and explicit maximum selections; not all arithmetic operations or bit cost."
+  },
+  "checks": [
+    {
+      "name": "expected API status",
+      "passed": true
+    },
+    {
+      "name": "zero scientific source/optimizer/stochastic oracles",
+      "passed": true
+    },
+    {
+      "name": "all started scalar evaluations are named",
+      "passed": true
+    },
+    {
+      "name": "bisection ledger matches the saved node traces",
+      "passed": true
+    },
+    {
+      "name": "resolved midpoint signs match completed updates",
+      "passed": true
+    },
+    {
+      "name": "direct exp calls reconcile with started scalar evaluations",
+      "passed": true
+    },
+    {
+      "name": "direct sin calls reconcile",
+      "passed": true
+    },
+    {
+      "name": "direct cos calls reconcile",
+      "passed": true
+    },
+    {
+      "name": "direct sqrt calls reconcile",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter bound_evaluations",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter root_sign_queries",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter root_sign_decisions",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter bisection_updates",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter loss_evaluations",
+      "passed": true
+    },
+    {
+      "name": "refusal exposes no envelope certificate",
+      "passed": true
+    },
+    {
+      "name": "exact expected refusal reason",
+      "passed": true
+    },
+    {
+      "name": "fixed refusal plan field positive_nodes",
+      "passed": true
+    },
+    {
+      "name": "fixed refusal plan field bisections_per_node",
+      "passed": true
+    },
+    {
+      "name": "actual final interval width violates the fixed reserve",
+      "passed": true
+    },
+    {
+      "name": "rounding refusal occurs after the independently fixed high-precision root work",
+      "passed": true
+    }
+  ],
+  "elapsed_seconds_measurement_only": 0.01054982099958579
+}

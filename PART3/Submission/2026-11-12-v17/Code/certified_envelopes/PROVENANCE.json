@@ -1,0 +1,44 @@
+{
+  "created_utc": "2026-11-12T13:51:46.433101+00:00",
+  "scope": "New v16 wrapper and fixed controls; no optimizer or source oracle. Legacy code/data preserved separately and never live-imported.",
+  "private_core": {
+    "path": "_legacy_core.py",
+    "sha256": "55b3e6a1bc196a507d7627003db643a7be3deb4497f57b3626694a26fb929c08",
+    "origin": "legacy_v15_snapshot_20261112T134140Z/api.py",
+    "unchanged_copy": true
+  },
+  "proof_references": {
+    "article_gap_regime.tex": {
+      "source": "/workspace/scratch/50468750a620/continuation_v16/gap_structure/article_gap_regime.tex",
+      "sha256": "3404f90393152fdc5661c86c8853fde1f4089f98ca21568794f85348a3402a72"
+    },
+    "article_gap_regime_appendix.tex": {
+      "source": "/workspace/scratch/50468750a620/continuation_v16/gap_structure/article_gap_regime_appendix.tex",
+      "sha256": "5e5f3f20145279805a3453b2e32509deac577efaab6596aa3ba6b781001b3a59"
+    },
+    "article_joint_envelope.tex": {
+      "source": "/workspace/scratch/50468750a620/continuation_v16/joint_envelope/article_joint_envelope.tex",
+      "sha256": "863125a093800d9738e3429531fa4d127d73369b5d52dbc4a70143712eca774d"
+    },
+    "article_joint_envelope_appendix.tex": {
+      "source": "/workspace/scratch/50468750a620/continuation_v16/joint_envelope/article_joint_envelope_appendix.tex",
+      "sha256": "da0ee9f223f0ade6563053e070d6d178fcb1d9543052d263eb2bcf70dcf509fa"
+    }
+  },
+  "scientific_runs_at_creation": 0,
+  "inherited_results_are_history_not_new_runs": true,
+  "joint_public_argument_order": "keyword-only g=..., P=...; mathematical J(g,P)",
+  "proof_labels": [
+    "gapregime:main",
+    "gapregime:radius-monotone",
+    "gapregime:tangent-upper"
+  ],
+  "new_elements": [
+    "outward S regime gate with guarded dependency and scale",
+    "exact gap in proved regime",
+    "one-node joint in proved regime",
+    "optional algebraic source-error upper bound without factor promise",
+    "actual-width certified joint grid outside the regime",
+    "explicit accounting for added evaluations and sign decisions"
+  ]
+}

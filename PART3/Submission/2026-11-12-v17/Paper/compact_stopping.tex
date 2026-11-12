@@ -1,0 +1,223 @@
+\section{Adaptive stopping and complete query counts}
+\label{nloracle:section}
+The certificates above can be used with ordinary quadratic backtracking.
+We state the work bound once for a general calibration $\Phi$; the
+specializations then change only this function. Objective values are exact.
+Let $D\ge\operatorname{diam}Q>0$, and suppose
+\begin{equation}\label{nloracle:model}
+ \lambda_{\max}(\nabla^2f(x))\le K(\delta(x)),\qquad
+ \delta(x)\le\Phi(G(x)).
+\end{equation}
+Here $K:[0,\infty)\to[0,\infty)$ is finite, continuous and nondecreasing,
+and $\Phi:[0,\infty)\to[0,\infty)$ is continuous,
+strictly increasing and unbounded, with $\Phi(0)=0$.
+The sharp gap envelope gives $\Phi=\mathcal B$ and $K(u)=H_0+H_1u$.
+The known diameter also permits $\Phi=\mathcal B_D$.
+These stopping assumptions also allow other regularity conditions.
+
+At requested directional accuracy $\eta>0$, a query returns $h\ge0$
+and $d=s-x$, $s\in Q$, such that
+\begin{equation}\label{nloracle:query}
+ G(x)\le B=h+\eta,\qquad
+ -\langle\nabla f(x),d\rangle\ge h-\eta.
+\end{equation}
+A source certificate $C$ must satisfy $\delta(x)\le C\le\Phi(B)$.
+One may use $C=\Phi(B)$ or a sharper valid joint certificate.
+Retain $\ell\leftarrow\max\{\ell,f(x)-C\}$ and set $U=f(x)-\ell$.
+The initial query creates the first lower bound.
+
+\paragraph{The rule.}
+Choose $\eta_0,M>0$ and $0<\theta<1$, and carry $\eta$ between points.
+After every query, first stop if $U\le\varepsilon$, where $\varepsilon>0$.
+Otherwise require $\eta\le\theta h$. If this fails, halve $\eta$ and
+query at the same point, reusing its objective value.
+After it passes, put $a=h-\eta$, start with $L=L_{k-1}/2$,
+$L_{-1}=M$, and double $L$ until
+\begin{equation}\label{eq:btstep}
+ \alpha=\min\{1,a/(L\|d\|^2)\},\qquad
+ f(x+\alpha d)\le f(x)-\alpha a+\tfrac12L\alpha^2\|d\|^2.
+\end{equation}
+Accept $x+\alpha d$, cache its value, and retain the accepted $L_k$.
+This is the usual backtracking update \cite{pedregosa}; the new
+certificates determine when its computed points are accurate enough.
+
+\begin{theorem}[Stopping with carried accuracy]\label{nloracle:main}
+Every refinement loop and line search terminates, and the rule stops
+with $\delta(x_N)\le U_N\le\varepsilon$.
+Let $N$ count accepted updates and $R$ count accuracy halvings, including
+initial and terminal source checks. With $\kappa=(1-\theta)/(1+\theta)$,
+\begin{equation}\label{nloracle:refinement}
+ R\le\left\lceil\log_2\max\left\{1,
+ \frac{(1+\theta)\eta_0}{\theta\Phi^{-1}(\varepsilon)}\right\}\right\rceil,
+ \qquad T=N+1+R.
+\end{equation}
+There are exactly $T$ source queries. Each vector query followed by a
+full LMO costs one LMO; each score query below costs one full atom scan.
+
+If an initial update is needed, let $U_0>\varepsilon$ be the certificate
+after its precision check, and set
+\[
+ \begin{gathered}
+ J=\lceil\log_2(U_0/\varepsilon)\rceil,\quad b_j=U_0/2^j,\quad
+ s_j=\kappa\Phi^{-1}(b_j/2),\\
+ C_j=\max\{2K(b_j),s_j/D^2\},\quad
+ P_K=\left\lceil\log_2\frac{\max\{M,C_0\}}{C_{J-1}}\right\rceil,
+ \qquad 0\le j<J.
+ \end{gathered}
+\]
+Then
+\begin{equation}\label{nloracle:work}
+ N\le T_\varepsilon:=P_K+
+ \left\lceil\sum_{j=0}^{J-1}
+ \max\left\{\frac{2b_j}{s_j},\frac{4D^2K(b_j)b_j}{s_j^2}\right\}\right\rceil.
+\end{equation}
+For actual $N\ge1$, all line-search objective calls, including the
+initial value and rejected trials, satisfy
+\begin{equation}\label{nloracle:functions}
+ N_f\le1+2N+
+ \left\lceil\log_2\max\{1,2K(U_0)/M\}\right\rceil.
+\end{equation}
+If $N=0$, there is one objective call and $1+R$ source queries.
+The phase quantities are then unnecessary.
+\end{theorem}
+
+\begin{proof}
+Every retained lower bound is valid, so $0\le\delta\le U\le C\le\Phi(B)$.
+At a nonterminal failed precision check,
+\[
+ \Phi^{-1}(\varepsilon)<\Phi^{-1}(U)\le B
+   <(1+\theta)\eta/\theta.
+\]
+Since the precision is halved and never reset, this proves the bound on
+$R$ and finiteness of each check. Each visited point has one closing
+query, and each halving has one additional failed query. Hence $T=N+1+R$.
+At a passed nonterminal check,
+\begin{equation}\label{compact:certified-slope}
+ a=h-\eta\ge\kappa(h+\eta)\ge\kappa\Phi^{-1}(U)>0.
+\end{equation}
+
+For the line search put $w(t)=f(x+td)-f(x)$ and $K_x=K(\delta(x))$.
+While $w\le0$, $w''\le K_x\|d\|^2$ and $w'(0)\le-a<0$.
+A first return to zero before $2a/(K_x\|d\|^2)$ contradicts
+$w(t)\le-at+K_x\|d\|^2t^2/2<0$. Thus every $L\ge K_x$
+passes the test at its proposed step. If $K_x=0$, use the linear
+comparison. Every accepted trial satisfies
+\begin{equation}\label{eq:acceptedprogress}
+ f_k-f_{k+1}\ge\alpha_k a_k/2,\qquad
+ L_k\le\max\{L_{k-1}/2,2K(\delta_k)\}.
+\end{equation}
+The objective decreases and the retained lower bound increases, so $U$
+is nonincreasing, also during refinements at a fixed point.
+
+Assign a nonterminal update to $b_j/2<U_k\le b_j$.
+The positive phase caps $C_j$ are nonincreasing. If $L_k>C_j$,
+the accepted trial must have been the first one: otherwise the preceding
+rejected value would be at least $C_j/2\ge K(\delta_k)$.
+Such an update therefore halves the inherited curvature.
+Before an update in phase $j$, use
+\[
+ V_k=\max\{0,\log_2(L_{k-1}/C_j)\}.
+\]
+An update above the cap reduces this potential by one; an update below
+the cap leaves zero before a phase change. A jump from phase $j$ to
+$j'$ increases it by at most $\log_2(C_j/C_{j'})$. These increments
+telescope, so there are at most $P_K$ updates above their caps.
+
+At any remaining update, \eqref{compact:certified-slope} and $\|d\|\le D$
+give objective decrease at least
+\[
+ p_j=\min\{s_j/2,s_j^2/(2C_jD^2)\}=s_j^2/(2C_jD^2).
+\]
+The total decrease from points in phase $j$ is at most the true error
+at its entry, hence at most $b_j$. There are at most $b_j/p_j$ such
+updates. Summation proves \eqref{nloracle:work}. The same finite bound
+holds for every unfinished prefix, excluding an infinite nonterminal run.
+
+If $q_k$ trials are rejected at update $k$, then
+$L_k=2^{q_k-1}L_{k-1}$. Consequently
+\[
+ \sum_{k<N}(q_k+1)=2N+\log_2(L_{N-1}/M),\qquad
+ L_{N-1}\le\max\{M/2^N,2K(U_0)\}.
+\]
+Adding the initial objective call proves \eqref{nloracle:functions}.
+\end{proof}
+
+\paragraph{Away steps.}\label{alg:afw}
+For $Q=\operatorname{conv}\mathcal A$ with finitely many atoms, maintain
+exact positive weights on the active set $S$.
+For AFW, the full LMO returns a minimizing atom in $\mathcal A$, including ties.
+Use $B=h_{\rm FW}+\eta$ for stopping and the FW precision check.
+Only after that check passes,
+scan the active set and compare its approximate away gap with the FW gap.
+Select the larger, use FW on ties and singleton sets,
+and subtract $\eta$ from the selected gap. The error guarantee must
+hold uniformly for both directions, as in the next section.
+The away direction $x-v$ has cap $\lambda_v/(1-\lambda_v)$; replace
+the cap $1$ in \eqref{eq:btstep} by this value \cite{lacostejaggi}.
+A step that reaches the away cap removes an atom. Every other step has
+the same progress bound as a FW step. The potential proof counts all
+updates above their caps, and the decrease proof counts the remaining
+good updates. Thus good updates number at most $T_\varepsilon$.
+FW adds at most one atom and a drop removes one, giving
+\begin{equation}\label{eq:dropcount}
+ N\le2T_\varepsilon+|S_0|-1.
+\end{equation}
+The query and objective bounds use this actual total $N$; AFW also
+performs $N$ active-set scans.
+
+\begin{corollary}[Certified scalar evaluation]\label{nloracle:energy}
+Suppose $\delta\le\Phi_0(G)$ and a scalar routine returns
+$\Phi_0(B)\le\widehat\Phi_0(B)\le\vartheta\Phi_0(B)$ for known
+$\vartheta\ge1$. Use $C=\widehat\Phi_0(B)$, or the smaller of this
+value and any other valid source bound. The theorem applies with
+$\Phi=\vartheta\Phi_0$. In particular, one may take
+$\Phi_0=\mathcal B$ or $\Phi_0=\mathcal B_D$; under $\nabla f(x^*)=0$, one may also take
+$\Phi_0=W$. The inverse is needed in the analysis, not in the algorithm.
+\end{corollary}
+\begin{proof}
+Validity gives $\delta\le C$, and construction gives
+$U\le C\le\vartheta\Phi_0(B)$. These are the calibration inequalities
+used in the proof. The required properties of $\mathcal B$ and $W$
+were proved above.
+\end{proof}
+
+A norm enclosure $P^+$ permits the exact choice $C=\mathcal J_D(B,P^+)$.
+For a computed enclosure, use
+$C=\widehat{\mathcal J}_D(B,P^+)\le\vartheta\mathcal J_D(B,P^+)
+\le\vartheta\mathcal B_D(B)$ and the effective calibration
+$\Phi=\vartheta\mathcal B_D$. The last inequality follows from the
+cap characterization of $\mathcal J_D$. Either choice can be combined with other
+valid source bounds by taking their minimum. Norm formation and scalar
+evaluation are additional work.
+If the scalar routine uses $n(B_j)$ comparisons at query $j$, charge
+$\sum_{j=1}^{N+1+R}n(B_j)$, including failed refinements and the terminal
+query. Comparison counts alone do not bound interval or bit arithmetic.
+For a nonincreasing query-cost bound $C_{\rm query}(\eta)$, the total is
+at most
+\[
+ (N+1)C_{\rm query}(\eta_R)+\sum_{r=0}^{R-1}C_{\rm query}(\eta_0 2^{-r}).
+\]
+
+\paragraph{Linear gap bounds and the final phases.}
+A known $G\ge\gamma\delta$ with $\gamma>0$ gives $\Phi(g)=g/\gamma$.
+For $K(u)=H_0+H_1u$ and $\bar\gamma=\kappa\gamma$,
+\eqref{nloracle:work} implies
+\[
+ N\le P_K+\left\lceil
+ \frac{4J}{\bar\gamma}+
+ \frac{32D^2H_0}{\bar\gamma^2\varepsilon}+
+ \frac{16D^2H_1J}{\bar\gamma^2}\right\rceil.
+\]
+Indeed $s_j=\bar\gamma b_j/2$ and
+$\sum_{j<J}b_j^{-1}<2/\varepsilon$.
+Quasar-convexity with center $x^*$ supplies this gap bound through
+$\langle\nabla f(x),x-x^*\rangle\ge\gamma\delta(x)$.
+It need not imply convexity between arbitrary pairs of points.
+For the sharp shifted-RSI calibration, the phases with
+$b_j/2\le g_c$ have $\mathcal B^{-1}(b_j/2)=b_j/2$ whenever the
+positive threshold $g_c$ exists. Their progress bound therefore has
+the same form with $\gamma=1$.
+For $\Phi=\vartheta\mathcal B$, the corresponding condition is
+$b_j/(2\vartheta)\le g_c$, and $s_j=\kappa b_j/(2\vartheta)$.
+The same final-phase formulas hold for $\mathcal B_D$, whose ordinary-gap
+regime is identical.

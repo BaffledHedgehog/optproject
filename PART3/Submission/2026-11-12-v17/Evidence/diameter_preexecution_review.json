@@ -1,0 +1,330 @@
+{
+  "status": "PASS",
+  "reviewer": "/root/gap_structure",
+  "review_kind": "Independent static preexecution review",
+  "created_utc": "2026-11-12T15:17:47.869782+00:00",
+  "reviewed_freeze_path": "/workspace/scratch/50468750a620/continuation_v17/certified_diameter/FREEZE.json",
+  "reviewed_freeze_sha256": "55f9824ee37c2b16e79918ff5a8849210589671c39055500bf2197a3fb3eb9c8",
+  "reviewed_source_hashes": {
+    "DEPENDENCY_CAPTURE.json": "e5bbb6a28ff314e8bae64f9b3e24e4b6c16a11601168cded2f78b0fcc8ccbd8c",
+    "DERIVATION.txt": "676b8839ca1a543e8093293a39d6b787a7be62c2b2e432cfd5f1986b6416c099",
+    "PROVENANCE.json": "577d8197a6a6c2c903be1652e0a0a092605cc9aaec2faee626b8fec520c7828a",
+    "README_RU.txt": "319422ff94dac9d80bf10a6018324a2c006db1c18042304f283c31b40bd3f209",
+    "__init__.py": "5c3c038c942c6a368ce98166c5b450f72c4d0b0e6ec4547cfb425658e4f5d7f2",
+    "_legacy_core.py": "55b3e6a1bc196a507d7627003db643a7be3deb4497f57b3626694a26fb929c08",
+    "_v16_api.py": "00bc84cf21a5b4ee39358c5439d26465333220a477b532edeca8ec14729c7ece",
+    "api.py": "9720c39164e39efe842ec850d7ccb0f87c3e011ee07d75a933bfb50a3e5b0cfd",
+    "proof_references/article_boundary_gap_appendix.tex": "d6c3ce0b50d3bdae4bb06589da0106757eee9285d176158b07fcd747b09ffa6d",
+    "proof_references/article_gap_regime.tex": "3404f90393152fdc5661c86c8853fde1f4089f98ca21568794f85348a3402a72",
+    "proof_references/article_gap_regime_appendix.tex": "5e5f3f20145279805a3453b2e32509deac577efaab6596aa3ba6b781001b3a59",
+    "proof_references/article_joint_diameter.tex": "29dbde366f203bd3a736326aae4a9ae6cf03c43210c6f9554718166194245f3d",
+    "proof_references/article_joint_diameter_appendix.tex": "26c3560ffd5cc4a15930fc432f662d78e0b55c423777f52824fa48c650cc53cd",
+    "proof_references/article_joint_envelope.tex": "863125a093800d9738e3429531fa4d127d73369b5d52dbc4a70143712eca774d",
+    "proof_references/article_joint_envelope_appendix.tex": "da0ee9f223f0ade6563053e070d6d178fcb1d9543052d263eb2bcf70dcf509fa",
+    "protocol.json": "ba866f45d396cff907d2e8d4b88b1aa17dfe05d867c361b9aaf8061d3da608c2",
+    "reference_data.json": "540394fa6b68d79f7682e1c323d5db8f791224f9fedcb73a4932e67b56a5c270",
+    "requirements.txt": "a699f46ed76bd216f1081b6b2330e4fb45d7c8c5a5354b208694d6590a5a8645",
+    "run_protocol.py": "45cee3812814b4f033cf91405af82906a697f5a7f4a8a1b202ecc71d59abb14a",
+    "static_self_review.json": "01792aa1bb9e2387ff579bc48c4f638f78d34e74271ced29ca88b0ba67a7c9f8"
+  },
+  "scientific_api_imports_performed": 0,
+  "scientific_api_calls_performed": 0,
+  "scientific_runs_performed": 0,
+  "new_runs_started": 0,
+  "reviewed_files_modified": false,
+  "execution_authorized": false,
+  "root_approval_required": true,
+  "approval_note": "This reviewer supplies a static PASS only. It is not the root approval document required by the runner and does not authorize or perform the first run.",
+  "method": "Source reading, manual proof-to-code reasoning, standard-library AST parsing and cryptographic byte comparisons only. The reviewed package and mpmath were not imported.",
+  "metadata_check_count": 40,
+  "metadata_checks": [
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "DEPENDENCY_CAPTURE.json"
+    },
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "DERIVATION.txt"
+    },
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "PROVENANCE.json"
+    },
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "README_RU.txt"
+    },
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "__init__.py"
+    },
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "_legacy_core.py"
+    },
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "_v16_api.py"
+    },
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "api.py"
+    },
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "proof_references/article_boundary_gap_appendix.tex"
+    },
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "proof_references/article_gap_regime.tex"
+    },
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "proof_references/article_gap_regime_appendix.tex"
+    },
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "proof_references/article_joint_diameter.tex"
+    },
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "proof_references/article_joint_diameter_appendix.tex"
+    },
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "proof_references/article_joint_envelope.tex"
+    },
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "proof_references/article_joint_envelope_appendix.tex"
+    },
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "protocol.json"
+    },
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "reference_data.json"
+    },
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "requirements.txt"
+    },
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "run_protocol.py"
+    },
+    {
+      "check": "frozen_source_sha256",
+      "passed": true,
+      "file": "static_self_review.json"
+    },
+    {
+      "check": "v16_dependency_byte_fidelity",
+      "passed": true,
+      "file": "_v16_api.py"
+    },
+    {
+      "check": "v16_dependency_byte_fidelity",
+      "passed": true,
+      "file": "_legacy_core.py"
+    },
+    {
+      "check": "v16_dependency_byte_fidelity",
+      "passed": true,
+      "file": "requirements.txt"
+    },
+    {
+      "check": "proof_origin_byte_fidelity",
+      "passed": true,
+      "file": "article_joint_diameter.tex"
+    },
+    {
+      "check": "proof_origin_byte_fidelity",
+      "passed": true,
+      "file": "article_joint_diameter_appendix.tex"
+    },
+    {
+      "check": "proof_origin_byte_fidelity",
+      "passed": true,
+      "file": "article_joint_envelope.tex"
+    },
+    {
+      "check": "proof_origin_byte_fidelity",
+      "passed": true,
+      "file": "article_joint_envelope_appendix.tex"
+    },
+    {
+      "check": "proof_origin_byte_fidelity",
+      "passed": true,
+      "file": "article_gap_regime.tex"
+    },
+    {
+      "check": "proof_origin_byte_fidelity",
+      "passed": true,
+      "file": "article_gap_regime_appendix.tex"
+    },
+    {
+      "check": "proof_origin_byte_fidelity",
+      "passed": true,
+      "file": "article_boundary_gap_appendix.tex"
+    },
+    {
+      "check": "historical_reference_data_byte_fidelity",
+      "passed": true
+    },
+    {
+      "check": "ast_parse_only_no_import",
+      "passed": true,
+      "file": "__init__.py"
+    },
+    {
+      "check": "ast_parse_only_no_import",
+      "passed": true,
+      "file": "_legacy_core.py"
+    },
+    {
+      "check": "ast_parse_only_no_import",
+      "passed": true,
+      "file": "_v16_api.py"
+    },
+    {
+      "check": "ast_parse_only_no_import",
+      "passed": true,
+      "file": "api.py"
+    },
+    {
+      "check": "ast_parse_only_no_import",
+      "passed": true,
+      "file": "run_protocol.py"
+    },
+    {
+      "check": "certificate_adapter_fields_match",
+      "passed": true,
+      "field_count": 16
+    },
+    {
+      "check": "ten_unique_fixed_cases",
+      "passed": true
+    },
+    {
+      "check": "protocol_registered_hash_unchanged",
+      "passed": true
+    },
+    {
+      "check": "new_run_001_absent",
+      "passed": true
+    }
+  ],
+  "manual_review": [
+    {
+      "area": "Exact input and cap semantics",
+      "conclusion": "PASS",
+      "reason": "D is parsed through the inherited exact rational parser and must be positive before any zero return. Joint g and P remain caps, so g>P*D is permitted. Norm mode derives g=P*D after the base E parser and does not record an observed g input."
+    },
+    {
+      "area": "Geometry",
+      "conclusion": "PASS",
+      "reason": "h=min(g,P^2/m,P*D), a=h^2/P^2 and b=min(h/m,D^2) use Fraction arithmetic. The two inequalities h<=P^2/m and h<=P*D imply 0<a<=b when g,P>0. Both zero axes return before division by P."
+    },
+    {
+      "area": "Constant curvature",
+      "conclusion": "PASS",
+      "reason": "The exact affine radius profile h+beta*rho is maximized at b for beta>=0 and at a otherwise. Positivity is checked. Zero caps are returned exactly."
+    },
+    {
+      "area": "Collapsed nodes and norm envelope",
+      "conclusion": "PASS",
+      "reason": "Exact a==b is tested before S. One positive node is then sufficient. For norm mode g=P*D the interval always collapses to min(D,P/m)^2, agreeing with E_D and the fixed-initial-slope theorem."
+    },
+    {
+      "area": "Ordinary-gap sign gate",
+      "conclusion": "PASS",
+      "reason": "The unchanged v16 gate uses S(h), only upper(S)<=0 permits one left node, and only lower(S)>0 permits the grid. An unresolved sign refuses. The pinned dependency and scale checks precede the interval square root, whose start is counted."
+    },
+    {
+      "area": "Single-node relative budget",
+      "conclusion": "PASS",
+      "reason": "V(h,rho)>=h/2. The chosen n satisfies 2*rho*K*2^-n <= (internal-1)*h/2 using rho<=h/m. No mesh correction is added."
+    },
+    {
+      "area": "Shortened interval grid",
+      "conclusion": "PASS",
+      "reason": "Both rational endpoints are sampled. N>=2*L*(b-a)/((internal-1)*h) gives mesh error <=(internal-1)*h/4, and the eight-K root budget gives root error <= the same amount. The inherited K,L bound covers the whole larger interval [0,h/m], so it also covers the shortened one."
+    },
+    {
+      "area": "Outward intervals and ratio",
+      "conclusion": "PASS",
+      "reason": "Unchanged v16 node primitives retain outward values and sign decisions in private mpmath contexts. finish_affine reserves (factor-internal)*h/2 for value rounding, derives a valid envelope lower bound and checks the exact rational returned ratio. The lower endpoint is explicitly not a bound on actual source error."
+    },
+    {
+      "area": "Resource exhaustion and partial failure",
+      "conclusion": "PASS",
+      "reason": "The inherited preflight limits cover nodes, bisections, scalar and elementary starts; in-loop and endpoint limits remain active. Refusals retain costs and diagnostic trace but no completed bounds or achieved factor. New geometry comparisons have separate named counters."
+    },
+    {
+      "area": "Certificate adapter and public interface",
+      "conclusion": "PASS",
+      "reason": "The 16 dataclass fields match the inherited Certificate exactly; the wrapper changes only the public family label to J_D or E_D. Joint g,P,D are keyword-only. Ordinary Python signature errors are separately documented."
+    },
+    {
+      "area": "Snapshot binding and first-run gate",
+      "conclusion": "PASS",
+      "reason": "Runner requires a root-approved PASS for the exact FREEZE digest before package or mpmath import, checks all live frozen hashes, copies every file and compares each copy directly with the approved digest, reads protocol/references from that snapshot and verifies imported module paths. A pre-existing run_001 causes refusal to overwrite."
+    },
+    {
+      "area": "Fixed panel completeness and records",
+      "conclusion": "PASS",
+      "reason": "The ten fixed cases and unique IDs are required. Cases are attempted once in saved order with no retries or precision changes, all outcomes are saved even after failures, aggregate and partial cost records are retained, and final PASS requires all ten calls, all checks and unchanged sources. Expected refusals are distinguished from unexpected failures."
+    },
+    {
+      "area": "Claim scope",
+      "conclusion": "PASS",
+      "reason": "The documentation preserves varying-domain sharpness, exact positive pair feasibility g<=P*D as a theorem condition rather than a cap-API restriction, named-operation cost semantics and no total bit-complexity or optimizer-performance claim."
+    }
+  ],
+  "fixed_panel": {
+    "case_count": 10,
+    "expected_certified": 7,
+    "expected_refused": 3,
+    "case_ids": [
+      "constant_exact_pair_diameter_improvement",
+      "affine_diameter_active_collapsed",
+      "exact_regime_equality_with_clipped_radius",
+      "outside_regime_shortened_grid",
+      "large_diameter_inactive",
+      "constant_norm_only_affine_formula",
+      "reject_zero_diameter",
+      "zero_norm_cap",
+      "collapsed_node_resource_refusal",
+      "reject_inexact_float_diameter"
+    ],
+    "interpretation": "These are predeclared expected outcomes, not observed execution results."
+  },
+  "issues": [],
+  "required_changes": [],
+  "limitations": [
+    "Static review does not establish the actual numerical outcome of the first fixed panel. Any failure must be retained without tuning or retry.",
+    "Resource counts cover the named operations and explicit caps; they are not a total bit or all-arithmetic operation bound.",
+    "The proof fragments are supporting source anchors; the assembled manuscript supplies the full surrounding definitions and radial comparison proof."
+  ]
+}

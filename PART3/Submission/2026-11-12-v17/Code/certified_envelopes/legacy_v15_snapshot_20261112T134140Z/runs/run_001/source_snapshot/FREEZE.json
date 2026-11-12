@@ -1,0 +1,19 @@
+{
+  "id": "certified_envelopes_v15_001_freeze",
+  "at_utc": "2026-11-12T13:35:16.773658+00:00",
+  "status": "FROZEN_PENDING_PARENT_REVIEW_BEFORE_FIRST_SCIENTIFIC_RUN",
+  "source_files": {
+    "api.py": "55b3e6a1bc196a507d7627003db643a7be3deb4497f57b3626694a26fb929c08",
+    "__init__.py": "f94757cf56544aa95a651ca613c566b6f193860c15b37b6167448007bea4ffd8",
+    "run_protocol.py": "8b421d060106c7ed02cee54beabcf3aa7ebc12dde90c8eb69f1421d0a12f26fa",
+    "README_RU.md": "bd0f0c93175950c17f25627323b7ad22111949c71fa92ea2c118299b94290957",
+    "requirements.txt": "a699f46ed76bd216f1081b6b2330e4fb45d7c8c5a5354b208694d6590a5a8645",
+    "protocol.json": "a01be9fac637796829173ad03b5f776fe4bbc05cbdcadfdd4599686c13257c20",
+    "reference_data.json": "444d5fd6004c59a04ce0b18e6cd00feb8fd763dbf9b9f47dd0a6da33493770d9",
+    "PROVENANCE.json": "0f9b70c39fbd4e9e6a4f38998cb886d3dd1a114d940bf76c1937d8db61aa8d1b",
+    "static_review.json": "936ed41bcd0c9eb81aff26734616eae779da79c20a1f19a257ea6deac90c51c0"
+  },
+  "scientific_executions_before_freeze": [],
+  "first_run_directory": "runs/run_001",
+  "failure_policy": "Preserve this freeze, all snapshots and every run. Never silently tune inputs, precision or caps after an outcome."
+}

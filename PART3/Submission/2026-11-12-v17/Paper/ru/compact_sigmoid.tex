@@ -1,0 +1,104 @@
+\section{Приложение к реализуемой сигмоидной регрессии}
+\label{reg:sigmoid}
+Квазар-выпуклость для реализуемых обобщённых
+линейных моделей известна \cite[лемма 3]{regglm}; связь через отношение
+производных также используется в \cite[лемма 5]{regfoster}.
+Сигмоидные наименьшие квадраты на $\ell_1$-шаре уже применяются
+для проверки методов условного градиента \cite[раздел 5.1.4]{khademi}.
+Ниже даны явные константы для полученных сертификатов.
+
+Пусть строки $A\in\mathbb R^{n\times d}$ равны $a_i^\top$,
+$Q=\{x:\|x\|_1\le R\}$, $R>0$, и $x^*\in Q$.
+Для $\sigma(z)=(1+e^{-z})^{-1}$ и ответов
+$y_i=\sigma(a_i^\top x^*)$ положим
+\begin{equation}\label{reg:sigmoidloss}
+ f(x)=\frac1{2n}\sum_{i=1}^n[\sigma(a_i^\top x)-y_i]^2.
+\end{equation}
+Тогда $f^*=0$ и $\nabla f(x^*)=0$. Обозначим
+\[
+ \begin{gathered}
+ Z=R\max_i\|a_i\|_\infty,\qquad
+ m_\sigma=(2+2\cosh Z)^{-1},\quad
+ M_\sigma=1/4,\quad C_\sigma=1/(6\sqrt3),\\
+ S=A^\top A/n,\quad \lambda=\lambda_{\min}(S),\quad
+ \Lambda=\lambda_{\max}(S),\quad K_A=\max_i\|a_i\|^2.
+ \end{gathered}
+\]
+Все допустимые скалярные аргументы лежат в $[-Z,Z]$, где
+$m_\sigma\le\sigma'\le M_\sigma$; на всей прямой
+$|\sigma''|\le C_\sigma$.
+
+\begin{proposition}[Константы регулярности и кривизны]
+\label{reg:sigmoidbounds}
+При $\lambda>0$ функция удовлетворяет сдвинутому RSI с
+$m=m_\sigma^2\lambda$. Для каждого $t>0$ граница нормы гессиана
+выполнена с
+\begin{equation}\label{reg:sighess}
+ H_0=\Lambda\left(M_\sigma^2+\frac{C_\sigma^2}{2t}\right),
+ \qquad H_1=K_A t.
+\end{equation}
+Кроме того,
+\begin{equation}\label{reg:quasar}
+ \langle\nabla f(x),x-x^*\rangle\ge\gamma f(x),\qquad
+ \gamma=\min\{1,2m_\sigma/M_\sigma\}>0,
+\end{equation}
+и на всей допустимой области
+\begin{equation}\label{reg:sigglobal}
+ \|\nabla^2f(x)\|\le L_Q
+ :=\Lambda\bigl(M_\sigma^2+C_\sigma\tanh(Z/2)\bigr).
+\end{equation}
+Для последних двух выводов полный столбцовый ранг не требуется.
+\end{proposition}
+\begin{proof}
+Положим $d=x-x^*$, $z_i=a_i^\top x$ и
+$r_i=\sigma(z_i)-\sigma(a_i^\top x^*)$.
+По теореме о среднем $r_i=\bar s_i a_i^\top d$, где
+$\bar s_i\in[m_\sigma,M_\sigma]$. Поэтому
+\[
+ \langle\nabla f(x),d\rangle
+ =\frac1n\sum_i\bar s_i\sigma'(z_i)(a_i^\top d)^2
+ \ge m_\sigma^2d^\top Sd\ge m\|d\|^2.
+\]
+Та же сумма равна
+$n^{-1}\sum_i\sigma'(z_i)r_i^2/\bar s_i
+ \ge 2m_\sigma f(x)/M_\sigma$, что доказывает \eqref{reg:quasar}.
+Гессиан имеет вид
+\[
+ \nabla^2f(x)=\frac1n\sum_i
+ [\sigma'(z_i)^2+r_i\sigma''(z_i)]a_i a_i^\top.
+\]
+Для единичного $v$ неравенство Коши-Буняковского и оценка
+$(a_i^\top v)^4\le K_A(a_i^\top v)^2$ ограничивают модуль
+квадратичной формы величиной
+\[
+ M_\sigma^2\Lambda+C_\sigma\sqrt{2K_A\Lambda f(x)}
+ \le\Lambda\left(M_\sigma^2+\frac{C_\sigma^2}{2t}\right)+K_Atf(x).
+\]
+Получена \eqref{reg:sighess}. Подстановка
+$|r_i|\le\tanh(Z/2)$ даёт \eqref{reg:sigglobal}.
+\end{proof}
+
+Приложение включает невыпуклые функции. Возьмём $n=d=1$,
+$Q=[-2,2]$, $a_1=1$ и $x^*=-2$. При
+$q=\tanh1>1/2$ и $p=\sigma'(2)=(1-q^2)/4$ имеем
+\[
+ f''(2)=p^2-pq^2=\frac p4(1-5q^2)<0.
+\]
+По непрерывности кривизна отрицательна и в близких внутренних точках.
+
+Константы требуют точной реализуемости. Для произвольных зашумлённых
+ответов эти RSI и связь градиента с ошибкой без остаточного члена
+не следуют. При большом $Z$ величина $m_\sigma$ может быть очень
+малой, и оценки становятся консервативными. Аффинная граница
+кривизны и $L_Q$ обе корректны; ни одна из них не всегда лучше.
+Параметр $t$ задаёт границу, а не подбор шага.
+
+Диаметр $\ell_1$-шара равен $D=2R$. Поэтому полный столбцовый ранг
+позволяет применять все оценки по норме, зазору и их сочетанию,
+включая $\mathcal J_D$; одной \eqref{reg:quasar} достаточно для
+остановки с линейной связью ошибки и зазора. Если алгоритму известно,
+что ответы реализуемы в допустимой точке, ему уже известно $f^*=0$,
+и само значение $f(x)$ равно ошибке. Если при сравнении эта
+нижняя граница скрыта, это нужно явно указать. Для произвольной
+невыпуклой функции ограниченная задача не объявляется эквивалентной
+задаче с фиксированным $\ell_1$-штрафом.

@@ -1,0 +1,72 @@
+{
+  "created_utc": "2026-11-12T15:13:02.636059+00:00",
+  "scientific_api_imports": 0,
+  "scientific_api_calls": 0,
+  "scientific_runs": 0,
+  "private_dependencies": {
+    "_v16_api.py": {
+      "origin": "/workspace/scratch/50468750a620/continuation_v16/certified_envelopes/runs/run_001/source_snapshot/certified_envelopes/api.py",
+      "sha256": "00bc84cf21a5b4ee39358c5439d26465333220a477b532edeca8ec14729c7ece",
+      "byte_identical": true
+    },
+    "_legacy_core.py": {
+      "origin": "/workspace/scratch/50468750a620/continuation_v16/certified_envelopes/runs/run_001/source_snapshot/certified_envelopes/_legacy_core.py",
+      "sha256": "55b3e6a1bc196a507d7627003db643a7be3deb4497f57b3626694a26fb929c08",
+      "byte_identical": true
+    },
+    "requirements.txt": {
+      "origin": "/workspace/scratch/50468750a620/continuation_v16/certified_envelopes/runs/run_001/source_snapshot/certified_envelopes/requirements.txt",
+      "sha256": "a699f46ed76bd216f1081b6b2330e4fb45d7c8c5a5354b208694d6590a5a8645",
+      "byte_identical": true
+    }
+  },
+  "proof_sources": {
+    "article_joint_diameter.tex": {
+      "origin": "/workspace/scratch/50468750a620/continuation_v17/diameter_review/article_joint_diameter.tex",
+      "sha256": "29dbde366f203bd3a736326aae4a9ae6cf03c43210c6f9554718166194245f3d",
+      "byte_identical": true
+    },
+    "article_joint_diameter_appendix.tex": {
+      "origin": "/workspace/scratch/50468750a620/continuation_v17/diameter_review/article_joint_diameter_appendix.tex",
+      "sha256": "26c3560ffd5cc4a15930fc432f662d78e0b55c423777f52824fa48c650cc53cd",
+      "byte_identical": true
+    },
+    "article_joint_envelope.tex": {
+      "origin": "/workspace/scratch/50468750a620/continuation_v16/certified_envelopes/runs/run_001/source_snapshot/certified_envelopes/proof_references/article_joint_envelope.tex",
+      "sha256": "863125a093800d9738e3429531fa4d127d73369b5d52dbc4a70143712eca774d",
+      "byte_identical": true
+    },
+    "article_joint_envelope_appendix.tex": {
+      "origin": "/workspace/scratch/50468750a620/continuation_v16/certified_envelopes/runs/run_001/source_snapshot/certified_envelopes/proof_references/article_joint_envelope_appendix.tex",
+      "sha256": "da0ee9f223f0ade6563053e070d6d178fcb1d9543052d263eb2bcf70dcf509fa",
+      "byte_identical": true
+    },
+    "article_gap_regime.tex": {
+      "origin": "/workspace/scratch/50468750a620/continuation_v16/certified_envelopes/runs/run_001/source_snapshot/certified_envelopes/proof_references/article_gap_regime.tex",
+      "sha256": "3404f90393152fdc5661c86c8853fde1f4089f98ca21568794f85348a3402a72",
+      "byte_identical": true
+    },
+    "article_gap_regime_appendix.tex": {
+      "origin": "/workspace/scratch/50468750a620/continuation_v16/certified_envelopes/runs/run_001/source_snapshot/certified_envelopes/proof_references/article_gap_regime_appendix.tex",
+      "sha256": "5e5f3f20145279805a3453b2e32509deac577efaab6596aa3ba6b781001b3a59",
+      "byte_identical": true
+    },
+    "article_boundary_gap_appendix.tex": {
+      "origin": "/workspace/scratch/50468750a620/continuation_v16/manuscript_en/article_boundary_gap_appendix.tex",
+      "sha256": "d6c3ce0b50d3bdae4bb06589da0106757eee9285d176158b07fcd747b09ffa6d",
+      "byte_identical": true
+    }
+  },
+  "diameter_proof_manifest": {
+    "path": "/workspace/scratch/50468750a620/continuation_v17/diameter_review/FINAL_MANIFEST.json",
+    "sha256": "3fa2f3f2cab30cf6d9bfd736333695640ef8be08c7dc667435b06606d8a7cea3"
+  },
+  "reference_data": {
+    "origin": "/workspace/scratch/50468750a620/continuation_v16/certified_envelopes/runs/run_001/source_snapshot/certified_envelopes/reference_data.json",
+    "sha256": "540394fa6b68d79f7682e1c323d5db8f791224f9fedcb73a4932e67b56a5c270",
+    "read_only_historical_copy": true
+  },
+  "registered_protocol_sha256": "ba866f45d396cff907d2e8d4b88b1aa17dfe05d867c361b9aaf8061d3da608c2",
+  "public_api_semantics": "Caps g,P and positive diameter bound D; exact pair feasibility is not imposed on caps.",
+  "v16_files_modified": false
+}

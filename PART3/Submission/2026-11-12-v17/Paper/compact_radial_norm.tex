@@ -1,0 +1,249 @@
+\section{The radial envelope and the norm certificate}
+\label{bndnorm:section}\label{energy:section}
+The same scalar comparison gives the norm, gap and joint certificates.
+Put $\mathcal A(v)=2H_0v+H_1v^2$. For $P>q\ge0$, define
+\begin{equation}\label{boundarygap:time}
+ \mathcal T(U;P,q)=\int_0^U
+ \frac{dv}{\sqrt{\min\{q^2+\mathcal A(v),
+                  P^2+\mathcal A(U)-\mathcal A(v)\}}}.
+\end{equation}
+For $P>0$ and $0<r\le P/m$, let $A(P,r)$ solve
+\begin{equation}\label{compact:radial-inverse}
+ \mathcal T(A(P,r);P,P-mr)=r,
+ \qquad A(P,0)=0.
+\end{equation}
+
+\begin{lemma}[Radial comparison and sharpness]\label{compact:radial}
+The inverse in \eqref{compact:radial-inverse} exists and is unique.
+Let $u\in C^1([0,r])$ have an absolutely continuous derivative and satisfy
+\[
+ u(0)=0,\quad u'(0)\ge0,\quad
+ u'(s)\ge u'(0)+ms,\quad u'(r)\le P,
+ \quad |u''(s)|\le H_0+H_1u(s)\quad\text{a.e.}
+\]
+Then $u(r)\le A(P,r)$. Equality holds for a trajectory whose curvature
+is first $H_0+H_1u$ and then $-(H_0+H_1u)$, with initial slope
+$P-mr$ and terminal slope $P$. Smooth trajectories with these exact
+slopes and the same constants approach its value.
+For fixed $P$, $A(P,r)$ is continuous and strictly increasing in $r$.
+
+For $H_1=0$,
+\begin{equation}\label{compact:radial-constant}
+ A(P,r)=Pr+\beta r^2,\qquad
+ \beta=\frac{H_0^2-2mH_0-m^2}{4H_0}.
+\end{equation}
+For $H_1>0$, put $k=\sqrt{H_1}$, $a=H_0/H_1$, $T=kr$, $q=P-mr$,
+and, for $0\le b\le\min\{T,\pi/4\}$, set
+\[
+ Y_b=a\cosh(T-b)+(q/k)\sinh(T-b),\qquad
+ Q_b=ak\sinh(T-b)+q\cosh(T-b).
+\]
+The unique root of
+\begin{equation}\label{compact:radial-switch}
+ Q_b\cos b-kY_b\sin b=P
+\end{equation}
+is interior, and
+\begin{equation}\label{compact:radial-value}
+ A(P,r)=Y_b\cos b+(Q_b/k)\sin b-a.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Write $p=u'$, $U=u(r)$ and $q=P-mr$. The assumptions imply
+$0\le p(0)\le q$ and $p(s)>0$ for $s>0$. The absolutely continuous
+chain rule applied to $p^2-\mathcal A(u)$ and $p^2+\mathcal A(u)$ gives
+\begin{equation}\label{energy:two-sided}
+ p(s)^2\le
+ \min\{q^2+\mathcal A(u(s)),P^2+\mathcal A(U)-\mathcal A(u(s))\}.
+\end{equation}
+Changing variables from $s$ to $u(s)$ yields
+$\mathcal T(U;P,q)\le r$. When $q=0$, the only endpoint singularity
+is of order $v^{-1/2}$ and is integrable. This argument also covers
+joins at which the second derivative jumps.
+
+We verify strict inversion. If $\mathcal A(U)\le P^2-q^2$, the first
+expression in the minimum is active throughout, so $\mathcal T$ is
+strictly increasing. Otherwise the crossing $v_c\in(0,U)$ satisfies
+$2\mathcal A(v_c)=P^2+\mathcal A(U)-q^2$.
+For $H_1>0$, set
+\[
+ z=U+a,\qquad R^2=z^2+P^2/k^2,\qquad
+ w^2=\tfrac12(R^2+a^2-q^2/k^2),\qquad w=v_c+a.
+\]
+Then
+\[
+ \mathcal T=
+ \int_a^w\frac{dy}{\sqrt{k^2y^2+q^2-k^2a^2}}
+ +\frac1k\{\arcsin(z/R)-\arcsin(w/R)\}.
+\]
+Differentiation cancels the crossing terms and gives
+\begin{equation}\label{boundarygap:time-derivative}
+ \mathcal T_U=\frac{P}{k^2R^2}
+       +\frac{zw}{kR^2\sqrt{R^2-w^2}}>0.
+\end{equation}
+The formulas agree at the branch boundary. The first integral diverges
+as $U\to\infty$, while the second is nonnegative. For $H_1=0$,
+\[
+ \mathcal T(U;P,q)=
+ \begin{cases}
+ (\sqrt{q^2+2H_0U}-q)/H_0,&2H_0U\le P^2-q^2,\\[1mm]
+ (\sqrt{2q^2+2P^2+4H_0U}-q-P)/H_0,&2H_0U>P^2-q^2.
+ \end{cases}
+\]
+Thus in both cases $\mathcal T$ is continuous, strictly increasing
+from zero to infinity. This proves the inverse and the upper bound.
+
+For $H_1>0$, solve $u''=H_0+H_1u$ from $u(0)=0$, $u'(0)=q$ for
+time $(T-b)/k$, then solve $u''=-(H_0+H_1u)$ for time $b/k$.
+Its terminal slope is $F(b)=Q_b\cos b-kY_b\sin b$, with
+$F'(b)=-2kY_b\cos b<0$. At $b=0$,
+$F(0)=ak\sinh T+q\cosh T>q+H_0r\ge P$.
+At the other endpoint it is either $q\cos T-ka\sin T<P$, or
+$(q-ka)e^{-(T-\pi/4)}/\sqrt2<P$.
+Hence \eqref{compact:radial-switch} has exactly one interior root.
+On its first arc the derivative is at least $q+ms$; on its second
+arc it decreases to $P=q+mr$, so the same inequality holds.
+The loss stays nonnegative, both energy bounds are attained on their
+respective arcs, and \eqref{compact:radial-value} follows.
+For $H_1=0$, switching from $H_0$ to $-H_0$ at
+$r(H_0+m)/(2H_0)$ gives \eqref{compact:radial-constant}.
+If also $H_0=m$, this trajectory is the smooth function $qs+ms^2/2$.
+
+In every other case the switch is interior and its slope exceeds $P$.
+Replace its sign by a smooth nonincreasing transition in $[-1,1]$
+over an interval of width $2\epsilon$, and solve
+$u''=\chi_{\epsilon,c}(H_0+H_1u)$ with the same initial data.
+Continuous dependence of this linear ODE gives uniform convergence
+of $u,u'$ as $\epsilon\downarrow0$. The limiting terminal slope has
+strictly positive derivative with respect to the physical switch $c$:
+$2(H_0+H_1u(c))\cos(k(r-c))$, or $2H_0$ if $H_1=0$.
+The intermediate value theorem therefore permits a nearby transition
+center for which $u'(r)=P$ exactly. Before the transition
+$u'(s)\ge q+ms$; throughout the transition it stays above $P$ by a
+fixed positive margin; afterwards it decreases to $P$. The same RSI
+and curvature bounds hold, with unchanged constants and endpoint slopes.
+The solutions extend smoothly to a neighborhood of the interval and
+their losses converge to $A(P,r)$.
+
+Finally let $0<r_1<r_2\le P/m$, $d=r_2-r_1$, and $q_i=P-mr_i$.
+Prefix a near-extremizer at $r_1$ by $q_2t+mt^2/2$ on $[0,d]$.
+Its final slope is $q_1$ and its value is
+$a_0=q_2d+md^2/2>0$. Continuing with $a_0+u(t-d)$ preserves the
+derivative lower bound and can only enlarge the permitted curvature.
+The joined derivative is absolutely continuous, so the energy comparison
+already proved gives
+\begin{equation}\label{compact:radial-growth}
+ A(P,r_2)\ge A(P,r_1)+q_2d+md^2/2>A(P,r_1).
+\end{equation}
+Continuity for $r>0$ follows from the strict switch, and at zero from
+the all-positive-curvature bound, which tends to zero. These comparison
+trajectories do not enlarge the feasible set of the original problem.
+\end{proof}
+
+Define $\mathcal E(P)=A(P,P/m)$ for $P>0$ and $\mathcal E(0)=0$.
+The preceding formulas evaluate it with one scalar root when $H_1>0$;
+for $H_1=0$ they give
+\begin{equation}\label{energy:constant}
+ \mathcal E(P)=
+ \frac{P^2(H_0^2+2mH_0-m^2)}{4m^2H_0}.
+\end{equation}
+
+\begin{theorem}[Norm certificate under shifted RSI]
+\label{bndnorm:main}\label{energy:main}
+Under \eqref{boundarygap:assumptions}, every source satisfies
+\begin{equation}\label{bndnorm:observable}
+ \delta(x)\le\mathcal E(P(x)).
+\end{equation}
+For $x\ne x^*$, with radial slopes $q=u'(0)$ and $p=u'(r)$,
+\begin{equation}\label{bndnorm:radial-deficit}
+ \delta(x)+\mathcal E(q)\le\mathcal E(p)\le\mathcal E(P(x)).
+\end{equation}
+The function $\mathcal E$ is continuous and, for $0\le P_1<P_2$,
+\begin{equation}\label{compact:norm-growth}
+ \mathcal E(P_2)\ge\mathcal E(P_1)+(P_2^2-P_1^2)/(2m).
+\end{equation}
+For each $P>0$, the bound is sharp with $P(x)=P$ exactly, including
+among smooth interval examples with $f'(x^*)>0$.
+\end{theorem}
+\begin{proof}
+The radial reduction and Lemma~\ref{compact:radial} give
+$\delta(x)\le A(P(x),r)\le A(P(x),P(x)/m)$.
+Extend a stationary extremal trajectory at $P_1$ from $P_1/m$ to
+$P_2/m$ with derivative $ms$. The join has an absolutely continuous
+derivative and curvature $m\le H_0+H_1u$ on the extension.
+The same comparison proves \eqref{compact:norm-growth}, including
+$P_1=0$ by the quadratic trajectory. Continuity follows from the
+switch formula; at zero use the all-positive-curvature upper bound.
+
+For \eqref{bndnorm:radial-deficit}, prefix the original ray by smooth
+stationary trajectories on $[0,q/m]$ with terminal slope $q$ and losses
+$a_j\to\mathcal E(q)$. Continue with $a_j+u(t-q/m)$.
+The first derivatives match, shifted RSI becomes $v'(t)\ge mt$,
+and the nonnegative loss offset preserves the curvature bound.
+The joined ray has terminal slope $p$ and length at most $p/m$.
+The comparison gives $a_j+\delta(x)\le\mathcal E(p)$; pass to the
+limit. The case $q=0$ uses an empty prefix.
+
+Sharpness with a stationary minimum is Lemma~\ref{compact:radial}
+at $r=P/m$. To make the optimal derivative positive, take
+$q_j\downarrow0$, use stationary near-extremizers $v_j$ at endpoint
+slope $P-q_j$ on $[0,(P-q_j)/m]$, and set $f_j(s)=v_j(s)+q_js$.
+The constants are unchanged, $f_j'(0)=q_j>0$, $f_j'(r_j)=P$, and
+$f_j(r_j)\to\mathcal E(P)$ by continuity.
+\end{proof}
+
+\begin{proposition}[A fixed initial slope]\label{joint:fixed-slope}
+For $P>q\ge0$, the sharp radial loss with initial slope $q$ and terminal
+slope $P$ is
+\begin{equation}\label{joint:fixed-slope-time}
+ \mathcal T(\mathcal E_q(P);P,q)=(P-q)/m,
+ \qquad \mathcal E_q(P)\le\mathcal E(P)-\mathcal E(q).
+\end{equation}
+Smooth interval functions with both slopes and all constants fixed
+approach this value. If $H_1=0$, then
+\begin{equation}\label{joint:fixed-slope-constant}
+ \mathcal E_q(P)=\frac{P^2-q^2}{2m}
+       +\frac{H_0^2-m^2}{4H_0m^2}(P-q)^2,
+\end{equation}
+and the deficit bound has excess
+\[
+ \mathcal E(P)-\mathcal E(q)-\mathcal E_q(P)
+ =\frac{q(P-q)(H_0^2-m^2)}{2H_0m^2}.
+\]
+\end{proposition}
+\begin{proof}
+RSI gives $r\le(P-q)/m$, and the energy comparison with these fixed
+slopes gives $\mathcal T(u(r);P,q)\le r$. Strict inversion proves the
+bound. Lemma~\ref{compact:radial} at $r=(P-q)/m$ proves smooth sharpness;
+\eqref{bndnorm:radial-deficit} proves the deficit. Substituting this
+radius in \eqref{compact:radial-constant} gives the two algebraic formulas.
+\end{proof}
+
+\begin{corollary}[The stationary full-gap certificate]\label{energy:gap}
+If $\nabla f(x^*)=0$, set $W(g)=\mathcal E(\sqrt{mg})$. Then
+\begin{equation}\label{energy:gap-certificate}
+ \delta(x)\le W\!\left(\min\{G(x),P(x)^2/m\}\right).
+\end{equation}
+The function $W$ is continuous, strictly increasing, unbounded, and
+$W(g)\ge g/2$. The bound is sharp when the gap is fixed exactly.
+\end{corollary}
+\begin{proof}
+For fixed $g>0$, define $U(r)$ by
+$\mathcal T(U(r);g/r,0)=r$. Write $P=g/r$ and let $v_c$ be the
+crossing of the two energy bounds. In the mixed branch,
+\[
+ \mathcal T+P\mathcal T_P
+ =\int_0^{v_c}\frac{dv}{\sqrt{\mathcal A(v)}}
+ +\int_{v_c}^{U}
+   \frac{\mathcal A(U)-\mathcal A(v)}
+        {[P^2+\mathcal A(U)-\mathcal A(v)]^{3/2}}\,dv>0.
+\]
+In the forward-only branch $\mathcal T_P=0$. Thus
+$U'(r)=(\mathcal T+P\mathcal T_P)/(r\mathcal T_U)>0$.
+Since $r\le\sqrt{g/m}$, the stationary radial comparison gives
+$\delta(x)\le U(\sqrt{g/m})=W(g)$. Combine this with the norm
+bound. The properties of $W$ follow from \eqref{compact:norm-growth}.
+The stationary interval examples have $G=P^2/m$ exactly and prove
+sharpness. This argument uses stationarity; the shifted gap envelope
+in the next section is different.
+\end{proof}

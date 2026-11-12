@@ -1,0 +1,43 @@
+{
+  "status": "AWAITING_INDEPENDENT_STATIC_REVIEW_AND_ROOT_PASS",
+  "created_utc": "2026-11-12T15:14:42.920228+00:00",
+  "scientific_api_imports_before_freeze": 0,
+  "scientific_api_calls_before_freeze": 0,
+  "new_scientific_runs_before_freeze": 0,
+  "registered_protocol_sha256": "ba866f45d396cff907d2e8d4b88b1aa17dfe05d867c361b9aaf8061d3da608c2",
+  "protocol_case_count": 10,
+  "mathematical_support": "H1>=0 with exact rational inputs and D>0, subject to the explicit resource, interval-sign and rounding refusal contract.",
+  "source_hashes": {
+    "DEPENDENCY_CAPTURE.json": "e5bbb6a28ff314e8bae64f9b3e24e4b6c16a11601168cded2f78b0fcc8ccbd8c",
+    "DERIVATION.txt": "676b8839ca1a543e8093293a39d6b787a7be62c2b2e432cfd5f1986b6416c099",
+    "PROVENANCE.json": "577d8197a6a6c2c903be1652e0a0a092605cc9aaec2faee626b8fec520c7828a",
+    "README_RU.txt": "319422ff94dac9d80bf10a6018324a2c006db1c18042304f283c31b40bd3f209",
+    "__init__.py": "5c3c038c942c6a368ce98166c5b450f72c4d0b0e6ec4547cfb425658e4f5d7f2",
+    "_legacy_core.py": "55b3e6a1bc196a507d7627003db643a7be3deb4497f57b3626694a26fb929c08",
+    "_v16_api.py": "00bc84cf21a5b4ee39358c5439d26465333220a477b532edeca8ec14729c7ece",
+    "api.py": "9720c39164e39efe842ec850d7ccb0f87c3e011ee07d75a933bfb50a3e5b0cfd",
+    "proof_references/article_boundary_gap_appendix.tex": "d6c3ce0b50d3bdae4bb06589da0106757eee9285d176158b07fcd747b09ffa6d",
+    "proof_references/article_gap_regime.tex": "3404f90393152fdc5661c86c8853fde1f4089f98ca21568794f85348a3402a72",
+    "proof_references/article_gap_regime_appendix.tex": "5e5f3f20145279805a3453b2e32509deac577efaab6596aa3ba6b781001b3a59",
+    "proof_references/article_joint_diameter.tex": "29dbde366f203bd3a736326aae4a9ae6cf03c43210c6f9554718166194245f3d",
+    "proof_references/article_joint_diameter_appendix.tex": "26c3560ffd5cc4a15930fc432f662d78e0b55c423777f52824fa48c650cc53cd",
+    "proof_references/article_joint_envelope.tex": "863125a093800d9738e3429531fa4d127d73369b5d52dbc4a70143712eca774d",
+    "proof_references/article_joint_envelope_appendix.tex": "da0ee9f223f0ade6563053e070d6d178fcb1d9543052d263eb2bcf70dcf509fa",
+    "protocol.json": "ba866f45d396cff907d2e8d4b88b1aa17dfe05d867c361b9aaf8061d3da608c2",
+    "reference_data.json": "540394fa6b68d79f7682e1c323d5db8f791224f9fedcb73a4932e67b56a5c270",
+    "requirements.txt": "a699f46ed76bd216f1081b6b2330e4fb45d7c8c5a5354b208694d6590a5a8645",
+    "run_protocol.py": "45cee3812814b4f033cf91405af82906a697f5a7f4a8a1b202ecc71d59abb14a",
+    "static_self_review.json": "01792aa1bb9e2387ff579bc48c4f638f78d34e74271ced29ca88b0ba67a7c9f8"
+  },
+  "review_contract": {
+    "required_path": "pre_execution_review.json",
+    "required_fields": {
+      "status": "PASS",
+      "approved_by": "/root",
+      "reviewed_freeze_sha256": "SHA256 of this exact FREEZE.json",
+      "scientific_runs_performed": 0
+    }
+  },
+  "execution_policy": "One first immutable run_001 only after independent static review and explicit root PASS. No API import before approval. Retain all ten outcomes and costs. No adaptive retry, precision increase, case replacement, v16 rerun, optimizer, LP or stochastic execution.",
+  "result_adapter_fields_statically_match": true
+}

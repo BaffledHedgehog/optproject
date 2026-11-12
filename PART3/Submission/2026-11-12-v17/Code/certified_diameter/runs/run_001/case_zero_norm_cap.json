@@ -1,0 +1,180 @@
+{
+  "id": "zero_norm_cap",
+  "function": "certify_joint_diameter",
+  "fixed_case": {
+    "id": "zero_norm_cap",
+    "function": "certify_joint_diameter",
+    "args": {
+      "g": "1",
+      "P": "0",
+      "D": "1"
+    },
+    "expected": {
+      "status": "certified",
+      "envelope": "J_D",
+      "branch": "diameter_zero",
+      "exact": "0",
+      "no_switch": true,
+      "regime_evaluations": 0
+    }
+  },
+  "api_call_started": true,
+  "output": {
+    "status": "certified",
+    "envelope": "J_D",
+    "envelope_lower": "0",
+    "envelope_upper": "0",
+    "achieved_factor": "1",
+    "requested_factor": "5/4",
+    "internal_factor": "9/8",
+    "reason": null,
+    "message": null,
+    "inputs": {
+      "m": "1",
+      "H0": "1",
+      "H1": "1",
+      "P": "0",
+      "g": "1",
+      "D": "1"
+    },
+    "precision": {
+      "work_dps": 100,
+      "value_dps": 100
+    },
+    "plan": {
+      "envelope_family": "diameter_restricted",
+      "branch": "diameter_zero",
+      "positive_nodes": 0,
+      "grid_intervals": 0,
+      "planned_bisections": 0
+    },
+    "work": {
+      "bound_evaluations": 0,
+      "node_coefficient_preparations": 0,
+      "switch_evaluations": 0,
+      "loss_evaluations": 0,
+      "scalar_evaluations_started": 0,
+      "bracket_sign_queries": 0,
+      "bracket_sign_decisions": 0,
+      "root_sign_queries": 0,
+      "root_sign_decisions": 0,
+      "bisection_updates": 0,
+      "sign_order_predicates": 0,
+      "sign_equality_predicates": 0,
+      "certificate_maximum_comparisons": 0,
+      "witness_maximum_comparisons": 0,
+      "rounding_maximum_comparisons": 0,
+      "derived_lower_maximum_comparisons": 0,
+      "budget_setup_maximum_comparisons": 0,
+      "budget_order_comparisons": 0,
+      "resource_metadata_maximum_comparisons": 8,
+      "budget_ceiling_operations": 0,
+      "rational_to_interval_conversions": 0,
+      "interval_endpoint_extractions": 0,
+      "resource_limit_checks": 10,
+      "validation_checks": 26,
+      "exact_formula_evaluations": 1,
+      "source_objective_calls": 0,
+      "source_gradient_calls": 0,
+      "full_LMO_calls": 0,
+      "LP_calls": 0,
+      "optimizer_updates": 0,
+      "stochastic_samples": 0,
+      "regime_evaluations": 0,
+      "regime_sign_queries": 0,
+      "regime_nonpositive_decisions": 0,
+      "regime_positive_decisions": 0,
+      "regime_unresolved_queries": 0,
+      "regime_order_predicates": 0,
+      "working_gap_minimum_comparisons": 0,
+      "algebraic_bound_evaluations": 0,
+      "diameter_cap_minimum_comparisons": 0,
+      "diameter_radius_minimum_comparisons": 0,
+      "diameter_collapse_comparisons": 0,
+      "diameter_exact_endpoint_comparisons": 0
+    },
+    "elementary_evaluations": {
+      "exp": 0,
+      "sin": 0,
+      "cos": 0,
+      "sqrt": 0
+    },
+    "trace": [],
+    "refusal_details": {},
+    "bound_semantics": "The interval encloses the sharp diameter-restricted mathematical envelope. Only envelope_upper bounds source error under the model assumptions and input caps.",
+    "cost_semantics": "Named started scalar and elementary evaluations, sign decisions and explicit comparisons; not all arithmetic operations or bit cost."
+  },
+  "checks": [
+    {
+      "check": "expected_status",
+      "passed": true
+    },
+    {
+      "check": "expected_envelope",
+      "passed": true
+    },
+    {
+      "check": "global_precision_unchanged",
+      "passed": true
+    },
+    {
+      "check": "no_source_or_optimizer_operations",
+      "passed": true
+    },
+    {
+      "check": "scalar_counter_partition",
+      "passed": true
+    },
+    {
+      "check": "root_updates_no_more_than_queries",
+      "passed": true
+    },
+    {
+      "check": "all_costs_nonnegative_integers",
+      "passed": true
+    },
+    {
+      "check": "expected_branch",
+      "passed": true
+    },
+    {
+      "check": "expected_regime_evaluation_count",
+      "passed": true
+    },
+    {
+      "check": "no_switch_or_loss_evaluations",
+      "passed": true
+    },
+    {
+      "check": "ordered_nonnegative_enclosure",
+      "passed": true
+    },
+    {
+      "check": "exact_returned_ratio",
+      "passed": true
+    },
+    {
+      "check": "requested_factor_met",
+      "passed": true
+    },
+    {
+      "check": "sqrt_counter_partition",
+      "passed": true
+    },
+    {
+      "check": "expected_exact_envelope",
+      "passed": true
+    }
+  ],
+  "status": "PASS",
+  "elapsed_seconds": 0.0001429069998266641,
+  "cpu_seconds": 0.00014237400000000067,
+  "global_precision_before": [
+    15,
+    15
+  ],
+  "global_precision_after": [
+    15,
+    15
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "scope": "Static syntax and metadata checks only; no API import/call or interval evaluation.",
+  "at_utc": "2026-11-12T13:35:16.773481+00:00",
+  "python_ast_parses": [
+    {
+      "file": "__init__.py",
+      "status": "PASS",
+      "sha256": "f94757cf56544aa95a651ca613c566b6f193860c15b37b6167448007bea4ffd8"
+    },
+    {
+      "file": "api.py",
+      "status": "PASS",
+      "sha256": "55b3e6a1bc196a507d7627003db643a7be3deb4497f57b3626694a26fb929c08"
+    },
+    {
+      "file": "run_protocol.py",
+      "status": "PASS",
+      "sha256": "8b421d060106c7ed02cee54beabcf3aa7ebc12dde90c8eb69f1421d0a12f26fa"
+    }
+  ],
+  "case_count": 26,
+  "case_identifiers_unique": true,
+  "scientific_executions": []
+}

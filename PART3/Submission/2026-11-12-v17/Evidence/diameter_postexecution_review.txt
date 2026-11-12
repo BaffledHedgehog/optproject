@@ -1,0 +1,79 @@
+POSTEXECUTION SAVED-RECORD REVIEW: PASS
+
+Reviewer: /root/gap_structure
+Scope: the saved first fixed run, read-only; no API import or rerun.
+Independent audit conditions: 638, all passed. Issues: none.
+
+Reviewed result SHA256:
+7db1a2f9b8c0a3ff0042cf6aec89bc65695de6bab7e9e2fd686dd0d6b98f0b54
+Reviewed FREEZE SHA256:
+55f9824ee37c2b16e79918ff5a8849210589671c39055500bf2197a3fb3eb9c8
+Independent JSON review SHA256:
+8c9af9fb14d0300c44fa9e86dfdd9ba90ac80cf1b99b4ed51e928166db1122f9
+
+Observed completion
+All ten frozen inputs were attempted once in their original order.
+There are seven certified enclosures and three expected refusals.
+The saved final and partial results agree with every per-case record.
+Case validation has 183 checks plus one interface check, giving 184.
+The API separately counted 344 internal validation predicates.
+
+Numerical and accounting checks
+The audit reconstructed exact cap geometry and all stored bisection
+brackets from their sign histories. It checked the saved interval signs,
+endpoint ordering, complete node coverage, exact returned ratios,
+root and mesh allowances, rounding reserve and the final lower-bound
+construction using rational arithmetic only.
+
+There are 11 completed positive nodes and 61 bisection updates.
+The shortened-grid case uses eight nodes and 40 updates. The three
+successful one-node cases use 8, 6 and 7 updates. The resource refusal
+retains one bounds evaluation but starts no node.
+
+Named scalar starts: 113 = 5 bounds + 3 regime tests + 83 switch
+evaluations + 22 loss evaluations. Elementary evaluations: 19 square
+roots, 220 exponentials, 105 sines and 105 cosines. Every aggregate
+counter matches the sum of the ten case records. The audit also
+reconciled endpoint extraction, rational conversion, selection,
+resource-check and validation-predicate counters.
+
+Source objective, gradient, LMO, LP, optimizer and stochastic counts
+are all zero. Ten API cases are not ten optimization experiments.
+
+Per-case outcomes
+Decimal displays below are rounded outward to six decimal places.
+The complete exact rational endpoints remain in the JSON reports.
+constant_exact_pair_diameter_improvement: certified [1.157500, 1.157500].
+affine_diameter_active_collapsed: certified [0.620259, 0.623356].
+exact_regime_equality_with_clipped_radius: certified [45.067869, 45.672390].
+outside_regime_shortened_grid: certified [0.274930, 0.374110].
+large_diameter_inactive: certified [0.903006, 0.903798].
+constant_norm_only_affine_formula: certified [1.357500, 1.357500].
+reject_zero_diameter: refused, invalid_input.
+zero_norm_cap: certified [0.000000, 0.000000].
+collapsed_node_resource_refusal: refused, resource_cap.
+reject_inexact_float_diameter: refused, invalid_input.
+
+The constant-curvature joint value is exactly 463/400, below the
+unrestricted 23/16. The norm-only value is exactly 543/400. The exact
+S=0 fixture retained tau=[3/4,3/4] and S=[0,0]. The inactive-diameter
+enclosure contains the previously saved v16 rational reference.
+
+Integrity and scope
+All 20 frozen live files and snapshot copies match the independently
+reviewed hashes. The root approval, preflight, environment, case hashes,
+final result and partial result form a consistent record. All saved
+run files retain read-only permissions, and runs contains run_001 only.
+
+This audit did not reevaluate square roots, exponentials or trigonometric
+intervals. It checks the saved execution against the reviewed code and
+proof contract; it is not another scientific execution.
+
+Audit process note: the first standard-library audit attempt stopped
+on an optional expected-field lookup in the resource-refusal case.
+The audit-only parser was corrected to treat optional fields correctly.
+The failed attempt receipt is retained. No package source, protocol
+input, saved run record or numerical precision was changed.
+
+API/package imports by this reviewer: 0.
+Scientific API calls or runs by this reviewer: 0.

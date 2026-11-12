@@ -1,0 +1,187 @@
+{
+  "id": "refuse_root_resource",
+  "case_type": "forced_resource_refusal",
+  "case": {
+    "id": "refuse_root_resource",
+    "case_type": "forced_resource_refusal",
+    "envelope": "E",
+    "arguments": [
+      "1"
+    ],
+    "expected": {
+      "status": "refused",
+      "reason": "resource_cap",
+      "details": {
+        "resource": "bisection_steps"
+      },
+      "plan": {
+        "positive_nodes": 1,
+        "bisections_per_node": 5
+      },
+      "work": {
+        "bound_evaluations": 1,
+        "switch_evaluations": 0,
+        "loss_evaluations": 0
+      }
+    },
+    "limits": {
+      "max_bisection_steps": 0
+    }
+  },
+  "test_status": "PASS",
+  "certificate": {
+    "status": "refused",
+    "envelope": "E",
+    "envelope_lower": null,
+    "envelope_upper": null,
+    "achieved_factor": null,
+    "requested_factor": "2",
+    "internal_factor": "3/2",
+    "reason": "resource_cap",
+    "message": "The fixed bisection_steps cap was exceeded.",
+    "inputs": {
+      "m": "1",
+      "H0": "1",
+      "H1": "1",
+      "P": "1"
+    },
+    "precision": {
+      "work_dps": 100,
+      "value_dps": 100
+    },
+    "plan": {
+      "branch": "affine_norm",
+      "working_gap": "1",
+      "fixed_radius": "1",
+      "Kstar_interval": [
+        "47564511195692300647032481380328689457821114006534486654973699574435731771518958482255775061119909527/17498005798264095394980017816940970922825355447145699491406164851279623993595007385788105416184430592",
+        "95129022391384601294064962760657378915642228013068973309947399148871463543037916964511550122239819057/34996011596528190789960035633881941845650710894291398982812329702559247987190014771576210832368861184"
+      ],
+      "Lstar_interval": [
+        "53048112672558730383571078748449851413388226677704567821301425661935615801375190489880879177371643459/4374501449566023848745004454235242730706338861786424872851541212819905998398751846447026354046107648",
+        "26524056336279365191785539374224925706694113338852283910650712830967807900687595244940439588685821731/2187250724783011924372502227117621365353169430893212436425770606409952999199375923223513177023053824"
+      ],
+      "positive_nodes": 1,
+      "bisections_per_node": 5,
+      "planned_bisections": 5
+    },
+    "work": {
+      "bound_evaluations": 1,
+      "node_coefficient_preparations": 0,
+      "switch_evaluations": 0,
+      "loss_evaluations": 0,
+      "scalar_evaluations_started": 1,
+      "bracket_sign_queries": 0,
+      "bracket_sign_decisions": 0,
+      "root_sign_queries": 0,
+      "root_sign_decisions": 0,
+      "bisection_updates": 0,
+      "sign_order_predicates": 0,
+      "sign_equality_predicates": 0,
+      "certificate_maximum_comparisons": 0,
+      "witness_maximum_comparisons": 0,
+      "rounding_maximum_comparisons": 0,
+      "derived_lower_maximum_comparisons": 0,
+      "budget_setup_maximum_comparisons": 0,
+      "budget_order_comparisons": 2,
+      "resource_metadata_maximum_comparisons": 18,
+      "budget_ceiling_operations": 0,
+      "rational_to_interval_conversions": 4,
+      "interval_endpoint_extractions": 4,
+      "resource_limit_checks": 19,
+      "validation_checks": 25,
+      "exact_formula_evaluations": 0,
+      "source_objective_calls": 0,
+      "source_gradient_calls": 0,
+      "full_LMO_calls": 0,
+      "LP_calls": 0,
+      "optimizer_updates": 0,
+      "stochastic_samples": 0
+    },
+    "elementary_evaluations": {
+      "exp": 2,
+      "sin": 0,
+      "cos": 0,
+      "sqrt": 1
+    },
+    "trace": [],
+    "refusal_details": {
+      "resource": "bisection_steps",
+      "required": 5,
+      "limit": 0
+    },
+    "bound_semantics": "The interval encloses the mathematical envelope; only envelope_upper bounds source error under the model assumptions.",
+    "cost_semantics": "Named started evaluations, resolved/attempted sign queries and explicit maximum selections; not all arithmetic operations or bit cost."
+  },
+  "checks": [
+    {
+      "name": "expected API status",
+      "passed": true
+    },
+    {
+      "name": "zero scientific source/optimizer/stochastic oracles",
+      "passed": true
+    },
+    {
+      "name": "all started scalar evaluations are named",
+      "passed": true
+    },
+    {
+      "name": "bisection ledger matches the saved node traces",
+      "passed": true
+    },
+    {
+      "name": "resolved midpoint signs match completed updates",
+      "passed": true
+    },
+    {
+      "name": "direct exp calls reconcile with started scalar evaluations",
+      "passed": true
+    },
+    {
+      "name": "direct sin calls reconcile",
+      "passed": true
+    },
+    {
+      "name": "direct cos calls reconcile",
+      "passed": true
+    },
+    {
+      "name": "direct sqrt calls reconcile",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter bound_evaluations",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter switch_evaluations",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter loss_evaluations",
+      "passed": true
+    },
+    {
+      "name": "refusal exposes no envelope certificate",
+      "passed": true
+    },
+    {
+      "name": "exact expected refusal reason",
+      "passed": true
+    },
+    {
+      "name": "exact refusal detail resource",
+      "passed": true
+    },
+    {
+      "name": "fixed refusal plan field positive_nodes",
+      "passed": true
+    },
+    {
+      "name": "fixed refusal plan field bisections_per_node",
+      "passed": true
+    }
+  ],
+  "elapsed_seconds_measurement_only": 0.0008811970001261216
+}

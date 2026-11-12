@@ -1,0 +1,136 @@
+{
+  "completed_cases": [
+    {
+      "id": "constant_exact_pair_diameter_improvement",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 18,
+      "failed_checks": [],
+      "result_sha256": "54e60e47cf6387c70b389d3dc0140d9213b4d894c92223f4a738d2117ae95e1e"
+    },
+    {
+      "id": "affine_diameter_active_collapsed",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 20,
+      "failed_checks": [],
+      "result_sha256": "ac7f3bfbb30d9f38ee324c8b260e0967e1b1214abc084c7edd955601ce6da614"
+    },
+    {
+      "id": "exact_regime_equality_with_clipped_radius",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 25,
+      "failed_checks": [],
+      "result_sha256": "43d6c0a3ff35f70520720ece1e45c23941af8b1ce503ea3d26ef40ce6055c3d8"
+    },
+    {
+      "id": "outside_regime_shortened_grid",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 24,
+      "failed_checks": [],
+      "result_sha256": "7aff30e04576ca53a4a6b3cfcede002ac4367bd9598829fc309d30a4d945dc66"
+    },
+    {
+      "id": "large_diameter_inactive",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 25,
+      "failed_checks": [],
+      "result_sha256": "22e1049ac11b9ef611a340054a6d6fde2ca3397ad64786e3943df9defe45369b"
+    },
+    {
+      "id": "constant_norm_only_affine_formula",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 19,
+      "failed_checks": [],
+      "result_sha256": "92696825f63ebde3e6831045f9350718343f0ff0d4756601320b4889af1972c7"
+    },
+    {
+      "id": "reject_zero_diameter",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 12,
+      "failed_checks": [],
+      "result_sha256": "0b0f6d0b70b1c0fa5d2f26ba7f65be3a2d9d4ec0beb591f99a9e21a815d37281"
+    },
+    {
+      "id": "zero_norm_cap",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 15,
+      "failed_checks": [],
+      "result_sha256": "af56b6ea62297350253f785f7521019b90f210473789aec8de3299a43207c80f"
+    },
+    {
+      "id": "collapsed_node_resource_refusal",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 13,
+      "failed_checks": [],
+      "result_sha256": "d0fd1ab05737de424c345c4fdc5f8adc19a7a5e4297887f9c4f4d10391e4cfce"
+    },
+    {
+      "id": "reject_inexact_float_diameter",
+      "status": "PASS",
+      "api_call_started": true,
+      "validation_checks": 12,
+      "failed_checks": [],
+      "result_sha256": "665bcbc0382c3d114bd0c6e9a72acb22d165a046b674ce878e289882dc2dc232"
+    }
+  ],
+  "api_calls_started": 10,
+  "work": {
+    "bound_evaluations": 5,
+    "node_coefficient_preparations": 11,
+    "switch_evaluations": 83,
+    "loss_evaluations": 22,
+    "scalar_evaluations_started": 113,
+    "bracket_sign_queries": 22,
+    "bracket_sign_decisions": 22,
+    "root_sign_queries": 61,
+    "root_sign_decisions": 61,
+    "bisection_updates": 61,
+    "sign_order_predicates": 129,
+    "sign_equality_predicates": 0,
+    "certificate_maximum_comparisons": 7,
+    "witness_maximum_comparisons": 8,
+    "rounding_maximum_comparisons": 8,
+    "derived_lower_maximum_comparisons": 8,
+    "budget_setup_maximum_comparisons": 1,
+    "budget_order_comparisons": 10,
+    "resource_metadata_maximum_comparisons": 804,
+    "budget_ceiling_operations": 1,
+    "rational_to_interval_conversions": 193,
+    "interval_endpoint_extractions": 242,
+    "resource_limit_checks": 988,
+    "validation_checks": 344,
+    "exact_formula_evaluations": 3,
+    "source_objective_calls": 0,
+    "source_gradient_calls": 0,
+    "full_LMO_calls": 0,
+    "LP_calls": 0,
+    "optimizer_updates": 0,
+    "stochastic_samples": 0,
+    "regime_evaluations": 3,
+    "regime_sign_queries": 3,
+    "regime_nonpositive_decisions": 2,
+    "regime_positive_decisions": 1,
+    "regime_unresolved_queries": 0,
+    "regime_order_predicates": 4,
+    "working_gap_minimum_comparisons": 0,
+    "algebraic_bound_evaluations": 0,
+    "diameter_cap_minimum_comparisons": 14,
+    "diameter_radius_minimum_comparisons": 7,
+    "diameter_collapse_comparisons": 5,
+    "diameter_exact_endpoint_comparisons": 2
+  },
+  "elementary_evaluations": {
+    "exp": 220,
+    "sin": 105,
+    "cos": 105,
+    "sqrt": 19
+  }
+}

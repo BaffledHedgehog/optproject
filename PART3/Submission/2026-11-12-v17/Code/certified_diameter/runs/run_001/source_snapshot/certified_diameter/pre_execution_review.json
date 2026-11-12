@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "approved_by": "/root",
+  "approved_at_utc": "2026-11-12T15:18:26.449824+00:00",
+  "reviewed_freeze_sha256": "55f9824ee37c2b16e79918ff5a8849210589671c39055500bf2197a3fb3eb9c8",
+  "scientific_runs_performed": 0,
+  "scientific_api_imports_performed": 0,
+  "scientific_api_calls_performed": 0,
+  "independent_review": "continuation_v17/diameter_api_review/preexecution_static_review.json",
+  "independent_review_sha256": "cd60cced2b7bd34abd5051208b8e3dbd4523162b1b574803517637f157eaa54d",
+  "root_review": [
+    "Read all new api.py and run_protocol.py and the frozen ten-case protocol.",
+    "Reviewed the exact cap geometry h=min(g,P^2/m,PD), positive nonempty radius interval and norm-only derivation.",
+    "Reviewed constant-curvature endpoint choice, zero axes after D validation, collapsed node before the S gate and outward sign decisions.",
+    "Checked single-node and shortened-grid error budgets against the proved envelope lower bound h/2 and the immutable finish_affine contract.",
+    "Read inherited input parsing, scale/dependency guards, node preflight, interval completion and structured refusal handling.",
+    "Reviewed snapshot-only imports, all-case preservation, final source hashes, no retry policy and separate operation counters.",
+    "Verified the independent static review hash and every exact frozen source hash without executing scientific code."
+  ],
+  "approved_execution": "One first run of this exact fixed ten-case protocol; preserve every result and refusal. No retries, tuning, legacy execution or optimizer/LP/stochastic runs."
+}

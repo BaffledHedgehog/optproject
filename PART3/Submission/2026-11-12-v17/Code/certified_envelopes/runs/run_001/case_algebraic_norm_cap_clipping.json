@@ -1,0 +1,192 @@
+{
+  "id": "algebraic_norm_cap_clipping",
+  "function": "algebraic_joint_bound",
+  "fixed_case": {
+    "id": "algebraic_norm_cap_clipping",
+    "function": "algebraic_joint_bound",
+    "args": {
+      "g": "10",
+      "P": "1"
+    },
+    "expected": {
+      "status": "certified",
+      "branch": "algebraic_joint_regime",
+      "working_gap": "1",
+      "regime": "nonpositive",
+      "positive_nodes": 0,
+      "no_switch": true,
+      "upper_lt": "1"
+    }
+  },
+  "output": {
+    "status": "certified",
+    "source_error_upper": "177705001081882923438732412208205079825094407583930997700092493397117284652883102389214440945284701033/279968092772225526319680285071055534765205687154331191862498637620473983897520118172609686658950889472",
+    "bound_type": "joint_algebraic",
+    "reason": null,
+    "message": null,
+    "inputs": {
+      "m": "1",
+      "H0": "1",
+      "H1": "1",
+      "P": "1",
+      "g": "10"
+    },
+    "precision": {
+      "work_dps": 100,
+      "value_dps": 100
+    },
+    "plan": {
+      "regime": {
+        "working_gap": "1",
+        "tau_interval": [
+          "121902124209439674302946074567416359903311591034489752985693687198031429801536545586659583602553786621/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736",
+          "121902124209439674302946074567416359903311591034489752985693687198031429801536545586659583602553786623/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736"
+        ],
+        "S_interval": [
+          "-102263091690342602880947872862850454940111279570400194162406144223356699244637015783395245713666188459/279968092772225526319680285071055534765205687154331191862498637620473983897520118172609686658950889472",
+          "-102263091690342602880947872862850454940111279570400194162406144223356699244637015783395245713666188439/279968092772225526319680285071055534765205687154331191862498637620473983897520118172609686658950889472"
+        ],
+        "decision": "nonpositive"
+      },
+      "branch": "algebraic_joint_regime",
+      "working_gap": "1",
+      "left_radius": "1",
+      "used_S_upper": "-102263091690342602880947872862850454940111279570400194162406144223356699244637015783395245713666188439/279968092772225526319680285071055534765205687154331191862498637620473983897520118172609686658950889472",
+      "positive_nodes": 0,
+      "grid_intervals": 0,
+      "planned_bisections": 0,
+      "guarantee": "source_error_upper_only_no_relative_factor"
+    },
+    "work": {
+      "bound_evaluations": 0,
+      "node_coefficient_preparations": 0,
+      "switch_evaluations": 0,
+      "loss_evaluations": 0,
+      "scalar_evaluations_started": 2,
+      "bracket_sign_queries": 0,
+      "bracket_sign_decisions": 0,
+      "root_sign_queries": 0,
+      "root_sign_decisions": 0,
+      "bisection_updates": 0,
+      "sign_order_predicates": 0,
+      "sign_equality_predicates": 0,
+      "certificate_maximum_comparisons": 0,
+      "witness_maximum_comparisons": 0,
+      "rounding_maximum_comparisons": 0,
+      "derived_lower_maximum_comparisons": 0,
+      "budget_setup_maximum_comparisons": 0,
+      "budget_order_comparisons": 0,
+      "resource_metadata_maximum_comparisons": 19,
+      "budget_ceiling_operations": 0,
+      "rational_to_interval_conversions": 4,
+      "interval_endpoint_extractions": 4,
+      "resource_limit_checks": 17,
+      "validation_checks": 28,
+      "exact_formula_evaluations": 0,
+      "source_objective_calls": 0,
+      "source_gradient_calls": 0,
+      "full_LMO_calls": 0,
+      "LP_calls": 0,
+      "optimizer_updates": 0,
+      "stochastic_samples": 0,
+      "regime_evaluations": 1,
+      "regime_sign_queries": 1,
+      "regime_nonpositive_decisions": 1,
+      "regime_positive_decisions": 0,
+      "regime_unresolved_queries": 0,
+      "regime_order_predicates": 1,
+      "working_gap_minimum_comparisons": 1,
+      "algebraic_bound_evaluations": 1
+    },
+    "elementary_evaluations": {
+      "exp": 0,
+      "sin": 0,
+      "cos": 0,
+      "sqrt": 1
+    },
+    "refusal_details": {},
+    "bound_semantics": "Only a source-error upper bound under the model assumptions and input caps; no lower error bound or requested relative-envelope factor.",
+    "cost_semantics": "Named started evaluations and comparisons; not all arithmetic operations or bit cost."
+  },
+  "checks": [
+    {
+      "check": "expected_status",
+      "passed": true
+    },
+    {
+      "check": "global_precision_unchanged",
+      "passed": true
+    },
+    {
+      "check": "no_source_or_optimizer_operations",
+      "passed": true
+    },
+    {
+      "check": "scalar_counter_partition",
+      "passed": true
+    },
+    {
+      "check": "root_updates_no_more_than_queries",
+      "passed": true
+    },
+    {
+      "check": "all_costs_nonnegative_integers",
+      "passed": true
+    },
+    {
+      "check": "expected_branch",
+      "passed": true
+    },
+    {
+      "check": "expected_clipped_working_gap",
+      "passed": true
+    },
+    {
+      "check": "expected_regime_decision",
+      "passed": true
+    },
+    {
+      "check": "one_regime_evaluation",
+      "passed": true
+    },
+    {
+      "check": "one_regime_query",
+      "passed": true
+    },
+    {
+      "check": "certified_nonpositive_endpoint",
+      "passed": true
+    },
+    {
+      "check": "expected_positive_nodes",
+      "passed": true
+    },
+    {
+      "check": "no_switch_or_loss_evaluations",
+      "passed": true
+    },
+    {
+      "check": "no_relative_envelope_contract",
+      "passed": true
+    },
+    {
+      "check": "nonnegative_bound",
+      "passed": true
+    },
+    {
+      "check": "expected_strict_upper",
+      "passed": true
+    }
+  ],
+  "status": "PASS",
+  "elapsed_seconds": 0.0008930529984354507,
+  "cpu_seconds": 0.0008711339999999956,
+  "global_precision_before": [
+    15,
+    15
+  ],
+  "global_precision_after": [
+    15,
+    15
+  ]
+}

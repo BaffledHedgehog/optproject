@@ -1,0 +1,216 @@
+{
+  "status": "PASS",
+  "protocol_id": "certified_envelopes_v16_first_fixed_panel",
+  "started_utc": "2026-11-12T13:55:59.729190+00:00",
+  "completed_utc": "2026-11-12T13:55:59.780820+00:00",
+  "scope": "Deterministic scalar implementation controls for proved formulas and refusal semantics. These controls are not proofs, benchmarks or optimization experiments.",
+  "api_calls": 16,
+  "new_protocol_run_index": 1,
+  "legacy_runs_repeated": 0,
+  "automatic_retries": 0,
+  "cases": [
+    {
+      "id": "zero_norm",
+      "status": "PASS",
+      "validation_checks": 12,
+      "failed_checks": [],
+      "result_sha256": "80af40af8690bdc7089d38c0618ea8526749ae9b5f75727d57f27b8437135657"
+    },
+    {
+      "id": "zero_joint_gap",
+      "status": "PASS",
+      "validation_checks": 12,
+      "failed_checks": [],
+      "result_sha256": "ff684e716097171dc034ce2e101bc8df7ef10b2289fec5655e23f9be71f6e055"
+    },
+    {
+      "id": "zero_algebraic_norm",
+      "status": "PASS",
+      "validation_checks": 11,
+      "failed_checks": [],
+      "result_sha256": "d5255f264669b7e76225eb677af929bf291c015a9c0a8d19232e8b8e38fb99aa"
+    },
+    {
+      "id": "constant_gap_active",
+      "status": "PASS",
+      "validation_checks": 12,
+      "failed_checks": [],
+      "result_sha256": "2153cc2cb0a234ce59a0476605b601975f595cb7e68d581baf7b99f0669dda88"
+    },
+    {
+      "id": "constant_norm_active",
+      "status": "PASS",
+      "validation_checks": 12,
+      "failed_checks": [],
+      "result_sha256": "485eff1b68caf4746e3633eb75a0103bed9476178e6404a6f8467c16a147516c"
+    },
+    {
+      "id": "gap_regime_exact",
+      "status": "PASS",
+      "validation_checks": 17,
+      "failed_checks": [],
+      "result_sha256": "c36ccaed80e10de59e031496d1079a0315a3274ef42cad7647f22044a69a8e55"
+    },
+    {
+      "id": "joint_regime_one_node",
+      "status": "PASS",
+      "validation_checks": 20,
+      "failed_checks": [],
+      "result_sha256": "8f9a49f2b50939208bcaa392905d4c2790269c8a91f65fabbcd96ad9738c70cf"
+    },
+    {
+      "id": "joint_norm_branch",
+      "status": "PASS",
+      "validation_checks": 15,
+      "failed_checks": [],
+      "result_sha256": "4576298e23365a6dff9f4bcef94d3b2f0e753d40e7325172a64a153776cb3b47"
+    },
+    {
+      "id": "algebraic_joint",
+      "status": "PASS",
+      "validation_checks": 17,
+      "failed_checks": [],
+      "result_sha256": "6a4e15066e5c5ac586616279f7bd276e3798cc8c800bf3483b064437b5f300c3"
+    },
+    {
+      "id": "algebraic_norm_cap_clipping",
+      "status": "PASS",
+      "validation_checks": 17,
+      "failed_checks": [],
+      "result_sha256": "7941996908bcbad0e6e7c246a61e0dfe8390f08d8fdc253a5d9fdbe41adf915f"
+    },
+    {
+      "id": "exact_gate_equality",
+      "status": "PASS",
+      "validation_checks": 20,
+      "failed_checks": [],
+      "result_sha256": "84f812fae9ce8b6b7927564293d45ff80973d1697ce411d169802e25e53509d4"
+    },
+    {
+      "id": "outside_regime_grid",
+      "status": "PASS",
+      "validation_checks": 20,
+      "failed_checks": [],
+      "result_sha256": "dc4c078aedec14c305c96877d4ec4a0b035f03ed11ecf3ea2b8e05b61aad8be0"
+    },
+    {
+      "id": "outside_algebraic_refusal",
+      "status": "PASS",
+      "validation_checks": 14,
+      "failed_checks": [],
+      "result_sha256": "da483acd708c05c3b9352893becd3a8abb7c1b32d2452f5f2120755da0d0ef08"
+    },
+    {
+      "id": "unresolved_regime_refusal",
+      "status": "PASS",
+      "validation_checks": 13,
+      "failed_checks": [],
+      "result_sha256": "f522faa4c7b77c9ec960cb3b4ae918add61f8eae5c1c454d97ed2c76c19f118a"
+    },
+    {
+      "id": "one_node_resource_refusal",
+      "status": "PASS",
+      "validation_checks": 14,
+      "failed_checks": [],
+      "result_sha256": "9472684e563d87adc4fb728a5886e7686c167a1e940b7b13868b0c30e66860ea"
+    },
+    {
+      "id": "reject_inexact_float",
+      "status": "PASS",
+      "validation_checks": 9,
+      "failed_checks": [],
+      "result_sha256": "c6eb5d8597f8fb547568e0542ce362b4d26d28a2fc538125bd32b75925622fda"
+    }
+  ],
+  "interface_checks": [
+    {
+      "check": "certify_joint_joint_arguments_keyword_only",
+      "passed": true
+    },
+    {
+      "check": "algebraic_joint_bound_joint_arguments_keyword_only",
+      "passed": true
+    },
+    {
+      "check": "algebraic_bound_has_no_factor_argument",
+      "passed": true
+    }
+  ],
+  "validation_checks": 238,
+  "work": {
+    "bound_evaluations": 5,
+    "node_coefficient_preparations": 17,
+    "switch_evaluations": 124,
+    "loss_evaluations": 34,
+    "scalar_evaluations_started": 174,
+    "bracket_sign_queries": 34,
+    "bracket_sign_decisions": 34,
+    "root_sign_queries": 90,
+    "root_sign_decisions": 90,
+    "bisection_updates": 90,
+    "sign_order_predicates": 195,
+    "sign_equality_predicates": 0,
+    "certificate_maximum_comparisons": 13,
+    "witness_maximum_comparisons": 14,
+    "rounding_maximum_comparisons": 14,
+    "derived_lower_maximum_comparisons": 8,
+    "budget_setup_maximum_comparisons": 1,
+    "budget_order_comparisons": 10,
+    "resource_metadata_maximum_comparisons": 1223,
+    "budget_ceiling_operations": 1,
+    "rational_to_interval_conversions": 300,
+    "interval_endpoint_extractions": 372,
+    "resource_limit_checks": 1479,
+    "validation_checks": 496,
+    "exact_formula_evaluations": 6,
+    "source_objective_calls": 0,
+    "source_gradient_calls": 0,
+    "full_LMO_calls": 0,
+    "LP_calls": 0,
+    "optimizer_updates": 0,
+    "stochastic_samples": 0,
+    "regime_evaluations": 9,
+    "regime_sign_queries": 9,
+    "regime_nonpositive_decisions": 6,
+    "regime_positive_decisions": 2,
+    "regime_unresolved_queries": 1,
+    "regime_order_predicates": 12,
+    "working_gap_minimum_comparisons": 3,
+    "algebraic_bound_evaluations": 2
+  },
+  "elementary_evaluations": {
+    "exp": 326,
+    "sin": 158,
+    "cos": 158,
+    "sqrt": 31
+  },
+  "elapsed_seconds": 0.05163372400056687,
+  "cpu_seconds": 0.051341396,
+  "source_hashes": {
+    "api.py": "00bc84cf21a5b4ee39358c5439d26465333220a477b532edeca8ec14729c7ece",
+    "_legacy_core.py": "55b3e6a1bc196a507d7627003db643a7be3deb4497f57b3626694a26fb929c08",
+    "__init__.py": "0717b2fa59a4d891f2206479ed7598a36a51767aae1e2cf13e7731c36ab00acf",
+    "run_protocol.py": "bbc746989d99b960bd773cf51eee96ff53f2705ad0d5a11ce3afd885751f4024",
+    "protocol.json": "91a450ec1bb7ca28bc908a59df9691dfdd77b51bf12a45ea3c0160beb9889511",
+    "reference_data.json": "540394fa6b68d79f7682e1c323d5db8f791224f9fedcb73a4932e67b56a5c270",
+    "README_RU.txt": "c85d95a808c40c751692ff2a144f93fc7ece577d1c31a8d41920ad484e93dd7c",
+    "DERIVATION.txt": "c66c9b6f9f649f027ba1186049d760472d4083c000743b923efa7724a9c7b898",
+    "PROVENANCE.json": "67f994d9545e8fdf95effe4b06fdbc6c132b88b36bcb9540c8fc8c29cd6aa623",
+    "LEGACY_CAPTURE.json": "2477e9b8768f894ffffa87027804fdd844be9dd6e75d4f5676c5b6437e5b8e6e",
+    "requirements.txt": "a699f46ed76bd216f1081b6b2330e4fb45d7c8c5a5354b208694d6590a5a8645",
+    "proof_references/article_gap_regime.tex": "3404f90393152fdc5661c86c8853fde1f4089f98ca21568794f85348a3402a72",
+    "proof_references/article_gap_regime_appendix.tex": "5e5f3f20145279805a3453b2e32509deac577efaab6596aa3ba6b781001b3a59",
+    "proof_references/article_joint_envelope.tex": "863125a093800d9738e3429531fa4d127d73369b5d52dbc4a70143712eca774d",
+    "proof_references/article_joint_envelope_appendix.tex": "da0ee9f223f0ade6563053e070d6d178fcb1d9543052d263eb2bcf70dcf509fa"
+  },
+  "sources_unchanged": true,
+  "freeze_sha256": "6a5311ca1c9a3f566be03a0800b60ef99b951e21ea7f8ba866c78def497ba238",
+  "review_sha256": "8765468fc1c035dee1261dc7846a95a5f1423943259f559bc680a3d68924c225",
+  "freeze_and_review_unchanged": true,
+  "mpmath_version": "1.3.0",
+  "api_version": "0.2.0",
+  "imported_api": "/workspace/scratch/50468750a620/continuation_v16/certified_envelopes/runs/run_001/source_snapshot/certified_envelopes/api.py",
+  "imported_core": "/workspace/scratch/50468750a620/continuation_v16/certified_envelopes/runs/run_001/source_snapshot/certified_envelopes/_legacy_core.py",
+  "cost_semantics": "Per-case and aggregate named scalar starts, square roots, elementary calls, sign queries, root updates and explicit comparisons are recorded separately from validation assertions and wall time. Counts are not bit complexity. All source objective, gradient, LMO, LP, optimizer and stochastic counts must remain zero.",
+  "limits_of_evidence": "Fixed implementation controls do not replace the mathematical proofs, establish priority, certify a fixed-domain minimax theorem, or benchmark an optimization algorithm."
+}

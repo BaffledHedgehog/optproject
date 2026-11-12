@@ -1,0 +1,24 @@
+{
+  "purpose": "Reusable implementation supplement to the proved v15 envelopes, independently packaged from the manuscript scalar-control panel.",
+  "source_sha256": {
+    "scalar_controls/check_v15.py": "086bb89d5e1d8075a044c52849b431523f8ff2a86e3ba80172291993918bb1a5",
+    "scalar_controls/protocol.json": "981b31f97a1943adedd1d5de69482e82b8fabbd7bad3ce6e48f47409b6b5bf21",
+    "scalar_controls/audit_001/ledger_correction.json": "7ecf0efb7957afeec7bf03213cc2a60cfc9fda2cdfe4171583e143604615999f",
+    "boundary_gap/article_boundary_gap.tex": "213df02005572532ac5fa51321ea5c48b12399f5151d11b781d951660ed7c249",
+    "boundary_gap/article_boundary_gap_appendix.tex": "824e17ec655a67f7129bc493208ea6bf308fa67e4f3be6236f12d272dae6bed5",
+    "joint_envelope/article_joint_envelope.tex": "a4955044c97ddd100acd2159dcd83feaf57061040b7af729e6c3fc9ce3d415b6",
+    "joint_envelope/article_joint_envelope_appendix.tex": "cdab2724fbd3d804885b956b918e7bbc7207c9e5416d53ea78c3ada51898739d",
+    "boundary_norm/article_boundary_norm.tex": "854f55c6b6597b39d6fbb30e7376767ab002a014057c18954339e0766aa9c249",
+    "boundary_norm/article_boundary_norm_appendix.tex": "e5ebd31787ede509c4f7da3148e7d557e7122ff72ba7f15b4ba40192e57e59c7"
+  },
+  "adaptations": [
+    "Local MPIntervalContext instances instead of mutation of global iv precision.",
+    "Actual executable zero and exact constant-curvature branches.",
+    "Costed refusal rather than a raised checker assertion; no retry or precision escalation.",
+    "Separate certificate, witness and rounding maxima and attempted/resolved signs.",
+    "One-node norm procedure and restricted joint procedure with the correct positive-node count.",
+    "A certified lower endpoint using the proved additive allowance and known baseline.",
+    "Frozen implementation protocol includes deterministic resource/sign/rounding refusals."
+  ],
+  "scientific_execution_before_freeze": false
+}

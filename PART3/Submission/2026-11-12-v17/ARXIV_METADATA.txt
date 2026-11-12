@@ -1,0 +1,10 @@
+Title: Sharp Error Bounds and Adaptive Stopping for Frank-Wolfe beyond Convexity
+Authors: Yaroslav P. Lyakhov; Stepan A. Suvorov
+Revision: v17
+Date: 2026-11-12
+Status: Research manuscript; no external submission performed.
+English source: Paper/article.tex
+Russian source: Paper/ru/article.tex
+English engine: pdflatex
+Russian engine: xelatex
+Affiliations and email addresses are not supplied.

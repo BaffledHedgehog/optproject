@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "mpmath_version": "1.3.0",
+  "scientific_api_calls": 0,
+  "module_paths": {
+    "api": "/workspace/scratch/50468750a620/continuation_v17/certified_diameter/runs/run_001/source_snapshot/certified_diameter/api.py",
+    "_v16_api": "/workspace/scratch/50468750a620/continuation_v17/certified_diameter/runs/run_001/source_snapshot/certified_diameter/_v16_api.py",
+    "_legacy_core": "/workspace/scratch/50468750a620/continuation_v17/certified_diameter/runs/run_001/source_snapshot/certified_diameter/_legacy_core.py"
+  }
+}

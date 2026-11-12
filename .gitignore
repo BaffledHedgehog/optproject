@@ -48,3 +48,9 @@ venv/
 # The final PDF lives at Submission/<date>/paper.pdf.
 /PART3/Submission/*/Paper/article.pdf
 /PART3/Submission/*/Paper/evidence/endpoint_recovery_table.tex
+
+
+# Small source and reading archives for the current v17 release.
+!/PART3/Submission/*/arxiv_source_v17.zip
+!/PART3/Submission/*/arxiv_source_ru_v17.zip
+!/PART3/Submission/*/reading_packet_v17.zip

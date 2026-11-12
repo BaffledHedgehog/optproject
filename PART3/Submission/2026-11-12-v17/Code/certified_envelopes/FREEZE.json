@@ -1,0 +1,40 @@
+{
+  "status": "AWAITING_PRE_EXECUTION_REVIEW",
+  "created_utc": "2026-11-12T13:52:47.647179+00:00",
+  "scientific_api_imports_before_freeze": 0,
+  "scientific_api_calls_before_freeze": 0,
+  "new_scientific_runs_before_freeze": 0,
+  "protocol_case_count": 16,
+  "source_hashes": {
+    "api.py": "00bc84cf21a5b4ee39358c5439d26465333220a477b532edeca8ec14729c7ece",
+    "_legacy_core.py": "55b3e6a1bc196a507d7627003db643a7be3deb4497f57b3626694a26fb929c08",
+    "__init__.py": "0717b2fa59a4d891f2206479ed7598a36a51767aae1e2cf13e7731c36ab00acf",
+    "run_protocol.py": "bbc746989d99b960bd773cf51eee96ff53f2705ad0d5a11ce3afd885751f4024",
+    "protocol.json": "91a450ec1bb7ca28bc908a59df9691dfdd77b51bf12a45ea3c0160beb9889511",
+    "reference_data.json": "540394fa6b68d79f7682e1c323d5db8f791224f9fedcb73a4932e67b56a5c270",
+    "README_RU.txt": "c85d95a808c40c751692ff2a144f93fc7ece577d1c31a8d41920ad484e93dd7c",
+    "DERIVATION.txt": "c66c9b6f9f649f027ba1186049d760472d4083c000743b923efa7724a9c7b898",
+    "PROVENANCE.json": "67f994d9545e8fdf95effe4b06fdbc6c132b88b36bcb9540c8fc8c29cd6aa623",
+    "LEGACY_CAPTURE.json": "2477e9b8768f894ffffa87027804fdd844be9dd6e75d4f5676c5b6437e5b8e6e",
+    "requirements.txt": "a699f46ed76bd216f1081b6b2330e4fb45d7c8c5a5354b208694d6590a5a8645",
+    "proof_references/article_gap_regime.tex": "3404f90393152fdc5661c86c8853fde1f4089f98ca21568794f85348a3402a72",
+    "proof_references/article_gap_regime_appendix.tex": "5e5f3f20145279805a3453b2e32509deac577efaab6596aa3ba6b781001b3a59",
+    "proof_references/article_joint_envelope.tex": "863125a093800d9738e3429531fa4d127d73369b5d52dbc4a70143712eca774d",
+    "proof_references/article_joint_envelope_appendix.tex": "da0ee9f223f0ade6563053e070d6d178fcb1d9543052d263eb2bcf70dcf509fa"
+  },
+  "review_contract": {
+    "required_path": "pre_execution_review.json",
+    "required_fields": {
+      "status": "PASS",
+      "reviewed_freeze_sha256": "SHA256 of this exact file",
+      "scientific_runs_performed": 0
+    }
+  },
+  "execution_policy": "One first immutable run_001 only after independent static/manual PASS. No parameter, case or precision tuning; retain every failure. Historical v15 runs are not repeated.",
+  "pre_execution_review_amendment": {
+    "previous_freeze_sha256": "97b01a182c5c44243b6aed5fd20a6600800e5af0579b6b160ebd69667c959e9e",
+    "previous_freeze_preserved": "review_history/freeze_before_snapshot_binding.json",
+    "change": "Bind every snapshot source directly to the initially reviewed digest, bind FREEZE/review copies to initially captured digests, and read protocol/reference_data only from the verified snapshot. No API source, formula, fixed case or precision changed.",
+    "scientific_api_calls_before_amendment": 0
+  }
+}

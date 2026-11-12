@@ -1,0 +1,315 @@
+{
+  "id": "affine_joint_norm_branch",
+  "case_type": "affine",
+  "case": {
+    "id": "affine_joint_norm_branch",
+    "case_type": "affine",
+    "envelope": "J",
+    "arguments": [
+      "1",
+      "2"
+    ],
+    "expected": {
+      "status": "certified",
+      "branch": "affine_joint_norm_branch",
+      "reference_norm_point": "unit_gap_rho1",
+      "plan": {
+        "positive_nodes": 1,
+        "bisections_per_node": 5,
+        "planned_bisections": 5
+      },
+      "work": {
+        "bound_evaluations": 1,
+        "switch_evaluations": 7,
+        "loss_evaluations": 2,
+        "root_sign_queries": 5,
+        "root_sign_decisions": 5,
+        "bisection_updates": 5,
+        "bracket_sign_queries": 2,
+        "certificate_maximum_comparisons": 0,
+        "witness_maximum_comparisons": 0,
+        "rounding_maximum_comparisons": 0,
+        "derived_lower_maximum_comparisons": 2,
+        "scalar_evaluations_started": 10
+      }
+    }
+  },
+  "test_status": "PASS",
+  "certificate": {
+    "status": "certified",
+    "envelope": "J",
+    "envelope_lower": "587539649573400052777644292730101336446991397015821729484351611527316352375018335856670737113696115/1093625362391505962186251113558810682676584715446606218212885303204976499599687961611756588511526912",
+    "envelope_upper": "37907496691070258403026782286327206574027519519739563543636126831364354474980553561947848577070319621/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368",
+    "achieved_factor": "37907496691070258403026782286327206574027519519739563543636126831364354474980553561947848577070319621/37602537572697603377769234734726485532607449409012590686998503137748246552001173494826927175276551360",
+    "requested_factor": "2",
+    "internal_factor": "3/2",
+    "reason": null,
+    "message": null,
+    "inputs": {
+      "m": "1",
+      "H0": "1",
+      "H1": "1",
+      "P": "1",
+      "g": "2"
+    },
+    "precision": {
+      "work_dps": 100,
+      "value_dps": 100
+    },
+    "plan": {
+      "branch": "affine_joint_norm_branch",
+      "working_gap": "1",
+      "fixed_radius": "1",
+      "Kstar_interval": [
+        "47564511195692300647032481380328689457821114006534486654973699574435731771518958482255775061119909527/17498005798264095394980017816940970922825355447145699491406164851279623993595007385788105416184430592",
+        "95129022391384601294064962760657378915642228013068973309947399148871463543037916964511550122239819057/34996011596528190789960035633881941845650710894291398982812329702559247987190014771576210832368861184"
+      ],
+      "Lstar_interval": [
+        "53048112672558730383571078748449851413388226677704567821301425661935615801375190489880879177371643459/4374501449566023848745004454235242730706338861786424872851541212819905998398751846447026354046107648",
+        "26524056336279365191785539374224925706694113338852283910650712830967807900687595244940439588685821731/2187250724783011924372502227117621365353169430893212436425770606409952999199375923223513177023053824"
+      ],
+      "positive_nodes": 1,
+      "bisections_per_node": 5,
+      "planned_bisections": 5,
+      "known_envelope_lower": "1/2",
+      "sampled_envelope_lower": "587539649573400052777644292730101336446991397015821729484351611527316352375018335856670737113696115/1093625362391505962186251113558810682676584715446606218212885303204976499599687961611756588511526912",
+      "mesh_allowance": "0",
+      "inner_root_allowance": "95129022391384601294064962760657378915642228013068973309947399148871463543037916964511550122239819057/559936185544451052639360570142111069530411374308662383724997275240947967795040236345219373317901778944",
+      "maximum_upper_evaluation_rounding_width": "5/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368",
+      "reserved_rounding_allowance": "1/4",
+      "total_additive_allowance": "95129022391384601294064962760657378915642228013068973309947399148871463543037916964511550122239819097/559936185544451052639360570142111069530411374308662383724997275240947967795040236345219373317901778944",
+      "upper_minus_allowance_lower": "208130951137177465930149295529960273676577928144847535039141615502043372256806511531071238494322737871/559936185544451052639360570142111069530411374308662383724997275240947967795040236345219373317901778944"
+    },
+    "work": {
+      "bound_evaluations": 1,
+      "node_coefficient_preparations": 1,
+      "switch_evaluations": 7,
+      "loss_evaluations": 2,
+      "scalar_evaluations_started": 10,
+      "bracket_sign_queries": 2,
+      "bracket_sign_decisions": 2,
+      "root_sign_queries": 5,
+      "root_sign_decisions": 5,
+      "bisection_updates": 5,
+      "sign_order_predicates": 12,
+      "sign_equality_predicates": 0,
+      "certificate_maximum_comparisons": 0,
+      "witness_maximum_comparisons": 0,
+      "rounding_maximum_comparisons": 0,
+      "derived_lower_maximum_comparisons": 2,
+      "budget_setup_maximum_comparisons": 0,
+      "budget_order_comparisons": 2,
+      "resource_metadata_maximum_comparisons": 73,
+      "budget_ceiling_operations": 0,
+      "rational_to_interval_conversions": 18,
+      "interval_endpoint_extractions": 22,
+      "resource_limit_checks": 91,
+      "validation_checks": 34,
+      "exact_formula_evaluations": 0,
+      "source_objective_calls": 0,
+      "source_gradient_calls": 0,
+      "full_LMO_calls": 0,
+      "LP_calls": 0,
+      "optimizer_updates": 0,
+      "stochastic_samples": 0
+    },
+    "elementary_evaluations": {
+      "exp": 20,
+      "sin": 9,
+      "cos": 9,
+      "sqrt": 2
+    },
+    "trace": [
+      {
+        "index": 0,
+        "rho": "1",
+        "planned_bisections": 5,
+        "completed_bisections": 5,
+        "alpha_bracket": [
+          "1/32",
+          "1/16"
+        ],
+        "sign_history": "----+",
+        "status": "enclosed",
+        "left_residual_interval": [
+          "5592791539324947209491018817319416979661753326730934272412111762558678629785509948183983964583630475/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368",
+          "5592791539324947209491018817319416979661753326730934272412111762558678629785509948183983964583630479/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368"
+        ],
+        "right_residual_interval": [
+          "-916625853147949060062343371475124076812112826539930940322511497532648415690996142099512197720839959/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368",
+          "-458312926573974530031171685737562038406056413269965470161255748766324207845498071049756098860419977/34996011596528190789960035633881941845650710894291398982812329702559247987190014771576210832368861184"
+        ],
+        "last_residual_interval": [
+          "5592791539324947209491018817319416979661753326730934272412111762558678629785509948183983964583630475/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368",
+          "5592791539324947209491018817319416979661753326730934272412111762558678629785509948183983964583630479/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368"
+        ],
+        "last_alpha": "1/32",
+        "loss_lower_endpoint_interval": [
+          "587539649573400052777644292730101336446991397015821729484351611527316352375018335856670737113696115/1093625362391505962186251113558810682676584715446606218212885303204976499599687961611756588511526912",
+          "37602537572697603377769234734726485532607449409012590686998503137748246552001173494826927175276551365/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368"
+        ],
+        "loss_upper_endpoint_interval": [
+          "18509519868686649610852921038245706334974374765497833761541077554377126208486598418919847938022617/34175792574734561318320347298712833833643272357706444319152665725155515612490248800367393390985216",
+          "37907496691070258403026782286327206574027519519739563543636126831364354474980553561947848577070319621/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368"
+        ],
+        "fixed_radius_lower": "587539649573400052777644292730101336446991397015821729484351611527316352375018335856670737113696115/1093625362391505962186251113558810682676584715446606218212885303204976499599687961611756588511526912",
+        "fixed_radius_upper": "37907496691070258403026782286327206574027519519739563543636126831364354474980553561947848577070319621/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368",
+        "upper_evaluation_rounding_width": "5/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368"
+      }
+    ],
+    "refusal_details": {},
+    "bound_semantics": "The interval encloses the mathematical envelope; only envelope_upper bounds source error under the model assumptions.",
+    "cost_semantics": "Named started evaluations, resolved/attempted sign queries and explicit maximum selections; not all arithmetic operations or bit cost."
+  },
+  "checks": [
+    {
+      "name": "expected API status",
+      "passed": true
+    },
+    {
+      "name": "zero scientific source/optimizer/stochastic oracles",
+      "passed": true
+    },
+    {
+      "name": "all started scalar evaluations are named",
+      "passed": true
+    },
+    {
+      "name": "bisection ledger matches the saved node traces",
+      "passed": true
+    },
+    {
+      "name": "resolved midpoint signs match completed updates",
+      "passed": true
+    },
+    {
+      "name": "direct exp calls reconcile with started scalar evaluations",
+      "passed": true
+    },
+    {
+      "name": "direct sin calls reconcile",
+      "passed": true
+    },
+    {
+      "name": "direct cos calls reconcile",
+      "passed": true
+    },
+    {
+      "name": "direct sqrt calls reconcile",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter bound_evaluations",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter switch_evaluations",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter loss_evaluations",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter root_sign_queries",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter root_sign_decisions",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter bisection_updates",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter bracket_sign_queries",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter certificate_maximum_comparisons",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter witness_maximum_comparisons",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter rounding_maximum_comparisons",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter derived_lower_maximum_comparisons",
+      "passed": true
+    },
+    {
+      "name": "fixed work counter scalar_evaluations_started",
+      "passed": true
+    },
+    {
+      "name": "rational envelope endpoints",
+      "passed": true
+    },
+    {
+      "name": "nonnegative ordered envelope enclosure",
+      "passed": true
+    },
+    {
+      "name": "achieved factor is the exact returned endpoint ratio",
+      "passed": true
+    },
+    {
+      "name": "requested relative enclosure factor",
+      "passed": true
+    },
+    {
+      "name": "expected implementation branch executed",
+      "passed": true
+    },
+    {
+      "name": "norm certificate contains the retained high-accuracy reference interval",
+      "passed": true
+    },
+    {
+      "name": "fixed plan field positive_nodes",
+      "passed": true
+    },
+    {
+      "name": "fixed plan field bisections_per_node",
+      "passed": true
+    },
+    {
+      "name": "fixed plan field planned_bisections",
+      "passed": true
+    },
+    {
+      "name": "every prescribed positive node was completed",
+      "passed": true
+    },
+    {
+      "name": "all prescribed positive nodes are retained",
+      "passed": true
+    },
+    {
+      "name": "two resolved endpoint signs per completed node",
+      "passed": true
+    },
+    {
+      "name": "no unresolved sign accepted by a certificate",
+      "passed": true
+    },
+    {
+      "name": "every switch evaluation has a recorded sign query",
+      "passed": true
+    },
+    {
+      "name": "two loss endpoint evaluations per node",
+      "passed": true
+    },
+    {
+      "name": "evaluation rounding fits its independently reserved allowance",
+      "passed": true
+    }
+  ],
+  "elapsed_seconds_measurement_only": 0.0019663639995997073
+}

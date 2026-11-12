@@ -1,0 +1,35 @@
+PUBLICATION SCOPE / СОСТАВ ПУБЛИКАЦИИ V17
+
+Включены обе компактные статьи, их полные LaTeX-исходники и рисунок;
+полные пакеты Code/certified_diameter и Code/certified_envelopes с исходными
+фиксированными скалярными протоколами, снимками кода и результатами;
+текущие проверки доказательства, сборки и вёрстки; фиксированный скалярный
+сертификат Evidence/joint_reference_result.json для таблицы статьи.
+Текущие статьи содержат полные доказательства центральных результатов.
+
+Расширенные LaTeX-исходники обеих статей v16, их рисунки и сопроводительные
+записи сохранены в отдельном архиве extended_sources_and_records_v16.zip.
+Он предоставляется отдельно и не входит в этот Git-выпуск.
+Публичный комплект предназначен для сборки текущих статей и воспроизведения
+фиксированных скалярных проверок. Он не заявлен полным архивом для повторения
+всех прежних оптимизационных экспериментов.
+
+Исторические числа 5/16 и 3/6 в статье относятся к разным прежним панелям;
+они не объединяются и не являются новыми запусками или сравнением скорости.
+Расширенные тексты v16 и сопроводительные записи доступны в отдельном архиве.
+
+Новый протокол диаметра включён полностью: 10 вызовов API, 7 сертификатов,
+3 предусмотренных отказа и 184 проверки контрольного скрипта. Инструкция
+его независимого воспроизведения находится в README_RU.txt.
+
+The public release contains the two current manuscripts with complete central
+proofs, their full sources and figure, both scalar-certificate code packages
+with their fixed control records, current proof/build/layout reviews, and the
+fixed scalar reference used in the comparison table.
+
+The expanded v16 LaTeX sources, figures and accompanying records are retained
+in the separate archive extended_sources_and_records_v16.zip, supplied outside
+this repository. The public package supports rebuilding the current papers
+and reproducing the fixed scalar controls; it is not a complete replay bundle
+of earlier optimization experiments. No historical run was overwritten or
+repeated. The new diameter code and first-run evidence are complete.

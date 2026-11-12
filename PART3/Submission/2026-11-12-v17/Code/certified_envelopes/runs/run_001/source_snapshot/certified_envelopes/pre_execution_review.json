@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "reviewer": "/root/recover_proofs",
+  "reviewed_at_utc": "2026-11-12T13:55:18.715920+00:00",
+  "reviewed_directory": "/workspace/scratch/50468750a620/continuation_v16/certified_envelopes",
+  "reviewed_freeze_sha256": "6a5311ca1c9a3f566be03a0800b60ef99b951e21ea7f8ba866c78def497ba238",
+  "scientific_runs_performed": 0,
+  "scientific_api_imports_performed": 0,
+  "scientific_api_calls_performed": 0,
+  "execution_scope": "Zero scientific imports/calls/runs within this static v16 API review. Earlier theorem controls are read-only historical references, not repeated executions.",
+  "review_method": [
+    "Read all public wrapper and private scalar core source",
+    "Read fixed runner, protocol, README, derivation, reference extraction and provenance",
+    "Manually verify directed gate, exact input boundaries and mathematical budgets",
+    "Parse Python syntax without importing or executing reviewed modules",
+    "Compare file digests and immutable origins"
+  ],
+  "reviewed_source_hashes": {
+    "api.py": "00bc84cf21a5b4ee39358c5439d26465333220a477b532edeca8ec14729c7ece",
+    "_legacy_core.py": "55b3e6a1bc196a507d7627003db643a7be3deb4497f57b3626694a26fb929c08",
+    "__init__.py": "0717b2fa59a4d891f2206479ed7598a36a51767aae1e2cf13e7731c36ab00acf",
+    "run_protocol.py": "bbc746989d99b960bd773cf51eee96ff53f2705ad0d5a11ce3afd885751f4024",
+    "protocol.json": "91a450ec1bb7ca28bc908a59df9691dfdd77b51bf12a45ea3c0160beb9889511",
+    "reference_data.json": "540394fa6b68d79f7682e1c323d5db8f791224f9fedcb73a4932e67b56a5c270",
+    "README_RU.txt": "c85d95a808c40c751692ff2a144f93fc7ece577d1c31a8d41920ad484e93dd7c",
+    "DERIVATION.txt": "c66c9b6f9f649f027ba1186049d760472d4083c000743b923efa7724a9c7b898",
+    "PROVENANCE.json": "67f994d9545e8fdf95effe4b06fdbc6c132b88b36bcb9540c8fc8c29cd6aa623",
+    "LEGACY_CAPTURE.json": "2477e9b8768f894ffffa87027804fdd844be9dd6e75d4f5676c5b6437e5b8e6e",
+    "requirements.txt": "a699f46ed76bd216f1081b6b2330e4fb45d7c8c5a5354b208694d6590a5a8645",
+    "proof_references/article_gap_regime.tex": "3404f90393152fdc5661c86c8853fde1f4089f98ca21568794f85348a3402a72",
+    "proof_references/article_gap_regime_appendix.tex": "5e5f3f20145279805a3453b2e32509deac577efaab6596aa3ba6b781001b3a59",
+    "proof_references/article_joint_envelope.tex": "863125a093800d9738e3429531fa4d127d73369b5d52dbc4a70143712eca774d",
+    "proof_references/article_joint_envelope_appendix.tex": "da0ee9f223f0ade6563053e070d6d178fcb1d9543052d263eb2bcf70dcf509fa"
+  },
+  "static_metadata_checks": {
+    "all_15_frozen_source_hashes_match": true,
+    "all_4_python_files_parse_without_execution": true,
+    "all_4_proof_reference_origins_match": true,
+    "historical_reference_result_hash_matches": true,
+    "private_core_byte_identical_to_captured_v15": true,
+    "protocol_case_count": 16,
+    "protocol_case_ids_unique": true,
+    "new_v16_run_001_absent_at_review": true
+  },
+  "manual_checks": [
+    {
+      "topic": "exact_inputs_and_boundaries",
+      "status": "PASS",
+      "finding": "Only exact rational input types; float and bool rejected. Fractions decide g>=P^2/m and all radii. Zero inputs precede divisions; H1=0 is exact."
+    },
+    {
+      "topic": "directed_regime_gate",
+      "status": "PASS",
+      "finding": "Outward tau/S intervals; nonpositive only from Shi<=0, positive only from Slo>0, otherwise refusal. Pinned dependency and scale checked before gate evaluation."
+    },
+    {
+      "topic": "exact_gate_equality_fixture",
+      "status": "PASS_MANUAL",
+      "finding": "m=23,H0=40,H1=1,g=48 gives discriminant=5776=76^2, tau=3/4, S=-5/2+5/2=0."
+    },
+    {
+      "topic": "working_gap_and_argument_order",
+      "status": "PASS",
+      "finding": "Norm branch uses h=P^2/m; gap-active branch has h=g. Cheap bound explicitly clips h. Public joint parameters are keyword-only g,P; inherited internal positional P,g order is preserved."
+    },
+    {
+      "topic": "one_node_relative_budget",
+      "status": "PASS",
+      "finding": "At rho=h^2/P^2, n with coefficient 4K gives inner allowance <=(internal-1)h/2; no mesh. Separate rounding allowance and exact U<=factor*L check remain valid."
+    },
+    {
+      "topic": "restricted_grid_budget",
+      "status": "PASS",
+      "finding": "J based on actual width gives mesh <=(internal-1)g/4; coefficient 8K gives inner <=(internal-1)g/4. Both endpoints and the known lower bound g/2 are retained."
+    },
+    {
+      "topic": "cheap_upper_bound_semantics",
+      "status": "PASS",
+      "finding": "Exact Fraction h+(h^2/P^2)*Shi is a valid source-error upper bound. Separate UpperBound type has no requested/achieved factor or envelope lower bound. Positive or unresolved S refuses the shortcut."
+    },
+    {
+      "topic": "costs_and_refusals",
+      "status": "PASS",
+      "finding": "New regime/algebraic scalar starts and gate sqrt/sign work are charged; node preflight includes spent gate work. Refusal carries no final bounds and retains partial diagnostic cost. Named counts are not total arithmetic or bit complexity."
+    },
+    {
+      "topic": "immutable_first_run",
+      "status": "PASS_AFTER_FIX",
+      "finding": "Every copied source is checked directly against its reviewed hash before import. Freeze/review snapshots use initially captured hashes. Protocol and references are read from verified snapshot; API and core import paths are checked."
+    },
+    {
+      "topic": "fixed_protocol",
+      "status": "PASS_FOR_EXECUTION",
+      "finding": "16 predeclared cases and fixed settings. No adaptive retry/tuning. Expected refusals, including low-precision unresolved gate, remain predictions until execution. Each result/failure and cost is retained."
+    }
+  ],
+  "resolved_findings_before_execution": [
+    {
+      "id": "DOC_H_VS_G",
+      "issue": "README initially inferred B(g)=g from S(h)<=0 with clipped h.",
+      "resolution": "README now separates the gap-only S(g) test from the joint S(h) test. API was already correct."
+    },
+    {
+      "id": "SNAPSHOT_REVIEW_BINDING",
+      "issue": "Initial runner compared copy to live source after earlier reviewed-hash check, leaving a mutation window.",
+      "resolution": "Final runner binds copied sources directly to reviewed hashes and reads protocol/reference data from verified snapshot. Earlier freeze preserved in review_history."
+    }
+  ],
+  "blocking_findings": [],
+  "approved_next_action": "Exactly the first new v16 runs/run_001 for the frozen 16-case panel. Retain all failures. No old run repeated, no automatic retry or post-result parameter tuning.",
+  "limits_of_evidence": [
+    "Static/manual review, not a formal verification or successful execution claim.",
+    "Relies on the retained mpmath 1.3.0 interval implementation and proved mathematical theorems.",
+    "Finite precision may refuse valid exact or near-zero signs; no universal decision guarantee.",
+    "The API does not test unknown source functions for RSI/Hessian assumptions.",
+    "Sharpness remains for the stated varying-domain class, not an arbitrary fixed prescribed domain."
+  ],
+  "text_report": "/workspace/scratch/50468750a620/continuation_v16/review_new/api_preexecution_review.txt",
+  "text_report_sha256": "3dff315abd93f99cd04c1fc96582915c0c3f793527c9d9bafaf747ec37b6f4ce"
+}

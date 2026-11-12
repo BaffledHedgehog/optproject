@@ -1,0 +1,517 @@
+{
+  "status": "PASS_STAGED_DIAMETER_EVIDENCE_CLOSED",
+  "captured_at_utc": "2026-11-12T15:27:57.297010+00:00",
+  "closes": {
+    "path": "/workspace/scratch/50468750a620/continuation_v17/root_fragments_ru/translation_review.json",
+    "sha256": "1c4abf3631fd44f3b965c760182505d036707df7581e2b0c34c2ca0c5c46180e",
+    "field": "staged_evidence_item",
+    "original_review_left_unchanged": true
+  },
+  "scope": "Read-only post-run record and hash-chain review. The package and its API were not imported or executed. No scientific run was repeated.",
+  "facts": {
+    "planned_cases": 10,
+    "api_calls": 10,
+    "certified": 7,
+    "expected_refusals": 3,
+    "per_case_runner_checks": 183,
+    "interface_runner_checks": 1,
+    "total_runner_checks": 184,
+    "internal_validation_predicates": 344,
+    "new_optimizer_updates": 0,
+    "new_LP_calls": 0,
+    "new_stochastic_samples": 0
+  },
+  "record_identity": {
+    "result": "/workspace/scratch/50468750a620/continuation_v17/certified_diameter/runs/run_001/result.json",
+    "result_sha256": "7db1a2f9b8c0a3ff0042cf6aec89bc65695de6bab7e9e2fd686dd0d6b98f0b54",
+    "freeze_sha256": "55f9824ee37c2b16e79918ff5a8849210589671c39055500bf2197a3fb3eb9c8",
+    "pre_execution_review_sha256": "748d298f5978df5488e287232943ce5c2d032a7f6097d14e6af3f35ece1c7865",
+    "registered_protocol_sha256": "ba866f45d396cff907d2e8d4b88b1aa17dfe05d867c361b9aaf8061d3da608c2"
+  },
+  "cases": [
+    {
+      "id": "constant_exact_pair_diameter_improvement",
+      "status": "certified",
+      "runner_checks": 18,
+      "result_sha256": "54e60e47cf6387c70b389d3dc0140d9213b4d894c92223f4a738d2117ae95e1e"
+    },
+    {
+      "id": "affine_diameter_active_collapsed",
+      "status": "certified",
+      "runner_checks": 20,
+      "result_sha256": "ac7f3bfbb30d9f38ee324c8b260e0967e1b1214abc084c7edd955601ce6da614"
+    },
+    {
+      "id": "exact_regime_equality_with_clipped_radius",
+      "status": "certified",
+      "runner_checks": 25,
+      "result_sha256": "43d6c0a3ff35f70520720ece1e45c23941af8b1ce503ea3d26ef40ce6055c3d8"
+    },
+    {
+      "id": "outside_regime_shortened_grid",
+      "status": "certified",
+      "runner_checks": 24,
+      "result_sha256": "7aff30e04576ca53a4a6b3cfcede002ac4367bd9598829fc309d30a4d945dc66"
+    },
+    {
+      "id": "large_diameter_inactive",
+      "status": "certified",
+      "runner_checks": 25,
+      "result_sha256": "22e1049ac11b9ef611a340054a6d6fde2ca3397ad64786e3943df9defe45369b"
+    },
+    {
+      "id": "constant_norm_only_affine_formula",
+      "status": "certified",
+      "runner_checks": 19,
+      "result_sha256": "92696825f63ebde3e6831045f9350718343f0ff0d4756601320b4889af1972c7"
+    },
+    {
+      "id": "reject_zero_diameter",
+      "status": "refused",
+      "runner_checks": 12,
+      "result_sha256": "0b0f6d0b70b1c0fa5d2f26ba7f65be3a2d9d4ec0beb591f99a9e21a815d37281"
+    },
+    {
+      "id": "zero_norm_cap",
+      "status": "certified",
+      "runner_checks": 15,
+      "result_sha256": "af56b6ea62297350253f785f7521019b90f210473789aec8de3299a43207c80f"
+    },
+    {
+      "id": "collapsed_node_resource_refusal",
+      "status": "refused",
+      "runner_checks": 13,
+      "result_sha256": "d0fd1ab05737de424c345c4fdc5f8adc19a7a5e4297887f9c4f4d10391e4cfce"
+    },
+    {
+      "id": "reject_inexact_float_diameter",
+      "status": "refused",
+      "runner_checks": 12,
+      "result_sha256": "665bcbc0382c3d114bd0c6e9a72acb22d165a046b674ce878e289882dc2dc232"
+    }
+  ],
+  "read_only_checks": [
+    {
+      "check": "root_pass_identifies_exact_freeze",
+      "passed": true
+    },
+    {
+      "check": "freeze_preflight_result_hash_chain",
+      "passed": true
+    },
+    {
+      "check": "snapshot_freeze_review_identity",
+      "passed": true
+    },
+    {
+      "check": "independent_static_review_identity",
+      "passed": true
+    },
+    {
+      "check": "registered_protocol_identity",
+      "passed": true
+    },
+    {
+      "check": "frozen_source_hash_maps_agree",
+      "passed": true
+    },
+    {
+      "check": "frozen_current_DEPENDENCY_CAPTURE.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot_DEPENDENCY_CAPTURE.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_current_DERIVATION.txt",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot_DERIVATION.txt",
+      "passed": true
+    },
+    {
+      "check": "frozen_current_PROVENANCE.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot_PROVENANCE.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_current_README_RU.txt",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot_README_RU.txt",
+      "passed": true
+    },
+    {
+      "check": "frozen_current___init__.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot___init__.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_current__legacy_core.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot__legacy_core.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_current__v16_api.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot__v16_api.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_current_api.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot_api.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_current_proof_references/article_boundary_gap_appendix.tex",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot_proof_references/article_boundary_gap_appendix.tex",
+      "passed": true
+    },
+    {
+      "check": "frozen_current_proof_references/article_gap_regime.tex",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot_proof_references/article_gap_regime.tex",
+      "passed": true
+    },
+    {
+      "check": "frozen_current_proof_references/article_gap_regime_appendix.tex",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot_proof_references/article_gap_regime_appendix.tex",
+      "passed": true
+    },
+    {
+      "check": "frozen_current_proof_references/article_joint_diameter.tex",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot_proof_references/article_joint_diameter.tex",
+      "passed": true
+    },
+    {
+      "check": "frozen_current_proof_references/article_joint_diameter_appendix.tex",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot_proof_references/article_joint_diameter_appendix.tex",
+      "passed": true
+    },
+    {
+      "check": "frozen_current_proof_references/article_joint_envelope.tex",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot_proof_references/article_joint_envelope.tex",
+      "passed": true
+    },
+    {
+      "check": "frozen_current_proof_references/article_joint_envelope_appendix.tex",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot_proof_references/article_joint_envelope_appendix.tex",
+      "passed": true
+    },
+    {
+      "check": "frozen_current_protocol.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot_protocol.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_current_reference_data.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot_reference_data.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_current_requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot_requirements.txt",
+      "passed": true
+    },
+    {
+      "check": "frozen_current_run_protocol.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot_run_protocol.py",
+      "passed": true
+    },
+    {
+      "check": "frozen_current_static_self_review.json",
+      "passed": true
+    },
+    {
+      "check": "frozen_snapshot_static_self_review.json",
+      "passed": true
+    },
+    {
+      "check": "exactly_ten_planned_results",
+      "passed": true
+    },
+    {
+      "check": "ten_unique_ids",
+      "passed": true
+    },
+    {
+      "check": "one_first_run_no_retry",
+      "passed": true
+    },
+    {
+      "check": "source_snapshotted_before_import",
+      "passed": true
+    },
+    {
+      "check": "chronology",
+      "passed": true
+    },
+    {
+      "check": "case_hash_constant_exact_pair_diameter_improvement",
+      "passed": true
+    },
+    {
+      "check": "planned_input_identity_constant_exact_pair_diameter_improvement",
+      "passed": true
+    },
+    {
+      "check": "case_checks_constant_exact_pair_diameter_improvement",
+      "passed": true
+    },
+    {
+      "check": "expected_outcome_constant_exact_pair_diameter_improvement",
+      "passed": true
+    },
+    {
+      "check": "case_hash_affine_diameter_active_collapsed",
+      "passed": true
+    },
+    {
+      "check": "planned_input_identity_affine_diameter_active_collapsed",
+      "passed": true
+    },
+    {
+      "check": "case_checks_affine_diameter_active_collapsed",
+      "passed": true
+    },
+    {
+      "check": "expected_outcome_affine_diameter_active_collapsed",
+      "passed": true
+    },
+    {
+      "check": "case_hash_exact_regime_equality_with_clipped_radius",
+      "passed": true
+    },
+    {
+      "check": "planned_input_identity_exact_regime_equality_with_clipped_radius",
+      "passed": true
+    },
+    {
+      "check": "case_checks_exact_regime_equality_with_clipped_radius",
+      "passed": true
+    },
+    {
+      "check": "expected_outcome_exact_regime_equality_with_clipped_radius",
+      "passed": true
+    },
+    {
+      "check": "case_hash_outside_regime_shortened_grid",
+      "passed": true
+    },
+    {
+      "check": "planned_input_identity_outside_regime_shortened_grid",
+      "passed": true
+    },
+    {
+      "check": "case_checks_outside_regime_shortened_grid",
+      "passed": true
+    },
+    {
+      "check": "expected_outcome_outside_regime_shortened_grid",
+      "passed": true
+    },
+    {
+      "check": "case_hash_large_diameter_inactive",
+      "passed": true
+    },
+    {
+      "check": "planned_input_identity_large_diameter_inactive",
+      "passed": true
+    },
+    {
+      "check": "case_checks_large_diameter_inactive",
+      "passed": true
+    },
+    {
+      "check": "expected_outcome_large_diameter_inactive",
+      "passed": true
+    },
+    {
+      "check": "case_hash_constant_norm_only_affine_formula",
+      "passed": true
+    },
+    {
+      "check": "planned_input_identity_constant_norm_only_affine_formula",
+      "passed": true
+    },
+    {
+      "check": "case_checks_constant_norm_only_affine_formula",
+      "passed": true
+    },
+    {
+      "check": "expected_outcome_constant_norm_only_affine_formula",
+      "passed": true
+    },
+    {
+      "check": "case_hash_reject_zero_diameter",
+      "passed": true
+    },
+    {
+      "check": "planned_input_identity_reject_zero_diameter",
+      "passed": true
+    },
+    {
+      "check": "case_checks_reject_zero_diameter",
+      "passed": true
+    },
+    {
+      "check": "expected_outcome_reject_zero_diameter",
+      "passed": true
+    },
+    {
+      "check": "refusal_returns_no_bound_reject_zero_diameter",
+      "passed": true
+    },
+    {
+      "check": "expected_refusal_reason_reject_zero_diameter",
+      "passed": true
+    },
+    {
+      "check": "case_hash_zero_norm_cap",
+      "passed": true
+    },
+    {
+      "check": "planned_input_identity_zero_norm_cap",
+      "passed": true
+    },
+    {
+      "check": "case_checks_zero_norm_cap",
+      "passed": true
+    },
+    {
+      "check": "expected_outcome_zero_norm_cap",
+      "passed": true
+    },
+    {
+      "check": "case_hash_collapsed_node_resource_refusal",
+      "passed": true
+    },
+    {
+      "check": "planned_input_identity_collapsed_node_resource_refusal",
+      "passed": true
+    },
+    {
+      "check": "case_checks_collapsed_node_resource_refusal",
+      "passed": true
+    },
+    {
+      "check": "expected_outcome_collapsed_node_resource_refusal",
+      "passed": true
+    },
+    {
+      "check": "refusal_returns_no_bound_collapsed_node_resource_refusal",
+      "passed": true
+    },
+    {
+      "check": "expected_refusal_reason_collapsed_node_resource_refusal",
+      "passed": true
+    },
+    {
+      "check": "case_hash_reject_inexact_float_diameter",
+      "passed": true
+    },
+    {
+      "check": "planned_input_identity_reject_inexact_float_diameter",
+      "passed": true
+    },
+    {
+      "check": "case_checks_reject_inexact_float_diameter",
+      "passed": true
+    },
+    {
+      "check": "expected_outcome_reject_inexact_float_diameter",
+      "passed": true
+    },
+    {
+      "check": "refusal_returns_no_bound_reject_inexact_float_diameter",
+      "passed": true
+    },
+    {
+      "check": "expected_refusal_reason_reject_inexact_float_diameter",
+      "passed": true
+    },
+    {
+      "check": "seven_certified_three_expected_refusals",
+      "passed": true
+    },
+    {
+      "check": "runner_checks_183_plus_1_equals_184",
+      "passed": true
+    },
+    {
+      "check": "all_work_counters_sum_per_case",
+      "passed": true
+    },
+    {
+      "check": "elementary_counters_sum_per_case",
+      "passed": true
+    },
+    {
+      "check": "zero_source_solver_optimizer_work",
+      "passed": true
+    },
+    {
+      "check": "source_unchanged_claim_consistent",
+      "passed": true
+    },
+    {
+      "check": "dated_translation_review_unchanged",
+      "passed": true
+    }
+  ],
+  "limits": [
+    "The saved first-run record resolves the earlier factual caveat that no run existed at the time of translation review.",
+    "This review checks provenance, planned-input identity, status and count consistency, expected refusal behavior, and source/snapshot hashes. It does not rerun interval arithmetic or replace mathematical proof review.",
+    "The 184 runner assertions are distinct from the 344 internal validation predicates recorded by the implementation. These counts are not total arithmetic or bit complexity.",
+    "Ten fixed implementation controls are not new optimizer benchmarks or evidence of empirical speedup."
+  ]
+}

@@ -1,0 +1,73 @@
+\paragraph{A prescribed diameter.}
+The joint envelope also admits an exact diameter restriction. The
+diameter may be an upper bound or a prescribed value; the domain
+otherwise varies.
+
+\begin{theorem}[The joint envelope with diameter information]
+\label{jointdiam:main}
+Assume \eqref{boundarygap:assumptions} and let $D>0$. For $g,P>0$ put
+\begin{equation}\label{jointdiam:definition}
+ \begin{gathered}
+ h=\min\{g,P^2/m,PD\},\qquad
+ \rho_-=h^2/P^2,\qquad \rho_+=\min\{h/m,D^2\},\\
+ \mathcal J_D(g,P)=\max_{\rho_-\le\rho\le\rho_+}V(h,\rho).
+ \end{gathered}
+\end{equation}
+Set $\mathcal J_D(g,0)=\mathcal J_D(0,P)=0$. Then
+\[
+ G(x)\le g,\quad \|\nabla f(x)\|\le P,\quad
+ \operatorname{diam}Q\le D
+ \quad\Longrightarrow\quad
+ \delta(x)\le\mathcal J_D(g,P).
+\]
+The bound is sharp for these three upper bounds. The same supremum
+holds with $\operatorname{diam}Q=D$, and is approached by smooth
+functions on neighborhoods of triangles with nonempty interior in
+$\mathbb R^2$.
+
+For prescribed positive values $G(x)=g$ and $\|\nabla f(x)\|=P$,
+the class is nonempty exactly when $g\le PD$. Whenever it is
+nonempty, its supremum is again $\mathcal J_D(g,P)$, whether the
+diameter is bounded by $D$ or fixed at $D$.
+\end{theorem}
+
+For $H_1=0$ put
+$\beta=(H_0^2-2mH_0-m^2)/(4H_0)$. Then
+\begin{equation}\label{jointdiam:constant}
+ \mathcal J_D(g,P)=
+ \begin{cases}
+ h+\beta\rho_+,&\beta\ge0,\\
+ h+\beta\rho_-,&\beta<0.
+ \end{cases}
+\end{equation}
+For example, $m=1$, $H_0=4$, $H_1=0$, $g=1$, $P=2$ and
+$D=3/5$ give
+\[
+ \beta=7/16,\qquad
+ \mathcal J_D(1,2)=463/400<23/16=\mathcal J(1,2).
+\]
+Both observations can be exact, since $g=1<6/5=PD$.
+For $H_1>0$ and $\mathcal S(h)\le0$, radius monotonicity gives
+\begin{equation}\label{jointdiam:ordinary}
+ \mathcal J_D(g,P)=V(h,\rho_-)
+       \le h+\rho_-\mathcal S(h)\le h.
+\end{equation}
+Thus the ordinary-gap regime still needs only one switch equation,
+or the displayed algebraic upper bound.
+
+\begin{corollary}[The norm envelope with diameter information]
+\label{jointdiam:norm}
+For $P>0$ let $r_D=\min\{D,P/m\}$ and $q=\max\{P-mD,0\}$. The
+sharp norm-only bound with diameter at most $D$ is
+\begin{equation}\label{jointdiam:norm-formula}
+ \mathcal E_D(P)=\mathcal J_D(PD,P)
+       =A(P,r_D)=\mathcal E_q(P).
+\end{equation}
+It remains sharp with both $\|\nabla f(x)\|=P$ and
+$\operatorname{diam}Q=D$. Set $\mathcal E_D(0)=0$.
+If $H_1=0$ and $P\ge mD$, then
+\begin{equation}\label{jointdiam:norm-constant}
+ \mathcal E_D(P)=PD+\beta D^2.
+\end{equation}
+For fixed $D$ this is an affine function of $P$.
+\end{corollary}

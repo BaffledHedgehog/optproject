@@ -1,0 +1,13 @@
+{
+  "at_utc": "2026-11-12T15:23:53.115968+00:00",
+  "activity": "Saved-record audit bookkeeping only",
+  "scientific_api_imports": 0,
+  "scientific_api_calls": 0,
+  "scientific_runs": 0,
+  "attempt": 1,
+  "audit_script_sha256": "448066ebdf1fd523e6e29bf0ed131cf921c4057657cffc8c65c27b24bdd9da54",
+  "outcome": "KeyError before writing the final review",
+  "cause": "Audit checker assumed every geometry-bearing case repeated working_gap in its optional expected fields; the frozen resource-refusal case intentionally omits that optional expectation.",
+  "correction": "Check optional expected geometry fields only when supplied; continue checking actual derived geometry against exact inputs for every geometry-bearing record.",
+  "package_or_run_record_changes": false
+}

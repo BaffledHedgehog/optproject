@@ -1,0 +1,68 @@
+INDEPENDENT STATIC PREEXECUTION REVIEW: PASS
+
+Reviewer: /root/gap_structure
+Reviewed directory:
+/workspace/scratch/50468750a620/continuation_v17/certified_diameter
+
+Reviewed FREEZE SHA256:
+55f9824ee37c2b16e79918ff5a8849210589671c39055500bf2197a3fb3eb9c8
+
+Independent JSON review SHA256:
+cd60cced2b7bd34abd5051208b8e3dbd4523162b1b574803517637f157eaa54d
+
+Scope and outcome
+Read all new API, runner, protocol and documentation sources, and the
+copied v16 primitives. Checked proof-to-code correspondence manually.
+All 40 metadata conditions passed: 20 frozen source hashes, three v16
+dependency copies, seven proof origins, the historical reference copy,
+five syntax trees, dataclass adapter fields, the ten unique cases, the
+registered protocol hash and absence of a new run_001.
+
+Thirteen mathematical and implementation areas passed independent
+manual review. There are no required changes or blocking issues.
+
+Geometry and dispatch
+h=min(g,P^2/m,P*D) and [h^2/P^2,min(h/m,D^2)] are computed exactly.
+The interval is nonempty for positive caps. A redundant cap g>P*D is
+accepted; exact-pair feasibility is not incorrectly imposed on caps.
+Positive D is validated even when another cap is zero. Norm mode
+derives g=P*D and has a singleton radius interval.
+
+The H1=0 maximum selects the correct affine endpoint. For H1>0 a
+singleton is handled before the S test. A noncollapsed interval uses
+the unchanged outward test S(h), accepting the one-node branch only
+when its upper endpoint is nonpositive. An unresolved sign refuses.
+
+Certified numerical budget
+Every eligible radius value is at least h/2. The one-node root budget
+spends at most (internal-1)*h/2. In the shortened grid, mesh and root
+errors each spend at most (internal-1)*h/4. The full-range outward K,L
+constants also cover the shorter interval. Both endpoints are sampled.
+The inherited value-rounding reserve and final exact ratio check
+remain intact. Refusal records contain no completed enclosure.
+
+Resource and runner checks
+Node, root, scalar, elementary and endpoint limits remain active;
+partial costs are retained. New diameter selections have named counters.
+The runner requires root approval of the exact freeze, checks copied
+bytes directly against approved hashes, reads protocol and references
+from that checked snapshot, verifies imported module locations and
+refuses to overwrite run_001. It makes one call per frozen case, keeps
+failed outcomes, and performs no retry, tuning or precision increase.
+
+The fixed panel contains ten cases. Its declared expectations are
+seven certified results and three explicit refusals. These are not
+observed results: no execution was performed for this review.
+
+Authority and limits
+Scientific package imports: 0
+API calls: 0
+Scientific runs: 0
+Reviewed source edits: 0
+Execution authorization issued: no
+
+This PASS is an independent static assessment, not the root approval
+document required by run_protocol.py. Root must decide separately
+whether to authorize the first run of the exact reviewed freeze.
+The review makes no claim about all-operation or bit complexity and
+does not replace the first fixed implementation control.

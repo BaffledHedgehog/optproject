@@ -1,0 +1,246 @@
+\section{Using the full gap and gradient norm together}
+\label{joint:section}
+The two observable bounds can be combined more tightly than by taking
+their minimum. A bounded gradient norm excludes the shrinking-radius
+examples that determine part of the full-gap envelope. The resulting
+certificate reuses the same scalar function $V$ on a shorter interval.
+
+\begin{theorem}[The sharp joint certificate]
+\label{joint:main}
+Assume \eqref{boundarygap:assumptions}. For $g,P>0$ put
+\begin{equation}\label{joint:definition}
+ h=\min\{g,P^2/m\},\qquad
+ \mathcal J(g,P)=
+ \max_{h^2/P^2\le\rho\le h/m}V(h,\rho).
+\end{equation}
+Set $\mathcal J(g,0)=\mathcal J(0,P)=0$. Then
+\begin{equation}\label{joint:bound}
+ \boxed{\delta(x)\le
+ \mathcal J\bigl(G(x),\|\nabla f(x)\|\bigr)
+ \le\min\{\mathcal B(G(x)),\mathcal E(\|\nabla f(x)\|)\}.}
+\end{equation}
+Equivalently,
+\[
+ \mathcal J(g,P)=
+ \begin{cases}
+ \displaystyle\max_{g^2/P^2\le\rho\le g/m}V(g,\rho),
+       &0<g<P^2/m,\\[2mm]
+ \mathcal E(P),&g\ge P^2/m.
+ \end{cases}
+\]
+The maximum exists. The function $\mathcal J$ is finite, continuous
+on $[0,\infty)^2$, and nondecreasing in each argument.
+
+For every fixed $g,P>0$, $\mathcal J(g,P)$ is the supremum of the
+source error in the stated class with
+\[
+ G(x)=g,\qquad \|\nabla f(x)\|=P
+\]
+both held exactly. The same supremum holds with these two equalities
+replaced by upper bounds. Smooth near-extremizers exist in dimension
+at most two, on compact convex sets with nonempty interior in their
+ambient space. The domain is allowed to vary; no fixed-domain or
+prescribed-diameter sharpness is asserted.
+\end{theorem}
+
+Appendix~\ref{joint:proof} proves the result. If $g\ge P^2/m$, the
+interval in \eqref{joint:definition} is a single point. Otherwise,
+the lower endpoint $g^2/P^2$ is positive. It removes radii at which
+the full-gap extremal trajectory would require a source gradient norm
+larger than the observed $P$.
+
+\begin{corollary}[Strict improvement]
+\label{joint:strict}
+For every $H_1\ge0$ and $0<g<P^2/m$,
+\[
+ \mathcal J(g,P)\le\mathcal E(P)
+       -\frac{(P^2-mg)^2}{2mP^2}<\mathcal E(P).
+\]
+If additionally $H_1>0$ and $\mathcal S(g)\le0$ in
+Theorem~\ref{gapregime:main}, then
+\[
+ \mathcal J(g,P)<\min\{\mathcal B(g),\mathcal E(P)\}.
+\]
+\end{corollary}
+\begin{proof}
+For a radius $\rho\in[g^2/P^2,g/m]$ put
+$p=g/\sqrt\rho$ and $q=p-m\sqrt\rho$.
+The radial deficit \eqref{bndnorm:radial-deficit}, applied to smooth
+near-extremizers, gives $V(g,\rho)+\mathcal E(q)\le\mathcal E(p)$.
+The growth inequality in Appendix~\ref{energy:proof} gives
+$\mathcal E(P)-\mathcal E(p)\ge(P^2-p^2)/(2m)$ and
+$\mathcal E(q)\ge q^2/(2m)$. Hence
+\[
+ \mathcal E(P)-V(g,\rho)
+ \ge\frac{P^2-p^2+q^2}{2m}
+ =\frac{P^2-2mg+m^2\rho}{2m}
+ \ge\frac{(P^2-mg)^2}{2mP^2}.
+\]
+Taking the maximum over radii proves the first claim.
+In the second case Theorem~\ref{gapregime:main} gives
+$V(g,\rho)<g$ at every positive radius. The joint maximum is
+over a compact interval with positive lower endpoint, so it is
+strictly less than $g=\mathcal B(g)$.
+\end{proof}
+The quantitative deficit is attained when $H_0=m$ and $H_1=0$.
+
+\begin{corollary}[One root or an elementary joint bound]
+\label{joint:ordinary}
+Let $H_1>0$, $g,P>0$, and $h=\min\{g,P^2/m\}$.
+If $\mathcal S(h)\le0$, then
+\begin{equation}\label{joint:ordinary-formula}
+ \boxed{\mathcal J(g,P)=V(h,h^2/P^2)
+       \le h+\frac{h^2}{P^2}\mathcal S(h)\le h.}
+\end{equation}
+The exact joint envelope therefore requires only the single
+switch root at $\rho=h^2/P^2$. The displayed upper bound uses
+only a square root and arithmetic to evaluate $\mathcal S(h)$;
+it requires neither a switch root nor an outer grid.
+\end{corollary}
+\begin{proof}
+Corollary~\ref{gapregime:radius-monotone} states that
+$V(h,\rho)$ is strictly decreasing in positive $\rho$ and that
+$V(h,\rho)\le h+\rho\mathcal S(h)$ in this regime.
+Apply both conclusions at the left endpoint of
+\eqref{joint:definition}. They also apply when the interval
+has collapsed to one point.
+\end{proof}
+
+For example, $m=H_0=H_1=1$, $g=1$, and $P=2$ give
+\[
+ \mathcal S(1)=4-\frac{7\sqrt{14}}6<0,\qquad
+ \delta(x)\le\mathcal J(1,2)
+ \le2-\frac{7\sqrt{14}}{24}<1.
+\]
+This is an elementary strengthening of the gap-only bound one.
+It follows from the theorem, not from a scan of radii.
+The single-root value is also the fixed-initial-slope envelope
+in Proposition~\ref{joint:fixed-slope}, with
+$q=P-mh/P$ and length $h/P$.
+With certified source upper bounds use the same formulas with
+$g=B^+$ and $P=P^+$; a numerical shortcut requires a certified
+nonpositive sign for $\mathcal S(h)$. An unresolved sign uses
+the general valid procedure.
+
+\begin{corollary}[Closed form for constant curvature]
+\label{joint:constant}
+If $H_1=0$, define
+\[
+ \beta=\frac{H_0^2-2mH_0-m^2}{4H_0},\qquad
+ h=\min\{g,P^2/m\}.
+\]
+For $g,P>0$,
+\begin{equation}\label{joint:constant-formula}
+ \mathcal J(g,P)=
+ \begin{cases}
+ h+\beta h/m,&\beta\ge0,\\
+ h+\beta h^2/P^2,&\beta<0.
+ \end{cases}
+\end{equation}
+If $m\le H_0<(1+\sqrt2)m$ and $0<g<P^2/m$, then
+\[
+ \mathcal J(g,P)<\min\{\mathcal B(g),\mathcal E(P)\}.
+\]
+For example, $m=H_0=1$, $H_1=0$, $g=1/2$, $P=1$ give
+\[
+ \mathcal J(1/2,1)=3/8,
+ \qquad \mathcal B(1/2)=\mathcal E(1)=1/2.
+\]
+The quadratic $f(s)=s/2+s^2/2$ on $Q=[0,1/2]$, evaluated at
+$s=1/2$, attains the joint value with exactly those observations.
+\end{corollary}
+\begin{proof}
+The constant-curvature expression
+$V(h,\rho)=h+\beta\rho$ is affine in $\rho$, so one of the
+two interval endpoints gives \eqref{joint:constant-formula}.
+In the strict-improvement regime put
+$b=-\beta/m\in(0,1/2]$ and $t=mg/P^2\in(0,1)$. Then
+\[
+ \mathcal B(g)=g,\qquad
+ \mathcal J(g,P)=\frac{P^2}{m}(t-bt^2),\qquad
+ \mathcal E(P)=\frac{P^2}{m}(1-b).
+\]
+The first strict comparison follows from $b,t>0$; the second from
+$1-b-t+bt^2=(1-t)\{1-b(1+t)\}>0$.
+\end{proof}
+
+\paragraph{Certified observations and stopping.}
+Suppose a paid source query supplies a full-gap upper bound $B^+$ and
+a norm upper bound $P^+$. Monotonicity gives
+\[
+ \delta(x)\le\mathcal J(B^+,P^+).
+\]
+For example, a norm-certified gradient with
+$\|\widehat g-\nabla f(x)\|\le\eta$ supplies
+$P^+=\|\widehat g\|+\eta$. A bound on atom-score differences alone
+does not supply this norm bound. The joint certificate uses no
+additional objective, gradient, or LMO query when both observations
+are already available; its scalar evaluation still has a cost.
+
+Retaining $f(x)-\mathcal J(B^+,P^+)$ strengthens the accumulated
+lower bound. Since $\mathcal J(B^+,P^+)\le\mathcal B(B^+)$, all
+existing work bounds based on the one-variable calibration
+$\mathcal B$ remain valid. There is no need to invert the
+two-variable function $\mathcal J$. This is a sharper certificate,
+not a claim of fewer optimization steps on untested data.
+If the scalar routine returns a certified enclosure
+$\mathcal J\le\widehat{\mathcal J}\le\vartheta\mathcal J$,
+the same argument uses the effective calibration
+$\Phi=\vartheta\mathcal B$ in Theorem~\ref{nloracle:main}.
+Its separate oracle-accuracy parameter $\theta$ is unchanged.
+
+\begin{proposition}[Finite scalar evaluation of the joint certificate]
+\label{joint:budget}
+Suppose $H_1>0$, $g,P>0$, and fix $\vartheta>1$. Let $h$ be as in
+\eqref{joint:definition}. Use $K_*=K_*(h)$ and $L_*=L_*(h)$ from
+Proposition~\ref{boundarygap:budget}, and put
+\[
+ \rho_-=h^2/P^2,\qquad \rho_+=h/m,\qquad
+ \Delta=\rho_+-\rho_-,\qquad
+ n=\left\lceil\log_2\max\left\{1,
+                  \frac{8K_*}{m(\vartheta-1)}\right\}\right\rceil.
+\]
+If $\Delta>0$, set
+\[
+ J=\max\left\{1,\left\lceil
+       \frac{2L_*\Delta}{(\vartheta-1)h}\right\rceil\right\},
+ \qquad \rho_j=\rho_-+j\Delta/J,\quad 0\le j\le J.
+\]
+At each node perform $n$ exact-sign bisections of
+\eqref{boundarygap:switch}, with gap argument $h$, and let
+$\widehat V_j$ be the upper retained endpoint value. Then
+\[
+ \widehat{\mathcal J}(g,P)=
+ \max_{0\le j\le J}\widehat V_j+\frac{L_*\Delta}{2J}
+ \qquad
+ \mathcal J(g,P)\le\widehat{\mathcal J}(g,P)
+                    \le\vartheta\mathcal J(g,P).
+\]
+This uses at most $(J+1)n$ root sign comparisons and $J$ maximum
+comparisons. If $\Delta=0$, use only its single node, with $n$
+root sign comparisons and no grid correction or maximum comparison.
+For $H_1=0$, use \eqref{joint:constant-formula}; when either input
+is zero return zero. These algebraic branches need no root search.
+\end{proposition}
+\begin{proof}
+The interval contains $h/m$, so
+$\mathcal J(g,P)\ge V(h,h/m)=W(h)\ge h/2$.
+Each upper endpoint has excess at most
+$2\rho_+K_*2^{-n}\le(\vartheta-1)h/4$.
+The half-mesh correction has the same upper bound. Their sum is
+at most $(\vartheta-1)\mathcal J(g,P)$. The Lipschitz argument of
+Proposition~\ref{boundarygap:budget} proves validity, and all
+$J+1$ nodes have positive radius. The single-node case uses only
+the first error bound.
+\end{proof}
+
+These are exact-arithmetic comparison counts. Certified numerical
+evaluation must also enclose arithmetic and elementary-function
+errors, for instance by reserving a factor
+$1<\vartheta_0<\vartheta$. They are not bit-complexity bounds.
+Since $h\le g$ and $\Delta\le h/m$, the uniform source-gap cap
+\eqref{boundarygap:query-cap} also bounds these budgets: one may use
+$J\le\max\{1,\lceil2L_*(\overline B)/(m(\vartheta-1))\rceil\}$
+and $n\le n(\overline B)$ at every positive query. Every paid
+source query, including unsuccessful refinements and the terminal
+check, must be charged for its chosen scalar calculation.

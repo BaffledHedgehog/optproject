@@ -1,17 +1,24 @@
 {
-  "date": "2026-11-01",
-  "directory": "2026-11-01",
-  "title": "Observable Certificates and Exact Termination in Backtracking Frank-Wolfe",
-  "paper": "2026-11-01/paper.pdf",
-  "arxiv_source": "2026-11-01/arxiv_source_v2.zip",
-  "expert_packet": "2026-11-01/for_gasnikov_v2.zip",
-  "metadata": "2026-11-01/ARXIV_METADATA.txt",
-  "status": "prepared locally; human expert review pending; not submitted",
+  "date": "2026-11-12",
+  "directory": "2026-11-12-v17",
+  "title": "Sharp Error Bounds and Adaptive Stopping for Frank-Wolfe beyond Convexity",
+  "paper": "2026-11-12-v17/paper.pdf",
+  "paper_ru": "2026-11-12-v17/paper_ru.pdf",
+  "arxiv_source": "2026-11-12-v17/arxiv_source_v17.zip",
+  "arxiv_source_ru": "2026-11-12-v17/arxiv_source_ru_v17.zip",
+  "expert_packet": "2026-11-12-v17/reading_packet_v17.zip",
+  "metadata": "2026-11-12-v17/ARXIV_METADATA.txt",
+  "status": "research manuscript; not submitted",
   "authors": [
     "Yaroslav P. Lyakhov",
     "Stepan A. Suvorov"
   ],
-  "revision_tag": "v2",
-  "reproducibility": "2026-11-01/reproducibility_v2.zip",
-  "validation": "2026-11-01/submission_validation_v2.json"
+  "revision_tag": "v17",
+  "pages": {
+    "en": 23,
+    "ru": 23
+  },
+  "reproducibility": "2026-11-12-v17/Code/README.txt",
+  "validation": "2026-11-12-v17/Evidence/release_validation.json",
+  "previous_release": "2026-11-01"
 }

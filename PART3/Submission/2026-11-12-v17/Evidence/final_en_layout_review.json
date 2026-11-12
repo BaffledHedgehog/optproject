@@ -1,0 +1,40 @@
+{
+  "status": "PASS",
+  "reviewed_at_utc": "2026-11-12T16:26:47.063919+00:00",
+  "reviewer": "root",
+  "pdf": "manuscript_en/paper.pdf",
+  "pdf_sha256": "ba126a54d6ae9871c6b190a8b57505037dcdb531ee82c65ac033cce1f220fc98",
+  "bytes": 449327,
+  "pages": 23,
+  "render_engine": "Poppler pdftoppm, 90 dpi PNG",
+  "contact_sheet_coverage": "all 23 pages",
+  "full_page_delta_review": [
+    2,
+    21,
+    22
+  ],
+  "source_hashes": {
+    "article.tex": "cf58936b7bd850daa59c72d4186c9d4c3aae34a8c79109898f3d8608cd67f80c",
+    "article_references.tex": "a858db872e7e1a697c2ebff1aa1eb094ce44428876af1e96e7eecbe7d187e721",
+    "compact_assumptions.tex": "adfb84e0dc7c2018ee35a0a3cf77171097a958bdf13d648f952de21854757677",
+    "compact_diameter.tex": "f35bd0eff7cef25b4a4f838e9801268b58ab27a1cd9987f4e044fb412d8cf494",
+    "compact_directional.tex": "8c22de347c7e324d351016af77a755b0cfaafe984776d56584bf41a67c6c4670",
+    "compact_evidence.tex": "aea178e99a5ffa5ae91ea69f0b150ad09f71c3c8e61027cbd5e4ed019f339913",
+    "compact_full_gap.tex": "aaade57dd477f8f25e165912d350c19084ef95765ed35b14e6a74db4a07f209a",
+    "compact_gap_regime.tex": "03d8ee9b0899799bcdffd0a8bf5138e4bd3b084e9370a67fa94ea13768b0d795",
+    "compact_intro.tex": "2211b0886b4f5d95949661ececf79b9a4524eddb7fc79a8e175456876be0f4c8",
+    "compact_joint.tex": "6e1ac56f747dc9c44e1c1fe2340641e081147770c90a9b7a6fabd339729c2e73",
+    "compact_radial_norm.tex": "fbf5308e7f913b8cbd31eb1a84d027fd2f15e61a5308f3361d1d56ebea9f7d18",
+    "compact_sigmoid.tex": "c05a1ac80d8e8bc96315fb61469678e9e82763170e38baca6f114306e66b5630",
+    "compact_stopping.tex": "b1f133bcf5e399ab7ad9910bfa486cd0d306ae003e42d62398e49570a65aed67"
+  },
+  "checks": [
+    "Final availability prose fits within margins.",
+    "No visible clipping, overlapping text or missing symbols in current renders.",
+    "All 23 current pages inspected as contact sheets; changed pages 2, 21 and 22 inspected at full-page resolution.",
+    "Diameter geometry remains legible, with both sloping sides labeled D.",
+    "No em or en dashes or unresolved reference markers in extracted text.",
+    "Build receipt matches all 13 current TeX sources and reports no warning."
+  ],
+  "scope": "Final layout and availability-text delta inspection; no scientific rerun or formal proof verification."
+}

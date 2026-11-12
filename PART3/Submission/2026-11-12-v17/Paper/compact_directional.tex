@@ -1,0 +1,113 @@
+\section{Directional errors and finite-variance observations}
+\label{diroracle:section}
+We give two implementations of \eqref{nloracle:query} and one sampling
+construction. Median-of-means estimation is classical \cite{dirlugosi};
+robust stochastic FW is studied in \cite{dirtang,dirsfyraki}.
+Here it supplies the stated global-error stopping certificate with
+exact objective values.
+
+\begin{proposition}[Vector and score implementations]
+\label{diroracle:width-transfer}\label{diroracle:scores}
+Define the feasible-direction seminorm
+\[
+ \omega_Q(v)=\max_{u,w\in Q}\langle v,u-w\rangle\le D\|v\|.
+\]
+If a vector query satisfies $\omega_Q(\widehat g-\nabla f(x))\le\eta$,
+choose $s\in\arg\min_{v\in Q}\langle\widehat g,v\rangle$ and
+$h=\langle\widehat g,x-s\rangle$. Then \eqref{nloracle:query} holds,
+also for the selected away direction with its own approximate gap.
+
+Alternatively let $Q=\operatorname{conv}\{v_0,\ldots,v_{n_A-1}\}$,
+$n_A\ge2$, and $x=\sum_i\lambda_i v_i$ with exact nonnegative weights
+summing to one. Put $t_i=\langle\nabla f(x),v_i-v_0\rangle$.
+Suppose $q_0=t_0=0$ and
+\begin{equation}\label{diroracle:score-error}
+ \max_i(q_i-t_i)-\min_i(q_i-t_i)\le\eta.
+\end{equation}
+Set $q_x=\sum_i\lambda_iq_i$, choose $i_s\in\arg\min_i q_i$, and
+use $h=q_x-q_{i_s}$. This also gives \eqref{nloracle:query} and the
+away-direction guarantee. The scores need not be a linear functional.
+Each query then costs a full scan of $n_A$ scores.
+\end{proposition}
+\begin{proof}
+The seminorm bounds the absolute error on each difference of feasible
+points by $\eta$. Taking the maximum proves the gap bound; evaluating
+the selected direction proves the slope bound.
+For scores write $e_i=q_i-t_i$ and $e_x=\sum_i\lambda_i e_i$.
+The error $e_x$ lies between the smallest and largest $e_i$, so
+\[
+ \langle\nabla f(x),x-v_i\rangle=q_x-q_i-e_x+e_i\le h+\eta.
+\]
+The selected FW slope is at least $h-\eta$. The away slope is at least
+$q_i-q_x-\eta$. Also $h\ge0$ because $q_x$ is a convex combination.
+\end{proof}
+
+For a Euclidean error bound $\eta_{\rm norm}$, use
+$\eta=D\eta_{\rm norm}$ and $P^+=\|\widehat g\|+\eta_{\rm norm}$.
+The latter can feed the joint certificate. Directional or score errors
+alone do not imply such a norm bound. On the radius-$R$ $\ell_1$ ball,
+$\omega_Q(v)=2R\|v\|_\infty$; on the simplex it is
+$\max_i v_i-\min_i v_i$. Enumerating scores is not one black-box LMO
+call on an implicit polytope.
+
+At a requested point suppose one fresh observation gives $n_A-1$
+scalar values $Y_i$. Conditional on the entire past $\mathcal F$,
+observations within the query are independent and identically distributed,
+with known uniform bound
+\begin{equation}\label{diroracle:moment}
+ \mathbb E[Y_i\mid\mathcal F]=t_i(x),\qquad
+ \mathbb E[(Y_i-t_i(x))^2\mid\mathcal F]\le\sigma_A^2<\infty.
+\end{equation}
+Coordinates of one observation may be dependent.
+Number every query, including refinements, by $j\ge1$.
+At precision level $r$, let $\eta_r=\eta_0 2^{-r}$ and choose
+\begin{equation}\label{diroracle:batch}
+ b_r=\max\{1,\lceil16\sigma_A^2/\eta_r^2\rceil\},\qquad
+ k_j=2\left\lceil4\log\frac{(n_A-1)j(j+1)}\zeta\right\rceil+1,
+ \quad 0<\zeta<1.
+\end{equation}
+Draw $b_rk_j$ observations. For each coordinate, take the median of
+the $k_j$ means over disjoint blocks of size $b_r$; set $q_0=0$.
+
+\begin{theorem}[One confidence event for all queries]\label{diroracle:sampling}
+With probability at least $1-\zeta$, every query requested by the
+algorithm satisfies \eqref{diroracle:score-error}. On this event all
+bounds of Theorem~\ref{nloracle:main} hold, including
+$\delta(x_N)\le U_N\le\varepsilon$ at its random stopping time.
+For actual $T=N+1+R$, the number of raw observations satisfies
+\begin{align}\label{diroracle:samples}
+ S&\le k_T\left[(N+1)b_R+\sum_{r=0}^{R-1}b_r\right]\\
+  &\le k_T\left[T+16\sigma_A^2\eta_R^{-2}
+       \left(N+1+\frac{1-4^{-R}}3\right)\right].\nonumber
+\end{align}
+Each observation returns all $n_A-1$ coordinates, so it represents
+$(n_A-1)S$ scalar directional values. Medians, scans and exact
+objective evaluations are separate costs.
+\end{theorem}
+\begin{proof}
+Conditional Chebyshev gives a probability at most $1/4$ that one block
+mean has error greater than $\eta_r/2$. For $\sigma_A=0$ this probability
+is zero. Independence of the blocks and Hoeffding's bound show that
+the odd median fails only with probability at most $e^{-k_j/8}$.
+A union bound over coordinates gives conditional failure probability
+at most $\zeta/[j(j+1)]$. Coordinate errors at most $\eta_r/2$
+give a score-error range at most $\eta_r$.
+Apply this bound on the event that query $j$
+is requested, take expectations, and sum over all $j\ge1$.
+Since the sum of $1/[j(j+1)]$ is one, all queries are valid together
+with probability at least $1-\zeta$. The deterministic prefix proof
+then establishes termination without a fixed query horizon.
+
+There is one failed query at each level $0,\ldots,R-1$ and $N+1$
+closing queries at levels at most $R$. Since $k_j$ increases, this
+gives the first sample bound. The second uses
+$b_r\le1+16\sigma_A^2\eta_r^{-2}$ and
+$\sum_{r<R}\eta_r^{-2}=\eta_R^{-2}(1-4^{-R})/3$.
+\end{proof}
+
+The directional moment assumption can hold without an ambient vector
+moment. On a simplex, a common Cauchy component $W\mathbf1$ cancels
+from every difference $\langle Z,e_i-e_0\rangle$. The differences
+must still have the finite conditional variance in
+\eqref{diroracle:moment}. The construction requires a finite explicit
+atom set, fresh samples, a known variance bound and exact objectives.

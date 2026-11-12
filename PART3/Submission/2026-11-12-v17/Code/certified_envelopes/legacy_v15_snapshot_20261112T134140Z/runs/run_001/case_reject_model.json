@@ -1,0 +1,131 @@
+{
+  "id": "reject_model",
+  "case_type": "input_validation",
+  "case": {
+    "id": "reject_model",
+    "case_type": "input_validation",
+    "envelope": "E",
+    "arguments": [
+      "1"
+    ],
+    "expected": {
+      "status": "refused",
+      "reason": "invalid_input"
+    },
+    "model": {
+      "m": "0"
+    }
+  },
+  "test_status": "PASS",
+  "certificate": {
+    "status": "refused",
+    "envelope": "E",
+    "envelope_lower": null,
+    "envelope_upper": null,
+    "achieved_factor": null,
+    "requested_factor": null,
+    "internal_factor": null,
+    "reason": "invalid_input",
+    "message": "Required model conditions are m>0, H0>=m and H1>=0.",
+    "inputs": {},
+    "precision": {
+      "work_dps": 100,
+      "value_dps": 100
+    },
+    "plan": {},
+    "work": {
+      "bound_evaluations": 0,
+      "node_coefficient_preparations": 0,
+      "switch_evaluations": 0,
+      "loss_evaluations": 0,
+      "scalar_evaluations_started": 0,
+      "bracket_sign_queries": 0,
+      "bracket_sign_decisions": 0,
+      "root_sign_queries": 0,
+      "root_sign_decisions": 0,
+      "bisection_updates": 0,
+      "sign_order_predicates": 0,
+      "sign_equality_predicates": 0,
+      "certificate_maximum_comparisons": 0,
+      "witness_maximum_comparisons": 0,
+      "rounding_maximum_comparisons": 0,
+      "derived_lower_maximum_comparisons": 0,
+      "budget_setup_maximum_comparisons": 0,
+      "budget_order_comparisons": 0,
+      "resource_metadata_maximum_comparisons": 3,
+      "budget_ceiling_operations": 0,
+      "rational_to_interval_conversions": 0,
+      "interval_endpoint_extractions": 0,
+      "resource_limit_checks": 5,
+      "validation_checks": 17,
+      "exact_formula_evaluations": 0,
+      "source_objective_calls": 0,
+      "source_gradient_calls": 0,
+      "full_LMO_calls": 0,
+      "LP_calls": 0,
+      "optimizer_updates": 0,
+      "stochastic_samples": 0
+    },
+    "elementary_evaluations": {
+      "exp": 0,
+      "sin": 0,
+      "cos": 0,
+      "sqrt": 0
+    },
+    "trace": [],
+    "refusal_details": {},
+    "bound_semantics": "The interval encloses the mathematical envelope; only envelope_upper bounds source error under the model assumptions.",
+    "cost_semantics": "Named started evaluations, resolved/attempted sign queries and explicit maximum selections; not all arithmetic operations or bit cost."
+  },
+  "checks": [
+    {
+      "name": "expected API status",
+      "passed": true
+    },
+    {
+      "name": "zero scientific source/optimizer/stochastic oracles",
+      "passed": true
+    },
+    {
+      "name": "all started scalar evaluations are named",
+      "passed": true
+    },
+    {
+      "name": "bisection ledger matches the saved node traces",
+      "passed": true
+    },
+    {
+      "name": "resolved midpoint signs match completed updates",
+      "passed": true
+    },
+    {
+      "name": "direct exp calls reconcile with started scalar evaluations",
+      "passed": true
+    },
+    {
+      "name": "direct sin calls reconcile",
+      "passed": true
+    },
+    {
+      "name": "direct cos calls reconcile",
+      "passed": true
+    },
+    {
+      "name": "direct sqrt calls reconcile",
+      "passed": true
+    },
+    {
+      "name": "refusal exposes no envelope certificate",
+      "passed": true
+    },
+    {
+      "name": "exact expected refusal reason",
+      "passed": true
+    },
+    {
+      "name": "invalid input causes no scientific scalar evaluation",
+      "passed": true
+    }
+  ],
+  "elapsed_seconds_measurement_only": 3.9307000406552106e-05
+}

@@ -1,0 +1,38 @@
+{
+  "source_result_path": "/workspace/scratch/50468750a620/continuation_v16/joint_envelope/controls_001/result.json",
+  "source_result_sha256": "74c276e93466ad810edaf04cc638d58698c44066cd9b04f9c22b94591d7bb3d8",
+  "extraction": "Read-only selection of frozen prior controls; no API import, scalar evaluation or new scientific run. Exact rational endpoints are preserved when supplied; the norm display is widened to explicit 30-decimal rational bounds.",
+  "points": {
+    "unit_joint_left": {
+      "model": {
+        "m": "1",
+        "H0": "1",
+        "H1": "1"
+      },
+      "g": "1",
+      "P": "2",
+      "rho": "1/4",
+      "rational_interval": [
+        "63218001815023148255805573542152830738167599220383580689571206834016540920348025531011817008939587467/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368",
+        "15804500453755787063951393385560893781103643051731846846624423737570523590872746888088446147645115235/17498005798264095394980017816940970922825355447145699491406164851279623993595007385788105416184430592"
+      ],
+      "source_field": "positive_H1_control.joint_exact_rational_endpoints"
+    },
+    "unit_norm": {
+      "model": {
+        "m": "1",
+        "H0": "1",
+        "H1": "1"
+      },
+      "P": "1",
+      "rho": "1",
+      "rational_interval": [
+        "0.538030657637574049520165561482",
+        "0.538030657637574049520165561485"
+      ],
+      "source_display_interval": "[0.538030657637574049520165561482826793975546218942057426344508237305830024078463492569564380545022066976538, 0.538030657637574049520165561484990667021945362598168818652458792956242855588913015970126584878769361019062]",
+      "source_field": "positive_H1_control.point_values[2].value.interval",
+      "interpretation": "An explicitly widened compatibility enclosure copied from the historical point V(1,1); it is not used to calculate or prove the new certificate."
+    }
+  }
+}

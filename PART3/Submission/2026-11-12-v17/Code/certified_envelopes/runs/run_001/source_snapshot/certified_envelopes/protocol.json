@@ -1,0 +1,34 @@
+{
+  "protocol_id": "certified_envelopes_v16_first_fixed_panel",
+  "version": 1,
+  "execution_policy": "No API import or scientific evaluation before independent static review of this freeze. Exactly one immutable run_001; no adaptive retry, parameter tuning, precision increase, case replacement or legacy rerun.",
+  "scope": "Deterministic scalar implementation controls for proved formulas and refusal semantics. These controls are not proofs, benchmarks or optimization experiments.",
+  "default_model": {"m": "1", "H0": "1", "H1": "1"},
+  "default_precision": {"work_dps": 100, "value_dps": 100},
+  "default_limits": {"max_positive_nodes": 64, "max_bisection_steps": 1024, "max_scalar_evaluations": 2048, "max_elementary_evaluations": 10000},
+  "cases": [
+    {"id": "zero_norm", "function": "certify_norm", "args": {"P": "0"}, "expected": {"status": "certified", "branch": "zero", "exact": "0", "no_switch": true}},
+    {"id": "zero_joint_gap", "function": "certify_joint", "args": {"g": "0", "P": "2"}, "expected": {"status": "certified", "branch": "zero", "exact": "0", "no_switch": true}},
+    {"id": "zero_algebraic_norm", "function": "algebraic_joint_bound", "args": {"g": "1", "P": "0"}, "expected": {"status": "certified", "branch": "algebraic_zero", "exact_upper": "0", "no_switch": true}},
+    {"id": "constant_gap_active", "function": "certify_joint", "model": {"m": "1", "H0": "1", "H1": "0"}, "args": {"g": "1/2", "P": "1"}, "expected": {"status": "certified", "branch": "constant_curvature", "exact": "3/8", "no_switch": true}},
+    {"id": "constant_norm_active", "function": "certify_joint", "model": {"m": "1", "H0": "1", "H1": "0"}, "args": {"g": "2", "P": "1"}, "expected": {"status": "certified", "branch": "constant_curvature", "exact": "1/2", "no_switch": true}},
+    {"id": "gap_regime_exact", "function": "certify_gap", "args": {"g": "1"}, "factor": "5/4", "expected": {"status": "certified", "branch": "affine_gap_regime_exact", "exact": "1", "regime": "nonpositive", "positive_nodes": 0, "no_switch": true}},
+    {"id": "joint_regime_one_node", "function": "certify_joint", "args": {"g": "1", "P": "2"}, "factor": "5/4", "expected": {"status": "certified", "branch": "affine_joint_regime_one_node", "regime": "nonpositive", "positive_nodes": 1, "reference": "unit_joint_left", "upper_lt": "1"}},
+    {"id": "joint_norm_branch", "function": "certify_joint", "args": {"g": "2", "P": "1"}, "factor": "5/4", "expected": {"status": "certified", "branch": "affine_joint_norm_branch", "positive_nodes": 1, "reference": "unit_norm"}},
+    {"id": "algebraic_joint", "function": "algebraic_joint_bound", "args": {"g": "1", "P": "2"}, "expected": {"status": "certified", "branch": "algebraic_joint_regime", "regime": "nonpositive", "positive_nodes": 0, "no_switch": true, "radical_upper_formula": "2-7*sqrt(14)/24", "upper_lt": "1"}},
+    {"id": "algebraic_norm_cap_clipping", "function": "algebraic_joint_bound", "args": {"g": "10", "P": "1"}, "expected": {"status": "certified", "branch": "algebraic_joint_regime", "working_gap": "1", "regime": "nonpositive", "positive_nodes": 0, "no_switch": true, "upper_lt": "1"}},
+    {"id": "exact_gate_equality", "function": "certify_joint", "model": {"m": "23", "H0": "40", "H1": "1"}, "args": {"g": "48", "P": "40"}, "factor": "2", "expected": {"status": "certified", "branch": "affine_joint_regime_one_node", "regime": "nonpositive", "S_interval_exact": ["0", "0"], "tau_interval_exact": ["3/4", "3/4"], "positive_nodes": 1}},
+    {"id": "outside_regime_grid", "function": "certify_joint", "model": {"m": "1", "H0": "3", "H1": "1"}, "args": {"g": "1/4", "P": "1"}, "factor": "4", "expected": {"status": "certified", "branch": "affine_joint_restricted_grid", "regime": "positive", "positive_grid": true}},
+    {"id": "outside_algebraic_refusal", "function": "algebraic_joint_bound", "args": {"g": "6", "P": "3"}, "expected": {"status": "refused", "reason": "outside_algebraic_regime", "regime": "positive", "no_switch": true}},
+    {"id": "unresolved_regime_refusal", "function": "certify_joint", "args": {"g": "444949/100000", "P": "10"}, "precision": {"work_dps": 2, "value_dps": 2}, "expected": {"status": "refused", "reason": "unresolved_regime_sign", "regime": "unresolved", "no_switch": true}},
+    {"id": "one_node_resource_refusal", "function": "certify_joint", "args": {"g": "1", "P": "2"}, "limits": {"max_positive_nodes": 0}, "expected": {"status": "refused", "reason": "resource_cap", "resource": "positive_nodes", "regime": "nonpositive", "no_switch": true}},
+    {"id": "reject_inexact_float", "function": "certify_norm", "args": {"P": 0.1}, "expected": {"status": "refused", "reason": "invalid_input", "no_switch": true}}
+  ],
+  "interpretation": {
+    "historical_references": "Read-only compatibility checks against frozen previously proved scalar controls. They do not establish the correctness of the API by themselves.",
+    "exact_gate_equality": "For m=23,H0=40,H1=1,g=48: discriminant=5776=76^2, tau=3/4 and S=0 exactly. This is a fixed algebraic fixture, not a fitted floating threshold.",
+    "unresolved_case": "The fixed low precision is deliberately expected to refuse a sign near the known threshold. If this prediction fails, retain the failure and do not tune the case.",
+    "interface_checks": "Inspect keyword-only public joint signatures; old positional (P,g) calls are Python signature errors, not structured mathematical refusals.",
+    "cost": "Per-case and aggregate named scalar starts, square roots, elementary calls, sign queries, root updates and explicit comparisons are recorded separately from validation assertions and wall time. Counts are not bit complexity. All source objective, gradient, LMO, LP, optimizer and stochastic counts must remain zero."
+  }
+}

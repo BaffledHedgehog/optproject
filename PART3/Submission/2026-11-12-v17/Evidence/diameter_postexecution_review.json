@@ -1,0 +1,3533 @@
+{
+  "status": "PASS",
+  "reviewer": "/root/gap_structure",
+  "review_kind": "Independent saved-record audit without API import or rerun",
+  "created_utc": "2026-11-12T15:23:58.059981+00:00",
+  "audited_run_path": "/workspace/scratch/50468750a620/continuation_v17/certified_diameter/runs/run_001",
+  "audited_result_sha256": "7db1a2f9b8c0a3ff0042cf6aec89bc65695de6bab7e9e2fd686dd0d6b98f0b54",
+  "reviewed_freeze_sha256": "55f9824ee37c2b16e79918ff5a8849210589671c39055500bf2197a3fb3eb9c8",
+  "root_approval_sha256": "748d298f5978df5488e287232943ce5c2d032a7f6097d14e6af3f35ece1c7865",
+  "audit_script_sha256": "7e757773f863fd45e42bc33a5f6906225c7fd3a2c3846cdd5d8406da9ffa78ad",
+  "scientific_api_imports_performed": 0,
+  "scientific_api_calls_performed": 0,
+  "scientific_runs_performed": 0,
+  "reviewed_files_modified": false,
+  "audit_attempt_receipt": "audit_first_attempt_receipt.json",
+  "audit_attempt_note": "An initial standard-library audit pass stopped at an optional expected-field lookup. That audit-only parser assumption was corrected; the package and saved run were untouched, and no API was imported or executed.",
+  "method": "Read-only JSON and byte-hash comparison plus exact Fraction bookkeeping of saved inputs, traces, budgets, outputs and named counters. No transcendental function or certificate was recomputed.",
+  "audit_condition_count": 638,
+  "conditions": [
+    {
+      "check": "reviewed_freeze_identity",
+      "passed": true
+    },
+    {
+      "check": "independent_review_identity",
+      "passed": true
+    },
+    {
+      "check": "explicit_root_approval",
+      "passed": true
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "DEPENDENCY_CAPTURE.json"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "DEPENDENCY_CAPTURE.json"
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "DERIVATION.txt"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "DERIVATION.txt"
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "PROVENANCE.json"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "PROVENANCE.json"
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "README_RU.txt"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "README_RU.txt"
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "__init__.py"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "__init__.py"
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "_legacy_core.py"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "_legacy_core.py"
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "_v16_api.py"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "_v16_api.py"
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "api.py"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "api.py"
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "proof_references/article_boundary_gap_appendix.tex"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "proof_references/article_boundary_gap_appendix.tex"
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "proof_references/article_gap_regime.tex"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "proof_references/article_gap_regime.tex"
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "proof_references/article_gap_regime_appendix.tex"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "proof_references/article_gap_regime_appendix.tex"
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "proof_references/article_joint_diameter.tex"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "proof_references/article_joint_diameter.tex"
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "proof_references/article_joint_diameter_appendix.tex"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "proof_references/article_joint_diameter_appendix.tex"
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "proof_references/article_joint_envelope.tex"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "proof_references/article_joint_envelope.tex"
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "proof_references/article_joint_envelope_appendix.tex"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "proof_references/article_joint_envelope_appendix.tex"
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "protocol.json"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "protocol.json"
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "reference_data.json"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "reference_data.json"
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "requirements.txt"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "requirements.txt"
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "run_protocol.py"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "run_protocol.py"
+    },
+    {
+      "check": "live_frozen_hash",
+      "passed": true,
+      "file": "static_self_review.json"
+    },
+    {
+      "check": "snapshot_frozen_hash",
+      "passed": true,
+      "file": "static_self_review.json"
+    },
+    {
+      "check": "snapshot_freeze_matches_live",
+      "passed": true
+    },
+    {
+      "check": "snapshot_approval_matches_live",
+      "passed": true
+    },
+    {
+      "check": "record_freeze_hash",
+      "passed": true,
+      "record": "result"
+    },
+    {
+      "check": "record_approval_hash",
+      "passed": true,
+      "record": "result"
+    },
+    {
+      "check": "record_source_map",
+      "passed": true,
+      "record": "result"
+    },
+    {
+      "check": "record_freeze_hash",
+      "passed": true,
+      "record": "preflight"
+    },
+    {
+      "check": "record_approval_hash",
+      "passed": true,
+      "record": "preflight"
+    },
+    {
+      "check": "record_source_map",
+      "passed": true,
+      "record": "preflight"
+    },
+    {
+      "check": "preflight_before_start",
+      "passed": true
+    },
+    {
+      "check": "preflight_zero_prior_calls",
+      "passed": true
+    },
+    {
+      "check": "environment_pinned",
+      "passed": true
+    },
+    {
+      "check": "snapshot_import_path",
+      "passed": true,
+      "module": "api"
+    },
+    {
+      "check": "snapshot_import_path",
+      "passed": true,
+      "module": "_v16_api"
+    },
+    {
+      "check": "snapshot_import_path",
+      "passed": true,
+      "module": "_legacy_core"
+    },
+    {
+      "check": "read_only_saved_files",
+      "passed": true
+    },
+    {
+      "check": "single_run_directory",
+      "passed": true
+    },
+    {
+      "check": "saved_completion_flags",
+      "passed": true
+    },
+    {
+      "check": "one_fixed_run_declared",
+      "passed": true
+    },
+    {
+      "check": "ten_unique_protocol_ids",
+      "passed": true
+    },
+    {
+      "check": "saved_case_order",
+      "passed": true
+    },
+    {
+      "check": "case_file_coverage",
+      "passed": true
+    },
+    {
+      "check": "partial_rows_equal_final",
+      "passed": true
+    },
+    {
+      "check": "partial_call_count",
+      "passed": true
+    },
+    {
+      "check": "protocol_identity",
+      "passed": true
+    },
+    {
+      "check": "case_result_hash",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "exact_frozen_case_copy",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "case_id_and_function",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "case_call_started",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "case_completed_without_exception",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "runner_check_count",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "precision_unchanged",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "nonnegative_recorded_times",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "expected_status_and_family",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "nonnegative_integer_counters",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "no_source_operations",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "scalar_partition",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "elementary_partitions",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "requested_and_internal_factor",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "fixed_precision_used",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "actual_named_costs_within_limits",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "expected_branch",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "expected_regime_evaluation_count",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "no_switch_started",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement",
+      "parameter": "m"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement",
+      "parameter": "H0"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement",
+      "parameter": "H1"
+    },
+    {
+      "check": "exact_observation_cap_recorded",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement",
+      "parameter": "P"
+    },
+    {
+      "check": "exact_observation_cap_recorded",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement",
+      "parameter": "g"
+    },
+    {
+      "check": "exact_derived_geometry",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "positive_ordered_radius_interval",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "expected_working_gap",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "expected_radius_interval",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "regime_counter_partitions",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "diameter_comparison_counters",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "no_legacy_working_gap_or_algebraic_branch",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "trace_root_costs",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "trace_sign_predicates",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "one_coefficient_preparation_per_completed_node",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "endpoint_extraction_partition",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "input_and_endpoint_metadata_maxima",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "rational_conversion_partition",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "resource_limit_check_partition",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "internal_validation_predicate_partition",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "ordered_returned_enclosure",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "exact_returned_factor",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "certified_has_no_refusal",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "expected_exact_value",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "exact_constant_formula",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "strict_diameter_improvement",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "outward_six_decimal_display",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "formula_counter",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "grid_selection_counter_partition",
+      "passed": true,
+      "case": "constant_exact_pair_diameter_improvement"
+    },
+    {
+      "check": "case_result_hash",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "exact_frozen_case_copy",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "case_id_and_function",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "case_call_started",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "case_completed_without_exception",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "runner_check_count",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "precision_unchanged",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "nonnegative_recorded_times",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "expected_status_and_family",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "nonnegative_integer_counters",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "no_source_operations",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "scalar_partition",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "elementary_partitions",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "requested_and_internal_factor",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "fixed_precision_used",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "actual_named_costs_within_limits",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "expected_branch",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "expected_regime_evaluation_count",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed",
+      "parameter": "m"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed",
+      "parameter": "H0"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed",
+      "parameter": "H1"
+    },
+    {
+      "check": "exact_observation_cap_recorded",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed",
+      "parameter": "P"
+    },
+    {
+      "check": "exact_observation_cap_recorded",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed",
+      "parameter": "g"
+    },
+    {
+      "check": "exact_derived_geometry",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "positive_ordered_radius_interval",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "expected_working_gap",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "expected_radius_interval",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "regime_counter_partitions",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "diameter_comparison_counters",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "no_legacy_working_gap_or_algebraic_branch",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "trace_node_completed",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed",
+      "node": 0
+    },
+    {
+      "check": "node_within_diameter_interval",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed",
+      "node": 0
+    },
+    {
+      "check": "exact_bisection_bracket_replay",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed",
+      "node": 0
+    },
+    {
+      "check": "last_midpoint_replay",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed",
+      "node": 0
+    },
+    {
+      "check": "last_saved_sign",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed",
+      "node": 0
+    },
+    {
+      "check": "retained_bracket_signs",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed",
+      "node": 0
+    },
+    {
+      "check": "saved_outward_value_intervals",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed",
+      "node": 0
+    },
+    {
+      "check": "trace_root_costs",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "trace_sign_predicates",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "one_coefficient_preparation_per_completed_node",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "endpoint_extraction_partition",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "input_and_endpoint_metadata_maxima",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "rational_conversion_partition",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "resource_limit_check_partition",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "internal_validation_predicate_partition",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "ordered_returned_enclosure",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "exact_returned_factor",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "certified_has_no_refusal",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "all_planned_nodes_completed",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "planned_root_budget",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "ordered_positive_scalar_bounds",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "minimal_root_budget_integer",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "single_left_node",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "single_root_allowance",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "exact_completion_budget_fields",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "completed_budget_fits",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "exact_returned_endpoints_from_trace",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "outward_six_decimal_display",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "formula_counter",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "grid_selection_counter_partition",
+      "passed": true,
+      "case": "affine_diameter_active_collapsed"
+    },
+    {
+      "check": "case_result_hash",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "exact_frozen_case_copy",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "case_id_and_function",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "case_call_started",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "case_completed_without_exception",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "runner_check_count",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "precision_unchanged",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "nonnegative_recorded_times",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "expected_status_and_family",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "nonnegative_integer_counters",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "no_source_operations",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "scalar_partition",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "elementary_partitions",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "requested_and_internal_factor",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "fixed_precision_used",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "actual_named_costs_within_limits",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "expected_branch",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "expected_regime_evaluation_count",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius",
+      "parameter": "m"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius",
+      "parameter": "H0"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius",
+      "parameter": "H1"
+    },
+    {
+      "check": "exact_observation_cap_recorded",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius",
+      "parameter": "P"
+    },
+    {
+      "check": "exact_observation_cap_recorded",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius",
+      "parameter": "g"
+    },
+    {
+      "check": "exact_derived_geometry",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "positive_ordered_radius_interval",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "expected_working_gap",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "expected_radius_interval",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "regime_uses_clipped_h",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "ordered_regime_intervals",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "regime_decision_matches_saved_outward_sign",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "expected_regime_branch",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "expected_exact_regime_fixture",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius",
+      "field": "S_interval"
+    },
+    {
+      "check": "expected_exact_regime_fixture",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius",
+      "field": "tau_interval"
+    },
+    {
+      "check": "regime_counter_partitions",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "diameter_comparison_counters",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "no_legacy_working_gap_or_algebraic_branch",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "trace_node_completed",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius",
+      "node": 0
+    },
+    {
+      "check": "node_within_diameter_interval",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius",
+      "node": 0
+    },
+    {
+      "check": "exact_bisection_bracket_replay",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius",
+      "node": 0
+    },
+    {
+      "check": "last_midpoint_replay",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius",
+      "node": 0
+    },
+    {
+      "check": "last_saved_sign",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius",
+      "node": 0
+    },
+    {
+      "check": "retained_bracket_signs",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius",
+      "node": 0
+    },
+    {
+      "check": "saved_outward_value_intervals",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius",
+      "node": 0
+    },
+    {
+      "check": "trace_root_costs",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "trace_sign_predicates",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "one_coefficient_preparation_per_completed_node",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "endpoint_extraction_partition",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "input_and_endpoint_metadata_maxima",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "rational_conversion_partition",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "resource_limit_check_partition",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "internal_validation_predicate_partition",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "ordered_returned_enclosure",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "exact_returned_factor",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "certified_has_no_refusal",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "all_planned_nodes_completed",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "planned_root_budget",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "ordered_positive_scalar_bounds",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "minimal_root_budget_integer",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "single_left_node",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "single_root_allowance",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "exact_completion_budget_fields",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "completed_budget_fits",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "exact_returned_endpoints_from_trace",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "outward_six_decimal_display",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "formula_counter",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "grid_selection_counter_partition",
+      "passed": true,
+      "case": "exact_regime_equality_with_clipped_radius"
+    },
+    {
+      "check": "case_result_hash",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "exact_frozen_case_copy",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "case_id_and_function",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "case_call_started",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "case_completed_without_exception",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "runner_check_count",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "precision_unchanged",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "nonnegative_recorded_times",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "expected_status_and_family",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "nonnegative_integer_counters",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "no_source_operations",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "scalar_partition",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "elementary_partitions",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "requested_and_internal_factor",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "fixed_precision_used",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "actual_named_costs_within_limits",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "expected_branch",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "expected_regime_evaluation_count",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "parameter": "m"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "parameter": "H0"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "parameter": "H1"
+    },
+    {
+      "check": "exact_observation_cap_recorded",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "parameter": "P"
+    },
+    {
+      "check": "exact_observation_cap_recorded",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "parameter": "g"
+    },
+    {
+      "check": "exact_derived_geometry",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "positive_ordered_radius_interval",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "expected_working_gap",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "expected_radius_interval",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "regime_uses_clipped_h",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "ordered_regime_intervals",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "regime_decision_matches_saved_outward_sign",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "expected_regime_branch",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "regime_counter_partitions",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "diameter_comparison_counters",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "no_legacy_working_gap_or_algebraic_branch",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "trace_node_completed",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 0
+    },
+    {
+      "check": "node_within_diameter_interval",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 0
+    },
+    {
+      "check": "exact_bisection_bracket_replay",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 0
+    },
+    {
+      "check": "last_midpoint_replay",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 0
+    },
+    {
+      "check": "last_saved_sign",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 0
+    },
+    {
+      "check": "retained_bracket_signs",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 0
+    },
+    {
+      "check": "saved_outward_value_intervals",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 0
+    },
+    {
+      "check": "trace_node_completed",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 1
+    },
+    {
+      "check": "node_within_diameter_interval",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 1
+    },
+    {
+      "check": "exact_bisection_bracket_replay",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 1
+    },
+    {
+      "check": "last_midpoint_replay",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 1
+    },
+    {
+      "check": "last_saved_sign",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 1
+    },
+    {
+      "check": "retained_bracket_signs",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 1
+    },
+    {
+      "check": "saved_outward_value_intervals",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 1
+    },
+    {
+      "check": "trace_node_completed",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 2
+    },
+    {
+      "check": "node_within_diameter_interval",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 2
+    },
+    {
+      "check": "exact_bisection_bracket_replay",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 2
+    },
+    {
+      "check": "last_midpoint_replay",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 2
+    },
+    {
+      "check": "last_saved_sign",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 2
+    },
+    {
+      "check": "retained_bracket_signs",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 2
+    },
+    {
+      "check": "saved_outward_value_intervals",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 2
+    },
+    {
+      "check": "trace_node_completed",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 3
+    },
+    {
+      "check": "node_within_diameter_interval",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 3
+    },
+    {
+      "check": "exact_bisection_bracket_replay",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 3
+    },
+    {
+      "check": "last_midpoint_replay",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 3
+    },
+    {
+      "check": "last_saved_sign",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 3
+    },
+    {
+      "check": "retained_bracket_signs",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 3
+    },
+    {
+      "check": "saved_outward_value_intervals",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 3
+    },
+    {
+      "check": "trace_node_completed",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 4
+    },
+    {
+      "check": "node_within_diameter_interval",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 4
+    },
+    {
+      "check": "exact_bisection_bracket_replay",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 4
+    },
+    {
+      "check": "last_midpoint_replay",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 4
+    },
+    {
+      "check": "last_saved_sign",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 4
+    },
+    {
+      "check": "retained_bracket_signs",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 4
+    },
+    {
+      "check": "saved_outward_value_intervals",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 4
+    },
+    {
+      "check": "trace_node_completed",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 5
+    },
+    {
+      "check": "node_within_diameter_interval",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 5
+    },
+    {
+      "check": "exact_bisection_bracket_replay",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 5
+    },
+    {
+      "check": "last_midpoint_replay",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 5
+    },
+    {
+      "check": "last_saved_sign",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 5
+    },
+    {
+      "check": "retained_bracket_signs",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 5
+    },
+    {
+      "check": "saved_outward_value_intervals",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 5
+    },
+    {
+      "check": "trace_node_completed",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 6
+    },
+    {
+      "check": "node_within_diameter_interval",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 6
+    },
+    {
+      "check": "exact_bisection_bracket_replay",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 6
+    },
+    {
+      "check": "last_midpoint_replay",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 6
+    },
+    {
+      "check": "last_saved_sign",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 6
+    },
+    {
+      "check": "retained_bracket_signs",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 6
+    },
+    {
+      "check": "saved_outward_value_intervals",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 6
+    },
+    {
+      "check": "trace_node_completed",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 7
+    },
+    {
+      "check": "node_within_diameter_interval",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 7
+    },
+    {
+      "check": "exact_bisection_bracket_replay",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 7
+    },
+    {
+      "check": "last_midpoint_replay",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 7
+    },
+    {
+      "check": "last_saved_sign",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 7
+    },
+    {
+      "check": "retained_bracket_signs",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 7
+    },
+    {
+      "check": "saved_outward_value_intervals",
+      "passed": true,
+      "case": "outside_regime_shortened_grid",
+      "node": 7
+    },
+    {
+      "check": "trace_root_costs",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "trace_sign_predicates",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "one_coefficient_preparation_per_completed_node",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "endpoint_extraction_partition",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "input_and_endpoint_metadata_maxima",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "rational_conversion_partition",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "resource_limit_check_partition",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "internal_validation_predicate_partition",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "ordered_returned_enclosure",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "exact_returned_factor",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "certified_has_no_refusal",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "all_planned_nodes_completed",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "planned_root_budget",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "ordered_positive_scalar_bounds",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "minimal_root_budget_integer",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "minimal_shortened_grid_budget",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "complete_uniform_grid",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "separate_mesh_and_root_allowances",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "exact_completion_budget_fields",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "completed_budget_fits",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "exact_returned_endpoints_from_trace",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "outward_six_decimal_display",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "formula_counter",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "grid_selection_counter_partition",
+      "passed": true,
+      "case": "outside_regime_shortened_grid"
+    },
+    {
+      "check": "case_result_hash",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "exact_frozen_case_copy",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "case_id_and_function",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "case_call_started",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "case_completed_without_exception",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "runner_check_count",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "precision_unchanged",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "nonnegative_recorded_times",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "expected_status_and_family",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "nonnegative_integer_counters",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "no_source_operations",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "scalar_partition",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "elementary_partitions",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "requested_and_internal_factor",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "fixed_precision_used",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "actual_named_costs_within_limits",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "expected_branch",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "expected_regime_evaluation_count",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "large_diameter_inactive",
+      "parameter": "m"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "large_diameter_inactive",
+      "parameter": "H0"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "large_diameter_inactive",
+      "parameter": "H1"
+    },
+    {
+      "check": "exact_observation_cap_recorded",
+      "passed": true,
+      "case": "large_diameter_inactive",
+      "parameter": "P"
+    },
+    {
+      "check": "exact_observation_cap_recorded",
+      "passed": true,
+      "case": "large_diameter_inactive",
+      "parameter": "g"
+    },
+    {
+      "check": "exact_derived_geometry",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "positive_ordered_radius_interval",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "expected_working_gap",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "expected_radius_interval",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "regime_uses_clipped_h",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "ordered_regime_intervals",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "regime_decision_matches_saved_outward_sign",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "expected_regime_branch",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "regime_counter_partitions",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "diameter_comparison_counters",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "no_legacy_working_gap_or_algebraic_branch",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "trace_node_completed",
+      "passed": true,
+      "case": "large_diameter_inactive",
+      "node": 0
+    },
+    {
+      "check": "node_within_diameter_interval",
+      "passed": true,
+      "case": "large_diameter_inactive",
+      "node": 0
+    },
+    {
+      "check": "exact_bisection_bracket_replay",
+      "passed": true,
+      "case": "large_diameter_inactive",
+      "node": 0
+    },
+    {
+      "check": "last_midpoint_replay",
+      "passed": true,
+      "case": "large_diameter_inactive",
+      "node": 0
+    },
+    {
+      "check": "last_saved_sign",
+      "passed": true,
+      "case": "large_diameter_inactive",
+      "node": 0
+    },
+    {
+      "check": "retained_bracket_signs",
+      "passed": true,
+      "case": "large_diameter_inactive",
+      "node": 0
+    },
+    {
+      "check": "saved_outward_value_intervals",
+      "passed": true,
+      "case": "large_diameter_inactive",
+      "node": 0
+    },
+    {
+      "check": "trace_root_costs",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "trace_sign_predicates",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "one_coefficient_preparation_per_completed_node",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "endpoint_extraction_partition",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "input_and_endpoint_metadata_maxima",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "rational_conversion_partition",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "resource_limit_check_partition",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "internal_validation_predicate_partition",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "ordered_returned_enclosure",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "exact_returned_factor",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "certified_has_no_refusal",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "historical_interval_contained",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "expected_strict_upper",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "all_planned_nodes_completed",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "planned_root_budget",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "ordered_positive_scalar_bounds",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "minimal_root_budget_integer",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "single_left_node",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "single_root_allowance",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "exact_completion_budget_fields",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "completed_budget_fits",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "exact_returned_endpoints_from_trace",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "outward_six_decimal_display",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "formula_counter",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "grid_selection_counter_partition",
+      "passed": true,
+      "case": "large_diameter_inactive"
+    },
+    {
+      "check": "case_result_hash",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "exact_frozen_case_copy",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "case_id_and_function",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "case_call_started",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "case_completed_without_exception",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "runner_check_count",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "precision_unchanged",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "nonnegative_recorded_times",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "expected_status_and_family",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "nonnegative_integer_counters",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "no_source_operations",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "scalar_partition",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "elementary_partitions",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "requested_and_internal_factor",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "fixed_precision_used",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "actual_named_costs_within_limits",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "expected_branch",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "expected_regime_evaluation_count",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "no_switch_started",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula",
+      "parameter": "m"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula",
+      "parameter": "H0"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula",
+      "parameter": "H1"
+    },
+    {
+      "check": "exact_observation_cap_recorded",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula",
+      "parameter": "P"
+    },
+    {
+      "check": "exact_derived_geometry",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "positive_ordered_radius_interval",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "expected_working_gap",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "expected_radius_interval",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "norm_derived_cap_and_singleton",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "regime_counter_partitions",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "diameter_comparison_counters",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "no_legacy_working_gap_or_algebraic_branch",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "trace_root_costs",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "trace_sign_predicates",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "one_coefficient_preparation_per_completed_node",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "endpoint_extraction_partition",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "input_and_endpoint_metadata_maxima",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "rational_conversion_partition",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "resource_limit_check_partition",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "internal_validation_predicate_partition",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "ordered_returned_enclosure",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "exact_returned_factor",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "certified_has_no_refusal",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "expected_exact_value",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "exact_constant_formula",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "outward_six_decimal_display",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "formula_counter",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "grid_selection_counter_partition",
+      "passed": true,
+      "case": "constant_norm_only_affine_formula"
+    },
+    {
+      "check": "case_result_hash",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "exact_frozen_case_copy",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "case_id_and_function",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "case_call_started",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "case_completed_without_exception",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "runner_check_count",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "precision_unchanged",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "nonnegative_recorded_times",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "expected_status_and_family",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "nonnegative_integer_counters",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "no_source_operations",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "scalar_partition",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "elementary_partitions",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "requested_and_internal_factor",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "fixed_precision_used",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "actual_named_costs_within_limits",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "expected_regime_evaluation_count",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "no_switch_started",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "reject_zero_diameter",
+      "parameter": "m"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "reject_zero_diameter",
+      "parameter": "H0"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "reject_zero_diameter",
+      "parameter": "H1"
+    },
+    {
+      "check": "exact_observation_cap_recorded",
+      "passed": true,
+      "case": "reject_zero_diameter",
+      "parameter": "P"
+    },
+    {
+      "check": "exact_observation_cap_recorded",
+      "passed": true,
+      "case": "reject_zero_diameter",
+      "parameter": "g"
+    },
+    {
+      "check": "regime_counter_partitions",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "diameter_comparison_counters",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "no_legacy_working_gap_or_algebraic_branch",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "trace_root_costs",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "trace_sign_predicates",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "one_coefficient_preparation_per_completed_node",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "endpoint_extraction_partition",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "input_and_endpoint_metadata_maxima",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "rational_conversion_partition",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "resource_limit_check_partition",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "internal_validation_predicate_partition",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "refusal_has_no_completed_bounds",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "expected_refusal_reason",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "expected_refusal_detail",
+      "passed": true,
+      "case": "reject_zero_diameter",
+      "detail": "parameter"
+    },
+    {
+      "check": "formula_counter",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "grid_selection_counter_partition",
+      "passed": true,
+      "case": "reject_zero_diameter"
+    },
+    {
+      "check": "case_result_hash",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "exact_frozen_case_copy",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "case_id_and_function",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "case_call_started",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "case_completed_without_exception",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "runner_check_count",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "precision_unchanged",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "nonnegative_recorded_times",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "expected_status_and_family",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "nonnegative_integer_counters",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "no_source_operations",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "scalar_partition",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "elementary_partitions",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "requested_and_internal_factor",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "fixed_precision_used",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "actual_named_costs_within_limits",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "expected_branch",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "expected_regime_evaluation_count",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "no_switch_started",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "zero_norm_cap",
+      "parameter": "m"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "zero_norm_cap",
+      "parameter": "H0"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "zero_norm_cap",
+      "parameter": "H1"
+    },
+    {
+      "check": "exact_observation_cap_recorded",
+      "passed": true,
+      "case": "zero_norm_cap",
+      "parameter": "P"
+    },
+    {
+      "check": "exact_observation_cap_recorded",
+      "passed": true,
+      "case": "zero_norm_cap",
+      "parameter": "g"
+    },
+    {
+      "check": "regime_counter_partitions",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "diameter_comparison_counters",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "no_legacy_working_gap_or_algebraic_branch",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "trace_root_costs",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "trace_sign_predicates",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "one_coefficient_preparation_per_completed_node",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "endpoint_extraction_partition",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "input_and_endpoint_metadata_maxima",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "rational_conversion_partition",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "resource_limit_check_partition",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "internal_validation_predicate_partition",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "ordered_returned_enclosure",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "exact_returned_factor",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "certified_has_no_refusal",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "expected_exact_value",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "outward_six_decimal_display",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "formula_counter",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "grid_selection_counter_partition",
+      "passed": true,
+      "case": "zero_norm_cap"
+    },
+    {
+      "check": "case_result_hash",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "exact_frozen_case_copy",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "case_id_and_function",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "case_call_started",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "case_completed_without_exception",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "runner_check_count",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "precision_unchanged",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "nonnegative_recorded_times",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "expected_status_and_family",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "nonnegative_integer_counters",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "no_source_operations",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "scalar_partition",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "elementary_partitions",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "requested_and_internal_factor",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "fixed_precision_used",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "actual_named_costs_within_limits",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "expected_branch",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "expected_regime_evaluation_count",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "no_switch_started",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal",
+      "parameter": "m"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal",
+      "parameter": "H0"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal",
+      "parameter": "H1"
+    },
+    {
+      "check": "exact_observation_cap_recorded",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal",
+      "parameter": "P"
+    },
+    {
+      "check": "exact_observation_cap_recorded",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal",
+      "parameter": "g"
+    },
+    {
+      "check": "exact_derived_geometry",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "positive_ordered_radius_interval",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "regime_counter_partitions",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "diameter_comparison_counters",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "no_legacy_working_gap_or_algebraic_branch",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "trace_root_costs",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "trace_sign_predicates",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "one_coefficient_preparation_per_completed_node",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "endpoint_extraction_partition",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "input_and_endpoint_metadata_maxima",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "rational_conversion_partition",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "resource_limit_check_partition",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "internal_validation_predicate_partition",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "refusal_has_no_completed_bounds",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "expected_refusal_reason",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "expected_refusal_detail",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal",
+      "detail": "resource"
+    },
+    {
+      "check": "node_cap_refused_before_node",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "formula_counter",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "grid_selection_counter_partition",
+      "passed": true,
+      "case": "collapsed_node_resource_refusal"
+    },
+    {
+      "check": "case_result_hash",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "exact_frozen_case_copy",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "case_id_and_function",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "case_call_started",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "case_completed_without_exception",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "runner_check_count",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "precision_unchanged",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "nonnegative_recorded_times",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "expected_status_and_family",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "nonnegative_integer_counters",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "no_source_operations",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "scalar_partition",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "elementary_partitions",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "requested_and_internal_factor",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "fixed_precision_used",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "actual_named_costs_within_limits",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "expected_regime_evaluation_count",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "no_switch_started",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "reject_inexact_float_diameter",
+      "parameter": "m"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "reject_inexact_float_diameter",
+      "parameter": "H0"
+    },
+    {
+      "check": "exact_model_input_recorded",
+      "passed": true,
+      "case": "reject_inexact_float_diameter",
+      "parameter": "H1"
+    },
+    {
+      "check": "exact_observation_cap_recorded",
+      "passed": true,
+      "case": "reject_inexact_float_diameter",
+      "parameter": "P"
+    },
+    {
+      "check": "exact_observation_cap_recorded",
+      "passed": true,
+      "case": "reject_inexact_float_diameter",
+      "parameter": "g"
+    },
+    {
+      "check": "regime_counter_partitions",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "diameter_comparison_counters",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "no_legacy_working_gap_or_algebraic_branch",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "trace_root_costs",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "trace_sign_predicates",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "one_coefficient_preparation_per_completed_node",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "endpoint_extraction_partition",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "input_and_endpoint_metadata_maxima",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "rational_conversion_partition",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "resource_limit_check_partition",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "internal_validation_predicate_partition",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "refusal_has_no_completed_bounds",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "expected_refusal_reason",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "expected_refusal_detail",
+      "passed": true,
+      "case": "reject_inexact_float_diameter",
+      "detail": "parameter"
+    },
+    {
+      "check": "formula_counter",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "grid_selection_counter_partition",
+      "passed": true,
+      "case": "reject_inexact_float_diameter"
+    },
+    {
+      "check": "observed_seven_certified_three_refused",
+      "passed": true
+    },
+    {
+      "check": "aggregate_work_matches_all_cases",
+      "passed": true
+    },
+    {
+      "check": "aggregate_elementary_matches_all_cases",
+      "passed": true
+    },
+    {
+      "check": "runner_checks_distinct_from_internal_predicates",
+      "passed": true
+    },
+    {
+      "check": "case_times_fit_run_times",
+      "passed": true
+    },
+    {
+      "check": "eleven_nodes_sixty_one_updates",
+      "passed": true
+    },
+    {
+      "check": "named_scalar_start_total",
+      "passed": true
+    }
+  ],
+  "issues": [],
+  "observed_case_counts": {
+    "certified": 7,
+    "refused": 3
+  },
+  "completed_first_panel": {
+    "api_calls": 10,
+    "case_runner_checks": 183,
+    "interface_runner_checks": 1,
+    "total_runner_checks": 184,
+    "internal_validation_predicates": 344,
+    "completed_positive_nodes": 11,
+    "bisection_updates": 61,
+    "named_scalar_starts": 113,
+    "elementary_evaluations": {
+      "exp": 220,
+      "sin": 105,
+      "cos": 105,
+      "sqrt": 19
+    }
+  },
+  "cases": [
+    {
+      "id": "constant_exact_pair_diameter_improvement",
+      "observed_status": "certified",
+      "branch": "diameter_constant_curvature",
+      "reason": null,
+      "envelope": "J_D",
+      "envelope_lower": "463/400",
+      "envelope_upper": "463/400",
+      "outward_6dp_display": [
+        "1.157500",
+        "1.157500"
+      ],
+      "achieved_factor": "1",
+      "completed_positive_nodes": 0,
+      "bisection_updates": 0,
+      "scalar_evaluations_started": 0,
+      "saved_result_sha256": "54e60e47cf6387c70b389d3dc0140d9213b4d894c92223f4a738d2117ae95e1e"
+    },
+    {
+      "id": "affine_diameter_active_collapsed",
+      "observed_status": "certified",
+      "branch": "diameter_collapsed_node",
+      "reason": null,
+      "envelope": "J_D",
+      "envelope_lower": "86826377746423854414649239873355901616797170098112444905395150355066214020473831403478480151692719235/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736",
+      "envelope_upper": "87259789602951341676370632904010618244627984714931131579642740413156361568298868539200429720577128687/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736",
+      "outward_6dp_display": [
+        "0.620259",
+        "0.623356"
+      ],
+      "achieved_factor": "87259789602951341676370632904010618244627984714931131579642740413156361568298868539200429720577128687/86826377746423854414649239873355901616797170098112444905395150355066214020473831403478480151692719235",
+      "completed_positive_nodes": 1,
+      "bisection_updates": 8,
+      "scalar_evaluations_started": 13,
+      "saved_result_sha256": "ac7f3bfbb30d9f38ee324c8b260e0967e1b1214abc084c7edd955601ce6da614"
+    },
+    {
+      "id": "exact_regime_equality_with_clipped_radius",
+      "observed_status": "certified",
+      "branch": "diameter_regime_one_node",
+      "reason": null,
+      "envelope": "J_D",
+      "envelope_lower": "98574730883348772874506263140002998152805009018093658617602379535497257687482140385173251824427928815/2187250724783011924372502227117621365353169430893212436425770606409952999199375923223513177023053824",
+      "envelope_upper": "97555632495836183140983149874006569977439363093706781498716786653743975143444844038296289292032115/2135987035920910082395021706169552114602704522356652769947041607822219725780640550022962086936576",
+      "outward_6dp_display": [
+        "45.067869",
+        "45.672390"
+      ],
+      "achieved_factor": "19979393535147250307273349094196545531379581561591148850937197906686766109377504059043080047008177152/19714946176669754574901252628000599630561001803618731723520475907099451537496428077034650364885585763",
+      "completed_positive_nodes": 1,
+      "bisection_updates": 6,
+      "scalar_evaluations_started": 12,
+      "saved_result_sha256": "43d6c0a3ff35f70520720ece1e45c23941af8b1ce503ea3d26ef40ce6055c3d8"
+    },
+    {
+      "id": "outside_regime_shortened_grid",
+      "observed_status": "certified",
+      "branch": "diameter_restricted_grid",
+      "reason": null,
+      "envelope": "J_D",
+      "envelope_lower": "76971820148184290727063751591228632256717629524929843409246807321976741856540640774883953043219956457/279968092772225526319680285071055534765205687154331191862498637620473983897520118172609686658950889472",
+      "envelope_upper": "458231641455859773382873000022531980938115677094015921606091146196837182339011006240868013229158912117/1224860405878486677648601247185867964597774881300198964398431539589573679551650517005167379132910141440",
+      "outward_6dp_display": [
+        "0.274930",
+        "0.374110"
+      ],
+      "achieved_factor": "3665853131646878187062984000180255847504925416752127372848729169574697458712088049926944105833271296936/2694013705186450175447231305693002128985117033372544519323638256269185964978922427120938356512698475995",
+      "completed_positive_nodes": 8,
+      "bisection_updates": 40,
+      "scalar_evaluations_started": 74,
+      "saved_result_sha256": "7aff30e04576ca53a4a6b3cfcede002ac4367bd9598829fc309d30a4d945dc66"
+    },
+    {
+      "id": "large_diameter_inactive",
+      "observed_status": "certified",
+      "branch": "diameter_regime_one_node",
+      "reason": null,
+      "envelope": "J_D",
+      "envelope_lower": "63203282886212436762990878361394414317034339835063320829565615648200399943476089168635106008948071403/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368",
+      "envelope_upper": "63258596791372186983259241702913793249952505515507306312747116608164630812081410712267251219866537455/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368",
+      "outward_6dp_display": [
+        "0.903006",
+        "0.903798"
+      ],
+      "achieved_factor": "63258596791372186983259241702913793249952505515507306312747116608164630812081410712267251219866537455/63203282886212436762990878361394414317034339835063320829565615648200399943476089168635106008948071403",
+      "completed_positive_nodes": 1,
+      "bisection_updates": 7,
+      "scalar_evaluations_started": 13,
+      "saved_result_sha256": "22e1049ac11b9ef611a340054a6d6fde2ca3397ad64786e3943df9defe45369b"
+    },
+    {
+      "id": "constant_norm_only_affine_formula",
+      "observed_status": "certified",
+      "branch": "diameter_constant_curvature",
+      "reason": null,
+      "envelope": "E_D",
+      "envelope_lower": "543/400",
+      "envelope_upper": "543/400",
+      "outward_6dp_display": [
+        "1.357500",
+        "1.357500"
+      ],
+      "achieved_factor": "1",
+      "completed_positive_nodes": 0,
+      "bisection_updates": 0,
+      "scalar_evaluations_started": 0,
+      "saved_result_sha256": "92696825f63ebde3e6831045f9350718343f0ff0d4756601320b4889af1972c7"
+    },
+    {
+      "id": "reject_zero_diameter",
+      "observed_status": "refused",
+      "branch": null,
+      "reason": "invalid_input",
+      "envelope": "J_D",
+      "envelope_lower": null,
+      "envelope_upper": null,
+      "outward_6dp_display": null,
+      "achieved_factor": null,
+      "completed_positive_nodes": 0,
+      "bisection_updates": 0,
+      "scalar_evaluations_started": 0,
+      "saved_result_sha256": "0b0f6d0b70b1c0fa5d2f26ba7f65be3a2d9d4ec0beb591f99a9e21a815d37281"
+    },
+    {
+      "id": "zero_norm_cap",
+      "observed_status": "certified",
+      "branch": "diameter_zero",
+      "reason": null,
+      "envelope": "J_D",
+      "envelope_lower": "0",
+      "envelope_upper": "0",
+      "outward_6dp_display": [
+        "0.000000",
+        "0.000000"
+      ],
+      "achieved_factor": "1",
+      "completed_positive_nodes": 0,
+      "bisection_updates": 0,
+      "scalar_evaluations_started": 0,
+      "saved_result_sha256": "af56b6ea62297350253f785f7521019b90f210473789aec8de3299a43207c80f"
+    },
+    {
+      "id": "collapsed_node_resource_refusal",
+      "observed_status": "refused",
+      "branch": "diameter_collapsed_node",
+      "reason": "resource_cap",
+      "envelope": "J_D",
+      "envelope_lower": null,
+      "envelope_upper": null,
+      "outward_6dp_display": null,
+      "achieved_factor": null,
+      "completed_positive_nodes": 0,
+      "bisection_updates": 0,
+      "scalar_evaluations_started": 1,
+      "saved_result_sha256": "d0fd1ab05737de424c345c4fdc5f8adc19a7a5e4297887f9c4f4d10391e4cfce"
+    },
+    {
+      "id": "reject_inexact_float_diameter",
+      "observed_status": "refused",
+      "branch": null,
+      "reason": "invalid_input",
+      "envelope": "J_D",
+      "envelope_lower": null,
+      "envelope_upper": null,
+      "outward_6dp_display": null,
+      "achieved_factor": null,
+      "completed_positive_nodes": 0,
+      "bisection_updates": 0,
+      "scalar_evaluations_started": 0,
+      "saved_result_sha256": "665bcbc0382c3d114bd0c6e9a72acb22d165a046b674ce878e289882dc2dc232"
+    }
+  ],
+  "saved_record_hashes": {
+    "case_affine_diameter_active_collapsed.json": "ac7f3bfbb30d9f38ee324c8b260e0967e1b1214abc084c7edd955601ce6da614",
+    "case_collapsed_node_resource_refusal.json": "d0fd1ab05737de424c345c4fdc5f8adc19a7a5e4297887f9c4f4d10391e4cfce",
+    "case_constant_exact_pair_diameter_improvement.json": "54e60e47cf6387c70b389d3dc0140d9213b4d894c92223f4a738d2117ae95e1e",
+    "case_constant_norm_only_affine_formula.json": "92696825f63ebde3e6831045f9350718343f0ff0d4756601320b4889af1972c7",
+    "case_exact_regime_equality_with_clipped_radius.json": "43d6c0a3ff35f70520720ece1e45c23941af8b1ce503ea3d26ef40ce6055c3d8",
+    "case_large_diameter_inactive.json": "22e1049ac11b9ef611a340054a6d6fde2ca3397ad64786e3943df9defe45369b",
+    "case_outside_regime_shortened_grid.json": "7aff30e04576ca53a4a6b3cfcede002ac4367bd9598829fc309d30a4d945dc66",
+    "case_reject_inexact_float_diameter.json": "665bcbc0382c3d114bd0c6e9a72acb22d165a046b674ce878e289882dc2dc232",
+    "case_reject_zero_diameter.json": "0b0f6d0b70b1c0fa5d2f26ba7f65be3a2d9d4ec0beb591f99a9e21a815d37281",
+    "case_zero_norm_cap.json": "af56b6ea62297350253f785f7521019b90f210473789aec8de3299a43207c80f",
+    "environment.json": "5977a1700b99901f5c64f6f12d44e5fda6539e1ca82ce6a730d4dfb0fb44a6d2",
+    "partial_result.json": "71e9b2731815d7681c04f06f9b5bf1b099803fbde129ac643d15083e5d3c2727",
+    "preflight.json": "c7d192507a7a36294adf2a85644bb3f9a778e74402d9ea860cb1fb68d27f2ff6",
+    "result.json": "7db1a2f9b8c0a3ff0042cf6aec89bc65695de6bab7e9e2fd686dd0d6b98f0b54"
+  },
+  "limitations": [
+    "This audit verifies consistency of the saved reviewed-code execution. It does not independently reevaluate exponential, trigonometric or square-root intervals.",
+    "Ten API implementation cases are not ten optimization experiments.",
+    "Counter totals describe named operations, not every arithmetic operation or total bit complexity.",
+    "The recorded single run and zero-retry policy are consistent with the runner and records; this is not a forensic claim about unrelated unrecorded activity."
+  ]
+}

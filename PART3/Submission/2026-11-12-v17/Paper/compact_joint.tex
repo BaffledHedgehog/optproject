@@ -1,0 +1,176 @@
+\section{The joint gap and norm certificate}
+\label{joint:section}
+
+\begin{theorem}[Sharp joint envelope]\label{joint:main}
+For $g,P>0$, put
+\begin{equation}\label{joint:definition}
+ h=\min\{g,P^2/m\},\qquad
+ \mathcal J(g,P)=
+ \max_{h^2/P^2\le\rho\le h/m}V(h,\rho).
+\end{equation}
+Set $\mathcal J(g,0)=\mathcal J(0,P)=0$. Under
+\eqref{boundarygap:assumptions},
+\begin{equation}\label{joint:bound}
+ \delta(x)\le\mathcal J(G(x),P(x))
+       \le\min\{\mathcal B(G(x)),\mathcal E(P(x))\}.
+\end{equation}
+The function $\mathcal J$ is finite, continuous on the closed quadrant,
+and nondecreasing in each argument. If $g\ge P^2/m$, the interval
+collapses and $\mathcal J(g,P)=\mathcal E(P)$.
+
+For every $g,P>0$, $\mathcal J(g,P)$ is the supremum of the source
+error with either the two upper bounds $G(x)\le g$, $P(x)\le P$, or
+the two exact observations $G(x)=g$, $P(x)=P$. Smooth interval examples
+suffice for upper bounds; exact observations need at most two dimensions.
+Their compact convex domains have nonempty interior in their ambient space
+and may vary.
+\end{theorem}
+
+\begin{proof}\label{joint:proof}
+Consider upper bounds $g,P>0$ and a nonoptimal source of radius $r$.
+Its terminal radial slope is at most $\min\{P,g/r\}$ and
+$r\le\min\{P/m,\sqrt{g/m}\}$. If $g\ge P^2/m$, the norm theorem
+gives the claim. Otherwise let $r_0=g/P$ and $R=\sqrt{g/m}$.
+For $r\le r_0$, Lemma~\ref{compact:radial} gives
+\[
+ \delta(x)\le A(P,r)\le A(P,r_0)=V(g,r_0^2).
+\]
+For $r\ge r_0$, the terminal cap $g/r$ gives
+$\delta(x)\le V(g,r^2)$. Combining the ranges gives
+\eqref{joint:definition}. Each fixed-radius interval construction
+meets both upper bounds, so its loss is bounded by both separate
+envelopes. In the norm branch the stationary interval has gap
+$P^2/m\le g$. These constructions also prove sharpness for upper bounds.
+
+To keep both observations exact when $g<P^2/m$, choose a maximizing
+$\rho$, set $r=\sqrt\rho$, $p=g/r\le P$, $q=p-mr$, and use smooth
+near-extremizers $u_i$ with initial slope $q$, terminal slope $p$ and
+$u_i(r)\to V(g,\rho)$. For any $a>0$, set
+\[
+ c=\sqrt{P^2-p^2},\qquad Q=[0,r]\times[0,a],\qquad
+ f_i(s,y)=u_i(s)+cy+my^2/2.
+\]
+The unique minimum is $(0,0)$, and
+\[
+ \langle\nabla f_i(s,y)-\nabla f_i(0,0),(s,y)\rangle
+ =(u_i'(s)-q)s+my^2\ge m(s^2+y^2).
+\]
+The Hessian is diagonal, with norm
+$\max\{|u_i''(s)|,m\}\le H_0+H_1u_i(s)\le H_0+H_1f_i(s,y)$.
+At $(r,0)$ the gradient is $(p,c)$, of norm $P$. Its components are
+nonnegative, so its full gap on $Q$ is exactly $rp=g$.
+The source losses converge to $\mathcal J(g,P)$.
+
+If $g\ge P^2/m$, let $r=P/m$ and $a=g/P-r\ge0$.
+Use stationary smooth near-extremizers on $[0,r]$ and extend them to
+$[-a,0]$ by the same positive-curvature solution with which they agree
+near zero:
+\[
+ u_+(s)=
+ \begin{cases}
+ (H_0/H_1)\{\cosh(\sqrt{H_1}s)-1\},&H_1>0,\\
+ H_0s^2/2,&H_1=0.
+ \end{cases}
+\]
+This even extension is smooth, has its unique minimum at zero, and
+satisfies $u_+'(s)s\ge H_0s^2\ge ms^2$ and the curvature bound with
+equality. At $r$, the norm is $P$, the gap is $(r+a)P=g$, and the
+loss tends to $\mathcal E(P)$. The quadratic case $H_0=m,H_1=0$ is
+already smooth.
+
+The upper-bound characterization proves monotonicity. For positive
+$(g,P)$, parameterize the compact interval in
+\eqref{joint:definition} by $z\in[0,1]$; continuity of $V$ gives
+continuity of the maximum, including its collapse.
+At the axes use $0\le\mathcal J(g,P)\le\min\{\mathcal B(g),\mathcal E(P)\}$.
+If either upper bound is zero, the source is optimal.
+Exact data with $g=0$ and any $P\ge0$ occur at the left endpoint of
+$f(s)=Ps+ms^2/2$. Exact data with $P=0<g$ are infeasible; the stated
+zero extension there concerns upper bounds only.
+\end{proof}
+
+\begin{corollary}[Strict improvement]\label{joint:strict}
+For $H_1\ge0$ and $0<g<P^2/m$,
+\[
+ \mathcal J(g,P)\le\mathcal E(P)
+   -\frac{(P^2-mg)^2}{2mP^2}<\mathcal E(P).
+\]
+If also $H_1>0$ and $\mathcal S(g)\le0$, then
+$\mathcal J(g,P)<\min\{\mathcal B(g),\mathcal E(P)\}$.
+\end{corollary}
+\begin{proof}
+For $\rho\in[g^2/P^2,g/m]$, put $p=g/\sqrt\rho$ and
+$q=p-m\sqrt\rho$. Apply \eqref{bndnorm:radial-deficit} to smooth
+near-extremizers, and use \eqref{compact:norm-growth}:
+\[
+ \mathcal E(P)-V(g,\rho)
+ \ge\frac{P^2-p^2+q^2}{2m}
+ =\frac{P^2-2mg+m^2\rho}{2m}
+ \ge\frac{(P^2-mg)^2}{2mP^2}.
+\]
+Maximization proves the first claim. Under the second set of assumptions,
+$V(g,\rho)<g$ on the compact joint interval, whose left endpoint is
+positive. Thus its maximum is below $g=\mathcal B(g)$.
+\end{proof}
+The displayed norm deficit is attained when $H_0=m$ and $H_1=0$.
+
+\begin{corollary}[One root or an algebraic bound]
+\label{joint:ordinary}\label{joint:regime}
+Let $H_1>0$, $g,P>0$, and $h=\min\{g,P^2/m\}$.
+If $\mathcal S(h)\le0$, then
+\begin{equation}\label{joint:ordinary-formula}
+ \mathcal J(g,P)=V(h,h^2/P^2)
+ \le h+\frac{h^2}{P^2}\mathcal S(h)\le h.
+\end{equation}
+\end{corollary}
+\begin{proof}
+Apply the radius monotonicity and tangent bound from
+Corollary~\ref{gapregime:radius-monotone} at the left endpoint of the
+joint interval. This includes a collapsed interval.
+\end{proof}
+The exact envelope needs one switch root. The algebraic upper bound
+needs only the square root in $\mathcal S(h)$ and arithmetic, but
+does not promise a prescribed relative approximation of $\mathcal J$.
+For $m=H_0=H_1=1$, $g=1$, $P=2$, it gives
+\[
+ \mathcal S(1)=4-\frac{7\sqrt{14}}6<0,\qquad
+ \mathcal J(1,2)\le2-\frac{7\sqrt{14}}{24}<1.
+\]
+
+\begin{corollary}[Constant curvature]\label{joint:constant}
+If $H_1=0$, then for $g,P>0$,
+\begin{equation}\label{joint:constant-formula}
+ \mathcal J(g,P)=
+ \begin{cases}
+ h+\beta h/m,&\beta\ge0,\\
+ h+\beta h^2/P^2,&\beta<0,
+ \end{cases}
+ \qquad h=\min\{g,P^2/m\}.
+\end{equation}
+If $m\le H_0<(1+\sqrt2)m$ and $0<g<P^2/m$, it is strictly below
+both separate envelopes.
+\end{corollary}
+\begin{proof}
+Maximize the affine function $V(h,\rho)=h+\beta\rho$ at the appropriate
+interval endpoint. For $\beta<0$ and $h=g$ the result is below
+$g=\mathcal B(g)$; Corollary~\ref{joint:strict} gives the norm comparison.
+\end{proof}
+For example, $m=H_0=P=1$, $H_1=0$, $g=1/2$ give
+$\mathcal J(1/2,1)=3/8$, while $\mathcal B(1/2)=\mathcal E(1)=1/2$.
+The function $f(s)=s/2+s^2/2$ on $[0,1/2]$ attains the joint value.
+
+For finite evaluation, apply Proposition~\ref{joint:budget} with gap
+argument $h$, interval $[h^2/P^2,h/m]$ and $\ell=h/2$.
+The norm branch uses a single node; the ordinary-gap regime uses its
+left node; otherwise use the interval grid.
+The lower bound $\ell$ concerns the extremal envelope, not the actual error.
+
+Certified upper observations $G(x)\le g^+$, $P(x)\le P^+$ give the
+valid lower bound $f(x)-\mathcal J(g^+,P^+)$ on the optimum.
+A bound on feasible-direction score errors alone does not supply $P^+$.
+When both observations are already available, the joint formula uses no
+additional objective, gradient or linear minimization oracle query.
+Its scalar evaluation remains a separate cost.
+Since $\mathcal J(g^+,P^+)\le\mathcal B(g^+)$, accumulating these lower
+bounds preserves the gap-only work estimates of Theorem~\ref{nloracle:main};
+no inverse of a two-variable function is needed.

@@ -1,0 +1,538 @@
+{
+  "status": "PASS",
+  "compiled_utc": "2026-11-12T15:23:17.603346+00:00",
+  "report_mode": "Read saved JSON and hash saved bytes only; no API, kernel or mpmath import and no scientific reevaluation.",
+  "scientific_api_imports_for_report": 0,
+  "scientific_api_calls_for_report": 0,
+  "scientific_runs_for_report": 0,
+  "source_result": "runs/run_001/result.json",
+  "source_result_sha256": "7db1a2f9b8c0a3ff0042cf6aec89bc65695de6bab7e9e2fd686dd0d6b98f0b54",
+  "protocol_id": "certified_diameter_v17_first_fixed_panel",
+  "api_version": "0.1.0",
+  "run_started_utc": "2026-11-12T15:18:26.965388+00:00",
+  "run_completed_utc": "2026-11-12T15:18:27.004595+00:00",
+  "new_protocol_run_index": 1,
+  "api_calls": 10,
+  "certificates": 7,
+  "expected_refusals": 3,
+  "external_runner_checks": 184,
+  "internal_api_validation_checks": 344,
+  "automatic_retries": 0,
+  "v16_api_calls_repeated": 0,
+  "work": {
+    "bound_evaluations": 5,
+    "node_coefficient_preparations": 11,
+    "switch_evaluations": 83,
+    "loss_evaluations": 22,
+    "scalar_evaluations_started": 113,
+    "bracket_sign_queries": 22,
+    "bracket_sign_decisions": 22,
+    "root_sign_queries": 61,
+    "root_sign_decisions": 61,
+    "bisection_updates": 61,
+    "sign_order_predicates": 129,
+    "sign_equality_predicates": 0,
+    "certificate_maximum_comparisons": 7,
+    "witness_maximum_comparisons": 8,
+    "rounding_maximum_comparisons": 8,
+    "derived_lower_maximum_comparisons": 8,
+    "budget_setup_maximum_comparisons": 1,
+    "budget_order_comparisons": 10,
+    "resource_metadata_maximum_comparisons": 804,
+    "budget_ceiling_operations": 1,
+    "rational_to_interval_conversions": 193,
+    "interval_endpoint_extractions": 242,
+    "resource_limit_checks": 988,
+    "validation_checks": 344,
+    "exact_formula_evaluations": 3,
+    "source_objective_calls": 0,
+    "source_gradient_calls": 0,
+    "full_LMO_calls": 0,
+    "LP_calls": 0,
+    "optimizer_updates": 0,
+    "stochastic_samples": 0,
+    "regime_evaluations": 3,
+    "regime_sign_queries": 3,
+    "regime_nonpositive_decisions": 2,
+    "regime_positive_decisions": 1,
+    "regime_unresolved_queries": 0,
+    "regime_order_predicates": 4,
+    "working_gap_minimum_comparisons": 0,
+    "algebraic_bound_evaluations": 0,
+    "diameter_cap_minimum_comparisons": 14,
+    "diameter_radius_minimum_comparisons": 7,
+    "diameter_collapse_comparisons": 5,
+    "diameter_exact_endpoint_comparisons": 2
+  },
+  "elementary_evaluations": {
+    "exp": 220,
+    "sin": 105,
+    "cos": 105,
+    "sqrt": 19
+  },
+  "exact_saved_results": {
+    "joint_diameter": {
+      "case": "constant_exact_pair_diameter_improvement",
+      "value": "463/400",
+      "unrestricted_exact_comparison_from_fixed_protocol": "23/16"
+    },
+    "norm_diameter": {
+      "case": "constant_norm_only_affine_formula",
+      "value": "543/400"
+    },
+    "zero_norm_cap": {
+      "case": "zero_norm_cap",
+      "value": "0"
+    }
+  },
+  "cases": [
+    {
+      "id": "constant_exact_pair_diameter_improvement",
+      "record_status": "PASS",
+      "api_status": "certified",
+      "envelope": "J_D",
+      "inputs": {
+        "m": "1",
+        "H0": "4",
+        "H1": "0",
+        "P": "2",
+        "g": "1",
+        "D": "3/5"
+      },
+      "branch": "diameter_constant_curvature",
+      "working_gap": "1",
+      "radius_interval": [
+        "1/4",
+        "9/25"
+      ],
+      "envelope_lower": "463/400",
+      "envelope_upper": "463/400",
+      "requested_factor": "5/4",
+      "achieved_factor": "1",
+      "reason": null,
+      "refusal_details": {},
+      "regime": null,
+      "completed_positive_nodes": 0,
+      "planned_positive_nodes": 0,
+      "bisections": 0,
+      "scalar_starts": 0,
+      "elementary_evaluations": {
+        "exp": 0,
+        "sin": 0,
+        "cos": 0,
+        "sqrt": 0
+      },
+      "runner_checks": 18,
+      "record_path": "runs/run_001/case_constant_exact_pair_diameter_improvement.json",
+      "record_sha256": "54e60e47cf6387c70b389d3dc0140d9213b4d894c92223f4a738d2117ae95e1e"
+    },
+    {
+      "id": "affine_diameter_active_collapsed",
+      "record_status": "PASS",
+      "api_status": "certified",
+      "envelope": "J_D",
+      "inputs": {
+        "m": "1",
+        "H0": "4",
+        "H1": "1",
+        "P": "1",
+        "g": "1",
+        "D": "1/2"
+      },
+      "branch": "diameter_collapsed_node",
+      "working_gap": "1/2",
+      "radius_interval": [
+        "1/4",
+        "1/4"
+      ],
+      "envelope_lower": "86826377746423854414649239873355901616797170098112444905395150355066214020473831403478480151692719235/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736",
+      "envelope_upper": "87259789602951341676370632904010618244627984714931131579642740413156361568298868539200429720577128687/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736",
+      "requested_factor": "5/4",
+      "achieved_factor": "87259789602951341676370632904010618244627984714931131579642740413156361568298868539200429720577128687/86826377746423854414649239873355901616797170098112444905395150355066214020473831403478480151692719235",
+      "reason": null,
+      "refusal_details": {},
+      "regime": null,
+      "completed_positive_nodes": 1,
+      "planned_positive_nodes": 1,
+      "bisections": 8,
+      "scalar_starts": 13,
+      "elementary_evaluations": {
+        "exp": 26,
+        "sin": 12,
+        "cos": 12,
+        "sqrt": 2
+      },
+      "runner_checks": 20,
+      "record_path": "runs/run_001/case_affine_diameter_active_collapsed.json",
+      "record_sha256": "ac7f3bfbb30d9f38ee324c8b260e0967e1b1214abc084c7edd955601ce6da614"
+    },
+    {
+      "id": "exact_regime_equality_with_clipped_radius",
+      "record_status": "PASS",
+      "api_status": "certified",
+      "envelope": "J_D",
+      "inputs": {
+        "m": "23",
+        "H0": "40",
+        "H1": "1",
+        "P": "40",
+        "g": "48",
+        "D": "7/5"
+      },
+      "branch": "diameter_regime_one_node",
+      "working_gap": "48",
+      "radius_interval": [
+        "36/25",
+        "49/25"
+      ],
+      "envelope_lower": "98574730883348772874506263140002998152805009018093658617602379535497257687482140385173251824427928815/2187250724783011924372502227117621365353169430893212436425770606409952999199375923223513177023053824",
+      "envelope_upper": "97555632495836183140983149874006569977439363093706781498716786653743975143444844038296289292032115/2135987035920910082395021706169552114602704522356652769947041607822219725780640550022962086936576",
+      "requested_factor": "2",
+      "achieved_factor": "19979393535147250307273349094196545531379581561591148850937197906686766109377504059043080047008177152/19714946176669754574901252628000599630561001803618731723520475907099451537496428077034650364885585763",
+      "reason": null,
+      "refusal_details": {},
+      "regime": {
+        "working_gap": "48",
+        "tau_interval": [
+          "3/4",
+          "3/4"
+        ],
+        "S_interval": [
+          "0",
+          "0"
+        ],
+        "decision": "nonpositive"
+      },
+      "completed_positive_nodes": 1,
+      "planned_positive_nodes": 1,
+      "bisections": 6,
+      "scalar_starts": 12,
+      "elementary_evaluations": {
+        "exp": 22,
+        "sin": 10,
+        "cos": 10,
+        "sqrt": 3
+      },
+      "runner_checks": 25,
+      "record_path": "runs/run_001/case_exact_regime_equality_with_clipped_radius.json",
+      "record_sha256": "43d6c0a3ff35f70520720ece1e45c23941af8b1ce503ea3d26ef40ce6055c3d8"
+    },
+    {
+      "id": "outside_regime_shortened_grid",
+      "record_status": "PASS",
+      "api_status": "certified",
+      "envelope": "J_D",
+      "inputs": {
+        "m": "1",
+        "H0": "3",
+        "H1": "1",
+        "P": "1",
+        "g": "1/4",
+        "D": "2/5"
+      },
+      "branch": "diameter_restricted_grid",
+      "working_gap": "1/4",
+      "radius_interval": [
+        "1/16",
+        "4/25"
+      ],
+      "envelope_lower": "76971820148184290727063751591228632256717629524929843409246807321976741856540640774883953043219956457/279968092772225526319680285071055534765205687154331191862498637620473983897520118172609686658950889472",
+      "envelope_upper": "458231641455859773382873000022531980938115677094015921606091146196837182339011006240868013229158912117/1224860405878486677648601247185867964597774881300198964398431539589573679551650517005167379132910141440",
+      "requested_factor": "4",
+      "achieved_factor": "3665853131646878187062984000180255847504925416752127372848729169574697458712088049926944105833271296936/2694013705186450175447231305693002128985117033372544519323638256269185964978922427120938356512698475995",
+      "reason": null,
+      "refusal_details": {},
+      "regime": {
+        "working_gap": "1/4",
+        "tau_interval": [
+          "46814826789615501055876598917397968388260698599089946105291854957223626267805198332542783077538898175/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368",
+          "182870417146935550999517964521085814016643353902695101973796308426654790108614055986495246396636321/273406340597876490546562778389702670669146178861651554553221325801244124899921990402939147127881728"
+        ],
+        "S_interval": [
+          "107139755617772642604178141746676605587149518543062972494577099761286396316665164078561422238732959691/559936185544451052639360570142111069530411374308662383724997275240947967795040236345219373317901778944",
+          "107139755617772642604178141746676605587149518543062972494577099761286396316665164078561422238732959731/559936185544451052639360570142111069530411374308662383724997275240947967795040236345219373317901778944"
+        ],
+        "decision": "positive"
+      },
+      "completed_positive_nodes": 8,
+      "planned_positive_nodes": 8,
+      "bisections": 40,
+      "scalar_starts": 74,
+      "elementary_evaluations": {
+        "exp": 146,
+        "sin": 72,
+        "cos": 72,
+        "sqrt": 10
+      },
+      "runner_checks": 24,
+      "record_path": "runs/run_001/case_outside_regime_shortened_grid.json",
+      "record_sha256": "7aff30e04576ca53a4a6b3cfcede002ac4367bd9598829fc309d30a4d945dc66"
+    },
+    {
+      "id": "large_diameter_inactive",
+      "record_status": "PASS",
+      "api_status": "certified",
+      "envelope": "J_D",
+      "inputs": {
+        "m": "1",
+        "H0": "1",
+        "H1": "1",
+        "P": "2",
+        "g": "1",
+        "D": "3"
+      },
+      "branch": "diameter_regime_one_node",
+      "working_gap": "1",
+      "radius_interval": [
+        "1/4",
+        "1"
+      ],
+      "envelope_lower": "63203282886212436762990878361394414317034339835063320829565615648200399943476089168635106008948071403/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368",
+      "envelope_upper": "63258596791372186983259241702913793249952505515507306312747116608164630812081410712267251219866537455/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368",
+      "requested_factor": "5/4",
+      "achieved_factor": "63258596791372186983259241702913793249952505515507306312747116608164630812081410712267251219866537455/63203282886212436762990878361394414317034339835063320829565615648200399943476089168635106008948071403",
+      "reason": null,
+      "refusal_details": {},
+      "regime": {
+        "working_gap": "1",
+        "tau_interval": [
+          "121902124209439674302946074567416359903311591034489752985693687198031429801536545586659583602553786621/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736",
+          "121902124209439674302946074567416359903311591034489752985693687198031429801536545586659583602553786623/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736"
+        ],
+        "S_interval": [
+          "-102263091690342602880947872862850454940111279570400194162406144223356699244637015783395245713666188459/279968092772225526319680285071055534765205687154331191862498637620473983897520118172609686658950889472",
+          "-102263091690342602880947872862850454940111279570400194162406144223356699244637015783395245713666188439/279968092772225526319680285071055534765205687154331191862498637620473983897520118172609686658950889472"
+        ],
+        "decision": "nonpositive"
+      },
+      "completed_positive_nodes": 1,
+      "planned_positive_nodes": 1,
+      "bisections": 7,
+      "scalar_starts": 13,
+      "elementary_evaluations": {
+        "exp": 24,
+        "sin": 11,
+        "cos": 11,
+        "sqrt": 3
+      },
+      "runner_checks": 25,
+      "record_path": "runs/run_001/case_large_diameter_inactive.json",
+      "record_sha256": "22e1049ac11b9ef611a340054a6d6fde2ca3397ad64786e3943df9defe45369b"
+    },
+    {
+      "id": "constant_norm_only_affine_formula",
+      "record_status": "PASS",
+      "api_status": "certified",
+      "envelope": "E_D",
+      "inputs": {
+        "m": "1",
+        "H0": "4",
+        "H1": "0",
+        "P": "2",
+        "D": "3/5",
+        "derived_gap_cap": "6/5"
+      },
+      "branch": "diameter_constant_curvature",
+      "working_gap": "6/5",
+      "radius_interval": [
+        "9/25",
+        "9/25"
+      ],
+      "envelope_lower": "543/400",
+      "envelope_upper": "543/400",
+      "requested_factor": "5/4",
+      "achieved_factor": "1",
+      "reason": null,
+      "refusal_details": {},
+      "regime": null,
+      "completed_positive_nodes": 0,
+      "planned_positive_nodes": 0,
+      "bisections": 0,
+      "scalar_starts": 0,
+      "elementary_evaluations": {
+        "exp": 0,
+        "sin": 0,
+        "cos": 0,
+        "sqrt": 0
+      },
+      "runner_checks": 19,
+      "record_path": "runs/run_001/case_constant_norm_only_affine_formula.json",
+      "record_sha256": "92696825f63ebde3e6831045f9350718343f0ff0d4756601320b4889af1972c7"
+    },
+    {
+      "id": "reject_zero_diameter",
+      "record_status": "PASS",
+      "api_status": "refused",
+      "envelope": "J_D",
+      "inputs": {
+        "m": "1",
+        "H0": "1",
+        "H1": "1",
+        "P": "2",
+        "g": "1",
+        "D": "0"
+      },
+      "branch": null,
+      "working_gap": null,
+      "radius_interval": null,
+      "envelope_lower": null,
+      "envelope_upper": null,
+      "requested_factor": "5/4",
+      "achieved_factor": null,
+      "reason": "invalid_input",
+      "refusal_details": {
+        "parameter": "D",
+        "value": "0"
+      },
+      "regime": null,
+      "completed_positive_nodes": 0,
+      "planned_positive_nodes": 0,
+      "bisections": 0,
+      "scalar_starts": 0,
+      "elementary_evaluations": {
+        "exp": 0,
+        "sin": 0,
+        "cos": 0,
+        "sqrt": 0
+      },
+      "runner_checks": 12,
+      "record_path": "runs/run_001/case_reject_zero_diameter.json",
+      "record_sha256": "0b0f6d0b70b1c0fa5d2f26ba7f65be3a2d9d4ec0beb591f99a9e21a815d37281"
+    },
+    {
+      "id": "zero_norm_cap",
+      "record_status": "PASS",
+      "api_status": "certified",
+      "envelope": "J_D",
+      "inputs": {
+        "m": "1",
+        "H0": "1",
+        "H1": "1",
+        "P": "0",
+        "g": "1",
+        "D": "1"
+      },
+      "branch": "diameter_zero",
+      "working_gap": null,
+      "radius_interval": null,
+      "envelope_lower": "0",
+      "envelope_upper": "0",
+      "requested_factor": "5/4",
+      "achieved_factor": "1",
+      "reason": null,
+      "refusal_details": {},
+      "regime": null,
+      "completed_positive_nodes": 0,
+      "planned_positive_nodes": 0,
+      "bisections": 0,
+      "scalar_starts": 0,
+      "elementary_evaluations": {
+        "exp": 0,
+        "sin": 0,
+        "cos": 0,
+        "sqrt": 0
+      },
+      "runner_checks": 15,
+      "record_path": "runs/run_001/case_zero_norm_cap.json",
+      "record_sha256": "af56b6ea62297350253f785f7521019b90f210473789aec8de3299a43207c80f"
+    },
+    {
+      "id": "collapsed_node_resource_refusal",
+      "record_status": "PASS",
+      "api_status": "refused",
+      "envelope": "J_D",
+      "inputs": {
+        "m": "1",
+        "H0": "4",
+        "H1": "1",
+        "P": "1",
+        "g": "1",
+        "D": "1/2"
+      },
+      "branch": "diameter_collapsed_node",
+      "working_gap": "1/2",
+      "radius_interval": [
+        "1/4",
+        "1/4"
+      ],
+      "envelope_lower": null,
+      "envelope_upper": null,
+      "requested_factor": "5/4",
+      "achieved_factor": null,
+      "reason": "resource_cap",
+      "refusal_details": {
+        "resource": "positive_nodes",
+        "required": 1,
+        "limit": 0
+      },
+      "regime": null,
+      "completed_positive_nodes": 0,
+      "planned_positive_nodes": 1,
+      "bisections": 0,
+      "scalar_starts": 1,
+      "elementary_evaluations": {
+        "exp": 2,
+        "sin": 0,
+        "cos": 0,
+        "sqrt": 1
+      },
+      "runner_checks": 13,
+      "record_path": "runs/run_001/case_collapsed_node_resource_refusal.json",
+      "record_sha256": "d0fd1ab05737de424c345c4fdc5f8adc19a7a5e4297887f9c4f4d10391e4cfce"
+    },
+    {
+      "id": "reject_inexact_float_diameter",
+      "record_status": "PASS",
+      "api_status": "refused",
+      "envelope": "J_D",
+      "inputs": {
+        "m": "1",
+        "H0": "1",
+        "H1": "1",
+        "P": "2",
+        "g": "1"
+      },
+      "branch": null,
+      "working_gap": null,
+      "radius_interval": null,
+      "envelope_lower": null,
+      "envelope_upper": null,
+      "requested_factor": "5/4",
+      "achieved_factor": null,
+      "reason": "invalid_input",
+      "refusal_details": {
+        "parameter": "D",
+        "received_type": "float"
+      },
+      "regime": null,
+      "completed_positive_nodes": 0,
+      "planned_positive_nodes": 0,
+      "bisections": 0,
+      "scalar_starts": 0,
+      "elementary_evaluations": {
+        "exp": 0,
+        "sin": 0,
+        "cos": 0,
+        "sqrt": 0
+      },
+      "runner_checks": 12,
+      "record_path": "runs/run_001/case_reject_inexact_float_diameter.json",
+      "record_sha256": "665bcbc0382c3d114bd0c6e9a72acb22d165a046b674ce878e289882dc2dc232"
+    }
+  ],
+  "sources_unchanged_as_recorded": true,
+  "freeze_and_review_unchanged_as_recorded": true,
+  "freeze_sha256": "55f9824ee37c2b16e79918ff5a8849210589671c39055500bf2197a3fb3eb9c8",
+  "root_review_sha256": "748d298f5978df5488e287232943ce5c2d032a7f6097d14e6af3f35ece1c7865",
+  "root_approved_by": "/root",
+  "root_approved_at_utc": "2026-11-12T15:18:26.449824+00:00",
+  "independent_preexecution_review": "continuation_v17/diameter_api_review/preexecution_static_review.json",
+  "independent_preexecution_review_sha256": "cd60cced2b7bd34abd5051208b8e3dbd4523162b1b574803517637f157eaa54d",
+  "mpmath_version": "1.3.0",
+  "cost_semantics": "Count named scalar starts, elementary evaluations, sign queries, root updates and explicit selections. Runner assertions and time are separate; no all-operation or bit-complexity claim. Source objective, gradient, LMO, LP, optimizer and stochastic counts must be zero.",
+  "limits_of_evidence": "Fixed implementation controls supplement the mathematical proofs. They are not optimizer benchmarks, fixed-domain sharpness proofs, or a total bit-complexity analysis.",
+  "postrun_reports": {
+    "EVIDENCE_RU.txt": "bac83c9592b2830d425b726cf261309b1a6081553ae5b1f3935aab0724441fd3",
+    "USAGE_AND_RESULTS.txt": "482548750e2c2470b2f1799097f50ea845053b9c46c59cf67d9f5943b4a0597e"
+  }
+}

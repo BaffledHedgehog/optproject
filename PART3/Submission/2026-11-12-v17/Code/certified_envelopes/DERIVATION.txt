@@ -1,0 +1,74 @@
+Mathematical contract and changes from the preserved v15 scalar core
+
+The model and sharpness scope are exactly those in proof_references.
+The joint arguments are mathematical J(g,P), not the positional order
+of the old private v15 entry point. All numerical controls below are
+implementation checks, not new proofs or new optimization experiments.
+
+For m>0, H0>=m, H1>0, h>0, put a=H0, b=H1*h and
+
+  tau=(a+m+b/2)/(a+sqrt(a*a+b*(a+m)+b*b/2)),
+  S(h)=a*(1/2-tau*tau)+(b/3)*(1-2*tau*tau*tau).
+
+Theorem gapregime:main gives B(h)=h iff S(h)<=0. Corollary
+gapregime:radius-monotone identifies the maximum over any restricted
+radius interval at its left endpoint when S(h)<=0. The tangent bound
+gapregime:tangent-upper gives V(h,rho)<=h+rho*S(h).
+
+For P,g>0, h=min(g,P*P/m), the joint theorem therefore gives
+
+  J(g,P)=V(h,h*h/(P*P)) <= h+(h*h/(P*P))*S(h)
+
+when S(h)<=0. The general joint representation has radii
+[h*h/(P*P),h/m]. If g>=P*P/m this interval is a singleton and the norm
+branch already needs only one scalar node, independently of S(h).
+
+The gate uses an outward interval [Slo,Shi]. Shi<=0 proves the regime,
+Slo>0 proves the complementary regime, and every other interval refuses
+the fixed-precision call. The optional algebraic bound uses exactly
+h+(h*h/(P*P))*Shi, with final arithmetic performed in Fraction. There is
+no claimed relative-envelope factor for this optional upper bound.
+
+Relative-enclosure budgets
+
+Let factor=theta>1, internal=(1+theta)/2, and K,L be outward upper bounds
+from the preserved scalar kernel. The known lower bound for joint or
+norm envelopes is h/2. The core node construction has additive switch
+error at most 2*rho*K*2^(-n).
+
+For the one-node joint regime choose
+
+  n=ceil(log2(max(1,4*K/(m*(internal-1))))).
+
+Since rho<=h/m, its switch allowance is at most (internal-1)*h/2.
+There is no outer mesh allowance. The separately checked value-rounding
+width is at most (theta-internal)*h/2. The existing finish_affine routine
+then returns a rigorous lower/upper enclosure and checks U<=theta*Lout
+with exact rational arithmetic.
+
+Outside the regime, a=g*g/(P*P), b=g/m, width=b-a>0. The v16 restricted
+grid uses J=max(1,ceil(2*L*width/((internal-1)*g))) intervals and
+n=ceil(log2(max(1,8*K/(m*(internal-1))))). Consequently the mesh allowance
+L*width/(2*J) and the inner allowance 2*(g/m)*K*2^(-n) are each at most
+(internal-1)*g/4. This is the same finite enclosure proof as the retained
+v15 grid, with its actual restricted width instead of the larger g/m.
+
+For B(g) in the nonpositive regime the result is exact, with no root or
+grid. Outside it the unchanged v15 gap grid is used. H1=0 uses the exact
+rational beta formula, beta=(H0*H0-2*m*H0-m*m)/(4*H0), already proved in
+the constant-curvature joint theorem. All zero inputs precede division.
+
+Cost and refusal contract
+
+Every attempted regime scalar evaluation is counted before its square
+root. Both the dependency guard (mpmath 1.3.0) and the scaled-input guard
+precede this evaluation, including branches that never call bounds().
+Exact formulas have their own count. Scalar-start totals include bounds,
+switches, endpoint losses, regime evaluations and algebraic evaluations;
+preflight budgets include work already spent on the new gate.
+
+No finite-bit ability to decide every equality or arbitrarily close sign
+is asserted. No unsuccessful partial trace is a completed certificate.
+Keyword/signature errors remain ordinary Python errors. Handled exact
+input, resource, interval-sign and rounding failures yield a structured
+refusal retaining their diagnostic cost.

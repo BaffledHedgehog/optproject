@@ -1,0 +1,28 @@
+V17 CHANGES
+
+Main papers: EN 196 to 23 pages; RU 210 to 23 pages. Both use 11pt type.
+Complete central proofs retained; repeated radial comparisons merged.
+Long dashes removed from both new PDFs. Extended v16 sources and accompanying
+records are preserved separately as extended_sources_and_records_v16.zip,
+outside this Git release. The current paper contains complete central proofs.
+
+The public package includes current manuscript sources and the figure, both
+scalar-certificate packages and their fixed records, current reviews and one
+fixed scalar reference. Earlier optimization archives are outside its scope.
+
+Added sharp J_D(g,P) with h=min(g,P^2/m,PD) and radius interval
+[h^2/P^2,min(h/m,D^2)]. Exact positive observations require g<=PD.
+Sharpness holds even at prescribed exact diameter D over varying domains.
+Added norm-only E_D(P), explicit affine constant-curvature formula,
+the exact 463/400 comparison, and a diagram of both triangle constructions.
+
+Stopping now permits a tighter source bound C and diameter calibration B_D.
+Clarified AFW atom selection and the timing of active-set scans.
+Preserved complete query, line-search and directional sampling counts.
+
+Added certified_diameter using unchanged reviewed interval primitives.
+One predeclared 10-case run: 7 certified, 3 expected refusals, 184 runner assertions.
+No previous first-run record overwritten; no optimization, LP or stochastic run.
+
+This revision does not claim historical priority for established methods,
+sharpness for each fixed domain, or empirical runtime superiority.

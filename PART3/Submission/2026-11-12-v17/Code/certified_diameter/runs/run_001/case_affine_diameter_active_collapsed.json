@@ -1,0 +1,273 @@
+{
+  "id": "affine_diameter_active_collapsed",
+  "function": "certify_joint_diameter",
+  "fixed_case": {
+    "id": "affine_diameter_active_collapsed",
+    "function": "certify_joint_diameter",
+    "model": {
+      "m": "1",
+      "H0": "4",
+      "H1": "1"
+    },
+    "args": {
+      "g": "1",
+      "P": "1",
+      "D": "1/2"
+    },
+    "expected": {
+      "status": "certified",
+      "envelope": "J_D",
+      "branch": "diameter_collapsed_node",
+      "working_gap": "1/2",
+      "radius_interval": [
+        "1/4",
+        "1/4"
+      ],
+      "positive_nodes": 1,
+      "regime_evaluations": 0
+    }
+  },
+  "api_call_started": true,
+  "output": {
+    "status": "certified",
+    "envelope": "J_D",
+    "envelope_lower": "86826377746423854414649239873355901616797170098112444905395150355066214020473831403478480151692719235/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736",
+    "envelope_upper": "87259789602951341676370632904010618244627984714931131579642740413156361568298868539200429720577128687/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736",
+    "achieved_factor": "87259789602951341676370632904010618244627984714931131579642740413156361568298868539200429720577128687/86826377746423854414649239873355901616797170098112444905395150355066214020473831403478480151692719235",
+    "requested_factor": "5/4",
+    "internal_factor": "9/8",
+    "reason": null,
+    "message": null,
+    "inputs": {
+      "m": "1",
+      "H0": "4",
+      "H1": "1",
+      "P": "1",
+      "g": "1",
+      "D": "1/2"
+    },
+    "precision": {
+      "work_dps": 100,
+      "value_dps": 100
+    },
+    "plan": {
+      "envelope_family": "diameter_restricted",
+      "working_gap": "1/2",
+      "working_gap_semantics": "Effective radial parameter h; not a claim that the observed full gap is at most P^2/m.",
+      "norm_gap_cap": "1",
+      "diameter_gap_cap": "1/2",
+      "radius_interval": [
+        "1/4",
+        "1/4"
+      ],
+      "limiting_zero_radius_nodes": 0,
+      "branch": "diameter_collapsed_node",
+      "fixed_radius": "1/4",
+      "grid_intervals": 0,
+      "Kstar_interval": [
+        "24431976281278245722940464488280160715349108874192914033767992431741435633084414057752730136653999351/4374501449566023848745004454235242730706338861786424872851541212819905998398751846447026354046107648",
+        "3053997035159780715367558061035020089418638609274114254220999053967679454135551757219091267081749919/546812681195752981093125556779405341338292357723303109106442651602488249799843980805878294255763456"
+      ],
+      "Lstar_interval": [
+        "81549703672051030890993380313556899575587252134986318819438968949864390364648740146628298175185005411/4374501449566023848745004454235242730706338861786424872851541212819905998398751846447026354046107648",
+        "5096856479503189430687086269597306223474203258436644926214935559366524397790546259164268635949062839/273406340597876490546562778389702670669146178861651554553221325801244124899921990402939147127881728"
+      ],
+      "positive_nodes": 1,
+      "bisections_per_node": 8,
+      "planned_bisections": 8,
+      "known_envelope_lower": "1/4",
+      "sampled_envelope_lower": "86826377746423854414649239873355901616797170098112444905395150355066214020473831403478480151692719235/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736",
+      "mesh_allowance": "0",
+      "inner_root_allowance": "3053997035159780715367558061035020089418638609274114254220999053967679454135551757219091267081749919/279968092772225526319680285071055534765205687154331191862498637620473983897520118172609686658950889472",
+      "maximum_upper_evaluation_rounding_width": "13/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368",
+      "reserved_rounding_allowance": "1/32",
+      "total_additive_allowance": "3053997035159780715367558061035020089418638609274114254220999053967679454135551757219091267081749971/279968092772225526319680285071055534765205687154331191862498637620473983897520118172609686658950889472",
+      "upper_minus_allowance_lower": "171465582170742902637373707746986216399837330820588148905064481772345043682462185321181768174072507403/279968092772225526319680285071055534765205687154331191862498637620473983897520118172609686658950889472"
+    },
+    "work": {
+      "bound_evaluations": 1,
+      "node_coefficient_preparations": 1,
+      "switch_evaluations": 10,
+      "loss_evaluations": 2,
+      "scalar_evaluations_started": 13,
+      "bracket_sign_queries": 2,
+      "bracket_sign_decisions": 2,
+      "root_sign_queries": 8,
+      "root_sign_decisions": 8,
+      "bisection_updates": 8,
+      "sign_order_predicates": 14,
+      "sign_equality_predicates": 0,
+      "certificate_maximum_comparisons": 0,
+      "witness_maximum_comparisons": 0,
+      "rounding_maximum_comparisons": 0,
+      "derived_lower_maximum_comparisons": 2,
+      "budget_setup_maximum_comparisons": 0,
+      "budget_order_comparisons": 2,
+      "resource_metadata_maximum_comparisons": 92,
+      "budget_ceiling_operations": 0,
+      "rational_to_interval_conversions": 21,
+      "interval_endpoint_extractions": 28,
+      "resource_limit_checks": 116,
+      "validation_checks": 37,
+      "exact_formula_evaluations": 0,
+      "source_objective_calls": 0,
+      "source_gradient_calls": 0,
+      "full_LMO_calls": 0,
+      "LP_calls": 0,
+      "optimizer_updates": 0,
+      "stochastic_samples": 0,
+      "regime_evaluations": 0,
+      "regime_sign_queries": 0,
+      "regime_nonpositive_decisions": 0,
+      "regime_positive_decisions": 0,
+      "regime_unresolved_queries": 0,
+      "regime_order_predicates": 0,
+      "working_gap_minimum_comparisons": 0,
+      "algebraic_bound_evaluations": 0,
+      "diameter_cap_minimum_comparisons": 2,
+      "diameter_radius_minimum_comparisons": 1,
+      "diameter_collapse_comparisons": 1,
+      "diameter_exact_endpoint_comparisons": 0
+    },
+    "elementary_evaluations": {
+      "exp": 26,
+      "sin": 12,
+      "cos": 12,
+      "sqrt": 2
+    },
+    "trace": [
+      {
+        "index": 0,
+        "rho": "1/4",
+        "planned_bisections": 8,
+        "completed_bisections": 8,
+        "alpha_bracket": [
+          "93/256",
+          "47/128"
+        ],
+        "sign_history": "-+-+++-+",
+        "status": "enclosed",
+        "left_residual_interval": [
+          "134016494709674170825884073767807229254270880831289498682685117674359598951367391804010384922952247/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736",
+          "2094007729838658919154438652621987957097982512988898416916954963661868733615115496937662264421129/2187250724783011924372502227117621365353169430893212436425770606409952999199375923223513177023053824"
+        ],
+        "right_residual_interval": [
+          "-1039431300925164375130695655548681796511456870062675074992307366174611346911915502391958499426712211/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736",
+          "-519715650462582187565347827774340898255728435031337537496153683087305673455957751195979249713356101/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368"
+        ],
+        "last_residual_interval": [
+          "134016494709674170825884073767807229254270880831289498682685117674359598951367391804010384922952247/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736",
+          "2094007729838658919154438652621987957097982512988898416916954963661868733615115496937662264421129/2187250724783011924372502227117621365353169430893212436425770606409952999199375923223513177023053824"
+        ],
+        "last_alpha": "93/256",
+        "loss_lower_endpoint_interval": [
+          "86826377746423854414649239873355901616797170098112444905395150355066214020473831403478480151692719235/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736",
+          "86826377746423854414649239873355901616797170098112444905395150355066214020473831403478480151692719277/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736"
+        ],
+        "loss_upper_endpoint_interval": [
+          "87259789602951341676370632904010618244627984714931131579642740413156361568298868539200429720577128661/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736",
+          "87259789602951341676370632904010618244627984714931131579642740413156361568298868539200429720577128687/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736"
+        ],
+        "fixed_radius_lower": "86826377746423854414649239873355901616797170098112444905395150355066214020473831403478480151692719235/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736",
+        "fixed_radius_upper": "87259789602951341676370632904010618244627984714931131579642740413156361568298868539200429720577128687/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736",
+        "upper_evaluation_rounding_width": "13/69992023193056381579920071267763883691301421788582797965624659405118495974380029543152421664737722368"
+      }
+    ],
+    "refusal_details": {},
+    "bound_semantics": "The interval encloses the sharp diameter-restricted mathematical envelope. Only envelope_upper bounds source error under the model assumptions and input caps.",
+    "cost_semantics": "Named started scalar and elementary evaluations, sign decisions and explicit comparisons; not all arithmetic operations or bit cost."
+  },
+  "checks": [
+    {
+      "check": "expected_status",
+      "passed": true
+    },
+    {
+      "check": "expected_envelope",
+      "passed": true
+    },
+    {
+      "check": "global_precision_unchanged",
+      "passed": true
+    },
+    {
+      "check": "no_source_or_optimizer_operations",
+      "passed": true
+    },
+    {
+      "check": "scalar_counter_partition",
+      "passed": true
+    },
+    {
+      "check": "root_updates_no_more_than_queries",
+      "passed": true
+    },
+    {
+      "check": "all_costs_nonnegative_integers",
+      "passed": true
+    },
+    {
+      "check": "expected_branch",
+      "passed": true
+    },
+    {
+      "check": "expected_working_gap",
+      "passed": true
+    },
+    {
+      "check": "expected_radius_interval",
+      "passed": true
+    },
+    {
+      "check": "expected_regime_evaluation_count",
+      "passed": true
+    },
+    {
+      "check": "expected_positive_nodes",
+      "passed": true
+    },
+    {
+      "check": "ordered_nonnegative_enclosure",
+      "passed": true
+    },
+    {
+      "check": "exact_returned_ratio",
+      "passed": true
+    },
+    {
+      "check": "requested_factor_met",
+      "passed": true
+    },
+    {
+      "check": "sqrt_counter_partition",
+      "passed": true
+    },
+    {
+      "check": "completed_all_planned_nodes",
+      "passed": true
+    },
+    {
+      "check": "root_budget_respected",
+      "passed": true
+    },
+    {
+      "check": "node_radii_respect_diameter_interval",
+      "passed": true
+    },
+    {
+      "check": "single_node_is_left_endpoint",
+      "passed": true
+    }
+  ],
+  "status": "PASS",
+  "elapsed_seconds": 0.0028658539995376486,
+  "cpu_seconds": 0.002866620000000014,
+  "global_precision_before": [
+    15,
+    15
+  ],
+  "global_precision_after": [
+    15,
+    15
+  ]
+}

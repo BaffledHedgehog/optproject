@@ -1,0 +1,202 @@
+{
+  "id": "one_node_resource_refusal",
+  "function": "certify_joint",
+  "fixed_case": {
+    "id": "one_node_resource_refusal",
+    "function": "certify_joint",
+    "args": {
+      "g": "1",
+      "P": "2"
+    },
+    "limits": {
+      "max_positive_nodes": 0
+    },
+    "expected": {
+      "status": "refused",
+      "reason": "resource_cap",
+      "resource": "positive_nodes",
+      "regime": "nonpositive",
+      "no_switch": true
+    }
+  },
+  "output": {
+    "status": "refused",
+    "envelope": "J",
+    "envelope_lower": null,
+    "envelope_upper": null,
+    "achieved_factor": null,
+    "requested_factor": "2",
+    "internal_factor": "3/2",
+    "reason": "resource_cap",
+    "message": "The fixed positive_nodes cap was exceeded.",
+    "inputs": {
+      "m": "1",
+      "H0": "1",
+      "H1": "1",
+      "P": "2",
+      "g": "1"
+    },
+    "precision": {
+      "work_dps": 100,
+      "value_dps": 100
+    },
+    "plan": {
+      "regime": {
+        "working_gap": "1",
+        "tau_interval": [
+          "121902124209439674302946074567416359903311591034489752985693687198031429801536545586659583602553786621/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736",
+          "121902124209439674302946074567416359903311591034489752985693687198031429801536545586659583602553786623/139984046386112763159840142535527767382602843577165595931249318810236991948760059086304843329475444736"
+        ],
+        "S_interval": [
+          "-102263091690342602880947872862850454940111279570400194162406144223356699244637015783395245713666188459/279968092772225526319680285071055534765205687154331191862498637620473983897520118172609686658950889472",
+          "-102263091690342602880947872862850454940111279570400194162406144223356699244637015783395245713666188439/279968092772225526319680285071055534765205687154331191862498637620473983897520118172609686658950889472"
+        ],
+        "decision": "nonpositive"
+      },
+      "branch": "affine_joint_regime_one_node",
+      "working_gap": "1",
+      "fixed_radius": "1/4",
+      "radius_interval": [
+        "1/4",
+        "1"
+      ],
+      "grid_intervals": 0,
+      "limiting_zero_radius_nodes": 0,
+      "Kstar_interval": [
+        "47564511195692300647032481380328689457821114006534486654973699574435731771518958482255775061119909527/17498005798264095394980017816940970922825355447145699491406164851279623993595007385788105416184430592",
+        "95129022391384601294064962760657378915642228013068973309947399148871463543037916964511550122239819057/34996011596528190789960035633881941845650710894291398982812329702559247987190014771576210832368861184"
+      ],
+      "Lstar_interval": [
+        "53048112672558730383571078748449851413388226677704567821301425661935615801375190489880879177371643459/4374501449566023848745004454235242730706338861786424872851541212819905998398751846447026354046107648",
+        "26524056336279365191785539374224925706694113338852283910650712830967807900687595244940439588685821731/2187250724783011924372502227117621365353169430893212436425770606409952999199375923223513177023053824"
+      ],
+      "positive_nodes": 1,
+      "bisections_per_node": 5,
+      "planned_bisections": 5
+    },
+    "work": {
+      "bound_evaluations": 1,
+      "node_coefficient_preparations": 0,
+      "switch_evaluations": 0,
+      "loss_evaluations": 0,
+      "scalar_evaluations_started": 2,
+      "bracket_sign_queries": 0,
+      "bracket_sign_decisions": 0,
+      "root_sign_queries": 0,
+      "root_sign_decisions": 0,
+      "bisection_updates": 0,
+      "sign_order_predicates": 0,
+      "sign_equality_predicates": 0,
+      "certificate_maximum_comparisons": 0,
+      "witness_maximum_comparisons": 0,
+      "rounding_maximum_comparisons": 0,
+      "derived_lower_maximum_comparisons": 0,
+      "budget_setup_maximum_comparisons": 0,
+      "budget_order_comparisons": 2,
+      "resource_metadata_maximum_comparisons": 31,
+      "budget_ceiling_operations": 0,
+      "rational_to_interval_conversions": 8,
+      "interval_endpoint_extractions": 8,
+      "resource_limit_checks": 26,
+      "validation_checks": 28,
+      "exact_formula_evaluations": 0,
+      "source_objective_calls": 0,
+      "source_gradient_calls": 0,
+      "full_LMO_calls": 0,
+      "LP_calls": 0,
+      "optimizer_updates": 0,
+      "stochastic_samples": 0,
+      "regime_evaluations": 1,
+      "regime_sign_queries": 1,
+      "regime_nonpositive_decisions": 1,
+      "regime_positive_decisions": 0,
+      "regime_unresolved_queries": 0,
+      "regime_order_predicates": 1,
+      "working_gap_minimum_comparisons": 0,
+      "algebraic_bound_evaluations": 0
+    },
+    "elementary_evaluations": {
+      "exp": 2,
+      "sin": 0,
+      "cos": 0,
+      "sqrt": 2
+    },
+    "trace": [],
+    "refusal_details": {
+      "resource": "positive_nodes",
+      "required": 1,
+      "limit": 0
+    },
+    "bound_semantics": "The interval encloses the mathematical envelope; only envelope_upper bounds source error under the model assumptions.",
+    "cost_semantics": "Named started evaluations, resolved/attempted sign queries and explicit maximum selections; not all arithmetic operations or bit cost."
+  },
+  "checks": [
+    {
+      "check": "expected_status",
+      "passed": true
+    },
+    {
+      "check": "global_precision_unchanged",
+      "passed": true
+    },
+    {
+      "check": "no_source_or_optimizer_operations",
+      "passed": true
+    },
+    {
+      "check": "scalar_counter_partition",
+      "passed": true
+    },
+    {
+      "check": "root_updates_no_more_than_queries",
+      "passed": true
+    },
+    {
+      "check": "all_costs_nonnegative_integers",
+      "passed": true
+    },
+    {
+      "check": "expected_refusal_reason",
+      "passed": true
+    },
+    {
+      "check": "expected_resource",
+      "passed": true
+    },
+    {
+      "check": "expected_regime_decision",
+      "passed": true
+    },
+    {
+      "check": "one_regime_evaluation",
+      "passed": true
+    },
+    {
+      "check": "one_regime_query",
+      "passed": true
+    },
+    {
+      "check": "certified_nonpositive_endpoint",
+      "passed": true
+    },
+    {
+      "check": "no_switch_or_loss_evaluations",
+      "passed": true
+    },
+    {
+      "check": "refusal_has_no_enclosure",
+      "passed": true
+    }
+  ],
+  "status": "PASS",
+  "elapsed_seconds": 0.0007784180015733,
+  "cpu_seconds": 0.0007652409999999998,
+  "global_precision_before": [
+    15,
+    15
+  ],
+  "global_precision_after": [
+    15,
+    15
+  ]
+}

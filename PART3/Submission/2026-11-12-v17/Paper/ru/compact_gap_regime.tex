@@ -1,0 +1,187 @@
+\section{Когда полный зазор ограничивает ошибку}
+\label{gapregime:section}
+Пусть $H_1>0$. Для $g\ge0$ положим $b=H_1g$ и определим
+\begin{align}
+ b\tau_g^2+2H_0\tau_g&=H_0+m+b/2,
+       \label{gapregime:switch}\\
+ \tau_g&=\frac{H_0+m+b/2}
+ {H_0+\sqrt{H_0^2+b(H_0+m)+b^2/2}},
+       \label{gapregime:tau}\\
+ \mathcal S(g)&=H_0(1/2-\tau_g^2)
+             +\frac{H_1g}{3}(1-2\tau_g^3).
+       \label{gapregime:coefficient}
+\end{align}
+Здесь $1/2<\tau_g\le1$; при $g>0$ неравенство справа строгое.
+
+\begin{theorem}[Точный диапазон оценки через зазор]
+\label{gapregime:main}
+Пусть $m>0$, $H_0\ge m$, $H_1>0$. Для каждого $g>0$
+\begin{equation}\label{gapregime:equivalence}
+ \mathcal B(g)=g\quad\Longleftrightarrow\quad\mathcal S(g)\le0.
+\end{equation}
+При $\mathcal S(g)\le0$ все положительные радиусы дают
+$V(g,\rho)<g$; супремум достигается только в пределе $\rho\downarrow0$.
+В частности, $\delta(x)<G(x)$ в любой неоптимальной точке
+этого диапазона.
+
+Функция $\mathcal S$ непрерывно дифференцируема, причём
+\begin{align}
+ \mathcal S(0)&=\frac{H_0^2-2mH_0-m^2}{4H_0},
+       \label{gapregime:initial}\\
+ \mathcal S'(g)&=H_1(\tau_g^3/3-\tau_g/2+1/3)>0.
+       \label{gapregime:derivative}
+\end{align}
+Если $m\le H_0<(1+\sqrt2)m$, существует единственный
+$g_{\rm c}>0$ с $\mathcal S(g_{\rm c})=0$, и равенство
+$\mathcal B(g)=g$ выполняется ровно при $0\le g\le g_{\rm c}$.
+При $H_0\ge(1+\sqrt2)m$ имеем $\mathcal B(g)>g$ для всех $g>0$.
+При $H_0=m$
+\begin{equation}\label{gapregime:unit-threshold}
+ g_{\rm c}=(2+\sqrt6)m/H_1.
+\end{equation}
+\end{theorem}
+
+\begin{proof}\label{gapregime:proof}
+Положим $K_g(t)=H_0+H_1gt$. Функция
+\[
+ D_g(a)=\int_0^1|a-t|K_g(t)\,dt-ma
+\]
+строго выпукла: $D_g''(a)=2K_g(a)>0$.
+Её минимум на $[0,1]$ достигается при $a=\tau_g$,
+а прямое интегрирование даёт $D_g(\tau_g)=\mathcal S(g)$.
+Поэтому при $|a(t)|\le K_g(t)$ и $\int_0^1a(t)\,dt=m$
+\begin{equation}\label{gapregime:dual-bound}
+ \int_0^1(1-t)a(t)\,dt-m
+ =\int_0^1(\tau_g-t)a(t)\,dt-m\tau_g\le\mathcal S(g).
+\end{equation}
+Равенство даёт $a=K_g$ до $\tau_g$ и $a=-K_g$ после неё.
+
+Для нормированной экстремальной траектории запишем
+$u''=\rho\sigma_\tau(H_0+H_1u)$,
+$u(0)=0$, $u'(0)=g-m\rho$, где $\sigma_\tau$ меняет знак
+с $+1$ на $-1$ в точке $\tau$.
+Условие $u'(1)=g$ после деления на $\rho$ имеет гладкое
+продолжение к $\rho=0$:
+\[
+ R(\rho,\tau)=-m+\int_0^1\sigma_\tau(t)(H_0+H_1u(t))\,dt=0.
+\]
+При $\rho=0$ имеем $u=gt$, $R(0,\tau_g)=0$ и
+$R_\tau(0,\tau_g)=2K_g(\tau_g)>0$.
+Теорема о неявной функции и двукратное интегрирование дают
+\begin{equation}\label{gapregime:variation}
+ V(g,\rho)=g+\rho\mathcal S(g)+O(\rho^2).
+\end{equation}
+Значит, $\mathcal S(g)>0$ влечёт $\mathcal B(g)>g$.
+
+Пусть $\mathcal S(g)<0$. Если после начального убывания
+$V(g,\rho)$ впервые достигает $g$ при $\rho_*>0$, то у
+соответствующей траектории $u'(0)<g$, производная сначала растёт,
+затем убывает до $g$. Поэтому $u-gt$ сначала убывает, затем
+возрастает до нуля и
+\begin{equation}\label{gapregime:below-line}
+ u(t)<gt\qquad(0<t<1).
+\end{equation}
+Функция $a=u''/\rho_*$ удовлетворяет условиям
+\eqref{gapregime:dual-bound}, откуда
+$0=V(g,\rho_*)-g\le\rho_*\mathcal S(g)<0$.
+Такое пересечение невозможно, и $\mathcal B(g)=g$.
+
+При дифференцировании $D_g(\tau_g)$ слагаемое с $\tau_g'$
+исчезает. Отсюда \eqref{gapregime:derivative} и
+\begin{equation}\label{gapregime:derivative-bounds}
+ \frac{H_1}{3}(1-1/\sqrt2)\le\mathcal S'(g)\le H_1/6,
+\end{equation}
+так как минимум $a^3/3-a/2+1/3$ на $[1/2,1]$ достигается
+при $a=1/\sqrt2$, а максимум при $a=1$.
+Вместе с \eqref{gapregime:initial} это доказывает утверждения о нуле.
+При $\mathcal S(g)=0$, $g>0$, непрерывность $\mathcal B$ и
+предел $g_n\uparrow g$ из диапазона $\mathcal S(g_n)<0$
+дают $\mathcal B(g)=g$.
+Если бы некоторый $\rho>0$ давал равенство, то
+\eqref{gapregime:below-line} и $H_1>0$ дали бы
+$|u''|/\rho<K_g$ почти всюду внутри $(0,1)$.
+Неравенство \eqref{gapregime:dual-bound} стало бы строгим,
+что противоречит $V-g=\rho\mathcal S(g)=0$.
+Наконец, при $H_0=m$ подстановка
+$\tau=2-\sqrt6/2$ и $g=(2+\sqrt6)m/H_1$ в
+\eqref{gapregime:switch} и \eqref{gapregime:coefficient}
+даёт \eqref{gapregime:unit-threshold}.
+\end{proof}
+
+\begin{corollary}[Убывание по радиусу]
+\label{gapregime:radius-monotone}
+При $H_1>0$, $g>0$, $\mathcal S(g)\le0$ функция
+$\rho\mapsto V(g,\rho)$ строго убывает на $[0,g/m]$.
+Для $0<\rho_1<\rho_2\le g/m$
+\begin{equation}\label{gapregime:deficit-ratio}
+ \frac{g-V(g,\rho_1)}{\rho_1}
+ \le\frac{g-V(g,\rho_2)}{\rho_2},
+\end{equation}
+а на всём отрезке
+\begin{equation}\label{gapregime:tangent-upper}
+ V(g,\rho)\le g+\rho\mathcal S(g).
+\end{equation}
+\end{corollary}
+\begin{proof}
+Пусть $u_2$ есть траектория для $\rho_2$.
+Как в \eqref{gapregime:below-line}, её производная сначала растёт,
+затем убывает до $g$; теперь $u_2(1)<g$, откуда $u_2\le gt$.
+При $\lambda=\rho_1/\rho_2$ функция
+$v=\lambda u_2+(1-\lambda)gt$ имеет нужные крайние производные,
+сохраняет сдвинутое RSI и удовлетворяет почти всюду
+\[
+ |v''|\le\rho_1(H_0+H_1u_2)\le\rho_1(H_0+H_1v).
+\]
+Радиальное сравнение применимо к $v\in C^1$ с абсолютно
+непрерывной производной. Оно даёт
+\begin{equation}\label{gapregime:mixture}
+ V(g,\rho_1)\ge\lambda V(g,\rho_2)+(1-\lambda)g>V(g,\rho_2).
+\end{equation}
+Перегруппировка даёт \eqref{gapregime:deficit-ratio},
+а предел $\rho_1\downarrow0$ с учётом
+\eqref{gapregime:variation} даёт \eqref{gapregime:tangent-upper}.
+При $\rho_1=0$ строгая монотонность следует из
+$V(g,0)=g>V(g,\rho_2)$ для $\rho_2>0$.
+\end{proof}
+
+\paragraph{Порог и верхние границы наблюдений.}
+Если $d=-\mathcal S(0)>0$, то
+\begin{equation}\label{gapregime:threshold-bracket}
+ \frac{6d}{H_1}\le g_{\rm c}
+ \le\frac{3d}{H_1(1-1/\sqrt2)}.
+\end{equation}
+Сам порог для проверки точки не нужен: знак $\mathcal S(B)$
+вычисляется по \eqref{gapregime:tau} и \eqref{gapregime:coefficient}.
+Если $G(x)\le B$ и этот знак доказан неположительным, то
+\begin{equation}\label{gapregime:inexact}
+ \delta(x)\le\mathcal B(G(x))\le\mathcal B(B)=B.
+\end{equation}
+При неопределённом знаке применяется общая верхняя оценка.
+При $H_1=0$ равенство $\mathcal B(g)=g$ для всех $g\ge0$
+равносильно $H_0\le(1+\sqrt2)m$; строгое убывание при граничном
+значении $H_0$ не утверждается.
+
+\paragraph{Профиль не всегда вогнут.}
+\label{gapregime:nonconcavity}
+При $m=H_1=1$, $H_0=4$, $g=6$ имеем $T=\tau_g=2/3$.
+Первая вариация состояния равна
+\[
+ w(t)=
+ \begin{cases}
+ -t+2t^2+t^3,&t\le2/3,\\
+ 7t-2t^2-t^3-80/27,&t\ge2/3.
+ \end{cases}
+\]
+При $\tau(\rho)=T+\rho T_1+O(\rho^2)$ сдвиг переключения
+даёт $2T_1K_g(T)$ в конечную производную и
+$2T_1K_g(T)(1-T)$ в конечное значение.
+Исключая $T_1$ условием постоянной конечной производной,
+получаем коэффициент второй вариации
+$C_2=H_1\int_0^1|T-t|w(t)\,dt=52/1215$. Поэтому
+\[
+ V(6,\rho)=6+\frac{28}{27}\rho+\frac{52}{1215}\rho^2+O(\rho^3),
+ \qquad V_{\rho\rho}(6,0)=\frac{104}{1215}>0.
+\]
+Вторая производная положительна и при малых положительных радиусах.
+Пример лежит вне режима убывания и не решает вопрос об общей
+одновершинности. Общая процедура не предполагает вогнутости.

@@ -1,0 +1,30 @@
+{
+  "status": "PASS_PRE_EXECUTION_REVIEW",
+  "at_utc": "2026-11-12T13:38:34.850132+00:00",
+  "reviewer": "root analytical code and frozen protocol review",
+  "freeze_sha256": "d68c445e8bc06418354a8f2d1c8db8fb4099cafa6d20ca461b971129968f1dba",
+  "source_hashes_verified": {
+    "api.py": "55b3e6a1bc196a507d7627003db643a7be3deb4497f57b3626694a26fb929c08",
+    "__init__.py": "f94757cf56544aa95a651ca613c566b6f193860c15b37b6167448007bea4ffd8",
+    "run_protocol.py": "8b421d060106c7ed02cee54beabcf3aa7ebc12dde90c8eb69f1421d0a12f26fa",
+    "README_RU.md": "bd0f0c93175950c17f25627323b7ad22111949c71fa92ea2c118299b94290957",
+    "requirements.txt": "a699f46ed76bd216f1081b6b2330e4fb45d7c8c5a5354b208694d6590a5a8645",
+    "protocol.json": "a01be9fac637796829173ad03b5f776fe4bbc05cbdcadfdd4599686c13257c20",
+    "reference_data.json": "444d5fd6004c59a04ce0b18e6cd00feb8fd763dbf9b9f47dd0a6da33493770d9",
+    "PROVENANCE.json": "0f9b70c39fbd4e9e6a4f38998cb886d3dd1a114d940bf76c1937d8db61aa8d1b",
+    "static_review.json": "936ed41bcd0c9eb81aff26734616eae779da79c20a1f19a257ea6deac90c51c0"
+  },
+  "case_count": 26,
+  "scientific_execution_performed_by_review": false,
+  "checks": [
+    "Frozen cases and exact expected constant-curvature values reviewed.",
+    "Public scalar API mathematical bounds and refusal behavior analytically reviewed before this freeze.",
+    "Runner snapshots and verifies all frozen source files and dependency before API import or calls.",
+    "Runner preserves returned certificate/refusal and aggregate costs before validation; per-case validation exceptions are recorded and do not discard later fixed cases.",
+    "Existing run directories are never overwritten.",
+    "Reference data use exact rational or interval strings rather than float displays.",
+    "Four actual zero branches supplement but do not rewrite the original scalar-controls convention check.",
+    "Source oracle, optimization, LP and stochastic budgets remain zero."
+  ],
+  "authorization": "The owner may execute this exact frozen protocol once into runs/run_001. Preserve every outcome."
+}

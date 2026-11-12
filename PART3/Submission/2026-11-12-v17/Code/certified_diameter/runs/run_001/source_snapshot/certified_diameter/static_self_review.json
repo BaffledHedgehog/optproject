@@ -1,0 +1,45 @@
+{
+  "status": "STATIC_SELF_REVIEW_COMPLETE_AWAITING_ROOT_PASS",
+  "reviewer": "/root/recover_proofs",
+  "at_utc": "2026-11-12T15:13:02.636277+00:00",
+  "scientific_api_imports_performed": 0,
+  "scientific_api_calls_performed": 0,
+  "scientific_runs_performed": 0,
+  "method": "Source reading, manual mathematics, AST parsing and hashes only; no reviewed module imported.",
+  "syntax_checks": {
+    "api.py": true,
+    "__init__.py": true,
+    "_v16_api.py": true,
+    "_legacy_core.py": true,
+    "run_protocol.py": true
+  },
+  "protocol_case_count": 10,
+  "protocol_case_ids_unique": true,
+  "protocol_unchanged_since_registration": true,
+  "private_dependencies_unchanged": true,
+  "manual_checks": [
+    "Exact positive D validation precedes zero caps",
+    "Joint caps accept g>P*D; norm mode derives g=P*D after exact parsing",
+    "Nonempty interval follows from h<=P^2/m and h<=P*D",
+    "H1=0 selects exact affine endpoint by beta sign",
+    "Singleton requires one node without S gate",
+    "Noncollapsed S gate uses unchanged outward endpoint decisions",
+    "One-node root budget fits (internal-1)*h/2",
+    "Actual-width grid has mesh and root allowances each <=(internal-1)*h/4",
+    "Existing value-rounding reserve and final exact ratio check retained",
+    "Returned envelope labels distinguish J_D and E_D; refusals retain costs and no bounds",
+    "Runner requires root PASS for exact freeze, checks snapshot hashes before import, and never retries"
+  ],
+  "independent_review_required": true,
+  "approval_status": "NOT AN EXECUTION APPROVAL",
+  "new_run_001_absent": true,
+  "primary_source_hashes": {
+    "api.py": "9720c39164e39efe842ec850d7ccb0f87c3e011ee07d75a933bfb50a3e5b0cfd",
+    "__init__.py": "5c3c038c942c6a368ce98166c5b450f72c4d0b0e6ec4547cfb425658e4f5d7f2",
+    "run_protocol.py": "45cee3812814b4f033cf91405af82906a697f5a7f4a8a1b202ecc71d59abb14a",
+    "protocol.json": "ba866f45d396cff907d2e8d4b88b1aa17dfe05d867c361b9aaf8061d3da608c2",
+    "_v16_api.py": "00bc84cf21a5b4ee39358c5439d26465333220a477b532edeca8ec14729c7ece",
+    "_legacy_core.py": "55b3e6a1bc196a507d7627003db643a7be3deb4497f57b3626694a26fb929c08",
+    "DERIVATION.txt": "676b8839ca1a543e8093293a39d6b787a7be62c2b2e432cfd5f1986b6416c099"
+  }
+}

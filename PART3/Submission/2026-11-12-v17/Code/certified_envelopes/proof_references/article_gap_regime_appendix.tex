@@ -1,0 +1,203 @@
+\section{Proof of the exact ordinary-gap range}
+\label{gapregime:proof}
+
+\paragraph{A scalar linear extremal problem.}
+Write $K_g(t)=H_0+H_1gt$ on $[0,1]$.  The strictly convex function
+\[
+ D_g(a)=\int_0^1|a-t|K_g(t)\,dt-ma,\qquad 0\le a\le1,
+\]
+satisfies
+\[
+ D_g'(a)=2H_0a+H_1ga^2-H_0-H_1g/2-m,
+ \qquad D_g''(a)=2K_g(a)>0.
+\]
+Its unique minimizer is $a=\tau_g$ from
+\eqref{gapregime:switch}.  At $g=0,H_0=m$ this is the endpoint
+$\tau_0=1$; otherwise it is interior.  At $a=1/2$ the derivative
+is negative, so $1/2<\tau_g\le1$.
+Direct integration, followed by the switch equation, gives
+\begin{align*}
+ \min_{0\le a\le1}D_g(a)
+ &=H_0(\tau_g^2-\tau_g+1/2)
+   +H_1g(\tau_g^3/3-\tau_g/2+1/3)-m\tau_g\\
+ &=\mathcal S(g).
+\end{align*}
+If a measurable acceleration $a(t)$ satisfies
+$|a(t)|\le K_g(t)$ and $\int_0^1a(t)\,dt=m$, then
+\begin{equation}\label{gapregime:dual-bound}
+ \int_0^1(1-t)a(t)\,dt-m
+ =\int_0^1(\tau_g-t)a(t)\,dt-m\tau_g
+ \le\mathcal S(g).
+\end{equation}
+Equality is obtained by $a(t)=K_g(t)$ before $\tau_g$ and
+$a(t)=-K_g(t)$ afterwards.  The switch equation is precisely its
+integral constraint.  This is an elementary extremal problem over
+bounded functions, not an additional optimization oracle.
+
+\paragraph{First variation at zero radius.}
+Fix $g>0$ and $H_1>0$.  Let $u_{\rho,\tau}$ solve the normalized
+two-arc system
+\[
+ u''=\rho\sigma_\tau(t)(H_0+H_1u),\qquad
+ u(0)=0,\quad u'(0)=g-m\rho,
+\]
+where $\sigma_\tau$ equals $+1$ before $\tau$ and $-1$ afterwards.
+At $\rho=0$ its solution is $u=gt$, independently of $\tau$.
+For $\rho\ne0$, the terminal slope equation $u'(1)=g$ is equivalent
+to
+\[
+ R(\rho,\tau):=-m+
+       \int_0^1\sigma_\tau(t)(H_0+H_1u_{\rho,\tau}(t))\,dt=0.
+\]
+The explicit two-arc solutions make $R$ smooth near
+$(0,\tau_g)$, and
+\[
+ R(0,\tau_g)=0,\qquad
+ \partial_\tau R(0,\tau_g)=2K_g(\tau_g)>0.
+\]
+Because $g>0,H_1>0$, this switch is interior.  The implicit function
+theorem supplies a smooth branch $\tau(\rho)$ from $\tau_g$.
+For small positive $\rho$, uniqueness of the fixed-radius switch
+identifies its terminal loss with $V(g,\rho)$.
+Twice integrating the equation gives
+\begin{equation}\label{gapregime:variation}
+ \begin{aligned}
+ V(g,\rho)
+ &=g+\rho\left\{-m+
+       \int_0^1(1-t)\sigma_{\tau_g}(t)K_g(t)\,dt\right\}
+         +O(\rho^2)\\
+ &=g+\rho\mathcal S(g)+O(\rho^2).
+ \end{aligned}
+\end{equation}
+In particular, $\mathcal S(g)>0$ implies
+$\mathcal B(g)>g$.
+
+\paragraph{Excluding a crossing when $\mathcal S(g)<0$.}
+Equation~\eqref{gapregime:variation} gives $V(g,\rho)<g$ for all
+sufficiently small positive $\rho$.  Suppose that this inequality
+fails somewhere on $(0,g/m]$.  By continuity there is a first
+positive $\rho_*$ with $V(g,\rho_*)=g$.
+Let $u$ be its normalized extremal two-arc trajectory.  Its derivative
+starts at $g-m\rho_*<g$, increases on the first arc, and decreases
+on the second arc to $g$.  The switch is interior and the peak
+derivative exceeds $g$.  Hence $u'(t)-g$ changes sign exactly once,
+from negative to positive, before ending at zero.
+Since $u(0)=0$ and $u(1)=g$, it follows that
+\begin{equation}\label{gapregime:below-line}
+ u(t)<gt\qquad(0<t<1).
+\end{equation}
+In particular $|u''(t)|/\rho_*\le K_g(t)$ almost everywhere, while
+$\int_0^1u''(t)/\rho_*\,dt=m$.  Apply
+\eqref{gapregime:dual-bound} with $a=u''/\rho_*$ to obtain
+\[
+ 0=u(1)-g\le\rho_*\mathcal S(g)<0,
+\]
+a contradiction.  Thus $V(g,\rho)<g$ for every positive radius,
+and the definition $V(g,0)=g$ proves $\mathcal B(g)=g$.
+
+\paragraph{Monotonicity of the first-variation coefficient.}
+The formula \eqref{gapregime:tau} is smooth for $g\ge0$.
+Differentiating $D_g(\tau_g)$ eliminates the switch derivative,
+because $D_g'(\tau_g)=0$, including at $g=0,H_0=m$.
+Therefore
+\[
+ \mathcal S'(g)=H_1\int_0^1|\tau_g-t|t\,dt
+ =H_1(\tau_g^3/3-\tau_g/2+1/3)>0.
+\]
+For $a\in[1/2,1]$, the function
+$j(a)=a^3/3-a/2+1/3$ has its unique minimum at $a=1/\sqrt2$.
+Its maximum on this interval is $j(1)=1/6$.  Thus
+\begin{equation}\label{gapregime:derivative-bounds}
+ \frac{H_1}{3}(1-1/\sqrt2)
+       \le\mathcal S'(g)\le\frac{H_1}{6}.
+\end{equation}
+At $g=0$, substitution of
+$\tau_0=(H_0+m)/(2H_0)$ proves
+\eqref{gapregime:initial}.  The strictly positive lower derivative
+bound shows that $\mathcal S(g)\to\infty$.
+These facts prove existence and uniqueness of a positive zero
+exactly when $m\le H_0<(1+\sqrt2)m$, and integrating
+\eqref{gapregime:derivative-bounds} proves
+\eqref{gapregime:threshold-bracket}.
+
+\paragraph{The zero coefficient and strictness.}
+If $g>0$ and $\mathcal S(g)=0$, strict monotonicity gives
+$\mathcal S(g_n)<0$ for any sequence $0<g_n\uparrow g$.
+The preceding noncrossing argument gives
+$\mathcal B(g_n)=g_n$.  Continuity of $\mathcal B$ from
+Theorem~\ref{boundarygap:main} yields $\mathcal B(g)=g$.
+This argument concerns a positive zero only; the case $g=0$ is
+already part of the envelope definition.
+
+If some positive radius attained $V(g,\rho)=g$, its trajectory
+would satisfy \eqref{gapregime:below-line}.  Since $H_1>0$,
+\[
+ |u''(t)|/\rho=H_0+H_1u(t)<K_g(t)
+ \quad\hbox{for almost every }t\in(0,1).
+\]
+The integral in \eqref{gapregime:dual-bound} is then strictly
+smaller than $\mathcal S(g)$: the multiplier
+$|\tau_g-t|$ is positive except at one point.  This gives
+$0=V-g<\rho\mathcal S(g)=0$, a contradiction.
+Together with the negative-coefficient case, this proves strictness
+at every positive radius whenever $\mathcal S(g)\le0$.
+
+\paragraph{Radius monotonicity.}
+Take $0<\rho_1<\rho_2\le g/m$ and put $\lambda=\rho_1/\rho_2$.
+Let $u_2$ be the normalized extremal trajectory for $\rho_2$.
+Its derivative increases and then decreases to $g$, while
+$u_2'(0)=g-m\rho_2<g$ and $u_2(1)=V(g,\rho_2)<g$.
+Thus $u_2(t)-gt$ first decreases and then increases to a negative
+endpoint; in particular $u_2(t)\le gt$ on $[0,1]$.
+Define
+\[
+ v(t)=\lambda u_2(t)+(1-\lambda)gt.
+\]
+Then $v(0)=0$, $v'(0)=g-m\rho_1$, and $v'(1)=g$.
+The normalized shifted-RSI inequality is preserved:
+\[
+ v'(t)\ge g-m\rho_1+m\rho_1t.
+\]
+Moreover $v\ge u_2$ and, almost everywhere,
+\[
+ |v''|\le\lambda\rho_2(H_0+H_1u_2)
+          \le\rho_1(H_0+H_1v).
+\]
+The fixed-radius energy comparison in Appendix~\ref{boundarygap:proof}
+therefore gives
+\begin{equation}\label{gapregime:mixture}
+ V(g,\rho_1)\ge v(1)
+       =\lambda V(g,\rho_2)+(1-\lambda)g>V(g,\rho_2).
+\end{equation}
+The comparison applies to this $C^1$, piecewise $C^2$ trajectory:
+its derivative is absolutely continuous, so both energy integrations
+and the change of variable in that proof remain valid with the
+almost-everywhere curvature bound.  No smooth extremizer is needed.
+Rearranging \eqref{gapregime:mixture} proves
+\eqref{gapregime:deficit-ratio}.  Letting $\rho_1\downarrow0$
+and using \eqref{gapregime:variation} gives
+\eqref{gapregime:tangent-upper}.  The value $V(g,0)=g$ and the
+strict inequality at every positive radius include zero in the
+strict monotonicity statement.
+
+\paragraph{The exact threshold when $H_0=m$.}
+Take
+\[
+ g_{\rm c}=(2+\sqrt6)m/H_1,
+ \qquad \tau_{g_{\rm c}}=2-\sqrt6/2.
+\]
+Direct substitution gives both
+\[
+ (2+\sqrt6)\tau_{g_{\rm c}}^2+2\tau_{g_{\rm c}}
+      =2+(2+\sqrt6)/2
+\]
+and
+\[
+ \frac12-\tau_{g_{\rm c}}^2
+   +\frac{2+\sqrt6}{3}(1-2\tau_{g_{\rm c}}^3)=0.
+\]
+The number $\tau_{g_{\rm c}}$ lies in $(1/2,1)$, so it is the
+unique switch from \eqref{gapregime:switch}.  Strict monotonicity of
+$\mathcal S$ proves that this is its unique positive zero.
+The special case $H_1=0$ does not require this argument and follows
+directly from \eqref{boundarygap:constant}.

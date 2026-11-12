@@ -1,0 +1,102 @@
+\section{Application to realizable sigmoid regression}
+\label{reg:sigmoid}
+Realizable generalized linear models have known quasar-convexity
+guarantees \cite[Lemma 3]{regglm}; derivative-ratio alignment is also
+used in \cite[Lemma 5]{regfoster}. Sigmoid least squares on an
+$\ell_1$ ball is an existing conditional-gradient benchmark
+\cite[Section 5.1.4]{khademi}. We give explicit constants for the
+certificates above.
+
+Let $A\in\mathbb R^{n\times d}$ have rows $a_i^\top$, let
+$Q=\{x:\|x\|_1\le R\}$, $R>0$, and fix $x^*\in Q$.
+For $\sigma(z)=(1+e^{-z})^{-1}$ and targets
+$y_i=\sigma(a_i^\top x^*)$, define
+\begin{equation}\label{reg:sigmoidloss}
+ f(x)=\frac1{2n}\sum_{i=1}^n[\sigma(a_i^\top x)-y_i]^2.
+\end{equation}
+Then $f^*=0$ and $\nabla f(x^*)=0$. Set
+\[
+ \begin{gathered}
+ Z=R\max_i\|a_i\|_\infty,\qquad
+ m_\sigma=(2+2\cosh Z)^{-1},\quad
+ M_\sigma=1/4,\quad C_\sigma=1/(6\sqrt3),\\
+ S=A^\top A/n,\quad \lambda=\lambda_{\min}(S),\quad
+ \Lambda=\lambda_{\max}(S),\quad K_A=\max_i\|a_i\|^2.
+ \end{gathered}
+\]
+Every feasible score lies in $[-Z,Z]$, where
+$m_\sigma\le\sigma'\le M_\sigma$; globally $|\sigma''|\le C_\sigma$.
+
+\begin{proposition}[Regularity and curvature constants]
+\label{reg:sigmoidbounds}
+If $\lambda>0$, the objective satisfies shifted RSI with
+$m=m_\sigma^2\lambda$. For every $t>0$ it satisfies the Hessian-norm
+bound with
+\begin{equation}\label{reg:sighess}
+ H_0=\Lambda\left(M_\sigma^2+\frac{C_\sigma^2}{2t}\right),
+ \qquad H_1=K_A t.
+\end{equation}
+It also satisfies
+\begin{equation}\label{reg:quasar}
+ \langle\nabla f(x),x-x^*\rangle\ge\gamma f(x),\qquad
+ \gamma=\min\{1,2m_\sigma/M_\sigma\}>0,
+\end{equation}
+and has the global feasible-region bound
+\begin{equation}\label{reg:sigglobal}
+ \|\nabla^2f(x)\|\le L_Q
+ :=\Lambda\bigl(M_\sigma^2+C_\sigma\tanh(Z/2)\bigr).
+\end{equation}
+The last two conclusions hold without full column rank.
+\end{proposition}
+\begin{proof}
+Write $d=x-x^*$, $z_i=a_i^\top x$ and
+$r_i=\sigma(z_i)-\sigma(a_i^\top x^*)$.
+The mean-value theorem gives $r_i=\bar s_i a_i^\top d$ with
+$\bar s_i\in[m_\sigma,M_\sigma]$. Hence
+\[
+ \langle\nabla f(x),d\rangle
+ =\frac1n\sum_i\bar s_i\sigma'(z_i)(a_i^\top d)^2
+ \ge m_\sigma^2d^\top Sd\ge m\|d\|^2.
+\]
+The same sum equals
+$n^{-1}\sum_i\sigma'(z_i)r_i^2/\bar s_i
+ \ge 2m_\sigma f(x)/M_\sigma$, proving \eqref{reg:quasar}.
+The Hessian is
+\[
+ \nabla^2f(x)=\frac1n\sum_i
+ [\sigma'(z_i)^2+r_i\sigma''(z_i)]a_i a_i^\top.
+\]
+For a unit vector $v$, Cauchy-Schwarz and
+$(a_i^\top v)^4\le K_A(a_i^\top v)^2$ bound its absolute quadratic
+form by
+\[
+ M_\sigma^2\Lambda+C_\sigma\sqrt{2K_A\Lambda f(x)}
+ \le\Lambda\left(M_\sigma^2+\frac{C_\sigma^2}{2t}\right)+K_Atf(x).
+\]
+This proves \eqref{reg:sighess}. Using
+$|r_i|\le\tanh(Z/2)$ instead gives \eqref{reg:sigglobal}.
+\end{proof}
+
+The application includes nonconvex objectives. Take $n=d=1$,
+$Q=[-2,2]$, $a_1=1$ and $x^*=-2$. For
+$q=\tanh1>1/2$ and $p=\sigma'(2)=(1-q^2)/4$,
+\[
+ f''(2)=p^2-pq^2=\frac p4(1-5q^2)<0.
+\]
+Continuity gives negative curvature at nearby interior points as well.
+
+The constants require exact realizability. Arbitrary noisy targets
+do not inherit these zero-floor RSI and alignment guarantees.
+Large $Z$ can also make $m_\sigma$ very small, so the bounds may be
+conservative. Both the affine curvature model and $L_Q$ are valid;
+neither is uniformly the better description. The parameter $t$ selects
+a bound and is not a line-search parameter.
+
+The diameter of the $\ell_1$ ball is $D=2R$. Thus full column rank
+allows all norm, gap and joint certificates, including $\mathcal J_D$;
+\eqref{reg:quasar} alone allows the linear-gap stopping bound.
+If the solver is told that the targets are realizable by a feasible
+point, it already knows $f^*=0$, so $f(x)$ itself certifies the error.
+A comparison that withholds this lower bound must state that choice.
+The constrained model does not assert an equivalence with a fixed
+$\ell_1$ penalty for arbitrary nonconvex objectives.
