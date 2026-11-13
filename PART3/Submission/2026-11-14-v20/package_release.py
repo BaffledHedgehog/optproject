@@ -36,7 +36,12 @@ def main():
         for name,digest in receipt['source_hashes'].items():
             assert sha((folder/name).read_bytes())==digest, 'Rebuild PDF after changing '+name
         pdf = folder/('paper_ru.pdf' if lang=='ru' else 'paper.pdf')
-        shutil.copyfile(pdf,ROOT/f'paper_{lang}_v20.pdf')
+        final_pdf = ROOT/f'paper_{lang}_v20.pdf'
+        if pdf.exists():
+            shutil.copyfile(pdf, final_pdf)
+        else:
+            previous = json.loads((ROOT/'SHA256SUMS.json').read_text())
+            assert sha(final_pdf.read_bytes()) == previous[final_pdf.name], 'Rebuild changed PDF'
         members = {p.name:p.read_bytes().replace(b'../figures/',b'figures/') for p in folder.glob('*.tex')}
         members.update({'figures/'+p.name:p.read_bytes() for p in (ROOT/'Paper/figures').glob('*.pdf')
                         if p.stem.endswith('_'+lang)})
@@ -49,8 +54,10 @@ def main():
         for p in (ROOT/folder).rglob('*'):
             if not p.is_file() or any(part in ('__pycache__','smoke','layout') or part.startswith('reproduced_') for part in p.parts):
                 continue
-            if folder=='Paper' and p.suffix not in ('.tex','.pdf','.png','.json') and not p.name.startswith('compile_'):
-                continue
+            if folder=='Paper':
+                # Keep sources, figures and receipts; final PDFs live at the root.
+                if p.suffix not in ('.tex','.pdf','.png','.json') or p.name in ('paper.pdf','paper_ru.pdf'):
+                    continue
             members[p.relative_to(ROOT).as_posix()] = p.read_bytes()
     for p in ROOT.iterdir():
         if p.is_file() and (p.suffix in ('.py','.txt') or p.name in (

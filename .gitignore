@@ -25,6 +25,7 @@ venv/
 *.out
 *.toc
 *.log
+*.xdv
 !/PART3/Submission/*/Formal/lean_validation.log
 
 # Intermediate recovery, superseded experiments and assistant working notes.
@@ -66,3 +67,15 @@ venv/
 # Large v18 files are restored from verified small parts.
 /PART3/Submission/2026-11-12-v18/Evidence/boundary_trace.csv
 /PART3/Submission/2026-11-12-v18/reading_packet_v18.zip
+
+# Superseded print bundles are recoverable from Git history.
+/PART3/Release/
+
+# Current v20: keep final PDFs and small source archives, regenerate full bundles.
+!/PART3/Submission/2026-11-14-v20/arxiv_source_v20.zip
+!/PART3/Submission/2026-11-14-v20/arxiv_source_ru_v20.zip
+/PART3/Submission/2026-11-14-v20/Paper/paper.pdf
+/PART3/Submission/2026-11-14-v20/Paper/ru/paper_ru.pdf
+/PART3/Submission/2026-11-14-v20/Evidence/layout/
+/PART3/Submission/2026-11-14-v20/Evidence/smoke/
+/PART3/Submission/2026-11-14-v20/Evidence/reproduced_*/

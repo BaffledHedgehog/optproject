@@ -1,8 +1,0 @@
-# Local smoke runs, layout previews and TeX intermediates.
-revision_v20/Evidence/layout/
-revision_v20/Evidence/smoke/
-*.xdv
-
-# The release manifest includes these build records.
-!revision_v20/Paper/compile_*.log
-!revision_v20/Paper/ru/compile_*.log

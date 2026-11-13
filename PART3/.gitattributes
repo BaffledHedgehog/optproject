@@ -11,8 +11,6 @@
 *.zip binary
 *.gz binary
 Data/** -text
-Release/** -text
-Work/research_notes_history/** -text
 # New evidence and publication files contain byte-level SHA-256 references.
 # Preserve their original bytes across Windows/Linux checkouts.
 Submission/** -text -whitespace
