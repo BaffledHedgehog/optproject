@@ -1,0 +1,170 @@
+This is XeTeX, Version 3.141592653-2.6-0.999995 (MiKTeX 24.1) (preloaded format=xelatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(article.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+(E:\miktex\tex/latex/base\article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(E:\miktex\tex/latex/base\size11.clo))
+(E:\miktex\tex/latex/geometry\geometry.sty
+(E:\miktex\tex/latex/graphics\keyval.sty)
+(E:\miktex\tex/generic/iftex\ifvtex.sty (E:\miktex\tex/generic/iftex\iftex.sty)
+) (E:\miktex\tex/latex/geometry\geometry.cfg))
+(E:\miktex\tex/latex/fontspec\fontspec.sty
+(E:\miktex\tex/latex/l3packages/xparse\xparse.sty
+(E:\miktex\tex/latex/l3kernel\expl3.sty
+(E:\miktex\tex/latex/l3backend\l3backend-xetex.def)))
+(E:\miktex\tex/latex/fontspec\fontspec-xetex.sty
+(E:\miktex\tex/latex/base\fontenc.sty)
+(E:\miktex\tex/latex/fontspec\fontspec.cfg)))
+(E:\miktex\tex/generic/babel\babel.sty (E:\miktex\tex/generic/babel\xebabel.def
+)
+*************************************
+* Local config file bblopts.cfg used
+*
+(E:\miktex\tex/latex/arabi\bblopts.cfg)
+(E:\miktex\tex/latex/babel-english\english.ldf)
+(E:\miktex\tex/latex/babel-russian\russianb.ldf))
+(E:\miktex\tex/generic/babel/locale/ru\babel-russian.tex)
+(E:\miktex\tex/generic/babel/locale/en\babel-english.tex)Running miktex-makemf.exe...
+
+Sorry, but miktex-makemf did not succeed.
+
+The log file hopefully contains the information to get MiKTeX going again:
+
+  C:\Users\yarik_temp\AppData\Local\MiKTeX\miktex\log\miktex-makemf.log
+Running miktex-hbf2gf.exe...
+Couldn't open `Liberation Ser.cfg'
+
+hbf2gf (CJK ver. 4.8.4)
+
+
+Sorry, but miktex-maketfm did not succeed.
+
+The log file hopefully contains the information to get MiKTeX going again:
+
+  C:\Users\yarik_temp\AppData\Local\MiKTeX\miktex\log\miktex-maketfm.log
+Running miktex-makemf.exe...
+
+Sorry, but miktex-makemf did not succeed.
+
+The log file hopefully contains the information to get MiKTeX going again:
+
+  C:\Users\yarik_temp\AppData\Local\MiKTeX\miktex\log\miktex-makemf.log
+Running miktex-hbf2gf.exe...
+Couldn't open `Liberation Sa.cfg'
+
+hbf2gf (CJK ver. 4.8.4)
+
+
+Sorry, but miktex-maketfm did not succeed.
+
+The log file hopefully contains the information to get MiKTeX going again:
+
+  C:\Users\yarik_temp\AppData\Local\MiKTeX\miktex\log\miktex-maketfm.log
+Running miktex-makemf.exe...
+
+Sorry, but miktex-makemf did not succeed.
+
+The log file hopefully contains the information to get MiKTeX going again:
+
+  C:\Users\yarik_temp\AppData\Local\MiKTeX\miktex\log\miktex-makemf.log
+Running miktex-hbf2gf.exe...
+Couldn't open `DejaVu Sans Mo.cfg'
+
+hbf2gf (CJK ver. 4.8.4)
+
+
+Sorry, but miktex-maketfm did not succeed.
+
+The log file hopefully contains the information to get MiKTeX going again:
+
+  C:\Users\yarik_temp\AppData\Local\MiKTeX\miktex\log\miktex-maketfm.log
+
+(E:\miktex\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(E:\miktex\tex/latex/amsmath\amstext.sty
+(E:\miktex\tex/latex/amsmath\amsgen.sty))
+(E:\miktex\tex/latex/amsmath\amsbsy.sty)
+(E:\miktex\tex/latex/amsmath\amsopn.sty))
+(E:\miktex\tex/latex/amsfonts\amssymb.sty
+(E:\miktex\tex/latex/amsfonts\amsfonts.sty))
+(E:\miktex\tex/latex/amscls\amsthm.sty)
+(E:\miktex\tex/latex/graphics\graphicx.sty
+(E:\miktex\tex/latex/graphics\graphics.sty
+(E:\miktex\tex/latex/graphics\trig.sty)
+(E:\miktex\tex/latex/graphics-cfg\graphics.cfg)
+(E:\miktex\tex/latex/graphics-def\xetex.def)))
+(E:\miktex\tex/latex/booktabs\booktabs.sty)
+(E:\miktex\tex/latex/float\float.sty)
+(E:\miktex\tex/latex/hyperref\hyperref.sty
+(E:\miktex\tex/generic/infwarerr\infwarerr.sty)
+(E:\miktex\tex/latex/kvsetkeys\kvsetkeys.sty)
+(E:\miktex\tex/generic/kvdefinekeys\kvdefinekeys.sty)
+(E:\miktex\tex/generic/pdfescape\pdfescape.sty
+(E:\miktex\tex/generic/ltxcmds\ltxcmds.sty)
+(E:\miktex\tex/generic/pdftexcmds\pdftexcmds.sty))
+(E:\miktex\tex/latex/hycolor\hycolor.sty)
+(E:\miktex\tex/latex/letltxmacro\letltxmacro.sty)
+(E:\miktex\tex/latex/auxhook\auxhook.sty)
+(E:\miktex\tex/latex/hyperref\nameref.sty
+(E:\miktex\tex/latex/refcount\refcount.sty)
+(E:\miktex\tex/generic/gettitlestring\gettitlestring.sty
+(E:\miktex\tex/latex/kvoptions\kvoptions.sty)))
+(E:\miktex\tex/latex/etoolbox\etoolbox.sty)
+(E:\miktex\tex/latex/hyperref\pd1enc.def)
+(E:\miktex\tex/generic/intcalc\intcalc.sty)
+(E:\miktex\tex/latex/hyperref\puenc.def) (E:\miktex\tex/latex/url\url.sty)
+(E:\miktex\tex/generic/bitset\bitset.sty
+(E:\miktex\tex/generic/bigintcalc\bigintcalc.sty))
+(E:\miktex\tex/latex/base\atbegshi-ltx.sty))
+(E:\miktex\tex/latex/hyperref\hxetex.def
+(E:\miktex\tex/generic/stringenc\stringenc.sty)
+(E:\miktex\tex/latex/rerunfilecheck\rerunfilecheck.sty
+(E:\miktex\tex/generic/uniquecounter\uniquecounter.sty))) (paper_ru.aux)
+(E:\miktex\tex/latex/base\ts1cmr.fd)
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+(paper_ru.out) (paper_ru.out) (E:\miktex\tex/latex/amsfonts\umsa.fd)
+(E:\miktex\tex/latex/amsfonts\umsb.fd) (model.tex
+Underfull \hbox (badness 2368) in paragraph at lines 48--51
+\TU/TimesNewRoman(0)/m/n/10.95 Зазор ограничивает ошибку по функции сверху. Обр
+атная оценка из одной лишь квазар-
+[1]
+Underfull \hbox (badness 1082) in paragraph at lines 88--89
+[]\TU/TimesNewRoman(0)/m/n/10 Явный короткий шаг через норму
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--89
+[]\TU/TimesNewRoman(0)/m/n/10 Квазар-выпуклый
+) (step.tex [2] [3]) (rates.tex
+Underfull \hbox (badness 1354) in paragraph at lines 34--42
+\TU/TimesNewRoman(0)/m/n/10.95 Значение функции убывает, а $\OML/cmm/m/it/10.95
+ `[]$ \TU/TimesNewRoman(0)/m/n/10.95 возрастает, поэтому $\OML/cmm/m/it/10.95 f
+\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]\OT1/cmr/m/n/10.95 ) \OMS/cmsy/m/n/1
+0.95 ^^@ \OML/cmm/m/it/10.95 `[]$ \TU/TimesNewRoman(0)/m/n/10.95 убывает. Полож
+им $\OML/cmm/m/it/10.95 b[] \OT1/cmr/m/n/10.95 =
+[4]
+Underfull \hbox (badness 1394) in paragraph at lines 84--88
+[]\TU/TimesNewRoman(0)/m/n/10.95 Граница шага даёт $\OML/cmm/m/it/10.95 ^^K[] \
+OMS/cmsy/m/n/10.95 ^^U [][]$\TU/TimesNewRoman(0)/m/n/10.95 , поэтому уменьшение
+ функции не меньше
+[5]) (armijo.tex) (structure.tex [6] [7]) (examples.tex [8]) (experiments.tex
+[9] [10] (multidim_table.tex) (radius_table.tex)) (discussion.tex
+Underfull \hbox (badness 5667) in paragraph at lines 142--1
+ []\TU/TimesNewRoman(0)/b/n/10.95 Воспроизведение и проверки.[] \TU/Consolas(0)
+/m/n/10.95 Code/benchmark_gap.py \TU/TimesNewRoman(0)/m/n/10.95 воспроизводит и
+сходные проверки,
+[11]) (references.tex
+Underfull \hbox (badness 6236) in paragraph at lines 12--16
+\TU/TimesNewRoman(0)/m/n/10.95 smooth functions. \TU/TimesNewRoman(0)/m/it/10.9
+5 Journal of Nonlinear and Variational Analysis \TU/TimesNewRoman(0)/m/n/10.95 
+10(3):597–616, 2026.
+[12]
+Underfull \hbox (badness 1484) in paragraph at lines 29--33
+[]\TU/TimesNewRoman(0)/m/n/10.95 F. Pedregosa, G. Négiar, A. Askari, and M. Jag
+gi. Linearly Convergent Frank-Wolfe with
+) [13] (paper_ru.aux) )
+(see the transcript file for additional information)
+Output written on paper_ru.pdf (13 pages).
+Transcript written on paper_ru.log.

@@ -1,0 +1,3890 @@
+[
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "zero",
+    "method": "gap_log",
+    "points": 6,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "zero",
+    "method": "global_L",
+    "points": 2,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "zero",
+    "method": "open_loop",
+    "points": 2,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "zero",
+    "method": "armijo",
+    "points": 2,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "zero",
+    "method": "backtracking",
+    "points": 2,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "zero",
+    "method": "norm_smooth",
+    "points": 12,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "zero",
+    "method": "line_bisection",
+    "points": 2,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "zero",
+    "method": "auto_conditioned",
+    "points": 2,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "plus_axis",
+    "method": "gap_log",
+    "points": 10,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "plus_axis",
+    "method": "global_L",
+    "points": 3,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "plus_axis",
+    "method": "open_loop",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "plus_axis",
+    "method": "armijo",
+    "points": 6,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "plus_axis",
+    "method": "backtracking",
+    "points": 3,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "plus_axis",
+    "method": "norm_smooth",
+    "points": 21,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "plus_axis",
+    "method": "line_bisection",
+    "points": 6,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "plus_axis",
+    "method": "auto_conditioned",
+    "points": 6,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "minus_axis",
+    "method": "gap_log",
+    "points": 9,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "minus_axis",
+    "method": "global_L",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "minus_axis",
+    "method": "open_loop",
+    "points": 10,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "minus_axis",
+    "method": "armijo",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "minus_axis",
+    "method": "backtracking",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "minus_axis",
+    "method": "norm_smooth",
+    "points": 20,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "minus_axis",
+    "method": "line_bisection",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R0.5",
+    "start": "minus_axis",
+    "method": "auto_conditioned",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "zero",
+    "method": "gap_log",
+    "points": 65,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "zero",
+    "method": "global_L",
+    "points": 48,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "zero",
+    "method": "open_loop",
+    "points": 67,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "zero",
+    "method": "armijo",
+    "points": 12,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "zero",
+    "method": "backtracking",
+    "points": 13,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "zero",
+    "method": "norm_smooth",
+    "points": 177,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "zero",
+    "method": "line_bisection",
+    "points": 11,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "zero",
+    "method": "auto_conditioned",
+    "points": 13,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "plus_axis",
+    "method": "gap_log",
+    "points": 75,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "plus_axis",
+    "method": "global_L",
+    "points": 54,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "plus_axis",
+    "method": "open_loop",
+    "points": 566,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "plus_axis",
+    "method": "armijo",
+    "points": 10,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "plus_axis",
+    "method": "backtracking",
+    "points": 13,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "plus_axis",
+    "method": "norm_smooth",
+    "points": 200,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "plus_axis",
+    "method": "line_bisection",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "plus_axis",
+    "method": "auto_conditioned",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "minus_axis",
+    "method": "gap_log",
+    "points": 82,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "minus_axis",
+    "method": "global_L",
+    "points": 53,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "minus_axis",
+    "method": "open_loop",
+    "points": 287,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "minus_axis",
+    "method": "armijo",
+    "points": 15,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "minus_axis",
+    "method": "backtracking",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "minus_axis",
+    "method": "norm_smooth",
+    "points": 207,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "minus_axis",
+    "method": "line_bisection",
+    "points": 13,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R2",
+    "start": "minus_axis",
+    "method": "auto_conditioned",
+    "points": 16,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "zero",
+    "method": "gap_log",
+    "points": 85,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "zero",
+    "method": "global_L",
+    "points": 450,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "zero",
+    "method": "open_loop",
+    "points": 20001,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "zero",
+    "method": "armijo",
+    "points": 7,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "zero",
+    "method": "backtracking",
+    "points": 11,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "zero",
+    "method": "norm_smooth",
+    "points": 223,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "zero",
+    "method": "line_bisection",
+    "points": 7,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "zero",
+    "method": "auto_conditioned",
+    "points": 13,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "plus_axis",
+    "method": "gap_log",
+    "points": 124,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "plus_axis",
+    "method": "global_L",
+    "points": 558,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "plus_axis",
+    "method": "open_loop",
+    "points": 20001,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "plus_axis",
+    "method": "armijo",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "plus_axis",
+    "method": "backtracking",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "plus_axis",
+    "method": "norm_smooth",
+    "points": 294,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "plus_axis",
+    "method": "line_bisection",
+    "points": 9,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "plus_axis",
+    "method": "auto_conditioned",
+    "points": 17,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "minus_axis",
+    "method": "gap_log",
+    "points": 133,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "minus_axis",
+    "method": "global_L",
+    "points": 523,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "minus_axis",
+    "method": "open_loop",
+    "points": 20001,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "minus_axis",
+    "method": "armijo",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "minus_axis",
+    "method": "backtracking",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "minus_axis",
+    "method": "norm_smooth",
+    "points": 298,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "minus_axis",
+    "method": "line_bisection",
+    "points": 9,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s11_R4",
+    "start": "minus_axis",
+    "method": "auto_conditioned",
+    "points": 19,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "zero",
+    "method": "gap_log",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "zero",
+    "method": "global_L",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "zero",
+    "method": "open_loop",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "zero",
+    "method": "armijo",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "zero",
+    "method": "backtracking",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "zero",
+    "method": "norm_smooth",
+    "points": 11,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "zero",
+    "method": "line_bisection",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "zero",
+    "method": "auto_conditioned",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "plus_axis",
+    "method": "gap_log",
+    "points": 8,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "plus_axis",
+    "method": "global_L",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "plus_axis",
+    "method": "open_loop",
+    "points": 6,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "plus_axis",
+    "method": "armijo",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "plus_axis",
+    "method": "backtracking",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "plus_axis",
+    "method": "norm_smooth",
+    "points": 19,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "plus_axis",
+    "method": "line_bisection",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "plus_axis",
+    "method": "auto_conditioned",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "minus_axis",
+    "method": "gap_log",
+    "points": 8,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "minus_axis",
+    "method": "global_L",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "minus_axis",
+    "method": "open_loop",
+    "points": 12,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "minus_axis",
+    "method": "armijo",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "minus_axis",
+    "method": "backtracking",
+    "points": 3,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "minus_axis",
+    "method": "norm_smooth",
+    "points": 19,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "minus_axis",
+    "method": "line_bisection",
+    "points": 6,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R0.5",
+    "start": "minus_axis",
+    "method": "auto_conditioned",
+    "points": 6,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "zero",
+    "method": "gap_log",
+    "points": 71,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "zero",
+    "method": "global_L",
+    "points": 70,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "zero",
+    "method": "open_loop",
+    "points": 2548,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "zero",
+    "method": "armijo",
+    "points": 16,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "zero",
+    "method": "backtracking",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "zero",
+    "method": "norm_smooth",
+    "points": 193,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "zero",
+    "method": "line_bisection",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "zero",
+    "method": "auto_conditioned",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "plus_axis",
+    "method": "gap_log",
+    "points": 87,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "plus_axis",
+    "method": "global_L",
+    "points": 76,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "plus_axis",
+    "method": "open_loop",
+    "points": 2546,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "plus_axis",
+    "method": "armijo",
+    "points": 15,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "plus_axis",
+    "method": "backtracking",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "plus_axis",
+    "method": "norm_smooth",
+    "points": 221,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "plus_axis",
+    "method": "line_bisection",
+    "points": 16,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "plus_axis",
+    "method": "auto_conditioned",
+    "points": 15,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "minus_axis",
+    "method": "gap_log",
+    "points": 85,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "minus_axis",
+    "method": "global_L",
+    "points": 81,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "minus_axis",
+    "method": "open_loop",
+    "points": 2549,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "minus_axis",
+    "method": "armijo",
+    "points": 15,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "minus_axis",
+    "method": "backtracking",
+    "points": 13,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "minus_axis",
+    "method": "norm_smooth",
+    "points": 225,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "minus_axis",
+    "method": "line_bisection",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R2",
+    "start": "minus_axis",
+    "method": "auto_conditioned",
+    "points": 16,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "zero",
+    "method": "gap_log",
+    "points": 100,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "zero",
+    "method": "global_L",
+    "points": 707,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "zero",
+    "method": "open_loop",
+    "points": 20001,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "zero",
+    "method": "armijo",
+    "points": 9,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "zero",
+    "method": "backtracking",
+    "points": 10,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "zero",
+    "method": "norm_smooth",
+    "points": 263,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "zero",
+    "method": "line_bisection",
+    "points": 9,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "zero",
+    "method": "auto_conditioned",
+    "points": 24,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "plus_axis",
+    "method": "gap_log",
+    "points": 144,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "plus_axis",
+    "method": "global_L",
+    "points": 764,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "plus_axis",
+    "method": "open_loop",
+    "points": 20001,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "plus_axis",
+    "method": "armijo",
+    "points": 11,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "plus_axis",
+    "method": "backtracking",
+    "points": 13,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "plus_axis",
+    "method": "norm_smooth",
+    "points": 325,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "plus_axis",
+    "method": "line_bisection",
+    "points": 12,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "plus_axis",
+    "method": "auto_conditioned",
+    "points": 23,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "minus_axis",
+    "method": "gap_log",
+    "points": 135,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "minus_axis",
+    "method": "global_L",
+    "points": 807,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "minus_axis",
+    "method": "open_loop",
+    "points": 20001,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "minus_axis",
+    "method": "armijo",
+    "points": 15,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "minus_axis",
+    "method": "backtracking",
+    "points": 12,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "minus_axis",
+    "method": "norm_smooth",
+    "points": 320,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "minus_axis",
+    "method": "line_bisection",
+    "points": 13,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s29_R4",
+    "start": "minus_axis",
+    "method": "auto_conditioned",
+    "points": 19,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "zero",
+    "method": "gap_log",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "zero",
+    "method": "global_L",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "zero",
+    "method": "open_loop",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "zero",
+    "method": "armijo",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "zero",
+    "method": "backtracking",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "zero",
+    "method": "norm_smooth",
+    "points": 12,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "zero",
+    "method": "line_bisection",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "zero",
+    "method": "auto_conditioned",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "plus_axis",
+    "method": "gap_log",
+    "points": 8,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "plus_axis",
+    "method": "global_L",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "plus_axis",
+    "method": "open_loop",
+    "points": 13,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "plus_axis",
+    "method": "armijo",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "plus_axis",
+    "method": "backtracking",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "plus_axis",
+    "method": "norm_smooth",
+    "points": 20,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "plus_axis",
+    "method": "line_bisection",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "plus_axis",
+    "method": "auto_conditioned",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "minus_axis",
+    "method": "gap_log",
+    "points": 9,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "minus_axis",
+    "method": "global_L",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "minus_axis",
+    "method": "open_loop",
+    "points": 9,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "minus_axis",
+    "method": "armijo",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "minus_axis",
+    "method": "backtracking",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "minus_axis",
+    "method": "norm_smooth",
+    "points": 20,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "minus_axis",
+    "method": "line_bisection",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R0.5",
+    "start": "minus_axis",
+    "method": "auto_conditioned",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "zero",
+    "method": "gap_log",
+    "points": 69,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "zero",
+    "method": "global_L",
+    "points": 62,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "zero",
+    "method": "open_loop",
+    "points": 271,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "zero",
+    "method": "armijo",
+    "points": 15,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "zero",
+    "method": "backtracking",
+    "points": 15,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "zero",
+    "method": "norm_smooth",
+    "points": 187,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "zero",
+    "method": "line_bisection",
+    "points": 12,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "zero",
+    "method": "auto_conditioned",
+    "points": 17,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "plus_axis",
+    "method": "gap_log",
+    "points": 83,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "plus_axis",
+    "method": "global_L",
+    "points": 71,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "plus_axis",
+    "method": "open_loop",
+    "points": 130,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "plus_axis",
+    "method": "armijo",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "plus_axis",
+    "method": "backtracking",
+    "points": 13,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "plus_axis",
+    "method": "norm_smooth",
+    "points": 219,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "plus_axis",
+    "method": "line_bisection",
+    "points": 12,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "plus_axis",
+    "method": "auto_conditioned",
+    "points": 15,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "minus_axis",
+    "method": "gap_log",
+    "points": 88,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "minus_axis",
+    "method": "global_L",
+    "points": 71,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "minus_axis",
+    "method": "open_loop",
+    "points": 268,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "minus_axis",
+    "method": "armijo",
+    "points": 16,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "minus_axis",
+    "method": "backtracking",
+    "points": 15,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "minus_axis",
+    "method": "norm_smooth",
+    "points": 226,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "minus_axis",
+    "method": "line_bisection",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R2",
+    "start": "minus_axis",
+    "method": "auto_conditioned",
+    "points": 19,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "zero",
+    "method": "gap_log",
+    "points": 101,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "zero",
+    "method": "global_L",
+    "points": 656,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "zero",
+    "method": "open_loop",
+    "points": 20001,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "zero",
+    "method": "armijo",
+    "points": 10,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "zero",
+    "method": "backtracking",
+    "points": 11,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "zero",
+    "method": "norm_smooth",
+    "points": 267,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "zero",
+    "method": "line_bisection",
+    "points": 9,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "zero",
+    "method": "auto_conditioned",
+    "points": 21,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "plus_axis",
+    "method": "gap_log",
+    "points": 157,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "plus_axis",
+    "method": "global_L",
+    "points": 888,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "plus_axis",
+    "method": "open_loop",
+    "points": 20001,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "plus_axis",
+    "method": "armijo",
+    "points": 13,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "plus_axis",
+    "method": "backtracking",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "plus_axis",
+    "method": "norm_smooth",
+    "points": 381,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "plus_axis",
+    "method": "line_bisection",
+    "points": 10,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "plus_axis",
+    "method": "auto_conditioned",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "minus_axis",
+    "method": "gap_log",
+    "points": 162,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "minus_axis",
+    "method": "global_L",
+    "points": 844,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "minus_axis",
+    "method": "open_loop",
+    "points": 20001,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "minus_axis",
+    "method": "armijo",
+    "points": 11,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "minus_axis",
+    "method": "backtracking",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "minus_axis",
+    "method": "norm_smooth",
+    "points": 378,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "minus_axis",
+    "method": "line_bisection",
+    "points": 10,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n4_s47_R4",
+    "start": "minus_axis",
+    "method": "auto_conditioned",
+    "points": 18,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "zero",
+    "method": "gap_log",
+    "points": 10,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "zero",
+    "method": "global_L",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "zero",
+    "method": "open_loop",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "zero",
+    "method": "armijo",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "zero",
+    "method": "backtracking",
+    "points": 3,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "zero",
+    "method": "norm_smooth",
+    "points": 25,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "zero",
+    "method": "line_bisection",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "zero",
+    "method": "auto_conditioned",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "plus_axis",
+    "method": "gap_log",
+    "points": 17,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "plus_axis",
+    "method": "global_L",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "plus_axis",
+    "method": "open_loop",
+    "points": 9,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "plus_axis",
+    "method": "armijo",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "plus_axis",
+    "method": "backtracking",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "plus_axis",
+    "method": "norm_smooth",
+    "points": 43,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "plus_axis",
+    "method": "line_bisection",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "plus_axis",
+    "method": "auto_conditioned",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "minus_axis",
+    "method": "gap_log",
+    "points": 17,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "minus_axis",
+    "method": "global_L",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "minus_axis",
+    "method": "open_loop",
+    "points": 10,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "minus_axis",
+    "method": "armijo",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "minus_axis",
+    "method": "backtracking",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "minus_axis",
+    "method": "norm_smooth",
+    "points": 43,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "minus_axis",
+    "method": "line_bisection",
+    "points": 6,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R0.5",
+    "start": "minus_axis",
+    "method": "auto_conditioned",
+    "points": 6,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "zero",
+    "method": "gap_log",
+    "points": 190,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "zero",
+    "method": "global_L",
+    "points": 95,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "zero",
+    "method": "open_loop",
+    "points": 1456,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "zero",
+    "method": "armijo",
+    "points": 21,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "zero",
+    "method": "backtracking",
+    "points": 27,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "zero",
+    "method": "norm_smooth",
+    "points": 512,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "zero",
+    "method": "line_bisection",
+    "points": 19,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "zero",
+    "method": "auto_conditioned",
+    "points": 24,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "plus_axis",
+    "method": "gap_log",
+    "points": 213,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "plus_axis",
+    "method": "global_L",
+    "points": 104,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "plus_axis",
+    "method": "open_loop",
+    "points": 1457,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "plus_axis",
+    "method": "armijo",
+    "points": 25,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "plus_axis",
+    "method": "backtracking",
+    "points": 24,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "plus_axis",
+    "method": "norm_smooth",
+    "points": 567,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "plus_axis",
+    "method": "line_bisection",
+    "points": 18,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "plus_axis",
+    "method": "auto_conditioned",
+    "points": 22,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "minus_axis",
+    "method": "gap_log",
+    "points": 216,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "minus_axis",
+    "method": "global_L",
+    "points": 106,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "minus_axis",
+    "method": "open_loop",
+    "points": 1456,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "minus_axis",
+    "method": "armijo",
+    "points": 22,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "minus_axis",
+    "method": "backtracking",
+    "points": 20,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "minus_axis",
+    "method": "norm_smooth",
+    "points": 576,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "minus_axis",
+    "method": "line_bisection",
+    "points": 22,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R2",
+    "start": "minus_axis",
+    "method": "auto_conditioned",
+    "points": 22,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "zero",
+    "method": "gap_log",
+    "points": 273,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "zero",
+    "method": "global_L",
+    "points": 1009,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "zero",
+    "method": "open_loop",
+    "points": 6600,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "zero",
+    "method": "armijo",
+    "points": 15,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "zero",
+    "method": "backtracking",
+    "points": 18,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "zero",
+    "method": "norm_smooth",
+    "points": 732,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "zero",
+    "method": "line_bisection",
+    "points": 11,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "zero",
+    "method": "auto_conditioned",
+    "points": 20,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "plus_axis",
+    "method": "gap_log",
+    "points": 326,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "plus_axis",
+    "method": "global_L",
+    "points": 1100,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "plus_axis",
+    "method": "open_loop",
+    "points": 6599,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "plus_axis",
+    "method": "armijo",
+    "points": 16,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "plus_axis",
+    "method": "backtracking",
+    "points": 17,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "plus_axis",
+    "method": "norm_smooth",
+    "points": 828,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "plus_axis",
+    "method": "line_bisection",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "plus_axis",
+    "method": "auto_conditioned",
+    "points": 18,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "minus_axis",
+    "method": "gap_log",
+    "points": 333,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "minus_axis",
+    "method": "global_L",
+    "points": 1125,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "minus_axis",
+    "method": "open_loop",
+    "points": 6604,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "minus_axis",
+    "method": "armijo",
+    "points": 15,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "minus_axis",
+    "method": "backtracking",
+    "points": 15,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "minus_axis",
+    "method": "norm_smooth",
+    "points": 846,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "minus_axis",
+    "method": "line_bisection",
+    "points": 12,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s11_R4",
+    "start": "minus_axis",
+    "method": "auto_conditioned",
+    "points": 19,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "zero",
+    "method": "gap_log",
+    "points": 11,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "zero",
+    "method": "global_L",
+    "points": 3,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "zero",
+    "method": "open_loop",
+    "points": 3,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "zero",
+    "method": "armijo",
+    "points": 3,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "zero",
+    "method": "backtracking",
+    "points": 3,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "zero",
+    "method": "norm_smooth",
+    "points": 27,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "zero",
+    "method": "line_bisection",
+    "points": 3,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "zero",
+    "method": "auto_conditioned",
+    "points": 3,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "plus_axis",
+    "method": "gap_log",
+    "points": 18,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "plus_axis",
+    "method": "global_L",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "plus_axis",
+    "method": "open_loop",
+    "points": 10,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "plus_axis",
+    "method": "armijo",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "plus_axis",
+    "method": "backtracking",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "plus_axis",
+    "method": "norm_smooth",
+    "points": 46,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "plus_axis",
+    "method": "line_bisection",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "plus_axis",
+    "method": "auto_conditioned",
+    "points": 6,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "minus_axis",
+    "method": "gap_log",
+    "points": 18,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "minus_axis",
+    "method": "global_L",
+    "points": 3,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "minus_axis",
+    "method": "open_loop",
+    "points": 10,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "minus_axis",
+    "method": "armijo",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "minus_axis",
+    "method": "backtracking",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "minus_axis",
+    "method": "norm_smooth",
+    "points": 46,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "minus_axis",
+    "method": "line_bisection",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R0.5",
+    "start": "minus_axis",
+    "method": "auto_conditioned",
+    "points": 6,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "zero",
+    "method": "gap_log",
+    "points": 180,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "zero",
+    "method": "global_L",
+    "points": 64,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "zero",
+    "method": "open_loop",
+    "points": 761,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "zero",
+    "method": "armijo",
+    "points": 25,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "zero",
+    "method": "backtracking",
+    "points": 24,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "zero",
+    "method": "norm_smooth",
+    "points": 485,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "zero",
+    "method": "line_bisection",
+    "points": 21,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "zero",
+    "method": "auto_conditioned",
+    "points": 28,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "plus_axis",
+    "method": "gap_log",
+    "points": 203,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "plus_axis",
+    "method": "global_L",
+    "points": 71,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "plus_axis",
+    "method": "open_loop",
+    "points": 761,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "plus_axis",
+    "method": "armijo",
+    "points": 23,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "plus_axis",
+    "method": "backtracking",
+    "points": 31,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "plus_axis",
+    "method": "norm_smooth",
+    "points": 540,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "plus_axis",
+    "method": "line_bisection",
+    "points": 30,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "plus_axis",
+    "method": "auto_conditioned",
+    "points": 25,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "minus_axis",
+    "method": "gap_log",
+    "points": 205,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "minus_axis",
+    "method": "global_L",
+    "points": 71,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "minus_axis",
+    "method": "open_loop",
+    "points": 762,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "minus_axis",
+    "method": "armijo",
+    "points": 26,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "minus_axis",
+    "method": "backtracking",
+    "points": 36,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "minus_axis",
+    "method": "norm_smooth",
+    "points": 545,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "minus_axis",
+    "method": "line_bisection",
+    "points": 27,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R2",
+    "start": "minus_axis",
+    "method": "auto_conditioned",
+    "points": 29,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "zero",
+    "method": "gap_log",
+    "points": 291,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "zero",
+    "method": "global_L",
+    "points": 772,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "zero",
+    "method": "open_loop",
+    "points": 16414,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "zero",
+    "method": "armijo",
+    "points": 12,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "zero",
+    "method": "backtracking",
+    "points": 15,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "zero",
+    "method": "norm_smooth",
+    "points": 779,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "zero",
+    "method": "line_bisection",
+    "points": 11,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "zero",
+    "method": "auto_conditioned",
+    "points": 17,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "plus_axis",
+    "method": "gap_log",
+    "points": 343,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "plus_axis",
+    "method": "global_L",
+    "points": 833,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "plus_axis",
+    "method": "open_loop",
+    "points": 16413,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "plus_axis",
+    "method": "armijo",
+    "points": 16,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "plus_axis",
+    "method": "backtracking",
+    "points": 17,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "plus_axis",
+    "method": "norm_smooth",
+    "points": 873,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "plus_axis",
+    "method": "line_bisection",
+    "points": 12,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "plus_axis",
+    "method": "auto_conditioned",
+    "points": 17,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "minus_axis",
+    "method": "gap_log",
+    "points": 350,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "minus_axis",
+    "method": "global_L",
+    "points": 856,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "minus_axis",
+    "method": "open_loop",
+    "points": 16414,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "minus_axis",
+    "method": "armijo",
+    "points": 15,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "minus_axis",
+    "method": "backtracking",
+    "points": 16,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "minus_axis",
+    "method": "norm_smooth",
+    "points": 894,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "minus_axis",
+    "method": "line_bisection",
+    "points": 12,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s29_R4",
+    "start": "minus_axis",
+    "method": "auto_conditioned",
+    "points": 17,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "zero",
+    "method": "gap_log",
+    "points": 11,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "zero",
+    "method": "global_L",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "zero",
+    "method": "open_loop",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "zero",
+    "method": "armijo",
+    "points": 3,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "zero",
+    "method": "backtracking",
+    "points": 3,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "zero",
+    "method": "norm_smooth",
+    "points": 26,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "zero",
+    "method": "line_bisection",
+    "points": 3,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "zero",
+    "method": "auto_conditioned",
+    "points": 3,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "plus_axis",
+    "method": "gap_log",
+    "points": 17,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "plus_axis",
+    "method": "global_L",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "plus_axis",
+    "method": "open_loop",
+    "points": 10,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "plus_axis",
+    "method": "armijo",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "plus_axis",
+    "method": "backtracking",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "plus_axis",
+    "method": "norm_smooth",
+    "points": 44,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "plus_axis",
+    "method": "line_bisection",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "plus_axis",
+    "method": "auto_conditioned",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "minus_axis",
+    "method": "gap_log",
+    "points": 18,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "minus_axis",
+    "method": "global_L",
+    "points": 3,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "minus_axis",
+    "method": "open_loop",
+    "points": 9,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "minus_axis",
+    "method": "armijo",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "minus_axis",
+    "method": "backtracking",
+    "points": 4,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "minus_axis",
+    "method": "norm_smooth",
+    "points": 45,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "minus_axis",
+    "method": "line_bisection",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R0.5",
+    "start": "minus_axis",
+    "method": "auto_conditioned",
+    "points": 5,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "zero",
+    "method": "gap_log",
+    "points": 106,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "zero",
+    "method": "global_L",
+    "points": 38,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "zero",
+    "method": "open_loop",
+    "points": 61,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "zero",
+    "method": "armijo",
+    "points": 18,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "zero",
+    "method": "backtracking",
+    "points": 27,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "zero",
+    "method": "norm_smooth",
+    "points": 284,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "zero",
+    "method": "line_bisection",
+    "points": 10,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "zero",
+    "method": "auto_conditioned",
+    "points": 22,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "plus_axis",
+    "method": "gap_log",
+    "points": 131,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "plus_axis",
+    "method": "global_L",
+    "points": 44,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "plus_axis",
+    "method": "open_loop",
+    "points": 57,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "plus_axis",
+    "method": "armijo",
+    "points": 21,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "plus_axis",
+    "method": "backtracking",
+    "points": 27,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "plus_axis",
+    "method": "norm_smooth",
+    "points": 340,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "plus_axis",
+    "method": "line_bisection",
+    "points": 12,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "plus_axis",
+    "method": "auto_conditioned",
+    "points": 23,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "minus_axis",
+    "method": "gap_log",
+    "points": 131,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "minus_axis",
+    "method": "global_L",
+    "points": 45,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "minus_axis",
+    "method": "open_loop",
+    "points": 57,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "minus_axis",
+    "method": "armijo",
+    "points": 26,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "minus_axis",
+    "method": "backtracking",
+    "points": 39,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "minus_axis",
+    "method": "norm_smooth",
+    "points": 343,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "minus_axis",
+    "method": "line_bisection",
+    "points": 22,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R2",
+    "start": "minus_axis",
+    "method": "auto_conditioned",
+    "points": 30,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "zero",
+    "method": "gap_log",
+    "points": 305,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "zero",
+    "method": "global_L",
+    "points": 806,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "zero",
+    "method": "open_loop",
+    "points": 11084,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "zero",
+    "method": "armijo",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "zero",
+    "method": "backtracking",
+    "points": 18,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "zero",
+    "method": "norm_smooth",
+    "points": 817,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "zero",
+    "method": "line_bisection",
+    "points": 16,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "zero",
+    "method": "auto_conditioned",
+    "points": 20,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "plus_axis",
+    "method": "gap_log",
+    "points": 361,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "plus_axis",
+    "method": "global_L",
+    "points": 873,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "plus_axis",
+    "method": "open_loop",
+    "points": 11084,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "plus_axis",
+    "method": "armijo",
+    "points": 15,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "plus_axis",
+    "method": "backtracking",
+    "points": 19,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "plus_axis",
+    "method": "norm_smooth",
+    "points": 918,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "plus_axis",
+    "method": "line_bisection",
+    "points": 13,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "plus_axis",
+    "method": "auto_conditioned",
+    "points": 18,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "minus_axis",
+    "method": "gap_log",
+    "points": 356,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "minus_axis",
+    "method": "global_L",
+    "points": 873,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "minus_axis",
+    "method": "open_loop",
+    "points": 11083,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "minus_axis",
+    "method": "armijo",
+    "points": 17,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "minus_axis",
+    "method": "backtracking",
+    "points": 19,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "minus_axis",
+    "method": "norm_smooth",
+    "points": 911,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "minus_axis",
+    "method": "line_bisection",
+    "points": 14,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  },
+  {
+    "problem": "poisson_n12_s47_R4",
+    "start": "minus_axis",
+    "method": "auto_conditioned",
+    "points": 19,
+    "max_descent_violation": 0.0,
+    "max_sampled_model_violation": 0.0,
+    "passed": true
+  }
+]

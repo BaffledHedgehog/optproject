@@ -1,0 +1,47 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm,graphicx,booktabs,float}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\hypersetup{pdftitle={Frank-Wolfe under gap-dependent smoothness},pdfauthor={Yaroslav P. Lyakhov and Stepan A. Suvorov}}
+\title{Frank-Wolfe under gap-dependent smoothness}
+\author{Yaroslav P. Lyakhov \and Stepan A. Suvorov}
+\date{14 November 2026 (revision v20)}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study Frank-Wolfe under the constrained curvature condition
+$\|\nabla^2f(x)\|\le L_0+L_1G(x)$, where $G$ is the full
+Frank-Wolfe gap. We prove a transport bound along the selected direction,
+an exponential upper model, and a logarithmic step with guaranteed descent.
+The step uses neither the minimum value nor the quasar-convexity parameter.
+For quasar-convex objectives, an accumulated computable lower bound gives
+finite stopping and separates the $L_0/\varepsilon$ and
+$L_1\log(1/\varepsilon)$ contributions.
+We obtain linear convergence when $L_0=0$, and on strongly convex
+domains with a nonzero gradient at the minimizer.
+We establish the same order of update complexity for ordinary Armijo FW,
+with additional function trials, and give data-derived constants for
+multidimensional Poisson regression. We relate the model to known
+gradient-norm smoothness and growth conditions. An exponential example
+separates the explicit step from a fixed global-$L$ short step, although
+ordinary endpoint steps solve that example immediately.
+Comparisons on synthetic regression problems report separate oracle costs,
+including cases where adaptive competitors are faster.
+\end{abstract}
+\input{model}
+\input{step}
+\input{rates}
+\input{armijo}
+\input{structure}
+\input{examples}
+\input{experiments}
+\input{discussion}
+\input{references}
+\end{document}

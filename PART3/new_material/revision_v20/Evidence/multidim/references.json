@@ -1,0 +1,182 @@
+{
+  "poisson_n4_s11_R0.5": {
+    "upper": 0.8196758787387305,
+    "lower": 0.8196758787387305,
+    "gap": 0.0,
+    "norm": 0.5,
+    "gradient_norm": 0.295318070168732,
+    "slsqp_success": true,
+    "slsqp_message": "Optimization terminated successfully",
+    "active": true
+  },
+  "poisson_n4_s11_R2": {
+    "upper": 0.666343311997517,
+    "lower": 0.6663432545070839,
+    "gap": 5.749043311752256e-08,
+    "norm": 1.4845888154581575,
+    "gradient_norm": 2.3288398038164864e-08,
+    "slsqp_success": true,
+    "slsqp_message": "Optimization terminated successfully",
+    "active": false
+  },
+  "poisson_n4_s11_R4": {
+    "upper": 0.666343311997517,
+    "lower": 0.6663432079302878,
+    "gap": 1.0406722919385228e-07,
+    "norm": 1.4845888154581575,
+    "gradient_norm": 2.3288398038164864e-08,
+    "slsqp_success": true,
+    "slsqp_message": "Optimization terminated successfully",
+    "active": false
+  },
+  "poisson_n4_s29_R0.5": {
+    "upper": 0.819655264332746,
+    "lower": 0.819655264332746,
+    "gap": 3.1187652822254066e-17,
+    "norm": 0.5,
+    "gradient_norm": 0.28429893349661794,
+    "slsqp_success": true,
+    "slsqp_message": "Optimization terminated successfully",
+    "active": true
+  },
+  "poisson_n4_s29_R2": {
+    "upper": 0.6958925212542457,
+    "lower": 0.6958925194597002,
+    "gap": 1.794545527782606e-09,
+    "norm": 1.3506892806902342,
+    "gradient_norm": 1.1718098885489354e-09,
+    "slsqp_success": true,
+    "slsqp_message": "Optimization terminated successfully",
+    "active": false
+  },
+  "poisson_n4_s29_R4": {
+    "upper": 0.6958925212542457,
+    "lower": 0.6958925171160805,
+    "gap": 4.138165304880477e-09,
+    "norm": 1.3506892806902342,
+    "gradient_norm": 1.1718098885489354e-09,
+    "slsqp_success": true,
+    "slsqp_message": "Optimization terminated successfully",
+    "active": false
+  },
+  "poisson_n4_s47_R0.5": {
+    "upper": 0.8098734782859366,
+    "lower": 0.8098734782859366,
+    "gap": 1.1525412665573275e-17,
+    "norm": 0.5,
+    "gradient_norm": 0.30525432884929676,
+    "slsqp_success": true,
+    "slsqp_message": "Optimization terminated successfully",
+    "active": true
+  },
+  "poisson_n4_s47_R2": {
+    "upper": 0.6643803450372688,
+    "lower": 0.6643803179060527,
+    "gap": 2.7131216151874062e-08,
+    "norm": 1.4199630051971335,
+    "gradient_norm": 2.2020643822615e-08,
+    "slsqp_success": true,
+    "slsqp_message": "Optimization terminated successfully",
+    "active": false
+  },
+  "poisson_n4_s47_R4": {
+    "upper": 0.6643803450372688,
+    "lower": 0.6643802738647651,
+    "gap": 7.117250379710406e-08,
+    "norm": 1.4199630051971335,
+    "gradient_norm": 2.2020643822615e-08,
+    "slsqp_success": true,
+    "slsqp_message": "Optimization terminated successfully",
+    "active": false
+  },
+  "poisson_n12_s11_R0.5": {
+    "upper": 0.9452071431389029,
+    "lower": 0.9452071431389028,
+    "gap": 8.372173498470023e-17,
+    "norm": 0.5,
+    "gradient_norm": 0.08804937419889519,
+    "slsqp_success": true,
+    "slsqp_message": "Optimization terminated successfully",
+    "active": true
+  },
+  "poisson_n12_s11_R2": {
+    "upper": 0.8966840352427794,
+    "lower": 0.8966839267757595,
+    "gap": 1.0846701987268166e-07,
+    "norm": 1.6425576713495613,
+    "gradient_norm": 5.559477163344598e-08,
+    "slsqp_success": true,
+    "slsqp_message": "Optimization terminated successfully",
+    "active": false
+  },
+  "poisson_n12_s11_R4": {
+    "upper": 0.8966840352427794,
+    "lower": 0.8966838155862162,
+    "gap": 2.1965656313957363e-07,
+    "norm": 1.6425576713495613,
+    "gradient_norm": 5.559477163344598e-08,
+    "slsqp_success": true,
+    "slsqp_message": "Optimization terminated successfully",
+    "active": false
+  },
+  "poisson_n12_s29_R0.5": {
+    "upper": 0.9359309307878007,
+    "lower": 0.9359309307878002,
+    "gap": 4.456803543138422e-16,
+    "norm": 0.5,
+    "gradient_norm": 0.107800308816369,
+    "slsqp_success": true,
+    "slsqp_message": "Optimization terminated successfully",
+    "active": true
+  },
+  "poisson_n12_s29_R2": {
+    "upper": 0.8630909876601883,
+    "lower": 0.8630909120491211,
+    "gap": 7.561106716322482e-08,
+    "norm": 1.8570943801160573,
+    "gradient_norm": 4.671444184309791e-08,
+    "slsqp_success": true,
+    "slsqp_message": "Optimization terminated successfully",
+    "active": false
+  },
+  "poisson_n12_s29_R4": {
+    "upper": 0.8630909876601883,
+    "lower": 0.8630908186202375,
+    "gap": 1.6903995084942064e-07,
+    "norm": 1.8570943801160573,
+    "gradient_norm": 4.671444184309791e-08,
+    "slsqp_success": true,
+    "slsqp_message": "Optimization terminated successfully",
+    "active": false
+  },
+  "poisson_n12_s47_R0.5": {
+    "upper": 0.9292650177242976,
+    "lower": 0.929265017724297,
+    "gap": 5.731441101279672e-16,
+    "norm": 0.5,
+    "gradient_norm": 0.1215698975481048,
+    "slsqp_success": true,
+    "slsqp_message": "Optimization terminated successfully",
+    "active": true
+  },
+  "poisson_n12_s47_R2": {
+    "upper": 0.8322423028666939,
+    "lower": 0.8322423028666909,
+    "gap": 3.0457807281074574e-15,
+    "norm": 1.9999999999999998,
+    "gradient_norm": 0.007936402161962432,
+    "slsqp_success": true,
+    "slsqp_message": "Optimization terminated successfully",
+    "active": true
+  },
+  "poisson_n12_s47_R4": {
+    "upper": 0.8318329585586071,
+    "lower": 0.8318326836277162,
+    "gap": 2.749308908777054e-07,
+    "norm": 2.1030616477056823,
+    "gradient_norm": 7.00900278711991e-08,
+    "slsqp_success": true,
+    "slsqp_message": "Optimization terminated successfully",
+    "active": false
+  }
+}

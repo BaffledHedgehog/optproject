@@ -1,0 +1,30 @@
+\section{Limitations and interpretation}
+The guarantees assume exact gradients and full linear minimization.
+Approximate or stochastic oracles require additional error terms and are
+not covered here. The logarithmic step needs valid $L_0,L_1,D$; a certified
+objective-accuracy test additionally needs a valid $\gamma$.
+Proposition~\ref{prop:poisson} supplies these quantities for a concrete
+class, but does not make their verification automatic for arbitrary models.
+
+The compact-domain assumptions already imply ordinary smoothness.
+The relevant question is whether exploiting the gap-dependent parameters
+is useful, not whether a global $L$ exists. Proposition~\ref{prop:rigidity}
+also limits the pure-gap regime: it cannot describe a nonconstant problem
+with a zero-gradient minimizer. The nonzero-gradient assumption in
+Theorem~\ref{thm:strong_set_linear} is substantive.
+
+The experiments concern small synthetic regression instances, and the
+global and norm-dependent constants are valid analytical bounds rather
+than optimized constants. Timing depends on hardware and implementation.
+The results do not establish broad superiority, optimal dependence on
+$\gamma$, or matching lower bounds for the proposed complexity estimate.
+Proposition~\ref{prop:armijo} shows explicitly that a familiar adaptive
+rule shares its order in accepted updates. The contribution is a
+parameter-explicit analysis of gap-dependent curvature and a model-minimizing
+step with no rejected function evaluations.
+
+\paragraph{Use of computational tools.}
+AI tools assisted with derivations, checks, implementation, and writing.
+The authors are responsible for the mathematical claims and reported results.
+Symbolic identities, floating-point controls, and mathematical proofs are
+reported separately; no formal proof-assistant certification is claimed.

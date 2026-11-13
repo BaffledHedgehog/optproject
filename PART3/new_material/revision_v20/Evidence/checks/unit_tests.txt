@@ -1,0 +1,13 @@
+test_actual_oracle_invocations_for_every_comparator (test_revision.RevisionChecks.test_actual_oracle_invocations_for_every_comparator) ... ok
+test_all_methods_stop_at_an_initial_minimum (test_revision.RevisionChecks.test_all_methods_stop_at_an_initial_minimum) ... ok
+test_armijo_grid_guarantee_and_trial_accounting (test_revision.RevisionChecks.test_armijo_grid_guarantee_and_trial_accounting) ... ok
+test_bisection_directional_optimality (test_revision.RevisionChecks.test_bisection_directional_optimality) ... ok
+test_global_class_bounds_and_transport_under_rescaling (test_revision.RevisionChecks.test_global_class_bounds_and_transport_under_rescaling) ... ok
+test_gradient_and_hessian_against_finite_differences (test_revision.RevisionChecks.test_gradient_and_hessian_against_finite_differences) ... ok
+test_poisson_oracle_endpoint_is_not_the_solution (test_revision.RevisionChecks.test_poisson_oracle_endpoint_is_not_the_solution) ... ok
+test_poisson_scalar_inequality_on_both_half_lines (test_revision.RevisionChecks.test_poisson_scalar_inequality_on_both_half_lines) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.054s
+
+OK

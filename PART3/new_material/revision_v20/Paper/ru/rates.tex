@@ -1,0 +1,160 @@
+\section{Остановка и сходимость}
+\label{sec:rates}
+Шаг использует наблюдаемый зазор и не требует $\gamma$.
+Известное значение $\gamma$ нужно для нижней границы в
+\eqref{eq:stop}. Из квазар-выпуклости следует
+\begin{equation}\label{eq:retained_bound}
+ 0\le f(x_k)-f(x^*)\le f(x_k)-\ell_k\le G(x_k)/\gamma.
+\end{equation}
+
+\begin{theorem}[Конечная остановка с гарантией точности]
+\label{thm:gap_stopping}
+При условиях \eqref{eq:gap_smoothness} и \eqref{eq:quasar}
+алгоритм останавливается с $f(x_N)-f(x^*)\le\varepsilon$.
+Если $G(x_0)>\gamma\varepsilon$, положим
+$J=\lceil\log_2(G(x_0)/(\gamma\varepsilon))\rceil$.
+Число шагов удовлетворяет
+\begin{equation}\label{eq:gap_iteration_bound}
+ N\le\left\lceil
+ \frac{\max\{4,4L_1D^2/\log 2\}}{\gamma}\,J
+ +\frac{16L_0D^2}{(\log 2)\gamma^2\varepsilon}
+ \right\rceil.
+\end{equation}
+Вычислений функции, градиента и запросов линейной минимизации
+ровно по $N+1$, включая последний запрос.
+Если $G(x_0)\le\gamma\varepsilon$, алгоритм останавливается сразу.
+\end{theorem}
+\begin{proof}
+При $L_0=L_1=0$ функция аффинна и нужен не более чем один полный шаг.
+В остальных случаях из \eqref{eq:step_lower} и \eqref{eq:descent} следует
+\begin{equation}\label{eq:gap_progress}
+ f(x_k)-f(x_{k+1})\ge
+ \min\left\{\frac{G(x_k)}2,
+ \frac{(\log 2)G(x_k)^2}{2D^2(L_0+L_1G(x_k))}\right\}.
+\end{equation}
+Значение функции убывает, а $\ell_k$ возрастает, поэтому
+$f(x_k)-\ell_k$ убывает. Положим $b_j=G(x_0)/(\gamma2^j)$,
+$0\le j<J$. Каждый шаг до остановки отнесём к фазе
+$b_j/2<f(x_k)-\ell_k\le b_j$.
+В этой фазе \eqref{eq:retained_bound} даёт $G(x_k)>\gamma b_j/2$.
+Функция $t^2/(L_0+L_1t)$ возрастает при $t>0$, поэтому каждый
+такой шаг уменьшает значение функции не меньше чем на
+\[
+ \min\left\{\frac{\gamma b_j}{4},
+ \frac{(\log 2)\gamma^2b_j^2}{8D^2(L_0+L_1\gamma b_j/2)}\right\}.
+\]
+Суммарное уменьшение на шагах, начинающихся в фазе, не больше
+истинной ошибки при входе, то есть не больше $b_j$.
+Сюда входит и последний шаг, выводящий из фазы: его конечная
+точка допустима. Поэтому число шагов в фазе не больше
+\[
+ \max\left\{\frac4\gamma,
+ \frac{8L_0D^2}{(\log 2)\gamma^2b_j}
+ +\frac{4L_1D^2}{(\log 2)\gamma}\right\}.
+\]
+Суммирование и $\sum_{j<J}b_j^{-1}<2/\varepsilon$ доказывают
+\eqref{eq:gap_iteration_bound}. Та же конечная граница верна для
+каждого незавершённого начала процесса, поэтому бесконечный процесс
+без остановки невозможен. В каждой посещённой точке по одному разу
+вычисляются функция, градиент и линейный минимум.
+Явный шаг \eqref{eq:log_step} не требует пробных вычислений функции.
+\end{proof}
+
+\subsection{Случай \texorpdfstring{$L_0=0$}{L0=0}}
+\begin{corollary}[Геометрическая сходимость]\label{cor:pure_gap_linear}
+Если $L_0=0<L_1$, положим
+\[
+ \underline\alpha_0=\min\{1,(\log 2)/(L_1D^2)\}.
+\]
+Для каждой вычисленной точки выполнено
+\begin{align*}
+ f(x_k)-f(x^*)&\le
+ (1-\gamma\underline\alpha_0/2)^k\bigl(f(x_0)-f(x^*)\bigr),\\
+ f(x_k)-\ell_k&\le
+ (1-\gamma\underline\alpha_0/2)^k G(x_0)/\gamma.
+\end{align*}
+Если начальная проверка не дала остановки, достаточно не более
+\[
+ \left\lceil\frac{\log(G(x_0)/(\gamma\varepsilon))}
+ {-\log(1-\gamma\underline\alpha_0/2)}\right\rceil
+\]
+шагов.
+\end{corollary}
+\begin{proof}
+Граница шага даёт $\alpha_k\ge\underline\alpha_0$, поэтому
+уменьшение функции не меньше $\underline\alpha_0G(x_k)/2$.
+Для первой рекуррентной оценки используем \eqref{eq:quasar},
+а для второй \eqref{eq:retained_bound} и $\ell_{k+1}\ge\ell_k$.
+\end{proof}
+Здесь $\nabla^2f(x^*)=0$ следует из $G(x^*)=0$.
+Невыпуклый пример в разделе~\ref{sec:examples} обладает этим свойством
+и ненулевым градиентом в минимуме.
+
+\subsection{Сильно выпуклая допустимая область}
+Используем определение из \cite{vyguzov}: множество $Q$ сильно
+выпукло с константой $\lambda>0$, если для любых $u,v\in Q$
+замкнутый шар радиуса $\lambda\|u-v\|^2$ с центром $(u+v)/2$
+содержится в $Q$. Это условие на область, а не сильная выпуклость
+целевой функции.
+
+\begin{theorem}[Ненулевой градиент в минимуме и линейная скорость]
+\label{thm:strong_set_linear}
+Пусть дополнительно $Q$ сильно выпукло и $\nabla f(x^*)\ne0$.
+Тогда минимум $x^*$ единственен и
+\[
+ c:=\min_{x\in Q}\|\nabla f(x)\|>0.
+\]
+Положим
+\[
+ \underline\alpha_{\rm sc}=
+ \min\left\{1,\left(\frac{L_0}{2\lambda c}+2L_1D^2\right)^{-1}\right\},
+\]
+причём при нулевом знаменателе значение равно $1$. Тогда
+\begin{align*}
+ f(x_k)-f(x^*)&\le
+ (1-\gamma\underline\alpha_{\rm sc}/2)^k
+       \bigl(f(x_0)-f(x^*)\bigr),\\
+ f(x_k)-\ell_k&\le
+ (1-\gamma\underline\alpha_{\rm sc}/2)^k G(x_0)/\gamma.
+\end{align*}
+Алгоритм не использует ни $c$, ни $\lambda$; они нужны только
+для этой оценки скорости.
+\end{theorem}
+\begin{proof}
+Если бы $y$ было другим минимумом, условие \eqref{eq:quasar}
+означало бы, что отношение
+\[
+ \frac{f(x^*+t(y-x^*))-f(x^*)}{t^\gamma}
+\]
+не убывает при $0<t\le1$. Оно неотрицательно и равно нулю при
+$t=1$, поэтому функция постоянна на всём отрезке и
+$\langle\nabla f(x^*),y-x^*\rangle=0$.
+Однако условие на шар и необходимое условие минимума на $Q$ дают
+\[
+ \langle\nabla f(x^*),y-x^*\rangle
+ \ge2\lambda\|\nabla f(x^*)\|\|y-x^*\|^2>0
+\]
+при $y\ne x^*$. Значит, минимум единственен.
+Нулевой градиент в любой точке $Q$ по \eqref{eq:quasar} означал бы
+ещё один минимум. Теперь непрерывность и компактность дают $c>0$.
+
+Та же конструкция с шаром в точке линейного минимума даёт
+\[
+ G(x_k)\ge2\lambda\|\nabla f(x_k)\|\|d_k\|^2
+           \ge2\lambda c\|d_k\|^2.
+\]
+При $L_0=L_1=0$ имеем $\alpha_k=1$. В остальных случаях используем
+$\log(1+t)\ge t/(1+t)$ в \eqref{eq:log_step}
+или указанный предел при $L_1=0$:
+\[
+ \alpha_k\ge\min\left\{1,
+ \frac{G(x_k)}{(L_0+L_1G(x_k))\|d_k\|^2
+                      +L_1D\|d_k\|G(x_k)}\right\}
+ \ge\underline\alpha_{\rm sc}.
+\]
+Здесь $\|d_k\|\le D$, а предыдущее неравенство ограничивает
+знаменатель, делённый на $G(x_k)$, числом
+$L_0/(2\lambda c)+2L_1D^2$.
+Обе рекуррентные оценки следуют так же, как в
+следствии~\ref{cor:pure_gap_linear}.
+\end{proof}

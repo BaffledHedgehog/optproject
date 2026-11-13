@@ -1,0 +1,11 @@
+{
+  "python": "3.13.5 (tags/v3.13.5:6cb20a2, Jun 11 2025, 16:15:46) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "numpy": "2.3.5",
+  "blas_threads": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": null,
+    "OMP_NUM_THREADS": "1"
+  },
+  "timing_note": "Sequential runs; median of untraced repetitions; no validation/serialization in timed region."
+}

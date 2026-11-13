@@ -1,0 +1,103 @@
+\section{Scope of the curvature condition}\label{sec:structure}
+\subsection{Uniform smoothness and the gradient-norm model}
+Since $f$ is $C^2$ near a compact $Q$, the uniform bound
+$L=\max_{x\in Q}\|\nabla^2f(x)\|$ is finite. Our assumption is useful
+through its parameters and the resulting local model, not because it admits
+functions without a finite smoothness constant on this fixed $Q$.
+Moreover,
+\[
+ G(x)\le D\|\nabla f(x)\|,
+ \qquad \|\nabla^2f(x)\|\le L_0+(L_1D)\|\nabla f(x)\|.
+\]
+Thus gap-dependent smoothness implies a norm-dependent bound on $Q$.
+The converse with the same zero constant term fails: $f(t)=e^t$ on
+$[0,R]$ satisfies $|f''|=|f'|$, whereas $G(0)=0$ and $f''(0)=1$.
+Every admissible gap-dependent pair therefore has $L_0\ge1$ in that example.
+In general $L_0\ge\|\nabla^2f(x^*)\|$.
+
+\begin{proposition}[A restriction of the pure-gap regime]\label{prop:rigidity}
+Suppose \eqref{eq:gap_smoothness} holds with $L_0=0$.
+If $\nabla f(z)=0$ at any $z\in Q$, then $\nabla f=0$ on $Q$ and
+$f$ is constant on $Q$. Convexity or quasar-convexity of $f$ is not needed.
+\end{proposition}
+\begin{proof}
+Fix $y\in Q$ and set $u(t)=\|\nabla f(z+t(y-z))\|$.
+The fundamental theorem of calculus and $G\le D\|\nabla f\|$ give
+\[
+ u(t)\le L_1D\|y-z\|\int_0^t u(s)\,ds.
+\]
+Gronwall's inequality yields $u=0$. Varying $y$ proves the assertion.
+\end{proof}
+Consequently, a nonconstant problem in the pure-gap regime cannot have
+a minimizer with zero gradient. In particular, an interior minimizer of a
+full-dimensional feasible set is excluded. This restriction should be kept
+in mind when interpreting Corollary~\ref{cor:pure_gap_linear}.
+
+\subsection{Connection to existing growth conditions}
+For convex $f$, write
+$D_f(y,x)=f(y)-f(x)-\langle\nabla f(x),y-x\rangle$.
+If $L_0=0<L_1$, Lemma~\ref{lem:transport} implies, for $0\le\alpha\le1$,
+\[
+ D_f(x+\alpha d,x)
+ \le \frac{M\alpha^2}{2}G(x),
+ \qquad M=L_1D^2e^{L_1D^2}.
+\]
+Indeed, bound the exponential in \eqref{eq:upper_model} by
+$e^{L_1D^2}$ and integrate $\alpha-t$.
+This is the strong $(M,1)$-growth condition used in~\cite{wirth}.
+The reduction is conservative: it introduces an exponential dependence on
+$L_1D^2$, whereas Corollary~\ref{cor:pure_gap_linear} uses an explicit
+step lower bound of order $\min\{1,(L_1D^2)^{-1}\}$.
+This comparison concerns the displayed conversion of constants, not a
+lower bound on what all other analyses or algorithms can achieve.
+
+\subsection{A multidimensional class with explicit parameters}
+Let $a_i\in\mathbb R^n$, $y_i\ge0$, and $B=\max_i\|a_i\|>0$.
+Consider the Poisson negative log-likelihood, up to data-only constants,
+\begin{equation}\label{eq:poisson}
+ f(x)=\frac1m\sum_{i=1}^m\bigl(e^{a_i^Tx}-y_i a_i^Tx\bigr),
+ \qquad 0\in Q.
+\end{equation}
+For integer $y_i$ this is a count-regression objective; the following
+bound also holds for nonnegative real responses.
+
+\begin{proposition}[Parameters from the observed data]\label{prop:poisson}
+On any compact convex $Q$ containing zero, \eqref{eq:poisson} satisfies
+\eqref{eq:gap_smoothness} with
+\begin{equation}\label{eq:poisson_constants}
+ L_0=B^2\left(1+\frac{1}{2m}\sum_i y_i^2\right),
+ \qquad L_1=B^2,\qquad \gamma=1.
+\end{equation}
+These constants do not require a minimizer or a minimum value.
+If $Q=\{x:\|x\|\le R\}$, valid norm-dependent constants are
+$K_0=L_0$, $K_1=RL_1$, and a uniform Hessian bound is
+\begin{equation}\label{eq:poisson_uniform}
+ L=e^{BR}\|A\|_2^2/m,
+\end{equation}
+where the rows of $A$ are $a_i^T$. These are valid bounds, not claims
+of smallest possible constants.
+\end{proposition}
+\begin{proof}
+For $y\ge0$ and $t\in\mathbb R$,
+\begin{equation}\label{eq:poisson_scalar}
+ e^t\le 1+y^2/2+t(e^t-y).
+\end{equation}
+For $t\le0$, $(1-t)e^t+yt\le1$.
+For $t\ge0$, the derivative of $(1-t)e^t$ is $-te^t\le-t$, so
+$(1-t)e^t+yt\le1-t^2/2+yt\le1+y^2/2$.
+Also $\|\nabla^2f(x)\|\le B^2m^{-1}\sum_i e^{a_i^Tx}$.
+Summing \eqref{eq:poisson_scalar} therefore gives
+\[
+ \|\nabla^2f(x)\|\le L_0+L_1\langle\nabla f(x),x\rangle
+ \le L_0+L_1G(x),
+\]
+where the last step uses $0\in Q$.
+On a ball, $\langle\nabla f(x),x\rangle\le R\|\nabla f(x)\|$.
+Finally $a_i^Tx\le BR$ implies
+$\nabla^2f(x)\preceq e^{BR}A^TA/m$.
+\end{proof}
+The ball's linear oracle is $s=-R\nabla f(x)/\|\nabla f(x)\|$
+when the gradient is nonzero. It generally differs from the minimizer
+of \eqref{eq:poisson}. Thus these problems avoid the endpoint degeneracy
+of the scalar examples below. The model and parameter bounds are global
+on $Q$; the numerical experiments only sample their consequences.

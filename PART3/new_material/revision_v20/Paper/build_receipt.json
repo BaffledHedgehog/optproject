@@ -1,0 +1,38 @@
+{
+  "release": "v20",
+  "language": "en",
+  "passes": [
+    {
+      "pass": 1,
+      "exit": 0,
+      "seconds": 0.8989116000011563
+    },
+    {
+      "pass": 2,
+      "exit": 0,
+      "seconds": 0.867344400001457
+    },
+    {
+      "pass": 3,
+      "exit": 0,
+      "seconds": 0.9885995000004186
+    }
+  ],
+  "warning_lines": [],
+  "source_changed_during_build": false,
+  "source_hashes": {
+    "armijo.tex": "0d20c9c8b91b97d7002b8d2ecfddeaad1b8ef24dba14ab5b6fae3c82c27fbef4",
+    "article.tex": "b2e4ccf18821958cd66c55b79b767bdff004d41978db2962c80143933515654f",
+    "discussion.tex": "0fe6297feedb3490b0920a4ad4d5b76dd063e928bf89cbac37bde1edeb0c547e",
+    "examples.tex": "9faa7500c84373e1e1f9de304216028a2f20602782473afbe4ba4fc7be705fad",
+    "experiments.tex": "e3754a43a3dff25282590d5d2afee230edcd4ef264d75296721c3d739aed4925",
+    "model.tex": "ae52cc442bb90b2c0ba0cc4fe393d6039fb528229d4726ab009ba82b92b02ce2",
+    "multidim_table.tex": "0dd265f816f88d0fd36c3e867824309dc01f74aac5dfe1e3baf3d7de968577ec",
+    "radius_table.tex": "764f1624c1bee0f227d443c5e750f204cc8a54968df717b7bf4326806869d4a8",
+    "rates.tex": "ed60fd7c09b6d99d00d24a58f063f34c3427dbf6cec7fa835f73bcb7e8f185f8",
+    "references.tex": "90697b57d20faf1ed6e55a8c1c3908ae9c96f061bf411edc27b922ec4f549941",
+    "step.tex": "34918fc4c56c09ca9dc3296fb1f18589f44a02340c31bdcec77ba4acb3e2643e",
+    "structure.tex": "836784ea43a1af169cae2e0a20d2faef455c0ed5ff98004ffc8cb46425de8278"
+  },
+  "scientific_calls": 0
+}

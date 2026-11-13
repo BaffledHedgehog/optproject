@@ -1,0 +1,21 @@
+{
+  "saved_runs": 432,
+  "status_counts": {
+    "converged": 423,
+    "budget_exhausted": 9
+  },
+  "data_hashes_passed": true,
+  "tex_receipts_passed": true,
+  "unit_tests": 8,
+  "symbolic_identities": 13,
+  "replayed_runs": 432,
+  "replay_excludes_elapsed_time": true,
+  "source_sha256": {
+    "Code/benchmark_gap.py": "b63b5dad3b11169b1cbd92f3346799bb7c242007d69aaf050b9adf548600d173",
+    "Code/benchmark_multidim.py": "d24098f370a8d06e5cc8a0c9af28b035524bd05f935e2ffe2dd2b370c6a738d3",
+    "Code/check_algebra.py": "c7f93a55ea2950ba4b3c8cd19f1825f8c8b1d1fb7c572846129dc07fb6e98bd0",
+    "Code/compare_v19.py": "b9f7bd868078bb103310cf3ba380c9a2721bea0074df429d84e88e37b49ecfb3",
+    "Code/report_results.py": "49634e8dd7efa91ce4befabc271e9decd151c59cf8ef83f6319a627dcbcd5d18",
+    "Code/test_revision.py": "6df8bd9c5e80859f2405396838109eeafa5fade521cffb6c9511e8b041e30236"
+  }
+}

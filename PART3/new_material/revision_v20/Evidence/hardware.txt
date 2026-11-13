@@ -1,0 +1,10 @@
+Observed on the machine used for the v20 experiments (14 November 2026):
+AMD Ryzen 7 5700X 8-Core Processor; 8 cores, 16 logical processors.
+Windows 10 build 19045; Python 3.13.5 (64 bit).
+NumPy 2.3.5, SciPy 1.16.3, Matplotlib 3.10.9, SymPy 1.14.0.
+OPENBLAS_NUM_THREADS=1, OMP_NUM_THREADS=1, MKL_NUM_THREADS unset.
+Algorithms and timing repetitions were sequential. No GPU was used.
+No CPU affinity or isolated-machine timing protocol was imposed.
+Reported timings are local illustrative measurements, not portable guarantees.
+The environment was recorded in Evidence/multidim/environment.json;
+this hardware description was added during release checking on the same host.

@@ -1,0 +1,51 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage{fontspec}
+\usepackage[english,russian]{babel}
+\IfFontExistsTF{Liberation Serif}{\setmainfont{Liberation Serif}}{\setmainfont{Times New Roman}}
+\IfFontExistsTF{Liberation Sans}{\setsansfont{Liberation Sans}}{\setsansfont{Arial}}
+\IfFontExistsTF{DejaVu Sans Mono}{\setmonofont{DejaVu Sans Mono}[Scale=0.82]}{\setmonofont{Consolas}[Scale=0.82]}
+\usepackage{amsmath,amssymb,amsthm,graphicx,booktabs,float}
+\usepackage[hidelinks,unicode]{hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{lemma}[theorem]{Лемма}
+\newtheorem{proposition}[theorem]{Утверждение}
+\newtheorem{corollary}[theorem]{Следствие}
+\hypersetup{pdftitle={Метод Франк-Вульф при гладкости через зазор},pdfauthor={Ярослав П. Ляхов и Степан А. Суворов}}
+\title{Метод Франк-Вульф при гладкости через зазор}
+\author{Ярослав П. Ляхов \and Степан А. Суворов}
+\date{14 ноября 2026 (редакция v20)}
+\begin{document}
+\maketitle
+\begin{abstract}
+Рассматривается условие кривизны
+$\|\nabla^2f(x)\|\le L_0+L_1G(x)$ на допустимом множестве,
+где $G$ обозначает полный зазор метода Франк-Вульф.
+Доказаны оценка роста зазора вдоль выбранного направления,
+экспоненциальная верхняя модель и логарифмический шаг с гарантией спуска.
+Шаг не использует значение минимума или параметр квазар-выпуклости.
+Для квазар-выпуклых функций накопленная вычисляемая нижняя граница
+даёт конечную остановку и разделяет вклады
+$L_0/\varepsilon$ и $L_1\log(1/\varepsilon)$.
+Получена линейная сходимость при $L_0=0$, а также на сильно выпуклой
+области при ненулевом градиенте в минимуме.
+Для обычного FW с поиском Армихо доказан тот же порядок числа обновлений
+при дополнительных пробных вычислениях функции. Получены явные параметры
+из данных многомерной пуассоновской регрессии. Установлена связь с известными
+условиями гладкости через норму градиента и условиями роста.
+Экспоненциальный пример разделяет явный шаг и короткий шаг с фиксированной
+общей константой $L$, хотя обычный полный шаг сразу решает этот пример.
+Сравнение на синтетических задачах регрессии учитывает отдельные стоимости
+оракулов и случаи, когда адаптивные конкуренты быстрее.
+\end{abstract}
+\input{model}
+\input{step}
+\input{rates}
+\input{armijo}
+\input{structure}
+\input{examples}
+\input{experiments}
+\input{discussion}
+\input{references}
+\end{document}

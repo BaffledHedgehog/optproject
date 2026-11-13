@@ -1,0 +1,100 @@
+\section{Problem and available information}
+The norm of the gradient need not vanish at a constrained minimum.
+The full Frank-Wolfe gap accounts for the feasible directions and
+does vanish there. We therefore use the gap in the curvature model,
+derive a feasible descent step, and then use quasar-convexity to
+convert descent into an objective-accuracy guarantee.
+
+Let $Q\subset\mathbb R^n$ be nonempty, compact, and convex, with
+$\operatorname{diam}Q\le D$, where $D>0$. Let $f$ be $C^2$ on a
+neighborhood of $Q$, and fix a minimizer $x^*\in Q$.
+All vector norms are Euclidean and matrix norms are spectral.
+The available operations are evaluation of $f$, evaluation of its
+gradient, and exact minimization of a linear function over $Q$.
+At a current point $x$, compute
+\begin{equation}\label{eq:gap}
+ s\in\arg\min_{v\in Q}\langle\nabla f(x),v\rangle,\qquad
+ d=s-x,\qquad
+ G(x)=\langle\nabla f(x),x-s\rangle
+     =\max_{v\in Q}\langle\nabla f(x),x-v\rangle.
+\end{equation}
+We assume
+\begin{equation}\label{eq:gap_smoothness}
+ \|\nabla^2f(x)\|\le L_0+L_1G(x)\quad(x\in Q),
+ \qquad L_0,L_1\ge0.
+\end{equation}
+This condition depends on the feasible set. In particular,
+$L_1D^2$ is dimensionless; the factor $D$ in the transport estimate
+below cannot be dropped.
+
+For convergence to the global minimum, we assume
+$\gamma$-quasar-convexity about $x^*$:
+\begin{equation}\label{eq:quasar}
+ \gamma\bigl(f(x)-f(x^*)\bigr)
+       \le\langle\nabla f(x),x-x^*\rangle\quad(x\in Q),
+ \qquad 0<\gamma\le1.
+\end{equation}
+A convex objective satisfies this with $\gamma=1$. The condition
+also admits nonconvex functions, as the example in Section~\ref{sec:examples}
+shows. The step requires valid $L_0,L_1,D$; the objective-accuracy
+test additionally uses $\gamma$. Neither $x^*$ nor $f(x^*)$ is an
+input.
+
+The constrained first-order condition gives $G(x^*)=0$, including
+when $\nabla f(x^*)\ne0$. From \eqref{eq:gap} and \eqref{eq:quasar},
+\begin{equation}\label{eq:certificate}
+ 0\le f(x)-f(x^*)\le \frac{G(x)}{\gamma}.
+\end{equation}
+Thus the gap bounds the objective error from above. Quasar-convexity
+alone does not reverse this inequality.
+
+\subsection{Relation to existing results and scope of the contribution}
+The full gap and its use as an optimality certificate are standard~\cite{jaggi}.
+The norm-dependent model and descent analysis of Vyguzov and
+Stonyakin~\cite{vyguzov}, also published with Gasnikov~\cite{vyguzovjournal},
+motivate our treatment of \eqref{eq:gap_smoothness}.
+Mart\'{i}nez-Rubio~\cite{quasar} already studies constrained quasar-convex FW;
+in particular, Theorem~9 gives $6LD^2/((k+1)\gamma^2)$ under ordinary
+smoothness. Thus neither quasar-convex FW nor the factor $\gamma^{-2}$
+is introduced here.
+
+The accumulated certificate used below also has a known convex antecedent:
+for $\gamma=1$ it is exactly the best primal-dual gap in
+Wirth, Pe\~na, and Pokutta~\cite{wirth}, Section~2.2.
+Their growth conditions relate the linear-model remainder to powers of $G$.
+Section~\ref{sec:structure} gives an explicit connection to our assumption.
+We use the certificate to analyze the proposed step for $0<\gamma\le1$;
+we do not claim a new convex certificate.
+
+Adaptive alternatives matter when comparing steps. Backtracking FW uses
+objective tests to estimate curvature~\cite{pedregosa}; auto-conditioned FW
+uses trial-point curvature without an inner search~\cite{acfw}.
+Line-search-free conditional-gradient extensions also appear in
+\cite{yagishita}. Adaptive Bregman steps handle a different, relative-smoothness
+model~\cite{bregman}. These assumptions and guarantees are not identified
+with \eqref{eq:gap_smoothness}.
+
+\begin{table}[ht]
+\centering\small
+\caption{Position of the present analysis. Constants in different models
+have different meanings; this is not a ranking of methods.}
+\begin{tabular}{p{.23\linewidth}p{.34\linewidth}p{.34\linewidth}}
+\toprule
+Analysis & Curvature or growth information & Relevant distinction\\
+\midrule
+Norm-based FW~\cite{vyguzov} & $K_0+K_1\|\nabla f\|$ & Norm-dependent explicit short step\\
+Quasar-convex FW~\cite{quasar} & Uniform $L$ & Known constrained quasar-convex rate\\
+Open-loop FW~\cite{wirth} & Remainder controlled by $G^r$ & Known accumulated convex certificate\\
+Adaptive FW~\cite{pedregosa,acfw} & Trial-point information & Does not require the supplied $L_0,L_1$\\
+This analysis & $L_0+L_1G$ & Directional transport, explicit model minimizer, and certified stopping\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The contribution is the derivation and analysis of this particular curvature
+model: a directional transport lemma, its logarithmic model minimizer,
+separate $L_0/\varepsilon$ and $L_1\log(1/\varepsilon)$ contributions,
+and verifiable examples. We also show that a conventional Armijo rule inherits
+the same order of update complexity. The explicit rule saves trial function
+evaluations when valid parameters are available; no universal numerical
+advantage over adaptive FW is asserted.

@@ -1,0 +1,22 @@
+{
+  "en": {
+    "archive_sha256": "5ab6055a4a5e89868f24ab8366c016022d439cadeaacf829210aded5559c818b",
+    "passes": [
+      0,
+      0,
+      0
+    ],
+    "warnings": [],
+    "pdf_created": true
+  },
+  "ru": {
+    "archive_sha256": "eac8156661096680930fedb72e76a1d172ef7e9409b6a8ff89cea721b053e535",
+    "passes": [
+      0,
+      0,
+      0
+    ],
+    "warnings": [],
+    "pdf_created": true
+  }
+}

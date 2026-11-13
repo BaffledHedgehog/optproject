@@ -1,0 +1,33 @@
+{
+  "archive_sha256": "4df2334aae17e193d4693d254270d7cfc0664e8b43f8d23b00f3aac84a5dedae",
+  "relative_tolerance": 5e-12,
+  "absolute_tolerance": 5e-13,
+  "note": "Line endings and last-bit floating-point differences do not imply a scientific mismatch.",
+  "files": {
+    "gap_summary.csv": {
+      "byte_identical": true,
+      "numeric_values": 491,
+      "max_absolute_difference": 0.0,
+      "numerically_equivalent": true
+    },
+    "gap_summary.json": {
+      "byte_identical": false,
+      "numeric_values": 719,
+      "max_absolute_difference": 0.0,
+      "numerically_equivalent": true
+    },
+    "gap_checks.json": {
+      "byte_identical": false,
+      "numeric_values": 504,
+      "max_absolute_difference": 0.0,
+      "numerically_equivalent": true
+    },
+    "gap_trace.csv": {
+      "byte_identical": false,
+      "numeric_values": 107275,
+      "max_absolute_difference": 9.094947017729282e-13,
+      "numerically_equivalent": true
+    }
+  },
+  "original_code_unchanged": true
+}

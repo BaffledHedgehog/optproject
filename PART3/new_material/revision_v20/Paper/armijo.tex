@@ -1,0 +1,56 @@
+\subsection{What an ordinary Armijo rule guarantees}\label{sec:armijo}
+Consider the existing sufficient-decrease strategy: at each iterate start
+with $\alpha=1$ and multiply it by a fixed $\beta\in(0,1)$ until
+\begin{equation}\label{eq:armijo}
+ f(x+\alpha d)\le f(x)-\alpha G(x)/2.
+\end{equation}
+Use the same accumulated certificate \eqref{eq:stop} and retain the
+accepted function value. This rule requires neither $L_0,L_1$ nor $D$.
+It is an ordinary Armijo search, not a new FW algorithm.
+
+\begin{proposition}[Certified complexity of the Armijo comparator]
+\label{prop:armijo}
+Under the assumptions of Theorem~\ref{thm:gap_stopping}, let
+$\alpha_{\log}(x)$ denote \eqref{eq:log_step}, including its limiting
+cases. The search terminates and its accepted step satisfies
+$\alpha\ge\beta\alpha_{\log}(x)$.
+If $G(x_0)>\gamma\varepsilon$, its number of updates satisfies
+\[
+ N\le\left\lceil\frac1\beta\left[
+ \frac{\max\{4,4L_1D^2/\log2\}}\gamma J
+ +\frac{16L_0D^2}{(\log2)\gamma^2\varepsilon}
+ \right]\right\rceil,
+ \qquad J=\left\lceil\log_2\frac{G(x_0)}{\gamma\varepsilon}\right\rceil.
+\]
+Outside the affine case define
+\[
+ a_\varepsilon=\min\left\{1,
+ \frac{(\log2)\gamma\varepsilon}
+ {D^2(L_0+L_1\gamma\varepsilon)}\right\},\qquad
+ T_\varepsilon=1+\left\lceil\frac{\log(1/a_\varepsilon)}{\log(1/\beta)}\right\rceil.
+\]
+There are $N+1$ gradient and LMO calls and at most $1+NT_\varepsilon$
+function calls. In the affine case one trial suffices for the single
+possible update.
+\end{proposition}
+\begin{proof}
+The proof of Lemma~\ref{lem:descent} applies to every
+$0<\alpha\le\alpha_{\log}(x)$: the model derivative is still
+nonpositive and the same convex-integral bound proves \eqref{eq:armijo}.
+The first grid point no larger than $\alpha_{\log}(x)$ is therefore
+accepted unless a larger one has already passed. This proves termination
+and the lower bound on the accepted step. The phase proof of
+Theorem~\ref{thm:gap_stopping} now applies with every guaranteed decrease
+multiplied by $\beta$.
+Before stopping, $G(x)>\gamma\varepsilon$. Monotonicity of
+$G/(L_0+L_1G)$ and \eqref{eq:step_lower} give
+$\alpha_{\log}(x)\ge a_\varepsilon$, so at most $T_\varepsilon$ trials
+are necessary. Each accepted function value is reused at the next point.
+\end{proof}
+When $L_0=0$, the certificate contracts by at least the factor
+$1-\beta\gamma\underline\alpha_0/2$ per update. An analogous factor
+$1-\beta\gamma\underline\alpha_{\rm sc}/2$ holds under
+Theorem~\ref{thm:strong_set_linear}. Consequently, the favorable update
+complexity is a consequence of the curvature assumption, not an
+exclusive property of the logarithmic formula. Its specific benefit
+is the guaranteed step without rejected function trials.

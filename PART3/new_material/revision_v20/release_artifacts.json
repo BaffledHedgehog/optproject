@@ -1,0 +1,22 @@
+{
+  "paper_en_v20.pdf": {
+    "bytes": 460276,
+    "sha256": "e0ea2b028e77f72b943ef8fe7eb2b1bab08b15bccf2d99501b9ba9498750add5"
+  },
+  "paper_ru_v20.pdf": {
+    "bytes": 262416,
+    "sha256": "d098d8e14a5e614e271094419094b3cee7ca9edac24f8edf57dc75a42e45f305"
+  },
+  "arxiv_source_v20.zip": {
+    "bytes": 57548,
+    "sha256": "5ab6055a4a5e89868f24ab8366c016022d439cadeaacf829210aded5559c818b"
+  },
+  "arxiv_source_ru_v20.zip": {
+    "bytes": 69093,
+    "sha256": "eac8156661096680930fedb72e76a1d172ef7e9409b6a8ff89cea721b053e535"
+  },
+  "reading_packet_v20.zip": {
+    "bytes": 46537543,
+    "sha256": "7bbe76365981ffa8d1fb110838dc142bb50d5cfd1319be290226e70febf0e65a"
+  }
+}

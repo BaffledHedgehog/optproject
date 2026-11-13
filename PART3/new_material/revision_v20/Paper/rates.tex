@@ -1,0 +1,153 @@
+\section{Stopping and convergence}
+\label{sec:rates}
+The step uses the observed gap and does not require $\gamma$.
+The known value of $\gamma$ is needed for the lower bound in
+\eqref{eq:stop}. Quasar-convexity gives
+\begin{equation}\label{eq:retained_bound}
+ 0\le f(x_k)-f(x^*)\le f(x_k)-\ell_k\le G(x_k)/\gamma.
+\end{equation}
+
+\begin{theorem}[Finite certified stopping]\label{thm:gap_stopping}
+Under \eqref{eq:gap_smoothness} and \eqref{eq:quasar}, the algorithm
+stops with $f(x_N)-f(x^*)\le\varepsilon$.
+If $G(x_0)>\gamma\varepsilon$, put
+$J=\lceil\log_2(G(x_0)/(\gamma\varepsilon))\rceil$.
+The number of updates satisfies
+\begin{equation}\label{eq:gap_iteration_bound}
+ N\le\left\lceil
+ \frac{\max\{4,4L_1D^2/\log 2\}}{\gamma}\,J
+ +\frac{16L_0D^2}{(\log 2)\gamma^2\varepsilon}
+ \right\rceil.
+\end{equation}
+There are exactly $N+1$ objective evaluations, $N+1$ gradient
+evaluations, and $N+1$ full linear minimizations, including the terminal
+query. If $G(x_0)\le\gamma\varepsilon$, the algorithm stops immediately.
+\end{theorem}
+\begin{proof}
+The affine case $L_0=L_1=0$ takes at most one full step.
+Otherwise \eqref{eq:step_lower} and \eqref{eq:descent} imply
+\begin{equation}\label{eq:gap_progress}
+ f(x_k)-f(x_{k+1})\ge
+ \min\left\{\frac{G(x_k)}2,
+ \frac{(\log 2)G(x_k)^2}{2D^2(L_0+L_1G(x_k))}\right\}.
+\end{equation}
+The objective decreases and $\ell_k$ increases, so $f(x_k)-\ell_k$
+decreases. Set $b_j=G(x_0)/(\gamma2^j)$ for $0\le j<J$ and assign
+each nonterminal update to $b_j/2<f(x_k)-\ell_k\le b_j$.
+In this phase, \eqref{eq:retained_bound} gives $G(x_k)>\gamma b_j/2$.
+Since $t^2/(L_0+L_1t)$ increases for $t>0$, each such update decreases
+the objective by at least
+\[
+ \min\left\{\frac{\gamma b_j}{4},
+ \frac{(\log 2)\gamma^2b_j^2}{8D^2(L_0+L_1\gamma b_j/2)}\right\}.
+\]
+The total decrease from updates starting in the phase is at most the
+true error at its entry, hence at most $b_j$. This includes the last
+update leaving the phase, whose endpoint is still feasible.
+The number of updates in the phase is therefore at most
+\[
+ \max\left\{\frac4\gamma,
+ \frac{8L_0D^2}{(\log 2)\gamma^2b_j}
+ +\frac{4L_1D^2}{(\log 2)\gamma}\right\}.
+\]
+Summation and $\sum_{j<J}b_j^{-1}<2/\varepsilon$ prove
+\eqref{eq:gap_iteration_bound}. The same finite bound holds for every
+unfinished prefix, excluding an infinite nonterminal run.
+At each visited point the three oracles are called once; the explicit
+step \eqref{eq:log_step} makes no trial objective calls.
+\end{proof}
+
+\subsection{The regime \texorpdfstring{$L_0=0$}{L0=0}}
+\begin{corollary}[Geometric convergence]\label{cor:pure_gap_linear}
+If $L_0=0<L_1$, set
+\[
+ \underline\alpha_0=\min\{1,(\log 2)/(L_1D^2)\}.
+\]
+For every computed iterate,
+\begin{align*}
+ f(x_k)-f(x^*)&\le
+ (1-\gamma\underline\alpha_0/2)^k\bigl(f(x_0)-f(x^*)\bigr),\\
+ f(x_k)-\ell_k&\le
+ (1-\gamma\underline\alpha_0/2)^k G(x_0)/\gamma.
+\end{align*}
+If the initial test fails, stopping takes at most
+\[
+ \left\lceil\frac{\log(G(x_0)/(\gamma\varepsilon))}
+ {-\log(1-\gamma\underline\alpha_0/2)}\right\rceil
+\]
+updates.
+\end{corollary}
+\begin{proof}
+The step bound gives $\alpha_k\ge\underline\alpha_0$, so decrease
+is at least $\underline\alpha_0G(x_k)/2$.
+Use \eqref{eq:quasar} for the first recurrence and
+\eqref{eq:retained_bound}, together with $\ell_{k+1}\ge\ell_k$,
+for the second.
+\end{proof}
+Here $\nabla^2f(x^*)=0$ follows from $G(x^*)=0$.
+The nonconvex example in Section~\ref{sec:examples} has this property
+and a nonzero gradient at the minimum.
+
+\subsection{Strongly convex feasible sets}
+Use the convention of \cite{vyguzov}: $Q$ is strongly convex with
+constant $\lambda>0$ if the closed ball of radius
+$\lambda\|u-v\|^2$ about $(u+v)/2$ lies in $Q$ for all $u,v\in Q$.
+This is a condition on the set, not strong convexity of the objective.
+
+\begin{theorem}[A nonzero optimal gradient gives a linear rate]
+\label{thm:strong_set_linear}
+Suppose additionally that $Q$ is strongly convex and
+$\nabla f(x^*)\ne0$. Then $x^*$ is unique and
+\[
+ c:=\min_{x\in Q}\|\nabla f(x)\|>0.
+\]
+Define
+\[
+ \underline\alpha_{\rm sc}=
+ \min\left\{1,\left(\frac{L_0}{2\lambda c}+2L_1D^2\right)^{-1}\right\},
+\]
+with value $1$ when the denominator is zero. Then
+\begin{align*}
+ f(x_k)-f(x^*)&\le
+ (1-\gamma\underline\alpha_{\rm sc}/2)^k
+       \bigl(f(x_0)-f(x^*)\bigr),\\
+ f(x_k)-\ell_k&\le
+ (1-\gamma\underline\alpha_{\rm sc}/2)^k G(x_0)/\gamma.
+\end{align*}
+The algorithm uses neither $c$ nor $\lambda$; they enter only this rate.
+\end{theorem}
+\begin{proof}
+If $y$ were another minimizer, \eqref{eq:quasar} would make
+\[
+ \frac{f(x^*+t(y-x^*))-f(x^*)}{t^\gamma}
+\]
+nondecreasing for $0<t\le1$. It is nonnegative and vanishes at $1$,
+so the function is constant on the segment and
+$\langle\nabla f(x^*),y-x^*\rangle=0$.
+The midpoint ball and constrained first-order optimality instead give
+\[
+ \langle\nabla f(x^*),y-x^*\rangle
+ \ge2\lambda\|\nabla f(x^*)\|\|y-x^*\|^2>0
+\]
+when $y\ne x^*$. Thus the minimizer is unique. A zero gradient anywhere
+in $Q$ would give another minimizer by \eqref{eq:quasar}; continuity
+and compactness now give $c>0$.
+
+The same midpoint construction at a full linear minimizer yields
+\[
+ G(x_k)\ge2\lambda\|\nabla f(x_k)\|\|d_k\|^2
+           \ge2\lambda c\|d_k\|^2.
+\]
+When $L_0=L_1=0$, $\alpha_k=1$. Otherwise,
+$\log(1+t)\ge t/(1+t)$ in \eqref{eq:log_step}, or the stated limit
+when $L_1=0$, gives
+\[
+ \alpha_k\ge\min\left\{1,
+ \frac{G(x_k)}{(L_0+L_1G(x_k))\|d_k\|^2
+                      +L_1D\|d_k\|G(x_k)}\right\}
+ \ge\underline\alpha_{\rm sc}.
+\]
+Here $\|d_k\|\le D$ and the preceding scaling inequality bound the
+denominator divided by $G(x_k)$ by $L_0/(2\lambda c)+2L_1D^2$.
+The two recurrences follow as in Corollary~\ref{cor:pure_gap_linear}.
+\end{proof}

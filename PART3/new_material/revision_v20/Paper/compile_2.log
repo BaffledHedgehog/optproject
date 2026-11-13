@@ -1,0 +1,93 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(article.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+(E:\miktex\tex/latex/base\article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(E:\miktex\tex/latex/base\size11.clo))
+(E:\miktex\tex/latex/geometry\geometry.sty
+(E:\miktex\tex/latex/graphics\keyval.sty)
+(E:\miktex\tex/generic/iftex\ifvtex.sty (E:\miktex\tex/generic/iftex\iftex.sty)
+) (E:\miktex\tex/latex/geometry\geometry.cfg))
+(E:\miktex\tex/latex/base\fontenc.sty) (E:\miktex\tex/latex/lm\lmodern.sty)
+(E:\miktex\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(E:\miktex\tex/latex/amsmath\amstext.sty
+(E:\miktex\tex/latex/amsmath\amsgen.sty))
+(E:\miktex\tex/latex/amsmath\amsbsy.sty)
+(E:\miktex\tex/latex/amsmath\amsopn.sty))
+(E:\miktex\tex/latex/amsfonts\amssymb.sty
+(E:\miktex\tex/latex/amsfonts\amsfonts.sty))
+(E:\miktex\tex/latex/amscls\amsthm.sty)
+(E:\miktex\tex/latex/graphics\graphicx.sty
+(E:\miktex\tex/latex/graphics\graphics.sty
+(E:\miktex\tex/latex/graphics\trig.sty)
+(E:\miktex\tex/latex/graphics-cfg\graphics.cfg)
+(E:\miktex\tex/latex/graphics-def\pdftex.def)))
+(E:\miktex\tex/latex/booktabs\booktabs.sty)
+(E:\miktex\tex/latex/float\float.sty)
+(E:\miktex\tex/latex/hyperref\hyperref.sty
+(E:\miktex\tex/generic/infwarerr\infwarerr.sty)
+(E:\miktex\tex/latex/kvsetkeys\kvsetkeys.sty)
+(E:\miktex\tex/generic/kvdefinekeys\kvdefinekeys.sty)
+(E:\miktex\tex/generic/pdfescape\pdfescape.sty
+(E:\miktex\tex/generic/ltxcmds\ltxcmds.sty)
+(E:\miktex\tex/generic/pdftexcmds\pdftexcmds.sty))
+(E:\miktex\tex/latex/hycolor\hycolor.sty)
+(E:\miktex\tex/latex/letltxmacro\letltxmacro.sty)
+(E:\miktex\tex/latex/auxhook\auxhook.sty)
+(E:\miktex\tex/latex/hyperref\nameref.sty
+(E:\miktex\tex/latex/refcount\refcount.sty)
+(E:\miktex\tex/generic/gettitlestring\gettitlestring.sty
+(E:\miktex\tex/latex/kvoptions\kvoptions.sty)))
+(E:\miktex\tex/latex/etoolbox\etoolbox.sty)
+(E:\miktex\tex/latex/hyperref\pd1enc.def)
+(E:\miktex\tex/generic/intcalc\intcalc.sty)
+(E:\miktex\tex/latex/hyperref\puenc.def) (E:\miktex\tex/latex/url\url.sty)
+(E:\miktex\tex/generic/bitset\bitset.sty
+(E:\miktex\tex/generic/bigintcalc\bigintcalc.sty))
+(E:\miktex\tex/latex/base\atbegshi-ltx.sty))
+(E:\miktex\tex/latex/hyperref\hpdftex.def
+(E:\miktex\tex/latex/base\atveryend-ltx.sty)
+(E:\miktex\tex/latex/rerunfilecheck\rerunfilecheck.sty
+(E:\miktex\tex/generic/uniquecounter\uniquecounter.sty)))
+(E:\miktex\tex/latex/lm\t1lmr.fd)
+(E:\miktex\tex/latex/l3backend\l3backend-pdftex.def) (paper.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+(E:\miktex\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (E:\miktex\tex/latex/epstopdf-pkg\epstopdf-base.sty
+(E:\miktex\tex/latex/00miktex\epstopdf-sys.cfg)) (paper.out) (paper.out)
+(E:\miktex\tex/latex/lm\ot1lmr.fd) (E:\miktex\tex/latex/lm\omllmm.fd)
+(E:\miktex\tex/latex/lm\omslmsy.fd) (E:\miktex\tex/latex/lm\omxlmex.fd)
+(E:\miktex\tex/latex/amsfonts\umsa.fd) (E:\miktex\tex/latex/amsfonts\umsb.fd)
+(model.tex [1{C:/Users/yarik_temp/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.
+map}{E:/miktex/fonts/enc/dvips/lm/lm-ec.enc}{E:/miktex/fonts/enc/dvips/lm/lm-ma
+thsy.enc}{E:/miktex/fonts/enc/dvips/lm/lm-rm.enc}{E:/miktex/fonts/enc/dvips/lm/
+lm-mathit.enc}{E:/miktex/fonts/enc/dvips/lm/lm-mathex.enc}]
+Underfull \hbox (badness 10000) in paragraph at lines 89--90
+[]\T1/lmr/m/n/10 Directional trans-port, ex-plicit
+
+Underfull \hbox (badness 5908) in paragraph at lines 89--90
+\T1/lmr/m/n/10 model min-i-mizer, and cer-ti-fied
+) (step.tex [2]) (rates.tex [3] [4]) (armijo.tex [5]) (structure.tex [6])
+(examples.tex [7] [8]) (experiments.tex [9] (E:\miktex\tex/latex/lm\t1lmtt.fd)
+(multidim_table.tex) (radius_table.tex) [10]) (discussion.tex [11 <./figures/mu
+ltidim_en.pdf>]) (references.tex) [12] (paper.aux) )
+(see the transcript file for additional information)<E:/miktex/fonts/type1/publ
+ic/lm/lmbx10.pfb><E:/miktex/fonts/type1/public/lm/lmbx12.pfb><E:/miktex/fonts/t
+ype1/public/lm/lmex10.pfb><E:/miktex/fonts/type1/public/lm/lmmi10.pfb><E:/mikte
+x/fonts/type1/public/lm/lmmi12.pfb><E:/miktex/fonts/type1/public/lm/lmmi6.pfb><
+E:/miktex/fonts/type1/public/lm/lmmi7.pfb><E:/miktex/fonts/type1/public/lm/lmmi
+8.pfb><E:/miktex/fonts/type1/public/lm/lmr10.pfb><E:/miktex/fonts/type1/public/
+lm/lmr12.pfb><E:/miktex/fonts/type1/public/lm/lmr17.pfb><E:/miktex/fonts/type1/
+public/lm/lmr6.pfb><E:/miktex/fonts/type1/public/lm/lmr7.pfb><E:/miktex/fonts/t
+ype1/public/lm/lmr8.pfb><E:/miktex/fonts/type1/public/lm/lmri10.pfb><E:/miktex/
+fonts/type1/public/lm/lmsy10.pfb><E:/miktex/fonts/type1/public/lm/lmsy8.pfb><E:
+/miktex/fonts/type1/public/lm/lmtt10.pfb><E:/miktex/fonts/type1/public/amsfonts
+/symbols/msbm10.pfb>
+Output written on paper.pdf (12 pages, 460276 bytes).
+Transcript written on paper.log.

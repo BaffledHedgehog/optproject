@@ -1,0 +1,26 @@
+{
+  "archive_sha256": "4df2334aae17e193d4693d254270d7cfc0664e8b43f8d23b00f3aac84a5dedae",
+  "files": {
+    "Code/benchmark_gap.py": "b63b5dad3b11169b1cbd92f3346799bb7c242007d69aaf050b9adf548600d173",
+    "Code/check_algebra.py": "c7f93a55ea2950ba4b3c8cd19f1825f8c8b1d1fb7c572846129dc07fb6e98bd0",
+    "Paper/article.tex": "0394d2a7670e8d4fbb6b135320d9e5c245c552cd787bdb929c1616747478b2ce",
+    "Paper/examples.tex": "9f923b8a58fd828f28644b42f5fb1f86ad1be283dd90268faceaa7df921fbfa0",
+    "Paper/experiments.tex": "2ac6cce42874d8b20c4b36d45d82a88a21c4c594de6262100b911b403371d91b",
+    "Paper/figures/gap_benchmark_en.pdf": "26304a01522a01a3f3b8233a8e58b22519e53a7740d38f82a6a6ef3ab7260202",
+    "Paper/figures/gap_benchmark_en.png": "799c585289a075dc93d2f9c7d703e8abd4df77dffb2e0ad54034cb4709aa133a",
+    "Paper/figures/gap_benchmark_ru.pdf": "b2da3c664a1128d34ed520ce507d48bf051f8fc3cdf5f17ff5ce4e2eacd60b5d",
+    "Paper/figures/gap_benchmark_ru.png": "d75c25467ba3a97830f6e6668cc9d20c3e5fdb5e882a5876082adb0e20c3d306",
+    "Paper/model.tex": "7698cb337cf4f9f42d4b58e1662b61a180a6fd0d6a0b62f4e60aadf637a4a4bd",
+    "Paper/rates.tex": "ed60fd7c09b6d99d00d24a58f063f34c3427dbf6cec7fa835f73bcb7e8f185f8",
+    "Paper/references.tex": "cb2b6d59472fb6ef03170c2a1c6aa1f0e841623bd7a60cf5230149af6979caab",
+    "Paper/ru/article.tex": "a48055087f1c94280f35db6c8c533fbb12c9b69551dfca4b4bf746e4589ca4e4",
+    "Paper/ru/examples.tex": "beefa19c9a1bb36da80756af07adda626df13c6d3dbe6e3707b1b4c620be3c16",
+    "Paper/ru/experiments.tex": "3cbeefe6b06c8a30b3c815616a3794222d24f2e286cb8a9145e0af14b3ab2e7b",
+    "Paper/ru/model.tex": "fdcd5bb8717e096179d17aeda902c171aef07cc046af9065eeec849b0f13e9af",
+    "Paper/ru/rates.tex": "a2fd2e86e1f7b8b2ae741680adafa1810600eb734bb5eb185946a3caff3aa238",
+    "Paper/ru/references.tex": "cb2b6d59472fb6ef03170c2a1c6aa1f0e841623bd7a60cf5230149af6979caab",
+    "Paper/ru/step.tex": "ed26a6ed8598544088fdf899a7b8a73ade7b39e3699eed71e1bf04dc758945d7",
+    "Paper/step.tex": "34918fc4c56c09ca9dc3296fb1f18589f44a02340c31bdcec77ba4acb3e2643e",
+    "build_papers.py": "83113763b3941688d5e7499f677331621bb7ec5b4a6aea58a51a735bc032e98d"
+  }
+}

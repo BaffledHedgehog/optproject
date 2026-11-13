@@ -1,0 +1,38 @@
+{
+  "release": "v20",
+  "language": "ru",
+  "passes": [
+    {
+      "pass": 1,
+      "exit": 0,
+      "seconds": 5.217672599996149
+    },
+    {
+      "pass": 2,
+      "exit": 0,
+      "seconds": 5.153130600003351
+    },
+    {
+      "pass": 3,
+      "exit": 0,
+      "seconds": 5.590077299995755
+    }
+  ],
+  "warning_lines": [],
+  "source_changed_during_build": false,
+  "source_hashes": {
+    "armijo.tex": "eeb06f0a96e4239b1d80e84e29a185e62acd175765a71049aea9bcc30b74e0d1",
+    "article.tex": "609841cb0c4d63f59aeee74cf913cb87842c3824678be6126c6c4404232034c1",
+    "discussion.tex": "527a178295b731d2c26b997d6004518ff15d44a55b65280b419b4d5d7dfd7a14",
+    "examples.tex": "882df4a648e7dc3df0168d2feffb2136c084a892d1d93872f183c64290be3373",
+    "experiments.tex": "34b07c8b255861393c49f0bd659f1e6c28b8214707ee4df7f3677f9d9402164a",
+    "model.tex": "44e5749429249092e572b885e0d0e50c1c585756cc225363cf483e41353e1588",
+    "multidim_table.tex": "0dd265f816f88d0fd36c3e867824309dc01f74aac5dfe1e3baf3d7de968577ec",
+    "radius_table.tex": "764f1624c1bee0f227d443c5e750f204cc8a54968df717b7bf4326806869d4a8",
+    "rates.tex": "a2fd2e86e1f7b8b2ae741680adafa1810600eb734bb5eb185946a3caff3aa238",
+    "references.tex": "90697b57d20faf1ed6e55a8c1c3908ae9c96f061bf411edc27b922ec4f549941",
+    "step.tex": "ed26a6ed8598544088fdf899a7b8a73ade7b39e3699eed71e1bf04dc758945d7",
+    "structure.tex": "b77774fb96827b8e3d9fa5358123e3d386a95278e202a891693baed53929d92f"
+  },
+  "scientific_calls": 0
+}

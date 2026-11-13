@@ -1,0 +1,46 @@
+{
+  "version": "v20",
+  "dimensions": [
+    4,
+    12
+  ],
+  "rows_per_dimension": 12,
+  "seeds": [
+    11,
+    29,
+    47
+  ],
+  "radii": [
+    0.5,
+    2.0,
+    4.0
+  ],
+  "starts": [
+    "zero",
+    "plus_axis",
+    "minus_axis"
+  ],
+  "epsilon": 0.0001,
+  "max_attempts": 20000,
+  "timing_repetitions": 3,
+  "methods": [
+    "gap_log",
+    "global_L",
+    "open_loop",
+    "armijo",
+    "backtracking",
+    "norm_smooth",
+    "line_bisection",
+    "auto_conditioned"
+  ],
+  "latent_norm": 1.2,
+  "armijo_beta": 0.5,
+  "armijo_sigma": 0.5,
+  "backtracking_initial_M": 1.0,
+  "backtracking_eta": 0.5,
+  "backtracking_tau": 2.0,
+  "line_bisection_width": 1e-12,
+  "ac_delta": 1.0,
+  "gamma": 1.0,
+  "note": "Synthetic data; three starts/radii share each generated dataset. No parameter tuning."
+}

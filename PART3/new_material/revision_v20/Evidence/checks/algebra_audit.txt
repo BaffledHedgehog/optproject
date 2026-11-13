@@ -1,0 +1,15 @@
+PASS: quadratic short-step value
+PASS: quadratic completion of the square
+PASS: integrated exponential model second derivative
+PASS: integrated exponential model at zero
+PASS: integrated exponential model slope at zero
+PASS: zero-exponent limit of the upper model
+PASS: logarithmic step solves the model derivative
+PASS: logarithmic step has the ordinary short-step limit
+PASS: half-decrease residual at zero
+PASS: half-decrease residual derivative at zero
+PASS: half-decrease residual second derivative is nonnegative
+PASS: counterexample Hessian inequality residual
+PASS: counterexample nonzero Taylor remainder
+All 13 symbolic identities passed. Sign conclusions use the stated positive-variable assumptions.
+No Lean compiler, Lake build, or Comparator audit was run; no formal verification is claimed.

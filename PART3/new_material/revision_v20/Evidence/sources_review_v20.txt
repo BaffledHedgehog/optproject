@@ -1,0 +1,46 @@
+Literature checked for revision v20, 14 November 2026.
+Primary sources; not a proof of priority or an exhaustive systematic review.
+
+Jaggi (2013), standard Frank-Wolfe and gap certificate:
+https://proceedings.mlr.press/v28/jaggi13.html
+
+Vyguzov and Stonyakin, arXiv v5 (5 October 2026), norm-dependent curvature:
+https://arxiv.org/abs/2510.16468v5
+Journal version with Gasnikov, JNVA 10(3):597-616 (2026):
+https://jnva.biemdas.com/archives/2972
+https://doi.org/10.23952/jnva.10.2026.3.05
+Author lists differ between these records; the bibliography preserves each.
+
+Martinez-Rubio, AISTATS 2026, constrained quasar-convex FW:
+https://proceedings.mlr.press/v300/martinez-rubio26a.html
+Theorem 9: ordinary-smooth rate 6LD^2/((t+1)gamma^2).
+
+Wirth, Pena and Pokutta, COAP 95:679-698 (2026):
+https://link.springer.com/article/10.1007/s10589-026-00817-w
+Section 2: best primal-dual gap; growth assumptions for FW.
+Inference in this revision: our gamma=1 accumulated certificate is identical;
+our pure-gap model implies strong (M,1)-growth with the displayed conservative M.
+The implication is derived in the manuscript, not asserted as a quotation.
+
+Giang-Tran, Shafiee and Ho-Nguyen, Auto-Conditioned Frank-Wolfe Algorithms,
+arXiv v2 (28 May 2026):
+https://arxiv.org/abs/2605.15512v2
+https://arxiv.org/html/2605.15512v2
+Algorithms 1-2 and equation (6), delta=1, inform the implemented comparator.
+
+Pedregosa, Negiar, Askari and Jaggi, AISTATS 2020:
+https://proceedings.mlr.press/v108/pedregosa20a.html
+Standard quadratic-model backtracking comparator.
+
+Takahashi, Pokutta and Takeda, adaptive Bregman FW, ICLR 2026:
+https://arxiv.org/abs/2504.04330
+https://iclr.cc/media/iclr-2026/Slides/10011099.pdf
+Related model, not identified with gap-dependent Hessian control.
+
+Yagishita and Ito, linesearch-free first-order methods (2025):
+https://arxiv.org/abs/2509.14670
+Related conditional-gradient step selection; included for positioning.
+
+New manuscript statements about Poisson parameters, rigidity and Armijo are
+explicit derivations. Their validity is supported by the written proofs;
+their absolute novelty is not established by this search.

@@ -1,0 +1,106 @@
+\section{Examples and a quantitative comparison}\label{sec:examples}
+\subsection{Gap-dependent constants and a large uniform constant}
+Let
+\begin{equation}\label{eq:exp_family}
+ f_A(x,y)=e^x+Ay,\qquad
+ Q=[0,R]\times[0,1],\qquad R,A>0,\qquad D=\sqrt{R^2+1}.
+\end{equation}
+This function is convex, its minimum is at $(0,0)$, and
+$\nabla f_A(0,0)=(1,A)$.
+The full linear minimizer is $(0,0)$, so
+\[
+ G(x,y)=xe^x+Ay,\qquad
+ \|\nabla^2 f_A(x,y)\|=e^x\le1+xe^x\le1+G(x,y).
+\]
+Indeed, $(1-x)e^x$ is nonincreasing for $x\ge0$ and equals one
+at zero. Thus $L_0=L_1=1$ work for every $R,A$, whereas the
+smallest uniform Hessian bound on $Q$ is $L=e^R$.
+
+\begin{theorem}[Two step rules on the same family]\label{thm:separation}
+Start both methods at $(R,0)$ in \eqref{eq:exp_family}.
+If continued without an earlier positive-tolerance stop, the
+logarithmic rule \eqref{eq:log_step} reaches the exact minimum
+in at most
+\begin{equation}\label{eq:exp_upper}
+ N_{\log}\le\left\lceil\frac{R\sqrt{R^2+1}}{\log2}\right\rceil
+\end{equation}
+updates. For the ordinary short step
+$\alpha=\min\{1,G/(L\|d\|^2)\}$ with $L=e^R$,
+attaining objective error at most $\varepsilon>0$ requires
+\begin{equation}\label{eq:exp_lower}
+ N_L\ge\frac{e^R/(1+\varepsilon)-1}{e-1}.
+\end{equation}
+The iterates, steps, objective values, gaps, certificates, and
+operation counts are independent of $A$.
+\end{theorem}
+\begin{proof}
+Every iterate has $y=0$. For the logarithmic rule its first coordinate
+satisfies
+\[
+ x_{\mathrm{next}}=\max\{0,x-h(x)\},\qquad
+ h(x)=\frac1D\log\left(1+\frac{D}{x+e^{-x}}\right).
+\]
+On $[0,R]$, $x+e^{-x}\le R+e^{-R}\le D$. The last inequality
+follows from $e^R-e^{-R}\ge2R$, whose left-hand side has derivative
+at least two.
+Thus $h(x)\ge(\log2)/D$, which proves \eqref{eq:exp_upper}.
+
+For the ordinary short step, write
+$x_{\mathrm{next}}=x-h$, where $h=\min\{x,e^{x-R}\}\le1$.
+Convexity of the exponential on $[0,1]$ gives
+\[
+ e^{-(x-h)}-e^{-x}
+ =e^{-x}(e^h-1)
+ \le(e-1)e^{-x}h\le(e-1)e^{-R}.
+\]
+Initially $e^{-x}=e^{-R}$. Error at most $\varepsilon$ requires
+$e^{-x}\ge1/(1+\varepsilon)$, which proves \eqref{eq:exp_lower}.
+On $y=0$, all function values, gaps, directions, and step formulas
+are independent of $A$; hence so is \eqref{eq:stop}.
+\end{proof}
+
+At fixed accuracy, these bounds compare a quadratic upper bound
+in $R$ with an exponential lower bound for the specified uniform-$L$
+step. The small numbers $L_0,L_1$ matter through the proved step
+and work estimates, not through a numerical comparison of constants
+with different units.
+
+\paragraph{What this comparison does not establish.}
+The linear oracle returns the global minimizer for every point in
+\eqref{eq:exp_family}. Thus the ordinary schedule $\alpha_k=2/(k+2)$,
+indexed from $k=0$, reaches the minimizer in one update; so does exact
+line search. Theorem~\ref{thm:separation} is a separation of two specified
+step rules, not a complexity lower bound for FW in general or evidence
+of superiority over adaptive competitors. Varying $A$ from the start
+$(R,0)$ adds no trajectory diversity: this is a one-dimensional control
+of sensitivity to a normal gradient component.
+
+\subsection{A nonconvex objective with a nonzero optimal gradient}
+On $Q=[0,1]$, consider
+\begin{equation}\label{eq:nonconvex}
+ f(x)=\int_0^x e^{-2t^2}\,dt.
+\end{equation}
+The minimizer is $x^*=0$, $f'(0)=1$, and $f''(x)<0$ for $x>0$.
+Moreover,
+\[
+ G(x)=xe^{-2x^2},\qquad
+ |f''(x)|=4G(x),\qquad
+ xf'(x)\ge e^{-2}x\ge e^{-2}f(x).
+\]
+Thus \eqref{eq:gap_smoothness} holds with $L_0=0,L_1=4$,
+and \eqref{eq:quasar} holds with $\gamma=e^{-2}$.
+This is a nonconvex member of the stated class.
+
+From $x_0=1$, the first logarithmic step gives
+$x_1=1-(\log2)/4\in(1/2,1)$.
+Since $xe^{-2x^2}$ decreases with $x$ on $(1/2,1]$,
+$G(x_1)>G(x_0)$ even though $f(x_1)<f(x_0)$.
+This explains why the stopping proof uses the monotone quantity
+$f(x_k)-\ell_k$ rather than assuming monotonicity of $G(x_k)$.
+The gradient norm increases toward one as the iterates approach
+the constrained minimum.
+
+Here too the linear oracle returns the minimizer $0$ and exact line search
+selects the full step. The purpose of this example is to verify membership
+in a nonconvex pure-gap class and the nonmonotonicity of $G$, not to
+demonstrate a difficult numerical problem.

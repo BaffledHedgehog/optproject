@@ -1,0 +1,58 @@
+[
+  {
+    "method": "global_L",
+    "updates_less_than_gap_log": 36,
+    "f_calls_less_than_gap_log": 36,
+    "g_calls_less_than_gap_log": 36,
+    "lmo_calls_less_than_gap_log": 36,
+    "seconds_less_than_gap_log": 35
+  },
+  {
+    "method": "open_loop",
+    "updates_less_than_gap_log": 16,
+    "f_calls_less_than_gap_log": 16,
+    "g_calls_less_than_gap_log": 16,
+    "lmo_calls_less_than_gap_log": 16,
+    "seconds_less_than_gap_log": 16
+  },
+  {
+    "method": "armijo",
+    "updates_less_than_gap_log": 54,
+    "f_calls_less_than_gap_log": 45,
+    "g_calls_less_than_gap_log": 54,
+    "lmo_calls_less_than_gap_log": 54,
+    "seconds_less_than_gap_log": 53
+  },
+  {
+    "method": "backtracking",
+    "updates_less_than_gap_log": 54,
+    "f_calls_less_than_gap_log": 52,
+    "g_calls_less_than_gap_log": 54,
+    "lmo_calls_less_than_gap_log": 54,
+    "seconds_less_than_gap_log": 53
+  },
+  {
+    "method": "norm_smooth",
+    "updates_less_than_gap_log": 0,
+    "f_calls_less_than_gap_log": 0,
+    "g_calls_less_than_gap_log": 0,
+    "lmo_calls_less_than_gap_log": 0,
+    "seconds_less_than_gap_log": 0
+  },
+  {
+    "method": "line_bisection",
+    "updates_less_than_gap_log": 54,
+    "f_calls_less_than_gap_log": 54,
+    "g_calls_less_than_gap_log": 10,
+    "lmo_calls_less_than_gap_log": 54,
+    "seconds_less_than_gap_log": 27
+  },
+  {
+    "method": "auto_conditioned",
+    "updates_less_than_gap_log": 54,
+    "f_calls_less_than_gap_log": 54,
+    "g_calls_less_than_gap_log": 54,
+    "lmo_calls_less_than_gap_log": 54,
+    "seconds_less_than_gap_log": 54
+  }
+]

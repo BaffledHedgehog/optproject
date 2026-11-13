@@ -1,0 +1,20 @@
+{
+  "poisson_n12_s11_R0.5.json": "d4446faf1847c4fdb1d8684fd52eea316e401937bec7c8939f83e0e862793121",
+  "poisson_n12_s11_R2.json": "4eae4ac6d117e8dbb9d71475bb1fb85f4001e4a300d3013ec1bbeace40e832d1",
+  "poisson_n12_s11_R4.json": "a311a7c1c6718152c3c24542f4789399573a60f6f88ea69455c617e7d70b7be7",
+  "poisson_n12_s29_R0.5.json": "8939c5b68de80ad655eb55d972de4519a26e39f7276afa2e65ad83b28a89dced",
+  "poisson_n12_s29_R2.json": "0f037a0fb5e4bcb3fc2ff7e0976f874286ab75075b67cfda1eb7f31dec10badc",
+  "poisson_n12_s29_R4.json": "2c6da2ecd67fb964f3245b7e9a5d13a1d5017403291281b9befd6a7a11ee4375",
+  "poisson_n12_s47_R0.5.json": "23cb181d166cb80fe3a30b3d63b564f00edd8e9308f1d78c8723592057ec926f",
+  "poisson_n12_s47_R2.json": "6c565a63e04a585d0968606c17eddc160321f0b2895f0b5034d0a837e0f6e26a",
+  "poisson_n12_s47_R4.json": "57c0b7e5517860af5a9f1606c64a60e93845ed2eee454993688e56d55f892395",
+  "poisson_n4_s11_R0.5.json": "6e5ca9f54fe026a8d06285fabb3159d62b8bf03fdb8c509ec6ce4f997c8cb9bf",
+  "poisson_n4_s11_R2.json": "5237489f2a6a6b6d652911fdaba656f38f28b4b4da4086dad30c372b6efff7ac",
+  "poisson_n4_s11_R4.json": "6f5e66d45534906028fd534b23e899e5bac321193526c391310a5db75c680816",
+  "poisson_n4_s29_R0.5.json": "fc42a47266743bbfafcbbf33c5894c48770bca3204321a5d2a5db1a0ec0ac749",
+  "poisson_n4_s29_R2.json": "58cc9e87c2a5a2b2b2fec98c89fef7b2fcdf9c66955638d7189cb32bdd24593f",
+  "poisson_n4_s29_R4.json": "055cfb4635465e9c16bfea014fbcc33593402ca0cceb4f68345ae3177fa0ae26",
+  "poisson_n4_s47_R0.5.json": "fe6f70cbffcf78afe3dff6252bc2f68e8a96fd195aadaa5664dccd8d02cc2884",
+  "poisson_n4_s47_R2.json": "22a134af922623a992cfdf37ea06676d5b3c6ae5ae4d639f879f211e8129cf08",
+  "poisson_n4_s47_R4.json": "564efb28264ab4578b21457c37aa9bd18810b157ff6d4d31e8350bbd5be94fa2"
+}

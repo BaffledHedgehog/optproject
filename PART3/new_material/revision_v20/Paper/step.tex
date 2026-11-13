@@ -1,0 +1,123 @@
+\section{Two lemmas and a computable step}
+The two lemmas in this section use \eqref{eq:gap_smoothness}
+but do not require convexity or quasar-convexity of $f$.
+
+\begin{lemma}[Transport and an upper model]\label{lem:transport}
+Let $s,d$ be given by \eqref{eq:gap}. For $0\le t\le1$,
+\begin{align}
+ G(x+td)&\le(1-t)G(x)
+    +D\|d\|\int_0^t\bigl(L_0+L_1G(x+ud)\bigr)\,du,
+       \label{eq:transport}\\
+ L_0+L_1G(x+td)&\le
+      \bigl(L_0+L_1G(x)\bigr)e^{L_1D\|d\|t}.
+       \label{eq:transport_exp}
+\end{align}
+Consequently, for $0\le\alpha\le1$,
+\begin{equation}\label{eq:upper_model}
+ f(x+\alpha d)\le f(x)-\alpha G(x)
+ +(L_0+L_1G(x))\|d\|^2
+       \int_0^\alpha(\alpha-t)e^{L_1D\|d\|t}\,dt.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For every $v\in Q$, expand the inner product at $x$:
+\[
+ \langle\nabla f(x+td),x+td-v\rangle
+ \le G(x)-tG(x)
+       +D\|\nabla f(x+td)-\nabla f(x)\|.
+\]
+Maximizing over $v$ and integrating the Hessian along the segment
+gives \eqref{eq:transport}. Drop the nonpositive term $-tG(x)$
+and apply Gronwall's inequality to $L_0+L_1G(x+td)$ to obtain
+\eqref{eq:transport_exp}; the case $L_1=0$ is immediate.
+Taylor's formula with integral remainder gives \eqref{eq:upper_model},
+since
+$|d^\top\nabla^2f(x+td)d|\le\|\nabla^2f(x+td)\|\|d\|^2$.
+\end{proof}
+
+The exponential in \eqref{eq:upper_model} bounds the growth of
+curvature while moving. The square $\|d\|^2$ comes from the second
+directional derivative. Both arise in the proof; neither can be
+removed by substituting the gap for a gradient norm in another model.
+The selected segment is essential. For example,
+$f(t)=t+t^3/6$ on $[0,1]$ has $|f''(t)|\le G(t)$, yet $G(0)=0$
+and $f(1)>f(0)+f'(0)$. Thus an upper model with initial coefficient
+$L_0+L_1G(x)$ cannot hold for \emph{every} pair $x,y$.
+
+\paragraph{Step rule.}
+If $G(x)>0$ and $L_1>0$, minimize the right-hand side of
+\eqref{eq:upper_model} over $[0,1]$:
+\begin{equation}\label{eq:log_step}
+ \boxed{\displaystyle
+ \alpha=\min\left\{1,\,
+ \frac{1}{L_1D\|d\|}
+ \log\left(1+
+ \frac{L_1D\,G(x)}
+ {(L_0+L_1G(x))\|d\|}\right)\right\}.}
+\end{equation}
+Here and below $\log$ is the natural logarithm.
+If $L_1=0<L_0$, use the continuous limit
+$\alpha=\min\{1,G(x)/(L_0\|d\|^2)\}$.
+If $L_0=L_1=0$, use $\alpha=1$; $f$ is then affine on $Q$.
+If $G(x)=0$, stop before evaluating any quotient.
+
+\begin{lemma}[Descent]\label{lem:descent}
+The step above satisfies
+\begin{equation}\label{eq:descent}
+ f(x+\alpha d)\le f(x)-\frac{\alpha G(x)}2.
+\end{equation}
+Outside the affine case,
+\begin{equation}\label{eq:step_lower}
+ \alpha\ge
+ \min\left\{1,
+   \frac{(\log2)G(x)}{(L_0+L_1G(x))D^2}\right\}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For this scalar calculation put $b=L_1D\|d\|>0$.
+The integral in \eqref{eq:upper_model} equals
+$(e^{b\alpha}-1-b\alpha)/b^2$.
+Differentiating the model gives
+\[
+ -G(x)+(L_0+L_1G(x))\|d\|^2
+             \frac{e^{b\alpha}-1}{b}.
+\]
+Its zero gives \eqref{eq:log_step}. At the capped minimizer
+the derivative is nonpositive. Since $(e^{bt}-1)/b$ is convex
+and vanishes at zero, its integral on $[0,\alpha]$ is at most
+half of $\alpha$ times its endpoint value. Substitution in
+\eqref{eq:upper_model} proves \eqref{eq:descent}.
+
+For \eqref{eq:step_lower}, temporarily set
+$r=\|d\|/D\le1$ and
+$q=L_1G(x)/(L_0+L_1G(x))\le1$. The uncapped step is
+$\log(1+q/r)/(L_1D^2r)$, and
+\[
+ \log(1+q/r)\ge\log(1+q)\ge q\log2\ge qr\log2.
+\]
+The middle inequality is concavity of the logarithm.
+When $L_1=0$, both assertions follow from the quadratic model.
+\end{proof}
+
+In the norm-based step of~\cite{vyguzov}, a restriction on the
+step length bounds an exponential by $e$.
+Here \eqref{eq:log_step} solves the exponential model directly.
+In particular, its logarithm makes
+\[
+ e^{L_1D\|d\|\alpha}-1
+ \le\frac{L_1D\,G(x)}{(L_0+L_1G(x))\|d\|},
+\]
+which is precisely the inequality used in the descent proof.
+
+\paragraph{Algorithm and stopping.}
+Fix an accuracy $\varepsilon>0$.
+At each visited point $x_k$, evaluate $f(x_k)$, its gradient,
+and a full linear minimizer. Retain
+\begin{equation}\label{eq:stop}
+ \ell_k=\max_{0\le j\le k}
+        \left\{f(x_j)-\frac{G(x_j)}{\gamma}\right\},
+ \qquad \text{stop if } f(x_k)-\ell_k\le\varepsilon.
+\end{equation}
+Otherwise set $x_{k+1}=x_k+\alpha_kd_k$ using \eqref{eq:log_step}
+or its stated limiting cases. Each new function value is evaluated
+once. There is no line search.
